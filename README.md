@@ -381,19 +381,19 @@
 Μπορείτε να δείτε τον παραγόμενο πηγαίο κώδικα HTML \(στην έκδοση 4.0 ή νεώτερη του LibreOffice\), από το μενού **View → HTML source** \(ανοίξτε το στον αγαπημένο σας κειμενογράφο απλού κειμένου, π.χ. gedit, αν τρέχετε έκδοση του LibreOffice μικρότερη του 4.0\). Το πρώτο πράγμα που παρατηρούμε είναι ότι είναι στη μορφή HTML 4.0 κι όχι στην HTML 5.
 
 ```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
-<TITLE></TITLE>
-<META NAME="GENERATOR" CONTENT="LibreOffice 3.5 (Linux)">
-<META NAME="AUTHOR" CONTENT="john">
-<META NAME="CREATED" CONTENT="20140111;154411577000000">
-<META NAME="CHANGED" CONTENT="20140111;155828735000000">
-</HEAD>
-<BODY LANG="el-GR" DIR="LTR">
-</BODY>
-</HTML>
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    <HTML>
+    <HEAD>
+    <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+    <TITLE></TITLE>
+    <META NAME="GENERATOR" CONTENT="LibreOffice 3.5 (Linux)">
+    <META NAME="AUTHOR" CONTENT="john">
+    <META NAME="CREATED" CONTENT="20140111;154411577000000">
+    <META NAME="CHANGED" CONTENT="20140111;155828735000000">
+    </HEAD>
+    <BODY LANG="el-GR" DIR="LTR">
+    </BODY>
+    </HTML>
 ```
 
 Επίσης, ελέγξτε ότι η κωδικοποίηση χαρακτήρων είναι UTF-8. Αν όχι \(π.χ. ISO-8859-7\), για να την αλλάξετε σε UTF-8, κάντε κλικ στο μενού **Tools → Options → Load/Save → HTML Compatibility** και αλλάξτε το πεδίο **Character Set** σε **Unicode \(UTF-8\)**. Πλέον κάθε νέο αρχείο HTML που αποθηκεύετε θα έχει αυτήν την κωδικοποίηση χαρακτήρων. Επίσης καλό είναι να τικάρετε και την επιλογή **Copy local graphics to internet**, ώστε όταν μεταφέρετε \(upload\) τον ιστοτόπο σας στο Διαδίκτυο, όπως θα δούμε παρακάτω, να μεταφέρει και τις εικόνες και τα υπόλοιπα αρχεία που χρειάζονται στις σωστές διαδρομές \(paths\).
@@ -485,7 +485,7 @@
 
 ![](/assets/chap6/Fig2.png)
 
-**Εικόνα 6.2**_Διαλογικό παράθυρο εισαγωγής υπερσυνδέσμων_
+**Εικόνα 6.2** _Διαλογικό παράθυρο εισαγωγής υπερσυνδέσμων_
 
 Μπορείτε να δημιουργήσετε τριών ειδών υπερσυνδέσμους:
 
