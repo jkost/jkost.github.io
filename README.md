@@ -403,43 +403,38 @@
 #### 6.2 Επεξεργασία Ιστοσελίδας
 
 Αφού δημιουργήσατε το έγγραφο HTML, θα πρέπει να ορίσετε τον τίτλο του εγγράφου. Ο τίτλος φαίνεται στη γραμμή παραθύρου του πλοηγού. Από το μενού **File → Properties → καρτέλα Description** μπορείτε να εισάγετε έναν τίτλο στο πεδίο **Title**. Αφού πατήσετε ΟΚ και το αποθηκεύσετε, ανοίγοντας το αρχείο HTML στον αγαπημένο σας κειμενογράφο απλού κειμένου θα δείτε ότι έχει ενημερωθεί η ετικέτα `<TITLE></TITLE>` κάτω από το `<HEAD>`. Μπορείτε να εισάγετε και λέξεις-κλειδιά που βοηθάνε τις διάφορες μηχανές αναζήτησης \(βλ. Google\) στο να εντοπίσουν πιο εύκολα την ιστοσελίδα σας:  
-`<META NAME="KEYWORDS" CONTENT="">`
+```html
+    <META NAME="KEYWORDS" CONTENT="">
+```
 
 Μπορείτε να γράψετε κείμενο με διαφορετικές μορφοποιήσεις, π.χ. **έντονο** \(μεταφράζεται στην ετικέτα HTML `<B></B>`\), _πλάγιο_ \(μεταφράζεται στην ετικέτα HTML `<I></I>`\), υπογραμμισμένο \(μεταφράζεται στην ετικέτα HTML `<U></U>`\) και γραμματοσειρές.
 
 Μπορείτε να εισάγετε αριθμημένες λίστες \(μεταφράζονται ως
 
-`<OL>`
-
-`<LI>...</LI>`
-
-`...`
-
-`</OL>`
-
+```html
+    <OL>
+      <LI>...</LI>
+      ...
+    </OL>
+```
 \) ή λίστες με κουκκίδες \(μεταφράζονται ως
-
-`<UL>`
-
-`<LI>...</LI>`
-
-`...`
-
-`</UL>`
-
+```html
+    <UL>
+      <LI>...</LI>
+      ...
+    </UL>
+```
 \).
 
 Ακόμα μπορείτε να εισάγετε πίνακες όπως μάθαμε σε προηγούμενο κεφάλαιο. Ο σωστός τρόπος διαμόρφωσης μιας σελίδας πάντως είναι με τη χρήση Cascading Style Sheets \(CSS\) κι όχι με τη χρήση πινάκων.
 
-`<TABLE WIDTH=100% CELLPADDING=5 CELLSPACING=0>`
-
-`<TR>`
-
-`<TD>...</TD>`
-
-`</TR>`
-
-`</TABLE>`
+```html
+    <TABLE WIDTH=100% CELLPADDING=5 CELLSPACING=0>
+      <TR>
+        <TD>...</TD>
+      </TR>
+    </TABLE>
+```
 
 Αλλά ας δούμε τα παραπάνω με ένα παράδειγμα. Θα δημιουργήσουμε την παρακάτω ιστοσελίδα ιστολογίου. Μπορείτε να μεταβείτε στην προβολή πηγαίου κώδικα HTML για να βλέπετε πως τροποποιείται το αρχείο HTML μετά από κάθε σας ενέργεια. Αν τρέχετε έκδοση του LibreOffice μικρότερη του 4.0 θα πρέπει να ανοίξετε το αρχείο .html στον αγαπημένο σας κειμενογράφο απλού κειμένου.
 
@@ -560,15 +555,13 @@
 
 Αφού τελειώσετε με την εισαγωγή υπερσυνδέσμων, κλείστε το διαλογικό παράθυρο **ImageMap**. Προβάλλοντας τον πηγαίο κώδικα HTML θα δείτε κάτι σαν το παρακάτω:
 
-`<MAP NAME="MAP1">`
-
-`<AREA SHAPE=RECT COORDS="401,404,415,421" HREF="`[`http://euruko2013.org/&quot`](http://euruko2013.org/&quot)`; TARGET="_self" ALT="Euruko 2013 Ruby conference">`
-
-`<AREA SHAPE=RECT COORDS="464,632,479,655" HREF="`[`http://jcrete.org/&quot`](http://jcrete.org/&quot)`; TARGET="_self" ALT="JCrete Java Conference">`
-
-`</MAP>`
-
-`<IMG SRC="`[`http://www.mapsofworld.com/greece/maps/greece-map.gif&quot`](http://www.mapsofworld.com/greece/maps/greece-map.gif&quot)`; NAME="graphics1" ALIGN=LEFT WIDTH=855 HEIGHT=775 BORDER=0 USEMAP="#MAP1">`
+```html
+    <MAP NAME="MAP1">
+      <AREA SHAPE=RECT COORDS="401,404,415,421" HREF="[http://euruko2013.org/&quot](http://euruko2013.org/&quot); TARGET="_self" ALT="Euruko 2013 Ruby     conference">
+      <AREA SHAPE=RECT COORDS="464,632,479,655" HREF="[http://jcrete.org/&quot](http://jcrete.org/&quot); TARGET="_self" ALT="JCrete Java Conference">
+    </MAP>
+    <IMG SRC="[http://www.mapsofworld.com/greece/maps/greece-map.gif&quot](http://www.mapsofworld.com/greece/maps/greece-map.gif&quot);     NAME="graphics1" ALIGN=LEFT WIDTH=855 HEIGHT=775 BORDER=0 USEMAP="#MAP1">
+```
 
 Το Writer ονομάζει τον χάρτη εικόνας ως `MAP1και` η εικόνα αναφέρεται σ' αυτόν με τη χρήση του `USEMAP`.
 
@@ -697,20 +690,15 @@
 
 Ας δούμε τι κώδικα παρήγαγε και συγκρίνετέ τον με την εικόνα 10:
 
-`<FORMNAME="Form" ACTION="../LibreOffice">`
-
-`<P><TEXTAREA NAME="txtComment" ROWS=4 COLS=81 WRAP=SOFT STYLE="float: left; width: 15.74cm; height: 2.31cm" ></TEXTAREA></P>`
-
-`<P><INPUT TYPE=TEXT NAME="Email" SIZE=81 STYLE="width: 15.77cm; height: 0.62cm" ></P>`
-
-`<P><INPUT TYPE=CHECKBOX NAME="Publish" VALUE="" STYLE="width: 6.29cm; height: 0.52cm">Να δημοσιευτεί;</P>`
-
-`<INPUT TYPE=SUBMIT NAME="btnSubmit" VALUE="Submit" STYLE="width: 2.44cm; height: 0.71cm; font-family: 'Arial', sans-serif; font-size: 12pt">`
-
-`<INPUT TYPE=RESET NAME="btnClear" VALUE="Clear" STYLE="width: 2.75cm; height: 0.75cm; font-family: 'Arial', sans-serif; font-size: 12pt">`
-
-`</FORM>`
-
+```html
+    <FORMNAME="Form" ACTION="../LibreOffice">
+      <P><TEXTAREA NAME="txtComment" ROWS=4 COLS=81 WRAP=SOFT STYLE="float: left; width: 15.74cm; height: 2.31cm" ></TEXTAREA></P>
+      <P><INPUT TYPE=TEXT NAME="Email" SIZE=81 STYLE="width: 15.77cm; height: 0.62cm" ></P>
+      <P><INPUT TYPE=CHECKBOX NAME="Publish" VALUE="" STYLE="width: 6.29cm; height: 0.52cm">Να δημοσιευτεί;</P>
+      <INPUT TYPE=SUBMIT NAME="btnSubmit" VALUE="Submit" STYLE="width: 2.44cm; height: 0.71cm; font-family: 'Arial', sans-serif; font-size: 12pt">
+      <INPUT TYPE=RESET NAME="btnClear" VALUE="Clear" STYLE="width: 2.75cm; height: 0.75cm; font-family: 'Arial', sans-serif; font-size: 12pt">
+    </FORM>
+```
 Μια φόρμα δηλώνεται με την ετικέτα `<FORM>`. Θέτετε την ιδιότητα `Action` με το πρόγραμμα διακομιστή \(π.χ. κάποιο script PHP ή Java\) που θα επεξεργαστεί τα δεδομένα της φόρμας σας. Στη περίπτωσή μας είναι το LibreΟffice, που σημαίνει ότι κανείς δεν επεξεργάζεται τα δεδομένα της φόρμας.
 
 Όταν τελειώσετε την επεξεργασία της φόρμας σας, αποθηκεύστε το αρχείο μόνο για ανάγνωση \(read-only\) ώστε να μην μπορούν να την αλλάξουν οι χρήστες παρά μόνο να εισάγουν δεδομένα. Γι' αυτό το σκοπό επιλέξτε  **File → Properties → Security → Open file read-only**.
