@@ -59,7 +59,7 @@
 3. [OpenOffice](http://en.wikipedia.org/wiki/OpenOffice.org).
 4. [LibreOffice](http://en.wikipedia.org/wiki/LibreOffice).
 5. LibreOffice \(2011\), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf) .
-6. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf) .
+6. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
 7. Chanelle A. \(2009\), Beginning OpenOffice 3 From Novice to Professional, Apress.
 8. Miller R. \(2005\),Point & Click OpenOffice.org!,Prentice Hall.
 9. Perry E. \(2011-2012\), “How To – Libre Office Part 1-6”,Full Circle Magazine,τεύχη 46-51.
