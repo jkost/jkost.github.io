@@ -73,6 +73,8 @@
 4. [Κεφάλαιο 4 - Μορφοποίηση](Writer/LibreOfficeWriter_chap4.md)
 5. [Κεφάλαιο 5 - Πίνακες](Writer/LibreOfficeWriter_chap5.md)
 6. [Κεφάλαιο 6 - Δημιουργία Ιστοσελίδων](Writer/LibreOfficeWriter_chap6.md)
+7. [Κεφάλαιο 7 - Συγχώνευση Αλληλογραφίας](Writer/LibreOfficeWriter_chap7.md)
+
 
 ### LibreOffice Calc
 

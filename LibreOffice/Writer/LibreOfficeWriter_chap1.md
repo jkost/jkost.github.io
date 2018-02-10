@@ -1,5 +1,9 @@
 # LibreOffice Writer
 
+---
+[<-](../README.md) | [->](LibreOfficeWriter_chap2.md)
+---
+
 ## Κεφάλαιο 1 - Εισαγωγή στο LibreOffice Writer
 
 Ο επεξεργαστής κειμένου είναι το πρόγραμμα που ίσως χρησιμοποιείτε πιο συχνά για να γράψετε τα κείμενα σας, τις επιστολές σας, τις εργασίες σας κλπ. Μοιάζει πολύ με τις παλαιότερες εκδόσεις του MS-Word, μέχρι την έκδοση 2003.
@@ -63,7 +67,5 @@
 9. Perry E. \(2011-2012\), “How To – Libre Office Part 1-6”,Full Circle Magazine,τεύχη 46-51.
 
 ---
-
 [<-](../README.md) | [->](LibreOfficeWriter_chap2.md)
-
 ---
