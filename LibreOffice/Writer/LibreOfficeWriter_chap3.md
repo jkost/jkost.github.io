@@ -1,8 +1,6 @@
 # LibreOffice Writer
 
----
 [<-](LibreOfficeWriter_chap2.md) | [->](LibreOfficeWriter_chap4.md)
----
 
 ## Κεφάλαιο 3 - Γράψτε με Στυλ
 
@@ -100,5 +98,7 @@
 7. Miller R. \(2005\), _Point & Click OpenOffice.org!_, Prentice Hall.
 
 ---
+
 [<-](LibreOfficeWriter_chap2.md) | [->](LibreOfficeWriter_chap4.md)
+
 ---

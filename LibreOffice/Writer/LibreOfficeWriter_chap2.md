@@ -1,8 +1,6 @@
 # LibreOffice Writer
 
----
 [<-](LibreOfficeWriter_chap1.md) | [->](LibreOfficeWriter_chap3.md)
----
 
 ## Κεφάλαιο 2 - Εργαλεία Συνεργασίας
 
@@ -70,5 +68,7 @@
 6. Perry E. \(2011-2012\), “How To – Libre Office Part 1-11”, [Full Circle Magazine](http://fullcirclemagazine.org/), τεύχη 46-57.
 
 ---
+
 [<-](LibreOfficeWriter_chap1.md) | [->](LibreOfficeWriter_chap3.md)
+
 ---

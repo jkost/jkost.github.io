@@ -1,8 +1,6 @@
 # LibreOffice Writer
 
----
 [<-](LibreOfficeWriter_chap4.md) | [->](LibreOfficeWriter_chap6.md)
----
 
 ## Κεφάλαιο 5 - Πίνακες
 
@@ -22,5 +20,7 @@
 **Εικόνα 5.2** _Διαλογικό παράθυρο εισαγωγής πίνακα_
 
 ---
+
 [<-](LibreOfficeWriter_chap4.md) | [->](LibreOfficeWriter_chap6.md)
+
 ---

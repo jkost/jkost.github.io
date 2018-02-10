@@ -1,8 +1,6 @@
 # LibreOffice Writer
 
----
 [<-](../README.md) | [->](LibreOfficeWriter_chap2.md)
----
 
 ## Κεφάλαιο 1 - Εισαγωγή στο LibreOffice Writer
 
@@ -67,5 +65,7 @@
 9. Perry E. \(2011-2012\), “How To – Libre Office Part 1-6”,Full Circle Magazine,τεύχη 46-51.
 
 ---
+
 [<-](../README.md) | [->](LibreOfficeWriter_chap2.md)
+
 ---

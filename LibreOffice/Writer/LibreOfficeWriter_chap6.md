@@ -1,8 +1,6 @@
 # LibreOffice Writer
 
----
 [<-](LibreOfficeWriter_chap5.md)| [->](LibreOfficeWriter_chap7.md)
----
 
 ## Κεφάλαιο 6 - Δημιουργία Ιστοσελίδων
 
@@ -352,5 +350,7 @@
 4. Miller R. \(2005\), _Point & Click OpenOffice.org!,_ Prentice Hall.
 
 ---
+
 [<-](LibreOfficeWriter_chap5.md)| [->](LibreOfficeWriter_chap7.md)
+
 ---
