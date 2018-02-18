@@ -1,4 +1,4 @@
-# Εισαγωγή στο ![](assets/LibreOffice_logo.png) {#libreoffice}
+# Εισαγωγή στο ![](assets/LibreOffice_logo.png) {#libreoffice} © Γιάννης Κωστάρας
 
 ---
 
