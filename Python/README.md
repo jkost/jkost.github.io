@@ -1180,7 +1180,7 @@ class Amphibian(Vehicle, Boat):
 ...
 ```
 ## Ασκήσεις
-1. Γράψτε μια συνάρτηση skip_vowels(text) η οποία θα επιστρέφει τη φράση που της περνάμε χωρίς φωνήεντα, π.χ. 
+1. Γράψτε μια συνάρτηση ```skip_vowels(text)``` η οποία θα επιστρέφει τη φράση που της περνάμε χωρίς φωνήεντα, π.χ. 
 ```
 >>> print skip_vowels('Όλα καλά;')
 λ κλ;
@@ -1199,34 +1199,33 @@ O O O O O
 O O O O O
 O O O O O
 O O O O O
-
+```
+```
 Γραμμή: 2
 Στήλη: 3
 Αστόχησες! Έχεις ακόμα 9 προσπάθειες...
-
+```
+```
 O O O O O
 O O O O O
 O O O X O
 O O O O O
 O O O O O
-
+```
+```
 Γραμμή: 4
 Στήλη: 2
 Συγχαρητήρια! Βύθισες το πλοίο!
 ```
 4. Δημιουργήστε μια συνάρτηση ```replace(text, word)``` η οποία αντικαθιστά όσες φορές βρει τη ```word``` στο ```text``` με ```*```.
 5. Δημιουργήστε μια κλάση ```Triangle``` με μια στατική μεταβλητή ```number_of_sides = 3```, τη μέθοδο κατασκευής να δέχεται ως ορίσματα τις 3 γωνίες του τριγώνου και μια μέθοδο ```check_angles()``` η οποία να επιστρέφει ```True``` αν το άθροισμα των γωνιών είναι ```180```, διαφορετικά ```False```. Επίσης μια υποκλάση της, ```Equilateral``` με μια στατική μεταβλητή ```angle = 60``` στη μέθοδο κατασκευής της οποίας θα καλείται την μέθοδο κατασκευής της υπερκλάσης περνώντας τρεις φορές τη γωνία ```angle```. Προσθέστε μεθόδους για να υπολογίσετε την περίμετρο και το εμβαδό των παραπάνω.
-6. Given a set of strings, find the longest common subtring. It is assumed that the input set of strings will never have more than one substring in common.
-
-Input: file containing a vector of strings on each line.
-Output: a string representing the common string. If the strings have no common substring, the output should be 0.
-
-Example:
-
-For:
-orchestra
-check
-chelsea
+6. Βρείτε το μεγαλύτερο κοινό αλφαριθμητικό που περιέχεται σ' έναν αριθμός από αλφαριθμητικά. Τα δοθέντα αλφαριθμητικά δεν θα έχουν περισσότερα από ένα κοινό αλφαριθμητικό. Αν δεν υπάρχει κοινό αλφαριθμητικό, τότε θα επιστρέφει ```0```. Π.χ.
+```
+ορχήστρα
+σφυρίχτρα
+χαρτορίχτρα
+```
+επιστρέφει ```τρα```.
 7. Προσπαθήστε να λύσετε όσες περισσότερες ασκήσεις μπορείτε από το [Project Euler](https://projecteuler.net/) σε Python.
 
 ## Επίλογος
@@ -1234,34 +1233,29 @@ chelsea
 Μέχρι τώρα είδαμε τα πολύ βασικά χαρακτηριστικά της γλώσσας. Αν θέλετε να εντρυφήσετε περαιτέρω θα πρέπει να μάθετε για τις πολλές βιβλιοθήκες της γλώσσας π.χ. για πρόσβαση στο σύστημα αρχείων είτε στις βάσεις δεδομένων κ.ά. Μπορείτε να δημιουργήσετε γραφικά περιβάλλοντα με χρήση του [wxPython](https://wxpython.org/) ή του [Tkinter](https://wiki.python.org/moin/TkInter) καθώς και εφαρμογές ιστού με το [Django](https://www.djangoproject.com/) που ίσως δούμε σε μελλοντικά άρθρα.
 Ο ενδιαφερόμενος αναγνώστης καλείται να ανατρέξει στην ιδιαίτερα πλούσια βιβλιογραφία για να εντρυφήσει πάνω στο αντικείμενο και ιδιαίτερα στο διαδραστικό περιβάλλον εκμάθησης της [Codecademy](https://www.codecademy.com/learn/python). Ο καλύτερος τρόπος όμως ίσως θα ήταν να παρακολουθήσει τα μαθήματα Python από το ελληνικό site εκμάθησης [Mathesis](https://mathesis.cup.gr/courses/course-v1:ComputerScience+CS1.1+2017_T4/about).
 
-Πηγές:
-    1. [The Python Tutorial](https://docs.python.org/3/tutorial/index.html).
-    2. A Byte of Python στα [ελληνικά](https://cyberpython.github.io/byte-of-python/) ή στα [αγγλικά](http://www.swaroopch.com/notes/python/)
-    3. [Python course](http://www.python-course.eu/).
-    4. Αβούρης Ν., [Εισαγωγή στην Python](https://mathesis.cup.gr/courses/course-v1:ComputerScience+CS1.1+2017_T4/about), Mathesis.
-    5. [A Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2008/), MIT Open Courseware.
-    6. [Learn Python](https://www.codecademy.com/learn/python), Codecademy.
-    7. [Dive Into Python](http://www.diveintopython.net/)
-    8. [Google's Python Class](https://developers.google.com/edu/python/)
-    9. [Intro to Computer Science](https://www.udacity.com/course/intro-to-computer-science--cs101), Udacity.
-    10. An Introduction to Interactive Programming in Python, [Part 1](https://www.coursera.org/learn/interactive-python-1/) & [Part 2](https://www.coursera.org/learn/interactive-python-2), Coursera.
-    11. [Python Programming: A Concise Introduction](https://www.coursera.org/learn/python-programming-introduction), Coursera.
-    12. [Programming for Everybody (Getting Started with Python)](https://www.coursera.org/learn/python), Coursera.
-    13. [Learn Python the Hard Way](http://learnpythonthehardway.org/)
-    14. Barry P. (2011), _Head First Python_, O’Reilly.
-    15. Barry P. & Griffiths D. (2009), _Head First Programming_, O’Reilly.
-    16. Briggs A. (2012), _Hello Python_, Manning.
-    17. Lutz M. (2013), _Learning Python_, 5th Ed., O’Reilly.
-    18. Lutz M. (2014), _Python Pocket Reference_, O’Reilly.
-    19. Matthes E. (2016), _Python Crash Course_, No Starch Press.
-    20. Payne J. (2010), _Beginning Python_, Wrox, Wiley.
-    21. Sweigart A. (2015), _Automate the Boring Stuff with Python_, No Starch Press.
-    22. Walters G. (2016-2017), “The Python Collection, Full Circle Magazine Python Special Editions", [Full Circle](https://fullcirclemagazine.org/python-special-editions/). 
-       
+## Πηγές:
 
-
----
-
-[->](Writer/LibreOfficeWriter_chap1.md)
+1. [The Python Tutorial](https://docs.python.org/3/tutorial/index.html).
+2. A Byte of Python στα [ελληνικά](https://cyberpython.github.io/byte-of-python/) ή στα [αγγλικά](http://www.swaroopch.com/notes/python/)
+3. [Python course](http://www.python-course.eu/).
+4. Αβούρης Ν., [Εισαγωγή στην Python](https://mathesis.cup.gr/courses/course-v1:ComputerScience+CS1.1+2017_T4/about), Mathesis.
+5. [A Gentle Introduction to Programming Using Python](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-189-a-gentle-introduction-to-programming-using-python-january-iap-2008/), MIT Open Courseware.
+6. [Learn Python](https://www.codecademy.com/learn/python), Codecademy.
+7. [Dive Into Python](http://www.diveintopython.net/)
+8. [Google's Python Class](https://developers.google.com/edu/python/)
+9. [Intro to Computer Science](https://www.udacity.com/course/intro-to-computer-science--cs101), Udacity.
+10. An Introduction to Interactive Programming in Python, [Part 1](https://www.coursera.org/learn/interactive-python-1/) & [Part 2](https://www.coursera.org/learn/interactive-python-2), Coursera.
+11. [Python Programming: A Concise Introduction](https://www.coursera.org/learn/python-programming-introduction), Coursera.
+12. [Programming for Everybody (Getting Started with Python)](https://www.coursera.org/learn/python), Coursera.
+13. [Learn Python the Hard Way](http://learnpythonthehardway.org/)
+14. Barry P. (2011), _Head First Python_, O’Reilly.
+15. Barry P. & Griffiths D. (2009), _Head First Programming_, O’Reilly.
+16. Briggs A. (2012), _Hello Python_, Manning.
+17. Lutz M. (2013), _Learning Python_, 5th Ed., O’Reilly.
+18. Lutz M. (2014), _Python Pocket Reference_, O’Reilly.
+19. Matthes E. (2016), _Python Crash Course_, No Starch Press.
+20. Payne J. (2010), _Beginning Python_, Wrox, Wiley.
+21. Sweigart A. (2015), _Automate the Boring Stuff with Python_, No Starch Press.
+22. Walters G. (2016-2017), “The Python Collection, Full Circle Magazine Python Special Editions", [Full Circle](https://fullcirclemagazine.org/python-special-editions/). 
 
 ---
