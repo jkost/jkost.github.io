@@ -1,4 +1,5 @@
-# LibreOffice Writer  © Γιάννης Κωστάρας
+# LibreOffice Writer  
+© Γιάννης Κωστάρας
 
 [<-](LibreOfficeWriter_chap2.md) | [->](LibreOfficeWriter_chap4.md)
 
