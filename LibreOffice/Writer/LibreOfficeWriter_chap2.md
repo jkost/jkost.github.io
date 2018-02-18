@@ -62,11 +62,11 @@
 **Πηγές:**
 
 1. Princeton University, "[Collaboration Tools in Microsoft Word](http://helpdesk.princeton.edu/ntfileshare/word.html)”.
+1. Perry E. \(2014\), “How To – Libre Office Part 40 - Writer, Tracking Changes”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-88), τεύχος 88, σελ. 19-21.
 2. LibreOffice \(2011\), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf).
 3. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
 4. Chanelle A. \(2009\), _Beginning OpenOffice 3 From Novice to Professional_, Apress.
 5. Miller R. \(2005\), _Point & Click OpenOffice.org!_, Prentice Hall.
-6. Perry E. \(2011-2012\), “How To – Libre Office Part 1-11”, [Full Circle Magazine](http://fullcirclemagazine.org/), τεύχη 46-57.
 
 ---
 

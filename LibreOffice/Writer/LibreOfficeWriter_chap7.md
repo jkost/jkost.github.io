@@ -142,11 +142,11 @@
 
 ## Πηγές:
 
-1. Perry E. (2011), “How To – Libre Office Part 7”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-52), τεύχος 52, σελ. 16-18.
+1. Perry E. \(2011\), “How To – Libre Office Part 7”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-52), τεύχος 52, σελ. 16-18.
 1. LibreOffice \(2011\), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf) .
 1. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
-1. Chanelle A. (2009), _Beginning OpenOffice 3 From Novice to Professional_, Apress.
-1. Miller R. (2005), _Point & Click OpenOffice.org!_, Prentice Hall.
+1. Chanelle A. \(2009\), _Beginning OpenOffice 3 From Novice to Professional_, Apress.
+1. Miller R. \(2005\), _Point & Click OpenOffice.org!_, Prentice Hall.
 
 ---
 

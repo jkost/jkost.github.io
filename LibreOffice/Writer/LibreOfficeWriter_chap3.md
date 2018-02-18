@@ -92,7 +92,8 @@
 
 1. Marongiu Μ. \(2006\), “Writing documents with OpenOffice.org Writer”, [_Free Software Magazine_](http://www.freesoftwaremagazine.com), τεύχος 14, Σεπτέμβριος/Οκτώβριος, σελ. 21-26.
 2. Popov D. \(2009\), “Creating a Book Template with Writer”, [_Free Software Magazine_](http://www.freesoftwaremagazine.com), τεύχος 20, σελ. 41-45.
-3. Perry E. \(2011-2012\), “How To – Libre Office Part 3”, [Full Circle Magazine](http://fullcirclemagazine.org/), τεύχος 48, σελ. 16-18.
+3. Perry E. \(2011\), “How To – Libre Office Part 3”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-48), τεύχος 48, σελ. 16-18.
+1. Perry E. \(2014\), “How To – Libre Office Part 38 - Contents and Indexes”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-86), τεύχος 86, σελ. 17-20.
 4. LibreOffice \(2011\), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf).
 5. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
 6. Chanelle A. \(2009\), _Beginning OpenOffice 3 From Novice to Professional_, Apress.

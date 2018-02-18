@@ -151,7 +151,7 @@ H καρτέλα **Εσοχές & διάστιχο (Indents & Spacing)** σας 
 
 **Εικόνα 4.12** _Διαλογικό παράθυρο Page, καρτέλα Footnote_
 
-### 4.3 Αυτόματη διόρθωση
+### 4.4 Αυτόματη διόρθωση
 Ίσως θα έχετε παρατηρήσει ότι καθώς πληκτρολογείτε, το LibreOffice διορθώνει αυτόματα κάποια τυπογραφικά σας λάθη. Αν όχι, τότε για να
 ενεργοποιήσετε την αυτόματη διόρθωση επιλέξτε **Format → AutoCorrect → While Typing**. Το τι διορθώνεται το ορίζετε από το παράθυρο **Format
  → AutoCorrect → AutoCorrect Options** ή **Tools → AutoCorrect Options** (βλ. Εικόνα 4.13).
@@ -196,7 +196,7 @@ H καρτέλα **Εσοχές & διάστιχο (Indents & Spacing)** σας 
 ## Πηγές:
 
 1. Perry E. (2011), “How To – Libre Office Part 3”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-48), τεύχος 48, σελ. 16-18.
-2. Perry E. (2011), “How To – Libre Office Part 6”, Full Circle Magazine](http://fullcirclemagazine.org/issue-51), τεύχος 51, σελ. 15-16.
+2. Perry E. (2011), “How To – Libre Office Part 6”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-51), τεύχος 51, σελ. 15-16.
 3. LibreOffice \(2011\), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf) .
 4. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
 5. Chanelle A. (2009), _Beginning OpenOffice 3 From Novice to Professional_, Apress.
