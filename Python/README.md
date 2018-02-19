@@ -1,4 +1,4 @@
-# Εισαγωγή στη Python {#libreoffice} 
+# Εισαγωγή στη Python {#python} 
 © Γιάννης Κωστάρας
 
 ---
