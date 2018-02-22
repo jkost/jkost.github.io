@@ -580,19 +580,20 @@ $ erlc +debug_info Module.erl
 
 ## Επίλογος
 Σ' αυτό το άρθρο δώσαμε μια εισαγωγή στο συναρτησιακό προγραμματισμό με τη σχετικά άγνωστη συναρτησιακή γλώσσα προγραμματισμού πραγματικού χρόνου Erlang. Γνωρίσαμε το συντακτικό της καθώς και τις δυνατότητές της για πολυεπεξεργασία (concurrency) που είναι και το πιο δυνατό της στοιχείο. Βέβαια, στις λίγες σελίδες αυτού του άρθρου είναι αδύνατο να καλύψουμε όλες τις δυνατότητες τις γλώσσας, όπως π.χ. η διαχείριση λαθών, οι βιβλιοθήκες OTP, κ.ά. αλλά πλέον έχετε τις βάσεις για να ανατρέξετε στη βιβλιογραφία για περαιτέρω μελέτη.  
-Αξίζει στο σημείο αυτό να αναφέρουμε το έργο ErLLVM [10] του ΕΜΠ για τη χρήση μιας _Χαμηλού Επιπέδου Εικονικής Μηχανής - Low Level Virtual Machine (LLVM)_ προς μια _Erlang Υψηλής Απόδοσης – High Performance Erlang (HiPE)_.
+Αξίζει στο σημείο αυτό να αναφέρουμε το έργο ErLLVM [11] του ΕΜΠ για τη χρήση μιας _Χαμηλού Επιπέδου Εικονικής Μηχανής - Low Level Virtual Machine (LLVM)_ προς μια _Erlang Υψηλής Απόδοσης – High Performance Erlang (HiPE)_.
 Είτε χρειάζεστε μια γλώσσα για να  εκτελέσετε επιστημονικούς υπολογισμούς, είτε μια γλώσσα για να εκμεταλλευτείτε όλους τους επεξεργαστές του υπερσύγχρονου συστήματός σας, η Erlang είναι μια πολύ ενδιαφέρουσα και πρωτότυπη γλώσσα που μπορεί να σας λύσει τα χέρια με πολύ λίγες γραμμές κώδικα.
 
 ## Πηγές:
 1. [Getting started with Erlang User's Guide, v. 5.9](http://www.erlang.org/doc/getting_started/users_guide.html) (2011). 
 2. [Erlang Reference Manual User's Guide, v. 5.9](http://www.erlang.org/doc/reference_manual/users_guide.html) (2011).
 3. [Learn you some Erlang](http://learnyousomeerlang.com/). 
-4. Armstrong J. (2007), _Programming Erlang_, Pragmatic.
-5. Cesarini F. & Thompson S. (2009), [Erlang Programming](http://en.wikibooks.org/wiki/Erlang_Programming), O'Reilly.
-6. [3 Free E-Books and a Tutorial on Erlang](http://www.readwriteweb.com/hack/2011/05/free-e-books-on-erlang.php).  
-7. Tate B. (2010), _Seven languages in seven weeks: A Pragmatic guide to learning programming languages_, Pragmatic. 
-8. [Fibonacci calculator](http://www.tools4noobs.com/online_tools/fibonacci/). 
-9. [Fast Fibonacci algorithms](http://nayuki.eigenstate.org/page/fast-fibonacci-algorithms). 
-10. [ErLVVM](http://erllvm.softlab.ntua.gr/). 
+4. [3 Free E-Books and a Tutorial on Erlang](http://www.readwriteweb.com/hack/2011/05/free-e-books-on-erlang.php).  
+5. Armstrong J. (2013), _Programming Erlang_, 2nd Edition, Pragmatic.
+6. Cesarini F. & Thompson S. (2009), [Erlang Programming](http://en.wikibooks.org/wiki/Erlang_Programming), O'Reilly.
+7. Laurent S. (2013), _Introducing Erlang_, O'Reilly.
+8. Tate B. (2010), _Seven languages in seven weeks: A Pragmatic guide to learning programming languages_, Pragmatic. 
+9. [Fibonacci calculator](http://www.tools4noobs.com/online_tools/fibonacci/). 
+10. [Fast Fibonacci algorithms](http://nayuki.eigenstate.org/page/fast-fibonacci-algorithms). 
+11. [ErLVVM](http://erllvm.softlab.ntua.gr/). 
 
 ---

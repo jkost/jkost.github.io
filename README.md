@@ -5,6 +5,7 @@
 
 * [Εισαγωγή στο LibreOffice](LibreOffice/README.md)
 * [Εισαγωγή στη Python](Python/README.md)
+* [Εισαγωγή στη Ruby](Ruby/README.md)
 * [Εισαγωγή στο bash](Bash/README.md)
 * [Εισαγωγή στην Erlang](Erlang/README.md)
 * [Εισαγωγή στην Elixir](Elixir/README.md)
