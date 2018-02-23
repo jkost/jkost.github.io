@@ -1004,7 +1004,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 | ```<wbr>``` | Αλλαγή γραμμής |
 | ```<audio>``` | Ήχος |
 | ```<video>``` | Βίντεο |
-| ```source>``` | Πόροι για <video> και <audio> |
+| ```<source>``` | Πόροι για ```<video>``` και ```<audio>``` |
 | ```<embed>``` | Υποδοχέας εξωτερικής εφαρμογής (π.χ. ένθετου plug-in) |
 | ```<track>``` | Κομμάτια (tracks) για ```<video>``` και ```<audio>``` |
 | ```<canvas>``` | Καμβάς |
@@ -1015,14 +1015,16 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 **Πίνακας 3** _Νέες ετικέτες_
 
 Πάντα υπάρχει το πρόβλημα ότι υπάρχουν παλιοί πλοηγοί εκεί έξω που δεν υποστηρίζουν τις παραπάνω ετικέτες. Τι κάνουμε σ' αυτήν την περίπτωση; Μια εύκολη λύση είναι η εξής:
-1. Κατεβάστε το αρχείο [modernizr](www.modernizr.com/download/) από εδώ.
+1. Κατεβάστε το αρχείο [modernizr](www.modernizr.com/download/).
 2. Φορτώστε το στο αρχείο σας HTML ως εξής:
+
 ```
 <html>
   <head>
     <script src="script/modernizr-2.6.2.js" type="text/javascript"></script>
   </head>
 ```
+
 Από δω και στο εξής δε χρειάζεται ν' ανησυχείτε για προς τα πίσω συμβατότητα.
 
 ## Αποθήκευση στον Ιστό (Web Storage)
