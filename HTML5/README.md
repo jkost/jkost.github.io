@@ -1247,7 +1247,7 @@ sender.html
 
 Το παρακάτω παράδειγμα υπολογίζει και εμφανίζει τη γεωγραφική σας θέση (αν του το επιτρέψετε).
 
-|# Your Geographic Location is|
+# Your Geographic Location is
 |Latitude/Longitude: 50°39′48″N/005°35′45″E - accuracy: 32 meters.|
 
 **Εικόνα 12** _Εμφάνιση γεωγραφικής θέσης χρήστη_
@@ -1381,7 +1381,7 @@ websockets.html
 Οι παραπάνω συναρτήσεις κάνουν χρήση της συνάρτησης ```writeToScreen()``` η οποία απλά προσθέτει τα διάφορα μηνύματα σε διαφορετικές γραμμές.
 Το αποτέλεσμα φαίνεται στην παρακάτω εικόνα.
 
-|# WebSockets|
+# WebSockets
 |CONNECTED|
 |SENT: Hello WebSocket |
 |RESPONSE: Hello WebSocket| 
