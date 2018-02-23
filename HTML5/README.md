@@ -836,24 +836,25 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 ## Νέες ετικέτες
 Η HTML5 διαθέτει μια πληθώρα νέων ετικετών που προσθέτουν... σημασία και δομή στις ιστοσελίδες σας (βλ. Εικόνα 5):
 
-* article
-* aside
-* figcaption
-* figure
-* footer
-* header
-* hgroup
-* mark
-* nav
-* section
-* time
+* ```article```
+* ```aside```
+* ```figcaption```
+* ```figure```
+* ```footer```
+* ```header```
+* ```hgroup```
+* ```mark```
+* ```nav```
+* ```section```
+* ```time```
 
 ![](assets/Fig5.png)
 
 **Εικόνα 5** _Διάταξη μιας ιστοσελίδας_
 
 Ας δούμε ένα παράδειγμα:
-```<!DOCTYPE html>
+```
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
