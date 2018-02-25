@@ -22,7 +22,7 @@
 
 **Εικόνα 2** _Η γλώσσα προγραμματισμού Java Enterprise Edition_
 
-Αλλά η Java έχει γίνει πολύ γνωστή και στον κλάδο των κινητών εφαρμογών με τη **Java Micro Edition (JME)**.
+Αλλά η Java έχει γίνει πολύ γνωστή και στον κλάδο των κινητών εφαρμογών με τη [Java Micro Edition (JME)](https://en.wikipedia.org/wiki/Java_Platform%2C_Micro_Edition).
 
 ![](assets/Fig3.png)
 
