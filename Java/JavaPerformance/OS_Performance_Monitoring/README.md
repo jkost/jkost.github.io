@@ -182,7 +182,7 @@ $ sudo sar -A > $(date +`hostname`-%d-%m-%y-%H%M.log)
 
 Mάθαμε για τις δυο κατηγορίες στις οποίες διαχωρίζεται η επεξεργασία μιας εφαρμογής: τη _χρήση επεξεργασίας χρήστη/κώδικα εφαρμογής_ και τη _χρήση επεξεργασίας πυρήνα ή συστήματος_ και μιλήσαμε για τα διάφορα εργαλεία που διαθέτει το Ubuntu για την παρακολούθηση της απόδοσης εφαρμογών. Πλέον διαθέτετε ένα ολόκληρο “οπλοστάσιο” από εργαλεία για να μπορείτε να βρίσκετε πού ξοδεύονται οι πόροι του συστήματός σας.
 
-##Πηγές:
+## Πηγές:
 1. Hunt C. & Binu J. (2011), _Java Performance_, O' Reilly.
 2. [“How to configure sysstat/sar on Ubuntu/Debian](http://www.leonardoborda.com/blog/how-to-configure-sysstatsar-on-ubuntudebian/)
 3. [“10 Useful Sar (Sysstat) Examples for UNIX / Linux Performance Monitoring”](http://www.thegeekstuff.com/2011/03/sar-examples/)
