@@ -11,12 +11,13 @@
 * [Εισαγωγή στο bash](Bash/README.md) √
 * [Εισαγωγή στην Erlang](Erlang/README.md) √
 * [Εισαγωγή στην Elixir](Elixir/README.md)
+* [Η γλώσσα προγραμματισμού Java](Java/README.md) √
 * [Επισκόπηση της C++14](Cpp/README.md)
+* [Εισαγωγή στο Scilab](Scilab/README.md)
 * [Εισαγωγή στις Εκφράσεις Αναγνώρισης Προτύπων (Regular Expressions)](Regex/README.md)
-* [Αποδοτική Java](Java/JavaPerformance/README.md)
-* [Επισκόπηση της Java 7](Java/Java7/README.md)
-* [Επισκόπηση της Java 8](Java/Java8/README.md)
-* [Επισκόπηση της Java 9](Java/Java9/README.md)
 * [Εισαγωγή στα Πολλά Δεδομένα (Big Data)](BigData/README.md)
+* [Εισαγωγή στο Mercurial](Mercurial/README.md)
+* [Εισαγωγή στο Git](Git/README.md)
+* [Εισαγωγή στα Γεωγραφικά Συστήματα Πληροφοριών](GIS/README.md)
 
 ---
