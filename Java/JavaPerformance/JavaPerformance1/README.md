@@ -1,7 +1,8 @@
 # Αποδοτική Java {#Java7}
 © Γιάννης Κωστάρας
+---
 
-[<-](../OS_Performance_Monitoring/README.md)| [->](../JavaPerformance2/REAMDE.md)
+[<-](../OS_Performance_Monitoring/README.md)| [->](../JavaPerformance2/README.md)
 
 ---
 
@@ -211,6 +212,6 @@ threshold) μπορούμε να λύσουμε αυτό το πρόβλημα. 
 
 ---
 
-[<-](../OS_Performance_Monitoring/README.md)| [->](../JavaPerformance2/REAMDE.md)
+[<-](../OS_Performance_Monitoring/README.md)| [->](../JavaPerformance2/README.md)
 
 ---

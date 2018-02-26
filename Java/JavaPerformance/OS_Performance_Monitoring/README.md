@@ -1,7 +1,8 @@
 # Εργαλεία Παρακολούθησης Απόδοσης Εφαρμογών
 © Γιάννης Κωστάρας
+---
 
-[->](../JavaPerformance1/REAMDE.md)
+[->](../JavaPerformance1/README.md)
 
 ---
 
@@ -192,6 +193,6 @@ Mάθαμε για τις δυο κατηγορίες στις οποίες δι
 
 ---
 
-[->](../JavaPerformance1/REAMDE.md)
+[->](../JavaPerformance1/README.md)
 
 ---
