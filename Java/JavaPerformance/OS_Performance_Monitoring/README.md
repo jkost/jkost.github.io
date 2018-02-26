@@ -1,6 +1,8 @@
 # Εργαλεία Παρακολούθησης Απόδοσης Εφαρμογών
 © Γιάννης Κωστάρας
 
+[->](../JavaPerformance1/REAMDE.md)
+
 ---
 
 Για ν' αποδώσει μια εφαρμογή τα μέγιστα δεν αρκεί μόνο να χρησιμοποιεί πλήρως τους κύκλους μηχανής του επεξεργαστή αλλά να τους εκμεταλλεύεται κατά τέτοιο τρόπο που να μην τους σπαταλά π.χ. περιμένοντας δεδομένα από κάποια συσκευή εισόδου/εξόδου. Θα 'χετε παρατηρήσει κάποια εφαρμογή να 'κολλάει' χρησιμοποιώντας το 100% του επεξεργαστή σας χωρίς ν' αποκρίνεται, είτε γιατί περιμένει δεδομένα από κάποια μονάδα εισόδου/εξόδου είτε γιατί έπεσε σε ατέρμονα βρόχο στον κώδικά της.
@@ -187,5 +189,9 @@ Mάθαμε για τις δυο κατηγορίες στις οποίες δι
 2. [“How to configure sysstat/sar on Ubuntu/Debian](http://www.leonardoborda.com/blog/how-to-configure-sysstatsar-on-ubuntudebian/)
 3. [“10 Useful Sar (Sysstat) Examples for UNIX / Linux Performance Monitoring”](http://www.thegeekstuff.com/2011/03/sar-examples/)
 4. [“SYSSTAT Howto: A Deployment and Configuration Guide for Linux Servers”](https://www.linux.com/learn/tutorials/33766-sysstat-howto-a-deployment-and-configuration-guide-for-linux-servers) 
+
+---
+
+[->](../JavaPerformance1/REAMDE.md)
 
 ---
