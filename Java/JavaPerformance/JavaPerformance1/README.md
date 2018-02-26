@@ -1,5 +1,6 @@
 # Αποδοτική Java - Μέρος 1ο: Πώς δουλεύει η εικονική μηχανή {#Java7}
 © Γιάννης Κωστάρας
+
 ---
 
 [<-](../OS_Performance_Monitoring/README.md)| [->](../JavaPerformance2/README.md)
@@ -191,8 +192,8 @@ threshold) μπορούμε να λύσουμε αυτό το πρόβλημα. 
 πως γίνεται η διαχείριση μνήμης. Στο επόμενο κεφάλαιο θα δούμε διάφορα εργαλεία επίβλεψης της μνήμης σωρού αλλά και της απόδοσης εφαρμογών.
 
 ## Πηγές:
-1. Hunt C. & Binu J. (2012), Java Performance, Addison-Wesley.
-2. Evans, B. & Verburg M. (2012), The Well Grounded Java Developer, Manning.
+1. Hunt C. & Binu J. (2012), _Java Performance_, Addison-Wesley.
+2. Evans, B. & Verburg M. (2012), _The Well Grounded Java Developer_, Manning.
 3. Pepperdine, K. (2010), [“Performance Tuning with Cheap Drinks and Poor Tools”](https://www.youtube.com/watch?v=VGQAL9aUKfs).
 4. Tene G. (2011) [“Understanding Java Garbage Collection and What You Can Do about It”](https://www.infoq.com/presentations/Understanding-Java-Garbage-Collection).
 5. RR’s Random Ramblings (2012), [“Java Tuning in a Nutshell – Part 1”](http://randomlyrr.blogspot.be/2012/03/java-tuning-in-nutshell-part-1.html).
