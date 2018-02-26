@@ -194,20 +194,20 @@ threshold) μπορούμε να λύσουμε αυτό το πρόβλημα. 
 ## Πηγές:
 1. Hunt C. & Binu J. (2012), Java Performance, Addison-Wesley.
 2. Evans, B. & Verburg M. (2012), The Well Grounded Java Developer, Manning.
-3. Pepperdine, K. (2010), “Performance Tuning with Cheap Drinks and Poor Tools”.
-4. Tene G. (2011) “Understanding Java Garbage Collection and What You Can Do about It”.
-5. RR’s Random Ramblings (2012), “Java Tuning in a Nutshell – Part 1”.
-6. Thompson, M. (2013), “Java Garbage Collection Distilled ”, InfoQ.
-7. Shirazi J. (2012), “Garbage Collectors available in JDK 1.7.0_04”.
-8. Lee, S. (2012), “Understanding Java Garbage Collection”.
-9. Lee, S. (2012), “How to monitor Java Garbage Collection”.
-10. Lee, S. (2012), “How to tune Java Garbage Collection”.
-11. Warburton, R. (2013), “Garbage Collection in Java (1)”.
-12. Warburton, R. (2013), “Garbage Collection in Java (2)”.
-13. Warburton, R. (2013), “Garbage Collection in Java (3)”.
-14. Warburton, R. (2013), “Garbage Collection in Java (4)”.
-15. Steingarten N. (2013), “JVM Performance Magic Tricks”.
-16. Java HotSpot VM Options.
+3. Pepperdine, K. (2010), [“Performance Tuning with Cheap Drinks and Poor Tools”](https://www.youtube.com/watch?v=VGQAL9aUKfs).
+4. Tene G. (2011) [“Understanding Java Garbage Collection and What You Can Do about It”](https://www.infoq.com/presentations/Understanding-Java-Garbage-Collection).
+5. RR’s Random Ramblings (2012), [“Java Tuning in a Nutshell – Part 1”](http://randomlyrr.blogspot.be/2012/03/java-tuning-in-nutshell-part-1.html).
+6. Thompson, M. (2013), [“Java Garbage Collection Distilled”](https://www.infoq.com/articles/Java_Garbage_Collection_Distilled), InfoQ.
+7. Shirazi J. (2012), [“Garbage Collectors available in JDK 1.7.0_04”](http://www.fasterj.com/articles/oraclecollectors1.shtml).
+8. Lee, S. (2012), [“Understanding Java Garbage Collection”](https://www.cubrid.org/blog/understanding-java-garbage-collection).
+9. Lee, S. (2012), [“How to monitor Java Garbage Collection”](https://www.cubrid.org/blog/how-to-monitor-java-garbage-collection).
+10. Lee, S. (2012), [“How to tune Java Garbage Collection”](https://www.cubrid.org/blog/textyle/428187).
+11. Warburton, R. (2013), [“Garbage Collection in Java (1)”](https://www.javacodegeeks.com/2013/06/garbage-collection-in-java-1.html).
+12. Warburton, R. (2013), [“Garbage Collection in Java (2)”](https://www.javacodegeeks.com/2013/06/garbage-collection-in-java-2.html).
+13. Warburton, R. (2013), [“Garbage Collection in Java (3)”](https://www.javacodegeeks.com/2013/06/garbage-collection-in-java-3.html).
+14. Warburton, R. (2013), [“Garbage Collection in Java (4)”](https://www.javacodegeeks.com/2013/07/garbage-collection-in-java-4.html).
+15. Steingarten N. (2013), [“JVM Performance Magic Tricks”](https://www.javacodegeeks.com/2013/06/jvm-performance-magic-tricks.html).
+16. [Java HotSpot VM Options](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html).
 
 ---
 
