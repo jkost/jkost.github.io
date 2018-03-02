@@ -3,7 +3,7 @@
 
 ---
 
-[<-](README.md)| [->](../SystemRuby/README.md)
+[<-](README.md)| [->](SystemRuby.md)
 
 ---
 
@@ -393,6 +393,6 @@ ARGV.each { |arg|
  
 ---
 
-[<-](README.md)| [->](../SystemRuby/README.md)
+[<-](README.md)| [->](SystemRuby.md)
 
 ---
