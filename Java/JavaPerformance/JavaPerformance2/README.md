@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../JavaPerformance1/README.md)| [->](../JavaPerformance2/README.md)
+[<-](../JavaPerformance1/README.md)| [->](../JavaPerformance3/README.md)
 
 ---
 
@@ -224,38 +224,40 @@ S0C       S1C       S0U    S1U      EC         EU �
 
 **Πίνακας 4** _Επεξήγηση εξόδου jstat_
 
-| Στήλη | Περιγραφή | Παράμετρος |
-| ```S0C``` | Τρέχον μέγεθος της περιοχής S0 σε KB | ```-gc```|
-| ```   ``` |                                      | ```-gccapacity```|
-| ```   ``` |                                      | ```-gcnew```|
-| ```   ``` |                                      | ```-gcnewcapacity```|
+| Στήλη     | Περιγραφή                            | Παράμετρος        |
+| ```S0C``` | Τρέχον μέγεθος της περιοχής S0 σε KB | ```-gc```         |
+|           |                                      | ```-gccapacity``` |
+
+
+|  |                                      | ```-gcnew```|
+|  |                                      | ```-gcnewcapacity```|
 | ```S1C``` | Τρέχον μέγεθος της περιοχής S1 σε KB | ```-gc```|
-| ```   ``` |                                      | ```-gccapacity```|
-| ```   ``` |                                      | ```-gcnew```|
-| ```   ``` |                                      | ```-gcnewcapacity```|
+|  |                                      | ```-gccapacity```|
+|  |                                      | ```-gcnew```|
+|  |                                      | ```-gcnewcapacity```|
 | ```S0U``` | Τρέχουσα χρήση της περιοχής S0 σε KB | ```-gc```|
-| ```   ``` |                                      | ```-gcnew```|
+|  |                                      | ```-gcnew```|
 | ```S1U``` | Τρέχουσα χρήση της περιοχής S1 σε KB | ```-gc```|
-| ```   ``` |                                     | ```-gcnew```|
+|  |                                     | ```-gcnew```|
 | ```EC``` | Τρέχον μέγεθος της περιοχής Εδέμ σε KB | ```-gc```|
-| ```  ``` |                                        | ```-gccapacity```|
-| ```  ``` |                                        | ```-gcnew```|
-| ```  ``` |                                        | ```-gcnewcapacity```|
+|  |                                        | ```-gccapacity```|
+|  |                                        | ```-gcnew```|
+|  |                                        | ```-gcnewcapacity```|
 | ```EU``` | Τρέχουσα χρήση της περιοχής Εδέμ σε KB | ```-gc```|
-| ```  ``` |                                        | ```-gcnew```|
+|  |                                        | ```-gcnew```|
 | ```OC``` | Τρέχον μέγεθος της θητεύουσας περιοχής σε KB | ```-gc```|
-| ```  ``` |                                              | ```-gccapacity```|
-| ```  ``` |                                              | ```-gcold```|
-| ```  ``` |                                              | ```-gcoldcapacity```|
+|  |                                              | ```-gccapacity```|
+|  |                                              | ```-gcold```|
+|  |                                              | ```-gcoldcapacity```|
 | ```OU``` | Τρέχουσα χρήση της θητεύουσας περιοχής σε KB | ```-gc```|
-| ```  ``` |                                              | ```-gcold```|
+|  |                                              | ```-gcold```|
 | ```PC``` | Τρέχον μέγεθος της μόνιμης περιοχής σε KB | -gc```|
-| ```  ``` |                                           | -gccapacity```|
-| ```  ``` |                                           | -gcold```|
-| ```  ``` |                                           | -gcoldcapacity```|
-| ```  ``` |                                           | -gcpermcapacity```|
+|  |                                           | -gccapacity```|
+|  |                                           | -gcold```|
+|  |                                           | -gcoldcapacity```|
+|  |                                           | -gcpermcapacity```|
 | ```PU``` | Τρέχουσα χρήση της μόνιμης περιοχής  σε KB |```-gc```
-| ```  ```  |                                           |```-gcold```
+| |                                           |```-gcold```
 | ```YGC``` |Αρ. σαρώσεων GC νέας γενιάς | ```-gc```|
 |     |                            | ```-gccapacity```|
 |     |                            | ```-gcnew```|
@@ -266,9 +268,9 @@ S0C       S1C       S0U    S1U      EC         EU �
 |     |                            | ```-gcutil```|
 |     |                            | ```-gccause```|
 | ```YGCT```| Συνολικός χρόνος σαρώσεων GC νέας γενιάς |```-gc``` |
-| ```    |                                          |```-gcnew``` |
-| ```     |                                         |```-gcutil``` |
-| ```     |                                         |```-gccause``` |
+|     |                                          |```-gcnew``` |
+|      |                                         |```-gcutil``` |
+|      |                                         |```-gccause``` |
 | ```FGC``` | Αρ. full GC | ```-gc``` |
 | |                 | ```-gccapacity``` |
 | |                 | ```-gcnew``` |
@@ -796,6 +798,6 @@ $ ./makeDemoLogFile.sh
 
 ---
 
-[<-](../JavaPerformance1/README.md)| [->](../JavaPerformance2/README.md)
+[<-](../JavaPerformance1/README.md)| [->](../JavaPerformance3/README.md)
 
 ---
