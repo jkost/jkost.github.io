@@ -76,7 +76,7 @@ A = 0, B = 1, C = 2, …, Z = 25
 **Σχήμα 4** _Σύγκριση αλγορίθμων κρυπτογράφησης δέσμης (block) και ροής (stream)_
 
 Αρκετά όμως με τη θεωρία. Ας δούμε ένα πρόγραμμα σε Java το οποίο υλοποιεί τα παραπάνω.
-```
+```java
 package gr.ubuntistas.issue9;
 
 import java.io.UnsupportedEncodingException;
@@ -192,7 +192,7 @@ public class SimpleSymmetricExample {
 Για να μεταγλωτίσετε το πρόγραμμα απαιτείται να προσθέσετε τη βιβλιοθήκη ```commons-codec.jar``` στο classpath, την οποία μπορείτε να κατεβάσετε από αυτήν την [ιστοσελίδα](http://commons.apache.org/codec/). Η βιβλιοθήκη αυτή περιέχει την κλάση ```Base64```, η οποία μας επιτρέπει να αναπαριστούμε τους κώδικες σε μια πιο φιλική μορφή (την Base64).
 
 Μεταγλωττίστε και εκτελέστε το πρόγραμμα. Ένα παράδειγμα εκτέλεσης φαίνεται παρακάτω:
-```
+```bash
 $ java -cp .:lib/commons-codec-1.4.jar gr.ubuntistas.issue9.SimpleSymmetricExample    This is a long message!
 Plain text input: This is a long message! 
 Cipher text:4DQ+eTUCb4UcVClHSLwzfIXOV/F7t1bB2OosIAIkL+4=
@@ -248,7 +248,7 @@ algorithm : algorithm.substring(0, algorithm.indexOf('/')));
 Για να μεταγλωτίσετε το πρόγραμμα απαιτείται να προσθέσετε τη βιβλιοθήκη ```commons-codec.jar``` στο ```classpath```, αν δεν το έχετε κάνει ήδη, την οποία μπορείτε να κατεβάσετε από αυτήν την [ιστοσελίδα](http://commons.apache.org/codec/). Η βιβλιοθήκη αυτή περιέχει την κλάση ```Base64```, η οποία μας επιτρέπει να αναπαριστούμε τους κώδικες σε μια πιο φιλική μορφή (την Base64). Παρόλ' αυτά, το πρόγραμμα δουλεύει μια χαρά και χωρίς αυτήν την κλάση, την οποία μπορείτε να βγάλετε εύκολα.
 
 Μεταγλωττίστε και εκτελέστε το πρόγραμμα (απαιτείται JDK 1.6 ή νεώτερο). Ένα παράδειγμα εκτέλεσης φαίνεται παρακάτω:
-```
+```bash
 $ java -cp .:lib/commons-codec-1.4.jar gr.ubuntistas.issue10.SimpleASymmetricExample    This is a long message!
 Plain text input: This is a long message! 
 Cipher text: a7NuxHv+FVrHTgRTNGP8dwfwR47h7Y7Hfllzx80rp+/mR/aWDPZr0DZ/AFVI0AjRVJqvsEd1taTo
@@ -268,20 +268,20 @@ Plain text output: This is a long message!
 
 Δυστυχώς, ο πάροχος [SunJCE](http://java.sun.com/j2se/1.4.2/docs/guide/security/jce/JCERefGuide.html#AppA) δεν έχει υλοποιήσει άλλους αλγορίθμους πέραν του RSA. Αν θέλετε να χρησιμοποιήσετε padding, όπως π.χ. RSA/None/PKCS1Padding ή RSA/None/OAEPWithSHA1AndMGF1Padding, τότε θα πρέπει να χρησιμοποιήσετε άλλον πάροχο, όπως π.χ. τον [BouncyCastle](http://www.bouncycastle.org/java.html). 
 Θα χρειαστεί να κάνετε τις ακόλουθες αλλαγές. Καταρχάς, κατεβάστε και προσθέστε στο φάκελο ```lib``` τη βιβλιοθήκη ```bcprov-jdk16-xxx.jar``` από την ιστοσελίδα της [BouncyCastle](http://www.bouncycastle.org/java.html). Στην αρχή της ```main()```, προσθέστε τη γραμμή:
-```
+```java
 Security.addProvider(new BouncyCastleProvider());
 ```
 Θα πρέπει να προστεθεί ο πάροχος ```«BC»``` στις παρακάτω γραμμές:
-```
+```java
 cipher = Cipher.getInstance(algorithm,"BC");
 keypairgenerator = KeyPairGenerator.getInstance(algorithm,"BC");
 ```
 Επίσης, η ```generateKeyPair()``` δεν καταλαβαίνει π.χ. το ```RSA/None/PKCS1Padding```, οπότε της περνάτε μόνο το RSA με την παρακάτω γραμμή κώδικα:
-```
+```java
 keypair = generateKeyPair(algorithm.indexOf('/') == -1 ? algorithm : algorithm.substring(0, algorithm.indexOf('/')));
 ```
 Μπορείτε να κατεβάσετε την κλάση ```SimpleASymmetricExampleBC``` από [εδώ](assets/java_cryptography.zip). Μεταγλωττίστε και εκτελέστε το πρόγραμμα. Ένα παράδειγμα εκτέλεσης φαίνεται παρακάτω:
-```
+```bash
 $ java -cp .:lib/commons-codec-1.4.jar:lib/bcprov-jdk16-145.jar gr.ubuntistas.issue10.SimpleASymmetricExampleBC    This is a long message!
 Plain text input: This is a long message! 
 Cipher text: Qk0xXw+DFxOeIccZQYza5xH3kp9AvKA9GYxIGP21JzTuW0saagv+0oKRoJy60ScHzC4faRAGGvQr
@@ -291,7 +291,7 @@ y/VVACGZnqVucxkJgAuW+SFbjumd3+EwCk84ivl5Y3ZPVB/TdHat5noiN65EO/iIggdc7gXIc+rZ
 Plain text output: This is a long message! 
 ```
 Κι ένα παράδειγμα χρήσης του αλγορίθμου ```El Gamal``` (αλλάζοντας μόνο το ```«RSA»``` σε ```«El Gamal»``` στη μέθοδο ```main()```!):
-```
+```bash
 Plain text input: This is a long message! 
 Cipher text: XMXaHtlbDJ72N4nocHLNbkFhPB7fKheMt3pjooxGEPg8CrZgMfyvC4uj/djJavkIJ/Lnt4UxiNrl
 sO3WHkwt0wsqbys5k9Xo8J7BmEHbSNSuzvdqdSCZNLqqTpXLAJ98wJ0WgZnG6UvZmddQTSDWKDHq
@@ -319,11 +319,11 @@ Plain text output: This is a long message!
 **Σχήμα 5** _Λειτουργία του αλγορίθμου Diffie-Hellman_
 
 Ένα παράδειγμα χρήσης του αλγορίθμου Diffie-Hellman φαίνεται τόσο στο πρόγραμμα ```SimpleASymmetricExample``` όσο και στο ```SimpleASymmetricExampleBC``` που κατεβάσατε προηγουμένως, αν διώξετε το σχόλιο από την τελευταία γραμμή:
-```
+```java
 System.out.println("\nDiffie-Hellman shared key: " + asymmetric.keyAgreement("DH", "BC", asymmetric.generateKeyPair("DH", "BC"), asymmetric.generateKeyPair("DH", "BC")));
 ```
 Η έξοδος του προγράμματος γίνεται πλέον:
-```
+```bash
 Plain text input: This is a long message! 
 Cipher text: CG/k4i/KJjArBfmWlbSt6TeLv1jjDxOj6YqipMZGmxx1JtAFREVLHdy4kQJA1zfKMS+5UZzKhM3K
 z+QOEax96hVYNw121V1cdVWTH5CX8zMhYqZ2TjkH5JQ4oqIvmJfQ37tiK/nPx6iPRaecsF2iX50Z
@@ -336,7 +336,7 @@ zZm9qu4UOVIOAH0uZG61TzrWXTPVrrVharL8wYzysiQWewhrcCOgLK+DMH2UYHPvvqVVCv3qfa78
 Dpui5Cpfl6F5SGXHoJU=
 ```
 Παρατηρήστε ότι η μέθοδος ```keyAgreement()``` ακολουθεί το σχήμα 5, δηλ. 
-```
+```java
 aKeyAgreement.doPhase(bKeyPair.getPublic(), true);
 bKeyAgreement.doPhase(aKeyPair.getPublic(), true);
 ```
@@ -364,7 +364,7 @@ bKeyAgreement.doPhase(aKeyPair.getPublic(), true);
 Κατά την αποκρυπτογράφηση, ανακτούμε πρώτα το συμμετρικό κλειδί, χρησιμοποιώντας το ιδιωτικό κλειδί στην ```byte[] decrypt(final byte[] cipherText, final Cipher cipher, final Key key)``` και περνώντας το αποτέλεσμα στην ```SecretKeySpec```, καθώς και τον αλγόριθμο που χρησιμοποιήσαμε για ν' ανακτήσουμε το συμμετρικό κλειδί. Τέλος, αποκρυπτογραφούμε το μήνυμα χρησιμοποιώντας το ανακτημένο συμμετρικό κλειδί.
 
 Ένα παράδειγμα εκτέλεσης τους προγράμματος φαίνεται παρακάτω:
-```
+```bash
 $ java -cp .:lib/bcprov-jdk16-145.jar gr.ubuntistas.issue10.CombinedSymmetricASymmetricExample   This is a long message!
 Plain text input: This is a long message! 
 Encrypted secret key: [B@2d58f9d3
@@ -399,7 +399,7 @@ Plain text output: This is a long message!
 * SHA
 
 Το Java Security API διαθέτει την κλάση ```java.security.MessageDigest``` για τη δημιουργία ψηφιακών αποτυπωμάτων. Μπορείτε να κατεβάσετε τον κώδικα από εδώ.
-```
+```java
 	/**
 	 * Returns the digest of <code>message</code>.
 	 * @param message a string to generate its digest
@@ -415,7 +415,7 @@ Plain text output: This is a long message!
 	}
 ```
 Η έξοδος της παραπάνω μεθόδου:
-```
+```bash
 Plain text input: This is a long message! 
 Message digest: neWNgutfQkbyB/5Hlfk1TEii6w0=
 ```
@@ -424,7 +424,7 @@ Message digest: neWNgutfQkbyB/5Hlfk1TEii6w0=
 Ίδια δουλειά με το ψηφιακό αποτύπωμα κάνει και ο _Κώδικας Αυθεντικοποίησης Μηνύματος (ΚΑΜ)_ ή _Message Authentication Code (MAC)_. Ο MAC παράγεται όπως και το ψηφιακό αποτύπωμα με τη διαφορά ότι χρησιμοποιείται κι ένα κλειδί για την παραγωγή του αποτυπώματος ώστε να προστατεύεται η ακεραιότητα των δεδομένων. 
 
 Το Java Security API διαθέτει την κλάση ```java.security.Mac``` για τη δημιουργία ΚΑΜ.
-```
+```java
 	/**
 	 * Generates a random secret key.
 	 * @param algorithm to use, e.g. HmacSHA1, SHA etc.
@@ -454,12 +454,12 @@ Message digest: neWNgutfQkbyB/5Hlfk1TEii6w0=
 	}
 ```	
 Θα πάρετε κάτι παρόμοιο με το παρακάτω:
-```
+```bash
 Plain text input: This is a long message! 
 MAC: xvyCTHc4IIdxng6z72TQEKpJBL0=
 ```
 Ένας άλλος τρόπος παραγωγής του κλειδιού φαίνεται παρακάτω:
-```
+```java
 		SecureRandom sr = new SecureRandom();
 		byte[] keyBytes = new byte[20];
 		sr.nextBytes(keyBytes);
@@ -477,7 +477,7 @@ MAC: xvyCTHc4IIdxng6z72TQEKpJBL0=
 Μια ψηφιακή υπογραφή παρέχει δυο υπηρεσίες ασφαλείας: αυθεντικοποίηση και ακεραιότητα (integrity). Έτσι, όχι μόνο επιβεβαιώνει ότι ένα μήνυμα δεν έχει αλλάξει αλλά και ότι ο αποστολέας είναι αυτός που λέει ότι είναι. Μια ψηφιακή υπογραφή δεν είναι τίποτ' άλλο από ένα ψηφιακό αποτύπωμα το οποίο κρυπτογραφείται με το ιδιωτικό κλειδί του αποστολέα. Μόνο όποιος διαθέτει το δημόσιο κλειδί του αποστολέα μπορεί να αποκρυπτογραφήσει την ψηφιακή υπογραφή (αυθεντικοποίηση του αποστολέα). Αν το ψηφιακό αποτύπωμα του μηνύματος είναι το ίδιο με την αποκρυπτογραφημένη ψηφιακή υπογραφή τότε έχουμε και ακεραιότητα δεδομένων. Οι ψηφιακές υπογραφές δεν παράγουν όμως εμπιστευτικότητα (confidentiality) – ο οποιοσδήποτε μπορεί να διαβάσει το μήνυμα που συνοδεύει την ψηφιακή υπογραφή, αν αυτό δεν είναι κρυπτογραφημένο.
 
 Το Java Security API διαθέτει την κλάση ```java.security.Signature``` για τη δημιουργία και την επαλήθευση ψηφιακών υπογραφών. Μπορείτε να κατεβάσετε το πρόγραμμα ```DigitalSignatureExample``` από [εδώ](assets/java_cryptography.zip). Μια έξοδος του προγράμματος φαίνεται παρακάτω:
-```
+```bash
 Plain text input: This is a long message! 
 Signature: MCwCFHA49354heCfHhDmRINN2MR49UjIAhRsFuQOX53Eb0ajlPuJtASWEHWrCQ==
 
@@ -500,7 +500,7 @@ Verified: true
 οι οποίοι βασίζονται στον RSA. 
 
 Χάρις στις βιβλιοθήκες JCE, οι αλλαγές που χρειάζεται να κάνετε στο παραπάνω πρόγραμμα είναι ελάχιστες. Κάντε τις εξής αλλαγές:
-```
+```java
 final String algorithm = "SHA1withRSA"; // ή SHA224withRSA ή SHA256withRSA 								  // ή SHA1withRSAandMGF1 ή SHA256withRSAandMGF1
 KeyPair keypair = digitalSignature.generatePKI("RSA");
 ```
