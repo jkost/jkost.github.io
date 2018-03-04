@@ -294,7 +294,7 @@ end
 ανακτά όλες τις εγγραφές τύπου ```Task``` από τη ΒΔ (```Task.all```) και τις αποθηκεύει στη δομή πίνακα ```@tasks```. Στη συνέχεια εμφανίζει τη σελίδα ```index```. Παρατηρήστε ότι αντίστοιχα ισχύουν αν λάβει μια αίτηση τύπου ```json``` (π.χ. [http://localhost:3000/posts.json](http://localhost:3000/posts.json)).
 5. Η πρότυπη σελίδα ```app/views/tasks/index.html.erb``` καλείται στη συνέχεια:
 
-```ruby
+```html
 <% @tasks.each do |task| %>
 <tr>
   <td><%= task.description %></td>
@@ -585,8 +585,7 @@ end
     <%= link_to ’Edit’, edit_task_path(@task) %> |
     <%= link_to ’Back’, tasks_path %>
 ```
-Ο παραπάνω κώδικας προσθέτει μια νέα φόρμα στη σελίδα ```show```, η οποία δημιουργεί μια νέα ενέργεια καλώντας τη μέθοδο create του ελεγκτή
-```ActivitiesController```:
+Ο παραπάνω κώδικας προσθέτει μια νέα φόρμα στη σελίδα ```show```, η οποία δημιουργεί μια νέα ενέργεια καλώντας τη μέθοδο create του ελεγκτή ```ActivitiesController```:
 
 ```ruby
 class ActivitiesController < ApplicationController
@@ -602,7 +601,7 @@ end
 
 Μπορούμε να βελτιώσουμε την αναγνωσιμότητα του αρχείου ```show.html.erb``` μεταφέροντας τον κώδικα των ενεργειών σε μερικές φόρμες (partials):
 ```html
-<!--app/views/activities/_activity.html.erb>
+<!--app/views/activities/_activity.html.erb-->
 <p>
   <b>Description:</b>
   <%= activity.description %>
@@ -673,9 +672,9 @@ end
 
 ```
 Τέλος, θα πρέπει να μεριμνήσουμε ώστε στην περίπτωση που διαγραφεί ένα έργο, να διαγραφούν και οι σχετικές ενέργειες:
-```app/models/task.rb```
 
 ```ruby
+# app/models/task.rb
 class Task < ActiveRecord::Base
   ...
   has_many :activities, :dependent => :destroy

@@ -3,7 +3,7 @@
 
 ---
 
-[<-](Ruby.md)| [->](../RoR/README.md)
+[<-](Ruby.md)| [->](RoR/README.md)
 
 ---
 
@@ -628,6 +628,6 @@ loop do; end
 
 ---
 
-[<-](Ruby.md)| [->](../RoR/README.md)
+[<-](Ruby.md)| [->](RoR/README.md)
 
 ---
