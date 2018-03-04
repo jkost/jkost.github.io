@@ -31,7 +31,7 @@
 
 ![](assets/Fig1.png)
 
-** Εικόνα 1** _Αρχιτεκτονική μιας εφαρμογής ιστού_
+**Εικόνα 1** _Αρχιτεκτονική μιας εφαρμογής ιστού_
 
 Παραδείγματα διακομιστών ιστού φαίνονται στον ακόλουθο πίνακα:
 
@@ -52,7 +52,7 @@
 
 Τέλος, πριν προχωρήσουμε, αξίζει να εξηγήσουμε ποια είναι η διαφορά μεταξύ της Ruby και της Ruby on Rails. Ενώ η πρώτη είναι μια γλώσσα προγραμματισμού, την οποία γνωρίσαμε σε παλαιότερα τεύχη, η RoR δεν είναι τίποτα άλλο από αρχεία συνόδου (scripts) γραμμένα σε Ruby τα οποία αποτελούν το πλαίσιο εργασίας (framework) για την ανάπτυξη εφαρμογών ιστού.
 
-#Εγκατάσταση
+## Εγκατάσταση
 Έχοντας εγκαταστήσει τη Ruby (αν όχι, ανατρέξτε στο κεφάλαιο 1), μπορείτε πολύ εύκολα να εγκαταστήσετε τη Ruby on Rails (RoR) ως εξής:
 ```bash
 $ sudo gem update --system
@@ -176,9 +176,7 @@ $ rake db:migrate
 ```
 Η εντολή ```rake``` είναι κάτι αντίστοιχο με την εντολή ```make``` της C και την ```ant``` της Java. Για να δούμε αν τα καταφέραμε. Αν ακόμα τρέχετε τον διακομιστή, τότε πλοηγηθείτε στην ιστοσελίδα: [http://localhost:3000/tasks](http://localhost:3000/tasks):
 
-| Listing Tasks |
-| Description Priority Duedate Alert Daysbefore Details |
-| New Task |
+![](assets/Fig.png)
 
 Μην κάθεστε! Προσθέστε μερικά έργα (βλ. Εικόνα 3):
 
@@ -295,6 +293,7 @@ end
 ```
 ανακτά όλες τις εγγραφές τύπου ```Task``` από τη ΒΔ (```Task.all```) και τις αποθηκεύει στη δομή πίνακα ```@tasks```. Στη συνέχεια εμφανίζει τη σελίδα ```index```. Παρατηρήστε ότι αντίστοιχα ισχύουν αν λάβει μια αίτηση τύπου ```json``` (π.χ. [http://localhost:3000/posts.json](http://localhost:3000/posts.json)).
 5. Η πρότυπη σελίδα ```app/views/tasks/index.html.erb``` καλείται στη συνέχεια:
+
 ```ruby
 <% @tasks.each do |task| %>
 <tr>
@@ -340,6 +339,7 @@ end
 **Πίνακας 3** _Πίνακας κατακερματισμού params_
 
 5. Η πρότυπη σελίδα ```app/views/tasks/show.html.erb``` καλείται στη συνέχεια:
+
 ```ruby
 <p>
 <b>Id:</b>
@@ -352,6 +352,7 @@ end
 1. Ο χρήστης επιλέγει τον υπερσύνδεσμο New Task ο οποίος δείχνει στο [http://localhost:3000/tasks/new/](http://localhost:3000/tasks/new/).
 2. Η αίτηση στέλνεται στο ```routes.rb```. Η διαδρομή ```tasks/new``` αντιστοιχείται με τη μέθοδο ```new``` του ελεγκτή ```tasks```.
 3. Η μέθοδος ```new``` της κλάσης ```TasksController```:
+
 ```ruby
 # GET /tasks/new
 # GET /tasks/new.json
@@ -365,12 +366,14 @@ end
 ```
 δημιουργεί ένα νέο κενό έργο, το οποίο αποθηκεύει στη μεταβλητή ```@task```, και εμφανίζει τη σελίδα ```new```. Είναι σημαντικό να δημιουργηθεί ένα νέο ```Task``` το οποίο θ’ εμφανίσει τυχόν δεδομένα (στην περίπτωση ```edit```) στη φόρμα εισαγωγής προτού εμφανιστεί η φόρμα εισαγωγής, αλλιώς θα δημιουργηθεί ένα λάθος ότι ```@task.id = nil```. 
 4. Εμφανίζεται η φόρμα εισαγωγής ```new.html.erb```
+
 ```ruby
 <h1>New task</h1>
 <%= render ’form’ %>
 <%= link_to ’Back’, tasks_path %>
 ```
 η οποία βασίζεται στη μερική (partial) φόρμα ```_form.html.erb```. Η τελευταία είναι κοινή φόρμα των ```new.html.erb``` και ```edit.html.erb``` καθώς η μορφή τους είναι πανομοιότυπη (DRY).
+
 ```ruby
 <%= form_for(@task) do |f| %>
   ...
@@ -385,6 +388,7 @@ end
 <% end %>
 ```
 5. Όταν ο χρήστης πατήσει το κουμπί υποβολής ```Submit```, η φόρμα καλεί την αντίστοιχη ενέργεια ```<%= f.submit %>``` η οποία δημιουργεί την αίτηση ```tasks/create``` η οποία ταυτίζεται (```routes.rb```) με τη μέθοδο ```create``` του ελεγκτή ```tasks```:
+
 ```ruby
 # POST /tasks
 # POST /tasks.json
@@ -408,6 +412,7 @@ end
 1. Ο χρήστης πατάει τον υπερσύνδεσμο ```Edit``` ο οποίος δείχνει στο [http://localhost:3000/tasks/:id/edit/](http://localhost:3000/tasks/:id/edit/).
 2. Η αίτηση στέλνεται στο ```routes.rb```. Η διαδρομή ```tasks/:id/edit``` αντιστοιχίζεται με τη μέθοδο ```edit``` του ελεγκτή ```tasks```.
 3. Η μέθοδος ```edit``` της κλάσης ```TasksController```:
+
 ```ruby
 # GET /tasks/1/edit
 def edit
@@ -417,6 +422,7 @@ end
 ανακτά το έργο με ```:id=1```, το αποθηκεύει στη μεταβλητή ```@task``` και εμφανίζει τη σελίδα ```edit```.
 4. Εμφανίζεται η φόρμα εισαγωγής ```edit.html.erb``` η οποία βασίζεται στη μερική (partial) φόρμα ```_form.html.erb```.
 5. Όταν ο χρήστης πατήσει το κουμπί υποβολής **Submit**, η φόρμα καλεί την αντίστοιχη ενέργεια ```<%= f.submit %>``` η οποία δημιουργεί την αίτηση ```tasks/:id/update``` που ταυτίζεται (```routes.rb```) με τη μέθοδο ```update``` του ελεγκτή ```tasks```:
+
 ```ruby
 # GET /tasks/1/edit
 # PUT /tasks/1/update
@@ -440,6 +446,7 @@ end
 
 ## Προσθέτοντας στυλ
 Μπορείτε να προσθέσετε τα δικά σας στυλ CSS για να “ντύσετε” την εφαρμογή σας στο φάκελο ```app/assets/stylesheets```, τις εικόνες σας στο φάκελο ```app/assets/images``` και τυχόν κώδικα javascript στο φάκελο ```app/assets/js```. Από κει και πέρα χρειάζεται να τροποποιήσετε την πρότυπη σελίδα ```app/views/layouts/application.html.erb``` βάσει της οποίας μοιάζουν όλες οι ιστοσελίδες της εφαρμογής σας ή να δημιουργήσετε τη δική σας.
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -455,6 +462,7 @@ end
 </html>
 ```
 Αλλάξτε το application css με το δικό σας στη γραμμή:
+
 ```html
 <%= stylesheet_link_tag ”application”, :media => ”all” %>
 ```
@@ -462,7 +470,8 @@ end
 
 ## Τροποποιώντας την πρότυπη εφαρμογή
 Και να που έρχεται μια νέα απαίτηση: “για κάθε έργο (Task) απαιτείται ένας αριθμός ενεργειών (Actions) για να ολοκληρωθεί. Μια ενέργεια αποτελείται από μια περιγραφή και σε ποιον ανατίθεται για να εκπληρωθεί”. Φυσικά ξεκινάμε από το μοντέλο (_μην εκτελέσετε την παρακάτω εντολή!_):
-```βαση
+
+```bash
 $ rails generate model Action description:text assignee:string task:references
 ```
 
@@ -473,6 +482,7 @@ Aν και η παραπάνω εντολή φαίνεται εντελώς αθ
 $ rails generate model Activity description:text assignee:string task:references
 ```
 Η παραπάνω εντολή δημιούργησε τα αρχεία ```app/models/activity.rb``` και ```db/migrate/..._create_activities.rb```.
+
 ```ruby
 class Activity < ActiveRecord::Base 
   belongs_to :task 
@@ -481,6 +491,7 @@ end
 ```
 Η γραμμή ```belongs_to :task``` ορίζει μια σχέση που δηλώνει ότι μια ενέργεια ανήκει σ’ ένα έργο. Πρέπει όμως να δηλώσουμε αυτή τη σχέση και στο
 άλλο μοντέλο:
+
 ```ruby
 class Task < ActiveRecord::Base
   attr_accessible :alert, :completed, :daysBefore, :description, :details, :dueDate, :priority
@@ -500,6 +511,7 @@ end
 **Εικόνα 5** _Διάγραμμα κλάσεων της εφαρμογής_
 
 ```db/migrate/..._create_activities.rb```:
+
 ```ruby
 class CreateActivities < ActiveRecord::Migration
   def change
@@ -527,17 +539,20 @@ $ rake db:migrate
 ```
 
 δημιούργησε τον πίνακα ```activities``` εκτελώντας το παραπάνω script. Στη συνέχεια, ο ελεγκτής δημιουργείται με την εντολή:
+
 ```bash
 $ rails generate controller activities
 ```
 η οποία δημιουργεί το αρχείο ```app/controllers/activities_controller.rb```.
 Χρειάζεται να ενημερώσουμε και το ```routes.rb``` ως εξής:
+
 ```ruby
 resources :tasks do
   resources :activities
 end
 ```
 Στη συνέχεια θα ενημερώσουμε την όψη ```show.html.erb``` ώστε να μπορούμε να εισάγουμε μια νέα ενέργεια: 
+
 ```html
 ...
 <p>
@@ -574,6 +589,7 @@ end
 ```
 Ο παραπάνω κώδικας προσθέτει μια νέα φόρμα στη σελίδα ```show```, η οποία δημιουργεί μια νέα ενέργεια καλώντας τη μέθοδο create του ελεγκτή
 ```ActivitiesController```:
+
 ```ruby
 class ActivitiesController < ApplicationController
   def create
@@ -588,6 +604,7 @@ end
 
 Μπορούμε να βελτιώσουμε την αναγνωσιμότητα του αρχείου ```show.html.erb``` μεταφέροντας τον κώδικα των ενεργειών σε μερικές φόρμες (partials):
 ```app/views/activities/_activity.html.erb```
+
 ```html
 <p>
   <b>Description:</b>
@@ -600,6 +617,7 @@ end
 ```
 και
 ```app/views/activities/_form.html.erb```
+
 ```html
 <%= form_for([@task, @task.activities.build]) do |f| %>
   <div class=”field”>
@@ -616,6 +634,7 @@ end
 <% end %>
 ```
 τροποποιώντας την show.html.erb ως εξής:
+
 ```html
 ...
 <p>
@@ -631,6 +650,7 @@ end
 ```
 Ως τελευταίο βήμα, θα προσθέσουμε τη δυνατότητα, όποιος γνωρίζει τον κωδικό του διαχειριστή, να μπορεί να διαγράψει ενέργειες.
 Ξεκινάμε προσθέτοντας έναν υπερσύνδεσμο διαγραφής μιας ενέργειας στη φόρμα ```_activity```:
+
 ```html
 <p>
 <%= link_to ’Delete Action’,
@@ -641,6 +661,7 @@ end
 ```
 ο οποίος θα στείλει μια αίτηση ```DELETE /tasks/:id/activities/:id``` στον ```ActivitiesController```, στον οποίο πρέπει να προσθέσουμε τη νέα
 μέθοδο:
+
 ```ruby
 class TasksController < ApplicationController
   http_basic_authenticate_with :name => ”admin”, :password => ”admin”, :only => :destroy
@@ -655,6 +676,7 @@ end
 ```
 Τέλος, θα πρέπει να μεριμνήσουμε ώστε στην περίπτωση που διαγραφεί ένα έργο, να διαγραφούν και οι σχετικές ενέργειες:
 ```app/models/task.rb```
+
 ```ruby
 class Task < ActiveRecord::Base
   ...
@@ -665,6 +687,7 @@ end
 ## Προς παραγωγή
 Κάποια στιγμή θ’ αποφασίσετε ότι η εφαρμογή σας είναι έτοιμη προς παραγωγή. Θα πρέπει να την εγκαταστήσετε στον διακομιστή παραγωγής και να τη ρυθμίσετε ώστε να δουλεύει με τη ΒΔ παραγωγής (MySQL στο παράδειγμά μας).
 Ανοίξτε το αρχείο ```config/database.yml```:
+
 ```ruby
 development:
   adapter: sqlite3
@@ -684,6 +707,7 @@ production:
 ```
 Παρατηρήστε ότι ορίζονται τρεις ΒΔ, μια για ανάπτυξη, μια για testing και μια για παραγωγή.
 Τροποποιήστε τη ΒΔ παραγωγής ως ακολούθως:
+
 ```ruby
 production:
   adapter: mysql2
@@ -696,11 +720,13 @@ production:
 ```
 ή ```socket: /opt/lampp/var/mysql/mysqld.sock``` αν χρησιμοποιείτε lampp.
 Για να δημιουργήσετε τη ΒΔ παραγωγής, δώστε τις εντολές:
+
 ```bash
 $ rake db:create RAILS_ENV=”production”
 $ rake db:migrate RAILS_ENV=”production”
 ```
 Θα πρέπει να έχετε εγκαταστήσει:
+
 ```bash
 $ sudo apt-get install libmysql-ruby
 $ sudo apt-get install libmysqlclient-dev
@@ -709,10 +735,12 @@ $ sudo gem install activerecord-mysql2-adapter
 ```
 Αν παρ’ όλ’ αυτά συνεχίζει να παραπονιέται ότι δε βρίσκει τη mysql2, τότε προσθέστε στο αρχείο ```Gemfile``` κάτω από τη γραμμή ```gem ’rails’``` τη
 γραμμή:
+
 ```bash
 gem ’mysql2’, ’~> 0.3.10’
 ```
 και από το κέλυφος δώστε:
+
 ```bash
 $ bundle install
 $ bundle show mysql2
