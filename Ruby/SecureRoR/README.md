@@ -44,14 +44,11 @@ $ sudo apt-get install ruby-bundler
 ```bash
 $ ./hydra -l admin -P Wordlists/LIST.txt
 http://www.todo.gr:3000/tasks/new -t 30
-Hydra v7.4.2 (c)2012 by van Hauser/THC & David Maciejak - for legal
-purposes only
+Hydra v7.4.2 (c)2012 by van Hauser/THC & David Maciejak - for legal purposes only
 Hydra (http://www.thc.org/thc-hydra) starting at 2013-07-10 20:15:52
-[DATA] 30 tasks, 1 server, 4349 login tries (l:1/p:4349), ~144 tries
-per task
+[DATA] 30 tasks, 1 server, 4349 login tries (l:1/p:4349), ~144 tries per task
 [DATA] attacking service http-get on port 3000
-[STATUS] 1773.00 tries/min, 1773 tries in 00:01h, 2576 todo in 00:02h
-, 30 active
+[STATUS] 1773.00 tries/min, 1773 tries in 00:01h, 2576 todo in 00:02h, 30 active
 [3000][www] host: 192.168.156.145 login: admin password: admin
 1 of 1 target successfully completed, 1 valid password found
 Hydra (http://www.thc.org/thc-hydra) finished at 2013-07-10 20:17:34
@@ -258,7 +255,7 @@ $ ./sqlmap.py -u www.todo.gr -o --dump -D production -T user
 ```
 
 αλλά ευτυχώς χωρίς αποτέλεσμα.
-Δοκιμάζει και το πρόσθετο για Firefox [SQL Inject Me](https://addons.mozilla.org/en-US/firefox/addon/sql-inject-me/) [17] σ’ όλες τις φόρμες της εφαρμογής (συνολικά 102 κυβερνοεπιθέσεις) χωρίς αποτέλεσμα.
+Δοκιμάζει και το πρόσθετο για Firefox [SQL Inject Me](https://addons.mozilla.org/en-US/firefox/addon/sql-inject-me/) [16] σ’ όλες τις φόρμες της εφαρμογής (συνολικά 102 κυβερνοεπιθέσεις) χωρίς αποτέλεσμα.
 
 Επισκεφθείτε και την ιστοσελίδα [http://rails-sqli.org](http://rails-sqli.org) αφιερωμένη ειδικά για SQLI για τη RoR. Μια πρόσφατη ευπάθεια (για εφαρμογές που χρησιμοποιούν AuthLogic κι όχι Devise) περιγράφεται [εδώ](blog.phusion.nl/2013/01/03/rails-sql-injection-vulnerability-hold-your-horses-here-are-the-facts/#.UOXr-j9680w) και από [εδώ](https://github.com/phusion/rails-cve-2012-5664-test) μπορείτε να κατεβάσετε μια εφαρμογή που την αναπαριστά.
 
@@ -274,6 +271,7 @@ $ ./sqlmap.py -u www.todo.gr -o --dump -D production -T user
 class ActivitiesController < ApplicationController
   #http_basic_authenticate_with :name => ”admin”, :password => ”admin”, :only => :destroy
   before_filter :authorize_admin!, :only => [:create, :destroy]
+```
 
 Από την έκδοση RoR 3.0 και μετά παρέχεται εξ’ ορισμού προστασία έναντι XSS. Εντολές ή ετικέτες απενεργοποιούνται (escape) από τα αλφαριθμητικά (strings) προτού σταλούν στον πλοηγό. Αποφύγετε πάσι θυσία την εντολή ```raw```, όπως π.χ. ```<%= raw @task.description %>``` και προσέξτε σε τι ιστοτόπους συνδέεστε με την εντολή ```link_to```, π.χ. ```<%= link_to ”User Website”, user.website %>``` όπου ```user.website``` μπορεί να είναι:
 
@@ -489,8 +487,9 @@ end
 
 Θέτοντας (```config/initializers/session_store.rb```):
 
+```ruby
+Todo::Application.config.session_store :cookie_store, key: ’_todo_session’, :httponly => true
 ```
-Todo::Application.config.session_store :cookie_store, key: ’_todo_session’, :httponly => true```
 
 και επανεκκινώντας τον Webrick δηλώνετε ότι κώδικας javascript που εκτελείται στον πλοηγό δεν μπορεί να προσπελάσει τα κουλουράκια σας.
 
