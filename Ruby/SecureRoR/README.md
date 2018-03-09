@@ -37,7 +37,7 @@ $ sudo apt-get install ruby-bundler
 
 Μέχρι στιγμής ο μόνος χρήστης που μπορεί να προσθέσει/ενημερώσει έργα είναι ο ρόλος ```admin```. Ο ρόλος αυτός μπορεί πολύ εύκολα να παραβιαστεί κι ο επίδοξος χάκερ να αποκτήσει πλήρη πρόσβαση στην εφαρμογή και τη ΒΔ. Το ερώτημα είναι, ότι ένα ακριβό τείχος προστασίας (Firewall) κι ένα σύστημα ανίχνευσης (Intrusion Detection System) δεν αρκούν για να μας προστατεύσουν; Η απάντηση είναι ότι και τα δυο είναι άχρηστα στις κυβερνοεπιθέσεις που χρησιμοποιούν τις θύρες TCP ```80``` και ```443``` γιατί απλούστατα αυτές οι θύρες θα πρέπει να παραμείνουν πάντα ανοικτές!
 
-##Ο χάκερ Μπάμπης
+## Ο χάκερ Μπάμπης
 Το πρώτο πράγμα που παρατήρησε ο _ηθικός_ χάκερ Μπάμπης, ο οποίος “έπεσε” στην ιστοσελίδα μας, είναι ότι για την αυθεντικοποίηση δεν χρησιμοποιείται καν SSL (HTTPS). Χωρίς να ’χει πρόσβαση στο διακομιστή ή στον Η/Υ που φιλοξενεί την εφαρμογή, δοκιμάζει διάφορα εργαλεία για να βρει τον κωδικό του διαχειριστή. 
 
 Ένα τέτοιο εργαλείο είναι το [Hydra](https://www.thc.org/thc-hydra/) (άλλα παρόμοια εργαλεία που θα μπορούσε να χρησιμοποιήσει είναι η [Medusa](http://foofus.net/goons/jmk/medusa/medusa.html) και το [ncrack](https://nmap.org/ncrack/)) το οποίο θα δοκιμάσει με τη σειρά διάφορους κωδικούς (brute force attack) (φυσικά μαντεύει ότι το όνομα χρήστη είναι ```admin```. Θα δοκιμάσει επίσης ```root, administrator``` κλπ.):
@@ -201,18 +201,18 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-και στη συνέχεια να αντικαταστήσουμε τη γραμμή βασικής αυθεντικοποίησης (```http_basic_authenticate_with```) με την ακόλουθη (```app/controllers/tasks_controller.rb```):
+και στη συνέχεια να αντικαταστήσουμε τη γραμμή βασικής αυθεντικοποίησης (```http_basic_authenticate_with```) με την ακόλουθη:
 
 ```ruby
+# app/controllers/tasks_controller.rb
 class TasksController < ApplicationController
   #http_basic_authenticate_with :name => ”admin”, :password => ”admin”, :except => [:index, :show]
   before_filter :authorize_admin!, :except => [:index, :show]
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 ```
 
-```app/controllers/activities_controller.rb```
-
 ```ruby
+# app/controllers/activities_controller.rb
 class ActivitiesController < ApplicationController
   #http_basic_authenticate_with :name => ”admin”, :password => ”admin”, :only => :destroy
   before_filter :authorize_admin!, :only => :destroy
@@ -244,7 +244,7 @@ class ActivitiesController < ApplicationController
 Θα αναλύσουμε κάποιες, αλλά όχι όλες, από τις παραπάνω στη συνέχεια.
 
 ## Ενέσεις SQL (SQL Injection)
-Ανάλογα με το ΣΔΒΔ που χρησιμοποιείτε υπάρχουν κι οι αντίστοιχες [ευπάθειες](http://www.sqlinjectionwiki.com/Categories.aspx?catId=5#ReferencesSQLInjectionExploitationTools) (βλ. και αναφορές [14-15]). Ο χάκερ Μπάμπης χρησιμοποιεί το [sqlmap](http://sqlmap.org/) γι’ αυτό το σκοπό (απαιτεί Python 2.7.x) (εσείς δοκιμάστε [https://localhost:3000](https://localhost:3000)):
+Ανάλογα με το ΣΔΒΔ που χρησιμοποιείτε υπάρχουν κι οι αντίστοιχες [ευπάθειες](http://www.sqlinjectionwiki.com/Categories.aspx?catId=5#ReferencesSQLInjectionExploitationTools) (βλ. και αναφορές [13-14]). Ο χάκερ Μπάμπης χρησιμοποιεί το [sqlmap](http://sqlmap.org/) γι’ αυτό το σκοπό (απαιτεί Python 2.7.x) (εσείς δοκιμάστε [https://localhost:3000](https://localhost:3000)):
 
 ```bash
 $ ./sqlmap.py -u www.todo.gr -b -f
@@ -255,7 +255,7 @@ $ ./sqlmap.py -u www.todo.gr -o --dump -D production -T user
 ```
 
 αλλά ευτυχώς χωρίς αποτέλεσμα.
-Δοκιμάζει και το πρόσθετο για Firefox [SQL Inject Me](https://addons.mozilla.org/en-US/firefox/addon/sql-inject-me/) [16] σ’ όλες τις φόρμες της εφαρμογής (συνολικά 102 κυβερνοεπιθέσεις) χωρίς αποτέλεσμα.
+Δοκιμάζει και το πρόσθετο για Firefox [SQL Inject Me](https://addons.mozilla.org/en-US/firefox/addon/sql-inject-me/) [13] σ’ όλες τις φόρμες της εφαρμογής (συνολικά 102 κυβερνοεπιθέσεις) χωρίς αποτέλεσμα.
 
 Επισκεφθείτε και την ιστοσελίδα [http://rails-sqli.org](http://rails-sqli.org) αφιερωμένη ειδικά για SQLI για τη RoR. Μια πρόσφατη ευπάθεια (για εφαρμογές που χρησιμοποιούν AuthLogic κι όχι Devise) περιγράφεται [εδώ](blog.phusion.nl/2013/01/03/rails-sql-injection-vulnerability-hold-your-horses-here-are-the-facts/#.UOXr-j9680w) και από [εδώ](https://github.com/phusion/rails-cve-2012-5664-test) μπορείτε να κατεβάσετε μια εφαρμογή που την αναπαριστά.
 
@@ -535,7 +535,7 @@ db/development.sqlite3
 $ cd todo
 $ brakeman
 ...
-+SUMMARY+ +-------------------+-------+ | Scanned/Reported | Total |
++SUMMARY+ +-------------------+-------+ | Scanned/Reported | Total | 
 +-------------------+-------+ | Controllers | 3 | |
 Models | 3 | | Templates | 9 | |
 Errors | 0 | | Security Warnings | 1 (1) |
@@ -551,7 +551,7 @@ secret should not be included in version control near line 12 |
 +------------+-------+--------+-----------------+----------------------------------------------------+
 ```
 
-Aπλά σας ζητάει να αποκλείσετε το ```config/initializers/secret_token.rb``` από το σύστημα διαχείρισης εκδόσεων (version control) που χρησιμοποιείτε (π.χ. να το προσθέσετε στο ```.gitignore``` ή ```.hgignore``` αν χρησιμοποιείτε git ή mercurial αντίστοιχα). Άλλα εργαλεία που μπορείτε να  χρησιμοποιήσετε, είναι τα [OpenVas](http://www.openvas.org/) και [ZAP](https://github.com/zaproxy/zaproxy) [17].
+Aπλά σας ζητάει να αποκλείσετε το ```config/initializers/secret_token.rb``` από το σύστημα διαχείρισης εκδόσεων (version control) που χρησιμοποιείτε (π.χ. να το προσθέσετε στο ```.gitignore``` ή ```.hgignore``` αν χρησιμοποιείτε git ή mercurial αντίστοιχα). Άλλα εργαλεία που μπορείτε να  χρησιμοποιήσετε, είναι τα [OpenVas](http://www.openvas.org/) και [ZAP](https://github.com/zaproxy/zaproxy) [15].
 
 ## Επίλογος
 Σ’ αυτό το άρθρο είδαμε πως μπορούμε να προστατεύσουμε τις εφαρμογές μας ιστού από επίδοξους χάκερς. Η προστασία που θα πρέπει να παρέχουμε πρέπει να ’ναι πολυεπίπεδη, δηλ.:
@@ -566,7 +566,7 @@ Aπλά σας ζητάει να αποκλείσετε το ```config/initializ
 * httponly
 * Content Security Policy
 
-ενώ ο ενδιαφερόμενος αναγνώστης θα μπορούσε να κοιτάξει και μια τρίτη, την X-XSS-Protection. Π.χ. θα μπορούσαμε να προσθέσουμε κι άλλες κεφαλίδες ως εξής [16] (```app/controllers/application_controller.rb```):
+ενώ ο ενδιαφερόμενος αναγνώστης θα μπορούσε να κοιτάξει και μια τρίτη, την X-XSS-Protection. Π.χ. θα μπορούσαμε να προσθέσουμε κι άλλες κεφαλίδες ως εξής [14] (```app/controllers/application_controller.rb```):
 
 ```ruby
 # Content Security Policy, X-XSS-Protection, X-Frame-Options
