@@ -1,4 +1,4 @@
-# Επισκόπιση της Java 8 {#Java8}
+# Επισκόπηση της Java 8 {#Java8}
 © Γιάννης Κωστάρας
 
 ---
@@ -107,44 +107,41 @@ fun even_or_odd (n) =
 Στο παραπάνω παράδειγμα, η συνάρτηση ```even_or_odd()``` επιστρέφει είτε τη συνάρτηση ```2*x``` είτε την ```3*x```.
 
 Ας ξεκινήσουμε με ένα παράδειγμα από τη C, για όσους θυμούνται. Στη C μια συνάρτηση δεν είναι μεταβλητή, μπορούμε όμως να ορίσουμε δείκτες σε συναρτήσεις, οι οποίοι μπορούν να εκχωρηθούν σε μεταβλητές, να τοποθετηθούν σε πίνακες, να περαστούν σε συναρτήσεις ή να επιστραφούν από συναρτήσεις κλπ. Π.χ. έστω η παρακάτω συνάρτηση ```qsort()``` η οποία ταξινομεί τα στοιχεία της λίστας ```list``` βάσει της συνάρτησης ταξινόμησης ```comp```. Όπως βλέπετε, περνάμε τμήμα κώδικα ως παράμετρο στην ```qsort()```.
-```C
-void qsort(void *list[], int left, int right, 
-           int (*comp)(void *, void *));
+```c
+void qsort(void *list[], int left, int right, int (*comp)(void *, void *));
 ```
 Η 4η παράμετρος της ```qsort()```, ```comp``` είναι δείκτης σε μια συνάρτηση που έχει δυο παραμέτρους τύπου ```void *``` και επιστρέφει ```int```. Κάθε δείκτης μπορεί να μετατραπεί (cast) σε ```void *``` και πάλι πίσω στον αρχικό του τύπο χωρίς να χαθεί πληροφορία, έτσι μπορούμε να καλέσουμε την ```qsort()``` με το να μετατρέψουμε τις παραμέτρους της σε ```void *```.
 
 Στο σώμα της ```qsort()``` μπορούμε να έχουμε κώδικα σαν κι αυτόν:
-```C
+```c
 int result = (*comp)(list[i], list[left]);
 ```
 Όταν καλείται η ```qsort()```, οι ```strcmp``` και ```numcmp``` είναι οι διευθύνσεις μνήμης των αντίστοιχων συναρτήσεων σύγκρισης:
-```C
-qsort((void**) list, 0, nlines-1, 
-      (int (*)(void*,void*)) numcmp);
-qsort((void**) list, 0, nlines-1, 
-      (int (*)(void*,void*)) strcmp);
+```c
+qsort((void**) list, 0, nlines-1, (int (*)(void*,void*)) numcmp);
+qsort((void**) list, 0, nlines-1, (int (*)(void*,void*)) strcmp);
 ```
 όπου
-```C
+```c
 /* numcmp: compare s1 and s2 numerically */
 int numcmp(char *s1, char *s2);
 ```
 και
-```C
+```c
 /*strcmp: compare s1 and s2 alphabetically */
 int strcmp(char *s1, char *s2);
 ```
 Αν δεν καταλάβατε τίποτα από τα παραπάνω, μην πτοείστε, δεν είναι απαραίτητα για να κατανοήσετε το λ-λογισμό στη Java.
 Ας δούμε λοιπόν πως η Java υποστηρίζει το συναρτησιακό προγραμματισμό. Αν θέλαμε να γράψουμε τη μαθηματική συνάρτηση ```f(x) = 2*x``` στη Java, αυτή θα οριζόταν ως εξής:
-```Java
+```java
 double dbl(double x) { return 2*x; }
 ```
 Αυτό που έχει όμως σημασία στη παραπάνω δήλωση είναι μόνο η παράμετρος και η τιμή επιστροφής (και προαιρετικά το όνομα της συνάρτησης). Ακόμα και ο τύπος δεδομένων επιστροφής θα μπορούσε να εξαχθεί από τα συμφραζόμενα (δηλ. ότι θα είναι ίδιος με τον τύπο της παραμέτρου). Η παραπάνω δήλωση, μπορεί να γραφεί ως η λ έκφραση:
-```Java
+```java
 (double x) -> 2*x; 
 ```
 και μπορούμε ακόμα να κάνουμε χωρίς τον τύπο της παραμέτρου, δηλ.:
-```Java
+```java
 x -> 2*x;
 ```
 αν αυτός μπορεί να συναχθεί από τα συμφραζόμενα. Η παραπάνω σύνταξη δηλώνει μια λ-έκφραση στη Java 8. Στη C#, π.χ. η παραπάνω έκφραση γράφεται ως: ```x => 2*x```. 
@@ -155,7 +152,7 @@ x -> 2*x;
 (parameters) -> { statements; }
 ```
 Παραδείγματα λ-εκφράσεων στη Java 8:
-```Java
+```java
 (int x, int y) -> x + y
 (x, y) -> x % y
 () -> Math.pi
@@ -166,7 +163,8 @@ c -> { int n = c.size(); c.clear(); return n ; }
 ```
 Όταν η λ-έκφραση αποτελείται μόνο από μια εντολή, δεν απαιτείται ```return``` ούτε άγκιστρα ```{}```. Η έκφραση ```String::toUpperCase``` ονομάζεται _αναφορά μεθόδου (method reference)_ και είναι μια εναλλακτική σύνταξη της λ-έκφρασης ```s -> s.toUpperCase()```. Περισσότερα για τις αναφορές μεθόδου παρακάτω.
 Μέχρι την Java 7, το πιο κοντινό στις λ-εκφράσεις που μας παρείχε η γλώσσα ήταν οι ανώνυμες κλάσεις, όπως η προσθήκη ενός ```ActionListener``` στο παρακάτω παράδειγμα. 
-```Java
+
+```java
 JButton button = new JButton("Click me!");
 button.addActionListener(
   new ActionListener() {
@@ -175,23 +173,28 @@ button.addActionListener(
     }
 });
 ```
+
 Ας δούμε άλλο ένα παράδειγμα:
-```Java
+
+```java
 FileFilter directoryFilter = new FileFilter() {
   public boolean accept(File file) {
     return file.isDirectory();
   }
 };
 ```
+
 Η μέθοδος ```accept()``` δέχεται μια παράμετρο τύπου ```File``` και επιστρέφει μια μεταβλητή τύπου ```boolean```. Μπορεί να γραφτεί ως λ-έκφραση:
-```Java
-FileFilter directoryFilter = 
-   (File f) -> f.isDirectory();
+
+```java
+FileFilter directoryFilter = (File f) -> f.isDirectory();
 // ή f -> f.isDirectory();
 ```
+
 Ως άσκηση, μετατρέψτε τη μέθοδο ```actionPerformed()``` ως λ-έκφραση.
 Οι μέθοδοι ```actionPerformed()``` και ```accept()``` διαθέτουν κάποια χαρακτηριστικά που μας επιτρέπουν να μπορούμε να τις γράψουμε ως λ-εκφράσεις.  Περιέχονται σε κλάσεις ή διεπαφές (interfaces) που περιέχουν μια μόνο μέθοδο:
-```Java
+
+```java
 public interface ActionListener extends EventListener {
   void actionPerformed(ActionEvent e);
 } 
@@ -199,14 +202,18 @@ public abstract class FileFilter {
   abstract boolean accept(File f);
 }
 ```
+
 Αυτές οι μέθοδοι μπορούν να σχολιαστούν με ```@FunctionalInterface``` ώστε ο μεταγλωττιστής να εμφανίσει λάθος μεταγλώττισης όταν μελλοντικά προσθέσουμε κατά λάθος κι άλλες μεθόδους.
-```Java
+
+```java
 interface ActionListener extends EventListener {  @FunctionalInterface
   void actionPerformed(ActionEvent e);
 } 
 ```
+
 Άλλα functional interfaces:
-```Java
+
+```java
 interface Runnable { void run(); } 
 interface Callable<V> { V call() throws Exception; } 
 interface Comparator<T> { 
@@ -214,13 +221,16 @@ interface Comparator<T> {
   boolean equals(Object obj); 
 }
 ```
+
 μπορούν να γραφτούν ως λ-εκφράσεις, π.χ.:
-```Java
+
+```java
 Runnable r = () -> {};  
 Callable<Runnable> c = 
   () ->  () -> { System.out.println("hi"); };
 Callable<Integer> c = flag ? (() -> 23) : (() -> 42);
 ```
+
 Παρατηρήστε ότι μέθοδοι που κληρονομούνται από την κλάση ```Object (equals(), hashCode()``` κλπ.) δεν λαμβάνονται υπόψιν, οπότε αν και η διεπαφή  ```Comparator``` φαίνεται να έχει δυο μεθόδους, στην ουσία μόνο η ```compare``` λαμβάνεται υπόψιν.
 Η έκδοση 8 διαθέτει ένα νέο πακέτο ```java.util.function``` το οποίο περιέχει πολλές χρήσιμες κλάσεις τις οποίες περιγράφουμε στη συνέχεια:
 
@@ -230,47 +240,57 @@ Callable<Integer> c = flag ? (() -> 23) : (() -> 42);
 * ```Function<T,R>```
 
 Η διεπαφή ```Consumer``` διαθέτει μια μέθοδο ```accept()``` που δέχεται μια μόνο παράμετρο και δεν επιστρέφει τίποτα. 
-```Java
+
+```java
 interface Consumer<T> {
   void accept(T t); // T -> void
 }
 ```
+
 Η διεπαφή ```Supplier``` διαθέτει μια μέθοδο δημιουργίας ```get()``` που δε δέχεται καμία παράμετρο και επιστρέφει ένα νέο αντικείμενο τύπου ```Τ```. 
-```Java
+
+```java
 interface Supplier<T> {
    T get();  // () -> T
 }
 ```
+
 Η διεπαφή ```Predicate``` διαθέτει μια μέθοδο ```test()``` που ελέγχει αν η παράμετρος ικανοποιεί κάποια κριτήρια. 
-```Java
+
+```java
 interface Predicate<T> {
    boolean test(T t);  // T -> boolean
 }
 ```
+
 Η διεπαφή ```Function``` διαθέτει μια μέθοδο ```apply()``` που μετατρέπει την είσοδό της από τον τύπο ```Τ``` σε τύπο ```R```. 
-```Java
+
+```java
 interface Function<T, R> {
    R apply(T t);  // T -> R
 }
 ```
+
 Οι κλάσεις αυτές είναι ιδιαίτερα χρήσιμες και θα δούμε πως μπορούμε να τις χρησιμοποιήσουμε παρακάτω. 
 Μια ακόμα χρήσιμη κλάση είναι η ```Optional<T>```.
-```Java
+
+```java
 Optional<String> found = prices.stream().
      filter(name -> name.startsWith(letter)).     
      findFirst();
 found.orElse("Not found!");
 found.ifPresent(name -> name.append("!"));
 ```
+
 Αλλά ας ξεκινήσουμε να βλέπουμε κάποιες εφαρμογές των όσων μάθαμε μέχρι τώρα, μελετώντας τις προσθήκες που έχουν γίνει στις συλλογές (Collections).
 Ας ξεκινήσουμε από ένα απλό παράδειγμα το οποίο τυπώνει τα περιεχόμενα της λίστας στην οθόνη:
-```Java
+```java
 List<String> input = Arrays.asList("alfa", "bravo", "charlie", "delta", "echo", "foxtrot");
 for (String s : input) 
     System.out.print(s + ",");
 ```
 Στη Java 8 η παραπάνω έκφραση μπορεί να γραφεί ως:
-```Java
+```java
 input.forEach(s -> System.out.print(s + ","));
 ``` 
 Ενώ η πρώτη έκφραση χρησιμοποιεί το _Iterator design pattern_, δηλ. προσπελάζουμε ένα-ένα τα στοιχεία της λίστας για να τα τυπώσουμε, στη δεύτερη οι ρόλοι αντιστρέφονται, περνάμε δηλ. στη λίστα μια συνάρτηση (λ-έκφραση) που θα εφαρμοστεί σε όλα τα στοιχεία της. (Βλ. π.χ. γλώσσα [Ruby](https://jkost.github.io/Ruby/Ruby.html)).
@@ -337,14 +357,16 @@ int longestLength = input.stream()
                 .getAsInt();
 ```
 
-Πίνακας 1: Method References
+**Πίνακας 1** _Method References_
+
 | Τύπος | Σύνταξη | λ-έκφραση | Παράδειγμα |
 | Static | RefType::staticMethod | (args) -> RefType.staticMethod(args) | String::valueOf |
 | Bound Instance | expr::instMethod | (args) -> expr.instMethod(args) | System.out::print |
-| Unbound Instance | RefType::instMethod(arg0,rest) -> arg0.instMethod(rest)  | | 
+| Unbound Instance | RefType::instMethod(arg0,rest) -> arg0.instMethod(rest) |            |
 | Constructor | ClassName::new | (args)->new ClassName(args) | File::new |
  
-| Πίνακας 2: Stream API
+**Πίνακας 2** _Stream API_
+
 | μέθοδος | παράμετρος | επιστρέφει | λ | lazy/eager |
 | map | Function<T,R> | Stream<R> | T -> R | lazy |
 | filter | Predicate<T> | Stream<T> | T -> boolean | lazy |
