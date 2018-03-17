@@ -226,8 +226,7 @@ interface Comparator<T> {
 
 ```java
 Runnable r = () -> {};  
-Callable<Runnable> c = 
-  () ->  () -> { System.out.println("hi"); };
+Callable<Runnable> c = () ->  () -> { System.out.println("hi"); };
 Callable<Integer> c = flag ? (() -> 23) : (() -> 42);
 ```
 
@@ -267,7 +266,7 @@ interface Predicate<T> {
 
 ```java
 interface Function<T, R> {
-   R apply(T t);  // T -> R
+  R apply(T t);  // T -> R
 }
 ```
 
@@ -276,8 +275,8 @@ interface Function<T, R> {
 
 ```java
 Optional<String> found = prices.stream().
-     filter(name -> name.startsWith(letter)).     
-     findFirst();
+  filter(name -> name.startsWith(letter)).
+  findFirst();
 found.orElse("Not found!");
 found.ifPresent(name -> name.append("!"));
 ```
