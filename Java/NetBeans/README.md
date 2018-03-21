@@ -171,7 +171,7 @@ this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 Αν και δεν καλύψαμε παρά ένα μικρό μέρος από τα χαρακτηριστικά του Netbeans, ελπίζω ότι σας άνοιξε η όρεξη να εξερευνήσετε τις δυνατότητες του φοβερού αυτού εργαλείου. Και κλείνουμε με τα λόγια του πατέρα της Java, του James Gosling, στο [Javapolis](http://www.javapolis.com/confluence/download/attachments/28974/Parleys_04_ebook.pdf?version=1) το 2007: «I’m very excited about NetBeans 6.0. Are you still using Emacs? Then go shoot yourself. Emacs was a good idea – about thirty years ago.» 
 
 ## Πηγές
-1. [Netbeans home page] (http://www.netbeans.org).
+1. [Netbeans home page](http://www.netbeans.org).
 2. [Netbeans tutorials](http://netbeans.org/kb/).
 3. Vladykin Α. (2010), [Working with Qt Applications](http://netbeans.org/kb/docs/cnd/qt-applications.html) 
 4. [FileChooser tutorial](http://java.sun.com/docs/books/tutorial/uiswing/components/filechooser.html)

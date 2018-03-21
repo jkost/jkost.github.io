@@ -13,7 +13,7 @@
 * [Εισαγωγή στην Elixir](Elixir/README.md)
 * [Η γλώσσα προγραμματισμού Java](Java/README.md) √
 * [Επισκόπηση της C++14](Cpp/README.md)
-* [Εισαγωγή στο Scilab](Scilab/README.md)
+* [Εισαγωγή στο Scilab](Scilab/README.md) √
 * [Εισαγωγή στις Εκφράσεις Αναγνώρισης Προτύπων (Regular Expressions)](Regex/README.md)
 * [Εισαγωγή στα Πολλά Δεδομένα (Big Data)](BigData/README.md)
 * [Εισαγωγή στο Mercurial](Mercurial/README.md)
