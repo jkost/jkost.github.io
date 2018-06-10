@@ -2,7 +2,7 @@
 © Γιάννης Κωστάρας
 ---
 
-![](Courses/Mathesis/assets/mathesis.png)
+[![Mathesis](Courses/Mathesis/assets/mathesis.png)](http://mathesis.cup.gr)
 
 * [Εισαγωγή στη γλώσσα προγραμματισμού Java](Courses/Mathesis/Intro2Java/README.md) 
 * [Προχωρημένος προγραμματισμός με τη γλώσσα Java](Courses/Mathesis/AdvancedJava/README.md)

@@ -3,8 +3,7 @@
 
 ---
 
-<a href="http://mathesis.cup.gr" target="_blank"><img src="Courses/Mathesis/assets/mathesis.png" 
-alt="Mathesis"/></a>
+[![Mathesis](Courses/Mathesis/assets/mathesis.png)](http://mathesis.cup.gr)
 
 ## Πίνακας περιεχομένων
 ### Εβδομάδα 1η - Εισαγωγή
