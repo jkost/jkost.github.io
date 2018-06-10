@@ -3,7 +3,7 @@
 
 ---
 
-[![Mathesis](Courses/Mathesis/assets/mathesis.png)](http://mathesis.cup.gr)
+[![Mathesis](../assets/mathesis.png)](http://mathesis.cup.gr)
 
 ## Πίνακας περιεχομένων
 ### Εβδομάδα 1η - Εισαγωγή
@@ -32,3 +32,5 @@
 
 
 ### Εβδομάδα 6η - 
+
+---
