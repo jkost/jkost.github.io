@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../README.md)| [->](../1.2-JavaBasics/README.md)
+[<-](../../README.md)| [->](../1.2-JavaBasics/README.md)
 
 ---
 
@@ -135,6 +135,6 @@ double myvar = 3.14
 
 ---
 
-[<-](../README.md)| [->](../1.2-JavaBasics/README.md)
+[<-](../../README.md)| [->](../1.2-JavaBasics/README.md)
 
 ---

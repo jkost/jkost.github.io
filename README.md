@@ -4,8 +4,8 @@
 
 ![](Courses/Mathesis/assets/mathesis.png)
 
-* [Εισαγωγή στη γλώσσα προγραμματισμού Java - Μάθησις](Courses/Mathesis/Intro2Java/README.md) 
-* [Προχωρημένος προγραμματισμός με τη γλώσσα Java - Μάθησις](Courses/Mathesis/AdvancedJava/README.md)
+* [Εισαγωγή στη γλώσσα προγραμματισμού Java](Courses/Mathesis/Intro2Java/README.md) 
+* [Προχωρημένος προγραμματισμός με τη γλώσσα Java](Courses/Mathesis/AdvancedJava/README.md)
 
 ---
 
