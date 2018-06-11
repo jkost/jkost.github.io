@@ -8,7 +8,7 @@
 ## Πίνακας περιεχομένων
 ### Εβδομάδα 1η - Εισαγωγή
 1. [Εισαγωγή στη γλώσσα προγραμματισμού Java](Week1/1.1-JavaHistory/README.md) √
-2. [Εγκατάσταση της Java](Week1/1.2-JavaInstallation/README.md) 
+2. [Εγκατάσταση της Java](Week1/1.2-Installation/README.md) 
 3. [Αριθμοί, μεταβλητές, εκφράσεις](Week1/1.3-JavaBasics/README.md) 
 4. [Συμβολοσειρές](Week1/1.4-Strings/README.md) 
 5. [Εντολές Αποφάσεων](Week1/1.5-ControlStatements/README.md) 
