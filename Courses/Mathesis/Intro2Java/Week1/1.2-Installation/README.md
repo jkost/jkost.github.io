@@ -17,10 +17,10 @@
 1. Εγκαταστήστε το ανάλογα με την πλατφόρμα σας. Για τα windows καλό θα ήταν να το εγκαταστήσετε σε μια διαδρομή (path) χωρίς κενά, π.χ. ```C:\Tools\Java``` ή κάτι τέτοιο κι όχι στην προτεινώμενη διαδρομή ```C:\Program Files\Java```. 
 1. Θα πρέπει να ορίσετε κάποιες μεταβλητές περιβάλλοντος, π.χ. ```JAVA_HOME=C:\Tools\Java\jdk10.0.1``` και ```PATH=%JAVA_HOME%\bin``` (για Windows) ή ```PATH=$JAVA_HOME/bin``` (για *nix συστήματα)
 
-Δεξί κλικ Computer ⇒ Properties
-System Properties
-Καρτέλα "Advanced” ⇒  Environment Variables
-"System Variables", επιλέξτε "PATH" ⇒  Edit
+* Δεξί κλικ Computer ⇒ Properties
+* System Properties
+* Καρτέλα "Advanced” ⇒  Environment Variables
+* "System Variables", επιλέξτε "PATH" ⇒  Edit
 
 ### Επαλήθευση εγκατάστασης
 Αν όλα πήγαν καλά, τότε μπορείτε ν' ανοίξετε μια προτροπή DOS (command prompt) ή ένα κέλυφος (shell) και να δώσετε τις εντολές:
