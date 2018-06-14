@@ -82,15 +82,29 @@ double myvar = 3.14
 Η Sun αναπτύσσει το JDK 1.2 και το [Swing](https://en.wikipedia.org/wiki/Swing_(Java), το οποίο αποτελεί την αντικατάσταση του [AWT (Abstract Window Toolkit)](https://en.wikipedia.org/wiki/Abstract_Window_Toolkit), για την ανάπτυξη GUIs (γραφικών εφαρμογών). 
 Ακολουθούν οι εκδόσεις 1.3, 1.4 και 1.5 όπου πλέον αλλάζει και η ονομασία της έκδοσης σε Java 5. Η Java 5 ήταν η πρώτη ουσιαστική αλλαγή του πυρήνα της γλώσσας απ' τη δημιουργία της, έτσι ώστε να υποστηρίζει Generics, Enumerated Types, autoboxing, varargs, annotations, static imports και νέες δυνατότητες για πολυνηματισμό (multi-threading). Η έκδοση 6 καταφέρνει να είναι 30% ταχύτερη από τις προηγούμενες εκδόσεις, ενώ η [έκδοση 7](Java7/REAMDE.md) φέρνει μικρές βελτιώσεις στη γλώσσα. Είναι η εποχή που η Sun Microsystems εξαγοράζεται από την Oracle. Η [έκδοση 8](Java8/README.md) φέρνει σημαντικές αλλαγές στη γλώσσα παρέχοντάς της δυνατότητες συναρτησιακού (λ-) προγραμματισμού αλλάζοντας κατά πολύ τον τρόπο χρήσης της. Η πολυαναμενόμενη [έκδοση 9](Java9/README.md) έφερε δυνατότητες τμηματοποίησης (modularisation) της γλώσσας δίνοντας τη δυνατότητα να δημιουργήσετε την δική σας εφαρμογή που να περιλαμβάνει μόνο τα modules της Java που χρειάζεται η εφαρμογή σας για να τρέξει. Από την έκδοση 10 και μετά, η Oracle αποφάσισε να εκδίδει μια νέα έκδοση Java κάθε 6 μήνες.
 
+| Έκδοση Java | Κωδική ονομασία | Τέλος εποχής | Ημερομηνία έκδοσης
+| Java 10 | - | - | 20/03/2018
+| Java 9 | - | - | 27/07/2017
+| Java 8 | Spider | - | 18/03/2014 
+| Java 7 | Dolphin | 14/04/2015 | 28/07/2011 
+| Java 6 | Mustang | 16/04/2013 | 23/12/2006
+| Java 5 | Tiger | 4/11/2009 | 04/10/2004
+| Java 1.4 | Merlin |    <4/11/2009 | 06/02/2002
+| Java 1.3 | Kestrel |   <4/11/2009 | 08/05/2000
+| Java 1.2 | Playground |<4/11/2009 | 08/12/1998
+| Java 1.1 | - |         <4/11/2009 | 19/02/1997
+| Java 1.0 | Oak |       <4/11/2009 | 21/01/1996
+
+
 ![](https://picodotdev.github.io/blog-bitix/assets/images/posts/2014/17/componentes-jpse8.png)
 
-**Εικόνα 6** _Αρχιτεκτονική της Java Standard Edition_
+**Εικόνα 6** _Αρχιτεκτονική της Java Standard Edition (Πηγή: https://tinyurl.com/y9y2meap)_
 
 Εν τω μεταξύ, μετά το JDK 1.3 εμφανίστηκε και η [Java Enterprise Edition (JEE) 1.3](https://en.wikipedia.org/wiki/Java_Platform%2C_Enterprise_Edition) η οποία στοχεύει στην ανάπτυξη επιχειρηματικών εφαρμογών (κοινώς το Web). Περιλαμβάνει τεχνολογίες όπως [Enterprise JavaBeans (EJBs)](https://en.wikipedia.org/wiki/Enterprise_JavaBeans), servlets, Java Server Pages, Java Server Faces κ.ά. Σήμερα βρίσκεται στην έκδοση 8, με πολλές δυνατότητες και ευκολία χρήσης σε σχέση με τις προηγούμενες εκδόσεις. Παράλληλα, έχουν αναπτυχθεί πολλά frameworks για ανάπτυξη επιχειρηματικών εφαρμογών (ή εφαρμογών ιστού) βασισμένα στη Java, όπως το [Apache Tapestry](https://en.wikipedia.org/wiki/Apache_Tapestry), το [Apache Struts](https://en.wikipedia.org/wiki/Apache_Struts_2) και το [Spring](https://en.wikipedia.org/wiki/Spring_Framework) για να αναφέρουμε τα πιο γνωστά. 
 
 ![](https://www.programering.com/images/remote/ZnJvbT1pdGV5ZSZ1cmw9Y21idzVpWWlabVloWlROemtqWmxGVExoTm1aNTB5WW1Sek10SW1OaFZUTDNVbVpsVkdaNFUyTHlrVE96OGlONEFETXZRbmJsMUdhakZHZDBGMkxrRjJic0JYZHYwMmJqNVNaNVZHZHA1aU1zUjJMdm9EYzBSSGE.jpg)
 
-**Εικόνα 7** _Αρχιτεκτονική της Java Enterprise Edition_
+**Εικόνα 7** _Αρχιτεκτονική της Java Enterprise Edition (Πηγή: https://tinyurl.com/yc2ozrck)_
 
 Βασικά συστατικά μιας εφαρμογής JEE είναι:
 
@@ -98,17 +112,19 @@ double myvar = 3.14
 * Servlets
 * Java Server Pages (JSP) ή Java Server Faces (JSF)
 
-Αλλά η Java έχει γίνει πολύ γνωστή και στον κλάδο των κινητών εφαρμογών με τη [Java Micro Edition (JME)](https://en.wikipedia.org/wiki/Java_Platform%2C_Micro_Edition) που αποτελεί ανταγωνιστή του Android.
+Αλλά η Java έχει γίνει πολύ γνωστή και στον κλάδο των κινητών εφαρμογών με τη [Java Micro Edition (JME)](https://en.wikipedia.org/wiki/Java_Platform%2C_Micro_Edition) που αποτελεί ανταγωνιστή του Android και του iOS.
 
-![](https://ixquick-proxy.com/do/spg/show_picture.pl?l=english&rais=1&oiu=http%3A%2F%2Fmedia.bestofmicro.com%2FH%2FE%2F394610%2Foriginal%2Fnew-java-software.png&sp=e78d14996b4ab1eee3abbeb215b39480)
+![](http://www.oracle.com/ocom/groups/public/@otn/documents/digitalasset/148076.jpg)
 
-**Εικόνα 8** _Αρχιτεκτονική της Java Mobile Edition_
+**Εικόνα 8** _Αρχιτεκτονική της Java Mobile Edition (Πηγή: https://tinyurl.com/ycfgxymh)_
 
 Η Java έχει προκαλέσει περισσότερο ενθουσιασμό από οποιαδήποτε άλλη εξέλιξη στο Διαδίκτυο από την εποχή του [Mosaic](https://en.wikipedia.org/wiki/Mosaic_(web_browser)). Είναι μια γλώσσα προγραμματισμού για κατανεμημένες εφαρμογές. Έχει γίνει παγκοσμίως γνωστή ωστόσο, επειδή επιτρέπει στους χρήστες να αλληλεπιδρούν με τις ιστοσελίδες. Ένα πολύ βασικό χαρακτηριστικό που αποτέλεσε κι έναν από τους κυριότερους λόγους διάδοσης της γλώσσας είναι ότι είναι ανεξάρτητη πλατφόρμας ('Write Once Run Everywhere'). Αυτό σημαίνει ότι γράφετε κώδικα μια φορά και αυτός τρέχει σε οποιαδήποτε πλατφόρμα που έχει εγκατεστημένο το [Java Virtual Machine](https://en.wikipedia.org/wiki/Java_virtual_machine). 
 
 Με το JDK 1.2, η Java έγινε η πιο ελκυστική γλώσσα για την κατασκευή φιλικών προς το χρήστη γραφικών περιβάλλοντων με τη χρήση του Swing. Το [JavaFX](https://en.wikipedia.org/wiki/JavaFX), ο ανταγωνιστής των [Adobe AIR](https://en.wikipedia.org/wiki/Adobe_AIR) και [MS Silverlight](https://en.wikipedia.org/wiki/Microsoft_Silverlight), αποτελεί το νέο framework της γλώσσας για ανάπτυξη γραφικών εφαρμογών (αντικαθιστά το Swing).
       
 Για να δούμε και μια άλλη γνώμη όμως, ο Stroustrup υποστηρίζει ότι ≪... η Java δεν είναι ανεξάρτητη πλατφόρμας. Είναι μια πλατφόρμα. Όπως και τα Windows, είναι μια ιδιόκτητη εμπορική πλατφόρμα. Δηλαδή, μπορείτε να γράψετε προγράμματα για Windows / Intel ή για Java / JVM, και σε κάθε περίπτωση γράφετε κώδικα για μια πλατφόρμα που ανήκει σε μία εταιρεία και για το εμπορικό όφελος των εν λόγω εταιριών. Έχει επισημανθεί ότι μπορείτε να γράψετε τα προγράμματα σε οποιαδήποτε γλώσσα για τη JVM και τα συναφή λειτουργικά συστήματα. Ωστόσο, η JVM, κ.λπ., είναι σε μεγάλο βαθμό μεροληπτική υπέρ της Java. Δεν είναι πουθενά κοντά σε μια γενική, λογικά, ουδέτερη γλώσσα VM/Λ.Σ. ...≫ 
+
+Αν και τα επιχειρήματα του Stroustrup, του δημιουργού της C++ ήταν αληθή εώς ένα βαθμό μέχρι πρότεινος, πρόσφατα η Oracle άνοιξε τον κώδικα τόσο της Java SE όσο και της [Java EE](http://www.linux-magazine.com/Online/News/Oracle-Donating-Java-EE-to-the-Eclipse-Foundation). Επίσης, η ΕΜ (JVM) αποτελεί πλέον την πλατφόρμα για πολλές άλλες γλώσσες προγραμματισμού οι οποίες μπορούν να τρέξουν σ' αυτή, όπως Groovy, Ruby (JRuby), Python (Jython), Go, Erlang (Erjang), Clojure κ.ά. κάνοντάς τη μια πραγματικά πολύγλωσση (polyglot) εικονική μηχανή.  
 
 Η Java έγινε πλέον ανοικτού κώδικα με το [OpenJDK](https://en.wikipedia.org/wiki/OpenJDK), η πρώτη έκδοση του οποίου κυκλοφόρησε για το Ubuntu και διανέμεται πλέον μ' αυτό.
       
