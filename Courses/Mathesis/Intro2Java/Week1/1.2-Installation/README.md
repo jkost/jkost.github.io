@@ -22,7 +22,6 @@ System Properties
 Καρτέλα "Advanced” ⇒  Environment Variables
 "System Variables", επιλέξτε "PATH" ⇒  Edit
 
-
 ### Επαλήθευση εγκατάστασης
 Αν όλα πήγαν καλά, τότε μπορείτε ν' ανοίξετε μια προτροπή DOS (command prompt) ή ένα κέλυφος (shell) και να δώσετε τις εντολές:
 

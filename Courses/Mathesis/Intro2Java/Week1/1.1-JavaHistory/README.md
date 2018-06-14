@@ -98,13 +98,13 @@ double myvar = 3.14
 
 ![](https://picodotdev.github.io/blog-bitix/assets/images/posts/2014/17/componentes-jpse8.png)
 
-**Εικόνα 6** _Αρχιτεκτονική της Java Standard Edition (Πηγή: https://tinyurl.com/y9y2meap)_
+**Εικόνα 6** _Αρχιτεκτονική της Java Standard Edition (Πηγή: [https://tinyurl.com/y9y2meap](https://tinyurl.com/y9y2meap))_
 
 Εν τω μεταξύ, μετά το JDK 1.3 εμφανίστηκε και η [Java Enterprise Edition (JEE) 1.3](https://en.wikipedia.org/wiki/Java_Platform%2C_Enterprise_Edition) η οποία στοχεύει στην ανάπτυξη επιχειρηματικών εφαρμογών (κοινώς το Web). Περιλαμβάνει τεχνολογίες όπως [Enterprise JavaBeans (EJBs)](https://en.wikipedia.org/wiki/Enterprise_JavaBeans), servlets, Java Server Pages, Java Server Faces κ.ά. Σήμερα βρίσκεται στην έκδοση 8, με πολλές δυνατότητες και ευκολία χρήσης σε σχέση με τις προηγούμενες εκδόσεις. Παράλληλα, έχουν αναπτυχθεί πολλά frameworks για ανάπτυξη επιχειρηματικών εφαρμογών (ή εφαρμογών ιστού) βασισμένα στη Java, όπως το [Apache Tapestry](https://en.wikipedia.org/wiki/Apache_Tapestry), το [Apache Struts](https://en.wikipedia.org/wiki/Apache_Struts_2) και το [Spring](https://en.wikipedia.org/wiki/Spring_Framework) για να αναφέρουμε τα πιο γνωστά. 
 
 ![](https://www.programering.com/images/remote/ZnJvbT1pdGV5ZSZ1cmw9Y21idzVpWWlabVloWlROemtqWmxGVExoTm1aNTB5WW1Sek10SW1OaFZUTDNVbVpsVkdaNFUyTHlrVE96OGlONEFETXZRbmJsMUdhakZHZDBGMkxrRjJic0JYZHYwMmJqNVNaNVZHZHA1aU1zUjJMdm9EYzBSSGE.jpg)
 
-**Εικόνα 7** _Αρχιτεκτονική της Java Enterprise Edition (Πηγή: https://tinyurl.com/yc2ozrck)_
+**Εικόνα 7** _Αρχιτεκτονική της Java Enterprise Edition (Πηγή: [https://tinyurl.com/yc2ozrck](https://tinyurl.com/yc2ozrck))_
 
 Βασικά συστατικά μιας εφαρμογής JEE είναι:
 
@@ -116,7 +116,7 @@ double myvar = 3.14
 
 ![](http://www.oracle.com/ocom/groups/public/@otn/documents/digitalasset/148076.jpg)
 
-**Εικόνα 8** _Αρχιτεκτονική της Java Mobile Edition (Πηγή: https://tinyurl.com/ycfgxymh)_
+**Εικόνα 8** _Αρχιτεκτονική της Java Mobile Edition (Πηγή: [https://tinyurl.com/ycfgxymh](https://tinyurl.com/ycfgxymh))_
 
 Η Java έχει προκαλέσει περισσότερο ενθουσιασμό από οποιαδήποτε άλλη εξέλιξη στο Διαδίκτυο από την εποχή του [Mosaic](https://en.wikipedia.org/wiki/Mosaic_(web_browser)). Είναι μια γλώσσα προγραμματισμού για κατανεμημένες εφαρμογές. Έχει γίνει παγκοσμίως γνωστή ωστόσο, επειδή επιτρέπει στους χρήστες να αλληλεπιδρούν με τις ιστοσελίδες. Ένα πολύ βασικό χαρακτηριστικό που αποτέλεσε κι έναν από τους κυριότερους λόγους διάδοσης της γλώσσας είναι ότι είναι ανεξάρτητη πλατφόρμας ('Write Once Run Everywhere'). Αυτό σημαίνει ότι γράφετε κώδικα μια φορά και αυτός τρέχει σε οποιαδήποτε πλατφόρμα που έχει εγκατεστημένο το [Java Virtual Machine](https://en.wikipedia.org/wiki/Java_virtual_machine). 
 
