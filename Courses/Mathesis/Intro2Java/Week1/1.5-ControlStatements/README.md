@@ -146,6 +146,7 @@ switch (grade) {
 2. Γράψτε ένα πρόγραμμα που θα διαβάζει 3 αριθμούς και θα επιστρέφει τον μεγαλύτερο από τους 3
 
 ## Πηγές:
+1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2017), Effective Java, 3rd Edition, Addison-Wesley.
 1. Sierra K. & Bates B. (2005), Head First Java, 2nd Ed. for Java 5.0, O’Reilly.
 

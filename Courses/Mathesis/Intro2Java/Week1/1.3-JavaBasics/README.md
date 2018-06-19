@@ -349,6 +349,7 @@ PI = 4;
 6. Πώς μπορούμε να ελέγξουμε αν ένας αριθμός είναι δύναμη του 2 χρησιμοποιώντας μόνο πράξεις bit;
 
 ## Πηγές:
+1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2017), _Effective Java_, 3rd Edition, Addison-Wesley.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 

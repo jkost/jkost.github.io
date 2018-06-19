@@ -106,6 +106,7 @@ multilineStr ==> "Σε γνωρίζω από την κόψη
 | ```\uΧΧΧΧ``` | Χαρακτήρας unicode (16-bit) όπου κάθε ```Χ``` είναι ένα δεκαεξαδικό ψηφίο
 
 ## Πηγές:
+1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2017), Effective Java, 3rd Edition, Addison-Wesley.
 1. Sierra K. & Bates B. (2005), Head First Java, 2nd Ed. for Java 5.0, O’Reilly.
 
