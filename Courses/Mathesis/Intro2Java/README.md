@@ -12,7 +12,7 @@
 3. [Αριθμοί, μεταβλητές, εκφράσεις](Week1/1.3-JavaBasics/README.md) √
 4. [Συμβολοσειρές](Week1/1.4-Strings/README.md) √
 5. [Εντολές Αποφάσεων](Week1/1.5-ControlStatements/README.md) √
-6. [Εντολές Επανάληψης](Week1/1.6-Loops/README.md) 
+6. [Εντολές Επανάληψης](Week1/1.6-Loops/README.md) √
 7. [Πίνακες](Week1/1.7-Arrays/README.md) 
 8. [Μέθοδοι](Week1/1.8-Methods/README.md) 
 9. [Αποσφαλμάτωση](Week1/1.9-Debugging/README.md) 
