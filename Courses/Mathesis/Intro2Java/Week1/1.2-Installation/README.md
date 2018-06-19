@@ -104,7 +104,7 @@ netbeans_jdkhome="/<path>/jdk-9.0.1.jdk/"
 
 ## JShell
 
-Το κέλυφος Java (JShell) εισήχθηκε στη Java από την έκδοση 9 και μετά. Πιο πάνω είδαμε πώς να το εκκινήσουμε τόσο από τη γραμμή εντολών του Λ.Σ. όσο και από το NetBeans.
+Το κέλυφος Java (JShell) εισήχθηκε στη Java από την έκδοση 9 και μετά. Πιο πάνω είδαμε πώς να το εκκινήσουμε τόσο από τη γραμμή εντολών του Λ.Σ. όσο και από το NetBeans. Στη βιβλιογραφία αναφέρεται ως _Read-Evaluate-Print-Loop_.
 
 Σ' αυτή την ενότητα θα δούμε πώς μπορούμε να το χρησιμοποιήσουμε. 
 
@@ -163,6 +163,7 @@ jshell> /help
 1. [JDK 10 Documentation](https://docs.oracle.com/javase/10/index.html)
 1. [Java Platform, Standard Edition Java Shell User’s Guide](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm#JSHEL-GUID-630F27C8-1195-4989-9F6B-2C51D46F52C8)
 1. [JShell Tutorial](https://jshelltutorial.com/)
+1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. [Apache NetBeans](https://netbeans.apache.org/help/index.html)
 
