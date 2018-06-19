@@ -57,26 +57,26 @@ jshell> myPrint(sentences)
 Οι μεταβλητές είναι ορατές μόνο στο μπλοκ που ορίζονται μέσα σε { } και σε εμφωλιασμένα μπλοκ.
 
 ```
-{								  	  __
-   int x;                              	|
-   {							__		|
-	int y;						  | y	| x
-   }							__	  	|
-   ...  // η y δεν υπάρχει 				|
-}									   -
+{                                     __
+   int x;                               |
+   {                           __       |
+	int y;                       | y    | x
+   }                           __       |
+   ...  // η y δεν υπάρχει              |
+}                                      __
 ```
 ```
 void printTree(int treeWidth) {
-   int i;												__
-   for (i = 1; i < treeWidth; i = i + 2) {				 |
-      int j;										__	 |
-      for (j = 0; j < (treeWidth - i) / 2; j++)		 |	 |
-         System.out.print(' ');						 |	 |
-      for (j = 0; j < i; j++)						 |	 |
-         System.out.print('*');						 |	 |
-      System.out.println();							 |	 |
-   }												__	 |
-}														__
+   int i;                                              __
+   for (i = 1; i < treeWidth; i = i + 2) {               |
+      int j;                                       __    |
+      for (j = 0; j < (treeWidth - i) / 2; j++)	     |   |
+         System.out.print(' ');                      |   |
+      for (j = 0; j < i; j++)                        |   |
+         System.out.print('*');	                     |   |
+      System.out.println();                          |   |
+   }                                                __   |
+}                                                       __
 ```
 
 ## Αναδρομή
