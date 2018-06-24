@@ -29,11 +29,11 @@
 
 ``` 
 $ java –version
-java version "9.0.1"
-Java(TM) SE Runtime Environment (build 9.0.1+11)
-Java HotSpot(TM) 64-Bit Server VM (build 9.0.1+11, mixed mode)
+java version "10.0.1"
+Java(TM) SE Runtime Environment 18.3 (build 10.0.1+10)
+Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.1+10, mixed mode)
 $ jshell
-|  Welcome to JShell -- Version 9.0.1
+|  Welcome to JShell -- Version 10.0.1
 |  For an introduction type: /help intro
 
 jshell> 2+2
@@ -44,7 +44,7 @@ jshell> (Ctrl+D)
 
 Η έκδοσή σας μπορεί να διαφέρει από την παραπάνω. 
 
-Το ```jshell```, όπως θα δούμε, είναι ένα νέο κέλυφος Java που έρχεται μαζί με την έκδοση 9 της Java (ή νεώτερη) και μας επιτρέπει να δοκιμάζουμε εντολές κλπ.
+Το ```jshell```, όπως θα δούμε, είναι ένα νέο κέλυφος Java που έρχεται μαζί με την έκδοση 9 της Java (ή νεώτερη) και μας επιτρέπει να δοκιμάζουμε εντολές κλπ. εύκολα και γρήγορα.
 
 ## Ολοκληρωμένα Περιβάλλοντα Εργασίας (Integrated Development Environments - IDEs)
 Αν και μπορείτε να γράψετε ολόκληρες εφαρμογές Java με τη χρήση ενός απλού επεξεργαστή κειμένου όπως το Notepad ή το vi, τα Ολοκληρωμένα Περιβάλλοντα Εργασίας (ΟΠΕ) σας παρέχουν πολλά καλούδια που σας βοηθούν στην ανάπτυξη των εφαρμογών σας γρηγορότερα, όπως αυτόματη συμπλήρωση κώδικα, online βοήθεια κλπ.
@@ -79,11 +79,11 @@ jshell> (Ctrl+D)
 1. Εγκαταστήστε το ανάλογα με την πλατφόρμα σας. 
 1. Ελέξτε ότι το αρχείο ```<netbeans>/etc/netbeans.conf``` περιέχει γραμμή παρόμοια με την παρακάτω ανάλογα με την έκδοση JDK που εγκαταστήσατε προηγουμένως:
 ```
-netbeans_jdkhome="/<path>/jdk-9.0.1.jdk/Contents/Home/" 
+netbeans_jdkhome="/<path>/jdk-10.0.1.jdk/Contents/Home/" 
 ```
 αν χρησιμοποιείτε Mac ή
 ```
-netbeans_jdkhome="/<path>/jdk-9.0.1.jdk/" 
+netbeans_jdkhome="/<path>/jdk-10.0.1.jdk/" 
 ```
 αν χρησιμοποείτε Windows/Linux/Unix.
 
@@ -93,8 +93,8 @@ netbeans_jdkhome="/<path>/jdk-9.0.1.jdk/"
 1. Επιλέξτε το μενού **Tools --> Open Java Platform Shell**
 ```
 |  System Information:
-|      Java version:    9.0.1+11
-|      Virtual Machine: Java HotSpot(TM) 64-Bit Server VM  9.0.1+11
+|      Java version:    10.0.1+11
+|      Virtual Machine: Java HotSpot(TM) 64-Bit Server VM  10.0.1+11
 |      Classpath:
 |  	/<path>/netbeans/java/modules/ext/nb-mod-jshell-probe.jar
 |  
@@ -119,17 +119,25 @@ $ jshell --startup PRINTING
 ### Εντολές JShell
 ```
 jshell> /help
-/list [<name or id>|-all|-start]     -- list the source you have typed
-/edit <name or id>                   -- edit a source entry referenced by name or id
-/save [-all|-history|-start] <file>  -- save snippet source to a file
-/open <file>                         -- open a file as source input
-/vars [<name or id>|-all|-start]     -- list the declared variables and their values
-/methods [<name or id>|-all|-start]	-- list the declared methods and their signatures
-/imports                             -- list the imported items
-/exit                                -- exit jshell
-/reset                               -- reset jshell
-/history                             -- history of what you have typed
-/help [<command>|<subject>]          -- get information about jshell
+/list [<name or id>|-all|-start]                                         -- list the source you have typed
+/edit <name or id>                                                       -- edit a source entry referenced by name or id
+/save [-all|-history|-start] <file>                                      -- save snippet source to a file
+/open <file>                                                             -- open a file as source input
+/vars [<name or id>|-all|-start]                                         -- list the declared variables and their values
+/types [<name or id>|-all|-start]                                        -- list the type declarations
+/methods [<name or id>|-all|-start]                                      -- list the declared methods and their signatures
+/imports                                                                 -- list the imported items
+/exit                                                                    -- exit jshell
+/env [-class-path <path>] [-module-path <path>] [-add-modules <modules>] -- view or change the evaluation context
+/reset                                                                   -- reset jshell
+/reload [-restore] [-quiet] [-class-path <path>] [-module-path <path>]   -- reset and replay relevant history -- current or previous (-restore)
+/history                                                                 -- history of what you have typed
+/help [<command>|<subject>]                                              -- get information about jshell
+/set editor|start|feedback|mode|prompt|truncation|format                 -- set configuration information
+/? [<command>|<subject>]                                                 -- get information about using the jshell tool
+/!                                                                       -- rerun last snippet -- see /help rerun
+/<id>                                                                    -- rerun snippets by ID or ID range -- see /help rerun
+/-<n>                                                                    -- rerun n-th previous snippet -- see /help rerun	
 ```
 
 ### Χρήσιμα πλήκτρα στο JShell
@@ -150,6 +158,7 @@ jshell> /help
 **Πίνακας 1.2.2** _Τροποποίηση κειμένου_
 
 | Πλήκτρο(-α) | Αποτέλεσμα
+| Tab | Εμφάνιση επιλογών
 | Delete | Διαγραφή του χαρακτήρα μετά τον δρομέα
 | Backspace  |  Διαγραφή του χαρακτήρα πριν δρομέα
 | Ctrl+K | Διαγραφή του κειμένου από το δρομέα μέχρι το τέλος της γραμμής
