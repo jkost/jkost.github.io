@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../../README.md)| [^](../../README.md) |[->](../1.2-Installation/README.md)
+[<-](../../README.md) | [->](../1.2-Installation/README.md)
 
 ---
 
@@ -151,6 +151,6 @@ double myvar = 3.14
 
 ---
 
-[<-](../../README.md)| [^](../../README.md) |[->](../1.2-Installation/README.md)
+[<-](../../README.md) | [->](../1.2-Installation/README.md)
 
 ---
