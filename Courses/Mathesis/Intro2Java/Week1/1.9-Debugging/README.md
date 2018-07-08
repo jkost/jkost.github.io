@@ -45,7 +45,7 @@
 
 Επικολλήστε τον παρακάτω κώδικα, όπως φαίνεται στην εικόνα 4.
 
-```
+```java
 public static void main(String[] args) {
 	System.out.println("3! = " + Main.factorial(3));
 }

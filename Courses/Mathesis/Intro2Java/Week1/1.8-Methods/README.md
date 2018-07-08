@@ -16,11 +16,11 @@
 Στη Java αυτό το πετυχαίνουμε τμηματοποιώντας τον κώδικα σε μεθόδους.
 
 Μια μέθοδος ορίζεται ως εξής:
-```
+```java
 τύπος_επιστροφής όνομα_μεθόδου(παράμετροι);
 ```
 Π.χ.
-```
+```java
 jshell> double perimeter(double r) {  // y = perimeter(r)
            return 2*Math.PI*r;
         }
@@ -34,7 +34,7 @@ jshell> /methods
 ```
 Παραπάνω ορίσαμε μια μέθοδο ```perimeter()``` η οποία λαμβάνει ως όρισμα (παράμετρο) έναν ```double``` και επιστρέφει έναν ```double```. Μια μέθοδος είναι σαν μια συνάρτηση στα μαθηματικά, π.χ. ```y = f(x)```. Δέχεται ένα όρισμα ```x``` και επιστρέφει μια τιμή ```y```.
 
-```
+```java
 jshell> void myPrint(String... lines) {  // varargs
            for (String e : lines) {
 		       System.out.println(e);
@@ -56,7 +56,7 @@ jshell> myPrint(sentences)
 
 Οι μεταβλητές είναι ορατές μόνο στο μπλοκ που ορίζονται μέσα σε { } και σε εμφωλιασμένα μπλοκ.
 
-```
+```java
 {                                     __
    int x;                               |
    {                           __       |
@@ -65,7 +65,7 @@ jshell> myPrint(sentences)
    ...  // η y δεν υπάρχει              |
 }                                      __
 ```
-```
+```java
 void printTree(int treeWidth) {
    int i;                                              __
    for (i = 1; i < treeWidth; i = i + 2) {               |
@@ -82,7 +82,7 @@ void printTree(int treeWidth) {
 ## Αναδρομή
 Μια μέθοδος ονομάζεται αναδρομική όταν καλεί τον εαυτό της.
 
-```
+```java
 // υπολογισμός του n παραγοντικό
 jshell> int factorial(int n) {
 	     if (n <= 2) {

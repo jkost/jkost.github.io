@@ -14,11 +14,11 @@
 **Εικόνα 1.7.1** _Πίνακας_
 
 Το 1ο στοιχείο αποθηκεύεται στη θέση ```0```:
-```
+```java
 Τύπος_δεδομένων όνομα_μεταβλητής[];
 ```
 Π.χ.
-```
+```java
 // Τ[] arrayname = new Τ[n];
 jshell> int SIZE = 10;
 SIZE ==> 10
@@ -27,7 +27,7 @@ bathmoi ==> int[10] { 0, 0, …, 0}
 ```
 
 ### Τρόποι αρχικοποίησης πίνακα
-```
+```java
 jshell> int[] numbers = { 1, 2, 3 }
 numbers ==> int[3] { 1, 2, 3 }
 jshell> int[] numbers2 = new int[3]
@@ -36,7 +36,7 @@ jshell> String[] strings = new String[] { "a", "b", "c" }
 strings ==> String[3] { "a", "b", "c" }
 jshell> strings.length  
 $1==> 3
-```
+```java
 Η εντολή ```length``` επιστρέφει το μέγεθος του πίνακα, όχι πόσα στοιχεία έχουν καταχωρηθεί σ’ αυτόν. Π.χ.
 ```
 jshell> int[] array = new int[3]
@@ -63,13 +63,13 @@ $3==> 3
 
 ## Πολυδιάστατοι πίνακες
 Ο ορισμός
-```
+```java
 // Τ[] arrayname = new Τ[n];
 ```
 ορίζει έναν μονοδιάστατο πίνακα. Η έννοια του μονοδιάστατου πίνακα μπορεί να γενικευθεί και σε πίνακες περισσοτέρων διαστάσεων, π.χ. δισδιάστατων, τρισδιάστατων κ.ο.κ.
 
 Π.χ. ένας δισδιάστατος πίνακας ορίζεται ως εξής:
-```
+```java
 // Τ[][] arrayname = new Τ[m][n];
 jshell> int m = 2, n = 3;
 m ==> 2
@@ -78,7 +78,7 @@ jshell> int[][] matrix = new int[m][n];
 matrix ==> int[2][] {int[3] {0, 0, 0}, int[3] {0, 0, 0}}
 ```
 Τρόποι ορισμού δισδιάστατου πίνακα:
-```
+```java
 jshell> int[][] numbers = { { 1, 2, 3 }, { 4, 5, 6 } }
 numbers ==> int[2][] { int[3] { 1, 2, 3 }, int[3] { 4, 5, 6 }}
 jshell> int[][] numbers2 = new int[2][3];
@@ -102,7 +102,7 @@ $5 ==> 6
 
 ## Η κλάση ```Arrays```
 Η κλάση ```Arrays``` παρέχει χρήσιμες μεθόδους για τους πίνακες.
-```
+```java
 jshell> String[] strings = new String[3];
 strings ==> String[3] { null, null, null }
 jshell> import java.util.Arrays;
@@ -118,7 +118,7 @@ strings ==> { "a", "b", "a" }
 ## Βασικές λειτουργίες πινάκων
 
 ### Προσπέλαση στοιχείων πίνακα
-```
+```java
 jshell> int[] array = new int[10];
 array ==> int[10] { 0, 0, 0, ..., 0 }
 jshell> for (int i = 0; i < array.length; i++) {
@@ -135,7 +135,7 @@ jshell> for (int e : array) {
 
 Ας δούμε πως μπορούμε να προσπελάσουμε τα στοιχεία ενός δισδιάστατου πίνακα:
 
-```
+```java
 jshell> int[][] matrix = new int[5][5]; 
 matrix ==> int[5][] { int[5] { 0, 0, 0, 0, 0 }, int[5] { 0,  ... int[5] { 0, 0, 0, 0, 0 } }
 jshell> for (int i = 0; i < matrix.length; i++) {
@@ -157,7 +157,7 @@ jshell> for (int[] numbers : matrix) {
 ```
 
 ### Εκτύπωση πινάκων
-```
+```java
 jshell> int[] array = {1, 2, 3, 4, 5};
 array ==> int[5] {1, 2, 3, 4, 5}
 jshell> Arrays.toString(array);
@@ -173,7 +173,7 @@ $2 ==> "[[1, 2, 3], [4, 5, 6], [7, 8, 9]]"
 ```
 
 ### Ταξινόμηση πινάκων
-```
+```java
 jshell> int[] array = {2, 9, -1, 4, 13};
 $3 ==> int[5] {2, 9, -1, 4, 13}
 jshell> Arrays.sort(array); // με αριθμητική σειρά
@@ -188,7 +188,7 @@ jshell> Arrays.sort(names, 0, names.length, Collections.reverseOrder()); // λε
 ```
 
 ### Αναζήτηση στοιχείων σε πίνακα
-```
+```java
 jshell> int[] array = {1, 2, 3, 4, 5};
 array ==> int[5] {1, 2, 3, 4, 5}
 jshell> Arrays.binarySearch(array, 4); // εύρεση του 4
@@ -197,7 +197,7 @@ $5 ==> 3  // επιστρέφει τον δείκτη αν βρέθηκε, ή έ
 ```
 
 ### Αντιγραφή πινάκων
-```
+```java
 jshell> int[] newArray = Arrays.copyOf(array, array.length+1); // δημιουργία ενός newArray μήκους array.length+1 με τα στοιχεία του array
 newArray ==> int[6] { 1, 2, 3, 4, 5, 0 }
 jshell> int[] newArray = Arrays.copyOfRange(array, 1, 2); // αντιγραφή μέρους του αρχικού πίνακα
@@ -207,7 +207,7 @@ clonedArray ==> int[5] { 1, 2, 3, 4, 5 }
 ```
 
 ### Διαγραφή στοιχείων πινάκων
-```
+```java
 jshell> int[] array = {1, 2, 3, 4, 5};
 array ==> int[5] {1, 2, 3, 4, 5}
 // Πώς μπορούμε να διαγράψουμε ένα στοιχείο;
@@ -224,7 +224,7 @@ newArray ==> int[4] { 1, 3, 4, 5 }
 ```
 
 ### Ισότητα πινάκων
-```
+```java
 jshell> Arrays.equals(array, newArray); 
 $1 ==> false
 jshell> Arrays.deepEquals(array2d, newArray2d); // για n-διαστάσεις
