@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.2-Installation/README.md) | [^](../../README.md) | [->](../1.4-Strings/README.md)
+[<-](../1.2-Installation/README.md) | [∆](../../README.md) | [->](../1.4-Strings/README.md)
 
 ---
 
@@ -363,6 +363,6 @@ PI = 4;
 
 ---
 
-[<-](../1.2-Installation/README.md) | [^](../../README.md) | [->](../1.4-Strings/README.md)
+[<-](../1.2-Installation/README.md) | [∆](../../README.md) | [->](../1.4-Strings/README.md)
 
 ---

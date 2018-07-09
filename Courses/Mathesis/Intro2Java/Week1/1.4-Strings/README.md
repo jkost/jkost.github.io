@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.3-JavaBasics/README.md) | [^](../../README.md) | [->](../1.5-ControlStatements/README.md)
+[<-](../1.3-JavaBasics/README.md) | [Δ](../../README.md) | [->](../1.5-ControlStatements/README.md)
 
 ---
 
@@ -121,6 +121,6 @@ multilineStr ==> "Σε γνωρίζω από την κόψη
 
 ---
 
-[<-](../1.3-JavaBasics/README.md) | [^](../../README.md) | [->](../1.5-ControlStatements/README.md)
+[<-](../1.3-JavaBasics/README.md) | [Δ](../../README.md) | [->](../1.5-ControlStatements/README.md)
 
 ---

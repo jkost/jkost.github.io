@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.4-Strings/README.md) | [^](../../README.md) | [->](../1.6-Loops/README.md)
+[<-](../1.4-Strings/README.md) | [Δ](../../README.md) | [->](../1.6-Loops/README.md)
 
 ---
 
@@ -160,6 +160,6 @@ switch (grade) {
 
 ---
 
-[<-](../1.4-Strings/README.md) | [^](../../README.md) | [->](../1.6-Loops/README.md)
+[<-](../1.4-Strings/README.md) | [Δ](../../README.md) | [->](../1.6-Loops/README.md)
 
 ---

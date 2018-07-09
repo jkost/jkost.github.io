@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.5-ControlStatements/README.md) | [^](../../README.md) | [->](../1.7-Arrays/README.md)
+[<-](../1.5-ControlStatements/README.md) | [Δ](../../README.md) | [->](../1.7-Arrays/README.md)
 
 ---
 
@@ -123,6 +123,6 @@ if (s.isEmpty()) {
 
 ---
 
-[<-](../1.5-ControlStatements/README.md) | [^](../../README.md) | [->](../1.7-Arrays/README.md)
+[<-](../1.5-ControlStatements/README.md) | [Δ](../../README.md) | [->](../1.7-Arrays/README.md)
 
 ---

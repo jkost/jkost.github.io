@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.7-Arrays/README.md) | [^](../../README.md) | [->](../1.9-Debugging/README.md)
+[<-](../1.7-Arrays/README.md) | [Δ](../../README.md) | [->](../1.9-Debugging/README.md)
 
 ---
 
@@ -123,6 +123,6 @@ $4 ==> 6
 
 ---
 
-[<-](../1.7-Arrays/README.md) | [^](../../README.md) | [->](../1.9-Debugging/README.md)
+[<-](../1.7-Arrays/README.md) | [Δ](../../README.md) | [->](../1.9-Debugging/README.md)
 
 ---

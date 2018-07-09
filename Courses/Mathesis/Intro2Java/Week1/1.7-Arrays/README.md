@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.6-Loops/README.md) | [^](../../README.md) | [->](../1.8-Methods/README.md)
+[<-](../1.6-Loops/README.md) | [Δ](../../README.md) | [->](../1.8-Methods/README.md)
 
 ---
 
@@ -278,6 +278,6 @@ $1 ==> false
 
 ---
 
-[<-](../1.6-Loops/README.md) | [^](../../README.md) | [->](../1.8-Methods/README.md)
+[<-](../1.6-Loops/README.md) | [Δ](../../README.md) | [->](../1.8-Methods/README.md)
 
 ---

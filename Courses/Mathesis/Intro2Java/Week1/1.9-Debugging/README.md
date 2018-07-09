@@ -3,7 +3,7 @@
 
 ---
 
-[^](../../README.md) | [<-](../1.8-Methods/README.md)
+[Δ](../../README.md) | [<-](../1.8-Methods/README.md)
 
 ---
 
@@ -82,6 +82,6 @@ static int factorial(int n) {
 
 ---
 
-[^](../../README.md) | [<-](../1.8-Methods/README.md)
+[Δ](../../README.md) | [<-](../1.8-Methods/README.md)
 
 ---
