@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.1-JavaHistory/README.md)| [->](../1.3-JavaBasics/README.md)
+[<-](../1.1-JavaHistory/README.md) | [^](../../README.md) | [->](../1.3-JavaBasics/README.md)
 
 ---
 
@@ -184,6 +184,6 @@ jshell> /help
 
 ---
 
-[<-](../1.1-JavaHistory/README.md)| [->](../1.3-JavaBasics/README.md)
+[<-](../1.1-JavaHistory/README.md) | [^](../../README.md) | [->](../1.3-JavaBasics/README.md)
 
 ---

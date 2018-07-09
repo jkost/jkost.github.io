@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.8-Methods/README.md)
+[^](../../README.md) | [<-](../1.8-Methods/README.md)
 
 ---
 
@@ -80,9 +80,8 @@ static int factorial(int n) {
 1. Spinellis D. (2017), _Effective Debugging_, Addison-Wesley.
 1. [Using the Visual Debugger in NetBeans IDE](https://netbeans.org/kb/docs/java/debug-visual.html)
 
-
 ---
 
-[<-](../1.8-Methods/README.md)
+[^](../../README.md) | [<-](../1.8-Methods/README.md)
 
 ---
