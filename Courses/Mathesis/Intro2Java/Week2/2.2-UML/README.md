@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../2.1-OOP/README.md) | [->](../2.3-Encapsulation/README.md)
+[<-](../2.1-OOP/README.md) | [Δ](../../README.md) | [->](../2.3-Encapsulation/README.md)
 
 ---
 
@@ -175,6 +175,6 @@ Online:
 
 ---
 
-[<-](../2.1-OOP/README.md) | [->](../2.3-Encapsulation/README.md)
+[<-](../2.1-OOP/README.md) | [Δ](../../README.md) | [->](../2.3-Encapsulation/README.md)
 
 ---

@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../2.3-Inheritance/README.md) | [Δ](../../README.md) | [->](../2.5-AutoboxingADME.md)
+[<-](../2.4-Inheritance/README.md) | [Δ](../../README.md) | [->](../2.5-Boxing.md)
 
 ---
 
@@ -232,6 +232,6 @@ Draws a circle...
 
 ---
 
-[<-](../2.3-Inheritance/README.md) | [Δ](../../README.md) | [->](../2.5-AutoboxingADME.md)
+[<-](../2.4-Inheritance/README.md) | [Δ](../../README.md) | [->](../2.5-Boxing.md)
 
 ---

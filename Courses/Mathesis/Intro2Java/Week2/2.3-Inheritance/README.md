@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../2.2-Encapsulation/README.md) | [Δ](../../README.md) | [->](../2.4-Polymorphism/README.md)
+[<-](../2.2-Encapsulation/README.md) | [Δ](../../README.md) | [->](../2.4-Inheritance/README.md)
 
 ---
 
@@ -240,6 +240,6 @@ public class Job implements Runnable {
 
 ---
 
-[<-](../2.1-OOP/README.md) | [Δ](../../README.md) | [->](../2.3-Inheritance/README.md)
+[<-](../2.2-Encapsulation/README.md) | [Δ](../../README.md) | [->](../2.4-Inheritance/README.md)
 
 ---
