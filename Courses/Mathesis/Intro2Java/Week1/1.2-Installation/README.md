@@ -99,8 +99,8 @@ netbeans_jdkhome="/<path>/jdk-10.0.1.jdk/"
 1. Επιλέξτε το μενού **Tools --> Open Java Platform Shell**
 ```
 |  System Information:
-|      Java version:    10.0.1+11
-|      Virtual Machine: Java HotSpot(TM) 64-Bit Server VM  10.0.1+11
+|      Java version:    10.0.1+10
+|      Virtual Machine: Java HotSpot(TM) 64-Bit Server VM  10.0.1+10
 |      Classpath:
 |  	/<path>/netbeans/java/modules/ext/nb-mod-jshell-probe.jar
 |  

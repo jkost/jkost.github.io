@@ -25,6 +25,7 @@
 5. [Πολυμορφισμός](Week2/2.5-Polymorphism/README.md) √
 6. [Boxing](Week2/2.6-Autoboxing/README.md) 
 7. [Τεκμηρίωση κώδικα](Week2/2.7-Javadoc/README.md)
+8. [Καλές τεχνικές προγραμματισμού](Week2/2.8-BestPractices/README.md)
 
 ### Εβδομάδα 3η - Συλλογές και Γενικοί Τύποι (Generics)
 1. [Δομές Δεδομένων](Week3/3.1-DataStructures/README.md) √
