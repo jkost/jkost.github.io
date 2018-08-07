@@ -425,6 +425,7 @@ private static long fibonacci(int n) {
    long fn_1 = fibonacci((n+1)/2);
    fib = fn*fn + fn_1*fn_1;
   }
+  return fib;
 }
 ```
 Το αποτέλεσμα εντυπωσιακό:
