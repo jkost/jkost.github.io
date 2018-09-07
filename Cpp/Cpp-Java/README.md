@@ -1,4 +1,4 @@
-# C++ για προγραμματιστές Java {#Java, #C++} 
+# C++ για προγραμματιστές Java {#Java}{#C++} 
 © Γιάννης Κωστάρας
 
 ---
@@ -254,7 +254,7 @@ class Person {
 };
 ```
 
-##7. What is the purpose of the ```explicit``` keyword? 
+## 7. What is the purpose of the ```explicit``` keyword? 
 By default, a single argument constructor will act as an implicit conversion operation, applied automatically. The constructor’s argument is converted to an object of the class in which the constructor is defined. The conversion is automatic and you need not use a cast operator. In some situations, implicit conversions are undesirable or error-prone. E.g.
  
 ```cpp
@@ -371,7 +371,7 @@ unsigned long mem_address;
 Square* s = reinterpret_cast<Square*>(mem_address);
 ```
 
-##10. ```enum```s between C++ and Java? 
+## 10. ```enum```s between C++ and Java? 
 Since Java 5, ```enum```s where introduced in the language.
 
 ```java 
@@ -418,7 +418,7 @@ By default, a scoped enum’s underlying integral type is ```int```. C++11 allow
 enum class Status : unsigned int { CONTINUE, WON, LOST };
 ```
 
-##11.	Constants in C++ 
+## 11.	Constants in C++ 
 In modern C++ you can declare a constant with the ```const``` keyword, which is similar to Java's ```final``` keyword: 
 ```cpp
 const type-name constant-name = value;
@@ -433,7 +433,7 @@ which allows for optimization possibilities from the compiler’s and applicatio
 
 Finally, enumerations defined with the ```enum``` keyword (see previous question) are also constants. 
 
-##12. How does C++ deal with random numbers? 
+## 12. How does C++ deal with random numbers? 
 Before C++11, the way to generate random numbers was: 
 ```cpp
 #include <cstdlib> // contains function prototype for rand and srand
@@ -494,7 +494,7 @@ int numbers [5] = {34, 56, -21, 5002, 365};
 
 When you access elements of an array, the C++ compiler does not check if the index is within the actual defined bounds of the array or not. The onus of ensuring that the array is not accessed beyond its bounds lies solely on the programmer. Java, on the other hand, throws an ```IndexOutOfBoundsException``` in that case. 
 
-##14. What is the auto keyword in C++? 
+## 14. What is the auto keyword in C++? 
 C++ provides automatic variable type deduction feature via keyword ```auto```, e.g.: 
 ```cpp
 auto bFlag = true;
@@ -538,7 +538,7 @@ double getArea(double radius, AreaData data) {
 }
 ```
 
-##16. What are pointers in C++? 
+## 16. What are pointers in C++? 
 A pointer is a variable one that stores an address in memory. The memory address that a pointer is pointing to can be interpreted only if we know its type. A pointer is declared as: 
 ```cpp
 Type* PointerVariableName;
@@ -590,7 +590,7 @@ const int* pInt = &intValue;
 const int* const pInt = &intValue;
 ```
 
-##17. What is the ```inline``` keyword in C++? 
+## 17. What is the ```inline``` keyword in C++? 
 A regular function call is translated into a ```CALL``` instruction, which results in stack operations and microprocessor execution shift to the function and so on. The overhead of performing an actual function call on this might be quite high for the amount of time spent actually executing a simple function like the following: 
 ```cpp
 double Area(double radius) {
@@ -601,7 +601,7 @@ C++ compilers enable the programmer to declare such functions as ```inline```. C
 
 Java doesn't have the inline keyword but the Java compiler is clever enough to inline small methods for performance.
 
-##18. How does C++ support lambdas? 
+## 18. How does C++ support lambdas? 
 Lambda functions were introduced in C++11 and help in the usage of STL algorithms to sort or process data. The syntax of a lambda function is the following: 
 ```cpp
 [optional parameters](parameter list){ statements; } 
@@ -629,7 +629,7 @@ String::toUpperCase		// Method Reference
 x -> 2 * x
 c -> { int n = c.size(); c.clear(); return n ; }
 ```
-##19.C++/Java and threads 
+## 19.C++/Java and threads 
 C++11 contains a full standard library dedicated to threads, ```<thread>```. 
 ```cpp
 #include <iostream>
@@ -706,13 +706,13 @@ Thread t = new Thread(() -> System.out.println("Hello Concurrent World"));
 t.start();
 ```
 
-## Generics vs Templates
+## 20. Generics vs Templates
 
 Οι _γενικευμένοι τύποι (generics)_ της Java μοιάζουν με τα _πρότυπα (templates)_ της C++. Αν και η σύνταξη είναι η ίδια, η σημασιολογία είναι διαφορετική. Υπάρχει μόνο μια μικρή διαφορά στη σύνταξη ότι ενώ στη Java η σύνταξη ```List<List<String>>``` είναι έγκυρη, στη C++ μπορεί να γραφτεί μόνο ως ```List<List<string> >``` καθώς ο μεταγλωττιστής μπερδεύεται με τον τελεστή ```>>```.
 
 Σημασιολογικά όμως, οι γενικευμένοι τύποι στη Java ορίζονται ώστε να 'διαγραφεί' ο τύπος τους κατά την εκτέλεση (by erasure). Στη C++ τα templates ορίζονται με στόχο την _επέκταση (by expansion)_. Κάθε στιγμιότυπο ενός νέου πρότυπου τύπου μεταγλωττίζεται ως ένας διαφορετικός τύπος δεδομένων. Π.χ. αν έχουμε ορίσει στο πρόγραμμά μας μια λίστα ακεραίων, μια λίστα πραγματικών και μια λίστα συμβολοσειρών, θα έχετε τρεις τύπους δεδομένων κατά τη μεταγλώττιση. Αυτό από τη μία έχει το μειονέκτημα ότι μπορούν να δημιουργηθούν πάρα πολλά αντικείμενα κατά την εκτέλεση του προγράμματός σας (code bloat) από την άλλη παρέχει τη δυνατότητα για βελτιστοποιημένη εκτέλεση του κώδικα. Επίσης, στη C++ επιτρέπεται να αρχικοποιήσετε ένα template με μια σταθερά (αντί για κάποιο τύπο δεδομένων) οπότε μπορείτε να δημιουργήσετε μακροεντολές π.χ. για κάποιους πολύπλοκους υπολογισμούς που εκτελούνται κατά τη φάση της μεταγλώττισης. Κάτι τέτοιο δεν επιτρέπεται στη Java.
 
-## ```printf()```
+## 21. ```printf()```
 Και η Java από την έκδοση 5 και μετά διαθέτει μέθοδο ```printf()``` η οποία δουλεύει παρόμοια μ' αυτή της C/C++ με τη διαφορά ότι αντί για ```\n``` η Java χρησιμοποιεί ```%n``` όπου τυπώνει το σωστό χαρακτήρα αλλαγής γραμμής για όλες τις πλατφόρμες.
  
 
