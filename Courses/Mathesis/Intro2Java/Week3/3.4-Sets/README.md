@@ -190,13 +190,16 @@ $1 ==> true
 jshell> Set<Integer> set = new LinkedHashSet<>();
 set ==> []
 ```
-Οι πράξεις στα συνδεδεμένα σύνολα είναι ίδιες με αυτές τα σύνολα κατακερματισμού (```HashSet```).
+Οι πράξεις στα συνδεδεμένα σύνολα είναι ίδιες με αυτές των συνόλων κατακερματισμού (```HashSet```).
 
 ## ```EnumSet```
 Χρησιμοποιείται όταν ο αριθμός των στοιχείων είναι γνωστός εξ' αρχής και δεν αλλάζει.
 
 ```java
-Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);
+jshell> enum Faces {JACK, QUEEN, KING};
+|  created enum Faces
+jshell> Set<Faces> faceCards = EnumSet.of(Faces.JACK, Faces.QUEEN, Faces.KING);
+faceCards ==> [JACK, QUEEN, KING]
 ```
 
 ## Σύγκριση ```HashSet``` και ```LinkedHashSet```

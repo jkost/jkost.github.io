@@ -1,9 +1,9 @@
-# 3.4 Πίνακες Κατακερματισμού (Maps) {#Java} 
+# 3.6 Πίνακες Κατακερματισμού (Maps) {#Java} 
 © Γιάννης Κωστάρας
 
 ---
 
-[<-](../3.3-Generics/README.md) | [Δ](../../README.md) |  [->](../3.5-Queues/README.md) 
+[<-](../3.5-Queues/README.md) | [Δ](../../README.md) 
  
 ---
 
@@ -230,6 +230,6 @@ _Πηγή: [Naftalin, Wadler (2006)]_
 
 ---
 
-[<-](../3.3-Generics/README.md) | [Δ](../../README.md) |  [->](../3.5-Queues/README.md) 
+[<-](../3.5-Queues/README.md) | [Δ](../../README.md) 
 
 ---

@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../3.1-DataStructures/README.md) | [Δ](../../README.md) |  [->](../3.3-Sets/README.md) 
+[<-](../3.1-DataStructures/README.md) | [Δ](../../README.md) |  [->](../3.3-Generics/README.md) 
  
 ---
 
@@ -429,6 +429,6 @@ list ==> [10, 20, 5, 30]
 
 ---
 
-[<-](../3.1-DataStructures/README.md) | [Δ](../../README.md) | [->](../3.3-Sets/README.md)
+[<-](../3.1-DataStructures/README.md) | [Δ](../../README.md) | [->](../3.3-Generics/README.md)
 
 ---

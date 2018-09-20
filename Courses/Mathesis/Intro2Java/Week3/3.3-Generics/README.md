@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../3.2-Lists/README.md) | [Δ](../../README.md) |  [->](../3.4-Lists2/README.md) 
+[<-](../3.2-Lists/README.md) | [Δ](../../README.md) |  [->](../3.4-Sets/README.md) 
  
 ---
 
@@ -245,17 +245,39 @@ List<?> list = new ArrayList<>(); // ok
 
 ```java
 public class Stack<E> {
-
-	public <E> boolean add(E e) {
-	
-	}
-
+	private final Deque<E> stack;
+ 	private final int size;
+ 	
+	public Stack(int numElements) {
+ 	 this.size = numElements;
+ 	 stack = new ArrayDeque<E>(this.size);
+ 	}
+ 	
+	public boolean push(E e) {
+ 	 return !isFull() && stack.offerFirst(e);
+ 	}
+ 	
+	public E pop() {
+ 	  return stack.poll();
+ 	}
+ 	
+	public E peek() {
+ 	  return stack.peek();
+ 	}
+ 	
+	public boolean isEmpty() {
+ 	 return stack.isEmpty();
+ 	}
+ 	
+	public boolean isFull() {
+ 		return stack.size() == size;
+ 	}
 }
-
 ```
+_Θα μιλήσουμε για τις ουρές σε επόμενο μάθημα_.
 
 ## Σύγκριση Λίστας με Πίνακα
-Οι πίνακες (arrays) είναι _συμμεταβαλόμενοι (covariant)_ που σημαίνει ότι αν η κλάση ```Cat extends Animal``` τότε η κλάση ```Cat[] extends Animal[]```. Αντιθέτως οι γενικευμένοι τύποι (generics) είναι _αμεταβαλόμενοι (invariant)_ δηλ. η ```List<Cat>``` δε κληρονομεί από τη ```List<Animal>```.
+Οι πίνακες (arrays) είναι _συμμεταβαλλόμενοι (covariant)_ που σημαίνει ότι αν η κλάση ```Cat extends Animal``` τότε η κλάση ```Cat[] extends Animal[]```. Αντιθέτως οι γενικευμένοι τύποι (generics) είναι _αμεταβαλόμενοι (invariant)_ δηλ. η ```List<Cat>``` δε κληρονομεί από τη ```List<Animal>```.
 	
 Έτσι π.χ.
 ```java
@@ -345,6 +367,6 @@ public interface Collection<E> {
 
 ---
 
-[<-](../3.1-DataStructures/README.md) | [Δ](../../README.md) | [->](../3.3-Sets/README.md)
+[<-](../3.2-Lists/README.md) | [Δ](../../README.md) | [->](../3.4-Sets/README.md)
 
 ---

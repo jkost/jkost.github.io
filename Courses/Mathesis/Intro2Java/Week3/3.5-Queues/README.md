@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../3.3-Generics/README.md) | [Δ](../../README.md) |  [->](../3.5-Queues/README.md) 
+[<-](../3.4-Sets/README.md) | [Δ](../../README.md) |  [->](../3.6-Maps/README.md) 
  
 ---
 
@@ -230,6 +230,6 @@ _Πηγή: [Naftalin, Wadler (2006)]_
 
 ---
 
-[<-](../3.3-Generics/README.md) | [Δ](../../README.md) |  [->](../3.5-Queues/README.md) 
+[<-](../3.4-Sets/README.md) | [Δ](../../README.md) |  [->](../3.6-Maps/README.md) 
 
 ---
