@@ -13,6 +13,8 @@
 
 **Εικόνα 1** _Σύνολα στη Java_
 
+Το _Συσχετισμένο Σύνολο (HashSet)_ είναι η πιο συνηθισμένη υλοποίηση ενός συνόλου. Όπως συνάγεται και από το όνομά του, υλοποιείται ως ένα πίνακας κατακερματισμού (HashMap).
+
 ```java
 jshell> Set<Integer> set = new HashSet<>();
 set ==> []
@@ -107,6 +109,65 @@ jshell> for (int n : set)
 	...>    sum += n;
 ```
 
+Όπως είδαμε παραπάνω, η δομή δεδομένων _Σύνολο_ δεν είναι ταξινομημένη και δεν μπορεί να ταξινομηθεί. Υπάρχει όμως η ```TreeSet``` (η οποία κληρονομεί από την ```SortedSet```) και  ταξινομεί τα στοιχεία της:
+
+```java
+jshell> TreeSet<Integer> sortedSet = new TreeSet<>(set);
+sortedSet ==> [10, 20, 30, 40]
+
+jshell> sortedSet.first();
+$1 ==> 10
+
+jshell> sortedSet.last();
+$2 ==> 40
+
+jshell> sortedSet.subSet(20,40);	// 20 &lt;= στοιχεία &lt; 40 
+$3 ==> [20, 30]
+
+jshell> sortedSet.subSet(20, true, 40, true);  // inclusive = true
+$4 ==> [20, 30, 40]
+
+jshell> sortedSet.headSet(20);	   	// στοιχεία &lt; 20
+$5 ==> [10]
+
+jshell> sortedSet.headSet(20, true);	// inclusive = true
+$6 ==> [10, 20]
+
+jshell> sortedSet.tailSet(20);			// στοιχεία &gt;= 20
+$7 ==> [20, 30, 40]
+
+jshell> sortedSet.tailSet(20, false);	// inclusive = false
+$8 ==> [30, 40]
+
+jshell> sortedSet.tailSet(25);		// στοιχεία &gt;= 25
+$9 ==> [30, 40]
+
+jshell> sortedSet.tailSet(25, true);	// inclusive = true
+$10 ==> [30, 40]
+
+jshell> sortedSet.ceiling(25);		// το μικρότερο στοιχείο &gt;= 25
+$11 ==> 30
+
+jshell> sortedSet.floor(25);		// το μεγαλύτερο στοιχείο &lt;= 25
+$12 ==> 20
+
+jshell> sortedSet.higher(20);		// το μικρότερο στοιχείο &gt; 20
+$13 ==> 30
+
+jshell> sortedSet.lower(20);		// το μεγαλύτερο στοιχείο &lt; 20
+$14 ==> 10
+
+jshell> sortedSet.descendingSet()
+$15 ==> [40, 30, 20, 10]
+
+jshell> Iterator<Integer> i = sortedSet.descendingIterator()
+i ==> java.util.TreeMap$NavigableSubMap$DescendingSubMapKeyIterator@544fe44c
+
+jshell> while (i.hasNext()) 
+   ...> System.out.print(i.next() + " ");
+40 30 20 10 
+```
+
 ### Εισαγωγή στοιχείων
 Όπως είδαμε, η εισαγωγή δεδομένων σ' ένα σύνολο γίνεται με την μέθοδο ```add()```. Η μέθοδος επιστρέφει ```true``` αν η εισαγωγή του στοιχείου ήταν επιτυχής, αλλοιώς επιστρέφει ```false```. 
 
@@ -142,6 +203,8 @@ set ==> [20, 40]
 
 Η ```retainAll(Collection<?> c)``` κρατάει από το σύνολό μας μόνο τα στοιχεία που περιέχονται στη ```c``` και διαγράφει όλα τα υπόλοιπα. 
 
+Η ```NavigableSet``` διαθέτει δυο ακόμα μεθόδους που διαγράφουν το πρώτο και το τελευταίο στοιχείο του ταξινομημένου συνόλου: ```pollFirst()``` και ```pollLast()```.
+
 ### Αναζήτηση στοιχείων
 Δυστυχώς η κλάση ```Collections``` δε διαθέτει κάποια μέθοδο για να αναζητήσει κάποιο στοιχείο σε ένα σύνολο (οι μέθοδοι ```binarySearch()``` δέχονται ως όρισμα λίστα).
 
@@ -157,7 +220,7 @@ $9 ==> true
 Όπως είπαμε, η δομή δεδομένων Σύνολο δεν είναι ταξινομημένη και δεν μπορεί να ταξινομηθεί. Υπάρχει όμως η ```TreeSet``` (η οποία κληρονομεί από την ```SortedSet```) και  ταξινομεί τα στοιχεία της:
 
 ```java
-jshell> Set sortedSet = new TreeSet<Integer>(set)
+jshell> TreeSet<Integer> sortedSet = new TreeSet<>(set);
 sortedSet ==> [10, 20, 30, 40]	
 ```
 
@@ -182,37 +245,42 @@ jshell> dest.equals(src);
 $1 ==> true
 ```
 
-## Συνδεδεμένα Σύνολα (```LinkedHashSet```)
-
-Αντίστοιχα με τη συνδεδεμένη λίστα (```LinkedList```), στο συνδεδεμένο σύνολο (```LinkedHashSet```) οι κόμβοι του συνήθως βρίσκονται σε απομακρυσμένες θέσεις μνήμης και η σύνδεσή τους γίνεται με _δείκτες_. Έτσι διευκολύνονται οι λειτουργίες της εισαγωγής και της διαγραφής δεδομένων. 
+## Συνδεδεμένα Συσχετισμένα Σύνολα (```LinkedHashSet```)
+Το Συνδεδομένο Συσχετισμένο Σύνολο (```LinkedHashSet```) κληρονομεί από την κλάση ```HashSet``` αλλά επιπλέον διατηρεί και μια συνδεδεμένη λίστα (```LinkedList```) με τα στοιχεία του που βελτιώνει την απόδοσή του σε σχέση με το HashSet αν θέλετε να προσπελάσετε όλα τα στοιχεία του. Με αυτόν τον τρόπο οι επαναλήπτες της (iterators) επιστρέφουν τα στοιχεία της με τη σειρά που εισήχθηκαν (θυμηθείτε ότι στην κλάση ```HashSet``` δεν υπάρχει κάποια σειρά στα στοιχεία).
 
 ```java
-jshell> Set<Integer> set = new LinkedHashSet<>();
-set ==> []
+jshell> Set<Character> characterSet = new LinkedHashSet<>();
+characterSet ==> []
+jshell> Collections.addAll(characterSet, 'z', 'y', 'x');
+$2 ==> true
+jshell> characterSet.toString().equals("[z, y, x]");
+$3 ==> true
 ```
-Οι πράξεις στα συνδεδεμένα σύνολα είναι ίδιες με αυτές των συνόλων κατακερματισμού (```HashSet```).
+Οι πράξεις στα συνδεδεμένα συσχετισμένα σύνολα είναι ίδιες με αυτές των συσχετισμένων συνόλων (```HashSet```s).
 
 ## ```EnumSet```
-Χρησιμοποιείται όταν ο αριθμός των στοιχείων είναι γνωστός εξ' αρχής και δεν αλλάζει.
+Χρησιμοποιείται όταν ο αριθμός των στοιχείων είναι γνωστός εξ' αρχής και δεν αλλάζει και μπορούμε να αναθέσουμε ένα ευρετήριο (index) σ' αυτά. Ως αποτέλεσμα, είναι πολύ πιο αποδοτικό από τις υπόλοιπες υλοποιήσεις. 
 
 ```java
 jshell> enum Faces {JACK, QUEEN, KING};
 |  created enum Faces
 jshell> Set<Faces> faceCards = EnumSet.of(Faces.JACK, Faces.QUEEN, Faces.KING);
 faceCards ==> [JACK, QUEEN, KING]
+jshell> Set<Faces> faceCards = EnumSet.allOf(Faces.class);
+faceCards ==> [JACK, QUEEN, KING]
 ```
+Επιστρέφει τα στοιχεία του με τη σειρά που ορίζονται στο ```enum```.
 
-## Σύγκριση ```HashSet``` και ```LinkedHashSet```
-
-Σύγκριση απόδοσης ```HashSet``` και ```LinkedHashSet``` 
+## Σύγκριση των διαφόρων υλοποιήσεων της ```Set```
 
 | | ```add``` |  ```contains``` | ```next``` | 
-| ```HashSet```  | O(1) | O(n) | O(k/n) |  
+| ```HashSet```  | O(1) | O(n) | O(k*/n) |  
 | ```LinkedHashSet``` | O(1) | O(1) | O(1) | 
-| ```EnumSet``` | O(1) | O(n) | O(1) | 
+| ```EnumSet``` | O(1) | O(n) | O(1)** | 
 | ```TreeSet``` | O(logn) | O(logn) | O(logn) | 
 
 *k είναι η χωρητικότητα του συνόλου
+** για ```EnumSet```s μέχρι 64 στοιχείων, μετά γίνεται O(logn)
 
 _Πηγή: [Naftalin, Wadler (2006)]_
 
