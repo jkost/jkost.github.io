@@ -1,4 +1,4 @@
-# 3.7 Άλλες Συλλογές {#Java} 
+# 3.7 Άλλες Δομές Δεδομένων {#Java} 
 © Γιάννης Κωστάρας
 
 ---
@@ -23,7 +23,7 @@
 Ονομάζονταν GS Collections και πρόσφατα έγιναν δωρεάν στο ίδρυμα Eclipse. Παρέχει πολλές χρήσιμες συλλογές που συμπληρώνουν αυτές της Java.
 
 ## Google Guava
-Η βιβλιοθήκη Guava περιλαμβάνει από [συλλογές](https://github.com/google/guava/wiki/CollectionUtilitiesExplained) που συμπληρώνουν αυτές της Java.
+Η βιβλιοθήκη Guava περιλαμβάνει [συλλογές](https://github.com/google/guava/wiki/CollectionUtilitiesExplained) που συμπληρώνουν αυτές της Java.
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
