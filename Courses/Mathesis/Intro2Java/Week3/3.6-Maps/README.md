@@ -217,7 +217,7 @@ jshell> map.equals(roMap)
 $12 ==> true
 ```
 
-## (```LinkedHashMap```)
+## Συνδεδεμένοι Συσχετισμένοι Πίνακες (```LinkedHashMap```)
 Όπως και η ```LinkedHashSet```, διατηρεί τη σειρά εισαγωγής των στοιχείων. Πηγαίνει όμως και πιο πέρα:
 
 * ```LinkedHashMap(int initialCapacity, float loadFactor, boolean accessOrder)```	// αν η ```accessOrder == true``` τότε τα στοιχεία επιστρέφονται ανάλογα με το πόσο πρόσφατα προσπελάστηκαν, διαφορετικά επιστρέφονται με τη σειρά εισαγωγής στον πίνακα κατακερματισμού 
@@ -266,18 +266,18 @@ System.out.println("Next high priority task: " + highPriorityTaskList.peek());
 ```
 
 ## Σύγκριση των διαφόρων υλοποιήσεων της ```Map```
-| | ```get``` |  ```containsKey``` | ```next``` | 
-| ```HashMap```  | O(1) | O(1) | O(h/n) | 
-| ```LinkedHashMap``` | O(1) | O(1) | O(1) | 
-| ```IdentityHashMap``` | O(1) | O(1) | O(h/n) |  
-| ```EnumMap``` | O(1) | O(1) | O(1) | 
-| ```TreeMap``` | O(logn) | O(logn) | O(logn) |  
+| |  ```get``` |  ```containsKey``` | ```next``` 
+| ```HashMap```  | O(1) | O(1) | O(h/n) 
+| ```LinkedHashMap``` | O(1) | O(1) | O(1)  
+| ```IdentityHashMap``` | O(1) | O(1) | O(h/n)   
+| ```EnumMap``` | O(1) | O(1) | O(1) 
+| ```TreeMap``` | O(logn) | O(logn) | O(logn)   
 
 _Πηγή: [Naftalin, Wadler (2006)]_
 
 ** h είναι η χωρητικότητα του πίνακα
 
-##```hashCode()```
+## Η μέθοδος ```hashCode()```
 Στο 1ο μάθημα της προηγούμενης εβδομάδας μάθαμε ότι κάθε κλάση που ενδέχεται να εισαχθεί σε μια συλλογή ή σ' έναν πίνακα κατακερματισμού θα πρέπει να υπερσκελίσει (override) τις μεθόδους ```equals()``` και ```hashCode()``` της κλάσης ```Object```. Γιατί άραγε; Ας δούμε το παρακάτω παράδειγμα:
 
 ```java
