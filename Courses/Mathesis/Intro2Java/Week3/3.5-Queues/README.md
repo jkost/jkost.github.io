@@ -236,13 +236,13 @@ jshell> deque.removeLast()
 Αν η σειρά με την οποία θέλουμε να προσπελάσουμε τα στοιχεία είναι σημαντική, τότε μπορούμε να χρησιμοποιήσουμε μια ουρά προτεραιότητας ή ```PriorityQueue```. Η σειρά (ταξινόμηση) των στοιχείων βασίζεται είτε στη φυσική σειρά των στοιχείων (αν υλοποιούν τη διεπαφή ```Comparable```), είτε τη σειρά που ορίζει ένας ```Comparator``` που παρέχεται στη μέθοδο κατασκευής της ```PriorityQueue```.
 
 ```java
-PriorityQueue() 										// φυσική ταξινόμηση, αρχική χωρητικότητα (11)
-PriorityQueue(Collection<? extends E> c)				// φυσική ταξινόμηση, εκτός κι αν c είναι τύπου PriorityQueue ή 
-														// SortedSet οπότε κληρονομεί τη σειρά ταξινόμησης της
-PriorityQueue(int initialCapacity)						// φυσική ταξινόμηση
+PriorityQueue() 				// φυσική ταξινόμηση, αρχική χωρητικότητα (11)
+PriorityQueue(Collection<? extends E> c) 				// φυσική ταξινόμηση, εκτός κι αν c είναι τύπου PriorityQueue ή 
+				// SortedSet οπότε κληρονομεί τη σειρά ταξινόμησης της
+PriorityQueue(int initialCapacity)				// φυσική ταξινόμηση
 PriorityQueue(int initialCapacity, Comparator<? super E> comparator)	// η ταξινόμηση ορίζεται από τον Comparator
-PriorityQueue(PriorityQueue<? extends E> c)				// ταξινόμηση αυτή της c
-PriorityQueue(SortedSet<? extends E> c)  				// ταξινόμηση αυτή της c
+PriorityQueue(PriorityQueue<? extends E> c)					// ταξινόμηση αυτή της c
+PriorityQueue(SortedSet<? extends E> c)  					// ταξινόμηση αυτή της c
 ```
 
 Έστω π.χ. ότι έχουμε μια κλάση ```Task```:
@@ -325,6 +325,13 @@ $1 ==> false
 _Πηγή: [Naftalin, Wadler (2006)]_
 
 Όπως είπαμε, καλύτερη απόδοση έχει η ```ArrayDeque```.
+
+## Ασκήσεις
+1. Στο μάθημα 3.2 είδαμε ότι υπάρχει η κληρονομημένη κλάση ```Stack```. Υλοποιήστε τη δική σας πιο αποδοτική κλάση ```Stack``` χρησιμοποιώντας μια υλοποίηση της ```Deque```.
+
+![](assets/Fig4.png)
+
+**Εικόνα 4** _Παράδειγμα στοίβας_
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)

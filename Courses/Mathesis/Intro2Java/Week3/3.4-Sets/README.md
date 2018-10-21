@@ -109,65 +109,6 @@ jshell> for (int n : set)
 	...>    sum += n;
 ```
 
-Όπως είδαμε παραπάνω, η δομή δεδομένων _Σύνολο_ δεν είναι ταξινομημένη και δεν μπορεί να ταξινομηθεί. Υπάρχει όμως η ```TreeSet``` (η οποία κληρονομεί από την ```SortedSet```) και  ταξινομεί τα στοιχεία της:
-
-```java
-jshell> TreeSet<Integer> sortedSet = new TreeSet<>(set);
-sortedSet ==> [10, 20, 30, 40]
-
-jshell> sortedSet.first();
-$1 ==> 10
-
-jshell> sortedSet.last();
-$2 ==> 40
-
-jshell> sortedSet.subSet(20,40);	// 20 &lt;= στοιχεία &lt; 40 
-$3 ==> [20, 30]
-
-jshell> sortedSet.subSet(20, true, 40, true);  // inclusive = true
-$4 ==> [20, 30, 40]
-
-jshell> sortedSet.headSet(20);	   	// στοιχεία &lt; 20
-$5 ==> [10]
-
-jshell> sortedSet.headSet(20, true);	// inclusive = true
-$6 ==> [10, 20]
-
-jshell> sortedSet.tailSet(20);			// στοιχεία &gt;= 20
-$7 ==> [20, 30, 40]
-
-jshell> sortedSet.tailSet(20, false);	// inclusive = false
-$8 ==> [30, 40]
-
-jshell> sortedSet.tailSet(25);		// στοιχεία &gt;= 25
-$9 ==> [30, 40]
-
-jshell> sortedSet.tailSet(25, true);	// inclusive = true
-$10 ==> [30, 40]
-
-jshell> sortedSet.ceiling(25);		// το μικρότερο στοιχείο &gt;= 25
-$11 ==> 30
-
-jshell> sortedSet.floor(25);		// το μεγαλύτερο στοιχείο &lt;= 25
-$12 ==> 20
-
-jshell> sortedSet.higher(20);		// το μικρότερο στοιχείο &gt; 20
-$13 ==> 30
-
-jshell> sortedSet.lower(20);		// το μεγαλύτερο στοιχείο &lt; 20
-$14 ==> 10
-
-jshell> sortedSet.descendingSet()
-$15 ==> [40, 30, 20, 10]
-
-jshell> Iterator<Integer> i = sortedSet.descendingIterator()
-i ==> java.util.TreeMap$NavigableSubMap$DescendingSubMapKeyIterator@544fe44c
-
-jshell> while (i.hasNext()) 
-   ...> System.out.print(i.next() + " ");
-40 30 20 10 
-```
-
 ### Εισαγωγή στοιχείων
 Όπως είδαμε, η εισαγωγή δεδομένων σ' ένα σύνολο γίνεται με την μέθοδο ```add()```. Η μέθοδος επιστρέφει ```true``` αν η εισαγωγή του στοιχείου ήταν επιτυχής, αλλοιώς επιστρέφει ```false```. 
 
@@ -216,12 +157,66 @@ jshell> set.contains(20);
 $9 ==> true
 ```
 
+Οπότε, μπορούμε να εφαρμόσουμε μόνο γραμμική αναζήτηση (η οποία αφήνεται ως άσκηση στον αναγνώστη).
+
 ### Ταξινόμηση 
-Όπως είπαμε, η δομή δεδομένων Σύνολο δεν είναι ταξινομημένη και δεν μπορεί να ταξινομηθεί. Υπάρχει όμως η ```TreeSet``` (η οποία κληρονομεί από την ```SortedSet```) και  ταξινομεί τα στοιχεία της:
+Όπως είδαμε παραπάνω, η δομή δεδομένων _Σύνολο_ δεν είναι ταξινομημένη και δεν μπορεί να ταξινομηθεί. Υπάρχει όμως η ```TreeSet``` (η οποία κληρονομεί από τις ```SortedSet``` και ```NavigableSet```) και  ταξινομεί τα στοιχεία της:
 
 ```java
 jshell> TreeSet<Integer> sortedSet = new TreeSet<>(set);
-sortedSet ==> [10, 20, 30, 40]	
+sortedSet ==> [10, 20, 30, 40]
+
+jshell> sortedSet.first();
+$1 ==> 10
+
+jshell> sortedSet.last();
+$2 ==> 40
+
+jshell> sortedSet.subSet(20,40);	// 20 <= στοιχεία < 40 
+$3 ==> [20, 30]
+
+jshell> sortedSet.subSet(20, true, 40, true);  // inclusive = true
+$4 ==> [20, 30, 40]
+
+jshell> sortedSet.headSet(20);	   	// στοιχεία < 20
+$5 ==> [10]
+
+jshell> sortedSet.headSet(20, true);	// inclusive = true
+$6 ==> [10, 20]
+
+jshell> sortedSet.tailSet(20);			// στοιχεία >= 20
+$7 ==> [20, 30, 40]
+
+jshell> sortedSet.tailSet(20, false);	// inclusive = false
+$8 ==> [30, 40]
+
+jshell> sortedSet.tailSet(25);		// στοιχεία >= 25
+$9 ==> [30, 40]
+
+jshell> sortedSet.tailSet(25, true);	// inclusive = true
+$10 ==> [30, 40]
+
+jshell> sortedSet.ceiling(25);		// το μικρότερο στοιχείο >= 25
+$11 ==> 30
+
+jshell> sortedSet.floor(25);		// το μεγαλύτερο στοιχείο <= 25
+$12 ==> 20
+
+jshell> sortedSet.higher(20);		// το μικρότερο στοιχείο > 20
+$13 ==> 30
+
+jshell> sortedSet.lower(20);		// το μεγαλύτερο στοιχείο < 20
+$14 ==> 10
+
+jshell> sortedSet.descendingSet()
+$15 ==> [40, 30, 20, 10]
+
+jshell> Iterator<Integer> i = sortedSet.descendingIterator()
+i ==> java.util.TreeMap$NavigableSubMap$DescendingSubMapKeyIterator@544fe44c
+
+jshell> while (i.hasNext()) 
+   ...> System.out.print(i.next() + " ");
+40 30 20 10 
 ```
 
 ### Αντιγραφή 
@@ -286,6 +281,18 @@ _Πηγή: [Naftalin, Wadler (2006)]_
 
 Αν η εφαρμογή σας διαβάζει συχνότερα στοιχεία τότε καλύτερη απόδοση έχει η ```LinkedHashSet```.
 
+| Ιδιότητα | ```HashSet``` |  ```LinkedHashSet``` | ```TreeSet``` | 
+| Δομή δεδομένων | 	```Hashtable``` | ```Hashtable```+```LinkedList``` | Ισοζυγισμένο (red-black) δέντρο  |  
+| Σειρά εισαγωγής | Δε διατηρείται | Διατηρείται | Δε διατηρείται | 
+| Διπλότυπα αντικείμενα | Δεν επιτρέπονται | Δεν επιτρέπονται | Δεν επιτρέπονται | 
+| Δυνατότητα ταξινόμησης | Όχι | Όχι | Ναι |
+| Ετερογενή αντικείμενα | Ναι | Ναι | Όχι |
+| ```null``` στοιχεία | Ναι | Ναι | Όχι, μόνο ως πρώτη εισαγωγή, δηλ. ως ρίζα του δέντρου | 
+
+## Ασκήσεις
+1. Γράψτε ένα πρόγραμμα που θα εισάγει ακέραιους αριθμούς σε ένα ```TreeSet``` με φθίνουσα ταξινόμηση.
+2. Γράψτε ένα πρόγραμμα που θα εισάγει συμβολοσειρές σε ένα ```TreeSet``` ταξινομημένες ως προς το μήκος τους. 
+   
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.

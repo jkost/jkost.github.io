@@ -159,13 +159,42 @@ jshell> while (iter.hasNext())
 Η διεπαφή ```Collection``` επεκτείνει τη διεπαφή ```Iterable```:
 ```java
 interface Iterable {
-	public Iterator iterator();
+	Iterator iterator();
 }
 
 interface Iterator {
-	public boolean hasNext();
-	public Object next();
-	public void remove();
+	boolean hasNext();
+	Object next();
+	void remove();
+}
+```
+
+Παλαιότερες (ή κληρονομημένες - legacy) λίστες όπως η ```Vector``` χρησιμοποιούσαν ένα ```Enumeration``` για να προσπελάσουν τα στοιχεία τους. 
+
+```java
+interface Enumeration {
+	boolean hasMoreElements();
+	Object nextElement();
+}
+```
+
+Αποφύγετε τη χρήση του και χρησιμοποιήστε στη θέση του τον ```Iterator```.
+
+Τόσο ο ```Enumeration``` όσο και ο ```Iterator``` μπορούν να προσπελάσουν μια λίστα μόνο προς τη μια κατεύθυνση. Ο ```ListIterator``` προσφέρει περισσότερη ευελιξία:
+
+```java
+interface ListIterator {
+	boolean hasNext();
+	Object next();
+	int nextIndex();
+	
+	boolean hasPrevious();
+	Object previous();
+	int previousIndex();	
+	
+	void remove();
+	void set(Object newObj);
+	void add(Object newObj);
 }
 ```
 
@@ -304,7 +333,7 @@ jshell> array
 array ==> [30, 20, 10, 5]
 ```
 
-Από την έκδοση 8 και μετά, μια μέθοδος ```sort()``` προστέθηκε στην διεπαφή ```List```: ```void List.sort(Comparator c)``` η οποία δέχεται έναν ```Comparator```:
+Από την έκδοση 8 και μετά, μια μέθοδος ```sort()``` προστέθηκε στην διεπαφή ```List```: ```void List.sort(Comparator c)``` η οποία δέχεται έναν ```Comparator``` (βλ. παρακάτω για μια επεξήγηση των κλάσεων ```Comparator``` και ```Comparable```):
 
 ```java
 jshell> array
@@ -320,6 +349,100 @@ jshell> array.sort(Comparator.reverseOrder())
 jshell> array
 array ==> [30, 20, 10, 5]
 ```
+
+#### Σύγκριση διεπαφών ```Comparator``` και ```Comparable```
+Η Java διαθέτει δυο επαφές που μοιάζουν πολύ μεταξύ τους.
+
+```java
+interface Comparable {
+	int compareTo(Object o);	
+}
+```
+Π.χ.
+```java
+obj1.compareTo(obj2);
+```
+
+Η μέθοδος αυτή επιστρέφει:
+
+* ```<0``` αν το ```obj1 < obj2```
+* ```0``` αν ```obj1 == obj2```
+* ```>0``` αν το ```obj1 < obj2```
+
+```java
+jshell> "a".compareTo("c")
+$1 ==> -2
+
+jshell> "c".compareTo("a")
+$2 ==> 2
+
+jshell> "a".compareTo("a")
+$3 ==> 0
+```
+Η διεπαφή αυτή περιγράφει την φυσική σειρά των αντικειμένων. Π.χ. ```1<2``` και ```"α"<"β"```.
+
+Αν όμως θέλουμε να ταξινομήσουμε αντικείμενα όχι με τη φυσική σειρά τους, αλλά με κάποια άλλη σειρά, τότε χρησιμοποιούμε έναν ```Comparator```:
+
+```java
+interface java.util.Comparator {
+	int compare(Object o1, Object o2);
+	boolean equals(Object o);
+	Comparator naturalOrder();
+	Comparator reversed();
+	Comparator reverseOrder();
+}
+```
+Ας δούμε ένα παράδειγμα για να κατανοήσουμε τις διαφορές τους καλύτερα:
+
+```java
+public class Student implements Comparable{
+    private final long am;    	// Αριθμός Μητρώου
+    private final String name;
+    private short grade;
+
+    public Student(long am, String name) {
+        this.am = am;
+        this.name = name;
+    }
+
+    public long getAm() {
+        return am;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public short getGrade() {
+        return grade;
+    }
+
+    public void setGrade(short grade) {
+        this.grade = grade;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Student otherStudent = (Student)o;
+        if (this.am == otherStudent.am)
+            return 0;
+        else if (this.am < otherStudent.am)
+            return -1;
+        else
+            return 1;
+    }
+
+    class StudentComparator implements Comparator {
+        @Override
+        public int compare(Object o1, Object o2) {
+            Student s1 = (Student)o1;
+            Student s2 = (Student)o2;
+            return s1.name.compareTo(s2.name);
+        }
+    }
+}
+```
+Αν θέλουμε να ταξινομήσουμε τους μαθητές με βάση το όνομά τους κι όχι τον αριθμό μητρώου τους, τότε χρησιμοποιούμε έναν ```Comparator```. Σημειώστε ότι ο ```Comparator``` χρησιμοποιεί την μέθοδο ```compareTo()``` της κλάσης ```String``` η οποία υλοποιεί τη διεπαφή ```Comparable```.
 
 ### Αντιγραφή λιστών
 Ήδη είδαμε τον copy constructor ```ArrayList(Collection c)``` που δημιουργεί μια νέα ```ArrayList``` από τη συλλογή που της περνάμε ως όρισμα.
@@ -395,12 +518,18 @@ $12 ==> 3
 
 ![](assets/Fig4.png)
 
-**Εικόνα 3** _Παράδειγμα συνδεδεμένης λίστας_
+**Εικόνα 4** _Παράδειγμα συνδεδεμένης λίστας_
 
 ```java
 jshell> List list = new LinkedList(Arrays.asList(10,20,5,30));
 list ==> [10, 20, 5, 30]
 ```
+
+Βέβαια, στην πραγματικότητα η ```LinkedList``` είναι μια διπλή συνδεδεμένη λίστα όπως φαίνεται στην ακόλουθη εικόνα:
+
+![](assets/Fig5.png)
+
+**Εικόνα 5** _Παράδειγμα συνδεδεμένης λίστας_
 
 Οι πράξεις στις συνδεδεμένες λίστες είναι ίδιες με αυτές της λίστας πίνακα.
 
@@ -413,6 +542,12 @@ list ==> [10, 20, 5, 30]
 | ```LinkedList``` | O(n) | O(1) | O(n) | O(1) | O(1) | O(1)
 
 Αν η εφαρμογή σας προσθέτει/διαβάζει/διαγράφει στοιχεία από/στο το τέλος της λίστας, τότε καλύτερη απόδοση έχει η ```ArrayList``` από την ```LinkedList```, διαφορετικά η ```LinkedList``` συμπεριφέρεται πιο αποδοτικά.
+
+## Κληρονομημένες Λίστες (Legacy lists)
+Πρόκειται για δομές δεδομένες που κληρονομήθηκαν από παλαιότερες εκδόσεις της Java, αλλά που δε συνίσταται να τις χρησιμοποιείτε στην πλειονότητα των περιπτώσεων:
+
+* ```Vector``` προτιμήστε την ```ArrayList``` η οποία είναι πιο αποδοτική
+* ```Stack``` κληρονομεί από την ```Vector``` και υλοποιεί τη δομή δεδομένων _Στοίβα_ ή LIFO (Last-In-First-Out). 
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
