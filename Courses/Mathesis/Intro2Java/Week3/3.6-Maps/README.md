@@ -266,6 +266,7 @@ System.out.println("Next high priority task: " + highPriorityTaskList.peek());
 ```
 
 ## Σύγκριση των διαφόρων υλοποιήσεων της ```Map```
+
 | |  ```get``` |  ```containsKey``` | ```next``` 
 | ```HashMap```  | O(1) | O(1) | O(h/n) 
 | ```LinkedHashMap``` | O(1) | O(1) | O(1)  
