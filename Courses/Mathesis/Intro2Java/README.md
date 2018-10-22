@@ -27,12 +27,12 @@
 8. [Καλές τεχνικές προγραμματισμού](Week2/2.8-BestPractices/README.md)
 9. [Πρώτη Άσκηση](Week2/2.9-Exercise1/README.md)
 
-### Εβδομάδα 3η - Συλλογές και Γενικευμένοι Τύποι (Generics)
+### Εβδομάδα 3η - Δομές Δεδομένων και Γενικευμένοι Τύποι (Generics)
 1. [Δομές Δεδομένων](Week3/3.1-DataStructures/README.md) √
 2. [Γραμμικές Λίστες](Week3/3.2-Lists/README.md) √
 3. [Γενικευμένοι Τύποι - Generics](Week3/3.3-Generics/README.md) √
 4. [Σύνολα](Week3/3.4-Sets/README.md) √
-5. [Ουρές](Week3/3.5-Queues/README.md) 
+5. [Ουρές](Week3/3.5-Queues/README.md) √
 6. [Πίνακες κατακερματισμού - Maps](Week3/3.6-Maps/README.md) 
 7. [Άλλες Δομές Δεδομένων](Week3/3.7-OtherCollections/README.md) √
 

@@ -7,6 +7,25 @@
  
 ---
 
+Όπως είδαμε στα μαθήματα της 1ης εβδομάδας, οι πίνακες ελέγχουν τον τύπο δεδομένων των στοιχείων που προσπαθούμε να προσθέσουμε σ' αυτούς:
+
+```java
+jshell> String[] names = new String[3];
+names ==> String[3] { null, null, null }
+
+jshell> names[0]="Κώστας"
+$12 ==> "Κώστας"
+
+jshell> names[1]="Μαρία"
+$13 ==> "Μαρία"
+
+jshell> names[3]=10
+|  Error:
+|  incompatible types: int cannot be converted to java.lang.String
+|  names[3]=10
+|           ^^
+```
+
 Στο προηγούμενο μάθημα είδαμε πώς μπορούμε να αποθηκεύσουμε μια ακολουθία αντικειμένων σε μια λίστα. Το πρόβλημα είναι ότι δεν γίνεται έλεγχος για τον τύπο των δεδομένων που εισάγονται στη λίστα. Αν π.χ. θέλουμε να αποθηκεύσουμε μόνο συμβολοσειρές, και σε κάποιο σημείο του κώδικά μας εισάγουμε κατά λάθος κάποιον ακέραιο στη λίστα μας, τότε είναι πολύ αργά (κατά την εκτέλεση του προγράμματός μας) προτού καταλάβουμε το λάθος μας.
 
 ```java
@@ -60,7 +79,7 @@ jshell> array.size()
 $4 ==> 3
 ```
 
-Πλέον δηλώνουμε ότι η λίστα ```array``` μπορεί να δέχεται μόνο στοιχεία τύπου ```Integer```. Χάρις στο autoboxing, τα στοιχεία τύπου ```int``` που προσθέτουμε στη λίστα μετατρέπονται σε τύπου ```Integer```. Ο τελεστής ```<>``` ονομάζεται _τελεστής διαμάντι_ και εισήχθηκε στην έκδοση 7 της γλώσσας. Απλοποιεί τη σύνταξη:
+Πλέον δηλώνουμε ότι η λίστα ```array``` μπορεί να δέχεται μόνο στοιχεία τύπου ```Integer```. Χάρις στο autoboxing, τα στοιχεία τύπου ```int``` που προσθέτουμε στη λίστα μετατρέπονται σε τύπου ```Integer``` καθώς οι συλλογές δεν μπορούν ν' αποθηκεύσουν πρωτογενείς τύπους. Ο τελεστής ```<>``` ονομάζεται _τελεστής διαμάντι_ και εισήχθηκε στην έκδοση 7 της γλώσσας. Απλοποιεί τη σύνταξη:
 
 ```java
 jshell> List<Integer> array = new ArrayList<Integer>();
@@ -96,7 +115,7 @@ jshell> for (int n : array)
 
 Αν διαβάσετε το ΑΡΙ της ```List``` θα παρατηρήσετε ότι ορίζεται ως ```List<E>``` (διαβάζεται 'μια λίστα από αντικείμενα τύπου Ε'), όπου ```Ε``` είναι ο γενικευμένος τύπος που μπορείτε να χρησιμοποιήσετε, π.χ. ```Integer, String, Car, Point``` κλπ. Όταν αντικαθιστούμε το ```Ε``` με κάποιον τύπο δεδομένων (π.χ. ```String```) τότε μιλάμε για _παραμετροποιημένο τύπο δεδομένων (parameterized type)_.
 
-Ως άσκηση, ξανατρέξτε τα παραδείγματα του προηγούμενου μαθήματος χρησιμοποιώντας τον σωστό γενικευμένο τύπο για τη λίστα σας. Παρατηρήστε ότι δεν απαιτείται πλέον να χρησιμοποιήτε casting. 
+Ως άσκηση, ξαναγράψτε τα παραδείγματα του προηγούμενου μαθήματος χρησιμοποιώντας τον σωστό γενικευμένο τύπο για τη λίστα σας. Παρατηρήστε ότι δεν απαιτείται πλέον να χρησιμοποιήτε casting. 
 
 Παρόλο που οι γενικευμένοι τύποι είναι πολύ χρήσιμοι καθώς επιτρέπουν να βρίσκουμε λάθη κατά τη διάρκεια της μεταγλώττισης, δυστυχώς για λόγους προς τα πίσω συμβατότητας (backwards compatibility) ο μεταγλωττιστής 'διαγράφει' τον γενικευμένο τύπο (type erasure) με αποτέλεσμα κατά την εκτέλεση του προγράμματος όλοι οι γενικευμένοι τύποι έχουν μετατραπεί σε ```Object```. Τύποι δεδομένων που δε 'σβήνονται' κατά τη διάρκεια της εκτέλεσης του προγράμματος ονομάζονται _τυπικοί (reified)_ (π.χ. ```Integer, String```), ενώ αυτοί οι οποίοι 'σβήνονται' λέγονται _μη τυπικοί (non-reified)_ (π.χ. ```List<String>```). Έτσι π.χ. κατά την εκτέλεση του προγράμματος οι τύποι δεδομένων ```List<Integer>``` και ```List<String>``` μετατρέπονται στον ίδιο τύπο δεδομένων ```List<Object>``` ή ```List```. 	
 	
@@ -119,11 +138,9 @@ jshell> List<Number> nums = ints; // compile-time error
 |                      ^--^
 ```	
 
-Με άλλα λόγια, η Αρχή της Υποκατάστασης (Substitution Principle) _δεν_ ισχύει για τους γενικευμένους τύπους. Δηλ., αν και ```Integer extends Number``` δεν ισχύει ότι ```List<Integer> extends List<Number>```.
+Με άλλα λόγια, η _Αρχή της Υποκατάστασης (Substitution Principle)_ _δεν_ ισχύει για τους γενικευμένους τύπους. Δηλ., αν και ```Integer extends Number``` δεν ισχύει ότι ```List<Integer> extends List<Number>```.
 	
 Αν δεν γνωρίζετε τι γενικευμένο τύπο δεδομένων να χρησιμοποιήσετε για να επιλύσετε κάποιο πρόβλημά σας, υπάρχει και ο _μη δεσμευμένος (unbounded)_ τύπος δεδομένων, π.χ. ```List<?>```. Βέβαια, σ' αυτή την περίπτωση μπορείτε να εισάγετε μόνο τιμές ```null``` στη συλλογή αυτή καθώς προσπάθεια προσθήκης άλλου τύπου δεδομένων εμφανίζει λάθος όπως π.χ. ```incompatible types: java.lang.String cannot be converted to capture#2 of ?```.
-
-
 
 ### Boxing, unboxing, autoboxing
 
@@ -157,7 +174,7 @@ int n = arrayOfints.get(0).intValue();
 ```
 
 ## Υπο- και υπερ-γενικευμένοι τύποι 
-Είδαμε προηγουμένως ότι η Αρχή της Υποκατάστασης (Substitution Principle) δεν εφαρμόζεται στους γενικευμένους τύπους. Έτσι δεν μπορούμε π.χ. να γράψουμε:
+Είδαμε προηγουμένως ότι η _Αρχή της Υποκατάστασης (Substitution Principle)_ _δεν_ εφαρμόζεται στους γενικευμένους τύπους. Έτσι δεν μπορούμε π.χ. να γράψουμε:
 
 ```java
 jshell> List<Number> nums = new ArrayList<Integer>();
@@ -222,14 +239,7 @@ public static <T> void copy(List<? super T> dst, List<? extends T> src);
 
 Πότε χρησιμοποιούμε την ```extends``` και πότε τη ```super```; Σύμφωνα με την _Αρχή Βγάλε και Βάλε (Get And Put Principle)_  χρησιμοποιήστε την ```extends``` όταν θέλετε να βγάλετε τιμές από τη δομή και την ```super``` όταν θέλετε να εισάγετε τιμές στη δομή δεδομένων. Όταν θέλετε να κάνετε και τις δυο ενέργειες, μη χρησιμοποιείτε καμιά από τις δυο.
 
-Χαρακτηριστικό παράδειγμα η μέθοδος ```copy()``` που είδαμε πιο πάνω:
-
-```java
-public static <T> void copy(List<? super T> dst, List<? extends T> src);
-```
-
-Θέλουμε να εξάγουμε στοιχεία από την ```src``` ενώ θέλουμε να εισάγουμε στην ```dst```. Ένας ```iterator``` εξάγει στοιχεία από μια δομή, άρα θα πρέπει να οριστεί με ```extends```.
-
+Χαρακτηριστικό παράδειγμα η μέθοδος ```copy()``` που είδαμε πιο πάνω. Θέλουμε να εξάγουμε στοιχεία από την ```src``` ενώ θέλουμε να εισάγουμε στην ```dst```. Ένας ```iterator``` εξάγει στοιχεία από μια δομή, άρα θα πρέπει να οριστεί με ```extends```.
 
 Η ```List<?>``` είναι ισοδύναμη με ```List<? extends Object>```¨
 
@@ -239,45 +249,67 @@ List<?> list = new ArrayList<?>() // compile-time error
 List<?> list = new ArrayList<>(); // ok
 ```
 
-
 ## Γενικευμένες κλάσεις και μέθοδοι
 Μπορούμε να δημιουργήσουμε τις δικές μας γενικευμένες κλάσεις, π.χ.
 
 ```java
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class Stack<E> {
-	private final Deque<E> stack;
- 	private final int size;
- 	
-	public Stack(int numElements) {
- 	 this.size = numElements;
- 	 stack = new ArrayDeque<E>(this.size);
- 	}
- 	
-	public boolean push(E e) {
- 	 return !isFull() && stack.offerFirst(e);
- 	}
- 	
-	public E pop() {
- 	  return stack.poll();
- 	}
- 	
-	public E peek() {
- 	  return stack.peek();
- 	}
- 	
-	public boolean isEmpty() {
- 	 return stack.isEmpty();
- 	}
- 	
-	public boolean isFull() {
- 		return stack.size() == size;
- 	}
+    private final Deque<E> stack;
+    private final int size;
+
+    public Stack(int numElements) {
+        this.size = numElements;
+        stack = new ArrayDeque<>(this.size);
+    }
+
+    public boolean push(E e) {
+        return !isFull() && stack.offerFirst(e);
+    }
+
+    public E pop() {
+        return stack.poll();
+    }
+
+    public E peek() {
+        return stack.peek();
+    }
+
+    public boolean isEmpty() {
+        return stack.isEmpty();
+    }
+
+    public boolean isFull() {
+        return stack.size() == size;
+    }
 }
 ```
 _Θα μιλήσουμε για τις ουρές σε επόμενο μάθημα_.
 
+Αν όμως η κλάση δεν είναι γενικευμένη αλλά θέλουμε να δηλώσουμε μια γενικευμένη μέθοδο, τότε η σύνταξη είναι ως εξής:
+
+```java
+class MyClass {
+	public void nonGenericMethod(String v) {}
+	public <T> void myMethod(T t) {}
+	public <T extends Number & Comparable> void myMethod(T t) {}	
+}
+```
+
+Όπως η γλώσσα υποστηρίζει απλή κληρονομικότητα για κλάσεις και πολλαπλή κληρονομικότητα για επαφές, το ίδιο ισχύει και για τους γενικευμένους τύπους όπως φαίνεται στα παρακάτω παραδείγματα:
+
+```java
+class Test<T extends Number & Runnable> {};				// OK <=> T extends Number implements Runnable 
+class Test<T extends Number & Runnable&Comparable> {};	// OK <=> T extends Number implements Runnable, Comparable
+class Test<T extends Number & String> {};				// Not OK <=> T extends Number, String
+class Test<T extends Runnable & Comparable> {};			// OK <=> T implements Runnable, Comparable
+class Test<T extends Comparable & Number> {};  	 		// Not OK <=> T implements Comparable extends Number
+```
+
 ## Σύγκριση Λίστας με Πίνακα
-Οι πίνακες (arrays) είναι _συμμεταβαλλόμενοι (covariant)_ που σημαίνει ότι αν η κλάση ```Cat extends Animal``` τότε η κλάση ```Cat[] extends Animal[]```. Αντιθέτως οι γενικευμένοι τύποι (generics) είναι _αμεταβαλόμενοι (invariant)_ δηλ. η ```List<Cat>``` δε κληρονομεί από τη ```List<Animal>```.
+Οι πίνακες (arrays) είναι _συμμεταβαλλόμενοι (covariant)_ που σημαίνει ότι αν η κλάση ```Cat extends Animal``` τότε η κλάση ```Cat[] extends Animal[]```. Αντιθέτως οι γενικευμένοι τύποι (generics) είναι _μη συμμεταβαλόμενοι (invariant)_ δηλ. η ```List<Cat>``` δε κληρονομεί από τη ```List<Animal>```.
 	
 Έτσι π.χ.
 ```java
@@ -316,6 +348,14 @@ list ==> ArrayList[1] { null }
 jshell> List<int[]> listOfInts = new ArrayList<>();
 listOfInts ==> []
 ```
+
+**Πίνακας 1** _Σύγκριση πίνακα / συλλογής_
+
+| Πίνακες | Συλλογές |
+| Σταθερό μέγεθος | Μεταβλητό μέγεθος |
+| Αποδοτικότεροι | Λιγότερο αποδοτικές |
+| Μόνο ίδιου τύπου στοιχεία | Διαφορετικού τύπου στοιχεία | 
+| Αποθηκεύουν πρωτογενείς τύπους και αντικείμενα | Αποθηκεύουν μόνο αντικείμενα |
 
 ## Οι διεπαφές ```Collection<E>, List<E>, Iterable<E>```
 Στο προηγούμενο μάθημα είδαμε την κλάση ```List<E>``` και είδαμε πως υπάρχουν παγίδες κατά τη χρήση των μεθόδων της κλάσης. 
