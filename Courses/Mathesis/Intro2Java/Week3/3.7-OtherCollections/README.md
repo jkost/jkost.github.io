@@ -17,6 +17,7 @@
    * Map Iteration
    * Ordered Maps
    * Bidirectional Maps
+   * MultiMap
 * Bags 
 
 ## Eclipse Collections

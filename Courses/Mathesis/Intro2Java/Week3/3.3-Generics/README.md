@@ -241,6 +241,13 @@ public static <T> void copy(List<? super T> dst, List<? extends T> src);
 
 Χαρακτηριστικό παράδειγμα η μέθοδος ```copy()``` που είδαμε πιο πάνω. Θέλουμε να εξάγουμε στοιχεία από την ```src``` ενώ θέλουμε να εισάγουμε στην ```dst```. Ένας ```iterator``` εξάγει στοιχεία από μια δομή, άρα θα πρέπει να οριστεί με ```extends```.
 
+Άλλο παράδειγμα, η ```java.util.Collections.sort()```:
+
+```java
+public static <T extends Comparable<? super T>> void sort(List<T> list) {...}
+```
+Το ```Τ``` πρέπει να είναι τύπου ```Comparable``` κι αυτό το ```Comparable``` πρέπει να ορίζεται στο ```Τ``` ή σε μια υπερκλάση του ```Τ```.
+
 Η ```List<?>``` είναι ισοδύναμη με ```List<? extends Object>```¨
 
 ```java
