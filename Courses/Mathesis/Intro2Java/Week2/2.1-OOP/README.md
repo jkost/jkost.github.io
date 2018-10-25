@@ -64,7 +64,7 @@ Hello, World!
 
 Συγχαρητήρια! Μόλις γράψατε, μεταγλωττίσατε και εκτελέσατε το πρώτο σας πρόγραμμα Java. Φυσικά, ένα ΟΠΕ, όπως το NetBeans, διευκολύνει, όπως θα δούμε την διαδικασία. 
 
-_Άσκηση_ Ως άσκηση, τροποποιήστε το παραπάνω πρόγραμμα ώστε να εμφανίζει στην έξοδο τις παραμέτρους γραμμής εντολής που εισήγατε ο χρήστης σε διαφορετικές γραμμές. Π.χ.:
+_Άσκηση_ Τροποποιήστε το παραπάνω πρόγραμμα ώστε να εμφανίζει στην έξοδο τις παραμέτρους γραμμής εντολής που εισήγαγε ο χρήστης σε διαφορετικές γραμμές. Π.χ.:
 
 ```bash
 $ java HelloWorld Δευτέρα Τρίτη Τετάρτη
@@ -74,7 +74,7 @@ $ java HelloWorld Δευτέρα Τρίτη Τετάρτη
 ```
 
 ## Εισαγωγή στο NetBeans
-Αν και μπορείτε κάλλιστα να αναπτύξετε προγράμματα, να τα μεταγλωττίσετε και να τα εκτελέσετε όπως περιγράψαμε προηγουμένως, ένα ΟΠΕ όμως σας βοηθάει να αναπτύξετε προγράμματα ευκολότερα και γρηγορότερα.
+Αν και μπορείτε κάλλιστα να αναπτύξετε προγράμματα, να τα μεταγλωττίσετε και να τα εκτελέσετε όπως περιγράψαμε προηγουμένως, δηλ. χρησιμοποιώντας τη γραμμή εντολών, ένα ΟΠΕ σας βοηθάει να αναπτύξετε προγράμματα ευκολότερα και γρηγορότερα.
   
 Ας δούμε πώς μπορούμε να γράψουμε το παραπάνω πρόγραμμα στο NetBeans. Κατ' αρχήν θα πρέπει να δημιουργήσουμε ένα νέο έργο (project). Από το μενού **File -> New Project** επιλέξτε την κατηγορία **Java** και το Project **Java Application**, όπως φαίνεται στην παρακάτω εικόνα, και πατήστε **Next**.
 
@@ -166,6 +166,58 @@ $2 ==> 10
 
 _Σημαντική σημείωση:_ Αν δηλώσουμε μέθοδο κατασκευής, τότε _δεν_ δημιουργείται αυτόματα default constructor. 
 
+M
+
+Η κλάση ```Truck``` μεταφέρει αυτοκίνητα:
+
+```java
+class Truck {
+	private static final int MAX_CAPACITY = 10;
+	private Car[] cars;
+	private int index = 0;
+
+	public Truck(int capacity) {
+		if (capacity > 0 && capacity <= MAX_CAPACITY) {
+			cars = new Car[capacity];
+		else {
+			cars = new Car[MAX_CAPACITY];
+		}
+	}
+	
+	public void add(Car car) {
+		cars[index++] = car;
+	}
+	
+	public Car remove(int i) {
+		Car car = null;
+		if (i >=0 && i < cars.length) {
+			car = cars[i];
+			cars[i] = null;
+			if (i < cars.length - 1) {
+				for (int j = i+1; j<cars.length-1; j++) {
+					cars[j]=cars[j+1];
+				}
+			}
+		}
+		return car;
+	} 
+	
+	public Car get(int i) {
+		if (i >=0 && i < cars.length) {
+			return cars[i];
+		} else {
+			return null;
+		}
+	}
+	
+	public void set(int i, Car car) {
+		if (i >=0 && i < cars.length) {
+			cars[i] = car;	
+		}
+	}
+
+}  
+
 ## Ιδιότητες αντικειμενοστραφούς προγραμματισμού
 Ο αντικειμενοστραφής προγραμματισμός περιλαμβάνει τέσσερεις βασικές ιδιότητες που τον χαρακτηρίζουν:
 
@@ -232,7 +284,20 @@ static {
    System.out.println("static block");
 }
 ```
- 
+
+
+## Τύποι Επικάλυψης (Wrapper types)
+Στα μαθήματα της πρώτης εβδομάδας μάθαμε για τους πρωτογενείς τύπους δεδομένων (raw data types) και την κλάση ```String```. Η Java διαθέτει αντίστοιχες κλάσεις για τους πρωτογενείς τύπους δεδομένων:
+
+* ```char``` <=> ```Character```
+* ```byte``` <=> ```Byte``` 
+* ```short``` <=> ```Short```
+* ```int``` <=> ```Integer```
+* ```long``` <=> ```Long```
+* ```float``` <=> ```Float```
+* ```double``` <=> ```Double```
+
+
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.
@@ -242,7 +307,6 @@ static {
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
-1. Naftalin M., Wadler P. (2006), _Java Generics and Collections_, O'Reilly. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 
