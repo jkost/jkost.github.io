@@ -18,12 +18,12 @@
 
 ### Εβδομάδα 2η - Αντικειμενοστραφής προγραμματισμός
 1. [Εισαγωγή στον αντικειμενοστραφή προγραμματισμό - Κλάσεις και αντικείμενα](Week2/2.1-OOP/README.md) √
-2. [Εισαγωγή στη UML](Week2/2.2-UML/README.md) √
+2. [Εισαγωγή στη UML](Week2/2.2-UML/README.md) 
 3. [Ενθυλάκωση, Πακέτα και Αρθρώματα](Week2/2.3-Encapsulation/README.md) √
 4. [Κληρονομικότητα](Week2/2.4-Inheritance/README.md) √
 5. [Πολυμορφισμός](Week2/2.5-Polymorphism/README.md) √
 6. [Τεκμηρίωση κώδικα](Week2/2.6-Javadoc/README.md)
-7. [Αποσφαλμάτωση](Week2/2.7-Debugging/README.md) √
+7. [Αποσφαλμάτωση](Week2/2.7-Debugging/README.md) 
 8. [Καλές τεχνικές προγραμματισμού](Week2/2.8-BestPractices/README.md)
 9. [Πρώτη Άσκηση](Week2/2.9-Exercise1/README.md)
 
@@ -37,12 +37,12 @@
 7. [Άλλες Δομές Δεδομένων](Week3/3.7-OtherCollections/README.md) √
 
 ### Εβδομάδα 4η - Εξαιρέσεις και Χρήσιμες Κλάσεις
-1. [Εξαιρέσεις - Exceptions](Week4/4.1-Exceptions/README.md) 
-2. [Ισχυρισμοί - Assertions](Week4/4.2-Assertions/README.md) 
+1. [Εξαιρέσεις - Exceptions](Week4/4.1-Exceptions/README.md) √
+2. [Απαριθμημένοι Τύποι - Enums](Week4/4.2-Enums/README.md) √
 
 ### Εβδομάδα 5η - Ημερομηνία και Ώρα, Εντολές Εισόδου/Εξόδου και Αρχεία
-1. [Ημερομηνία](Week5/5.1-Date/README.md) √
-2. [Ώρα](Week5/5.2-Time/README.md) 
+1. [Ημερομηνία & Ώρα](Week5/5.1-Date-Time/README.md) √
+2. [Αρχεία](Week5/5.2-Files/README.md) 
 
 
 ### Εβδομάδα 6η - Ανάπτυξη μιας εφαρμογής 
