@@ -3,7 +3,7 @@
 
 ---
 
-[->](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.3-Assertions/README.md)  
+[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.3-Assertions/README.md)  
  
 ---
 Στα μαθήματα της πρώτης εβδομάδας μιλήσαμε για τους απαριθμημένους τύπους (```enum```s) και μάλιστα μάθαμε ότι μπορούν να χρησιμοποιούνται στις εντολές ```switch```. Οι απαριθμημένοι τύποι είναι ένα σύνολο από σταθερές.
@@ -62,6 +62,6 @@ enum Day {
 
 ---
 
-[Δ](../../README.md) | [->](../4.2-Assertions/README.md)  
+[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.2-Assertions/README.md)  
 
 ---

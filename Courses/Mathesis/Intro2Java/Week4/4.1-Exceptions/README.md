@@ -289,6 +289,7 @@ try {
 } catch (FileNotFoundException | IOException e) {
 //...
 }
+```
 
 ## Συμβουλές χρήσης εξαιρέσεων
 
