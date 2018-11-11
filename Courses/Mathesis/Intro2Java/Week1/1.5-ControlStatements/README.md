@@ -89,7 +89,7 @@ switch(μεταβλητή) {
 ```
 Η _μεταβλητή_ μπορεί να είναι είτε αριθμητικού τύπου (```char, byte, short, int, Character, Byte, Short, Integer```), είτε συμβολοσειρά (```String```), είτε τύπου ```enum```. ```enum``` είναι ένας ειδικός τύπος δεδομένων που επιτρέπει να ορίζουμε ένα καθορισμένο αριθμό σταθερών τιμών. ```Character, Byte, Short, Integer``` είναι οι αντίστοιχες κλάσεις των πρωτογενών τύπων ```char, byte, short, int```. Θα μιλήσουμε για τις κλάσεις την επόμενη εβδομάδα.
 
-Ας δούμε ένα παράδειγμα:
+Ας δούμε ένα παράδειγμα όπου ο έλεγχος γίνεται με ```enum```:
 ```java
 enum Choice {
   RED_PILL;
@@ -106,7 +106,46 @@ switch (choice) {
 }
 ```
 
-Π.χ.
+Παράδειγμα ελέγχου με αλφαριθμητικό:
+
+```java
+final String dayOfWeek = "Saturday";
+String result = ""; 
+switch (dayOfWeek) {
+  case "Sunday":                 
+    result = "Κυριακή"; 
+    break; 
+  case "Monday": 
+    result = "Δευτέρα"; 
+    break; 
+  case "Tuesday": 
+    result = "Τρίτη"; 
+    break; 
+  case "Wednesday": 
+    result = "Τετάρτη"; 
+    break; 
+  case "Thursday": 
+    result = "Πέμπτη"; 
+    break; 
+  case "Friday": 
+    result = "Παρασκευή"; 
+    break; 
+  case "Saturday": 
+    result = "Σάββατο"; 
+    break; 
+  default: 
+    result = "Error: " + dayOfWeek + 
+             " is not a day of the week"; 
+    break; 
+} 
+System.out.println(result);
+``` 
+Έξοδος:
+```bash
+> Σάββατο
+```
+
+Ακόμα ένα παράδειγμα:
 ```java
 Scanner scan = new Scanner(System.in);
 String choice = scan.next();
@@ -151,6 +190,7 @@ switch (grade) {
 1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
 1. Downey A. B., Mayfield C. (2016), _Think Java_, O' Reilly. 
 1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
+1. Liguori R. & Liguori P. (2014), _Java 8 Pocket Guide_, O'Reilly.
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 

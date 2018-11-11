@@ -37,7 +37,8 @@
 7. [Άλλες Δομές Δεδομένων](Week3/3.7-OtherCollections/README.md) √
 
 ### Εβδομάδα 4η - Εξαιρέσεις και Χρήσιμες Κλάσεις
-1. [Εξαιρέσεις](Week4/4.1-Exceptions/README.md) 
+1. [Εξαιρέσεις - Exceptions](Week4/4.1-Exceptions/README.md) 
+2. [Ισχυρισμοί - Assertions](Week4/4.2-Assertions/README.md) 
 
 ### Εβδομάδα 5η - Ημερομηνία και Ώρα, Εντολές Εισόδου/Εξόδου και Αρχεία
 1. [Ημερομηνία](Week5/5.1-Date/README.md) √

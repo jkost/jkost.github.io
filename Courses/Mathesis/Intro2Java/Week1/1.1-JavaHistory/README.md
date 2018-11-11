@@ -77,30 +77,30 @@ double myvar = 3.14
 
 Ο [Netscape Navigator 2.0](https://en.wikipedia.org/wiki/Netscape_Navigator) υποστηρίζει τη γλώσσα το Σεπτέμβριο του 1995 με τη μορφή των μη αυτόνομων εφαρμογών [Java applets](https://en.wikipedia.org/wiki/Java_applet). Η Microsoft ενσωματώνει τη γλώσσα στον [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer) στο τέλος του 1995. 
 
-Από τότε, οι δυνατότητες της γλώσσας απογειώνονται. Το 1996 η Sun αναπτύσσει το [Java Development Kit 1.0](https://en.wikipedia.org/wiki/Java_Development_Kit). Το επόμενο έτος, η έκδοση 1.1 υποστηρίζει [JavaBeans](https://en.wikipedia.org/wiki/JavaBeans). Το 1997 η Sun κατηγορεί τη Microsoft για παραβίαση της συμφωνίας όσον αφορά την Java στον Internet Explorer 4. 
+Από τότε, οι δυνατότητες της γλώσσας απογειώνονται. Το 1996 η Sun αναπτύσσει το [Java Development Kit 1.02](https://en.wikipedia.org/wiki/Java_Development_Kit). Το επόμενο έτος, η έκδοση 1.1 υποστηρίζει [JavaBeans](https://en.wikipedia.org/wiki/JavaBeans). Το 1997 η Sun κατηγορεί τη Microsoft για παραβίαση της συμφωνίας όσον αφορά την Java στον Internet Explorer 4. 
 
-Η Sun αναπτύσσει το JDK 1.2 και το [Swing](https://en.wikipedia.org/wiki/Swing_(Java), το οποίο αποτελεί την αντικατάσταση του [AWT (Abstract Window Toolkit)](https://en.wikipedia.org/wiki/Abstract_Window_Toolkit), για την ανάπτυξη GUIs (γραφικών εφαρμογών). 
-Ακολουθούν οι εκδόσεις 1.3, 1.4 και 1.5 όπου πλέον αλλάζει και η ονομασία της έκδοσης σε Java 5. Η Java 5 ήταν η πρώτη ουσιαστική αλλαγή του πυρήνα της γλώσσας απ' τη δημιουργία της, έτσι ώστε να υποστηρίζει Generics, Enumerated Types, autoboxing, varargs, annotations, static imports και νέες δυνατότητες για πολυνηματισμό (multi-threading). Η έκδοση 6 καταφέρνει να είναι 30% ταχύτερη από τις προηγούμενες εκδόσεις, ενώ η [έκδοση 7](Java7/REAMDE.md) φέρνει μικρές βελτιώσεις στη γλώσσα. Είναι η εποχή που η Sun Microsystems εξαγοράζεται από την Oracle. Η [έκδοση 8](Java8/README.md) φέρνει σημαντικές αλλαγές στη γλώσσα παρέχοντάς της δυνατότητες συναρτησιακού (λ-) προγραμματισμού αλλάζοντας κατά πολύ τον τρόπο χρήσης της. Η πολυαναμενόμενη [έκδοση 9](Java9/README.md) έφερε δυνατότητες τμηματοποίησης (modularisation) της γλώσσας δίνοντας τη δυνατότητα να δημιουργήσετε την δική σας εφαρμογή που να περιλαμβάνει μόνο τα modules της Java που χρειάζεται η εφαρμογή σας για να τρέξει. Από την έκδοση 10 και μετά, η Oracle αποφάσισε να εκδίδει μια νέα (minor) έκδοση Java κάθε 6 μήνες.
+Η Sun αναπτύσσει το JDK 1.2 και το [Swing](https://en.wikipedia.org/wiki/Swing_(Java), το οποίο αποτελεί την αντικατάσταση του [AWT (Abstract Window Toolkit)](https://en.wikipedia.org/wiki/Abstract_Window_Toolkit), για την ανάπτυξη GUIs (γραφικών εφαρμογών). Επειδή οι αλλαγές είναι πολύ μεγάλες σε σχέση με τις εκδόσεις 1.02 και 1.1, αποφασίζει να την ονομάσει "Java 2".
+Ακολουθούν οι εκδόσεις 1.3 και 1.4 (εισαγωγή του JDBC για επικοινωνία με βάσεις δεδομένων). Οι εκδόσεις 1.2, 1.3 και 1.4 αποτελούν τη "Java 2". Από την έκδοση 1.5, οι αλλαγές είναι πάλι μεγάλες, και πλέον αλλάζει πάλι η ονομασία της έκδοσης σε Java 5. Η Java 5 ήταν η πρώτη ουσιαστική αλλαγή του πυρήνα της γλώσσας απ' τη δημιουργία της, έτσι ώστε να υποστηρίζει Generics, Enumerated Types, autoboxing, varargs, annotations, static imports και νέες δυνατότητες για πολυνηματισμό (multi-threading). Η έκδοση 6 καταφέρνει να είναι 30% ταχύτερη από τις προηγούμενες εκδόσεις, ενώ η [έκδοση 7](Java7/REAMDE.md) φέρνει μικρές βελτιώσεις στη γλώσσα. Είναι η εποχή που η Sun Microsystems εξαγοράζεται από την Oracle. Η [έκδοση 8](Java8/README.md) φέρνει σημαντικές αλλαγές στη γλώσσα παρέχοντάς της δυνατότητες συναρτησιακού (λ-) προγραμματισμού αλλάζοντας κατά πολύ τον τρόπο χρήσης της. Η πολυαναμενόμενη [έκδοση 9](Java9/README.md) έφερε δυνατότητες τμηματοποίησης (modularisation) της γλώσσας δίνοντας τη δυνατότητα να δημιουργήσετε την δική σας εφαρμογή που να περιλαμβάνει μόνο τα modules της Java που χρειάζεται η εφαρμογή σας για να τρέξει. Από την έκδοση 10 και μετά, η Oracle αποφάσισε να εκδίδει μια νέα (minor) έκδοση Java κάθε 6 μήνες (και μια major έκδοση κάθε δυο χρόνια). Η πρώτη minor έκδοση είναι η 11.
 
-| Έκδοση Java | Κωδική ονομασία | Τέλος εποχής | Ημερομηνία έκδοσης
-| Java 10 | - | - | 20/03/2018
-| Java 9 | - | - | 27/07/2017
-| Java 8 | Spider | - | 18/03/2014 
-| Java 7 | Dolphin | 14/04/2015 | 28/07/2011 
-| Java 6 | Mustang | 16/04/2013 | 23/12/2006
-| Java 5 | Tiger | 4/11/2009 | 04/10/2004
-| Java 1.4 | Merlin |    <4/11/2009 | 06/02/2002
-| Java 1.3 | Kestrel |   <4/11/2009 | 08/05/2000
-| Java 1.2 | Playground |<4/11/2009 | 08/12/1998
-| Java 1.1 | - |         <4/11/2009 | 19/02/1997
-| Java 1.0 | Oak |       <4/11/2009 | 21/01/1996
-
+| Έκδοση Java | Κωδική ονομασία | Τέλος εποχής | Ημερομηνία έκδοσης | Αρ. κλάσεων
+| Java 11 | - | - | 25/09/2018 |
+| Java 10 | - | - | 20/03/2018 | 
+| Java 9 | - | - | 27/07/2017 | 6005
+| Java 8 | Spider | - | 18/03/2014 | 4240
+| Java 7 | Dolphin | 14/04/2015 | 28/07/2011 | 4024
+| Java 6 | Mustang | 16/04/2013 | 23/12/2006 | 3793
+| Java 5 | Tiger | 4/11/2009 | 04/10/2004 | 3279
+| Java 1.4 | Merlin |    <4/11/2009 | 06/02/2002 | 2991
+| Java 1.3 | Kestrel |   <4/11/2009 | 08/05/2000 | 1842
+| Java 1.2 | Playground |<4/11/2009 | 08/12/1998 | 1520
+| Java 1.1 | - |         <4/11/2009 | 19/02/1997 | 504
+| Java 1.02 | Oak |       <4/11/2009 | 21/01/1996 | 212
 
 ![](https://picodotdev.github.io/blog-bitix/assets/images/posts/2014/17/componentes-jpse8.png)
 
 **Εικόνα 6** _Αρχιτεκτονική της Java Standard Edition (Πηγή: [https://tinyurl.com/y9y2meap](https://tinyurl.com/y9y2meap))_
 
-Εν τω μεταξύ, μετά το JDK 1.3 εμφανίστηκε και η [Java Enterprise Edition (JEE) 1.3](https://en.wikipedia.org/wiki/Java_Platform%2C_Enterprise_Edition) η οποία στοχεύει στην ανάπτυξη επιχειρηματικών εφαρμογών (κοινώς το Web). Περιλαμβάνει τεχνολογίες όπως [Enterprise JavaBeans (EJBs)](https://en.wikipedia.org/wiki/Enterprise_JavaBeans), servlets, Java Server Pages, Java Server Faces κ.ά. Σήμερα βρίσκεται στην έκδοση 8, με πολλές δυνατότητες και ευκολία χρήσης σε σχέση με τις προηγούμενες εκδόσεις. Παράλληλα, έχουν αναπτυχθεί πολλά frameworks για ανάπτυξη επιχειρηματικών εφαρμογών (ή εφαρμογών ιστού) βασισμένα στη Java, όπως το [Apache Tapestry](https://en.wikipedia.org/wiki/Apache_Tapestry), το [Apache Struts](https://en.wikipedia.org/wiki/Apache_Struts_2) και το [Spring](https://en.wikipedia.org/wiki/Spring_Framework) για να αναφέρουμε τα πιο γνωστά. 
+Εν τω μεταξύ, μετά το JDK 1.3 εμφανίστηκε και η [Java Enterprise Edition (JEE) 1.3](https://en.wikipedia.org/wiki/Java_Platform%2C_Enterprise_Edition) η οποία στοχεύει στην ανάπτυξη επιχειρηματικών εφαρμογών (κοινώς το Web). Περιλαμβάνει τεχνολογίες όπως [Enterprise JavaBeans (EJBs)](https://en.wikipedia.org/wiki/Enterprise_JavaBeans), servlets, Java Server Pages, Java Server Faces κ.ά. Σήμερα βρίσκεται στην έκδοση 8, με πολλές δυνατότητες και ευκολία χρήσης σε σχέση με τις προηγούμενες εκδόσεις (1.3, 1.4, 5, 6, 7, 8). Παράλληλα, έχουν αναπτυχθεί πολλά frameworks για ανάπτυξη επιχειρηματικών εφαρμογών (ή εφαρμογών ιστού) βασισμένα στη Java, όπως το [Apache Tapestry](https://en.wikipedia.org/wiki/Apache_Tapestry), το [Apache Struts](https://en.wikipedia.org/wiki/Apache_Struts_2), το [Play](https://www.playframework.com/) και το [Spring](https://en.wikipedia.org/wiki/Spring_Framework) για να αναφέρουμε τα πιο γνωστά. 
 
 ![](https://www.programering.com/images/remote/ZnJvbT1pdGV5ZSZ1cmw9Y21idzVpWWlabVloWlROemtqWmxGVExoTm1aNTB5WW1Sek10SW1OaFZUTDNVbVpsVkdaNFUyTHlrVE96OGlONEFETXZRbmJsMUdhakZHZDBGMkxrRjJic0JYZHYwMmJqNVNaNVZHZHA1aU1zUjJMdm9EYzBSSGE.jpg)
 
@@ -124,7 +124,7 @@ double myvar = 3.14
       
 Για να δούμε και μια άλλη γνώμη όμως, ο Stroustrup υποστηρίζει ότι ≪... η Java δεν είναι ανεξάρτητη πλατφόρμας. Είναι μια πλατφόρμα. Όπως και τα Windows, είναι μια ιδιόκτητη εμπορική πλατφόρμα. Δηλαδή, μπορείτε να γράψετε προγράμματα για Windows / Intel ή για Java / JVM, και σε κάθε περίπτωση γράφετε κώδικα για μια πλατφόρμα που ανήκει σε μία εταιρεία και για το εμπορικό όφελος των εν λόγω εταιριών. Έχει επισημανθεί ότι μπορείτε να γράψετε τα προγράμματα σε οποιαδήποτε γλώσσα για τη JVM και τα συναφή λειτουργικά συστήματα. Ωστόσο, η JVM, κ.λπ., είναι σε μεγάλο βαθμό μεροληπτική υπέρ της Java. Δεν είναι πουθενά κοντά σε μια γενική, λογικά, ουδέτερη γλώσσα VM/Λ.Σ. ...≫ 
 
-Αν και τα επιχειρήματα του Stroustrup, του δημιουργού της C++ ήταν αληθή εώς ένα βαθμό μέχρι πρότεινος, πρόσφατα η Oracle "άνοιξε" τον κώδικα τόσο της Java SE όσο και της [Java EE](http://www.linux-magazine.com/Online/News/Oracle-Donating-Java-EE-to-the-Eclipse-Foundation). Επίσης, η ΕΜ (JVM) αποτελεί πλέον την πλατφόρμα για πολλές άλλες γλώσσες προγραμματισμού οι οποίες μπορούν να τρέξουν σ' αυτή, όπως Groovy, Ruby (JRuby), Python (Jython), Go, Erlang (Erjang), Clojure κ.ά. κάνοντάς τη μια πραγματικά πολύγλωσση (polyglot) εικονική μηχανή.  
+Αν και τα επιχειρήματα του Stroustrup, του δημιουργού της C++ ήταν αληθή έως ένα βαθμό μέχρι πρότεινος, πρόσφατα η Oracle "άνοιξε" τον κώδικα τόσο της Java SE όσο και της [Java EE](http://www.linux-magazine.com/Online/News/Oracle-Donating-Java-EE-to-the-Eclipse-Foundation). Επίσης, η ΕΜ (JVM) αποτελεί πλέον την πλατφόρμα για πολλές άλλες γλώσσες προγραμματισμού οι οποίες μπορούν να τρέξουν σ' αυτή, όπως Groovy, Ruby (JRuby), Python (Jython), Go, Erlang (Erjang), Clojure κ.ά. κάνοντάς τη μια πραγματικά πολύγλωσση (polyglot) εικονική μηχανή.  
 
 Η Java έγινε πλέον ανοικτού κώδικα με το [OpenJDK](https://en.wikipedia.org/wiki/OpenJDK), η πρώτη έκδοση του οποίου κυκλοφόρησε για το Ubuntu και διανέμεται πλέον μ' αυτό.
       
@@ -148,6 +148,7 @@ double myvar = 3.14
 ## Πηγές:
 1. [Java History](http://www.java.com/en/javahistory/).
 2. Wikipedia, [Java Programming Language](http://en.wikipedia.org/wiki/Java_%28programming_language%29).
+3. Liguori R. & Liguori P. (2014), _Java 8 Pocket Guide_, O'Reilly.
 
 ---
 
