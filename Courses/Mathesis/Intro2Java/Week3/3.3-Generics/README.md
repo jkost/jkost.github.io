@@ -142,11 +142,11 @@ jshell> List<Number> nums = ints; // compile-time error
 	
 Αν δεν γνωρίζετε τι γενικευμένο τύπο δεδομένων να χρησιμοποιήσετε για να επιλύσετε κάποιο πρόβλημά σας, υπάρχει και ο _μη δεσμευμένος (unbounded)_ τύπος δεδομένων, π.χ. ```List<?>```. Βέβαια, σ' αυτή την περίπτωση μπορείτε να εισάγετε μόνο τιμές ```null``` στη συλλογή αυτή καθώς προσπάθεια προσθήκης άλλου τύπου δεδομένων εμφανίζει λάθος όπως π.χ. ```incompatible types: java.lang.String cannot be converted to capture#2 of ?```.
 
-Για ακόμα μεγαλύτερη ασφάλεια, μπορείτε να χρησιμοποιήσετε τις αντίστοιχες στατικές μεθόδους `checkedXXX``` της ```Collection```
+Για ακόμα μεγαλύτερη ασφάλεια, μπορείτε να χρησιμοποιήσετε τις αντίστοιχες στατικές μεθόδους ```checkedXXX``` της ```Collection```:
 ```java
 checkedCollection()     checkedList()           checkedMap()            
-checkedNavigableMap()   checkedNavigableSet()   checkedQueue()         
-checkedSet() 			checkedSortedMap()      checkedSortedSet() 
+checkedNavigableMap()	checkedNavigableSet()   checkedQueue()         
+checkedSet() 	checkedSortedMap()      checkedSortedSet() 
 ```
 
 Π.χ.:
