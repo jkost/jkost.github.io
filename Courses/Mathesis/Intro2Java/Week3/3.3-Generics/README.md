@@ -142,6 +142,17 @@ jshell> List<Number> nums = ints; // compile-time error
 	
 Αν δεν γνωρίζετε τι γενικευμένο τύπο δεδομένων να χρησιμοποιήσετε για να επιλύσετε κάποιο πρόβλημά σας, υπάρχει και ο _μη δεσμευμένος (unbounded)_ τύπος δεδομένων, π.χ. ```List<?>```. Βέβαια, σ' αυτή την περίπτωση μπορείτε να εισάγετε μόνο τιμές ```null``` στη συλλογή αυτή καθώς προσπάθεια προσθήκης άλλου τύπου δεδομένων εμφανίζει λάθος όπως π.χ. ```incompatible types: java.lang.String cannot be converted to capture#2 of ?```.
 
+Για ακόμα μεγαλύτερη ασφάλεια, μπορείτε να χρησιμοποιήσετε τις αντίστοιχες στατικές μεθόδους `checkedXXX``` της ```Collection```
+```java
+checkedCollection()     checkedList()           checkedMap()            checkedNavigableMap()   checkedNavigableSet()   checkedQueue()          checkedSet() 			checkedSortedMap()      checkedSortedSet() 
+```
+
+Π.χ.:
+```java
+List<String> names = Collections.checkedList(new ArrayList<>(), String.class);
+Collections.addAll(names, "Κατερίνα", "Σοφία", "Μαρία");
+```
+
 ### Boxing, unboxing, autoboxing
 
 Κάθε πρωτογενής (raw) τύπος διαθέτει την αντίστοιχη κλάση του:
@@ -408,6 +419,7 @@ public interface Collection<E> {
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+1. Kabutz H. (2017), "Collections.checkedCollection()", [Java Specialists Newsletter Issue 251](https://www.javaspecialists.eu/archive/Issue251.html)
 1. Naftalin M., Wadler P. (2006), _Java Generics and Collections_, O'Reilly. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.

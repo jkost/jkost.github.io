@@ -47,7 +47,7 @@ enum Day {
   }
 }
 ```
-
+Σημειώστε ότι η μέθοδος κατασκευής (constructor) ενός ```enum``` είναι πάντοτε ```private```.
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.

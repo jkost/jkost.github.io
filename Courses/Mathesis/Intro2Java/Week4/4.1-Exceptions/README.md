@@ -404,11 +404,12 @@ assert var1 > 0;
 
 Οι ισχυρισμοί δεν μπορούν ν' αντικαταστήσουν τις συνθήκες. Να έχετε πάντοτε υπόψιν σας ότι οι ισχυρισμοί μπορούν να απενεργοποιούνται. Καλό είναι να ενεργοποιούνται όταν ακόμα τεστάρετε τον κώδικα, και να απενεργοποιούνται όταν το πρόγραμμα είναι στην παραγωγή.
 
-## Optional
+## Προαιρετικό (Optional)
 
 Ο Sir Tony Hoare, ο δημιουργός του ```null```, θεωρεί αυτή του τη δημιουργία ως το μεγαλύτερο λάθος του (βλ. [εδώ](https://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions) και [εδώ](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare)).
 
-Η κλάση ```Optional``` εισήχθηκε στην έκδοση 8 με σκοπό να αντιμετωπίσει μια από τις πιο συνηθισμένες εξαιρέσεις, την ```NullPointerException```.
+Η κλάση ```Optional<T>``` εισήχθηκε στην έκδοση 8 με σκοπό να αντιμετωπίσει μια από τις πιο συνηθισμένες εξαιρέσεις, την ```NullPointerException```. Η κλάση ```Optional<T>``` αναπαριστά μια αμετάβλητη αποθήκη μνήμης που μπορεί να φυλάσσει
+ένα όχι ```null``` στοιχείο ```T``` ή τίποτα (άδεια). Μια προαιρετική (```optional```) μεταβλητή είναι στην ουσία μια αμετάβλητη συλλογή (αν και δεν κληρονομεί από την διεπαφή ```Collection<T>```) που μπορεί να αποθηκεύσει το πολύ ένα στοιχείο. 
 
 ```java
 jshell> String s1 = null
@@ -433,6 +434,40 @@ jshell> o1.orElse("") + o2.get()
 $3 ==> "Hello"					// αντί για NullPointerException
 ```
 
+Είναι καλή ιδέα οι μεθόδοι σας να επιστρέφουν ```Optional<T>``` αντί για ```Τ``` αν νομίζετε ότι η ```Τ``` μπορεί να είναι ```null``` δηλ. όχι τιμή και οι χρήστες αυτής της μεθόδου πρέπει να ελέγξουν αυτήν την περίπτωση. Π.χ. η παρακάτω μέθοδος αναζητά σειριακά ένα στοιχείο σε μια συλλογή, κι αν δεν το βρει επιστρέφει ```null```:
+```java
+public static <E extends Comparable<E>> E find(E el, Collection<E> c) {
+	for (E e : c) {
+		if (e.equals(el)) {
+			return el;
+		}
+	}
+	return null;
+}
+//...
+if (find("Ελένη", names) != null) {
+//...
+}
+```
+Θα ήταν καλύτερα αν επέστρεφε ```Optional<E>```:
+```java
+public static <E extends Comparable<E>> Optional<E> find(E el, Collection<E> c) {
+	for (E e : c) {
+		if (e.equals(el)) {
+			return Optional.of(el);
+		}
+	}
+	return Optional.empty();
+}
+//...
+String foundName = find("Ελένη", names).orElse("Not found...");
+```
+Αποφύγετε να χρησιμοποιείτε ```Optional``` στις ακόλουθες περιπτώσεις:
+
+* μην επιστρέφετε συλλογές ως ```Optional``` (π.χ. ```Optional<List<T>>```) 
+* μην χρησιμοποιείτε ```Optional```s ως κλειδιά σε πίνακες κατακερματισμού
+* αν η μέθοδός σας επιστρέφει κάποιον πρωτογενή τύπο, προτιμήστε τα ξαδελφάκια της ```Optional```, ```OptionalInt, OptionalLong``` και ```OptionalDouble```
+	
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.
