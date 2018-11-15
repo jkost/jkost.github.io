@@ -144,7 +144,9 @@ jshell> List<Number> nums = ints; // compile-time error
 
 Για ακόμα μεγαλύτερη ασφάλεια, μπορείτε να χρησιμοποιήσετε τις αντίστοιχες στατικές μεθόδους `checkedXXX``` της ```Collection```
 ```java
-checkedCollection()     checkedList()           checkedMap()            checkedNavigableMap()   checkedNavigableSet()   checkedQueue()          checkedSet() 			checkedSortedMap()      checkedSortedSet() 
+checkedCollection()     checkedList()           checkedMap()            
+checkedNavigableMap()   checkedNavigableSet()   checkedQueue()         
+checkedSet() 			checkedSortedMap()      checkedSortedSet() 
 ```
 
 Π.χ.:
