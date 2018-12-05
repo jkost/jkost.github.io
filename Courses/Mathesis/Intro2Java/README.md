@@ -22,7 +22,7 @@
 3. [Ενθυλάκωση, Πακέτα και Αρθρώματα](Week2/2.3-Encapsulation/README.md) √
 4. [Κληρονομικότητα](Week2/2.4-Inheritance/README.md) √
 5. [Πολυμορφισμός](Week2/2.5-Polymorphism/README.md) √
-6. [Τεκμηρίωση κώδικα](Week2/2.6-Javadoc/README.md)
+6. [Τεκμηρίωση κώδικα - Javadoc](Week2/2.6-Javadoc/README.md)
 7. [Αποσφαλμάτωση](Week2/2.7-Debugging/README.md) 
 8. [Καλές τεχνικές προγραμματισμού](Week2/2.8-BestPractices/README.md)
 9. [Πρώτη Άσκηση](Week2/2.9-Exercise1/README.md)
@@ -39,10 +39,16 @@
 ### Εβδομάδα 4η - Εξαιρέσεις και Χρήσιμες Κλάσεις
 1. [Εξαιρέσεις - Exceptions](Week4/4.1-Exceptions/README.md) √
 2. [Απαριθμημένοι Τύποι - Enums](Week4/4.2-Enums/README.md) √
+3. [Σχόλια μεταγλώττισης - Annotations](Week4/4.3-Annotations/README.md)
+4. [Χρήσιμες κλάσεις](Week4/4.4-UsefulClasses/README.md)
+4. [Έλεγχος κώδικα με το JUnit 5](Week4/4.5-JUnit/README.md)
+5. [Αρχεία καταγραφής - Logging](Week4/4.6-Logging/README.md)
 
 ### Εβδομάδα 5η - Ημερομηνία και Ώρα, Εντολές Εισόδου/Εξόδου και Αρχεία
 1. [Ημερομηνία & Ώρα](Week5/5.1-Date-Time/README.md) √
 2. [Αρχεία](Week5/5.2-Files/README.md) 
+3. [NIO](Week5/5.3-NIO/README.md) 
+4. 
 
 
 ### Εβδομάδα 6η - Ανάπτυξη μιας εφαρμογής 

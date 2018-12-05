@@ -151,10 +151,18 @@ checkedSet() 	checkedSortedMap()      checkedSortedSet()
 
 Π.χ.:
 ```java
-List<String> names = Collections.checkedList(new ArrayList<>(), String.class);
-Collections.addAll(names, "Κατερίνα", "Σοφία", "Μαρία");
-```
+jshell> List<String> names = Collections.checkedList(new ArrayList<>(), String.class);
+names ==> []
 
+jshell> Collections.addAll(names, "Κατερίνα", "Σοφία", "Μαρία");
+$15 ==> true
+
+jshell> names.add(42)
+|  Error:
+|  incompatible types: int cannot be converted to java.lang.String
+|  names.add(42)
+|            ^^
+```
 ### Boxing, unboxing, autoboxing
 
 Κάθε πρωτογενής (raw) τύπος διαθέτει την αντίστοιχη κλάση του:
@@ -411,6 +419,13 @@ public interface Collection<E> {
 
 Συμπερασματικά, χρησιμοποιείτε πάντα τους γενικευμένους τύπους (generic types) και αποφύγετε τη χρήση των πρωτογενών συλλογών (π.χ. ```List, Set``` κλπ.). Οι πρωτογενείς συλλογές μπορούν να εμφανίσουν εξαιρέσεις κατά την εκτέλεση του προγράμματος. Ο γενικευμένος τύπος ```List<Object>``` μπορεί ν' αποθηκεύσει δεδομένα οποιουδήποτε τύπου (προτιμήστε τον από τον πρωτογενή τύπο ```List```) ενώ ο γενικευμένος τύπος ```List<?>``` αναπαριστά μια λίστα που μπορεί ν' αποθηκεύσει αντικείμενα ενός άγνωστου τύπου δεδομένων.
 	
+###Ασκήσεις
+1. Να γράψετε μια κλάση ```StringIterable implements Iterable<Character>``` η οποία επιστρέφει τους χαρακτήρες ενός αλφαριθμητικού, π.χ.
+```java
+for (Character character : new StringIterable("abc")) {
+	System.out.print(character + ", ");
+}
+```
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
