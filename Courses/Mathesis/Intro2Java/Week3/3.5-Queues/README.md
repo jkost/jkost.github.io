@@ -89,43 +89,6 @@ public class Q<E> {
 
 Μια ουρά που υλοποιείται με πίνακα κινδυνεύει να γεμίσει ενώ υπάρχει ακόμα χώρος στην αρχή της, δηλ. πριν από το δείκτη εμπρός. Μια πιο αποτελεσματική υλοποίηση είναι η _κυκλική ουρά (circular queue)_ ή _δακτύλιος (ring)_.
 
-Ας δούμε και μια υλοποίηση της ```Stack```:
-
-```java
-import java.util.ArrayDeque;
-import java.util.Deque;
-
-public class Stack<E> {
-    private final Deque<E> stack;
-    private final int size;
-
-    public Stack(int numElements) {
-        this.size = numElements;
-        stack = new ArrayDeque<>(this.size);
-    }
-
-    public boolean push(E e) {
-        return !isFull() && stack.offerFirst(e);
-    }
-
-    public E pop() {
-        return stack.poll();
-    }
-
-    public E peek() {
-        return stack.peek();
-    }
-
-    public boolean isEmpty() {
-        return stack.isEmpty();
-    }
-
-    public boolean isFull() {
-        return stack.size() == size;
-    }
-}
-```
-
 ### Εισαγωγή στοιχείων
 Χρησιμοποιήστε τη μέθοδο ```boolean offer(E e)``` για να εισάγετε ένα στοιχείο στο τέλος της ουράς. Η μέθοδος επιστρέφει ```true``` αν η εισαγωγή του στοιχείου ήταν επιτυχής, αλλοιώς επιστρέφει ```false```. Αποφύγετε τη χρήση της ```boolean add(E e)``` από την ```Collection``` η οποία εμφανίζει ```IllegalStateException``` αν η ουρά είναι γεμάτη.
 
@@ -364,7 +327,7 @@ _Πηγή: [Naftalin, Wadler (2006)]_
 Όπως είπαμε, καλύτερη απόδοση έχει η ```ArrayDeque```.
 
 ## Ασκήσεις
-1. Στο μάθημα 3.2 είδαμε ότι υπάρχει η κληρονομημένη κλάση ```Stack```. Υλοποιήστε τη δική σας πιο αποδοτική κλάση ```Stack``` χρησιμοποιώντας μια υλοποίηση της ```Deque```.
+1. Στο μάθημα 3.2 είδαμε ότι υπάρχει η παρωχημένη (legacy) κλάση ```Stack```. Υλοποιήστε τη δική σας πιο αποδοτική κλάση ```Stack``` χρησιμοποιώντας μια υλοποίηση της ```Deque```.
 
 ![](assets/Fig4.png)
 
