@@ -252,7 +252,7 @@ nums ==> [10, 20, 2.78, 3.14]
 jshell> List<? super Integer> nums = new ArrayList<>();
 ```
 
-δηλώνεί ότι η ```nums``` δέχεται ως στοιχεία τύπου ```Integer``` αλλά και οποιασδήποτε υπερκλάσης της ```Integer```, δηλ. ```Number``` και ```Object```. 
+δηλώνει ότι η ```nums``` δέχεται ως στοιχεία τύπου ```Integer``` αλλά και οποιασδήποτε υπερκλάσης της ```Integer```, δηλ. ```Number``` και ```Object```. 
 
 ```java
 public static <T> void copy(List<? super T> dst, List<? extends T> src);
@@ -269,7 +269,7 @@ public static <T extends Comparable<? super T>> void sort(List<T> list) {...}
 ```
 Το ```Τ``` πρέπει να είναι τύπου ```Comparable``` κι αυτό το ```Comparable``` πρέπει να ορίζεται στο ```Τ``` ή σε μια υπερκλάση του ```Τ```.
 
-Η ```List<?>``` είναι ισοδύναμη με ```List<? extends Object>```¨
+Η ```List<?>``` είναι ισοδύναμη με ```List<? extends Object>```:
 
 ```java
 List<?> list = new ArrayList<Object>(); // ok
@@ -419,7 +419,7 @@ public interface Collection<E> {
 
 Συμπερασματικά, χρησιμοποιείτε πάντα τους γενικευμένους τύπους (generic types) και αποφύγετε τη χρήση των πρωτογενών συλλογών (π.χ. ```List, Set``` κλπ.). Οι πρωτογενείς συλλογές μπορούν να εμφανίσουν εξαιρέσεις κατά την εκτέλεση του προγράμματος. Ο γενικευμένος τύπος ```List<Object>``` μπορεί ν' αποθηκεύσει δεδομένα οποιουδήποτε τύπου (προτιμήστε τον από τον πρωτογενή τύπο ```List```) ενώ ο γενικευμένος τύπος ```List<?>``` αναπαριστά μια λίστα που μπορεί ν' αποθηκεύσει αντικείμενα ενός άγνωστου τύπου δεδομένων.
 	
-###Ασκήσεις
+### Ασκήσεις
 1. Να γράψετε μια κλάση ```StringIterable implements Iterable<Character>``` η οποία επιστρέφει τους χαρακτήρες ενός αλφαριθμητικού, π.χ.
 ```java
 for (Character character : new StringIterable("abc")) {

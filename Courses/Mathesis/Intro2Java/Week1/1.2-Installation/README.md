@@ -11,19 +11,20 @@
 
 Όπως είδαμε, η Java αποτελείται από μια Εικονική Μηχανή που επιτρέπει την εκτέλεση των εφαρμογών Java σε οποιαδήποτε πλατφόρμα (Windows, Mac, Linux, Unix). Για να εκτελέσετε μια εφαρμογή Java χρειάζεστε το _Java Runtime Environment (JRE)_. Για να αναπτύξετε όμως μια εφαρμογή Java χρειάζεστε το _Java Development Kit (JDK)_ το οποίο περιλαμβάνει το JRE.
 
-Θα εγκαταστήσουμε την τελευταία έκδοση της Java SE ή Standard Edition (10, αλλά και η 9 μας καλύπτει) για τις πιο δημοφιλής πλατφόρμες Windows, Linux, MacOSX.
+Θα εγκαταστήσουμε την τελευταία έκδοση της Java SE ή Standard Edition (11, αλλά και οι 9 ή 10 μας καλύπτουν) για τις πιο δημοφιλής πλατφόρμες Windows, Linux, MacOSX. Από την έκδοση 11 και μετά, έχει αλλάξει η άδεια χρήσης. Για επαγγελματική χρήση κατεβάστε το Oracle JDK, ενώ υπάρχει και η δωρεάν έκδοση OpenJDK. 
 
 ### Εγκατάσταση της Java στα Windows
-
-1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (```jdk-10.0.2_windows-x64_bin.exe```).
-1. Κάντε διπλό κλικ πάνω στο αρχείο αυτό και ακολουθήστε τα βήματα του οδηγού. Καλό είναι να το εγκαταστήσετε σε μια διαδρομή (path) χωρίς κενά, π.χ. ```C:\Programs\Java``` αντί για την προτεινόμενη διαδρομή ```C:\Program Files\Java```. Ο οδηγός θα σας ζητήσει στη συνέχεια να εγκαταστήσετε και το JRE. Επιλέξτε ```C:\Program Files\Java\jdk10.0.2\jre```.
+#### Oracle JDK
+1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) ή στο [OpenJDK](http://jdk.java.net/11/) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (```jdk-11.0.1_windows-x64_bin.exe``` ή [openjdk-11.0.1_windows-x64_bin.zip](https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_windows-x64_bin.zip)).
+1. Κάντε διπλό κλικ πάνω στο αρχείο αυτό και ακολουθήστε τα βήματα του οδηγού. Καλό είναι να το εγκαταστήσετε σε μια διαδρομή (path) χωρίς κενά, π.χ. ```C:\Programs\Java``` αντί για την προτεινόμενη διαδρομή ```C:\Program Files\Java```. Ο οδηγός θα σας ζητήσει στη συνέχεια να εγκαταστήσετε και το JRE. Επιλέξτε ```C:\Program Files\Java\jdk11.0.1\jre```.
 1. Προσθέστε την εγκατάσταση στη μεταβλητή περιβάλλοντος ```PATH``` ως εξής:
+
 
 * Δεξί κλικ στο εικονίδιο Computer ⇒ Properties
 * System Properties
 * Καρτέλα "Advanced” ⇒  Environment Variables
 * "System Variables", 
-* Επιλέξτε **New** και εισάγετε τη νέα μεταβλητή περιβάλλοντος ```JAVA_HOME``` δίνοντάς της την τιμή ```C:\Programs\Java\jdk10.0.2```
+* Επιλέξτε **New** και εισάγετε τη νέα μεταβλητή περιβάλλοντος ```JAVA_HOME``` δίνοντάς της την τιμή ```C:\Programs\Java\jdk11.0.2```
 * Επιλέξτε **"PATH" ⇒  Edit** και προσθέστε ```%JAVA_HOME%\bin;``` μπροστά από οποιαδήποτε άλλη τιμή της μεταβλητής αυτής
 * Πατήστε **ΟΚ** σε όλα τ' ανοικτά παράθυρα
 
@@ -33,7 +34,7 @@
 
 
 ### Εγκατάσταση της Java στο MacOS
-1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (```jdk-10.0.2_osx-x64_bin.dmg```).
+1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (```jdk-11.0.1_osx-x64_bin.dmg```).
 1. Εγκαταστήστε το αρχείο κατά τα γνωστά.
 1. Ορίστε τις ακόλουθες μεταβλητές περιβάλλοντος στο αρχείο ```.bash_profile```: ```JAVA_HOME=$HOME/Programs/Java/jdk10.0.2``` και ```PATH=$JAVA_HOME/bin:$PATH```
 
@@ -116,17 +117,17 @@ jshell> (Ctrl+D)
 * [Tutorialspoint            ](https://www.tutorialspoint.com/compile_java_online.php)
 * [Visualizer                ](http://www.pythontutor.com/visualize.html#mode=edit)
 
-## Εγκατάσταση του NetBeans 9.0
+## Εγκατάσταση του Apache NetBeans
 
 1. Από τον ιστοχώρο της [Apache](https://netbeans.apache.org/download/index.html) κατεβάστε την τελευταία έκδοση του Apache NetBeans. Θα πρέπει να κατεβάσετε την έκδοση 9.0 ή νεώτερη για να μπορέσετε να δουλέψετε με το JDK 9 ή νεώτερο.
-1. Αποσυμπιέστε το αρχείο ```netbeans-java-9.0-bin.zip``` σε ένα φάκελο (π.χ. ```$HOME/Programs```)  
+1. Αποσυμπιέστε το αρχείο ```netbeans-java-x.0-bin.zip``` σε ένα φάκελο (π.χ. ```$HOME/Programs```)  
 1. Ελέξτε ότι το αρχείο ```<netbeans>/etc/netbeans.conf``` περιέχει γραμμή παρόμοια με την παρακάτω ανάλογα με την έκδοση JDK που εγκαταστήσατε προηγουμένως:
 ```bash
-netbeans_jdkhome="/<path>/jdk-10.0.2.jdk/Contents/Home/" 
+netbeans_jdkhome="/<path>/jdk-11.0.1.jdk/Contents/Home/" 
 ```
 αν χρησιμοποιείτε Mac ή
 ```bash
-netbeans_jdkhome="/<path>/jdk10.0.2/" 
+netbeans_jdkhome="/<path>/jdk11.0.1/" 
 ```
 αν χρησιμοποείτε Windows/Linux/Unix.
 
@@ -135,8 +136,8 @@ netbeans_jdkhome="/<path>/jdk10.0.2/"
 1. Επιλέξτε το μενού **Tools --> Open Java Platform Shell**
 ```
 |  System Information:
-|      Java version:    10.0.2+10
-|      Virtual Machine: Java HotSpot(TM) 64-Bit Server VM  10.0.2+10
+|      Java version:    11.0.1+10
+|      Virtual Machine: Java HotSpot(TM) 64-Bit Server VM  11.0.1+10
 |      Classpath:
 |  	/<path>/netbeans/java/modules/ext/nb-mod-jshell-probe.jar
 |  

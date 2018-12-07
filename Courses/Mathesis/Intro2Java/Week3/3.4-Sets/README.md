@@ -275,6 +275,7 @@ faceCards ==> [JACK, QUEEN, KING]
 | ```TreeSet``` | O(logn) | O(logn) | O(logn) | 
 
 *k είναι η χωρητικότητα του συνόλου
+
 ** για ```EnumSet```s μέχρι 64 στοιχείων, μετά γίνεται O(logn)
 
 _Πηγή: [Naftalin, Wadler (2006)]_
