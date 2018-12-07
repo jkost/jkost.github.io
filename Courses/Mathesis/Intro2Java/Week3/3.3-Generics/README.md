@@ -278,43 +278,13 @@ List<?> list = new ArrayList<>(); // ok
 ```
 
 ## Γενικευμένες κλάσεις και μέθοδοι
-Μπορούμε να δημιουργήσουμε τις δικές μας γενικευμένες κλάσεις, π.χ.
+Μπορούμε να δημιουργήσουμε τις δικές μας γενικευμένες κλάσεις. Θα δούμε παραδείγματα στο μάθημα 3.5 όταν θα μιλήσουμε για τις Ουρές.
 
 ```java
-import java.util.ArrayDeque;
-import java.util.Deque;
-
-public class Stack<E> {
-    private final Deque<E> stack;
-    private final int size;
-
-    public Stack(int numElements) {
-        this.size = numElements;
-        stack = new ArrayDeque<>(this.size);
-    }
-
-    public boolean push(E e) {
-        return !isFull() && stack.offerFirst(e);
-    }
-
-    public E pop() {
-        return stack.poll();
-    }
-
-    public E peek() {
-        return stack.peek();
-    }
-
-    public boolean isEmpty() {
-        return stack.isEmpty();
-    }
-
-    public boolean isFull() {
-        return stack.size() == size;
-    }
+public class MyGenericClass<T> {
+//...
 }
 ```
-_Θα μιλήσουμε για τις ουρές σε επόμενο μάθημα_.
 
 Αν όμως η κλάση δεν είναι γενικευμένη αλλά θέλουμε να δηλώσουμε μια γενικευμένη μέθοδο, τότε η σύνταξη είναι ως εξής:
 
