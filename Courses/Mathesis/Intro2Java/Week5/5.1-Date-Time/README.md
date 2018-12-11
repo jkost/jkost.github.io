@@ -3,15 +3,15 @@
 
 ---
 
-[Δ](../../README.md) |[->](../5.2-Time/README.md) 
+[Δ](../../README.md) | [->](../5.2-Time/README.md) 
  
 ---
 
 ## Εισαγωγή
-Για πολλά χρόνια η γλώσσα διέθετε ένα όχι και τόσο ικανοποιητικό ΑΡΙ για την αναπαράσταση της ημερομηνίας και της ώρας.
+Για πολλά χρόνια η γλώσσα διέθετε ένα όχι και τόσο ικανοποιητικό ΑΡΙ για την αναπαράσταση της ημερομηνίας και της ώρας. Η έκδοση 1.0 εισήγαγε την κλάση ```java.util.Date``` (μην την μπερδέψετε με την ```java.sql.Date```) η οποία αντικαταστάθηκε (deprecated) στην έκδοση 1.1 από την ```Calendar```. Η έκδοση 8, επιτέλους, εισήγαγε μια πολύ καλή υλοποίηση όπως θα δούμε στη συνέχεια.
 
 ## Date/Time API (JSR-310)
-Πρόκειται για τον αντικαταστάτη των ```java.util.Date``` και ```java.util.Calendar```. Βασίζεται στη βιβλιοθήκη [Joda Time](http://www.joda.org/joda-time). Βρίσκεται στο πακέτο ```java.time``` και οι κλάσεις της είναι αμετάβλητες (immutable) πράγμα που σημαίνει ότι δεν χρειάζονται συγχρονισμό σε πολυ-νηματικά περιβάλλοντα. Ακολουθεί το χρονολογικό πρότυπο [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) αλλά υποστηρίζει τη χρήση κι άλλων χρονολογιών (π.χ. ιαπωνικό, ισλαμικό κλπ.) - (βλ. κλάση ```Chronology```). Αποτελείται από τα εξής υπο-πακέτα:
+Πρόκειται για τον αντικαταστάτη των ```java.util.Date``` και ```java.util.Calendar```. Βασίζεται στη βιβλιοθήκη [Joda Time](http://www.joda.org/joda-time). Βρίσκεται στη βιβλιοθήκη (package) ```java.time``` και οι κλάσεις της είναι αμετάβλητες (immutable) πράγμα που σημαίνει ότι δεν χρειάζονται συγχρονισμό σε πολυ-νηματικά περιβάλλοντα. Ακολουθεί το χρονολογικό πρότυπο [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) αλλά υποστηρίζει τη χρήση κι άλλων χρονολογιών (π.χ. ιαπωνικό, ισλαμικό κλπ.) - (βλ. κλάση ```Chronology```). Αποτελείται από τις εξής υπο-βιβλιοθήκες:
 
 * ```java.time```
 * ```java.time.chrono```
@@ -21,74 +21,162 @@
 
 Το ΑΡΙ ακολουθεί κάποιες συμβάσεις οι οποίες κάνουν τη ζωή μας πιο εύκολη. Έτσι, για τη δημιουργία αντικειμένων υπάρχουν στατικές μέθοδοι κατασκευής (factory methods) ```of()```, για τη μετατροπή από έναν τύπο σε άλλο οι μέθοδοι καλούνται ```from()```, για τη μετατροπή από αλφαριθμητικά καλούνται ```parse()```, ```with()``` για ν' αλλάξετε τις τιμές των αντικειμένων κλπ.
 
-Ας δούμε μερικά παραδείγματα. Για να δημιουργήσουμε μια νέα ημερομηνία χρησιμοποιούμε την κλάση ```LocalDate```:
+Ας δούμε μερικά παραδείγματα. Για να δημιουργήσουμε μια νέα ημερομηνία χρησιμοποιούμε την κλάση ```LocalDate``` ενώ για μια νέα ώρα την κλάση ```LocalTime```:
 ```java
-  LocalDate today = LocalDate.now();
-  // 2014-11-18
-  LocalDate date = LocalDate.of(2014, 11, 18);
-```
-Μπορούμε να ανακτήσουμε 
-```java
-  int year = date.getYear();      // 2014
-  Month month = date.getMonth();    // NOVEMBER
-  int day = date.getDayOfMonth();   // 18
-  DayOfWeek dow = date.getDayOfWeek();  // TUESDAY
-  int len = date.lengthOfMonth();   // 30
-  boolean leap = date.isLeapYear(); // false
+jshell> import java.time.*
+
+jshell> LocalDate today = LocalDate.now();
+today ==> 2018-12-10
+
+jshell> LocalDate xmas = LocalDate.of(2018, 12, 25);
+xmas ==> 2018-12-25
+
+jshell> int year = xmas.getYear();
+year ==> 2018
+
+jshell> Month month = xmas.getMonth();
+month ==> DECEMBER
+
+jshell> int day = xmas.getDayOfMonth();
+day ==> 25
+
+jshell> DayOfWeek dow = xmas.getDayOfWeek(); 
+dow ==> TUESDAY
+
+jshell> dow.getValue();    // DayOfWeek.MONDAY ==> 1, DayOfWeek.SUNDAY ==> 7
+$1 ==> 2
+
+jshell> int len = xmas.lengthOfMonth();
+len ==> 31
+
+jshell> boolean leap = xmas.isLeapYear();
+leap ==> false
   
-  year = date.get(ChronoField.YEAR);  // 2014
-  int month_ = date.get(ChronoField.MONTH_OF_YEAR); //11 
-  day = date.get(ChronoField.DAY_OF_MONTH); // 30
+jshell> import java.time.temporal.*
+
+jshell> year = xmas.get(ChronoField.YEAR); 
+year ==> 2018
+
+jshell> int month_ = xmas.get(ChronoField.MONTH_OF_YEAR);
+month_ ==> 12
+
+jshell> day = xmas.get(ChronoField.DAY_OF_MONTH);
+day ==> 25
+
+jshell> LocalTime now = LocalTime.now();
+now ==> 16:12:32.759312
+
+jshell> LocalTime time = LocalTime.of(19, 45, 25);
+time ==> 19:45:25
+
+jshell> int hour = time.getHour();    
+hour ==> 19
+
+jshell> int minute = time.getMinute();  
+minute ==> 45
+
+jshell> int second = time.getSecond();  
+second ==> 25
    
-  date = LocalDate.parse("2014-11-18");
+jshell> xmas = LocalDate.parse("2018-12-25")
+xmas ==> 2018-12-25
   
-  // 2014-11-18T19:45:23
-  LocalDateTime dt1 = LocalDateTime.of(2014, Month.NOVEMBER, 18, 19, 45, 23);
-  LocalDateTime dt2 = LocalDateTime.of(date, time);
-  LocalDateTime dt3 = date.atTime(19, 45, 23);
-  LocalDateTime dt4 = date.atTime(time);
-  LocalDateTime dt5 = time.atDate(date);
+jshell> LocalDateTime dt1 = LocalDateTime.of(2018, Month.DECEMBER, 25, 19, 45, 23);
+dt1 ==> 2018-12-25T19:45:23
+
+jshell> LocalDateTime dt2 = LocalDateTime.of(xmas, time);
+dt2 ==> 2018-12-25T19:45:25
+
+jshell> LocalDateTime dt3 = xmas.atTime(19, 45, 23);
+dt3 ==> 2018-12-25T19:45:23
+
+jshell> LocalDateTime dt4 = xmas.atTime(time);
+dt4 ==> 2018-12-25T19:45:25
+
+jshell> LocalDateTime dt5 = time.atDate(xmas);
+dt5 ==> 2018-12-25T19:45:25
   
-  LocalDate date1 = dt1.toLocalDate();  // 2014-11-18
-  LocalTime time1 = dt1.toLocalTime();  // 19:45:23
-  LocalTime truncatedTime = time1.truncatedTo(ChronoUnit.SECONDS);
+jshell> LocalDate date1 = dt1.toLocalDate();  
+date1 ==> 2018-12-25
+
+jshell> LocalTime time1 = dt1.toLocalTime();  
+time1 ==> 19:45:23
+
+jshell> LocalTime truncatedTime = time1.truncatedTo(ChronoUnit.MINUTES);
+truncatedTime ==> 19:45
   
-  LocalDate date2 = date1.withYear(2015); // 2015-11-18
-  //2015-11-25
-  LocalDate date3 = date2.withDayOfMonth(25);
-  //2015-09-25
-  LocalDate date4 = date3.with(ChronoField.MONTH_OF_YEAR, 10);
+jshell> LocalDate date2 = date1.withYear(2015); 
+date2 ==> 2015-12-25
+
+jshell> LocalDate date3 = date2.withDayOfMonth(25);
+date3 ==> 2015-12-25
+
+jshell> LocalDate date4 = date3.with(ChronoField.MONTH_OF_YEAR, 10);
+date4 ==> 2015-10-25
   
-  LocalDate date11 = date1.plusWeeks(1);  // 2014-11-25
-  LocalDate date22 = date2.minusYears(3); // 2012-11-18
-  //2016-03-25
-  LocalDate date33 = date3.plus(6, ChronoUnit.MONTHS);
-  // adjuster
-  date3 = date2.with(lastDayOfMonth()); // 2015-11-31
+jshell> LocalDate date11 = date1.plusWeeks(1);  
+date11 ==> 2019-01-01
+
+jshell> LocalDate date22 = date2.minusYears(3); 
+date22 ==> 2012-12-25
+
+jshell> LocalDate date33 = date3.plus(6, ChronoUnit.MONTHS);
+date33 ==> 2016-06-25
   
-  // 20141118
-  String s1 = date.format(DateTimeFormatter.BASIC_ISO_DATE);
-  // 2014-11-18
-  String s2 = date.format(DateTimeFormatter.ISO_LOCAL_DATE);
+jshell> LocalDate.now().until(LocalDate.of(2018, Month.DECEMBER, 25), ChronoUnit.DAYS);
+$2 ==> 15
   
-  date1 = LocalDate.parse("20141118", DateTimeFormatter.BASIC_ISO_DATE);
-  date2 = LocalDate.parse("2014-11-18", DateTimeFormatter.ISO_LOCAL_DATE);
+jshell> import java.time.format.*
+
+jshell> String s1 = xmas.format(DateTimeFormatter.BASIC_ISO_DATE);
+s3 ==> "20181225"
   
-  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-  // 18/11/2014
-  String formattedDate = date.format(formatter);
-  // 2014-11-18
-  date1 = LocalDate.parse(formattedDate, formatter);
-  DateTimeFormatter hellenicFormatter = 
-           DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale.forLanguageTag("el-GR"));
-  // 18 Νοεμβρίου 2014
-  formattedDate = date.format(hellenicFormatter); 
-  date2 = LocalDate.parse(formattedDate, hellenicFormatter);
-```  
+jshell> String s2 = xmas.format(DateTimeFormatter.ISO_LOCAL_DATE);
+s4 ==> "2018-12-25"
+  
+jshell> LocalDate.parse("20181225", DateTimeFormatter.BASIC_ISO_DATE);
+$5 ==> 2018-12-25
+  
+jshell> DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+formatter ==> Value(DayOfMonth,2)'/'Value(MonthOfYear,2)'/'Value(YearOfEra,4,19,EXCEEDS_PAD)
+
+jshell> String formattedDate = xmas.format(formatter);
+formattedDate ==> "25/12/2018"
+
+jshell> LocalDate.parse(formattedDate, formatter);
+$6 ==> 2018-12-25
+
+jshell>   DateTimeFormatter hellenicFormatter = 
+   ...>            DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale.forLanguageTag("el-GR"));
+hellenicFormatter ==> Value(DayOfMonth,2)' 'Text(MonthOfYear)' 'Value(YearOfEra,4,19,EXCEEDS_PAD)
+
+jshell> String formattedDate = xmas.format(hellenicFormatter); 
+formattedDate ==> "25 Δεκεμβρίου 2018"
+
+jshell> LocalDate.parse(formattedDate, hellenicFormatter)
+$7 ==> 2018-12-25
+  
+jshell> time = LocalTime.parse("13:45:20");
+time ==> 13:45:20
+```
 
 Παρατηρήστε ότι η κλάση ```DateTimeFormatter``` δε χρειάζεται συγχρονισμό όπως η ```DateFormatter``` που δεν ήταν thread safe. 
 
-Υποστηρίζονται χρονικές ζώνες (time zones) (```ZoneId, ZoneOffset```).  
+Για να βρούμε την τελευταία ημέρα του μήνα:
+```java
+jshell> import static java.time.temporal.TemporalAdjusters.*;
+
+jshell> xmas.with(lastDayOfMonth())
+$8 ==> 2018-12-31
+
+jshell> YearMonth month = YearMonth.from(xmas);
+month ==> 2018-12
+
+jshell> month.atEndOfMonth();
+$9 ==> 2018-12-31
+```  
+
+Υποστηρίζονται χρονικές ζώνες (time zones) (```ZoneId, ZoneOffset```):
 ```java
 jshell> ZoneId.systemDefault()
 $1 ==> Europe/Athens
@@ -114,7 +202,7 @@ jshell> ZoneId brxId = ZoneId.of("Europe/Brussels");
 brxId ==> Europe/Brussels
 ```
 
-Μια περίοδος (```Period```) αναφέρεται σε μια μεγάλη χρονική διάρκεια (ημερών, μηνών κλπ.) ενώ μια χρονική διάρκεια (```Duration```) αναφέρεται σε ώρες, λεπτά, δευτ/πτα. 
+Μια περίοδος (```Period```) αναφέρεται σε μια μεγάλη χρονική διάρκεια (ημερών, μηνών κλπ.) ενώ μια χρονική διάρκεια (```Duration```) αναφέρεται σε ώρες, λεπτά, δευτ/πτα. Η πρώτη χρησιμοποιείται στις ```LocalDate```s ενώ η δεύτερη στα ```Instant```s.
 
 ```java
   Duration d1 = Duration.between(now, time);
@@ -125,6 +213,15 @@ brxId ==> Europe/Brussels
   Period threeWeeks = Period.ofWeeks(3); //P21D
   // P2Y6M1D
   Period twoYearsSixMonthsOneDay = Period.of(2, 6, 1);
+```
+Επίσης, μπορούμε να μετρήσουμε πόσο διήρκησε η εκτέλεση κάποιας μεθόδου:
+
+```java
+Instant start = Instant.now();
+myMethod();
+Instant end = Instant.now();
+Duration timeElapsed = Duration.between(start, end);
+long millis = timeElapsed.toMillis();
 ```
 
 Τέλος, η κλάση ```Instant``` μετράει το χρόνο από την εποχή του Unix, δηλ. από την 1η Ιανουαρίου 1970 UTC.
@@ -138,23 +235,13 @@ instant ==> 1970-01-01T00:00:03Z
 ```
 
 ## Πηγές
-2. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
-3. Naftalin M. (2014), _Mastering Lambdas: Java Programming in a Multicore World_, Oracle Press.
-4. Redko A. (2014), [“Java 8 Features – The ULTIMATE Guide”](http://www.javacodegeeks.com/2014/05/java-8-features-tutorial.html).
-5. Subramaniam V. (2014), _Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expressions_, Pragmatic.
-6. Urma R-G., Fusco M., Mycroft Al. (2014), _Java 8 in Action: Lambdas, Streams, and functional-style programming_, Manning.
-7. Warburton R. (2014), _Java 8 Lambdas: Pragmatic Functional Programming_, O' Reilly.
-8. Nurkiewicz T. (2014), [“Optional in Java 8 cheat sheet”](http://www.javacodegeeks.com/2013/08/optional-in-java-8-cheat-sheet.html?utm_content=buffer2a9ed&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer). 
-9. (2013), [Everything about Java 8](http://www.techempower.com/blog/2013/03/26/everything-about-java-8/).
-10. Neward T. (2013), “Java 8: Lambdas – Part 1”, Java Magazine, [Issue 13](http://www.oraclejavamagazine-digital.com/javamagazine_open/20130708#pg35), July-August, pp. 34-40.
-11. Neward T. (2013), “Java 8: Lambdas – Part 2”, Java Magazine, [Issue 14](http://www.oraclejavamagazine-digital.com/javamagazine_open/20130910#pg29), September-October, pp. 28-34.
-12. Urma R-G. (2014), “Processing Data with Java SE 8 Streams – Part 1”, Java Magazine, [Issue 17](http://www.oraclejavamagazine-digital.com/javamagazine_open/20140304#pg51), March-April, pp. 50-55.
-13. Urma R-G. (2014), “Processing Data with Java SE 8 Streams – Part 2”, Java Magazine, [Issue 18](http://www.oraclejavamagazine-digital.com/javamagazine_open/20140506#pg50), May-June, pp. 49-53.
-14. Wielenga G., Franklin L., Gydri A. (2014), “Quick and Easy Conversion to Java SE 8 with NetBeans IDE 8”, Java Magazine, [Issue 18](http://www.oraclejavamagazine-digital.com/javamagazine_open/20140506#pg43), May-June, pp. 42-45.
-15. Juneau J. (2014), “JSR 308 Explained: Java Type Annotations”, Java Magazine, [Issue 17](http://www.oraclejavamagazine-digital.com/javamagazine_open/20140304?pg=57#pg57), March-April, pp. 56-61.
-16. Evans B., Warburton R. (2014), “Java SE 8 Date and Time”, Java Magazine, [Issue 16](http://www.oraclejavamagazine-digital.com/javamagazine_open/20140304?pg=57#pg57), January-February, pp. 56-58.
-17. Maiorano N. (2014), “Is Java 8 a Functional Language? Three ways it is – Three ways it isn’t”, [Java Magazine](http://javamag.org/download/java-magazine-8/), Vol. 1, No. 3, Issue 03, pp. 25-31.
-18. Charbonneau P.-H. (2014), “Java 8: Removal of PermGen”, [Java Magazine](http://javamag.org/download/java-magazine-8/), Vol. 1, No. 3, Issue 03, pp. 82-89.
+1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
+2. Evans B., Warburton R. (2014), “Java SE 8 Date and Time”, Java Magazine, [Issue 16](http://www.oraclejavamagazine-digital.com/javamagazine_open/20140304?pg=57#pg57), January-February, pp. 56-58.
+3. Evans B. J., Flanagan D. (2019), _Java in a Nutshell_, 7th Ed., O’ Reilly. 
+4. Horstmann C. S. (2018), _Core Java Volume II - Advanced Features_, 11th Ed., Pearson.
+5. Redko A. (2014), [“Java 8 Features – The ULTIMATE Guide”](http://www.javacodegeeks.com/2014/05/java-8-features-tutorial.html).
+6. Subramaniam V. (2014), _Functional Programming in Java: Harnessing the Power of Java 8 Lambda Expressions_, Pragmatic.
+7. Urma R-G., Fusco M., Mycroft Al. (2014), _Java 8 in Action: Lambdas, Streams, and functional-style programming_, Manning.
 
 ---
 
