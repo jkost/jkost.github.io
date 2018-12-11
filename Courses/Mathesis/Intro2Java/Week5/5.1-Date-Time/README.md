@@ -3,7 +3,7 @@
 
 ---
 
-[Δ](../../README.md) | [->](../5.2-Time/README.md) 
+[Δ](../../README.md) | [->](../5.2-Files/README.md) 
  
 ---
 
@@ -378,6 +378,6 @@ public class BirthdayDiary {
 
 ---
 
-[Δ](../../README.md) | [->](../5.2-Time/README.md)
+[Δ](../../README.md) | [->](../5.2-Files/README.md)
 
 ---
