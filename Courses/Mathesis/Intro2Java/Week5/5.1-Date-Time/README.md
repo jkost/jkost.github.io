@@ -332,7 +332,7 @@ ZoneId          GMT
 ```
 
 ## Ασκήσεις
-1. (3ος Πανελλήνιος Διαγωνισμός Πληροφορικής 1991) Να γραφεί πρόγραμμα που να υλοποιεί τα παρακάτω: (α) να εισάγονται από το πληκτρολόγιο 2 ημερομηνίες μεταξύ 1/1/1980 και 21/12/1999 (β) να εμφανίζεται στην οθόνη η διαφορά των ημερομηνιών αυτών στη μορφή: μέρες/μήνες/έτη. Να λαμβάνεται υπ' όψη ο αριθμός των ημερών κάθε μήνα καθώς και ο αριθμός των ημερών δίσεκτου έτους. Δίσεκτο έτος είναι εκείνο που διαιρείται ακριβώς με το 4 αλλά όχι με το 100, εκτός κι αν είναι του 400. _(Ο αλγόριθμος αυτός εφαρμόζεται για όλα τα προηγούμενα έτη αν και αυτό είναι ιστορικά ανακριβές. Τα δίσεκτα έτη ανακαλύφθηκαν το –46 και οι κανόνες διαιρετότητας με το 100 και το 400 εισήχθηκαν με τη μεταρρύθμιση του Γρηγοριανό ημερολογίου του 1582. Πήρε στη μεταρρύθμιση αυτή πάνω από 300 χρόνια για να καθιερωθεί.)_
+1. (3ος Πανελλήνιος Διαγωνισμός Πληροφορικής 1991) Να γραφεί πρόγραμμα που να υλοποιεί τα παρακάτω: (α) να εισάγονται από το πληκτρολόγιο 2 ημερομηνίες μεταξύ 1/1/1980 και 21/12/1999 (β) να εμφανίζεται στην οθόνη η διαφορά των ημερομηνιών αυτών στη μορφή: μέρες/μήνες/έτη. Να λαμβάνεται υπ' όψη ο αριθμός των ημερών κάθε μήνα καθώς και ο αριθμός των ημερών δίσεκτου έτους. Δίσεκτο έτος είναι εκείνο που διαιρείται ακριβώς με το 4 αλλά όχι με το 100, εκτός κι αν είναι του 400. _(Ο αλγόριθμος αυτός εφαρμόζεται για όλα τα προηγούμενα έτη αν και αυτό είναι ιστορικά ανακριβές. Τα δίσεκτα έτη ανακαλύφθηκαν το 46 π.Χ. και οι κανόνες διαιρετότητας με το 100 και το 400 εισήχθηκαν με τη μεταρρύθμιση του Γρηγοριανού ημερολογίου του 1582. Πήρε στη μεταρρύθμιση αυτή πάνω από 300 χρόνια για να καθιερωθεί.)_
 2. Υλοποιήστε την παρακάτω κλάση:
 ```java
 public class BirthdayDiary {
@@ -358,12 +358,29 @@ public class BirthdayDiary {
 	   // TODO
    }
    
-   public Map.Entry<String, LocalDate> getNextBirthday() {
+   public Map<String, LocalDate> getBirthdaysIn(Month month) {
    	   // TODO
    }
    
-   public Set<String> getBirthdaysIn(Month month) {
+   public Map<String, LocalDate> getBirthdaysIn(Month month) {
 	   // TODO
+   }
+public static void main(String[] args) {
+   BirthdayDiary diary = new BirthdayDiary();
+   diary.addBirthday("Γιάννης", 10, 3, 1973);
+   diary.addBirthday("Κατερίνα", 24, 5, 1980);
+
+   LocalDate johnBirthday = diary.getBirthdayFor("Γιάννης");
+   System.out.println(johnBirthday);
+
+   Map<String, LocalDate> birthdaysInMarch = diary.getBirthdaysIn(Month.MARCH);
+   for (Map.Entry<String, LocalDate> e : birthdaysInMarch.entrySet()) {
+       System.out.println(e.getKey() + "'s birthday is on " + e.getValue());
+   }
+
+   Map<String, LocalDate> birthdays = diary.getNextClosestBirthdays();
+   for (Map.Entry<String, LocalDate> e : birthdays.entrySet()) {
+       System.out.println(e.getKey() + "'s birthday is on " + e.getValue());
    }
 }
 ```
