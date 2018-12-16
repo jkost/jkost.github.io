@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../2.6-Javadoc/README.md) | [Δ](../../README.md) | [->](../2.8-BestPractices/README.md)
+[<-](../2.6-JavaDoc/README.md) | [Δ](../../README.md) | [->](../2.8-BestPractices/README.md)
 
 ---
 
@@ -84,6 +84,6 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
 
 ---
 
-[<-](../2.6-Javadoc/README.md) | [Δ](../../README.md) | [->](../2.8-BestPractices/README.md)
+[<-](../2.6-JavaDoc/README.md) | [Δ](../../README.md) | [->](../2.8-BestPractices/README.md)
 
 ---
