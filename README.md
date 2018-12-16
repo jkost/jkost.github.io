@@ -4,8 +4,12 @@
 
 [![Mathesis](Courses/Mathesis/assets/mathesis.png)](http://mathesis.cup.gr)
 
-* [Εισαγωγή στη γλώσσα προγραμματισμού Java](Courses/Mathesis/Intro2Java/README.md) 
+* [Εισαγωγή στη γλώσσα προγραμματισμού Java](Courses/Mathesis/Intro2Java/README.md) √
 * [Προχωρημένος προγραμματισμός με τη γλώσσα Java](Courses/Mathesis/AdvancedJava/README.md)
+* [Εισαγωγή στη Java EE](Courses/Mathesis/JavaEE/README.md)
+* [Εισαγωγή στον προγραμματισμό με Android](Courses/Mathesis/Android/README.md)
+* [Πρότυπα Σχεδίασης - Design Patterns](Courses/Mathesis/DesignPatterns/README.md)
+* [C++ για προγραμματιστές Java](Courses/Mathesis/Cpp/README.md)
 
 ---
 
