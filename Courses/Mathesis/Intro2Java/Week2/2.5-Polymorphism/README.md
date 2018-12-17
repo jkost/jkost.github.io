@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../2.4-Inheritance/README.md) | [Δ](../../README.md) | [->](../2.6-JavaDoc.md)
+[<-](../2.4-Inheritance/README.md) | [Δ](../../README.md) | [->](../2.6-JavaDoc/README.md)
 
 ---
 
@@ -231,6 +231,6 @@ Draws a circle...
 
 ---
 
-[<-](../2.4-Inheritance/README.md) | [Δ](../../README.md) | [->](../2.6-JavaDoc.md)
+[<-](../2.4-Inheritance/README.md) | [Δ](../../README.md) | [->](../2.6-JavaDoc/README.md)
 
 ---
