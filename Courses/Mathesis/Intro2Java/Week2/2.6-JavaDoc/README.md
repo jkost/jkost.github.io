@@ -1,9 +1,9 @@
-# 2.7 Τεκμηρίωση κώδικα - Javadoc {#Java} 
+# 2.6 Τεκμηρίωση κώδικα - Javadoc {#Java} 
 © Γιάννης Κωστάρας
 
 ---
 
-[<-](../2.6-Boxing/README.md) | [Δ](../../README.md) | [->](../2.8-BestPractices/README.md)
+[<-](../2.5-Polymorphism/README.md) | [Δ](../../README.md) | [->](../2.7-Debugging/README.md)
 
 ---
 
@@ -127,6 +127,6 @@ _Υπάρχει και το [UML Java Doclet](https://github.com/gboersma/uml-ja
 
 ---
 
-[<-](../2.6-Boxing/README.md) | [Δ](../../README.md) | [->](../2.8-BestPractices/README.md)
+[<-](../2.5-Polymorphism/README.md) | [Δ](../../README.md) | [->](../2.7-Debugging/README.md)
 
 ---
