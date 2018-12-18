@@ -148,6 +148,19 @@ Online:
 **Εικόνα 2** _Παράδειγμα κλάσης στη UML_
 
 Θα εξηγήσουμε τι σημαίνουν τα (+) και (-) στο επόμενο μάθημα.
+
+## NetBeans UML plugins
+Μπορείτε να οπτικοποιήσετε τις κλάσεις σας απευθείας από το NetBeans. Υπάρχουν μερικά plugins για το NetBeans γι' αυτό το σκοπό. 
+
+* [easyUML](http://plugins.netbeans.org/plugin/55435/easyuml)
+* [plantUML](http://plugins.netbeans.org/plugin/49069/plantuml)
+* [Visual Paradigm](https://www.visual-paradigm.com/tutorials/modelinginnetbeans.jsp)
+
+Εδώ θα περιγράψουμε συντόμως το _easyUML_ plugin και στο κεφάλαιο για την τεκμηρίωση κώδικα το _plantUML_. 
+
+Για να εγκαταστήσετε το easyUML, αφού το κατεβάσετε και το αποσυμπιέσετε, επιλέξτε στο NetBeans το μενού **Tools --> Plugins**, καρτέλα **Downloaded**, κλικ στο κουμπί **Add Plugins**, πλοηγηθείτε στο φάκελο **1407020290_easyUml**, επιλέξτε όλα τα ```*.nbm``` αρχεία και **Open** και στη συνέχεια **Install**. Ακολουθήστε τις οδηγίες του οδηγού για να το εγκαταστήσετε.
+
+Από το μενού **Window** επιλέξτε **UML Designer**. Μπορείτε να σύρετε αντικείμενα όπως κλάση, διεπαφή, συσχέτιση από την παλέττα και να δημιουργήσετε διαγράμματα κλάσεων.
  
 ## Πηγές:
 1. Ambler S.W. (2003), _The Elements of UML 2.0 Style_, Cambridge University Press.

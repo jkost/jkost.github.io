@@ -58,7 +58,7 @@ public class Player {
 | ```{@value reference}``` | Inline | Αντικαθίσταται από το static final γνώρισμα στο οποίο αναφέρεται | |  | 
 | ```@version version``` | Κλάση/Διεπαφή | Δηλώνει την έκδοση της κλάσης σε συνδυασμό με κάποιο σύστημα διαχείρισης εκδόσεων (version control system). | ```-version``` | ```@version 1.0``` |
 
-Το ```reference``` (βλ. @see, {@link}, {@linkplain} και {@value}) μπορεί να είναι:
+Το ```reference``` (βλ. ```@see, {@link}, {@linkplain}``` και ```{@value}```) μπορεί να είναι:
 
 * ```pkgname```, π.χ. ```@see java.util```
 * ```pkgname.classname```, π.χ. ```@see java.util.Collections```
