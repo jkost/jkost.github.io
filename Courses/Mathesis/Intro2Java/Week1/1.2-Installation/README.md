@@ -80,14 +80,14 @@ Java(TM) SE Runtime Environment 18.9 (build 11.0.1+13-LTS)
 Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.1+13-LTS, mixed mode)
 ```
 για το Oracle JDK, ενώ για το OpenJDK:
-```java
+```bash
 $ java –version
 openjdk version "11" 2018-09-25
 OpenJDK Runtime Environment 18.9 (build 11+28)
 OpenJDK 64-Bit Server VM 18.9 (build 11+28, mixed mode)
 ```
 
-```java
+```bash
 $ jshell
 |  Welcome to JShell -- Version 11.0.1
 |  For an introduction type: /help intro
@@ -146,7 +146,7 @@ netbeans_jdkhome="/<path>/jdk11.0.1/"
 ### Επαλήθευση εγκατάστασης
 1. Ξεκινήστε το NetBeans. Ανάλογα με την πλατφόρμα σας (Windows: κάντε διπλό κλικ στο αρχείο ```netbeans.exe``` ή ```netbeans64.exe```)(Linux/MacOSX: από ένα κέλυφος πληκτρολογήστε ```./netbeans &```) από το φάκελο ```bin```.
 1. Επιλέξτε το μενού **Tools --> Open Java Platform Shell**
-```
+```bash
 |  System Information:
 |      Java version:    11.0.1+10
 |      Virtual Machine: Java HotSpot(TM) 64-Bit Server VM  11.0.1+10
