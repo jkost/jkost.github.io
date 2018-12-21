@@ -3,17 +3,42 @@
 
 ---
 
-[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.3-Assertions/README.md)  
+[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.3-Annotations/README.md)  
  
 ---
-Στα μαθήματα της πρώτης εβδομάδας μιλήσαμε για τους απαριθμημένους τύπους (```enum```s) και μάλιστα μάθαμε ότι μπορούν να χρησιμοποιούνται στις εντολές ```switch```. Οι απαριθμημένοι τύποι είναι ένα σύνολο από σταθερές.
+Στα μαθήματα της πρώτης εβδομάδας μιλήσαμε για τους απαριθμημένους τύπους (```enum```s) και μάλιστα μάθαμε ότι μπορούν να χρησιμοποιούνται στις εντολές ```switch```. Οι απαριθμημένοι τύποι είναι ένα σταθερό πλήθος από σταθερές. Συνίσταται να χρησιμοποιείτε ```enum```s αντί για μια σειρά από σταθερές (```public static final```). 
+
+Πριν την έκδοση 5 της Java που εισήγαγε τους απαριθμημένους τύπους, οι προγραμματιστές έπρεπε να γράψουν π.χ.:
+
+```java
+public static final int MON = 1;
+public static final int TUE = 2;
+public static final int WED = 3;
+public static final int THU = 4;
+public static final int FRI = 5;
+public static final int SAT = 6;
+public static final int SUN = 7;
+
+public static final int JAN = 1;
+public static final int FEB = 2;
+...
+public static final int DEC = 12;
+```
+Οι παραπάνω δηλώσεις έχουν ένα σωρό προβλήματα. Καθώς δεν υπάρχουν χώροι ονοματοδοσίας (namespaces) στη Java (όπως υπάρχουν σε άλλες γλώσσες, π.χ. C++), ο μεταγλωττιστής δεν παραπονιέται αν κατά λάθος ο προγραμματιστής γράψει:
+
+```java
+int numOfDays = FRI - FEB;
+```
+το οποίο είναι ένα λογικό λάθος, καθώς ο μεταγλωττιστής "βλέπει" μόνο ακέραιες τιμές. Αν αλλάξουν οι τιμές των σταθερών, το πρόγραμμα θα πρέπει να επαναμεταγγλωτιστεί αλλοιώς ο καλών κώδικας θα χρησιμοποιεί λάθος τιμές. Όταν εμφανίζετε τις τιμές, θα βλέπετε τις ακέραιες τιμές κι όχι το τι σημαίνουν (π.χ. ```1``` αντί για ```MON```) και χρειάζεται κάποια κλάση μετατροπής αν θέλετε να εμφανίζετε ένα ```String``` αντί της τιμής. Δεν είναι επίσης εύκολο να απαριθμήσετε τις τιμές ή να δείτε εύκολα το σύνολο των τιμών (π.χ. σύνολο 7 ημέρες, 12 μήνες).
+
+Για τους παραπάνω λόγους η Java από την έκδοση 5 εισήγαγε τους απαριθμημένους τύπους, π.χ.
 
 ```java
 enum Day {
   MON, TUE, WED, THU, FRI, SAT, SUN;
 }
 ``` 
-Κάθε ```enum``` είναι υποκλάση της κλάσης ```Enum``` και είναι σιωπηρά ```final```. Έτσι, δεν μπορούμε να κληρονομήσουμε έναν απαριθμημένο τύπο. Ένας ```enum``` όμως μπορεί να υλοποιήσει διεπαφές.
+Κάθε ```enum``` είναι υποκλάση της κλάσης ```Enum``` και είναι σιωπηρά ```final```. Έτσι, δεν μπορούμε να κληρονομήσουμε έναν απαριθμημένο τύπο. Ένας ```enum``` όμως μπορεί να υλοποιήσει διεπαφές. Οι ```enum```s στη Java όμως έχουν περισσότερες δυνατότητες από άλλες γλώσσες προγραμματισμού.
 
 ```java
 jshell> Day.values()
@@ -28,6 +53,7 @@ $3 ==> 0
 jshell> Day.valueOf("MON")			// αντίστροφη της toString()
 $4 ==> MON
 ```
+Μη βασίζεστε τόσο στην μέθοδο ```ordinal()```. Αυτή συνήθως χρησιμοποιείται από δομές δεδομένων όπως ```EnumSet``` και ```EnumMap``` που είδαμε στα μαθήματα της προηγούμενης εβδομάδας. 
 
 Οι ```enum```s μπορούν να οριστούν τόσο μέσα όσο και έξω από μια κλάση, αλλά όχι μέσα σε μια μέθοδο.
 
@@ -47,7 +73,64 @@ enum Day {
   }
 }
 ```
-Σημειώστε ότι η μέθοδος κατασκευής (constructor) ενός ```enum``` είναι πάντοτε ```private```.
+Σημειώστε ότι η μέθοδος κατασκευής (constructor) ενός ```enum``` είναι πάντοτε ```private```. Τέλος, οι ```enum```s είναι από τη φύση τους αμεάβλητοι (immutable).
+
+Άλλες δυνατότητες που διαθέτουν οι απαριθμημένοι τύποι (υλοποιήσεις μεθόδων σταθερών τιμών):
+
+```java
+// Enum type with constant-specific method implementations
+public enum Operation {
+	PLUS {public long apply(long x, long y){return x + y;}},
+	MINUS {public long apply(long x, long y){return x - y;}},
+	TIMES {public long apply(long x, long y){return x * y;}},
+	DIVIDE {public long apply(long x, long y){return x / y;}};
+
+	public abstract long apply(long x, long y);
+}
+```
+
+Επίσης, οι απαριθμημένοι τύποι μπορούν να εμφωλιαστούν (nest), δηλ.
+
+```java
+enum OuterEnum {
+//...
+
+    private enum InnerEnum {
+	
+	}
+
+}
+```
+Τέλος, μπορούν να υλοποιούν διεπαφές, π.χ.
+
+```java
+public interface Operation {
+	long apply(long x, long y);
+}
+
+public enum BasicOperation implements Operation {
+	PLUS {public long apply(long x, long y){return x + y;}},
+	MINUS {public long apply(long x, long y){return x - y;}},
+	TIMES {public long apply(long x, long y){return x * y;}},
+	DIVIDE {public long apply(long x, long y){return x / y;}};
+}
+```
+
+## Ασκήσεις
+1. Τροποποιήστε το ```eunm Operation``` ώστε:
+```java
+jshell> int a = 4, b = 2;
+a ==> 4
+b ==> 2
+
+jshell> Operation op = Operation.PLUS;
+op ==> Operation.PLUS
+
+jshell> System.out.print(a + " " + op + " " + b + " = " + op.apply(x, y));
+4 + 2 = 6
+``` 
+ 
+
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.
@@ -62,6 +145,6 @@ enum Day {
 
 ---
 
-[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.2-Assertions/README.md)  
+[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.2-Annotations/README.md)  
 
 ---

@@ -21,14 +21,13 @@ public class Player {
   private int age, score;
   
   /** 
-    * Επιστρέφει το σκορ του παίκτη. Βλ. {@code score}.
+    * Υπολογίζει το σκορ του παίκτη. Βλ. {@code score}.
 	* @param wins νίκες
 	* @param fails αποτυχίες
 	* @return το σκορ του παίκτη 
 	*/
   public int score(int wins, int fails) {
-	  int score;
-	  //...
+	  score = wins - fails;
   	  return score;
   }
 

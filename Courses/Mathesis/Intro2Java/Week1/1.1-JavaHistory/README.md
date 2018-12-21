@@ -98,6 +98,20 @@ double myvar = 3.14
 
 *αριθμός δημοσίων κλάσεων του πλαισίου 'all classes' του javadoc API
 
+Μια σύνοψη των αλλαγών στις διάφορες εκδόσεις:
+
+* 1.1: nested classes
+* 1.2: strictfp
+* 1.3: μικρές αλλαγές
+* 1.4: assert
+* 1.5: annotations, generics, autoboxing, var-args...
+* 1.6: καλύτερη απόδοση
+* 1.7: diamond syntax, try-with-resources, κλπ.
+* 1.8: lambda expressions και default methods
+*   9: modules, μικροδιορθώσεις στις εκδόσεις 1.7 και 1.8
+*  10: local-variable type inference (var)
+*  11: μικρές αλλαγές
+
 ![](https://picodotdev.github.io/blog-bitix/assets/images/posts/2014/17/componentes-jpse8.png)
 
 **Εικόνα 6** _Αρχιτεκτονική της Java Standard Edition (Πηγή: [https://tinyurl.com/y9y2meap](https://tinyurl.com/y9y2meap))_

@@ -82,6 +82,7 @@ public final class Point {
 1. Downey A. B., Mayfield C. (2016), _Think Java_, O' Reilly. 
 1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
 1. Fowler M. (1999), _Refactoring, Improving the Design of Existing Code_, Addison-Wesley.
+1. Fowler M. (2019), _Refactoring, Improving the Design of Existing Code_, 2nd Ed., Addison-Wesley.
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 

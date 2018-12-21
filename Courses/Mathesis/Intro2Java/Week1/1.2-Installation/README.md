@@ -11,20 +11,22 @@
 
 Όπως είδαμε, η Java αποτελείται από μια Εικονική Μηχανή που επιτρέπει την εκτέλεση των εφαρμογών Java σε οποιαδήποτε πλατφόρμα (Windows, Mac, Linux, Unix). Για να εκτελέσετε μια εφαρμογή Java χρειάζεστε το _Java Runtime Environment (JRE)_. Για να αναπτύξετε όμως μια εφαρμογή Java χρειάζεστε το _Java Development Kit (JDK)_ το οποίο περιλαμβάνει το JRE.
 
-Θα εγκαταστήσουμε την τελευταία έκδοση της Java SE ή Standard Edition (11, αλλά και οι 9 ή 10 μας καλύπτουν) για τις πιο δημοφιλής πλατφόρμες Windows, Linux, MacOSX. Από την έκδοση 11 και μετά, έχει αλλάξει η άδεια χρήσης. Για επαγγελματική χρήση κατεβάστε το Oracle JDK, ενώ υπάρχει και η δωρεάν έκδοση OpenJDK. 
+Θα εγκαταστήσουμε την τελευταία έκδοση της Java SE ή Standard Edition (11, αλλά και οι 9 ή 10 μας καλύπτουν) για τις πιο δημοφιλής πλατφόρμες Windows, Linux, MacOSX. Από την έκδοση 11 και μετά, έχει αλλάξει η άδεια χρήσης. Για επαγγελματική χρήση κατεβάστε το Oracle JDK, ενώ υπάρχει και η δωρεάν ανοικτού κώδικα έκδοση OpenJDK (άδεια χρήσης: GNU General
+Public License v2 with Classpath Exception (GPLv2+CPE)). Οι δυο εκδόσεις δουλεύουν ακριβώς το ίδιο εκτός από ελάχιστες διαφορές. 
 
-### Εγκατάσταση της Java στα Windows
-#### Oracle JDK
-1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) ή στο [OpenJDK](http://jdk.java.net/11/) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (```jdk-11.0.1_windows-x64_bin.exe``` ή [openjdk-11.0.1_windows-x64_bin.zip](https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_windows-x64_bin.zip)).
-1. Κάντε διπλό κλικ πάνω στο αρχείο αυτό και ακολουθήστε τα βήματα του οδηγού. Καλό είναι να το εγκαταστήσετε σε μια διαδρομή (path) χωρίς κενά, π.χ. ```C:\Programs\Java``` αντί για την προτεινόμενη διαδρομή ```C:\Program Files\Java```. Ο οδηγός θα σας ζητήσει στη συνέχεια να εγκαταστήσετε και το JRE. Επιλέξτε ```C:\Program Files\Java\jdk11.0.1\jre```.
+### Εγκατάσταση του OpenJDK
+Πλοηγηθείτε στο [jdk.java.net](http://jdk.java.net/) και κατεβάστε την τελευταία έκδοση για την πλατφόρμα σας (π.χ. [openjdk-11.0.1_windows-x64_bin.zip](https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_windows-x64_bin.zip)). Αποσυμπιέστε το και ακολουθείστε τα βήματα που περιγράφονται παρακάτω για να το εισάγετε στο ```PATH```. Καλό είναι να το εγκαταστήσετε σε μια διαδρομή (path) χωρίς κενά. 
+
+### Εγκατάσταση του Oracle JDK στα Windows
+1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (```jdk-11.0.1_windows-x64_bin.exe```.
+1. Κάντε διπλό κλικ πάνω στο αρχείο αυτό και ακολουθήστε τα βήματα του οδηγού. Καλό είναι να το εγκαταστήσετε σε μια διαδρομή (path) χωρίς κενά, π.χ. ```C:\Programs\Java``` αντί για την προτεινόμενη διαδρομή ```C:\Program Files\Java```. Ο οδηγός θα σας ζητήσει στη συνέχεια να εγκαταστήσετε και το JRE. Επιλέξτε ```C:\Programs\Java\jdk11.0.1\jre```.
 1. Προσθέστε την εγκατάσταση στη μεταβλητή περιβάλλοντος ```PATH``` ως εξής:
-
 
 * Δεξί κλικ στο εικονίδιο Computer ⇒ Properties
 * System Properties
-* Καρτέλα "Advanced” ⇒  Environment Variables
+* Καρτέλα "Advanced" ⇒  Environment Variables
 * "System Variables", 
-* Επιλέξτε **New** και εισάγετε τη νέα μεταβλητή περιβάλλοντος ```JAVA_HOME``` δίνοντάς της την τιμή ```C:\Programs\Java\jdk11.0.2```
+* Επιλέξτε **New** και εισάγετε τη νέα μεταβλητή περιβάλλοντος ```JAVA_HOME``` δίνοντάς της την τιμή ```C:\Programs\Java\jdk11.0.1```
 * Επιλέξτε **"PATH" ⇒  Edit** και προσθέστε ```%JAVA_HOME%\bin;``` μπροστά από οποιαδήποτε άλλη τιμή της μεταβλητής αυτής
 * Πατήστε **ΟΚ** σε όλα τ' ανοικτά παράθυρα
 
@@ -32,17 +34,17 @@
 
 **Εικόνα 1** _Ορισμός μεταβλητών περιβάλλοντος στα Windows_
 
-
-### Εγκατάσταση της Java στο MacOS
+### Εγκατάσταση του Oracle JDK στο MacOS
 1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (```jdk-11.0.1_osx-x64_bin.dmg```).
 1. Εγκαταστήστε το αρχείο κατά τα γνωστά.
-1. Ορίστε τις ακόλουθες μεταβλητές περιβάλλοντος στο αρχείο ```.bash_profile```: ```JAVA_HOME=$HOME/Programs/Java/jdk10.0.2``` και ```PATH=$JAVA_HOME/bin:$PATH```
+1. Ορίστε τις ακόλουθες μεταβλητές περιβάλλοντος στο αρχείο ```.bash_profile```: ```JAVA_HOME=$HOME/Programs/Java/jdk11.0.1``` και ```PATH=$JAVA_HOME/bin:$PATH```
 
-Αν έχετε και άλλες εγκατεστημένες εκδόσεις της Java, τότε για να ορίσετε την 10 ως την εξ' ορισμού έκδοση στο σύστημά σας ακολουθήστε τα παρακάτω βήματα (σε ένα κέλυφος):
+Αν έχετε και άλλες εγκατεστημένες εκδόσεις της Java, τότε για να ορίσετε π.χ. την 11 ως την εξ' ορισμού έκδοση στο σύστημά σας ακολουθήστε τα παρακάτω βήματα (σε ένα κέλυφος):
 
 ```bash
 $ /usr/libexec/java_home -V
-Matching Java Virtual Machines (6):
+Matching Java Virtual Machines (7):
+	11.0.1, x86_64:	"Java SE 11.0.1"	/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home
     10.0.2, x86_64:	"Java SE 10.0.2"	/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home
     9.0.4, x86_64:	"Java SE 9.0.4"	/Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home
     1.8.0_181, x86_64:	"Java SE 8"	/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
@@ -50,18 +52,18 @@ Matching Java Virtual Machines (6):
     1.6.0_65-b14-462, x86_64:	"Java SE 6"	/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
     1.6.0_65-b14-462, i386:	"Java SE 6"	/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 
-/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home
+/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home
 ```
-Στη συνέχεια μπορείτε να ορίσετε τη μεταβλητή περιβάλλοντος ```JAVA_HOME``` στο ```.bash_profile``` όπως είδαμε παραπάνω δίνοντάς της την τιμή ```export JAVA_HOME=`/usr/libexec/java_home -v 10.0.2` ```.
+Στη συνέχεια μπορείτε να ορίσετε τη μεταβλητή περιβάλλοντος ```JAVA_HOME``` στο ```.bash_profile``` όπως είδαμε παραπάνω δίνοντάς της την τιμή ```export JAVA_HOME=`/usr/libexec/java_home -v 11.0.1` ```.
 
 _Πηγή:_ [StackOverflow](https://stackoverflow.com/questions/21964709/how-to-set-or-change-the-default-java-jdk-version-on-os-x#24657630)
 
-### Εγκατάσταση της Java στο Linux
-1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (προτιμήστε το αρχείο ```jdk-10.0.2_linux-x64_bin.tar.gz```).
-1. Αποσυμπιέστε το (π.χ. από τον εξερευνητή αρχείων κάντε δεξί κλικ και επιλέξτε **Extract here**). Μετακινήστε το φάκελο ```jdk10.0.2``` σε μια διαδρομή (path) χωρίς κενά, π.χ. ```$HOME/Programs/Java```.
-1. Ορίστε τις ακόλουθες μεταβλητές περιβάλλοντος στο αρχείο ```.bashrc```: ```JAVA_HOME=$HOME/Programs/Java/jdk10.0.2``` και ```PATH=$JAVA_HOME/bin:$PATH```
+### Εγκατάσταση του Oracle JDK στο Linux
+1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (προτιμήστε το αρχείο ```jdk-11.0.1_linux-x64_bin.tar.gz```).
+1. Αποσυμπιέστε το (π.χ. από τον εξερευνητή αρχείων κάντε δεξί κλικ και επιλέξτε **Extract here**). Μετακινήστε το φάκελο ```jdk11.0.1``` σε μια διαδρομή (path) χωρίς κενά, π.χ. ```$HOME/Programs/Java```.
+1. Ορίστε τις ακόλουθες μεταβλητές περιβάλλοντος στο αρχείο ```.bashrc```: ```JAVA_HOME=$HOME/Programs/Java/jdk11.0.1``` και ```PATH=$JAVA_HOME/bin:$PATH```
 
-Αν έχετε και άλλες εγκατεστημένες εκδόσεις της Java, τότε για να ορίσετε την 10 ως την εξ' ορισμού έκδοση στο σύστημά σας:
+Αν έχετε και άλλες εγκατεστημένες εκδόσεις της Java, τότε για να ορίσετε την 11 ως την εξ' ορισμού έκδοση στο σύστημά σας:
 
 ```bash
 $ sudo update-alternatives –-config java
@@ -73,11 +75,21 @@ $ sudo update-alternatives –-config java
 
 ```bash 
 $ java –version
-java version "10.0.2"
-Java(TM) SE Runtime Environment 18.3 (build 10.0.2+10)
-Java HotSpot(TM) 64-Bit Server VM 18.3 (build 10.0.2+10, mixed mode)
+java version "11.0.1" 2018-10-16 LTS
+Java(TM) SE Runtime Environment 18.9 (build 11.0.1+13-LTS)
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.1+13-LTS, mixed mode)
+```
+για το Oracle JDK, ενώ για το OpenJDK:
+```java
+$ java –version
+openjdk version "11" 2018-09-25
+OpenJDK Runtime Environment 18.9 (build 11+28)
+OpenJDK 64-Bit Server VM 18.9 (build 11+28, mixed mode)
+```
+
+```java
 $ jshell
-|  Welcome to JShell -- Version 10.0.2
+|  Welcome to JShell -- Version 11.0.1
 |  For an introduction type: /help intro
 
 jshell> 2+2
