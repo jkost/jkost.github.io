@@ -118,6 +118,7 @@ public enum BasicOperation implements Operation {
 
 ## Ασκήσεις
 1. Τροποποιήστε το ```eunm Operation``` ώστε:
+
 ```java
 jshell> int a = 4, b = 2;
 a ==> 4
