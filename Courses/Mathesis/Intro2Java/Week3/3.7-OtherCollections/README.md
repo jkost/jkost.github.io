@@ -46,7 +46,7 @@ public Set<Car> getSportCars() {
 	return Collections.unmodifiableSet(sportCars);
 }
 ```
-Ο καλών της μεθόδου ```getSportCars()``` δεν θα μπορεί πλέον να τροποποιήσει τα στοιχεία του ```Set``` που επιστρέφει η μέθοδος.
+Ο καλών της μεθόδου ```getSportCars()``` δεν θα μπορεί πλέον να τροποποιήσει τα στοιχεία του ```Set``` που επιστρέφει η μέθοδος. Φυσικά, μπορείτε να χρησιμοποιήσετε και τις άλλες στατικές μεθόδους που μάθαμε αυτή την εβδομάδα, όπως ```of(), asList()``` και ```singleton()```.
 
 ## Apache Commons Collections
 Το ίδρυμα Apache παρέχει παραδοσιακά πολλές χρήσιμες βιβλιοθήκες και προγράμματα ανοικτού κώδικα. Πρόσφατα, ακόμα και το NetBeans μεταπήδησε στο Apache. Η βιβλιοθήκη Commons Collections παρέχει:
@@ -76,6 +76,10 @@ public Set<Car> getSportCars() {
 ```java
 import org.apache.commons.collections4.Bag;
 ```
+
+Π.χ. στο 2ο μάθημα αυτής της εβδομάδας μάθαμε ότι δεν μπορούμε να μετατρέψουμε μια συλλογή σε μια συστοιχία πρωτογενούς τύπου με την ```toArray()```. Χρησιμοποιήστε είτε την ```Ints.toArray(Collection<Integer> collection)``` της βιβλιοθήκης Guava είτε την ```ArrayUtils.toPrimitive()``` της βιβλιοθήκης Apache Commons Collections για το επιτύχετε αυτό. 
+
+Ακολουθήστε τις οδηγίες που θα βρείτε [εδώ](https://stackoverflow.com/questions/43111018/how-to-import-external-libraries-in-jshell-java-9) για να χρησιμοποιήσετε βιβλιοθήκες στο jshell.
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)

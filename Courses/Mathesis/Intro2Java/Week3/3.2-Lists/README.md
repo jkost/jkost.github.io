@@ -120,6 +120,46 @@ array ==> [10, 20, 30, 40]
 
 **Εικόνα 3** _Διεπαφή ```List```_
 
+Μπορείτε να μετατρέψετε τις συλλογές στον αντίστοιχο πίνακα με τις παρακάτω εντολές:
+
+```java
+jshell> Object[] a = array.toArray()
+a ==> Object[3] { 10, 20, 30 }
+
+jshell> Object[] a = array.toArray(new Integer[3]);
+|  Warning:
+|  unchecked call to <T>toArray(T[]) as a member of the raw type java.util.List
+|  Object[] a = array.toArray(new Integer[3]);
+|               ^---------------------------^
+a ==> Integer[3] { 10, 20, 30 }
+
+jshell> Object[] a = array.toArray(new Integer[0]);
+|  Warning:
+|  unchecked call to <T>toArray(T[]) as a member of the raw type java.util.List
+|  Object[] a = array.toArray(new Integer[0]);
+|               ^---------------------------^
+a ==> Integer[3] { 10, 20, 30 }
+
+jshell> Integer[] a = (Integer[])array.toArray(new Integer[3]);
+|  Warning:
+|  unchecked call to <T>toArray(T[]) as a member of the raw type java.util.List
+|  Integer[] a = (Integer[])array.toArray(new Integer[3]);
+|                           ^---------------------------^
+a ==> Integer[3] { 10, 20, 30 }
+
+jshell> int[] a = array.toArray(new int[0]);
+|  Error:
+|  no suitable method found for toArray(int[])
+|      method java.util.Collection.toArray(java.util.function.IntFunction) is not applicable
+|        (argument mismatch; int[] cannot be converted to java.util.function.IntFunction)
+|      method java.util.List.toArray(java.lang.Object[]) is not applicable
+|        (argument mismatch; int[] cannot be converted to java.lang.Object[])
+|  int[] a = array.toArray(new int[0]);
+|            ^-----------^
+```
+
+_Προσοχή! Δεν υπάρχει άμεσος τρόπος μετατροπής σε έναν πίνακα πρωτογενούς τύπου, π.χ. ```int[]```, με την ```toArray()```. Πώς θα μπορούσατε να κάνετε αλλοιώς την μετατροπή;_
+
 Στη συνέχεια θα δούμε τις διάφορες μεθόδους της κλάσης.
 
 ### Προσπέλαση στοιχείων
