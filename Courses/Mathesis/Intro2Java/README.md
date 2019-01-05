@@ -39,10 +39,10 @@
 ### Εβδομάδα 4η - Εξαιρέσεις και Χρήσιμες Κλάσεις
 1. [Εξαιρέσεις (Exceptions)](Week4/4.1-Exceptions/README.md) √
 2. [Απαριθμημένοι Τύποι (Enums)](Week4/4.2-Enums/README.md) √
-3. [Σχόλια μεταγλώττισης - Annotations](Week4/4.3-Annotations/README.md)
-4. [Χρήσιμες κλάσεις](Week4/4.4-UsefulClasses/README.md)
-4. [Έλεγχος κώδικα με το JUnit 5](Week4/4.5-JUnit/README.md)
-5. [Αρχεία καταγραφής (Logging)](Week4/4.6-Logging/README.md)
+3. [Χρήσιμες κλάσεις](Week4/4.3-UsefulClasses/README.md)
+4. [Διεθνοποίηση (Internationalisation)](Week4/4.4-Internationalisation/README.md)
+5. [Έλεγχος κώδικα με το JUnit 5](Week4/4.5-JUnit/README.md)
+6. [Αρχεία καταγραφής (Logging)](Week4/4.6-Logging/README.md)
 
 ### Εβδομάδα 5η - Ημερομηνία και Ώρα, Εντολές Εισόδου/Εξόδου και Αρχεία
 1. [Ημερομηνία & Ώρα](Week5/5.1-Date-Time/README.md) √

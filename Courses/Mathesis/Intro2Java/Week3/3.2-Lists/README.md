@@ -244,11 +244,11 @@ interface ListIterator {
 jshell> sum = 0
 sum ==> 0
 
-jshell> for (Object n : array) 
+jshell> for (final Object n : array) 
 	...>    sum += (int)n;
 ```
 
-Στο επόμενο μάθημα θα δούμε πώς μπορούμε να ξεφορτωθούμε το casting. 
+Στο επόμενο μάθημα θα δούμε πώς μπορούμε να ξεφορτωθούμε το casting. Καλό είναι να δηλώνετε τη μεταβλητή του βρόγχου ως ```final``` ώστε ν' αποφεύγετε κατά λάθος ή επίτηδες καταχώρηση τιμής στη μεταβλητή του βρόγχου (βλ. αναφορά [9:DCL02-J. Declare all enhanced for statement loop variables final]).
 
 Μεγάλη προσοχή χρειάζεται όταν προσπελάζουμε τα στοιχεία μιας λίστας, και γενικότερα μιας συλλογής. Αν καθώς προσπελάζουμε τα στοιχεία, η λίστα (συλλογή) αλλάξει (π.χ. προστεθούν ή διαγραφούν στοιχεία σ' αυτή), προκαλείται ```ConcurrentModificationException```:
 
@@ -632,6 +632,7 @@ list ==> [10, 20, 5, 30]
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+1. Long F. et. al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Pearson.
 1. Naftalin M., Wadler P. (2006), _Java Generics and Collections_, O'Reilly. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
