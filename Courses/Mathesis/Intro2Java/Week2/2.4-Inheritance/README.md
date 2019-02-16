@@ -578,8 +578,24 @@ Hello Z
 | ```private default``` | Όχι | από τη μία θα πρέπει να μπορεί να επεκταθεί (```abstract```) από την άλλη δεν μπορεί (```private```)
 
 
-## Ανώνυμες Εσωτερικές (inner) και Εμφωλιασμένες (nested) κλάσεις
-Στο πρώτο μάθημα αυτής της εβδομάδας μιλήσαμε για τις εσωτερικές (inner) και τις εμφωλιασμένες (nested) κλάσεις. Αφήσαμε τις ανώνυμες εσωτερικές κλάσεις (anonymous inner classes) γι' αυτό το μάθημα. 
+## Ανώνυμες Εσωτερικές (inner) κλάσεις
+Στο προηγούμενο μάθημα μιλήσαμε για τις εσωτερικές (inner) και τις εμφωλιασμένες (nested) κλάσεις. Αφήσαμε τις ανώνυμες εσωτερικές κλάσεις (anonymous inner classes) γι' αυτό το μάθημα. Οι ανώνυμες εσωτερικές κλάσεις είναι μη στατικές εσωτερικές κλάσεις χωρίς όνομα (όταν χρησιμοποιούνται μόνο μια φορά).
+
+```java
+public interface MyInterface {
+
+  public void aMethod();
+}
+
+MyInterface instance = new MyInterface() {
+
+    public void aMethod() {
+        System.out.println("Anonymous class aMethod()");
+    }
+};
+
+instance.aMethod();  // Anonymous class aMethod()
+```
 
 ## Ασκήσεις
 
@@ -598,6 +614,7 @@ Hello Z
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
+1. [Jenkov Nested Classes](http://tutorials.jenkov.com/java/nested-classes.html)
 
 ---
 

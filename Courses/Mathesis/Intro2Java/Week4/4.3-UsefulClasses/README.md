@@ -45,7 +45,7 @@ jshell> sb.toString()
 $1 ==> "This is a String "
 ```
 
-## ```Γεννήτριες τυχαίων αριθμών```
+## Γεννήτριες τυχαίων αριθμών
 Αν θέλετε να παράγετε (ψευδο)τυχαίους αριθμούς, τότε η γλώσσα παρέχει μια επιλογή από κλάσεις γι' αυτό το σκοπό:
 
 * ```ThreadLocalRandom```: συνίσταται (από τη Java 7)
@@ -348,7 +348,7 @@ jshell> one.compareTo(one1)
 $6 ==> 0
 ```
 
-Αυτό οφείλεται στο ότι η ```equals()``` λαμβάνει υπόψιν τον αριθμό δεκαδικών ψηφίων (```scale```). Γι' αυτό χρησιμοποιείτε **πάντα** την ```comparetTo()```.
+Αυτό οφείλεται στο ότι η ```equals()``` λαμβάνει υπόψιν τον αριθμό δεκαδικών ψηφίων (```scale```). Γι' αυτό χρησιμοποιείτε **πάντα** την ```compareTo()```.
 
 ### Μαθηματικοί τελεστές
 * ```add()```
@@ -406,8 +406,6 @@ result ==> BigDecimal[2] { 0, 5 }
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
-1. Kabutz H. (2012), [What is the Meaning of Life?](https://www.javaspecialists.eu/archive/Issue197.html), Issue 198. 
-1. Kabutz H. (2012), [Pushing the Limits in Java's Random](https://www.javaspecialists.eu/archive/Issue198.html), Issue 198. 
 1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
