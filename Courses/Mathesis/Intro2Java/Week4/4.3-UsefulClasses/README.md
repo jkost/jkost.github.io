@@ -8,7 +8,7 @@
 ---
 Σ' αυτό το μάθημα θα δούμε κάποιες χρήσιμες κλάσεις της γλώσσας.
 
-## StringBuilder
+## ```StringBuilder``` και ```StringJoiner```
 Όπως μάθαμε στα μαθήματα της πρώτης εβδομάδας, η κλάση ```String``` είναι αμετάβλητη (immutable). Κάθε φορά που εκχωρείτε κάποια τιμή σε μια συμβολοσειρά, δημιουργείται ένα νέο αντικείμενο της κλάσης (δεν τροποποιείται το προηγούμενο). Π.χ. στο ακόλουθο παράδειγμα δημιουργείται κάθε φορά ένα νέο αντικείμενο ```String```:
 
 ```java
@@ -43,6 +43,140 @@ jshell> for (String s : strings)
 
 jshell> sb.toString()
 $1 ==> "This is a String "
+```
+
+Η κλάση ```StringJoiner``` εισήχθηκε στην έκδοση 8 και επιτρέπει τη δημιουργία αλφαριθμητικών συνενώνοντας άλλα αλφαριθμητικά:
+ 
+```java
+jshell> StringJoiner sj = new StringJoiner(", ", "[", "]");  // StringJoiner(CharSequence delimiter, CharSequence prefix, CharSequence suffix)
+sj ==> []
+
+jshell> for (String s : new String[]{"α", "β", "γ"}) {
+   ...> sj.add(s);
+   ...> }
+
+jshell> sj
+sj ==> [α, β, γ]
+```
+
+Για να διαχωρίσουμε αλφαριθμητικά:
+
+```java
+jshell> String s = "Ιαν Φεβ Μάρ"
+s ==> "Ιαν Φεβ Μάρ"
+
+jshell> StringTokenizer st = new StringTokenizer(s, " ")
+st ==> java.util.StringTokenizer@55d56113
+
+jshell> while (st.hasMoreTokens()) {
+   ...> System.out.println(st.nextToken());
+   ...> }
+Ιαν
+Φεβ
+Μάρ
+
+jshell> String[] split = s.split(" ")
+split ==> String[3] { "Ιαν", "Φεβ", "Μάρ" }
+
+jshell> for (String str : split)
+   ...> System.out.println(str);
+Ιαν
+Φεβ
+Μάρ
+```
+
+## ```Formatter, NumberFormat, System.out.printf()```
+Έχουμε μάθει ότι οι	```System.out.print()``` και ```System.out.println()``` εμφανίζουν τα ορίσματά τους στη μονάδα εξόδου (συνήθως οθόνη). Η ```System.out.printf()``` λειτουργεί όπως η ```printf()``` της C και παρέχει περισσότερες δυνατότητες μορφοποίησης με τη βοήθεια της ```Formatter```:
+
+```java
+jshell> Formatter f = new Formatter();
+f ==> 
+
+jshell> System.out.print(f.format("Όνομα: %s, ηλικία: %d%n", "Νίκος", 1))
+Όνομα: Νίκος, ηλικία: 1
+
+jshell> System.out.print(String.format("Όνομα: %s, ηλικία: %d%n", "Νίκος", 1))
+Όνομα: Νίκος, ηλικία: 1
+```
+Τα ```%s, %d``` είναι ειδικοί χαρακτήρες μορφοποίησης που δηλώνουν ότι τα ορίσματα που ακολουθούν είναι αλφαριθμητικό και ακέραιος αριθμός (decimal) αντίστοιχα, ενώ ο ```%n``` δηλώνει το χαρακτήρα αλλαγής γραμμής. 
+
+Το πρώτο όρισμα ονομάζεται αλφαριθμητικό μορφοποίησης (format string) και έχει τη γενική μορφή:
+
+```
+%[argument_index$][flags][width][.precision]conversion
+```
+
+Το ```[argument_index$]``` είναι προαιρετικό και δηλώνει τη θέση το κάθε ορίσματος, π.χ. ```1$``` είναι το 1ο όρισμα κλπ. Π.χ.
+
+```java
+jshell> System.out.print(f.format("Όνομα: %2$s, ηλικία: %1$d%n", 1, "Νίκος"))
+Όνομα: Νίκος, ηλικία: 1
+```
+
+Το προαιρετικό ```flags``` είναι ένα σύνολο από χαρακτήρες που εξαρτώνται από τη μετατροπή (conversion) και μορφοποιούν ανάλογα το όρισμα.
+
+| Flag | Μορφή
+| '-' | Αριστερή στοίχιση
+| '#' | 
+| '+' | Με πρόσημο
+| ' ' | κενό πριν 
+| '0' | συμπλήρωμα με 0 πριν
+| ',' | διαχωριστικό
+| '(' | οι αρνητικοί αριθμοί μέσα σε παρενθέσεις
+
+Το προαιρετικό ```width``` είναι ένας θετικός αριθμός που δηλώνει τον ελάχιστο αριθμό χαρακτήρων που θα εμφανιστούν στην έξοδο (οθόνη).
+
+Το προαιρετικό ```precision``` είναι ένας θετικός ακέραιος που περιορίζει τον αριθμό των χαρακτήρων (π.χ. αρ. δεκαδικών ψηφίων).
+
+Το ```conversion``` είναι ένας ειδικός χαρακτήρας που δηλώνει πως θα μορφοποιηθεί το όρισμα, π.χ. ```s```. Συνοπτικά:
+
+| Conversion | Μορφή 
+| ```b``` | ```boolean```
+| ```h``` | ```hexadecimal```
+| ```s``` | ```String```
+| ```c``` | χαρακτήρας
+| ```d``` | ακέραιος αριθμός
+| ```o``` | οκταδικός αριθμός
+| ```x``` | δεκαεξαδικός αριθμός
+| ```e``` | επιστημονική μορφή ακεραίου π.χ. 2Ε-2
+| ```f``` | ```float```
+| ```g``` | επιστημονική μορφή δεκαδικού
+| ```a``` | δεκαεξαδικός δεκαδικός αριθμός
+| ```t``` | ημερομηνία/ώρα
+| ```%``` | %
+| ```n``` | αλλαγή γραμμής
+
+Για μια πλήρη περιγραφή βλ. [Formatter ΑΡΙ](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html).
+
+Π.χ.
+
+```java
+jshell> f.format(locale, "e=%+10.4f", Math.E)
+$1 ==> e=   +2,7183
+```
+
+όπου ```Math.E``` είναι το e (η βάση των φυσικών λογαρίθμων). Στο αλφαριθμητικό μορφοποίησης θέλουμε να υπάρχει πρόσημο, το μήκος να είναι 10 χαρακτήρες και 4 δεκαδικά ψηφία, ενώ αναπαριστούμε δεκαδικό αριθμό (```f```).
+
+```java
+jshell> f.format(locale, "%(,.2f €", -1850.362)
+$2 ==> (1.850,36) €
+```
+Οι αρνητικοί αριθμοί εμφανίζονται μέσα σε παρενθέσεις, χρησιμοποιούμε την υποδιαστολή σύμφωνα με το εκάστοτε ```Locale``` και επιτρέπουμε 2 δεκαδικά ψηφία.
+
+Ίδιοι κανόνες ισχύουν και για την ```printf()```:
+
+```java
+jshell> String s = "Hello World";
+s ==> "Hello World"
+
+jshell> System.out.printf("Το αλφαριθμητικό %s έχει hash code %h%n", s, s);
+Το αλφαριθμητικό Hello World έχει hash code cc969a84
+
+jshell> System.out.printf("% 4d", 2)       // συμπλήρωση με κενά 
+   2
+   
+jshell> System.out.printf("%10.5s%n", Math.PI)
+     3.141
 ```
 
 ## Γεννήτριες τυχαίων αριθμών
@@ -391,10 +525,80 @@ result ==> BigDecimal[2] { 0, 5 }
 * ```movePointLeft()```   	// μετακίνηση υποδιαστολής αριστερά
 * ```movePointRight()```	// μετακίνηση υποδιαστολής αριστερά
 
-## ```Formatter, NumberFormat, System.out.printf()```
+## Είσοδος
 
+Υπάρχουν διάφοροι τρόποι να διαβάσουμε από τη μονάδα εισόδου (συνήθως το πληκτρολόγιο):
 
+### ```System.console```
+Δε δουλεύει με το jshell.
 
+```java
+String name = System.console().readLine("Εισάγετε όνομα χρήστη και πατήστε Enter%n");
+System.out.printf("Γειά σου %s!", name);
+System.out.print("Εισάγετε κωδικό και πατήστε Enter: ");
+char[] password = System.console().readPassword();
+```
+
+### ```java.util.Scanner```
+```java
+jshell> import java.util.Scanner
+
+jshell> Scanner scanner = new Scanner(System.in);
+scanner ==> java.util.Scanner[delimiters=\p{javaWhitespace}+] ... \E][infinity string=\Q∞\E]
+
+jshell> System.out.print("Όνομα χρήστη: ");
+Όνομα χρήστη: 
+jshell> String username = scanner.next();
+john
+username ==> "john"
+```
+Δεν υποστηρίζει απόκρυψη εισόδου (π.χ. για ανάγνωση κωδικού όπως η ```System.console```).
+
+* ```next()``` ανάγνωση κειμένου μέχρι το επόμενο κενό (ανάγνωση ενός token)
+* ```nextLine()``` ανάγνωση κειμένου μέχρι την αλλαγή γραμμής
+* ```nextByte()```
+* ```nextShort()```
+* ```nextInt()```
+* ```nextLong()```
+* ```nextFloat()```
+* ```nextDouble()```
+* ```nextBigInteger()```
+* ```nextBigDecimal()```
+* ```hasNextByte()```
+* ```hasNextShort()```
+* ```hasNextInt()```
+* ```hasNextLong()```
+* ```hasNextFloat()```
+* ```hasNextDouble()```
+* ```hasNextBigInteger()```
+* ```hasNextBigDecimal()```
+
+```java
+if (scanner.hasNextFloat()){ 
+	float fValue = scanner.nextFloat(); 
+}else{
+	String sValue = scanner.next(); 
+}
+```
+
+### ```BufferedReader```
+
+```java
+jshell> System.out.print("Όνομα χρήστη: ")
+Όνομα χρήστη: 
+jshell> BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+reader ==> java.io.BufferedReader@7a187f14
+
+jshell> try {
+   ...> String username = reader.readLine();
+   ...> } catch(IOException e) {
+   ...> e.printStackTrace();
+   ...> }
+john
+
+jshell> username
+username ==> "john"
+```
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
@@ -411,6 +615,7 @@ result ==> BigDecimal[2] { 0, 5 }
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
 1. [Generate Random Numbers](http://www.javapractices.com/topic/TopicAction.do?Id=62)
+1. [Java printf( ) Method Quick Reference](https://www.cs.colostate.edu/~cs160/.Spring16/resources/Java_printf_method_quick_reference.pdf)
 
 ---
 

@@ -50,17 +50,17 @@ System.out.println(messages.getString("farewell"));
 
 ```java
 jshell> Locale.
-CANADA					   CANADA_FRENCH
-CHINA					   CHINESE                    
+CANADA				CANADA_FRENCH
+CHINA				CHINESE                    
 ENGLISH                    
-FRANCE					   FRENCH                     
-GERMAN                     GERMANY
-ITALIAN                    ITALY
-JAPAN  					   JAPANESE
-KOREA 					   KOREAN
+FRANCE				FRENCH                     
+GERMAN				GERMANY
+ITALIAN				ITALY
+JAPAN				JAPANESE
+KOREA				KOREAN
 SIMPLIFIED_CHINESE
-TAIWAN                     TRADITIONAL_CHINESE
-UK                         US                         
+TAIWAN				TRADITIONAL_CHINESE
+UK					US                         
 ```
 
 Στη συνέχεια ορίζουμε το αρχείο ```MessagesBundle.properties``` στον ίδιο φάκελο με την ```Main.java```:
@@ -87,7 +87,7 @@ inquiry = Τι κάνεις;
 Μπορείτε να προσθέσετε όσα ```MessagesBundle_xx_YY.properties``` αρχεία θέλετε υποστηρίζοντας όσες γλώσσες θέλετε και περνώντας τους κατάλληλους κωδικούς γλώσσας και χώρας στη ```Locale``` μπορείτε να εμφανίζετε τα μηνύματα σ' αυτές τις γλώσσες. Μπορείτε επίσης να περάσετε τον κωδικό γλώσσας και χώρας στη γραμμή εντολών καθώς εκτελείται το πρόγραμμα, π.χ.
 
 ```bash
-$ java Main fr FR
+$ java Main el GR
 ```
 
 ```java
@@ -165,11 +165,38 @@ jshell> Locale.setDefault(new Locale("el", "GR"))
 jshell> NumberFormat.getInstance().format(902304)
 $4 ==> "902.304"
 
-jshell> NumberFormat.getInstance(new Locale("el", "GR")).format(902304)
-$5 ==> "902.304"
- ```
+jshell> Locale locale = new Locale("el", "GR");
+locale ==> el_GR
 
-Όταν υπάρχουν μέθοδοι που υπάρχει η επιλογή να περάσετε ένα ```Locale``` και να μην περάσετε ```Locale```, συνίσταται να περνάτε πάντα ```Locale```. Η μέθοδος χωρίς ```Locale``` χρησιμοποιεί το ```Locale``` του συστήματος και τ' αποτελέσματα μπορεί να 'ναι λάθος.
+jshell> NumberFormat.getInstance(locale).format(902304)
+$5 ==> "902.304"
+
+jshell> NumberFormat.getCurrencyInstance(locale).format(902304)
+$6 ==> "902.304,00 €"
+
+jshell> NumberFormat.getPercentInstance(locale).format(99.999)
+$7 ==> "10.000%"
+
+jshell> NumberFormat.getInstance(locale).parse("100,00");
+$8 ==> 100
+```
+
+Μπορείτε να ορίσετε τον ελάχιστο-μέγιστο αριθμό ψηφίων για ακεραίους και δεκαδικούς:
+```java
+numberFormat.setMinimumIntegerDigits(int digits)
+numberFormat.setMaximumIntegerDigits(int digits)
+numberFormat.setMinimumFractionDigits(int digits)
+numberFormat.setMaximumFractionDigits(int digits)
+
+int digits = numberFormat.getMinimumIntegerDigits();
+int digits = numberFormat.getMaximumIntegerDigits();
+int digits = numberFormat.getMinimumFractionDigits();
+int digits = numberFormat.getMaximumFractionDigits();
+```
+
+Μπορείτε να ορίσετε επίσης ```numberFormat.setRoundingMode(RoundingMode.HALF_DOWN)``` όπως μάθαμε στο προηγούμενο μάθημα. 
+
+Όταν υπάρχουν μέθοδοι που υπάρχει η επιλογή να περάσετε ή όχι ένα ```Locale```, συνίσταται να περνάτε πάντα ```Locale```. Η μέθοδος χωρίς ```Locale``` χρησιμοποιεί το ```Locale``` του συστήματος και τ' αποτελέσματα μπορεί να 'ναι λάθος.
 
 Π.χ.
 
