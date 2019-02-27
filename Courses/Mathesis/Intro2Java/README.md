@@ -24,8 +24,8 @@
 5. [Πολυμορφισμός (Polymorphism)](Week2/2.5-Polymorphism/README.md) √
 6. [Τεκμηρίωση κώδικα (Javadoc)](Week2/2.6-JavaDoc/README.md) √ 
 7. [Αποσφαλμάτωση (Debugging)](Week2/2.7-Debugging/README.md) √ 
-8. [Καλές τεχνικές προγραμματισμού](Week2/2.8-BestPractices/README.md)
-9. [Πρώτη Άσκηση](Week2/2.9-Exercise1/README.md)
+8. [Καλές τεχνικές προγραμματισμού](Week2/2.8-BestPractices/README.md) √
+9. [Πρώτη Άσκηση](Week2/2.9-Exercise1/README.md) √
 
 ### Εβδομάδα 3η - Δομές Δεδομένων και Γενικευμένοι Τύποι (Generics)
 1. [Δομές Δεδομένων (Data Structures)](Week3/3.1-DataStructures/README.md) √
@@ -47,9 +47,9 @@
 
 ### Εβδομάδα 5η - Ημερομηνία και Ώρα, Εντολές Εισόδου/Εξόδου και Αρχεία
 1. [Ημερομηνία & Ώρα](Week5/5.1-Date-Time/README.md) √
-2. [Αρχεία](Week5/5.2-Files/README.md) 
-3. [NIO](Week5/5.3-NIO/README.md) 
-4. [Επικοινωνία με Βάσεις Δεδομένων](Week5/5.4-JDBC/README.md)
+2. [Αρχεία](Week5/5.2-Files/README.md) √
+3. [NIO](Week5/5.3-NIO/README.md) √
+4. [Επικοινωνία με Βάσεις Δεδομένων](Week5/5.4-JDBC/README.md) √
 5. [XML](Week5/5.5-XML/README.md)
 
 
