@@ -134,16 +134,17 @@ Locale cLocale = new Locale.Builder().setLanguage("en").setRegion("GB").build();
 
 ```java
 Locale locale = Locale.forLanguageTag("el-GR");
+locale ==> el_GR
 ```
 
 ```java
-jshell> Locale.getDisplayName()
+jshell> locale.getDisplayName()
 $8 ==> "Ελληνικά (Ελλάδα)"
 
-jshell> Locale.getDisplayCountry()
+jshell> locale.getDisplayCountry()
 $9 ==> "Ελλάδα"
 
-jshell> Locale.getDisplayLanguage()
+jshell> locale.getDisplayLanguage()
 $10 ==> "Ελληνικά"
 ```
 
