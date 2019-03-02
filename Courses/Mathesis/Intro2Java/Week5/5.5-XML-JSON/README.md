@@ -352,7 +352,6 @@ XPathExpression exp = xPath.compile("//password");
 NodeList passwords = (NodeList) exp.evaluate(doc, XPathConstants.NODESET);
 ```
 
-
 Μπορείτε επίσης να δημιουργήσετε XML αρχεία. Στο παρακάτω παράδειγμα δείχνουμε πώς μπορείτε να δημιουργήσετε τα περιεχόμενα του ```users.xml```:
 
 ```java
@@ -415,11 +414,73 @@ public class DOMCreator {
 }
 ```
 
+### Ασφάλεια
+Όπως και με την SQL, υπάρχουν και κυβερνοεπιθέσεις για XML.
+
+#### XML Injection
+Όπως και η SQL, έτσι κάποιος κακόβουλος χρήστης μπορεί να εισάγει ειδικά τροποποιημένο XML αρχείο.
+
+Π.χ. έστω το παρακάτω αρχείο από το καλάθι του χρήστη σε μια ιστοσελίδα ηλεκτρονικού εμπορίου:
+
+```xml
+<item>
+	<description>iPhone</description>
+	<price>850.0</price>
+	<quantity>1</quantity>
+</item>
+```
+Ένας κακόβουλος χρήστης μπορεί να δώσει στο πεδίο ```quantity``` το παρακάτω:
+
+```xml
+1</quantity><price>1.0</price><quantity>1
+```
+με αποτέλεσμα:
+```xml
+<item>
+	<description>iPhone</description>
+	<price>850.0</price>
+	<quantity>1</quantity><price>1.0</price><quantity>1</quantity>
+</item>
+```
+Το 2ο πεδίο ```price``` υπερκαλύπτει το 1ο με αποτέλεσμα ν' αγοράσει το iPhone για 1€ μόνο!
+
+Σ'αυτήν την περίπτωση θα πρέπει να ελέγχεται το πεδίο τιμών των πεδίων, π.χ. 
+
+```java
+s
+```
+
+#### XML External Entity Attacks (XXE)
+Κάποιες οντότητες (entities) ενός XML αρχείου μπορεί να προέρχονται από εξωτερικούς πόρους. Π.χ. το παρακάτω αρχείο
+
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE foo SYSTEM "file:/dev/tty">
+<foo>bar</foo>
+``` 
+προσπαθεί να προσπελάσει το ```/dev/tty``` (ή ```/dev/random```) με αποτέλεσμα να προκαλεί Denial of Service (DoS) όταν αναλυθεί από το παρακάτω πρόγραμμα:
+
+```java
+public class ΧΧΕApp {
+
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+        parseXML(new FileInputStream("evil.xml"), new DefaultHandler2());
+    }
+
+    private static void parseXML(InputStream is, DefaultHandler2 defaultHandler)
+            throws ParserConfigurationException, SAXException, IOException {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParser saxParser = factory.newSAXParser();
+        saxParser.parse(is, defaultHandler);
+    }
+}
+```
+Η λύση είναι η χρήση ενός ```EntityResolver``` και ξεφεύγει από τα πλαίσια του εισαγωγικού μαθήματος.
+
 ## JSON
 Μια άλλη αναπαράσταση δεδομένων είναι η μορφή JSON (JavaScript Object Notation). Το JSON μπορεί ν' αναπαραστήσει δυο δομημένους τύπους: _αντικείμενα_ και _συστοιχίες (arrays)_. Υποστηρίζει τους παρακάτω τύπους δεδομένων: ```number, string, boolean, array, object, null```. Χρησιμοποιείται συχνά σε εφαρμογές Ajax, υπηρεσίες ιστού REST (RESTful web services) κ.α. Φυσικά, όπως και με την XML, μπορείτε να επικυρώσετε μια δομή JSON σε κάποιο σχήμα (schema) (βλ. [schemavalidator](https://www.jsonschemavalidator.net/) και [άλλες υλοποιήσεις](http://json-schema.org/implementations.html)).
 
-Το [Java API for JSON Processing](https://www.oracle.com/technetwork/articles/java/json-1973242.html) παρέχει τη δυνατότητα να αναλύσετε (parse), παράγετε (generate), μετατρέψετε (transform), και να δημιουργήσετε ερωτήματα (query) δομές JSON. [Η JSON απαιτεί λιγότερη πληκτρολόγηση από την XML](www.json.org/xml.html). Το [JEP 198: Light-Weight JSON API](http://
-openjdk.java.net/jeps/198) για την προσθήκη του JSON API στη Java _δεν_ είναι ακόμα μέρος του JDK. Άλλες βιβλιοθήκες:
+Το [Java API for JSON Processing](https://www.oracle.com/technetwork/articles/java/json-1973242.html) παρέχει τη δυνατότητα να αναλύσετε (parse), παράγετε (generate), μετατρέψετε (transform), και να δημιουργήσετε ερωτήματα (query) δομές JSON. [Η JSON απαιτεί λιγότερη πληκτρολόγηση από την XML](www.json.org/xml.html). Το [JEP 198: Light-Weight JSON API](http://openjdk.java.net/jeps/198) για την προσθήκη του JSON API στη Java _δεν_ είναι ακόμα μέρος του JDK. Άλλες βιβλιοθήκες:
 
 * [GSon](https://mvnrepository.com/artifact/com.google.code.gson/gson) από τη Google
 * [Jackson](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)

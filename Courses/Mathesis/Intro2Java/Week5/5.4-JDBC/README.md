@@ -33,7 +33,7 @@
 * [MySQL](https://www.mysql.com/)
 * [Oracle](http://oracle.com/database)
 * [Postgresql](https://postgresql.org/)
-* [SQLite](sqlite.org)
+* [SQLite](https://sqlite.org)
 
 
 Η Java μπορεί να επικοινωνήσει με ΣΣΔΒΔ για να επεξεργαστεί δεδομένα που είναι αποθηκευμένα σ' αυτά, χάρις στο _Java Database Connectivity Bridge (JDBC)_ (τελευταία έκδοση [4.3](https://jcp.org/aboutJava/communityprocess/mrel/jsr221/index3.html)). Η ιδέα πίσω από το JDBC είναι ότι κάθε κατασκευαστής προσφέρει τον οδηγό του (driver) που υλοποιεί το JDBC.

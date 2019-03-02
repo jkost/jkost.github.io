@@ -42,7 +42,7 @@
 3. [Χρήσιμες κλάσεις](Week4/4.3-UsefulClasses/README.md) √
 4. [Διεθνοποίηση (Internationalisation)](Week4/4.4-Internationalisation/README.md) √
 5. [Αρχεία καταγραφής (Logging)](Week4/4.5-Logging/README.md) √
-6. [Έλεγχος κώδικα με το JUnit 5](Week4/4.6-UnitTesting/README.md)
+6. [Έλεγχος κώδικα με το JUnit 5](Week4/4.6-UnitTesting/README.md) √
 
 
 ### Εβδομάδα 5η - Ημερομηνία και Ώρα, Εντολές Εισόδου/Εξόδου και Αρχεία
