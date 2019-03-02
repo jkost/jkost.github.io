@@ -50,7 +50,7 @@
 2. [Αρχεία](Week5/5.2-Files/README.md) √
 3. [NIO](Week5/5.3-NIO/README.md) √
 4. [Επικοινωνία με Βάσεις Δεδομένων](Week5/5.4-JDBC/README.md) √
-5. [XML](Week5/5.5-XML/README.md)
+5. [XML & JSON](Week5/5.5-XML-JSON/README.md) √
 
 
 ### Εβδομάδα 6η - Ανάπτυξη μιας εφαρμογής 

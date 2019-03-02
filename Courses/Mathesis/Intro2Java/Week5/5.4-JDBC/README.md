@@ -2,7 +2,9 @@
 © Γιάννης Κωστάρας
 
 ---
+
 [<-](../5.3-NIO/README.md)  | [Δ](../../README.md) | [->](../5.5-XML/README.md) 
+
 ---
 
 Στα προηγούμενα μαθήματα είδαμε πώς μπορούμε ν' αποθηκεύουμε μόνιμα τα δεδομένα μας σε συστήματα αρχείων. Σ' αυτό το μάθημα θα μάθουμε πώς ν' αποθηκεύουμε τα δεδομένα μας σε βάσεις δεδομένων.
@@ -36,7 +38,7 @@
 
 Η Java μπορεί να επικοινωνήσει με ΣΣΔΒΔ για να επεξεργαστεί δεδομένα που είναι αποθηκευμένα σ' αυτά, χάρις στο _Java Database Connectivity Bridge (JDBC)_ (τελευταία έκδοση [4.3](https://jcp.org/aboutJava/communityprocess/mrel/jsr221/index3.html)). Η ιδέα πίσω από το JDBC είναι ότι κάθε κατασκευαστής προσφέρει τον οδηγό του (driver) που υλοποιεί το JDBC.
 
-### Επικοινωνία με Σχεσιακές ΒΔ
+#### Επικοινωνία με Σχεσιακές ΒΔ
 
 Στα παρακάτω θα χρησιμοποιήσουμε την SQLite ως ΣΔΒΔ και θα δημιουργήσουμε το σχήμα (schema) της ακόλουθης ΒΔ η οποία αποτελείται από έναν πίνακα ```Users```:
 
@@ -331,11 +333,12 @@ import javax.sql.rowset.*;
 
 Μπορείτε επίσης να ορίσετε τη μέθοδο ```crs.setPageSize(20)``` για να λάβετε π.χ. μόνο 20 αποτελέσματα (στην περίπτωση που σας επιστρέφονται πολλά αποτελέσματα). Για να μεταβείτε στην επόμενη σελ. αποτελεσμάτων, ```crs.nextPage()```, ενώ αν τροποποιήσατε τα δεδομένα, θα πρέπει να καλέσετε την ```crs.acceptChanges()``` για να ενημερώσετε τη ΒΔ.
 
-Τέλος, αν θέλετε να μάθετε περισσότερα για τη δομή (σχήμα) της ΒΔ σας, χρησιμοποιήστε την 
+Αν θέλετε να μάθετε περισσότερα για τη δομή (σχήμα) της ΒΔ σας:
 
 ```java
-DatabaseMetaData metadata = dbConnection.getMetaData()
-metadata.getTables(null, null, null, new String[]{"TABLE"}); // (String catalog, String Schema, String tableNamepattern, string type)
+DatabaseMetaData metadata = dbConnection.getMetaData();
+// (String catalog, String Schema, String tableNamepattern, string type)
+metadata.getTables(null, null, null, new String[]{"TABLE"}); 
 ResultSetMetaData metadata = rs.getMetaData();
 for (int i = 1; i <= metadata.getColumnCount(); i++) {
     System.out.println(metadata.getColumnLabel(i) + "\t" + metadata.getColumnDisplaySize(i));
@@ -348,6 +351,7 @@ dbConnection.setAutoCommit(false);
 //...
 stmt.executeUpdate(sqlCommand1);
 stmt.executeUpdate(sqlCommand2);
+//...
 dbConnection.commit();
 ```
 ενώ σε περίπτωση λάθους:
@@ -355,8 +359,53 @@ dbConnection.commit();
 dbConnection.rollback();
 ```
 
-Μπορείτε ακόμα να χρησιμοποιήσετε Batch Updates και Save Points αλλά ξεφεύγουν από το σκοπό ενός εισαγωγικού μαθήματος. 
-### Επικοινωνία με NoSQL ΒΔ
+Μπορείτε ακόμα να χρησιμοποιήσετε Batch Updates και Save Points αλλά ξεφεύγουν από το σκοπό ενός εισαγωγικού μαθήματος.
+
+### Μη σχεσιακές ΒΔ
+Με την παραγωγή πολλών δεδομένων, εμφανίστηκαν οι περιορισμοί των σχεσιακών ΒΔ. Με τον ορισμό "Πολλά Δεδομένα (Big Data)" εννοούμε μεγάλες ποσότητες δεδομένων που αλλάζουν συχνά και δεν έχουν την ίδια δομή ή μπορεί να είναι αδόμητα (π.χ. μετεωρολογικά/σεισμικά δεδομένα, πωλήσεις κλπ.). Δουλεύοντας με πολλά δεδομένα σημαίνει να μπορούμε να μπορούμε να:
+
+* αποκτούμε αποτελεσματικά αυτά τα δεδομένα
+* αποθηκεύουμε αποτελεσματικά και φθηνά αυτά τα δεδομένα
+* επεξεργαζόμαστε τα δεδομένα γρήγορα
+* αναλύουμε τ' αποτελέσματα
+
+Οι ΒΔ που μπορούν ν' αποθηκεύουν τέτοιου είδους δεδομένα λέγονται _NoSQL_. Συνήθως δεν έχουν κάποιο schema (αδόμητα δεδομένα). Οι NoSQL ΒΔ χωρίζονται στις παρακάτω κατηγορίες ([λίστα με NoSQL ΒΔ](http://nosql-database.org)):
+
+* Key–value: ένα μεγάλο ```HashMap``` όπου τα δεδομένα διαβάζονται πολύ γρήγορα μέσω του κλειδιού ([Redis](https://redis.io/) για επικοινωνία με Java χρησιμοποιήστε το [Jedis](https://code.google.com/p/jedis/), [Amazon DynamoDB](https://aws.amazon.com/dynamodb/), [Microsoft Azure Table Storage](https://azure.microsoft.com/en-us/services/storage/tables/), [Riak](https://riak.com/products/), [Oracle NoSQL Database](https://www.oracle.com/technetwork/database/database-technologies/nosqldb/downloads/index.html))
+* Document: ιεραρχικές χωρίς σχήμα όπου κι εδώ είναι key-value με τη διαφορά ότι το value είναι ένα έγγραφο ([MongoDB](https://www.mongodb.com/), [Amazon DocumentDB](https://aws.amazon.com/documentdb/), [CouchDB](http://couchdb.apache.org/), [MarkLogic](https://www.marklogic.com/), [Terrastore](https://code.google.com/archive/p/terrastore/))
+* Column: σχετιζόμενα δεδομένα αποθηκεύονται μαζί ([Cassandra](https://cassandra.apache.org/), [Hbase](http://hbase.apache.org/), [Accumulo](https://accumulo.apache.org/), [Amazon DynamoDB](https://aws.amazon.com/dynamodb/), [Hypertable](https://dbdb.io/db/hypertable))
+* Graph: επιτρέπουν ερωτήματα βασισμένα στις σχέσεις μεταξύ των κόμβων ([Neo4j](https://neo4j.com/), [Infinite Graph](https://www.objectivity.com/products/infinitegraph/), [FlockDB](https://github.com/twitter-archive/flockdb), [Fallen 8](http://fallen-8.com/))
+  
+#### Επικοινωνία με NoSQL ΒΔ
+Ως παράδειγμα, θα χρησιμοποιήσουμε τη MongoDB. Κατεβάστε:
+
+* τη [MongoDB](https://www.mongodb.com/) (MongoDB Community Server για το Λ.Σ. σας) και αποσυμπιέστε το σε κάποιον φάκελο. 
+* το [NBMongo](http://plugins.netbeans.org/plugin/52638/nbmongo) plugin και εγκαταστήστε το στο NetBeans κατά τα γνωστά. Με το που θα εγκαταστήσετε το πρόσθετο, στην καρτέλα _Services_ εμφανίζεται ένας νέος κόμβος _MongoDB_.
+* το [MongoDB Java Driver](https://mongodb.github.io/mongo-java-driver/). Καθώς δεν έχουμε μάθει κάποιο από τα build frameworks όπως τα maven, gradle, πλοηγηθείτε στο [maven central](https://search.maven.org) και αναζητήστε ```mongodb-driver-sync``` και κατεβάστε την τελευταία έκδοση.
+
+1. Εξ' ορισμού ο διακομιστής MongoDB (```mongod```) δημιουργεί τη ΒΔ στην τοποθεσία (```/data/db```). Στα Windows, ενημερώστε το κλειδί ```dbpath``` στο αρχείο ```mongo.config``` με τη διαδρομή που θέλετε να αποθηκεύεται τη ΒΔ. Στο Unix/Linux, εκκινήστε το διακομιστή ως εξής: ```./mongod --dbpath <path>``` όπου θα πρέπει να έχετε ήδη δημιουργήσει το φάκελο, π.χ. ```../db``` (άρα θα αποθηκευθεί στο ```mongodb-x.x.x/db```). Ο διακομιστής εξυπηρετεί στη θύρα ```27017```.
+1. Κάντε δεξί κλικ στο _MongoDB_ στην καρτέλα _Services_ και επιλέξτε **New Connection**. Δώστε ένα όνομα, π.χ. ```TestMongoDB```, πατήστε το κουμπί ```...``` και δώστε ένα όνομα στη ΒΔ (π.χ. ```testdb```) και προαιρετικά _Username, Password_ για περισσότερη ασφάλεια και **OK**.
+1. Δεξί κλικ στον κόμβο _TestMongoDB_ και **Connect**. 
+1. Δεξί κλικ στον κόμβο _TestMongoDB_ και **CreateDatabase**. Δώστε ένα όνομα, π.χ. ```testdb`.
+1. Δεξί κλικ στον κόμβο _testdb_ και **Add Collection**. Δώστε ως _Collection name_ ```user```. Μια ΒΔ περιέχει συλλογές.
+1. Δεξί κλικ στον κόμβο _user_ και **Open**. 
+1. Πατήστε το κουμπί **Add Document** από τη μπάρα εργαλείων και εισάγετε ένα νέο έγγραφο σε μορφή JSON (για την οποία θα μιλήσουμε στο επόμενο μάθημα). Μια συλλογή περιέχει έγγραφα.
+
+```json
+{username:'admin', password:'admin'}
+```
+
+![](assets/Fig4.png)
+
+**Εικόνα 4** _Συλλογή User στο NetBeans_
+
+Μπορείτε να αναζητήσετε ένα έγγραφο από το άνω μέρος του παραθύρου, πατώντας **Edit** και δίνοντας π.χ. το παρακάτω κριτήριο:
+
+```json
+{ "username" : "admin" }
+```
+
+Ας δημιουργήσουμε ένα νέο έργο ```MongoDBApp``` (όπως δημιουργήσατε το ```UserDBApp```) και ας δούμε πώς μπορούμε να επικοινωνήσουμε με τη ΒΔ από ένα πρόγραμμα Java. 
 
 ## Περίληψη
 Στο μάθημα αυτό μάθαμε πώς να χρησιμοποιούμε βάσεις δεδομένων για ν' αποθηκεύουμε τα δεδομένα μας. Είδαμε πώς να επικοινωνούμε με σχεσιακές βάσεις δεδομένων μέσω JDBC. Στα μαθήματα της προχωρημένης Java θα δούμε έναν άλλο (πιο αντικειμενοστραφή) τρόπο, το Java Persistence API (JPA). Είδαμε επίσης πώς να επικοινωνούμε με NoSQL βάσεις δεδομένων, δηλ. ΒΔ που δεν ακολουθούν το σχεσιακό μοντέλο.
@@ -365,10 +414,22 @@ dbConnection.rollback();
 
 ## Πηγές
 1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
+1. Date C.J. (1991), _An Introduction to Data Base Systems_, Vοlume 1, 6th Edition, Addison Wesley.
 1. Horstmann C. S. (2018), _Core Java, Volume II--Advanced Features_, 11th Edition, 
+1. Kreibich J. A. (2010), _Using SQLite_, O'Reilly.
 1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley. 
+1. O'Donahue J. (2002), _Java Database Programming Bible_, John Wiley & Sons.
+1. Reese G. (2001), _Database Programming with JDBC and Java_, 2nd Ed., O'Reilly.
+1. Thomas T. M. (2002), _Java Data Access—JDBC, JNDI, and JAXP_, M&T Books.
+1. Αβούρης Ν. (2001), [Βάσεις Δεδομένων και Γνώσεων](https://hci.ece.upatras.gr/various/c901-trans_partA.pdf).
+1. Κόλλιας Ι. (1991), _Βάσεις Δεδομένων_, Τόμος 1, Συμμετρία.
 1. Ξένος Μ. & Χριστοδουλάκης Δ. (2000), _Βάσεις Δεδομένων_, Τόμος Γ', ΕΑΠ.
 1. [SQLite Java](http://www.sqlitetutorial.net/sqlite-java/)
+1. [Datatypes In SQLite Version 3](https://www.sqlite.org/datatype3.html)
+1. [MongoDB Java tutorial](http://www.mkyong.com/tutorials/java-mongodb-tutorials/)
 
 ---
+
 [<-](../5.3-NIO/README.md)  | [Δ](../../README.md) | [->](../5.5-XML/README.md) 
+
+---

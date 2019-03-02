@@ -2,7 +2,9 @@
 © Γιάννης Κωστάρας
 
 ---
+
 [<-](../5.1-Date-Time/README.md)  | [Δ](../../README.md) | [->](../5.3-NIO/README.md) 
+
 ---
 
 ## Εισαγωγή
@@ -97,6 +99,7 @@ finally {
 	bis.close();
 }
 ```
+Υπενθυμίζουμε εδώ ότι για να μπορέσουμε να χρησιμοποιήσουμε την try-with-resources, η κλάση θα πρέπει να υλοποιεί το interface ```Autocloseable```.
 
 Η ```BufferedInputStream``` είναι πιο αποδοτική από την ```FileInputStream``` καθώς διατηρεί μια εσωτερική μνήμη (buffer).
 
@@ -274,4 +277,7 @@ $10 ==> 35
 1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
 
 ---
+
 [<-](../5.1-Date-Time/README.md)  | [Δ](../../README.md) | [->](../5.3-NIO/README.md) 
+
+---
