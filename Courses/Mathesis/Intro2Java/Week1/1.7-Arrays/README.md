@@ -105,15 +105,31 @@ $5 ==> 6
 ```java
 jshell> String[] strings = new String[3];
 strings ==> String[3] { null, null, null }
+
 jshell> import java.util.Arrays;
+
 jshell> Arrays.fill(strings, "a");
+
 jshell> strings
 strings ==> String[3] { "a", "a", "a" }
+
 jshell> Arrays.fill(strings, 1, 2, "b");
+
 jshell> strings
 strings ==> { "a", "b", "a" }
+
+jshell> String[] strings_ = new String[3];
+strings_ ==> String[3] { null, null, null }
+
+jshell> Arrays.fill(strings_, "a");
+
+jshell> strings_
+strings_ ==> String[3] { "a", "a", "a" }
+
+jshell> Arrays.mismatch(strings, strings_);
+$1 ==> 1
 ```
-Προτού τη χρησιμοποιήσουμε, θα πρέπει να εισάγουμε το αντίστοιχο πακέτο (package) ```java.util.Arrays```
+Προτού τη χρησιμοποιήσουμε, θα πρέπει να εισάγουμε το αντίστοιχο πακέτο (package) ```java.util.Arrays```. Η ```mismatch()``` είναι μια πολύ γρήγορη μέθοδος που προστέθηκε στην έκδοση 11 και μας επιτρέπει να συγκρίνουμε αν δυο συστοιχίες είναι ίσες (```-1```), διαφορετικά επιστρέφει τον πρώτο δείκτη όπου οι δυο συστοιχίες διαφέρουν. 
 
 ## Βασικές λειτουργίες πινάκων
 
