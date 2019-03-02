@@ -4,6 +4,7 @@
 ---
 
 [<-](../4.4-Internationalisation/README.md) | [Δ](../../README.md) | [->](../4.6-UnitTesting/README.md)   
+
 ---
 
 Τα προγράμματα έχουν γίνει πλέον τόσο πολύπλοκα που ένα σωρό πράγματα μπορούν να συμβούν. Προβλήματα μπορούν να συμβούν ακόμα και όταν το πρόγραμμα βγει στην παραγωγή στις εγκαταστάσεις του πελάτη. Θα θέλουμε να έχουμε κάποιον τρόπο, επομένως, για να μπορούμε να βρούμε τι μπορεί να πήγε λάθος. Αυτό το πετυχαίνουμε με τα _αρχεία καταγραφής (logs)_. Δημιουργώντας λεπτομερή αρχεία καταγραφής μας βοηθάει στο να εντοπίσουμε τα λάθη και να τα διορθώσουμε. 
@@ -32,14 +33,15 @@ import java.util.logging.Logger;
 public class MyClass {
 	private static final Logger LOG = Logger.getLogger(MyClass.class.getName());
 	public void myMethod() {
-		Logger.getGlobal().info("Opening file " + filename);  // default logger
+		//Logger.getGlobal().info("Opening file " + filename);  // default logger
+		LOG.setLevel(Level.FINE);
 		LOG.info("An info log message");
 		LOG.log(Level.INFO, "Another info log message");
 		LOG.fine("A fine message");
 		try {
 			// code might throw an exception
-		} catch (SomeException ex) {
-			LOG.log(Level.WARNING, "Something went wrong", ex);
+		} catch (Exception ex) {
+			LOG.log(Level.SEVERE, "Something went wrong", ex);
 		}
 	}
 }
@@ -75,6 +77,7 @@ LOG.finest("FINEST");
 // ή χρησιμοποιήστε αυτή τη μορφή
 LOG.log(Level.FINEST, "FINEST");
 ```
+Αν θέσουμε π.χ. το επίπεδο σε ```INFO```, αυτό σημαίνει ότι θα καταγραφούν και όλα τ' ανώτερα επίπεδα, δηλ. ```WARNING``` και ```SEVERE```.
 
 Για να βελτιώσετε την απόδοση του προγράμματος, καλό είναι να κάνετε έλεγχο πριν από κάθε καταγραφή, π.χ.
 
@@ -90,6 +93,70 @@ if (LOG.isLoggable(Level.FINE)) {
 
 Τέλος, μπορείτε να μορφοποιήσετε τις καταγραφές με το κλειδί ```java.util.logging.SimpleFormatter.format```.
 
+Αν τρέξουμε όμως το παραπάνω πρόγραμμα θα δούμε:
+
+```
+Feb 28, 2019 10:42:19 AM MyClass myMethod
+INFO: An info log message
+Feb 28, 2019 10:42:19 AM MyClass myMethod
+INFO: Another info log message
+```
+
+Που πήγε το μήνυμα fine; Ας προσθέσουμε κι ένα διαχειριστή αρχείων (file handler) για να καταγράψουμε τα μηνύματα και σ' ένα αρχείο καταγραφής (όχι μόνο στην κονσόλα):
+
+```java
+    public void myMethod() {
+//		Logger.getGlobal().info("Opening file " + filename);  // default logger
+        FileHandler fh = null;
+        try {
+            fh = new FileHandler("log.xml");
+            LOG.addHandler(fh);
+        } catch (IOException ioexc) {
+            ioexc.printStackTrace();
+        }
+        LOG.setLevel(Level.FINE);
+//..
+```
+Στο αρχείο ```log.xml``` καταγράφεται το μήνυμα fine. Τι συμβαίνει; 
+
+Ανοίγοντας το αρχείο ```logging.properties```, παρατηρούμε ότι το εξ' ορισμού επίπεδο που ορίζεται εκεί για τον logger είναι ```.level= INFO```. Κάθε Logger έχει έναν πατέρα και η ιεραρχία φτάνει μέχρι τον ριζικό που ορίζεται στο ```logging.properties```. Καλούνται πάντα οι γονικοί handlers εκτός κι αν ορίσουμε ```setUseParentHandlers(false)```. Θα πρέπει να προσέξουμε ότι υπάρχουν επίπεδα για τους loggers και επίπεδα για τους handlers. Πρέπει να προσέξουμε όμως το επίπεδο για τον handler δεν μπορεί να είναι χαμηλότερος από του logger. Έτσι, π.χ. στο ```logging.properties``` ορίζεται για τον logger το επίπεδο ```.level= INFO``` και για τον ```java.util.logging.ConsoleHandler``` ορίζεται ```java.util.logging.ConsoleHandler.level = INFO```. Επομένως, αν και ορίζουμε το επίπεδο του logger μας να είναι ```FINE```, καθώς ο ```ConsoleHandler``` έχει ορισμένο επίπεδο ```INFO```, θα εμφανίσει μόνο τις καταγραφές ```INFO``` και πάνω. Αντιθέτως, ο ```FileHandler``` έχει εξ' ορισμού επίπεδο ```ALL```, οπότε μπορεί να καταγράψει επίπεδα ```FINE```.
+
+![](assets/Fig1.png)
+
+**Εικόνα 1** _Loggers και Handlers και levels_
+
+Όπως φαίνεται στην παραπάνω εικόνα, για καταγραφές υψηλότερες του επιπέδου που ορίζεται στον Logger (δηλ. ```FINE```), καλείται ο γονικός Logger (ο ριζικός στο πιο πάνω σχήμα). Ο ριζικός logger στέλνει τις καταγραφές με επίπεδο ```INFO``` και πάνω στον handler του ο οποίος καταγράφει μόνο τις καταγραφές στο επίπεδό του και πάνω (```INFO``` αλλά θα μπορούσε να ήταν και διαφορετικό). Επίσης, ο Logger στέλνει τις καταγραφές υψηλότερες του επιπέδου του (δηλ. ```FINE```) και στον handler του ο οποίος καταγράφει μόνο τις καταγραφές που είναι στο επίπεδό του και πάνω (δηλ. ```INFO```).
+
+Για να εμφανίσουμε τις καταγραφές του σωστού επιπέδου και στην κονσόλα, θα πρέπει να δημιουργήσουμε τον δικό μας ```ConsoleHandler``` και να δηλώσουμε ότι δε θέλουμε να χρησιμοποιήσουμε τον πατρικό handler:
+
+```java
+    public void myMethod() {
+//		Logger.getGlobal().info("Opening file " + filename);  // default logger
+        ConsoleHandler ch = new ConsoleHandler();
+        LOG.addHandler(ch);
+        FileHandler fh = null;
+        try {
+            fh = new FileHandler("log.xml");
+            LOG.addHandler(fh);
+        } catch (IOException ioexc) {
+            ioexc.printStackTrace();
+        }
+        LOG.setLevel(Level.FINE);
+        LOG.setUseParentHandlers(false);
+        ch.setLevel(Level.FINE);
+        fh.setLevel(Level.FINE);
+//...
+```
+Τώρα η έξοδος στην κονσόλα είναι πλέον σωστή:
+
+```
+Feb 28, 2019 11:17:00 AM MyClass myMethod
+INFO: An info log message
+Feb 28, 2019 11:17:01 AM MyClass myMethod
+INFO: Another info log message
+Feb 28, 2019 11:17:01 AM MyClass myMethod
+FINE: A fine message
+```
 ## Apache Log4j 2.x
 
 Αφού το κατεβάσετε από την τοποθεσία, θα χρειαστείτε τα εξής δυο αρχεία:
@@ -212,6 +279,7 @@ LOG.addAppender(appender);
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
+1. Daconta M. C. et al. (2003), _More Java Pitfalls_, Wiley.
 1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 

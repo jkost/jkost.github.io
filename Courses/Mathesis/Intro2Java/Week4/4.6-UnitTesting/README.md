@@ -26,9 +26,9 @@
 
 * [EasyMock](https://en.wikipedia.org/wiki/EasyMock)
 * [JMock](http://jmock.org)
-* [JMockit](jmockit.github.io)
+* [JMockit](http://jmockit.github.io)
 * [Mockito](https://site.mockito.org)
-* [PowerMock](powermock.github.io)
+* [PowerMock](http://powermock.github.io)
 
 Στη συνέχεια θα επικεντρωθούμε στην τελευταία έκδοση του JUnit.
 
