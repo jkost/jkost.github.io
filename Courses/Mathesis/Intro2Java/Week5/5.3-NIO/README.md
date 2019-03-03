@@ -526,6 +526,7 @@ jshell> try (BufferedWriter writer = Files.newBufferedWriter(path, Charset.forNa
 ```
 
 ```StandardOperation.```:
+
 * ```READ``` 
 * ```WRITE``` 
 * ```CREATE```
@@ -533,7 +534,6 @@ jshell> try (BufferedWriter writer = Files.newBufferedWriter(path, Charset.forNa
 * ```APPPEND``` 
 * ```DELETE_ON_CLOSE``` 
 * ```TRUNCATE_EXISTING``` 
-```
 
 ## Αντιγραφή αρχείου
 Στο μάθημα με τις εξαιρέσεις είδαμε έναν τρόπο αντιγραφής ενός αρχείου. Ένας γρήγορος τρόπος αντιγραφής αρχείων είναι ο παρακάτω:
