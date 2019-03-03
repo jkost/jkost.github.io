@@ -417,7 +417,8 @@ public interface FileVisitor {
    FileVisitResult visitFile(Path dir, BasicFileAttributes attrs);
    FileVisitResult postVisitDirectory(Path dir, IOException e);
    FileVisitResult visitFileFailed(Path dir, IOException e);
-}```
+}
+```
 
 * ```FileVisitResult.CONTINUE```: να συνεχιστεί η προσπέλαση
 * ```FileVisitResult.SKIP_SIBLINGS```: να συνεχιστεί η προσπέλαση αλλά χωρίς να επισκεφτούν τα υπόλοιπα αρχεία/φακέλους σ' αυτόν τον φάκελο
