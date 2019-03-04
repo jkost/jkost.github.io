@@ -526,7 +526,7 @@ jshell> try (BufferedWriter writer = Files.newBufferedWriter(path, Charset.forNa
 ```
 Υπάρχουν οι εξής επιλογές:
 
-```StandardOperation.```:
+``` StandardOperation. ``` :
 
 * ```READ``` 
 * ```WRITE``` 
