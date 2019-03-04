@@ -524,6 +524,7 @@ jshell> try (BufferedWriter writer = Files.newBufferedWriter(path, Charset.forNa
    ...> System.err.println(e);
    ...> }
 ```
+Υπάρχουν οι εξής επιλογές:
 
 ```StandardOperation.```:
 
