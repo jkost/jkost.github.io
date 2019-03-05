@@ -447,8 +447,21 @@ public class DOMCreator {
 Σ'αυτήν την περίπτωση θα πρέπει να ελέγχεται το πεδίο τιμών των πεδίων, π.χ. 
 
 ```java
-s
+int validate(String sQuantity) {
+   int quantity = -1; //invalid	 
+   try {
+      quantity = Integer.parseInt(sQuantity);
+   } catch (NumberFormatException ex) {
+      throw new IllegalArgumentException(ex);
+   }
+   if (quantity > 0 && quantity < 10) {
+	   return quantity;
+   } else {
+   	   return -1;
+   }
+} 
 ```
+Άλλη λύση είναι η χρήση XML Schema ή DTD.
 
 #### XML External Entity Attacks (XXE)
 Κάποιες οντότητες (entities) ενός XML αρχείου μπορεί να προέρχονται από εξωτερικούς πόρους. Π.χ. το παρακάτω αρχείο
