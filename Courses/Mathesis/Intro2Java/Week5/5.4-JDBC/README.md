@@ -57,7 +57,11 @@
 
 **Εικόνα 2** _Δημιουργία πίνακα Users με τον SQLiteBrowser_
 
-Συγχαρητήρια! Μόλις δημιουργήσατε μια SQLite3 ΒΔ. Μπορείτε να εισάγετε κάποι
+Συγχαρητήρια! Μόλις δημιουργήσατε μια SQLite3 ΒΔ. Μπορείτε να εισάγετε κάποιες εγγραφές σ' αυτήν είτε επιλέγοντας την καρτέλα **Browser Data** και πατώντας το κουμπί **New Record** και εισάγοντας τιμές για τα πεδία ```username, password```, είτε επιλέγοντας την καρτέλα **Execute SQL** και εισάγοντας μια εντολή SQL όπως η παρακάτω:
+
+```sql
+INSERT INTO Users (username, password) VALUES ('user', 'user');
+```
 
 Ας δούμε τώρα πώς μπορούμε να δημιουργήσουμε την ίδια ΒΔ με το NetBeans και πώς μπορούμε να επικοινωνήσουμε μ' αυτή.
 
@@ -68,7 +72,7 @@
 1. Προαιρετικά δώστε ένα _User Name_ και _Password_ για να συνδεθείτε στη ΒΔ, και ως _JDBC URL_ δώστε τη διαδρομή που θέλετε ν' αποθηκεύσετε τη ΒΔ (ή τη διαδρομή της ΒΔ που δημιουργήσαμε προηγούμενα): ```jdbc:sqlite:<path>/UserDB.sqlite3```
 1. Πατήστε **Finish**
 
-Το NetBeans δημιούργησε μια νέα σύνδεση (Connection) στη ΒΔ που δημιουργήσατε που περιέχει 3 κόμβους: _Tables, Views, Procedures_. Μπορείτε να δημιουργήσετε πίνακες, να δείτε τα δεδομένα τους κλπ.	
+Το NetBeans δημιούργησε μια νέα σύνδεση (Connection) στη ΒΔ που δημιουργήσατε που περιέχει 3 κόμβους: _Tables, Views, Procedures_. Μπορείτε να δημιουργήσετε πίνακες, να δείτε τα δεδομένα τους, να εισάγετε νέα δεδομένα κλπ.	
 
 ![](assets/Fig3.png)
 
@@ -111,13 +115,13 @@ public class UserDBApp {
     }
 }
 ```
-Η μέθοδος ```getConnection()``` δημιουργεί μια σύνδεση (```Connection```) με τη ΒΔ που ορίζεται με το ```URL```. Το όνομα χρήστη και ο κωδικός του διαχειριστή της ΒΔ δεν απαιτούνται από την SQLite, αλλά απαιτούνται από άλλες ΒΔ όπως π.χ. MySQL κλπ.
+Η μέθοδος ```getConnection()``` δημιουργεί μια σύνδεση (```Connection```) με τη ΒΔ που ορίζεται με το ```URL```. Το όνομα χρήστη και ο κωδικός του διαχειριστή της ΒΔ δεν απαιτούνται από την SQLite, αλλά απαιτούνται από άλλες ΒΔ όπως π.χ. MySQL κλπ. **Προσοχή**, τα ```DB_ADMIN_USERNAME, DB_ADMIN_PASSWORD``` χρησιμοποιούνται για να συνδεθούμε με το ΣΔΒΔ της SQLite και δεν έχουν καμία σχέση με τα περιεχόμενα του πίνακα ```Users```.  
 
 Ας δούμε πώς μπορούμε να διαβάσουμε τα περιεχόμενα του πίνακα ```Users```:
 
 ```java
 //...
-	private static final String SQL_SELECT_ALL = "SELECT username, password FROM users ORDER BY username";
+    private static final String SQL_SELECT_ALL = "SELECT username, password FROM users ORDER BY username";
 
     /**
      * @param args the command line arguments
@@ -148,7 +152,7 @@ public class UserDBApp {
 ```
 Η μέθοδος ```selectAll()``` δημιουργεί μια νέα εντολή (```Statement```) με την οποία εκτελεί ένα ερώτημα SQL στη ΒΔ με τη μέθοδο ```executeQuery```. Το αποτέλεσμα αποθηκεύεται σ' ένα αντικείμενο τύπου ```ResultSet```. Στη συνέχεια ανακτούμε ένα ένα τα αποθηκευμένα δεδομένα στην ```ResultSet``` και τα εμφανίζουμε στην οθόνη. Η ```ResultSet``` μοιάζει με έναν ```Iterator``` αλλά διαφέρει αρκετά απ' αυτόν. Π.χ. δεν υπάρχει μέθοδος ```hasNext()```, η ```next()``` δείχνει αρχικά πριν από την πρώτη εγγραφή, και πρέπει να την καλέσετε τουλάχιστο μια φορά ώστε να μετακινηθεί στην πρώτη εγγραφή, εκτός κι αν δεν υπάρχει καμία εγγραφή οπότε επιστρέφει ```false```.
 
-Η ```executeQuery()``` παράγει μια εντολή SQL ```SELECT```. Για αλλαγή των δεδομένων (εντολές SQL ```INSERT, UPDATE, DELETE, CREATE, DROP, ALTER```), χρησιμοποιήστε την ```executeUpdate()```. 
+Η ```executeQuery()``` παράγει μια εντολή SQL ```SELECT```. Για τροποποίηση των δεδομένων (εντολές SQL ```INSERT, UPDATE, DELETE, CREATE, DROP, ALTER```), χρησιμοποιήστε την ```executeUpdate()```. 
 
 Ανάλογα με τον τύπο των δεδομένων, υπάρχουν διάφορες μέθοδοι ανάκτησης αυτών π.χ. ```getString(), getDouble()``` κλπ. Προσέξτε ότι υπάρχει η ```getDate()``` η οποία επιστρέφει ```java.sql.Date``` (κι όχι ```java.util.Date```), η ```getTime()``` η οποία επιστρέφει ```java.sql.Time``` και η ```getTimeStamp()``` η οποία επιστρέφει ```java.sql.TimeStamp```. Θα πρέπει να τις μετατρέψετε στις αντίστοιχες κλάσεις ημερομηνίας και ώρας για να τις χρησιμοποιήσετε στο Java πρόγραμμά σας.
 
@@ -171,7 +175,7 @@ public class UserDBApp {
     }
 ```  
 
-Ας δούμε ένα ακόμα παράδειγμα. Η παρακάτω μέθοδος ```isValid()``` ελέγχει αν ένας χρήστης είναι έγκυρος για σύνδεση στην εφαρομγή ή όχι:
+Ας δούμε ένα ακόμα παράδειγμα. Η παρακάτω μέθοδος ```isValid()``` ελέγχει αν ένας χρήστης είναι έγκυρος για σύνδεση στην εφαρμογή ή όχι:
 
 ```java
     /**
@@ -196,19 +200,19 @@ public class UserDBApp {
         return false;
     }
 ```
-Με τον ίδιο τρόπο όπως και πριν, η ```executeQuery()``` καλεί την κατάλληλη εντολή SQL. Αν αυτή επιστρέψει κάποιο αποτέλεσμα, αυτό σημαίνει ότι υπάρχει κάποια εγγραφή στον πίνακα και άρα η μέθοδος επιστρέφει ```true``` διαφορετικά ```false```.  Έτσι, π.χ. η παρακάτω εντολή επιστρέφει ```Username: user, Password: user is valid? true``` (ή ```false```) αν ο χρήστης ```user``` με κωδικό ```user``` υπάρχει στον πίνακα ```Users```.
+Με τον ίδιο τρόπο όπως και πριν, η ```executeQuery()``` καλεί την κατάλληλη εντολή SQL. Αν αυτή επιστρέψει κάποιο αποτέλεσμα, αυτό σημαίνει ότι υπάρχει κάποια εγγραφή στον πίνακα και άρα η μέθοδος επιστρέφει ```true``` διαφορετικά ```false```.  Έτσι, π.χ. η παρακάτω εντολή επιστρέφει ```Username: user, Password: user is valid? true``` (ή ```false```) αν ο χρήστης ```user``` με κωδικό ```user``` (δεν) υπάρχει στον πίνακα ```Users```.
 
 ```java
 System.out.println("Username: user, Password: user is valid? " + isValid("user", "user"));
 ```
 
-Ένας χρήστης όμως δίνει τα εξής διαπιστευτήρια:
+Ένας κακόβουλος χρήστης της εφαρμογής όμως δίνει τα εξής διαπιστευτήρια:
 
 ```
 Username: user' OR '1'='1
 Password: any
 ```
-τα οποία μεταφράζονται:
+τα οποία μεταφράζονται σε:
 
 ```java
 System.out.println("Username: user' OR '1'='1, Password: any is valid? " + isValid("user' OR '1'='1", "any"));
@@ -283,7 +287,7 @@ String pwdHash = hashPassword(pwd);
 stmt.setString(2, pwdHash);
 }
 ```
-Μπορείτε ακόμα να αποθηκεύσετε τα αποτελέσματα σε μια προσωρινή μνήμη (cache) ώστε να είναι διαθέσιμα και αφού κλείσει η σύνδεση με τη ΒΔ, με τη βοήθεια των rowsets 
+Η βιβλιοθήκη ```java.sql``` παρέχει και άλλες δυνατότητες. Π.χ. σας επιτρέπει να αποθηκεύσετε τα αποτελέσματα σε μια προσωρινή μνήμη (cache) ώστε να είναι διαθέσιμα ακόμα και αφού κλείσει η σύνδεση με τη ΒΔ, με τη βοήθεια των rowsets: 
 
 ```java
 import javax.sql.rowset.*;
@@ -327,9 +331,9 @@ import javax.sql.rowset.*;
      dbConnection.close();
  }
 ```
-κλείνει τη σύνδεση με τη ΒΔ (αν και η ```finally``` δεν είναι απαραίτητη καθώς χρησιμοποιούμε try-with-resources).
+κλείνει τη σύνδεση με τη ΒΔ (αν και η ```finally``` δεν είναι απαραίτητη καθώς χρησιμοποιούμε try-with-resources το δείχνουμε εδώ).
 
-Με τη βοήθεια των ```RowSetFactory``` και ```CachedRowSet``` βλέπουμε ότι μπορούμε ν' ανακτήσουμε δεδομένα χωρίς να είμαστε συνδεδεμένοι με τη ΒΔ. Υπάρχουν επίσης οι ```WebRowSet, FilteredRowSet, JoinRowSet``` και ```JdbcRowSet```.
+Με τη βοήθεια των ```RowSetFactory``` και ```CachedRowSet``` βλέπουμε ότι μπορούμε ν' ανακτήσουμε δεδομένα _χωρίς_ να είμαστε συνδεδεμένοι με τη ΒΔ. Υπάρχουν επίσης οι ```WebRowSet, FilteredRowSet, JoinRowSet``` και ```JdbcRowSet```.
 
 Μπορείτε επίσης να ορίσετε τη μέθοδο ```crs.setPageSize(20)``` για να λάβετε π.χ. μόνο 20 αποτελέσματα (στην περίπτωση που σας επιστρέφονται πολλά αποτελέσματα). Για να μεταβείτε στην επόμενη σελ. αποτελεσμάτων, ```crs.nextPage()```, ενώ αν τροποποιήσατε τα δεδομένα, θα πρέπει να καλέσετε την ```crs.acceptChanges()``` για να ενημερώσετε τη ΒΔ.
 
@@ -362,34 +366,43 @@ dbConnection.rollback();
 Μπορείτε ακόμα να χρησιμοποιήσετε Batch Updates και Save Points αλλά ξεφεύγουν από το σκοπό ενός εισαγωγικού μαθήματος.
 
 ### Μη σχεσιακές ΒΔ
-Με την παραγωγή πολλών δεδομένων, εμφανίστηκαν οι περιορισμοί των σχεσιακών ΒΔ. Με τον ορισμό "Πολλά Δεδομένα (Big Data)" εννοούμε μεγάλες ποσότητες δεδομένων που αλλάζουν συχνά και δεν έχουν την ίδια δομή ή μπορεί να είναι αδόμητα (π.χ. μετεωρολογικά/σεισμικά δεδομένα, πωλήσεις κλπ.). Δουλεύοντας με πολλά δεδομένα σημαίνει να μπορούμε να μπορούμε να:
+Με την παραγωγή πολλών δεδομένων, εμφανίστηκαν οι περιορισμοί των σχεσιακών ΒΔ. Με τον ορισμό "Υπέρογκα Δεδομένα (Big Data)" εννοούμε μεγάλες ποσότητες δεδομένων που αλλάζουν συχνά και δεν έχουν την ίδια δομή ή μπορεί να είναι αδόμητα (π.χ. μετεωρολογικά/σεισμικά δεδομένα, πωλήσεις κλπ.). Δουλεύοντας με υπέρογκα δεδομένα σημαίνει να μπορούμε να:
 
-* αποκτούμε αποτελεσματικά αυτά τα δεδομένα
-* αποθηκεύουμε αποτελεσματικά και φθηνά αυτά τα δεδομένα
+* ανακτούμε αποτελεσματικά τα δεδομένα αυτά
+* τ' αποθηκεύουμε αποτελεσματικά και με φθηνούς τρόπους
 * επεξεργαζόμαστε τα δεδομένα γρήγορα
 * αναλύουμε τ' αποτελέσματα
 
-Οι ΒΔ που μπορούν ν' αποθηκεύουν τέτοιου είδους δεδομένα λέγονται _NoSQL_. Συνήθως δεν έχουν κάποιο schema (αδόμητα δεδομένα). Οι NoSQL ΒΔ χωρίζονται στις παρακάτω κατηγορίες ([λίστα με NoSQL ΒΔ](http://nosql-database.org)):
+Οι ΒΔ που μπορούν ν' αποθηκεύουν τέτοιου είδους δεδομένα ονομάζονται _NoSQL_. Συνήθως δεν έχουν κάποιο schema (αδόμητα δεδομένα) όπως οι σχεσιακές ΒΔ. Οι NoSQL ΒΔ χωρίζονται στις παρακάτω κατηγορίες ([λίστα με NoSQL ΒΔ](http://nosql-database.org)):
 
-* Key–value: ένα μεγάλο ```HashMap``` όπου τα δεδομένα διαβάζονται πολύ γρήγορα μέσω του κλειδιού ([Redis](https://redis.io/) για επικοινωνία με Java χρησιμοποιήστε το [Jedis](https://code.google.com/p/jedis/), [Amazon DynamoDB](https://aws.amazon.com/dynamodb/), [Microsoft Azure Table Storage](https://azure.microsoft.com/en-us/services/storage/tables/), [Riak](https://riak.com/products/), [Oracle NoSQL Database](https://www.oracle.com/technetwork/database/database-technologies/nosqldb/downloads/index.html))
-* Document: ιεραρχικές χωρίς σχήμα όπου κι εδώ είναι key-value με τη διαφορά ότι το value είναι ένα έγγραφο ([MongoDB](https://www.mongodb.com/), [Amazon DocumentDB](https://aws.amazon.com/documentdb/), [CouchDB](http://couchdb.apache.org/), [MarkLogic](https://www.marklogic.com/), [Terrastore](https://code.google.com/archive/p/terrastore/))
-* Column: σχετιζόμενα δεδομένα αποθηκεύονται μαζί ([Cassandra](https://cassandra.apache.org/), [Hbase](http://hbase.apache.org/), [Accumulo](https://accumulo.apache.org/), [Amazon DynamoDB](https://aws.amazon.com/dynamodb/), [Hypertable](https://dbdb.io/db/hypertable))
-* Graph: επιτρέπουν ερωτήματα βασισμένα στις σχέσεις μεταξύ των κόμβων ([Neo4j](https://neo4j.com/), [Infinite Graph](https://www.objectivity.com/products/infinitegraph/), [FlockDB](https://github.com/twitter-archive/flockdb), [Fallen 8](http://fallen-8.com/))
+* _Κατακερματισμού (Key–value)_: ένας μεγάλος πίνακας κατακερματισμού όπου τα δεδομένα διαβάζονται πολύ γρήγορα μέσω του κλειδιού ([Redis](https://redis.io/) για επικοινωνία με Java χρησιμοποιήστε το [Jedis](https://code.google.com/p/jedis/), [Amazon DynamoDB](https://aws.amazon.com/dynamodb/), [Microsoft Azure Table Storage](https://azure.microsoft.com/en-us/services/storage/tables/), [Riak](https://riak.com/products/), [Oracle NoSQL Database](https://www.oracle.com/technetwork/database/database-technologies/nosqldb/downloads/index.html))
+* _Εγγράφων (Document)_: ιεραρχικές χωρίς σχήμα όπου κι εδώ είναι key-value με τη διαφορά ότι το value είναι ένα έγγραφο ([MongoDB](https://www.mongodb.com/), [Amazon DocumentDB](https://aws.amazon.com/documentdb/), [CouchDB](http://couchdb.apache.org/), [MarkLogic](https://www.marklogic.com/), [Terrastore](https://code.google.com/archive/p/terrastore/))
+* _Στήλης (Column)_: σχετιζόμενα δεδομένα αποθηκεύονται μαζί ([Cassandra](https://cassandra.apache.org/), [Hbase](http://hbase.apache.org/), [Accumulo](https://accumulo.apache.org/), [Amazon DynamoDB](https://aws.amazon.com/dynamodb/), [Hypertable](https://dbdb.io/db/hypertable))
+* _Γράφων (Graph)_: επιτρέπουν ερωτήματα βασισμένα στις σχέσεις μεταξύ των κόμβων ([Neo4j](https://neo4j.com/), [Infinite Graph](https://www.objectivity.com/products/infinitegraph/), [FlockDB](https://github.com/twitter-archive/flockdb), [Fallen 8](http://fallen-8.com/))
   
 #### Επικοινωνία με NoSQL ΒΔ
-Ως παράδειγμα, θα χρησιμοποιήσουμε τη MongoDB. Κατεβάστε:
+Ως παράδειγμα, θα χρησιμοποιήσουμε τη MongoDB. Ο παρακάτω πίνακας αντιστοιχεί τη MongoDB με μια σχεσιακή ΒΔ:
 
-* τη [MongoDB](https://www.mongodb.com/) (MongoDB Community Server για το Λ.Σ. σας) και αποσυμπιέστε το σε κάποιον φάκελο. 
-* το [NBMongo](http://plugins.netbeans.org/plugin/52638/nbmongo) plugin και εγκαταστήστε το στο NetBeans κατά τα γνωστά. Με το που θα εγκαταστήσετε το πρόσθετο, στην καρτέλα _Services_ εμφανίζεται ένας νέος κόμβος _MongoDB_.
-* το [MongoDB Java Driver](https://mongodb.github.io/mongo-java-driver/). Καθώς δεν έχουμε μάθει κάποιο από τα build frameworks όπως τα maven, gradle, πλοηγηθείτε στο [maven central](https://search.maven.org) και αναζητήστε ```mongodb-driver-sync``` και κατεβάστε την τελευταία έκδοση.
+| Σχεσιακή ΒΔ | MongoDB |
+| Database  |   Database
+| Table |   Collection
+| Row |  | Document
+| Column  | Field
+| Join  | Embedded Documents
+| Primary Key |    Primary Key (Εξ' ορισμού ```key _id``` παρέχεται από τη MongoDB)
 
-1. Εξ' ορισμού ο διακομιστής MongoDB (```mongod```) δημιουργεί τη ΒΔ στην τοποθεσία (```/data/db```). Στα Windows, ενημερώστε το κλειδί ```dbpath``` στο αρχείο ```mongo.config``` με τη διαδρομή που θέλετε να αποθηκεύεται τη ΒΔ. Στο Unix/Linux, εκκινήστε το διακομιστή ως εξής: ```./mongod --dbpath <path>``` όπου θα πρέπει να έχετε ήδη δημιουργήσει το φάκελο, π.χ. ```../db``` (άρα θα αποθηκευθεί στο ```mongodb-x.x.x/db```). Ο διακομιστής εξυπηρετεί στη θύρα ```27017```.
-1. Κάντε δεξί κλικ στο _MongoDB_ στην καρτέλα _Services_ και επιλέξτε **New Connection**. Δώστε ένα όνομα, π.χ. ```TestMongoDB```, πατήστε το κουμπί ```...``` και δώστε ένα όνομα στη ΒΔ (π.χ. ```testdb```) και προαιρετικά _Username, Password_ για περισσότερη ασφάλεια και **OK**.
+Κατεβάστε (αν δε θέλετε να εγκαταστήσετε τη MongoDB στον Η/Υ σας τότε μπορείτε να την χρησιμοποιήσετε ως υπηρεσία μέσω του [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) ή του [mlab.com](https://mlab.com/)):
+
+* τη [MongoDB](https://www.mongodb.com/) (MongoDB Community Server για το Λ.Σ. σας) και αποσυμπιέστε τη σε κάποιον φάκελο
+* το [NBMongo](http://plugins.netbeans.org/plugin/52638/nbmongo) plugin και εγκαταστήστε το στο NetBeans κατά τα γνωστά. Με το που θα εγκαταστήσετε το πρόσθετο, στην καρτέλα _Services_ εμφανίζεται ένας νέος κόμβος _MongoDB_
+* το [MongoDB Java Driver](https://mongodb.github.io/mongo-java-driver/). Καθώς δεν έχουμε μάθει κάποιο από τα build frameworks όπως τα maven, gradle, πλοηγηθείτε στο [maven central](https://search.maven.org) και αναζητήστε ```mongodb-driver-sync``` και κατεβάστε την τελευταία έκδοση. Επίσης θα χρειαστείτε τις βιβλιοθήκες ```mongodb-driver-core``` και ```bson```.
+
+1. Εξ' ορισμού ο διακομιστής MongoDB (```mongod```) δημιουργεί τη ΒΔ στην τοποθεσία (```/data/db```). Στα Windows, ενημερώστε το κλειδί ```dbpath``` στο αρχείο ```mongo.config``` με τη διαδρομή που θέλετε να αποθηκεύετε τη ΒΔ. Στο Unix/Linux, εκκινήστε το διακομιστή ως εξής: ```./mongod --dbpath <path>``` όπου θα πρέπει να έχετε ήδη δημιουργήσει το φάκελο, π.χ. ```../db``` (άρα θα αποθηκευθεί στο ```mongodb-x.x.x/db```). Ο διακομιστής εξυπηρετεί στη θύρα ```27017```.
+1. Στο NetBeans, κάντε δεξί κλικ στο _MongoDB_ στην καρτέλα _Services_ και επιλέξτε **New Connection**. Δώστε ένα όνομα, π.χ. ```TestMongoDB```, πατήστε το κουμπί ```...``` και δώστε ένα όνομα στη ΒΔ (π.χ. ```usersdb```) και προαιρετικά _Username, Password_ για περισσότερη ασφάλεια και **OK**.
 1. Δεξί κλικ στον κόμβο _TestMongoDB_ και **Connect**. 
-1. Δεξί κλικ στον κόμβο _TestMongoDB_ και **CreateDatabase**. Δώστε ένα όνομα, π.χ. ```testdb`.
-1. Δεξί κλικ στον κόμβο _testdb_ και **Add Collection**. Δώστε ως _Collection name_ ```user```. Μια ΒΔ περιέχει συλλογές.
-1. Δεξί κλικ στον κόμβο _user_ και **Open**. 
-1. Πατήστε το κουμπί **Add Document** από τη μπάρα εργαλείων και εισάγετε ένα νέο έγγραφο σε μορφή JSON (για την οποία θα μιλήσουμε στο επόμενο μάθημα). Μια συλλογή περιέχει έγγραφα.
+1. Δεξί κλικ στον κόμβο _usersdb_ και **Add Collection**. Δώστε ως _Collection name_ ```users```. Μια ΒΔ τύπου εγγράφων (document) περιέχει _συλλογές_.
+1. Δεξί κλικ στον κόμβο _users_ και **Open**. 
+1. Πατήστε το κουμπί **Add Document** από τη μπάρα εργαλείων και εισάγετε ένα νέο έγγραφο σε μορφή JSON (για την οποία θα μιλήσουμε στο επόμενο μάθημα, μάλιστα για την ακρίβεια αποθηκεύει τα δεδομένα σε δυαδική μορφή JSON ή BSON). Μια συλλογή περιέχει έγγραφα.
 
 ```json
 {username:'admin', password:'admin'}
@@ -397,7 +410,15 @@ dbConnection.rollback();
 
 ![](assets/Fig4.png)
 
-**Εικόνα 4** _Συλλογή User στο NetBeans_
+**Εικόνα 4** _Συλλογή users στο NetBeans_
+
+Παρατηρήστε ότι δε χρειάζεται να ορίσουμε κάποιο schema για τη ΒΔ μας (όπως στην περίπτωση των σχεσιακών ΒΔ με την ```CREATE TABLE```). Οι συλλογές δημιουργούνται την πρώτη φορά που εισάγονται δεδομένα. Το πρωτεύον κλειδί είναι πάντα το ```_id```. Επίσης, μπορείτε ν' αλλάξετε δυναμικά το schema της συλλογής, προσθέτοντας π.χ. ένα ακόμα πεδίο:
+
+```json
+{ username:'admin', password:'admin', admin:true }
+```
+
+(διαγράψτε την προηγούμενη εγγραφή).
 
 Μπορείτε να αναζητήσετε ένα έγγραφο από το άνω μέρος του παραθύρου, πατώντας **Edit** και δίνοντας π.χ. το παρακάτω κριτήριο:
 
@@ -407,10 +428,66 @@ dbConnection.rollback();
 
 Ας δημιουργήσουμε ένα νέο έργο ```MongoDBApp``` (όπως δημιουργήσατε το ```UserDBApp```) και ας δούμε πώς μπορούμε να επικοινωνήσουμε με τη ΒΔ από ένα πρόγραμμα Java. 
 
-## Περίληψη
-Στο μάθημα αυτό μάθαμε πώς να χρησιμοποιούμε βάσεις δεδομένων για ν' αποθηκεύουμε τα δεδομένα μας. Είδαμε πώς να επικοινωνούμε με σχεσιακές βάσεις δεδομένων μέσω JDBC. Στα μαθήματα της προχωρημένης Java θα δούμε έναν άλλο (πιο αντικειμενοστραφή) τρόπο, το Java Persistence API (JPA). Είδαμε επίσης πώς να επικοινωνούμε με NoSQL βάσεις δεδομένων, δηλ. ΒΔ που δεν ακολουθούν το σχεσιακό μοντέλο.
+Προσθέστε τις βιβλιοθήκες ```mongodb-driver-core.x.x.x.jar, mongodb-driver-sync-x.x.x.jar, bson.x.x.x.jar``` στο έργο αυτό και προσθέστε τον ακόλουθο κώδικα στη ```main()```:
 
-Στο επόμενο μάθημα, θα δούμε δυο ακόμα τρόπους αναπαράστασης δεδομένων, XML και JSON.
+```java
+MongoClient mongoClient = MongoClients.create();
+MongoDatabase database = mongoClient.getDatabase("usersdb");
+MongoCollection<Document> collection = database.getCollection("users");
+System.out.println("Found: " + collection.countDocuments());
+```
+Για να επικοινωνήσουμε με το διακομιστή (server) της MongoDB ΒΔ που δημιουργήσαμε, θα χρειαστούμε ένα πρόγραμμα πελάτη (client) ```MongoClient``` μέσω του οποίου μπορούμε ν' ανακτήσουμε τη ΒΔ μέσω του ονόματός της κι από αυτή τις συλλογές που περιέχει. Η τελευταία εντολή επιστρέφει το σύνολο των εγγράφων που είναι αποθηκευμένα στη συλλογή ```users```.
+
+Αν θέλουμε να εισάγουμε ένα νέο έγγραφο στη συλλογή μας:
+```java
+Document doc = new Document("username", "john").append("password", "john");
+collection.insertOne(doc);
+```
+Αν θέλουμε να εισάγουμε πολλά έγγραφα, τότε μπορούμε να χρησιμοποιήσουμε την ```insertMany()``` παρέχοντάς της μια λίστα από έγγραφα (```List<Document>```).
+
+Η αναζήτηση με βάση κάποια κριτήρια γίνεται παρόμοια:
+
+```java
+System.out.println(collection.find().first().toJson());   
+System.out.println("Found: " + collection.find(eq("admin", true)).first().toJson());
+MongoCursor<Document> cursor = collection.find().iterator();
+try {
+    while (cursor.hasNext()) {
+        System.out.println(cursor.next().toJson());
+    }
+} finally {
+    cursor.close();
+}
+```
+Πιο πάνω βλέπουμε τρεις τρόπους αναζήτησης, ο πρώτος με χρήση της ```find()``` επιστρέφει το πρώτο έγγραφο, ο δεύτερος παρέχει ένα κριτήριο (```eq```) και ο τρίτος χρησιμοποιεί έναν κέρσορα (cursor) για να πλοηγηθεί σ' όλες τα έγγραφα της συλλογής. Για πιο γρήγορα αποτελέσματα μπορείτε να δημιουργήσετε ευρετήρια (indexes), π.χ.
+
+```java
+collection.createIndex(Indexes.text("username"));
+System.out.println("Count: " + collection.countDocuments(Filters.text("user admin")));
+```
+
+Μπορείτε να τροποποιήσετε (```updateOne()``` ή ```updateMany()```), αντικαταστήσετε (```replaceOne()``` ή ```replaceMany()```) ή να διαγράψετε (```deleteOne()``` ή ```deleteMany()```) έγγραφα, π.χ.:
+
+```java
+collection.updateOne(eq("username", "john"), Updates.set("password", "12345"));
+collection.deleteOne(eq("username", "john"));
+```
+
+Τέλος, μπορείτε να εκτελέσετε οποιαδήποτε εντολή MongoDB με την μέθοδο ```runCommand()``` ως εξής:
+
+```java
+Document buildInfoResults = database.runCommand(new Document("buildInfo", 1));
+System.out.println("Build info: " + buildInfoResults.toJson());
+
+Document collStatsResults = database.runCommand(new Document("collStats", "users"));
+System.out.println("Column statistics: " + collStatsResults.toJson());
+```
+Μπορείτε να βρείτε τις διαθέσιμες εντολές [εδώ](https://docs.mongodb.com/manual/reference/command/).
+
+## Περίληψη
+Στο μάθημα αυτό μάθαμε πώς να χρησιμοποιούμε βάσεις δεδομένων για ν' αποθηκεύουμε τα δεδομένα μας. Είδαμε πώς να επικοινωνούμε με σχεσιακές βάσεις δεδομένων μέσω JDBC. Στα μαθήματα της προχωρημένης Java θα δούμε έναν άλλο (πιο αντικειμενοστραφή) τρόπο, το [Java Persistence API (JPA)](https://en.wikipedia.org/wiki/Java_Persistence_API). Είδαμε επίσης πώς να επικοινωνούμε με NoSQL βάσεις δεδομένων, δηλ. ΒΔ που _δεν_ ακολουθούν το σχεσιακό μοντέλο.
+
+Στο επόμενο μάθημα, θα δούμε δυο ακόμα τρόπους αναπαράστασης δεδομένων, τα αρχεία XML και τις δομές JSON.
 
 ## Πηγές
 1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
@@ -426,7 +503,7 @@ dbConnection.rollback();
 1. Ξένος Μ. & Χριστοδουλάκης Δ. (2000), _Βάσεις Δεδομένων_, Τόμος Γ', ΕΑΠ.
 1. [SQLite Java](http://www.sqlitetutorial.net/sqlite-java/)
 1. [Datatypes In SQLite Version 3](https://www.sqlite.org/datatype3.html)
-1. [MongoDB Java tutorial](http://www.mkyong.com/tutorials/java-mongodb-tutorials/)
+1. [MongoDB Java Driver Tutorial](http://mongodb.github.io/mongo-java-driver/3.8/driver/)
 
 ---
 
