@@ -386,7 +386,7 @@ dbConnection.rollback();
 | Σχεσιακή ΒΔ | MongoDB |
 | Database  |   Database
 | Table |   Collection
-| Row |  | Document
+| Row | Document
 | Column  | Field
 | Join  | Embedded Documents
 | Primary Key |    Primary Key (Εξ' ορισμού ```key _id``` παρέχεται από τη MongoDB)
