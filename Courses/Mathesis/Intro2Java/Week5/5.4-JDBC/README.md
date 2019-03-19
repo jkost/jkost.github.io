@@ -381,7 +381,7 @@ dbConnection.rollback();
 * _Γράφων (Graph)_: επιτρέπουν ερωτήματα βασισμένα στις σχέσεις μεταξύ των κόμβων ([Neo4j](https://neo4j.com/), [Infinite Graph](https://www.objectivity.com/products/infinitegraph/), [FlockDB](https://github.com/twitter-archive/flockdb), [Fallen 8](http://fallen-8.com/))
   
 #### Επικοινωνία με NoSQL ΒΔ
-Ως παράδειγμα, θα χρησιμοποιήσουμε τη MongoDB. Ο παρακάτω πίνακας αντιστοιχεί τη MongoDB με μια σχεσιακή ΒΔ:
+Ως παράδειγμα, θα χρησιμοποιήσουμε τη MongoDB. Ο παρακάτω πίνακας συγκρίνει τη MongoDB με μια σχεσιακή ΒΔ:
 
 | Σχεσιακή ΒΔ | MongoDB |
 | Database  |   Database
