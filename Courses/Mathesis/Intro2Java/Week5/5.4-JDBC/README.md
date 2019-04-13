@@ -38,13 +38,17 @@
 
 Η Java μπορεί να επικοινωνήσει με ΣΣΔΒΔ για να επεξεργαστεί δεδομένα που είναι αποθηκευμένα σ' αυτά, χάρις στο _Java Database Connectivity Bridge (JDBC)_ (τελευταία έκδοση [4.3](https://jcp.org/aboutJava/communityprocess/mrel/jsr221/index3.html)). Η ιδέα πίσω από το JDBC είναι ότι κάθε κατασκευαστής προσφέρει τον οδηγό του (driver) που υλοποιεί το JDBC.
 
+![](assets/Fig1.png)
+
+**Εικόνα 1** _Java Database Connectivity Bridge (JDBC)_
+
 #### Επικοινωνία με Σχεσιακές ΒΔ
 
 Στα παρακάτω θα χρησιμοποιήσουμε την SQLite ως ΣΔΒΔ και θα δημιουργήσουμε το σχήμα (schema) της ακόλουθης ΒΔ η οποία αποτελείται από έναν πίνακα ```Users```:
 
-![](assets/Fig1.png)
+![](assets/Fig2.png)
 
-**Εικόνα 1** _Πίνακας Users_
+**Εικόνα 2** _Πίνακας Users_
 
 Κατεβάστε τα:
 
@@ -53,9 +57,9 @@
 
 Με τον SQLiteBrowser δημιουργήστε μια νέα ΒΔ με όνομα ```UserDB.sqlite3``` και τον πίνακα ```Users``` όπως φαίνεται στην ακόλουθη εικόνα:
 
-![](assets/Fig2.png)
+![](assets/Fig3.png)
 
-**Εικόνα 2** _Δημιουργία πίνακα Users με τον SQLiteBrowser_
+**Εικόνα 3** _Δημιουργία πίνακα Users με τον SQLiteBrowser_
 
 Συγχαρητήρια! Μόλις δημιουργήσατε μια SQLite3 ΒΔ. Μπορείτε να εισάγετε κάποιες εγγραφές σ' αυτήν είτε επιλέγοντας την καρτέλα **Browser Data** και πατώντας το κουμπί **New Record** και εισάγοντας τιμές για τα πεδία ```username, password```, είτε επιλέγοντας την καρτέλα **Execute SQL** και εισάγοντας μια εντολή SQL όπως η παρακάτω:
 
@@ -74,9 +78,9 @@ INSERT INTO Users (username, password) VALUES ('user', 'user');
 
 Το NetBeans δημιούργησε μια νέα σύνδεση (Connection) στη ΒΔ που δημιουργήσατε που περιέχει 3 κόμβους: _Tables, Views, Procedures_. Μπορείτε να δημιουργήσετε πίνακες, να δείτε τα δεδομένα τους, να εισάγετε νέα δεδομένα κλπ.	
 
-![](assets/Fig3.png)
+![](assets/Fig4.png)
 
-**Εικόνα 3** _Πίνακας Users στο NetBeans_
+**Εικόνα 4** _Πίνακας Users στο NetBeans_
 
 Στη συνέχεια θα δημιουργήσουμε ένα πρόγραμμα Java για να επικοινωνήσουμε με τη ΒΔ ```UserDB.sqlite3```.
 
@@ -335,7 +339,7 @@ import javax.sql.rowset.*;
 
 Με τη βοήθεια των ```RowSetFactory``` και ```CachedRowSet``` βλέπουμε ότι μπορούμε ν' ανακτήσουμε δεδομένα _χωρίς_ να είμαστε συνδεδεμένοι με τη ΒΔ. Υπάρχουν επίσης οι ```WebRowSet, FilteredRowSet, JoinRowSet``` και ```JdbcRowSet```.
 
-Μπορείτε επίσης να ορίσετε τη μέθοδο ```crs.setPageSize(20)``` για να λάβετε π.χ. μόνο 20 αποτελέσματα (στην περίπτωση που σας επιστρέφονται πολλά αποτελέσματα). Για να μεταβείτε στην επόμενη σελ. αποτελεσμάτων, ```crs.nextPage()```, ενώ αν τροποποιήσατε τα δεδομένα, θα πρέπει να καλέσετε την ```crs.acceptChanges()``` για να ενημερώσετε τη ΒΔ.
+Μπορείτε επίσης να ορίσετε τη μέθοδο ```crs.setPageSize(20)``` για να λάβετε π.χ. μόνο 20 αποτελέσματα (στην περίπτωση που σας επιστρέφονται πολλά αποτελέσματα). Για να μεταβείτε στην επόμενη σελ. αποτελεσμάτων, ```crs.nextPage()```, ενώ αν τροποποιήσατε τα δεδομένα, θα πρέπει να καλέσετε την ```crs.acceptChanges()``` για να ενημερώσετε τη ΒΔ
 
 Αν θέλετε να μάθετε περισσότερα για τη δομή (σχήμα) της ΒΔ σας:
 
@@ -348,6 +352,24 @@ for (int i = 1; i <= metadata.getColumnCount(); i++) {
     System.out.println(metadata.getColumnLabel(i) + "\t" + metadata.getColumnDisplaySize(i));
 }
 ```
+
+Η ```PreparedStatement``` μας δίνει τη δυνατότητα να εκτελούμε _batch updates_, δηλ. πολλά updates μαζί, π.χ.
+
+```java
+String sql = "INSERT INTO Users (username, password) VALUES (?, ?);";
+PreparedStatement stmt = dbConnection.prepareStatement(sql);
+
+stmt.setString(1, 'katerina');
+stmt.setString(2, 'thunderkat');
+stmt.addBatch();
+
+stmt.setString(1, 'zinovia');
+stmt.setString(2, 'zina');
+stmt.addBatch();
+
+int[] rowsAffected = stmt.executeBatch();
+```
+
 Τέλος, αν θέλετε να χρησιμοποιήσετε _συναλλαγές (transactions)_ δηλ. να εκτελέσετε μαζικά μια σειρά από SQL queries που θα πρέπει να επιτύχουν όλες (αν αποτύχει έστω και μία τότε αποτυγχάνουν όλες), θα πρέπει να:
 
 ```java
@@ -363,7 +385,9 @@ dbConnection.commit();
 dbConnection.rollback();
 ```
 
-Μπορείτε ακόμα να χρησιμοποιήσετε Batch Updates και Save Points αλλά ξεφεύγουν από το σκοπό ενός εισαγωγικού μαθήματος.
+Αυτό που κάνουν οι παραπάνω εντολές είναι να απενεργοποιήσουν το AutoCommit και να το καλέσουνε χειροκίνητα. Εξ' ορισμού το AutoCommit είναι ενεργοποιημένο και γι' αυτό εκτελούνται οι εντολές ```executeUpdate``` στη ΒΔ.
+
+Μπορείτε ακόμα να χρησιμοποιήσετε ```CallableStatement```s για κλήση _Αποθηκευμένων Διαδικασιών (Stored Procedures)_ και _Save Points_ αλλά ξεφεύγουν από το σκοπό του εισαγωγικού αυτού μαθήματος.
 
 ### Μη σχεσιακές ΒΔ
 Με την παραγωγή πολλών δεδομένων, εμφανίστηκαν οι περιορισμοί των σχεσιακών ΒΔ. Με τον ορισμό "Υπέρογκα Δεδομένα (Big Data)" εννοούμε μεγάλες ποσότητες δεδομένων που αλλάζουν συχνά και δεν έχουν την ίδια δομή ή μπορεί να είναι αδόμητα (π.χ. μετεωρολογικά/σεισμικά δεδομένα, πωλήσεις κλπ.). Δουλεύοντας με υπέρογκα δεδομένα σημαίνει να μπορούμε να:
@@ -408,9 +432,9 @@ dbConnection.rollback();
 {username:'admin', password:'admin'}
 ```
 
-![](assets/Fig4.png)
+![](assets/Fig5.png)
 
-**Εικόνα 4** _Συλλογή users στο NetBeans_
+**Εικόνα 5** _Συλλογή users στο NetBeans_
 
 Παρατηρήστε ότι δε χρειάζεται να ορίσουμε κάποιο schema για τη ΒΔ μας (όπως στην περίπτωση των σχεσιακών ΒΔ με την ```CREATE TABLE```). Οι συλλογές δημιουργούνται την πρώτη φορά που εισάγονται δεδομένα. Το πρωτεύον κλειδί είναι πάντα το ```_id```. Επίσης, μπορείτε ν' αλλάξετε δυναμικά το schema της συλλογής, προσθέτοντας π.χ. ένα ακόμα πεδίο:
 
@@ -498,6 +522,7 @@ System.out.println("Column statistics: " + collStatsResults.toJson());
 1. O'Donahue J. (2002), _Java Database Programming Bible_, John Wiley & Sons.
 1. Reese G. (2001), _Database Programming with JDBC and Java_, 2nd Ed., O'Reilly.
 1. Thomas T. M. (2002), _Java Data Access—JDBC, JNDI, and JAXP_, M&T Books.
+1. Tyson M. (2019), "What is JDBC? Introduction to the Java Database Connectivity API", [JavaWorld](https://www.javaworld.com/article/3388036/what-is-jdbc-introduction-to-the-java-database-connectivity-api.html)
 1. Αβούρης Ν. (2001), [Βάσεις Δεδομένων και Γνώσεων](https://hci.ece.upatras.gr/various/c901-trans_partA.pdf).
 1. Κόλλιας Ι. (1991), _Βάσεις Δεδομένων_, Τόμος 1, Συμμετρία.
 1. Ξένος Μ. & Χριστοδουλάκης Δ. (2000), _Βάσεις Δεδομένων_, Τόμος Γ', ΕΑΠ.
