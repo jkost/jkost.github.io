@@ -144,10 +144,10 @@ public class EulerTest {
 
 Φυσικά, αν ξανατρέξετε την εντολή **Test** (ή δεξί κλικ στην κλάση ```Euler``` και **Test File**), πάλι θ' αποτύχει το unit test καθώς η μέθοδος επιστρέφει ```0```. 
 
-Ένα νέο χαρακτηριστικό του JUnit 5 είναι το σχόλιο μεταγλώττισης @DisplayName:
+Ένα νέο χαρακτηριστικό του JUnit 5 είναι το σχόλιο μεταγλώττισης ```@DisplayName```:
 
 ```java
-	@DisplayName("sumOf_3_5")
+    @DisplayName("sumOf_3_5")
     @Test
     public void testSumOf_3_5() {
         assertEquals(23, Euler.sumOf_3_5(10));
