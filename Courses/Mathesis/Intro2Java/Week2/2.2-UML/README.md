@@ -367,7 +367,9 @@
 
 * [ArgoUML](http://argouml.tigris.org/)
 * [Astah](http://astah.net/)
+* [Capella](https://www.polarsys.org/capella/)
 * [Dia](http://dia-installer.de/)
+* [Umbrello](https://umbrello.kde.org/)
 * [UMLet](http://umlet.com/)
 
 Online:
@@ -376,13 +378,17 @@ Online:
 * [Diagram Editor](https://www.diagrameditor.com/)
 * [PlantText](https://www.planttext.com/)
 * [Creately](https://creately.com/Draw-UML-and-Class-Diagrams-Online)
+* [yEd](https://www.yworks.com/products/yed)
 * [YUML](https://yuml.me)
 * [YWorks](https://www.yworks.com/products/graphity)
 
 Εμπορικά:
 
-* [SmartDraw](https://www.smartdraw.com/uml-diagram/uml-diagram-tool.htm)
 * [Altova UModel](https://www.altova.com/umodel/uml-diagrams)
+* [Enterprise Architect](https://www.sparxsystems.com/)
+* [MagicDraw](https://www.nomagic.com/products/magicdraw)
+* [Microsoft Visio](https://www.microsoft.com/en-us/store/collections/visio?cat0=devices)
+* [SmartDraw](https://www.smartdraw.com/uml-diagram/uml-diagram-tool.htm)
 * [StarUML](http://staruml.io/)
 * [VisualParadigm](https://www.visual-paradigm.com/solution/freeumltool/)
 
