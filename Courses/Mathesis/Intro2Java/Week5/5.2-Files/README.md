@@ -87,51 +87,15 @@ f C:\temp\test.txt
 
 Η ανάγνωση/εγγραφή σε αρχεία γίνεται με τη βοήθεια _ροών (streams)_. Μία ροή εισόδου (εξόδου) (input(output) stream) χρησιμοποιείται για να διαβάσουμε(γράψουμε) δεδομένα από(σε) μία πηγή.
 
-```plantuml
-interface InputStream
-class ByteArrayInputStream
-class FileInputStream
-interface FilterInputStream
-class DataInputStream
-class BufferedInputStream
-class ObjectInputStream
-ByteArrayInputStream -up-|> InputStream
-FileInputStream -up-|> InputStream
-DataInputStream -up-|> FilterInputStream 
-BufferedInputStream -up-|> FilterInputStream
-ObjectInputStream -up-|> InputStream
-FilterInputStream -up-|> InputStream
-FilterInputStream *-up-> "1" InputStream
-```
-
 ![](assets/Fig1.png)
 
 **Εικόνα 1** _Ιεραρχία κλάσεων ροών εισόδου_ 
-
-```plantuml
-interface OutputStream
-class ByteArrayOutputStream
-class FileOutputStream
-interface FilterOutputStream
-class DataOutputStream
-class BufferedOutputStream
-class ObjectOutputStream
-class PrintStream
-ByteArrayOutputStream -up-|> OutputStream
-FileOutputStream -up-|> OutputStream
-DataOutputStream -up-|> FilterOutputStream 
-BufferedOutputStream -up-|> FilterOutputStream
-PrintStream -up-|> FilterOutputStream
-ObjectOutputStream -up-|> OutputStream
-FilterOutputStream -up-|> OutputStream
-FilterOutputStream *-up-> "1" OutputStream
-```
 
 ![](assets/Fig2.png)
 
 **Εικόνα 2** _Ιεραρχία κλάσεων ροών εξόδου_ 
 
-Στο μάθημα των εξαιρέσεων της προηγούμενης εβδομάδας, είδαμε παραδείγματα χρήσης των παραπάνω. Θα πρέπει πάντα να κλείνουμε μια ροή ή να χρησιμοποιούμε την ```try-with-resources``` που κλείνει τη ροή αυτόματα.
+Στο μάθημα των εξαιρέσεων της προηγούμενης εβδομάδας, είδαμε παραδείγματα χρήσης των παραπάνω. Θα πρέπει πάντα να κλείνουμε μια ροή ή να χρησιμοποιούμε την try-with-resources που κλείνει τη ροή αυτόματα.
 
 ## Ανάγνωση αρχείων
 
