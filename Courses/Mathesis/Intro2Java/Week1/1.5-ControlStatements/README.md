@@ -92,8 +92,7 @@ switch(μεταβλητή) {
 Ας δούμε ένα παράδειγμα όπου ο έλεγχος γίνεται με ```enum```:
 ```java
 enum Choice {
-  RED_PILL;
-  BLUE_PILL;
+  RED_PILL, BLUE_PILL
 }
 Choice choice = ...;  // Choice.RED_PILL ή Choice.BLUE_PILL
 switch (choice) {
@@ -162,7 +161,7 @@ switch (choice) {
 ```
 Η ```Scanner``` μας επιτρέπει να διαβάζουμε την μονάδα εισόδου (δηλ. το πληκτρολόγιο). Στο πιο πάνω παράδειγμα διαβάζει μια συμβολοσειρά από την είσοδο, την αποθηκεύει στη μεταβλητή ```choice``` και αν είναι ```"one"``` ή ```"two"``` εμφανίζει στην είσοδο ```1``` ή ```2``` αλλοιώς ```-1```.
 
-Το πιο πάνω παράδειγμα της εντολής ```if``` μπορεί να γραφτεί κι ως εξής:
+Το πιο πάνω παράδειγμα της εντολής ```if``` μπορεί να γραφτεί κι ως εξής (_fall through_):
 ```java
 switch (grade) {
   case 20:
@@ -178,6 +177,86 @@ switch (grade) {
   default:
 	System.out.println("Απορριπτέος");
 }
+```
+
+### JDK 12
+Η έκδοση 12 της γλώσσας φέρνει μια νέα σύνταξη για τη ```switch``` η οποία είναι στη φάση της προεπισκόπισης (preview) ώστε οι προγραμματιστές να μπορούν να παρέχουν ανατροφοδότηση (feedback) από τη χρήση της και πιθανές βελτιώσεις σε μελλοντικές εκδόσεις της γλώσσας. Για να μπορέσετε να τη χρησιμοποιήσετε θα πρέπει να περάσετε την παράμετρο ```enable-preview``` στο jshell της έκδοσης 12 όπως φαίνεται ακολούθως:
+
+```java
+$> jshell --enable-preview
+|  Welcome to JShell -- Version 12
+|  For an introduction type: /help intro
+
+jshell> 
+```
+
+Η εντολή ```switch```, όπως την περιγράψαμε προηγουμένως, έχει αρκετά μειονεκτήματα. Π.χ. αν ξεχάσουμε μια εντολή ```break``` τότε η εκτέλεση του προγράμματος συνεχίζεται και στο επόμενο μπλοκ εντολής όπως είδαμε στο προηγούμενο παράδειγμα με τις βαθμολογίες. Αυτό μπορεί να γίνει εσκεμμένα, αλλά είναι πολύ εύκολο να γίνει και από λάθος το οποίο δε μπορεί να βρει ο μεταγλωττιστής (δηλ. είναι λογικό λάθος). 
+
+Η νέα σύνταξη έχει ως εξής: 
+
+```java
+switch(μεταβλητή) {
+  case τιμή -> εντολές;
+  case τιμή -> εντολές;
+  ...
+  default -> εντολές;
+}
+```
+Ας ξαναγράψουμε ένα από τα προηγούμενα παραδείγματα με τη νέα σύνταξη:
+
+```java
+jshell> String dayOfWeek = "Saturday";
+dayOfWeek ==> "Saturday"
+
+jshell> String result = "";
+result ==> ""
+ 
+jshell> switch (dayOfWeek) {
+  case "Sunday" -> result = "Κυριακή"; 
+  case "Monday" -> result = "Δευτέρα"; 
+  case "Tuesday" -> result = "Τρίτη"; 
+  case "Wednesday" -> result = "Τετάρτη"; 
+  case "Thursday" -> result = "Πέμπτη"; 
+  case "Friday" -> result = "Παρασκευή"; 
+  case "Saturday" -> result = "Σάββατο"; 
+  default -> result = "Error: " + dayOfWeek + 
+             " is not a day of the week"; 
+} 
+$3 ==> "Σάββατο"
+
+jshell> System.out.println(result);
+Σάββατο
+```
+Βλέπετε πως δεν απαιτείται η ```break```. Η περίπτωση _fall through_ μπορεί να γραφτεί ως εξής:
+
+```java
+jshell> int grade = 17;
+grade ==> 17
+
+jshell> switch (grade) {
+  case 20, 19, 18 -> System.out.println("Άριστα");
+  case 17, 16 -> System.out.println("Πολύ καλά");
+  case 15, 14 -> System.out.println("Καλά");
+  case 10, 13 -> System.out.println("Μέτρια");
+  default -> System.out.println("Απορριπτέος");
+}
+Πολύ καλά
+```
+Τέλος, η ```switch``` δεν είναι πλέον απλά μια εντολή, αλλά έχει μετατραπεί σε έκφραση:
+
+```java
+jshell> String result = switch (dayOfWeek) {
+  case "Sunday" -> result = "Κυριακή"; 
+  case "Monday" -> result = "Δευτέρα"; 
+  case "Tuesday" -> result = "Τρίτη"; 
+  case "Wednesday" -> result = "Τετάρτη"; 
+  case "Thursday" -> result = "Πέμπτη"; 
+  case "Friday" -> result = "Παρασκευή"; 
+  case "Saturday" -> result = "Σάββατο"; 
+  default -> result = "Error: " + dayOfWeek + 
+             " is not a day of the week"; 
+} 
+result ==> "Σάββατο"
 ```
 
 ## Ασκήσεις
@@ -196,6 +275,7 @@ switch (grade) {
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
+1. Urma R.-G. & Warburton R. (2019), "New switch Expressions in Java 12", _Java Magazine_, May/June 2019.
 
 ---
 
