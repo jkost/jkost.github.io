@@ -384,6 +384,31 @@ public static void main(String[] args) {
    }
 }
 ```
+3. Μπορείτε να βρείτε το λάθος στην παρακάτω μέθοδο; Αυτός ο κώδικας έχει μετατραπεί από τη γλώσσα C και εκτελούνταν στον media player Zune 30, προκαλώντας το κλείδωμά τους στις 30 Δεκεμβρίου 2008 τα μεσάνυχτα. Υπολογίζει τον αριθμό των ημερών από την 1η Ιανουαρίου 1980. Για να διευκολυνθείτε, το 1980 έχει αλλαχθεί στο 2008 όπου είναι και η ημερομηνία που εμφανίστηκε το λάθος για πρώτη φορά.
+
+```java
+    final static int ORIGIN_YEAR = 2008;  // 1980
+    /* Number of days since January 1, 1980 */
+    public static void convertDays(long days){
+        int year = ORIGIN_YEAR;
+        LocalDate date = LocalDate.of(year, 1, 1);
+
+        /* ... */
+        while (days > 365) {
+            date = LocalDate.of(year, 1, 1);
+            if (date.isLeapYear()) {
+                if (days > 366) {
+                    days -= 366;
+                    year += 1;
+                }
+            } else {
+                days -= 365;
+                year += 1;
+            }
+        }
+    }
+```
+Αφού βρείτε το λάθος, πώς μπορείτε να το διορθώσετε; Πώς θα μπορούσατε να ξαναγράψετε απλούστερα αυτή τη μέθοδο;
 
 ## Πηγές
 1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
