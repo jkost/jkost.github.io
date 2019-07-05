@@ -273,6 +273,8 @@ result ==> "Σάββατο"
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+1. Long F. et. al. (2014), _Java Coding Guidelines_, Addison-Wesley.
+1. Samoylov N. (2019), _Learn Java 12 Programming_, Packt.
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 1. Urma R.-G. & Warburton R. (2019), "New switch Expressions in Java 12", _Java Magazine_, May/June 2019.
