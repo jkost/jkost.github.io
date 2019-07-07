@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../2.6-JavaDoc/README.md) | [Δ](../../README.md)
+[<-](../2.7-Debugging/README.md) | [Δ](../../README.md)
 
 ---
 
@@ -56,7 +56,7 @@ public final class Point {
 1. όλα τα γνωρίσματα της κλάσης πρέπει να είναι ```private```
 1. αν η κλάση σας διαθέτει μεταβλητά γνωρίσματα τότε αν δεν τα εκθέτετε σε άλλες κλάσεις η κλάση σας μπορεί να χαρακτηριστεί ως immutable
 
-Η Java διαθέτει πολλά παραδείγματα αμετάβλητων κλάσεων όπως ```String```, ```BigInteger``` και ```BigDecimal```.
+Η Java διαθέτει πολλά παραδείγματα αμετάβλητων κλάσεων όπως ```String```, ```Double```, ```Integer```, ```Color```, ```BigInteger``` και ```BigDecimal``` (αν και οι δυο τελευταίες δεν πληρούν όλα τα κριτήρια όπως θα δούμε σε επόμενο μάθημα) κλπ.
 
 ## Αναδιοργάνωση Κώδικα (Refactoring)
 Πολλές φορές συμβαίνει να θέλετε να προσθέσετε ένα νέο χαρακτηριστικό σε ένα πρόγραμμα, αλλά η δομή του προγράμματος είναι τέτοια που δεν είναι εύκολο ή εφικτό να προστεθεί αυτό το νέο χαρακτηριστικό. Σ' αυτήν την περίπτωση, θα πρέπει πρώτα να αναδιοργανώσετε τον κώδικα ώστε να είναι ευκολότερο να εισάγετε νέα χαρακτηριστικά.
@@ -88,9 +88,10 @@ public final class Point {
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
+1. Visser J. (2016), _Building Maintainable Software, Java Edition_, O’Reilly.
 
 ---
 
-[<-](../2.6-JavaDoc/README.md) | [Δ](../../README.md)
+[<-](../2.7-Debugging/README.md) | [Δ](../../README.md)
 
 ---

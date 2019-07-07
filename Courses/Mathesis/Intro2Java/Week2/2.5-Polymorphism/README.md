@@ -12,7 +12,7 @@
 Υπάρχουν τα εξής είδη πολυμορφισμού: 
 
 - υπερφόρτωση μεθόδων (method overloading)
-- υπερσκέλιση Μεθόδων (method overriding)
+- υπερσκέλιση μεθόδων (method overriding)
 - δυναμική πρόσδεση (Late (Dynamic) Binding)
 
 ## Υπερφόρτωση μεθόδων (method overloading)
@@ -31,7 +31,7 @@ public class Shape {
 Η μέθοδος ```draw()``` έχει υπερφορτωθεί. Το ίδιο μπορεί να γίνει και με τις μεθόδους κατασκευής. Σημειώστε ότι είναι λάθος μεταγλώττισης να ορίσετε δυο μεθόδους με το ίδιο όνομα που να επιστρέφουν όμως διαφορετικό τύπο δεδομένων. Η υπερφόρτωση αφορά μόνο τον τύπο και τον αριθμό των ορισμάτων.
 
 ## Υπερσκέλιση μεθόδων (method overriding)
-Την είδαμε στο προηγούμενο μάθημα. Π.χ. η κλάση ```Circle``` υπερσκέλισε τις δυο ```abstract``` μεθόδους ```area()``` και ```perimeter()``` της υπερκλάσης ```Shape```. Αν θέλουμε να καλέσουμε πρώτα τον κώδικα της υπερσκελισμένης μεθόδου της υπερκλάσης μέσα στην μέθοδο της υποκλάσης, χρησιμοποιούμε τη δεσμευμένη λέξη ```super```, π.χ.
+Την είδαμε στο προηγούμενο μάθημα. Π.χ. η κλάση ```Circle``` υπερσκέλισε (δηλ. επανακαθόρισε) τις δυο ```abstract``` μεθόδους ```area()``` και ```perimeter()``` της υπερκλάσης ```Shape```. Αν θέλουμε να καλέσουμε πρώτα τον κώδικα της υπερσκελισμένης μεθόδου της υπερκλάσης μέσα στην μέθοδο της υποκλάσης, χρησιμοποιούμε τη δεσμευμένη λέξη ```super```, π.χ.
 
 ```java
 public double area() {
@@ -226,6 +226,8 @@ Draws a circle...
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+1. Long F. et. al. (2014), _Java Coding Guidelines_, Addison-Wesley.
+1. Samoylov N. (2019), _Learn Java 12 Programming_, Packt.
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 

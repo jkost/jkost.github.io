@@ -13,7 +13,7 @@
 
 Τα κοινά στοιχεία δυο ή περισσοτέρων παρόμοιων κλάσεων μπορούν να οριστούν σε μια κοινή _υπερκλάση (superclass)_. Μία _υποκλάση (subclass)_ μπορεί να κληρονομήσει όλα τα "επιτρεπτά" γνωρίσματα και μεθόδους από τους "προγόνους" της (δηλ. όσα είναι δηλωμένα ως ```protected``` και ```public``` αλλά και ```package``` αν βρίσκεται στο ίδιο πακέτο με τους προγόνους της) εκτός από τις μεθόδους κατασκευής. Η σχέση μεταξύ μιας υπερκλάσης και μιας υποκλάσης είναι σχέση τύπου "ΕΊΝΑΙ (IS-A)".
 
-Μια υποκλάση μπορεί να ορίσει νέα γνωρίσματα και μεθόδους, μπορεί να επεκτείνει υφιστάμενες μεθόδους (overloading) ή ακόμα και να επανακαθορίσει υφιστάμενες μεθόδους (overriding). Όλες οι κλάσεις στη Java κληρονομούν από την κλάση ```Object```.
+Μια υποκλάση μπορεί να ορίσει νέα γνωρίσματα και μεθόδους, μπορεί να υπερφορτώσει υφιστάμενες μεθόδους (overloading) ή ακόμα και να επανακαθορίσει υφιστάμενες μεθόδους (overriding). Όλες οι κλάσεις στη Java κληρονομούν από την κλάση ```Object```.
 
 Ας δούμε ένα παράδειγμα. Ο κύκλος, το ορθογώνιο παραλληλόγραμμο κλπ. είναι όλα σχήματα (κληρονομούν από την υπερκλάση ```Shape```). Αυτό δηλώνεται με τη λέξη-κλειδί ```extends```.
 
@@ -614,6 +614,8 @@ instance.aMethod();  // Anonymous class aMethod()
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+1. Long F. et. al. (2014), _Java Coding Guidelines_, Addison-Wesley.
+1. Samoylov N. (2019), _Learn Java 12 Programming_, Packt.
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 1. [Jenkov Nested Classes](http://tutorials.jenkov.com/java/nested-classes.html)
