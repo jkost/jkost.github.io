@@ -289,6 +289,7 @@ $10 ==> 35
 
 ## Ασκήσεις
 1. Να δημιουργήσετε ένα πρόγραμμα σε Java το οποίο θα διαβάζει το όνομα ενός αρχείου ή φακέλου που δίνεται από τον χρήστη και θα επιστρέφει το μέγεθός του σε KiloBytes.
+
 ```java
 System.out.print("Enter a file or directory: ");
 Scanner input = new Scanner(System.in);
