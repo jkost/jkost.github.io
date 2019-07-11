@@ -45,6 +45,8 @@ jshell> sb.toString()
 $1 ==> "This is a String "
 ```
 
+Από την έκδοση 9 και μετά, η απόδοση της κλάσης ```String``` έχει βελτιωθεί πολύ με αποτέλεσμα ο τελεστής συγχώνευσης ```+``` να είναι πιο αποτελεσματικός από τη χρήση της ```StringBuilder```. Χρησιμοποιήστε την ```StringBuilder``` μόνο όταν χρειάζεται να συγχωνεύσετε αλφαριθμητικά μέσα σε βρόγχους. Σε όλες τις άλλες περιπτώσεις, ο τελεστής ```+``` είναι πλέον πολύ αποδοτικός.
+
 Η κλάση ```StringJoiner``` εισήχθηκε στην έκδοση 8 και επιτρέπει τη δημιουργία αλφαριθμητικών συνενώνοντας άλλα αλφαριθμητικά:
  
 ```java
@@ -279,7 +281,7 @@ jshell> System.out.println(Arrays.toString(randomBytes));
 Τέλος, αν θέλουμε να παράγουμε πολύ μεγάλους τυχαίους αριθμούς, μπορούμε να χρησιμοποιήσουμε την αντίστοιχη μέθοδος κατασκευής της ```BigInteger``` όπως θα δούμε παρακάτω.
 
 ## ```BigInteger```
-Στα μαθήματα της 1ης εβδομάδας μάθαμε για τους πρωτογενείς τύπους δεδομένων της γλώσσας ```int, long, float``` και ```double```. Εξηγήσαμε τους περιορισμούς καθενός. Είδαμε π.χ. ότι ο τύπος ```int``` μπορεί ν' αποθηκεύσει ακέραιους αριθμούς μέχρι το ```Integer.MAX = 2^31-1``` κι ότι αν οι υπολογισμοί σας τον ξεπεράσουν τότε έχουμε υπερχείλιση και λάθος αποτελέσματα. Επίσης, λόγω του [τρόπου αναπαράστασης των αριθμών κινητής υποδιαστολής](https://en.wikipedia.org/wiki/IEEE_754) από τους Η/Υ, δεν μπορείτε να βασίζεστε στην ακρίβεια των πράξεων τέτοιων αριθμών. Η Java παρέχει τις κλάσεις ([BigInteger](https://docs.oracle.com/javase/10/docs/api/java/math/BigInteger.html) και [BigDecimal](https://docs.oracle.com/javase/10/docs/api/java/math/BigDecimal.html)) γι' αυτό το σκοπό. Σημειώστε ότι και οι δυο κλάσεις είναι αμετάβλητες (immutable).
+Στα μαθήματα της 1ης εβδομάδας μάθαμε για τους πρωτογενείς τύπους δεδομένων της γλώσσας ```int, long, float``` και ```double```. Εξηγήσαμε τους περιορισμούς καθενός. Είδαμε π.χ. ότι ο τύπος ```int``` μπορεί ν' αποθηκεύσει ακέραιους αριθμούς μέχρι το ```Integer.MAX = 2^31-1``` κι ότι αν οι υπολογισμοί σας τον ξεπεράσουν τότε έχουμε υπερχείλιση και λάθος αποτελέσματα. Επίσης, λόγω του [τρόπου αναπαράστασης των αριθμών κινητής υποδιαστολής](https://en.wikipedia.org/wiki/IEEE_754) από τους Η/Υ, δεν μπορείτε να βασίζεστε στην ακρίβεια των πράξεων τέτοιων αριθμών. Η Java παρέχει τις κλάσεις ([BigInteger](https://docs.oracle.com/javase/10/docs/api/java/math/BigInteger.html) και [BigDecimal](https://docs.oracle.com/javase/10/docs/api/java/math/BigDecimal.html)) γι' αυτό το σκοπό. Σημειώστε ότι και οι δυο κλάσεις είναι αμετάβλητες (immutable) (αν και δεν πληρούν όλα τα κριτήρια). Από σχεδιαστικό λάθος των ```BigInteger``` και ```BigDecimal```, έπρεπε να δηλωθούν ```final``` (άρα δεν ικανοποιούν πλήρως τα κριτήρια της αμεταβλητότητας - immutability). Δυστυχώς πλέον είναι αργά, κι έτσι κάποιος μπορεί να δημιουργήσει μια νέα κακόβουλη ```BigInteger``` η οποία κληρονομεί από την ```BigInteger``` την οποία μπορεί να χρησιμοποιήσετε κατά λάθος στο πρόγραμμά σας με καταστροφικά αποτελέσματα (βλ. πηγή [10]).
 
 Για να μετατρέψετε έναν ακέραιο τύπου ```int``` ή ```long``` σε ```BigInteger``` προτιμήστε τη στατική μέθοδο ```valueOf```:
 
@@ -336,8 +338,6 @@ $3 ==> 1009907818
 * ```andnot()```       		// nand
 * ```shiftLeft()```			// <<
 * ```shiftRight()```		// >>
-
-Άλλο ένα σχεδιαστικό λάθος των ```BigInteger``` και ```BigDecimal```, είναι ότι έπρεπε να δηλωθούν ```final``` (άρα δεν ικανοποιούν πλήρως τα κριτήρια της αμεταβλητότητας - immutability). Δυστυχώς πλέον είναι αργά, κι έτσι κάποιος μπορεί να δημιουργήσει μια νέα κακόβουλη ```BigInteger``` η οποία κληρονομεί από την ```BigInteger``` την οποία μπορεί να χρησιμοποιήσετε στο πρόγραμμά σας με καταστροφικά αποτελέσματα (βλ. πηγή [10]).
 
 Τέλος, αποφύγετε να δουλεύετε με πρωτογενή δυαδικά δεδομένα σα να ήταν κωδικοποιημένοι χαρακτήρες. Στο παρακάτω παράδειγμα, κάποια bytes δεν αντιπροσωπεύουν χαρακτήρες, με αποτέλεσμα με την εξ'ορισμού κωδικοποίηση US-ASCII να χάνεται πληροφορία.
 
@@ -529,7 +529,7 @@ result ==> BigDecimal[2] { 0, 5 }
 Υπάρχουν διάφοροι τρόποι να διαβάσουμε από τη μονάδα εισόδου (συνήθως το πληκτρολόγιο):
 
 ### ```System.console```
-Δε δουλεύει με το jshell.
+Δε δουλεύει με το jshell αλλά διαθέτει τη δυνατότητα να αποκρύπτει την είσοδο (π.χ. για να εισάγετε έναν κωδικό).
 
 ```java
 String name = System.console().readLine("Εισάγετε όνομα χρήστη και πατήστε Enter%n");
@@ -580,6 +580,16 @@ if (scanner.hasNextFloat()){
 }
 ```
 
+Αν θέλετε να δέχεστε το ENTER ως έγκυρη είσοδο:
+
+```java
+Scanner IN = new Scanner(System.in).useDelimiter("(\\b|\\B)");
+String s = null;
+do { 
+    s = IN.nextLine();
+} while (s.isEmpty());
+```
+
 ### ```BufferedReader```
 
 ```java
@@ -599,6 +609,52 @@ jshell> username
 username ==> "john"
 ```
 
+### Text-IO
+Η εξωτερική βιβλιοθήκη [Text-IO](https://github.com/beryx/text-io) προσπαθεί να συνδυάσει τα πλεονεκτήματα των ανωτέρω τριών τρόπων χωρίς τα προβλήματά τους. Για να τη χρησιμοποιήσετε με το jshell, ακολουθήστε τα εξής βήματα:
+
+1. Κατεβάστε τις βιβλιοθήκες [text-io-x.x.x.jar](https://search.maven.org/search?q=a:text-io) και [slf4j-api-x.x.x.jar](https://search.maven.org/search?q=a:slf4j-parent)
+2. Εκκινήστε το jshell ως ```jshell --class-path /<path-to>/text-io-x.x.x.jar:/<path-to>/slf4j-api-x.x.x.jar``` ή εκκινήστε το κανονικά και δώστε την εντολή ```jshell> /env -class-path /<path-to>/text-io-x.x.x.jar:/<path-to>/slf4j-api-x.x.x.jar``` (για τα Windows χρησιμοποιήστε ```\```)
+
+```java
+jshell> import org.beryx.textio.*
+
+jshell> TextIO textIO = TextIoFactory.getTextIO();
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#noProviders for further details.
+textIO ==> org.beryx.textio.TextIO@31304f14
+
+jshell> String username = textIO.newStringInputReader().withDefaultValue("admin").read("Username: ");
+username ==> "admin"
+```
+Εμφανίζεται το ξεχωριστό παράθυρο ```TextTerminal``` το οποίο δέχεται την είσοδο του χρήστη. Μπορείτε να πατήσετε απλά ```ENTER``` ώστε η μεταβλητή ```username``` να λάβει την εξ' ορισμού τιμή ```"admin"```.
+
+![](assets/Fig1.png)
+
+**Εικόνα 1** _Παράθυρο ```TextTerminal```_ 
+
+```java
+jshell> String password = textIO.newStringInputReader().withMinLength(6).withInputMasking(true).read("Password: ");
+password ==> "123456"
+```
+με το αποτέλεσμα:
+
+```
+Username:  [admin]: ​
+Password:  ​
+Invalid value.
+Expected a string with at least 6 characters.
+
+Password:  ​******
+```
+Επίσης μπορείτε να χρησιμοποιήσετε το παράθυρο ```TextTerminal``` όχι μόνο για είσοδο αλλά και για έξοδο, π.χ.
+
+```java
+jshell> textIO.getTextTerminal().printf("Username: %s, password %s.\n", username, password);
+```
+
+Για περισσότερα, αναφερθείτε στις πηγές.
+
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. & Gafter N. (2005), _Java™ Puzzlers: Traps, Pitfalls, and Corner Cases_, Addison-Wesley, Puzzle 2.
@@ -609,6 +665,7 @@ username ==> "john"
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+1. Iordache S. (2016), ["Interactive Console Applications in Java"](https://dzone.com/articles/interactive-console-applications-in-java).
 1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
