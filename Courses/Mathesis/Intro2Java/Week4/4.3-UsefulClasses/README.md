@@ -524,6 +524,38 @@ result ==> BigDecimal[2] { 0, 5 }
 * ```movePointLeft()```   	// μετακίνηση υποδιαστολής αριστερά
 * ```movePointRight()```	// μετακίνηση υποδιαστολής αριστερά
 
+## ```Math```
+Στα προηγούμενα μαθήματα είδαμε κάποιες χρήσεις της κλάσης ```Math``` (π.χ. ```Math.PI, Math.E, Math.sin(), Math.random(), Math.abs()```) κλπ. 
+
+```java
+jshell> Math.
+E                 IEEEremainder(    PI                abs(              acos(             addExact(         asin(           atan(             atan2(            cbrt(             ceil(             class             copySign(         cos(            cosh(             decrementExact(   exp(              expm1(            floor(            floorDiv(         floorMod(       
+fma(              getExponent(      hypot(            incrementExact(   log(              log10(            log1p(          
+max(              min(              multiplyExact(    multiplyFull(     multiplyHigh(     negateExact(      nextAfter(      
+nextDown(         nextUp(           pow(              random()          rint(             round(            scalb(         
+signum(           sin(              sinh(             sqrt(             subtractExact(    tan(              tanh(           
+toDegrees(        toIntExact(       toRadians(        ulp(      
+```
+
+Η κλάση αυτή παρέχει μερικές μεθόδους ως λύση για το πρόβλημα της υπερχείλισης που είδαμε στα μαθήματα της 1ης εβδομάδας:
+```java
+Math.addExact()
+Math.subtractExact()
+Math.multiplyExact()
+Math.negateExact()
+Math.incrementExact()
+Math.decrementExact()
+Math.toIntExact()
+```
+Οι μέθοδοι αυτές εμφανίζουν ```ArithmeticException``` αν υπάρξει λάθος εκτέλεσης, π.χ. υπερχείλιση.
+Π.χ.
+```java
+jshell> Math.addExact((int)1E30, 1000)
+|  Exception java.lang.ArithmeticException: integer overflow
+|        at Math.addExact (Math.java:825)
+|        at (#18:1)
+```
+
 ## Είσοδος
 
 Υπάρχουν διάφοροι τρόποι να διαβάσουμε από τη μονάδα εισόδου (συνήθως το πληκτρολόγιο):
