@@ -120,7 +120,7 @@ double myvar = 3.14
 | Διορθώσεις | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8187930?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%229%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8196883?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2210%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8209506?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2211%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8215322?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2212%22) | 
 | Release Notes | [Release Notes](https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html) | [Release Notes]() | [Release Notes](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html) | - |
 
-![](https://picodotdev.github.io/blog-bitix/assets/images/posts/2014/17/componentes-jpse8.png)
+![](assets/Fig6.png)
 
 **Εικόνα 6** _Αρχιτεκτονική της Java Standard Edition (Πηγή: [https://tinyurl.com/y9y2meap](https://tinyurl.com/y9y2meap))_
 
