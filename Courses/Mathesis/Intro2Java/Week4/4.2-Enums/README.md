@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.3-Annotations/README.md)  
+[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.3-UsefulClasses/README.md)  
  
 ---
 Στα μαθήματα της πρώτης εβδομάδας μιλήσαμε για τους απαριθμημένους τύπους (```enum```s) και μάλιστα μάθαμε ότι μπορούν να χρησιμοποιούνται στις εντολές ```switch```. Οι απαριθμημένοι τύποι είναι ένα σταθερό πλήθος από σταθερές. Συνίσταται να χρησιμοποιείτε ```enum```s αντί για μια σειρά από σταθερές (```public static final```). 
@@ -146,6 +146,6 @@ jshell> System.out.print(a + " " + op + " " + b + " = " + op.apply(x, y));
 
 ---
 
-[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.2-Annotations/README.md)  
+[<-](../4.1-Exceptions/README.md) | [Δ](../../README.md) | [->](../4.3-UsefulClasses/README.md)  
 
 ---
