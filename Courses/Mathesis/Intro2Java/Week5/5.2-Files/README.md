@@ -14,7 +14,7 @@
 
 ## Java I/O
 
-Οι κλάσεις διαχείρισης ενός συστήματος αρχείων βρίσκονται στη βιβλιοθήκη ```java.io```. Η πιο βασική κλάση είναι η [File](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html), η οποία βασικά δείχνει τη διαδρομή ή το μονοπάτι (path) ενός αρχείου, οπότε ένα πιο σωστό όνομα για την κλάση αυτή θα ήταν ```Path```. Υπάρχουν σχετικά/αναφορικά (relative) και απόλυτα (absolute) μονοπάτια, μονοπάτια δηλ. που ξεκινούν από τον ριζικό κατάλογο. Π.χ. ```/home/users/john``` ή ```C:\temp``` είναι απόλυτα μονοπάτια (ξεκινούν με το ριζικό κατάλογο), ενώ ```temp``` ή ```users/john``` είναι σχετικά μονοπάτια.
+Οι κλάσεις διαχείρισης ενός συστήματος αρχείων βρίσκονται στη βιβλιοθήκη ```java.io```. Η πιο βασική κλάση είναι η [File](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html), η οποία βασικά δείχνει τη διαδρομή ή το μονοπάτι (path) ενός αρχείου, οπότε ένα πιο σωστό όνομα για την κλάση αυτή θα ήταν ```Path```. Υπάρχουν σχετικά/αναφορικά (relative) και απόλυτα (absolute) μονοπάτια, μονοπάτια δηλ. που ξεκινούν από τον ριζικό κατάλογο. Π.χ. ```/home/users/john``` ή ```C:\temp``` είναι απόλυτα μονοπάτια (ξεκινούν με το ριζικό κατάλογο), ενώ ```temp``` ή ```users/john``` είναι σχετικά μονοπάτια (σχετικά δηλ. με τον κατάλογο που βρισκόμαστε).
 
 ```java
 jshell> File file = new File("test.txt");
@@ -103,6 +103,8 @@ $16 ==> 5533339648
 * ```setExecutable(boolean executable)```		// για εκτέλεση μόνο από τον ιδιοκτήτη του αρχείου/φακέλου δηλ. ```--x------```
 * ```setExecutable(boolean executable, boolean ownerOnly)```  // αν ```ownerOnly == false``` ```--x--x--x``` αλλοιώς ```--x------```
 
+## Ανάγνωση/εγγραφή αρχείων
+
 Η ανάγνωση/εγγραφή σε αρχεία γίνεται με τη βοήθεια _ροών (streams)_. Μία ροή εισόδου (εξόδου) (input(output) stream) χρησιμοποιείται για να διαβάσουμε(γράψουμε) δεδομένα από(σε) μία πηγή (είτε αυτή είναι αρχείο στο δίσκο, είτε δεδομένα από άλλες συσκευές, είτε από άλλα προγράμματα κλπ.). Οι ροές υποστηρίζουν πολλά είδη δεδομένων όπως απλά bytes, πρωτογενείς τύπους, τοπικοποιημένους χαρακτήρες και αντικείμενα. Κάποιες ροές απλά μεταφέρουν δεδομένα, άλλες τα διαμορφώνουν και τα μετασχηματίζουν με διάφορους τρόπους (π.χ. σε δυαδικά).
 
 Η Java υποστηρίζει 3 βασικές ροές: _Standard Input (System.in), Standard Output(System.out)_ και _Standard Error(System.err)_.
@@ -119,20 +121,85 @@ $16 ==> 5533339648
 
 **Εικόνα 2** _Ιεραρχία κλάσεων ροών εξόδου_ 
 
-Οι βασικές διεπαφές ```InputStream``` και ```OutputStream``` μεταφέρουν δεδομένα σε μορφή bytes. Για ανάγνωση από ή εγγραφή σε αρχεία χρησιμοποιήστε τις ```FileInputStream, FileOutputStream``` (σε συνδυασμό με ```BufferedInputStream, BufferedOutputStream``` αντίστοιχα για καλύτερη απόδοση). Για ανάγνωση ή εγγραφή δυαδικών δεδομένων (πρωτογενείς τύπους και/ή αλφαριθμητικά) χρησιμοποιήστε ```DataInputStream, DataOutputStream```. Για ανάγνωση/εγγραφή αντικειμένων, χρησιμοποιήστε ```ObjectInputStream, ObjectOutputStream``` (η κλάση θα πρέπει να υλοποιεί τη διεπαφή ```Serializable```).
+Οι βασικές διεπαφές ```InputStream``` και ```OutputStream``` μεταφέρουν δεδομένα σε μορφή bytes. Για ανάγνωση από ή εγγραφή σε αρχεία χρησιμοποιήστε τις ```FileInputStream, FileOutputStream``` (σε συνδυασμό με ```BufferedInputStream, BufferedOutputStream``` αντίστοιχα για καλύτερη απόδοση). Για ανάγνωση ή εγγραφή δυαδικών δεδομένων (πρωτογενείς τύπους και/ή αλφαριθμητικά) χρησιμοποιήστε ```DataInputStream, DataOutputStream```. Για ανάγνωση/εγγραφή αντικειμένων, χρησιμοποιήστε ```ObjectInputStream, ObjectOutputStream``` (η κλάση θα πρέπει να υλοποιεί τη διεπαφή ```Serializable```). Τέλος, για ανάγνωση/εγγραφή χαρακτήρων, υπάρχουν οι διεπαφές ```Reader, Writer``` αντίστοιχα.
+
+![](assets/Fig3.png)
+
+**Εικόνα 3** _Ιεραρχία κλάσεων ροών ανάγνωσης χαρακτήρων_ 
+
+Ένα πρόγραμμα χρησιμοποιεί μία _ροή εξόδου (output stream)_ για να γράψει δεδομένα σε μία πηγή.
+
+![](assets/Fig4.png)
+
+**Εικόνα 4** _Ιεραρχία κλάσεων ροών εγγραφής χαρακτήρων_ 
 
 Στο μάθημα των εξαιρέσεων της προηγούμενης εβδομάδας, είδαμε παραδείγματα χρήσης των παραπάνω. Θα πρέπει πάντα να κλείνουμε μια ροή ή να χρησιμοποιούμε την ```try-with-resources``` που κλείνει τη ροή αυτόματα.
 
-## Ανάγνωση αρχείων
+### Ανάγνωση αρχείων
+#### Ανάγνωση bytes
+Η διεπαφή ```InputStream``` διαθέτει τη μέθοδο ```read()``` για ανάγνωση ενός byte από έναν πόρο. Επιστρέφει έναν ακέραιο μεταξύ 0 και 255 (0xFF) ή -1 (0xFFFFFFF) αν διάβασε το τέλος του πόρου. Ένα σύνηθες λάθος πολλών προγραμματιστών (που έχουν εκμετταλευτεί πολλές φορές οι hackers) είναι η πρόωρη μετατροπή του byte που διαβάζεται σε ```byte```:
+
+```java
+jshell> String filepath ="/tmp/test.txt";
+filepath ==> "/tmp/test.txt
+
+jshell> try (InputStream in = new FileInputStream(filepath)) {
+   ...> byte data;
+   ...> while ((data = (byte) in.read()) != -1) {
+   ...> // ...
+   ...> }
+```
+Στον παραπάνω έλεγχο γίνεται πρώτα η μετατροπή του χαρακτήρα που διαβάζεται από την ροή σε ```byte``` και μετά ελέγχεται αν αυτός είναι ο -1. Αν το -1 υπάρχει μέσα στο αρχείο που διαβάζεται, μετατρέποντάς το πρώτα σε```byte``` (δηλ. στο ```0xFF```), θα 'χει ως αποτέλεσμα ο βρόγχος να τερματιστεί πρόωρα (το ```0xFF``` θα μετατραπεί πάλι στον ακέραιο ```0xFFFFFFF``` για να συγκριθεί με το -1). 
+
+Ο σωστός τρόπος είναι:
+
+```java
+jshell> try (InputStream in = new FileInputStream(filepath)) {
+   ...> int dataIn;
+   ...> byte data;
+   ...> while ((dataIn = in.read()) != -1) {
+   ...> data = (byte)dataIn;
+   ...> // ...
+   ...> }
+```
+Παρατηρήστε ότι ο παραπάνω κώδικας χρησιμοποιεί την ```try-with-resources``` η οποία κλείνει αυτόματα τους ανοικτούς πόρους (στην περίπτωσή μας το αρχείο που διαβάζουμε) κι έτσι δε χρειάζεται: 
+
+```java
+finally {
+  if(bis != null)
+	bis.close();
+}
+```
+Υπενθυμίζουμε εδώ ότι για να μπορέσουμε να χρησιμοποιήσουμε την ```try-with-resources```, η κλάση θα πρέπει να υλοποιεί το interface ```Autocloseable```.
+
+Η ```BufferedInputStream``` είναι πιο αποδοτική από την ```FileInputStream``` καθώς διατηρεί μια εσωτερική μνήμη (buffer) οπότε συνίσταται αν θέλετε να διαβάσετε μεγάλα αρχεία.
+
+Ο παρακάτω κώδικας που διαβάζει ένα αρχείο στο σύνολό του χρησιμοποιεί μια υπερφορτωμένη μέθοδο της ```read()```, την ```int read(byte[] buffer, int offset, int length)``` η οποία επιστρέφει τον αριθμό των bytes που διαβάστηκαν.
 
 ```java
 jshell> String filepath ="/tmp/test.txt";
 filepath ==> "/tmp/test.txt"
 
-jshell> try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filepath))){
+jshell> try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filepath))) {
    ...> int length = (int) new File(filepath).length();
    ...> byte[] buffer = new byte[length];
-   ...> bis.read(buffer, 0, length);
+   ...> if (bis.read(buffer, 0, length) == length) {	// read(byte[] buffer, int offset, int length)
+   ...> System.out.println(new String(buffer, "UTF-8"));
+   ...> }
+   ...> } catch (FileNotFoundException e) {
+   ...> e.printStackTrace();
+   ...> } catch (IOException e) {
+   ...> e.printStackTrace();
+   ...> }
+```
+
+Άλλος τρόπος για να διαβάσουμε ένα αρχείο. Αν δε διαβαστεί ολόκληρο εγείρεται μια εξαίρεση.
+
+```java
+jshell> try (DataInputStream dis = new DataInputStream(new FileInputStream(filepath))) {
+   ...> int length = (int) new File(filepath).length();
+   ...> byte[] buffer = new byte[length];
+   ...> dis.readFully(buffer);
    ...> System.out.println(new String(buffer, "UTF-8"));
    ...> } catch (FileNotFoundException e) {
    ...> e.printStackTrace();
@@ -141,19 +208,56 @@ jshell> try (BufferedInputStream bis = new BufferedInputStream(new FileInputStre
    ...> }
 ```
 
-Χρησιμοποιεί την ```try-with-resources``` η οποία κλείνει αυτόματα τους ανοικτούς πόρους (στην περίπτωσή μας το αρχείο που διαβάζουμε) κι έτσι δε χρειάζεται: 
+Αν το αρχείο είναι μεγάλο, μπορούμε να το διαβάσουμε τμηματικά:
 
 ```java
-finally {
-  if(bis != null)
-	bis.close();
-}
+jshell> try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(filepath))) {
+   ...> int length = (int) new File(filepath).length();
+   ...> int offset = 0;
+   ...> int bytesRead = 0;
+   ...> byte[] buffer = new byte[1024];	// τμήματα του 1Kb
+   ...> while ((bytesRead = bis.read(buffer, offset, length-offset)) != -1) {
+   ...>   offset += bytesRead;
+   ...>   if (offset >= length) {
+   ...>	     break;
+   ...>	  }
+   ...> }
+   ...> System.out.println(new String(buffer, "UTF-8"));   
+   ...> } catch (FileNotFoundException e) {
+   ...> e.printStackTrace();
+   ...> } catch (IOException e) {
+   ...> e.printStackTrace();
+   ...> }
 ```
-Υπενθυμίζουμε εδώ ότι για να μπορέσουμε να χρησιμοποιήσουμε την try-with-resources, η κλάση θα πρέπει να υλοποιεί το interface ```Autocloseable```.
 
-Η ```BufferedInputStream``` είναι πιο αποδοτική από την ```FileInputStream``` καθώς διατηρεί μια εσωτερική μνήμη (buffer).
+#### Ανάγνωση χαρακτήρων
+Η διεπαφή ```Reader``` διαθέτει τη μέθοδο ```read()``` για να διαβάσει έναν χαρακτήρα από κάποιον πόρο και επιστρέφει την τιμή του ως ακέραιο μεταξύ 0 και 65,535 ή −1 αν διάβασε το τέλος του αρχείου. Ένα σύνηθες λάθος (που έχει εκμετταλευτεί πολλές φορές από hackers) είναι η πρόωρη μετατροπή του χαρακτήρα που διαβάζεται σε ```char```:
 
-Αν θέλετε να μετατρέψετε τις συστοιχίες από bytes σε χαρακτήρες (με συγκεκριμένη κωδικοποίηση), τότε υπάρχει η [InputStreamReader](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html).
+```java
+jshell> String filepath ="/tmp/test.txt";
+filepath ==> "/tmp/test.txt
+
+jshell> try (Reader in = new FileReader(filepath)) {
+   ...> char data;
+   ...> while ((data = (char) in.read()) != -1) {
+   ...> // ...
+   ...> }
+```
+Στον παραπάνω έλεγχο γίνεται πρώτα η μετατροπή ανάγνωσης του χαρακτήρα σε ```char``` και μετά ελέγχεται αν αυτός είναι ο -1. Στην περίπτωση της πρόωρης μετατροπής σε ```char```, αυτός μετατρέπεται στον χαρακτήρα ```Character.MAX_VALUE``` ή ```0xFFFF``` και ποτέ πίσω σε ```int``` με αποτέλεσμα ο βρόγχος να μην τερματίζεται ποτέ.
+
+Ο σωστός τρόπος είναι:
+
+```java
+jshell> try (Reader in = new FileReader(filepath)) {
+   ...> int dataIn;
+   ...> char data;
+   ...> while ((dataIn = in.read()) != -1) {
+   ...> data = (char)dataIn;
+   ...> // ...
+   ...> }
+```
+
+Αν θέλετε να μετατρέψετε συστοιχίες από bytes σε χαρακτήρες (με συγκεκριμένη κωδικοποίηση), τότε υπάρχει η [InputStreamReader](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html) για καλύτερη απόδοση.
 
 ```java
 jshell> import java.nio.charset.*
@@ -171,7 +275,44 @@ jshell> while((line = reader.readLine()) != null) {
  του σπαθιού την τρομερή
 ```
 
-## Εγγραφή αρχείων
+### Εγγραφή αρχείων
+#### Εγγραφή bytes
+Η διεπαφή ```OutputStream``` διαθέτει τη μέθοδο ```write(int b)``` για εγγραφή ενός byte σε έναν πόρο. Δέχεται σαν όρισμα έναν ακέραιο μεταξύ 0 και 255 (0xFF) (γι' αυτό και θα πρέπει να γίνεται έλεγχος ώστε το byte προς εγγραφή να είναι σ' αυτό το διάστημα). Μόνο τα 8 χαμηλότερα bits γράφονται στην έξοδο, τα υψηλότερα 24 bits αγνοούνται (ένας ακέραιος έχει 32 bits).
+
+```java
+jshell> String filepath ="/tmp/test.txt";
+filepath ==> "/tmp/test.txt"
+
+jshell> int value = 300;
+i ==> 300
+
+jshell> try (OutputStream out = new FileOutputStream(filepath)) {
+   ...> if (value < 0 || value > 255) {
+   ...> throw new ArithmeticException("Value is out of range");
+   ...> }
+   ...> out.write(value);
+   ...> out.flush();
+   ...> }
+```
+ή εναλλακτικά την παρακάτω αν θέλουμε να γράψουμε τιμές μεγαλύτερες του 255:
+
+```java
+jshell> try (DataOutputStream out = new DataOutputStream(new FileOutputStream(filepath))) {
+   ...> out.writeInt(value);
+   ...> out.flush();
+   ...> }
+```
+
+Χρησιμοποιούμε την ```try-with-resources``` η οποία κλείνει αυτόματα τους ανοικτούς πόρους (στην περίπτωσή μας το αρχείο που γράφουμε) κι έτσι δε χρειάζεται: 
+
+```java
+finally {
+  if(bos != null)
+	bos.close();
+}
+```
+
+Η ```BufferedOutputStream``` είναι πιο αποδοτική από την ```FileOutputStream``` καθώς διατηρεί μια εσωτερική μνήμη (buffer).
 
 ```java
 jshell> String filepath ="/tmp/test.txt";
@@ -200,18 +341,10 @@ jshell> try (BufferedOutputStream outputStream = new BufferedOutputStream(new Fi
    ...> }
 ```
 
-Χρησιμοποιεί την try-with-resources η οποία κλείνει αυτόματα τους ανοικτούς πόρους (στην περίπτωσή μας το αρχείο που γράφουμε) κι έτσι δε χρειάζεται: 
+#### Εγγραφή χαρακτήρων
+Η διεπαφή ```Writer``` διαθέτει τη μέθοδο ```write(int c)``` για εγγραφή ενός χαρακτήρα σε έναν πόρο. Δέχεται σαν όρισμα έναν ακέραιο αλλά μόνο τα 16 χαμηλότερα bits γράφονται στην έξοδο, τα υψηλότερα 16 bits αγνοούνται (ένας ακέραιος έχει 32 bits). Όπως και στην περίπτωση της ```OutputStream.write()``` θα πρέπει να γίνεται έλεγχος ώστε ο ακέραιος προς εγγραφή να βρίσκεται σ' αυτό το διάστημα. Για ευκολία διαθέτει και την ```Writer.write(String s)```.
 
-```java
-finally {
-  if(bos != null)
-	bos.close();
-}
-```
-
-Η ```BufferedOutputStream``` είναι πιο αποδοτική από την ```FileOutputStream``` καθώς διατηρεί μια εσωτερική μνήμη (buffer).
-
-Αν θέλετε να μετατρέψετε τις συστοιχίες από bytes σε χαρακτήρες (με συγκεκριμένη κωδικοποίηση), τότε υπάρχει η [OutputStreamWriter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStreamWriter.html).
+Αν θέλετε να μετατρέψετε συστοιχίες από bytes σε χαρακτήρες (με συγκεκριμένη κωδικοποίηση), τότε υπάρχει η [OutputStreamWriter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/OutputStreamWriter.html).
 
 ```java
 jshell> Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:/temp/test.txt"), StandardCharsets.UTF_8));
@@ -241,7 +374,7 @@ age ==> 15
 jshell> LocalDate registration = LocalDate.now();
 registration ==> 2019-02-24
 
-jshell> try(PrintStream ps = new PrintStream(destination)){
+jshell> try(PrintStream ps = new PrintStream(destination)) {
    ...> ps.println("Όνομα: " + name);
    ...> ps.println("Ηλικία: " + age);
    ...> ps.printf("Registration: %1$td/%1$tm/%1$tY", registration);
@@ -259,11 +392,20 @@ jshell> try(PrintStream ps = new PrintStream(destination)){
 Registration: 24/02/2019
 ```
 
-## Διαγραφή αρχείων
+### Διαγραφή αρχείων
 
 ```java
 jshell> file.delete()
 $6 ==> false
+```
+
+Αν η διαγραφή αποτύχει, δεν εγείρεται κάποια εξαίρεση. Ο μόνος τρόπος να γνωρίζουμε αν κάτι πήγε στραβά είναι να ελέγξουμε την τιμή επιστροφής της εντολής:
+
+```java
+jshell> if (!file.delete()) {
+   ...> System.out.println("Deletion failed");
+   ...> } 
+Deletion failed
 ```
 
 ## Δυαδικά αρχεία
@@ -323,7 +465,7 @@ String directory = input.nextLine();
 System.out.println(getSize(new File(directory)) + " KB");
 
 long getSize(File file) {
-...
+// υλοποιήστε αυτή τη μέθοδο
 }
 ``` 
 
