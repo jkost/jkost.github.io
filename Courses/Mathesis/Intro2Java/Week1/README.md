@@ -5,6 +5,12 @@
 
 [![Mathesis](../../assets/mathesis.png)](http://mathesis.cup.gr)
 
+---
+
+[Δ](../README.md) | [->](../Week2/README.md) 
+ 
+---
+
 ## Πίνακας περιεχομένων
 ### Εβδομάδα 1η - Εισαγωγή
 1. [Εισαγωγή στη γλώσσα προγραμματισμού Java](1.1-JavaHistory/README.md) 
@@ -16,4 +22,8 @@
 7. [Πίνακες ή Συστοιχίες (Arrays)](1.7-Arrays/README.md) 
 8. [Μέθοδοι (Methods)](1.8-Methods/README.md)  
 
+---
+
+[Δ](../README.md) | [->](../Week2/README.md) 
+ 
 ---
