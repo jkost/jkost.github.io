@@ -19,13 +19,13 @@
 
 ![](assets/Fig1.png)
 
-**Εικόνα 1** _Διαδικασία μεταγλώττισης πηγαίου κώδικα_
+**Εικόνα 1.1.1** _Διαδικασία μεταγλώττισης πηγαίου κώδικα_
 
 * **Διερμηνευτικές (interpreted)** όπου κάθε εντολή του προγράμματος εκτελείται ως έχει χωρίς μεταγλώττιση. Ο _διερμηνευτής_ (_interpreter_) δημιουργεί ένα ενδιάμεσο κώδικα ο οποίος μπορεί να εκτελεστεί σε διάφορες μηχανές, αλλά υπάρχουν περιορισμένες δυνατότητες βελτιστοποίησης. Παραδείγματα διερμηνευτικών γλωσσών: Perl, Python, Ruby, Javascript, Basic, Visual Basic, bash. 
 
 ![](assets/Fig2.png)
 
-**Εικόνα 2** _Διαδικασία διερμήνευσης πηγαίου κώδικα_
+**Εικόνα 1.1.2** _Διαδικασία διερμήνευσης πηγαίου κώδικα_
 
 Ανάλογα με τον **τρόπο εκτέλεσης**, οι γλώσσες προγραμματισμού χωρίζονται ακόμα σε:
 
@@ -57,14 +57,14 @@ double myvar = 3.14
 
 ![](assets/Fig3.png)
 
-**Εικόνα 3** _Διαδικασία μεταγλώττισης/διερμήνευσης πηγαίου κώδικα Java_
+**Εικόνα 1.1.3** _Διαδικασία μεταγλώττισης/διερμήνευσης πηγαίου κώδικα Java_
 
 Η Εικονική Μηχανής της τρέχει πάνω σε διάφορες πλατφόρμες ανεξαρτήτως αρχιτεκτονικής, π.χ. Windows, Linux, Mac OS, Solaris.
 Επιτρέπει στα προγράμματα γραμμένα στη γλώσσα Java να μεταγλωττίζονται μόνο μια φορά και να μπορούν να εκτελούνται σε οποιαδήποτε πλατφόρμα χωρίς την ανάγκη επαναμεταλώττισης. (**Write once run everywhere**)
 
 ![](assets/Fig4.png)
 
-**Εικόνα 4** _Η Εικονική Μηχανή της Java (Java Virtual Machine)_
+**Εικόνα 1.1.4** _Η Εικονική Μηχανή της Java (Java Virtual Machine)_
 
 Όπως φαίνεται στο παραπάνω σχήμα, ο πηγαίος κώδικας (```.java```) μεταγλωττίζεται σε κώδικα bytecode (```.class```). Κατά την εκτέλεση του προγράμματος, η Εικονική Μηχανή (Ε.Μ.) Java φορτώνει και ελέγχει τις κλάσεις και στη συνέχεια τις εκτελεί με τον διερμηνευτή (Java Interpreter). Ο μεταγλωττιστής Just In Time (JIT) ψάχνει για τμήματα κώδικα που εκτελούνται περισσότερο (hot spots) και τα μεταγλωτίζει για γρηγορότερη εκτέλεση. 
 
@@ -73,7 +73,7 @@ double myvar = 3.14
 
 ![](assets/Fig5.png)
 
-**Εικόνα 5** _Ο πατέρας της Java James Gosling_
+**Εικόνα 1.1.5** _Ο πατέρας της Java James Gosling_
 
 Ο [Netscape Navigator 2.0](https://en.wikipedia.org/wiki/Netscape_Navigator) υποστηρίζει τη γλώσσα το Σεπτέμβριο του 1995 με τη μορφή των μη αυτόνομων εφαρμογών [Java applets](https://en.wikipedia.org/wiki/Java_applet). Η Microsoft ενσωματώνει τη γλώσσα στον [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer) στο τέλος του 1995. 
 
@@ -103,32 +103,34 @@ double myvar = 3.14
 * 1.1: nested classes
 * 1.2: strictfp
 * 1.3: μικρές αλλαγές
-* 1.4: assert
-* 1.5: annotations, generics, autoboxing, var-args...
-* 1.6: καλύτερη απόδοση
-* 1.7: diamond syntax, try-with-resources, κλπ.
-* 1.8: lambda expressions και default methods
+* 1.4: assert, JDBC
+*   5: annotations, generics, autoboxing, var-args...
+*   6: καλύτερη απόδοση
+*   7: diamond syntax, try-with-resources, κλπ.
+*   8: lambda expressions και default methods
 *   9: modules, μικροδιορθώσεις στις εκδόσεις 1.7 και 1.8
-*  10: local-variable type inference (var)
-*  11: μικρές αλλαγές
+*  10: [local-variable type inference (var)](https://metebalci.com/blog/what-is-new-in-java-10/)
+*  11: [unicode 10](https://metebalci.com/blog/what-is-new-in-java-11/)
+*  12: [νέα switch](https://metebalci.com/blog/what-is-new-in-java-12/)
+*  13: [νέα switch και text blocks](https://metebalci.com/blog/what-is-new-in-java-13/) 
 
 Ο ακόλουθος πίνακας παρέχει μια εύκολη αναφορά για να δείτε τι έχει αλλάξει ανάμεσα στις τελευταίες εκδόσεις της γλώσσας.
 
-| Έκδοση Java | 9 (09/2017) | 10 (03/2018) | 11 (09/2018) | 12 (03/2019) | 
-| JEPs | [jdk9](https://openjdk.java.net/projects/jdk9/) | [jdk10](https://openjdk.java.net/projects/jdk/10) | [jdk11](https://openjdk.java.net/projects/jdk/11) | [jdk12](https://openjdk.java.net/projects/jdk/12) | 
-| JSRs | [379](https://openjdk.java.net/projects/jdk9/spec) | [383](https://openjdk.java.net/projects/jdk/10/spec) | [384](https://openjdk.java.net/projects/jdk/11/spec/) | [386](https://openjdk.java.net/projects/jdk/12/spec/) | 
-| Διορθώσεις | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8187930?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%229%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8196883?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2210%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8209506?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2211%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8215322?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2212%22) | 
-| Release Notes | [Release Notes](https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html) | [Release Notes]() | [Release Notes](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html) | - |
+| Έκδοση Java | 9 (09/2017) | 10 (03/2018) | 11 (09/2018) | 12 (03/2019) | 13 (09/2019)
+| JEPs | [jdk9](https://openjdk.java.net/projects/jdk9/) | [jdk10](https://openjdk.java.net/projects/jdk/10) | [jdk11](https://openjdk.java.net/projects/jdk/11) | [jdk12](https://openjdk.java.net/projects/jdk/12) | [jdk13](https://openjdk.java.net/projects/jdk/13)
+| JSRs | [379](https://openjdk.java.net/projects/jdk9/spec) | [383](https://openjdk.java.net/projects/jdk/10/spec) | [384](https://openjdk.java.net/projects/jdk/11/spec/) | [386](https://openjdk.java.net/projects/jdk/12/spec/) | [388](https://openjdk.java.net/projects/jdk/13/spec/)
+| Διορθώσεις | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8187930?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%229%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8196883?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2210%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8209506?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2211%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8215322?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2212%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8227642?jql=project%20%3D%20JDK%20AND%20issuetype%20in%20(Enhancement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved%2C%20Closed)%20AND%20resolution%20%3D%20Fixed%20AND%20Fixed%20%3D%20%2213%22) 
+| Release Notes | [Release Notes](https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html) | [Release Notes]() | [Release Notes](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html) | [Release Notes](https://www.oracle.com/technetwork/java/javase/12u-relnotes-5211424.html) | [Release Notes](https://www.oracle.com/technetwork/java/javase/13u-relnotes-5461742.html)
 
 ![](assets/Fig6.png)
 
-**Εικόνα 6** _Αρχιτεκτονική της Java Standard Edition (Πηγή: [https://tinyurl.com/y9y2meap](https://tinyurl.com/y9y2meap))_
+**Εικόνα 1.1.6** _Αρχιτεκτονική της Java Standard Edition (Πηγή: [https://tinyurl.com/y9y2meap](https://tinyurl.com/y9y2meap))_
 
 Εν τω μεταξύ, μετά το JDK 1.3 εμφανίστηκε και η [Java Enterprise Edition (JEE) 1.3](https://en.wikipedia.org/wiki/Java_Platform%2C_Enterprise_Edition) η οποία στοχεύει στην ανάπτυξη επιχειρηματικών εφαρμογών (κοινώς το Web). Περιλαμβάνει τεχνολογίες όπως [Enterprise JavaBeans (EJBs)](https://en.wikipedia.org/wiki/Enterprise_JavaBeans), servlets, Java Server Pages, Java Server Faces κ.ά. Σήμερα βρίσκεται στην έκδοση 8, με πολλές δυνατότητες και ευκολία χρήσης σε σχέση με τις προηγούμενες εκδόσεις (1.3, 1.4, 5, 6, 7). Παράλληλα, έχουν αναπτυχθεί πολλά frameworks για ανάπτυξη επιχειρηματικών εφαρμογών (ή εφαρμογών ιστού) βασισμένα στη Java, όπως το [Apache Tapestry](https://en.wikipedia.org/wiki/Apache_Tapestry), το [Apache Struts](https://en.wikipedia.org/wiki/Apache_Struts_2), το [Play](https://www.playframework.com/) και το [Spring](https://en.wikipedia.org/wiki/Spring_Framework) για να αναφέρουμε τα πιο γνωστά. 
 
 ![](https://www.programering.com/images/remote/ZnJvbT1pdGV5ZSZ1cmw9Y21idzVpWWlabVloWlROemtqWmxGVExoTm1aNTB5WW1Sek10SW1OaFZUTDNVbVpsVkdaNFUyTHlrVE96OGlONEFETXZRbmJsMUdhakZHZDBGMkxrRjJic0JYZHYwMmJqNVNaNVZHZHA1aU1zUjJMdm9EYzBSSGE.jpg)
 
-**Εικόνα 7** _Αρχιτεκτονική της Java Enterprise Edition (Πηγή: [https://tinyurl.com/yc2ozrck](https://tinyurl.com/yc2ozrck))_
+**Εικόνα 1.1.7** _Αρχιτεκτονική της Java Enterprise Edition (Πηγή: [https://tinyurl.com/yc2ozrck](https://tinyurl.com/yc2ozrck))_
 
 Βασικά συστατικά μιας εφαρμογής JEE είναι:
 
@@ -140,7 +142,7 @@ double myvar = 3.14
 
 ![](http://www.oracle.com/ocom/groups/public/@otn/documents/digitalasset/148076.jpg)
 
-**Εικόνα 8** _Αρχιτεκτονική της Java Mobile Edition (Πηγή: [https://tinyurl.com/ycfgxymh](https://tinyurl.com/ycfgxymh))_
+**Εικόνα 1.1.8** _Αρχιτεκτονική της Java Mobile Edition (Πηγή: [https://tinyurl.com/ycfgxymh](https://tinyurl.com/ycfgxymh))_
 
 Η Java έχει προκαλέσει περισσότερο ενθουσιασμό από οποιαδήποτε άλλη εξέλιξη στο Διαδίκτυο από την εποχή του [Mosaic](https://en.wikipedia.org/wiki/Mosaic_(web_browser)). Είναι μια γλώσσα προγραμματισμού για κατανεμημένες εφαρμογές. Έχει γίνει παγκοσμίως γνωστή ωστόσο, επειδή επιτρέπει στους χρήστες να αλληλεπιδρούν με τις ιστοσελίδες. Ένα πολύ βασικό χαρακτηριστικό που αποτέλεσε κι έναν από τους κυριότερους λόγους διάδοσης της γλώσσας είναι ότι είναι ανεξάρτητη πλατφόρμας ('Write Once Run Everywhere'). Αυτό σημαίνει ότι γράφετε κώδικα μια φορά και αυτός τρέχει σε οποιαδήποτε πλατφόρμα που έχει εγκατεστημένο το [Java Virtual Machine](https://en.wikipedia.org/wiki/Java_virtual_machine). 
 

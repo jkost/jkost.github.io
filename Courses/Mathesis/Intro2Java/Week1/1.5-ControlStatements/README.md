@@ -179,8 +179,8 @@ switch (grade) {
 }
 ```
 
-### JDK 12
-Η έκδοση 12 της γλώσσας φέρνει μια νέα σύνταξη για τη ```switch``` η οποία είναι στη φάση της προεπισκόπισης (preview) ώστε οι προγραμματιστές να μπορούν να παρέχουν ανατροφοδότηση (feedback) από τη χρήση της και πιθανές βελτιώσεις σε μελλοντικές εκδόσεις της γλώσσας. Για να μπορέσετε να τη χρησιμοποιήσετε θα πρέπει να περάσετε την παράμετρο ```enable-preview``` στο jshell της έκδοσης 12 όπως φαίνεται ακολούθως:
+### JDK 12/13
+Οι εκδόσεις 12/13 της γλώσσας φέρνουν μια νέα σύνταξη για τη ```switch``` η οποία είναι στη φάση της προεπισκόπισης (preview) ώστε οι προγραμματιστές να μπορούν να παρέχουν ανατροφοδότηση (feedback) από τη χρήση της και πιθανές βελτιώσεις σε μελλοντικές εκδόσεις της γλώσσας. Για να μπορέσετε να τη χρησιμοποιήσετε θα πρέπει να περάσετε την παράμετρο ```enable-preview``` στο jshell της έκδοσης 12 ή 13 όπως φαίνεται ακολούθως:
 
 ```java
 $> jshell --enable-preview
@@ -279,6 +279,7 @@ result ==> "Σάββατο"
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 1. Urma R.-G. & Warburton R. (2019), "New switch Expressions in Java 12", _Java Magazine_, May/June 2019.
+1. Urma R.-G. & Warburton R. (2019), "Inside Java 13’s switch Expressions and Reimplemented Socket API", [Java Magazine](https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api), October 2019.
 
 ---
 

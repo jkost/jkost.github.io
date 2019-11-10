@@ -32,7 +32,7 @@ Public License v2 with Classpath Exception (GPLv2+CPE)). Οι δυο εκδόσ�
 
 ![](assets/Fig1.png)
 
-**Εικόνα 1** _Ορισμός μεταβλητών περιβάλλοντος στα Windows_
+**Εικόνα 1.2.1** _Ορισμός μεταβλητών περιβάλλοντος στα Windows_
 
 ### Εγκατάσταση του Oracle JDK στο MacOS
 1. Πλοηγηθείτε στον ιστοχώρο της [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html) και κατεβάστε την τελευταία έκδοση του JDK. Αποδεχθείτε την άδεια χρήσης (License Agreement) και κατεβάστε το για την πλατφόρμα σας (```jdk-12.0.1_osx-x64_bin.dmg```).
@@ -141,8 +141,8 @@ jshell> (Ctrl+D)
 
 ## Εγκατάσταση του Apache NetBeans
 
-1. Από τον ιστοχώρο της [Apache](https://netbeans.apache.org/download/index.html) κατεβάστε την τελευταία έκδοση του Apache NetBeans. Θα πρέπει να κατεβάσετε την έκδοση 9.0 ή νεώτερη για να μπορέσετε να δουλέψετε με το JDK 9 ή νεώτερο.
-1. Αποσυμπιέστε το αρχείο ```netbeans-java-x.0-bin.zip``` σε ένα φάκελο (π.χ. ```$HOME/Programs```)  
+1. Από τον ιστοχώρο της [Apache](https://netbeans.apache.org/download/index.html) κατεβάστε την τελευταία έκδοση του Apache NetBeans. Θα πρέπει να κατεβάσετε την έκδοση 9.0 ή νεώτερη για να μπορέσετε να δουλέψετε με το JDK 9 ή νεώτερο. A
+1. Αποσυμπιέστε το αρχείο ```netbeans-java-x.0-bin.zip``` σε ένα φάκελο (π.χ. ```$HOME/Programs```). Από την έκδοση 11.2 και μετά υπάρχει οδηγός εγκατάστασης του NetBeabs. Κατεβάστε το κατάλληλο για την πλατφόρμα σας και εκτελέστε το για να εγκαταστήσετε το Apache NetBeans. 
 1. Ελέξτε ότι το αρχείο ```<netbeans>/etc/netbeans.conf``` περιέχει γραμμή παρόμοια με την παρακάτω ανάλογα με την έκδοση JDK που εγκαταστήσατε προηγουμένως:
 ```bash
 netbeans_jdkhome="/<path>/jdk-12.0.1.jdk/Contents/Home/" 
@@ -151,7 +151,7 @@ netbeans_jdkhome="/<path>/jdk-12.0.1.jdk/Contents/Home/"
 ```bash
 netbeans_jdkhome="/<path>/jdk12.0.1/" 
 ```
-αν χρησιμοποείτε Windows/Linux/Unix.
+αν χρησιμοποιείτε Windows/Linux/Unix.
 
 ### Επαλήθευση εγκατάστασης
 1. Ξεκινήστε το NetBeans. Ανάλογα με την πλατφόρμα σας (Windows: κάντε διπλό κλικ στο αρχείο ```netbeans.exe``` ή ```netbeans64.exe```)(Linux/MacOSX: από ένα κέλυφος πληκτρολογήστε ```./netbeans &```) από το φάκελο ```bin```.
@@ -171,7 +171,7 @@ netbeans_jdkhome="/<path>/jdk12.0.1/"
 
 ![](assets/Fig2.png)
 
-**Εικόνα 2** _Ορισμός πλατφορμών JDK_
+**Εικόνα 1.2.2** _Ορισμός πλατφορμών JDK_
 
 ## JShell
 
