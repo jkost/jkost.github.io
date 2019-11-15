@@ -333,6 +333,17 @@ _Πηγή: [Naftalin, Wadler (2006)]_
 
 **Εικόνα 3.5.4** _Παράδειγμα στοίβας_
 
+Η διεπαφή της στοίβας είναι:
+
+```java
+public class Stack<E> {
+   	public boolean push(E e); // εισάγει ένα στοιχείο στο τέλος της στοίβας
+	public E pop(); // εξάγει το τελευταίο στοιχείο που εισήχθηκε
+	public E peek(); // επιστρέφει χωρίς να διαγράφει το τελευταίο στοιχείο που εισήχθηκε
+	public boolean isEmpty(); // έλεγχος αν η στοίβα είναι κενή
+	public boolena isFull(); // έλεγχος αν η στοίβα είναι γεμάτη
+}
+```
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.
