@@ -663,7 +663,7 @@ username ==> "admin"
 
 ![](assets/Fig1.png)
 
-**Εικόνα 1** _Παράθυρο ```TextTerminal```_ 
+**Εικόνα 4.3.1** _Παράθυρο ```TextTerminal```_ 
 
 ```java
 jshell> String password = textIO.newStringInputReader().withMinLength(6).withInputMasking(true).read("Password: ");

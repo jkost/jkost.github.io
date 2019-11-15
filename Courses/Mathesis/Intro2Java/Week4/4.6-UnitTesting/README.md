@@ -74,11 +74,11 @@ public class Euler {
 ``` 
 Προτού υλοποιήσουμε τη στατική μέθοδο, ακολουθώντας το παράδειγμα του TDD, θα γράψουμε πρώτα το unit test γι' αυτήν. 
 
-Επιλέξτε την κλάση ```Euler``` στο παράθυρο _Projects_, δεξί κλικ και επιλέξτε **Tools --> Create/Update Tests**. Θα εμφανιστεί το παράθυρο _Create/Update Tests_ (βλ. εικόνα 1).
+Επιλέξτε την κλάση ```Euler``` στο παράθυρο _Projects_, δεξί κλικ και επιλέξτε **Tools --> Create/Update Tests**. Θα εμφανιστεί το παράθυρο _Create/Update Tests_ (βλ. Εικόνα 4.6.1).
 
 ![](assets/Fig1.png)
 
-**Εικόνα 1** _Διαλογικό παράθυρο Create/Update Tests του NetBeans_  
+**Εικόνα 4.6.1** _Διαλογικό παράθυρο Create/Update Tests του NetBeans_  
 
 Πατώντας **ΟΚ**, το NetBeans θα δημιουργήσει την κλάση ```EulerTest``` μέσα στον κατάλογο _Test Packages_ και θα προσθέσει τις βιβλιοθήκες του JUnit 5 μέσα στον κατάλογο _Test Libraries_.
 
@@ -246,7 +246,7 @@ class Test {
 
 ![](assets/Fig2.png)
 
-**Εικόνα 2** _Εμφάνιση συμβουλών CheckStyle στο NetBeans_  
+**Εικόνα 4.6.2** _Εμφάνιση συμβουλών CheckStyle στο NetBeans_  
 
 ### PMD
 Κατεβάστε το [EasyPMD](http://plugins.netbeans.org/plugin/57270/easypmd) plugin στον Η/Υ σας και στη συνέχεια εγκαταστήστε το κάνοντας κλικ στο μενού **Tools --> Plugins --> Downloaded --> Add Plugins**, πλοηγηθήτε στο φάκελο που κατεβάσατε το ```xxxxx_easypmd-10.0.nbm``` και επιλέξτε το, επιλέξτε τα ```dom4j``` και ```EasyPmd``` και ```Install```.
@@ -261,7 +261,7 @@ class Test {
 
 ![](assets/Fig3.png)
 
-**Εικόνα 3** _Inspect με το FindBugs_  
+**Εικόνα 4.6.3** _Inspect με το FindBugs_  
 
 Πατώντας **Inspect**, το NetBeans θα εμφανίσει το παράθυρο _Inspector_ με μια λίστα με τα προβλήματα που βρήκε. Με διπλό κλικ πάνω σε ένα πρόβλημα μεταφέρεστε στην αντίστοιχη γραμμή. 
 
