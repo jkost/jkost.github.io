@@ -85,7 +85,7 @@ double arcsine(double sine)  {
 double func(double x) {
 	try {
 		double angle = arcsine(x);
-		return angle;						// αν συμβεί εξαίρεση στην προηγούμενη γραμμή, αυτή η γραμμή δεν εκτελείται
+		return angle;	// αν συμβεί εξαίρεση στην προηγούμενη γραμμή, αυτή η γραμμή δεν εκτελείται
 	} catch (IllegalArgumentException e) {
 		e.printlnStackTrace();
 		return 0.0;
