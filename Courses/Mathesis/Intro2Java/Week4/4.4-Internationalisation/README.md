@@ -46,7 +46,15 @@ System.out.println(messages.getString("inquiry"));
 System.out.println(messages.getString("farewell"));
 ```
 
-Αλλάξαμε τον κώδικα της ```main()``` με τον παραπάνω. Κατ' αρχήν, ορίζουμε ένα νέο ```Locale``` το οποίο λαμβάνει ως παραμέτρους τη _γλώσσα_ και τη _χώρα_. Οι γλώσσες (language) ([ISO 639](http://www.loc.gov/standards/iso639-2/php/code_list.php)) και οι χώρες  (region) ([ISO 3166](http://www.chemie.fu-berlin.de/diverse/doc/ISO_3166.html)) ορίζονται [εδώ](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry). Υπάρχουν φυσικά και σταθερές για τις πιο δημοφιλής γλώσσες:
+Αλλάξαμε τον κώδικα της ```main()``` με τον παραπάνω. Κατ' αρχήν, ορίζουμε ένα νέο ```Locale``` το οποίο λαμβάνει ως παραμέτρους τη _γλώσσα_ και τη _χώρα_. Η ```Locale``` διαθέτει 3 μεθόδους κατασκευής (constructors):
+
+* ```Locale(String language)```
+* ```Locale(String language, String country)```
+* ```Locale(String language, String country, String variant)```
+
+Οι γλώσσες (language) ([ISO 639](http://www.loc.gov/standards/iso639-2/php/code_list.php) και [IETF BCP 47](https://tools.ietf.org/html/bcp47)) και οι χώρες  (country) ([ISO 3166](http://www.chemie.fu-berlin.de/diverse/doc/ISO_3166.html) ή [UN M.49](https://en.wikipedia.org/wiki/UN_M49)) ορίζονται [εδώ](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry). Μια χώρα ορίζεται από 2 ή 3 χαρακτήρες. Τέλος, η παραλλαγή χρησιμοποιείται για να δείξει μια παραλλαγή ενός Locale, π.χ. ```"polyton"``` (πολυτονικά ελληνικά), ```"POSIX"``` κλπ.
+
+Υπάρχουν φυσικά και σταθερές για τις πιο δημοφιλής γλώσσες:
 
 ```java
 jshell> Locale.
@@ -148,11 +156,11 @@ jshell> locale.getDisplayLanguage()
 $10 ==> "Ελληνικά"
 ```
 
-Πολλές κλάσεις διαθέτουν μεθόδους που χρειάζονται το ```Locale``` για να δουλέψουν σωστά. 
+Πολλές κλάσεις διαθέτουν μεθόδους που χρειάζονται το ```Locale``` για να δουλέψουν σωστά.
 
- Π.χ. 
+Π.χ. 
 
- ```java
+```java
 jshell> Locale.getDefault()
 $1 ==> en_US
 
@@ -220,6 +228,12 @@ $15 ==> "TITLE"
 
 * ```String.toLowerCase()```
 * ```String.equalsIgnoreCase()```
+* ```System.out.printf(locale, format, arguments)```
+
+```java
+jshell> System.out.printf(locale, "%,d %n", 10000);
+10.000
+```
 
 Αν θέλετε να συγκρίνετε δυο αλφαριθμητικά λαμβάνοντας υπόψιν το ```Locale```, τότε υπάρχει η κλάση [Collator](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/Collator.html):
 
