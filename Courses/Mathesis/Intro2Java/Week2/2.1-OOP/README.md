@@ -351,14 +351,20 @@ static {
 Η μετατροπή ενός πρωτογενούς τύπου στην αντίστοιχη κλάση του ονομάζεται _εγκλισμός (boxing)_ ενώ η αντίστροφη μετατροπή _απεγκλισμός (unboxing)_. Η γλώσσα κάνει αυτές τις μετατροπές αυτόματα τις περισσότερες φορές. Π.χ. η έκφραση:
 
 ```java
-jshell> Integer val = 10;
+jshell> Integer val = 10; // autoboxing int --> Integer 
 val ==> 10
+
+jshell> int ival = val; // auto-unboxing Integer --> int
+ival ==> 10
 ```
 χωρίς autoboxing θα 'πρεπε να γραφτεί (όπως και συνέβαινε σε παλαιότερες εκδόσεις της γλώσσας):
 
 ```java
-jshell> Integer val = new Integer(10).intValue();
+jshell> Integer val = new Integer(10); // int --> Integer 
 val ==> 10
+
+jshell> int ival = val.intValue(); // Integer --> int
+ival ==> 10
 ```
 
 ### Ασκήσεις
