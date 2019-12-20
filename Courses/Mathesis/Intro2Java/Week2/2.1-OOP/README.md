@@ -360,10 +360,10 @@ ival ==> 10
 χωρίς autoboxing θα 'πρεπε να γραφτεί (όπως και συνέβαινε σε παλαιότερες εκδόσεις της γλώσσας):
 
 ```java
-jshell> Integer val = new Integer(10); // int --> Integer 
+jshell> Integer val = new Integer(10); // Boxing: int --> Integer 
 val ==> 10
 
-jshell> int ival = val.intValue(); // Integer --> int
+jshell> int ival = val.intValue(); // Unboxing: Integer --> int
 ival ==> 10
 ```
 

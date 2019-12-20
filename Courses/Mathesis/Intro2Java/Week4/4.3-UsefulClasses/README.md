@@ -136,20 +136,20 @@ jshell> System.out.print(f.format("Όνομα: %2$s, ηλικία: %1$d%n", 1, "
 Το ```conversion``` είναι ένας ειδικός χαρακτήρας που δηλώνει πως θα μορφοποιηθεί το όρισμα, π.χ. ```s```. Συνοπτικά:
 
 | Conversion | Μορφή 
+| ```a``` | δεκαεξαδικός δεκαδικός αριθμός
 | ```b, B``` | ```boolean```
-| ```h``` | ```hexadecimal```
-| ```s, S``` | ```String```
 | ```c, C``` | χαρακτήρας
 | ```d``` | ακέραιος αριθμός
-| ```o``` | οκταδικός αριθμός
-| ```x``` | δεκαεξαδικός αριθμός
 | ```e``` | επιστημονική μορφή ακεραίου π.χ. 2Ε-2
-| ```f``` | ```float```
+| ```f``` | δεκαδικός αριθμός (```float```)
 | ```g``` | επιστημονική μορφή δεκαδικού
-| ```a``` | δεκαεξαδικός δεκαδικός αριθμός
-| ```t, T``` | ημερομηνία/ώρα
-| ```%``` | %
+| ```h``` | ```Integer.toHexString(αριθμός.hashCode())```
 | ```n``` | αλλαγή γραμμής
+| ```o``` | οκταδικός αριθμός
+| ```s, S``` | αλφαριθμητικό ```String```
+| ```t, T``` | ημερομηνία/ώρα
+| ```x``` | δεκαεξαδικός αριθμός (```hexadecimal```)
+| ```%``` | %
 
 Για μια πλήρη περιγραφή βλ. [Formatter ΑΡΙ](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Formatter.html).
 
@@ -631,15 +631,36 @@ jshell> Math.addExact((int)1E30, 1000)
 Υπάρχουν διάφοροι τρόποι να διαβάσουμε από τη μονάδα εισόδου (συνήθως το πληκτρολόγιο):
 
 ### ```System.console```
-Δε δουλεύει με το jshell αλλά διαθέτει τη δυνατότητα να αποκρύπτει την είσοδο (π.χ. για να εισάγετε έναν κωδικό).
+Δε δουλεύει με το jshell (ούτε με το NetBeans) αλλά διαθέτει τη δυνατότητα να αποκρύπτει την είσοδο (π.χ. για να εισάγετε έναν κωδικό).
 
 ```java
-String name = System.console().readLine("Εισάγετε όνομα χρήστη και πατήστε Enter%n");
-System.out.printf("Γειά σου %s!", name);
-System.out.print("Εισάγετε κωδικό και πατήστε Enter: ");
-char[] password = System.console().readPassword();
-```
+import java.io.Console;
+import java.util.Arrays;
 
+public class Test {
+    public static void main(String[] args) {
+        Console console = System.console();
+		if (console != null) { // Console returns null on jshell or inside an IDE
+        	String name = console.readLine("> Εισάγετε όνομα χρήστη και πατήστε Enter%n");
+        	console.printf("Γειά σου %s!%n", name);
+        	console.printf("> Εισάγετε κωδικό και πατήστε Enter: ");
+        	char[] password = console.readPassword();
+        	console.printf("Δώσατε τον κωδικό: %s%n", String.valueOf(password));
+			Arrays.fill(password, ' '); // καλή τεχνική να σβήνετε τον κωδικό αν δε χρησιμοποιείται άλλο
+		}
+    }
+}
+```
+Από ένα κέλυφος Unix/Linux ή τερματικό DOS:
+```java
+$ javac Test.java
+$ java Test
+> Εισάγετε όνομα χρήστη και πατήστε Enter
+Γιάννης
+Γειά σου Γιάννης!
+> Εισάγετε κωδικό και πατήστε Enter: 
+Δώσατε τον κωδικό: pass01
+```
 ### ```java.util.Scanner```
 ```java
 jshell> import java.util.Scanner
@@ -756,6 +777,17 @@ jshell> textIO.getTextTerminal().printf("Username: %s, password %s.\n", username
 ```
 
 Για περισσότερα, αναφερθείτε στις πηγές.
+
+## Ασκήσεις
+1. Να γράψετε ένα πρόγραμμα που να δημιουργεί μια κλάση ```Supplier``` με τα εξής γνωρίσματα: ```long id, String productName, int quantity, String city```. Στη μέθοδο ```main()``` της κλάσης αποθηκεύστε 4 αντικείμενα της κλάσης αυτής σε έναν πίνακα και εμφανίστε την ακόλουθη έξοδο στην οθόνη (ID: 2 χαρακτήρες αριστερής στοίχισης, Name: 6 χαρακτήρες αριστερής στοίχισης, qt: 2 χαρακτήρες, City: 10 χαρακτήρες αριστερής στοίχισης):
+```
+ID Name  qt City
+---------------------- 
+1  Sony  20	Hania
+2  Apple 10	Heraklion
+3  Apple 30	Hania
+4  Dell  40	Rethymnon
+```
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)

@@ -250,9 +250,9 @@ class Weapon {
 
 ```java
 public class Object {
-	boolean	equals​(Object obj); 	// Indicates whether some other object is "equal to" this one.
-	int	hashCode();					// Returns a hash code value for the object.
-	String toString(); 				// Returns a string representation of the object.
+	boolean	equals​(Object obj); // Indicates whether some other object is "equal to" this one.
+	int	hashCode();	// Returns a hash code value for the object.
+	String toString(); 	// Returns a string representation of the object.
 }
 ```
 Είναι πολύ σημαντικό να υπερσκελίζουμε (override) αυτές τις μεθόδους όταν ορίζουμε τις κλάσεις μας. 
@@ -399,11 +399,11 @@ public abstract Shape implements IShape {
 
 Η παραπάνω κλάση δηλώνεται ως αφαιρετική (abstract) καθώς δεν υλοποιεί τις μεθόδους της διεπαφής ```IShape```.
 
-Στη UML ένα interface αναπαρίσταται με δυο τρόπους όπως φαίνεται στην ακόλουθη Εικόνα 2.4.(βλ. και Εικόνα 2.4.2.2.4). Λέμε ότι η κλάση ```Shape``` _πραγματοποιεί (realizes)_ τη διεπαφή ```IShape```.
+Στη UML ένα interface αναπαρίσταται με δυο τρόπους όπως φαίνεται στην ακόλουθη Εικόνα 2.4.3 (βλ. και Εικόνα 2.2.4). Λέμε ότι η κλάση ```Shape``` _πραγματοποιεί (realizes)_ τη διεπαφή ```IShape```.
 
 ![](assets/Fig3.png)
 
-**Εικόνα 2.4.3** _όλες_
+**Εικόνα 2.4.3** _Αναπαράσταση διεπαφής (interface) στη UML_
 
 Χαρακτηριστικές διεπαφές της γλώσσας Java:
 
