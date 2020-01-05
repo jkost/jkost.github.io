@@ -639,7 +639,7 @@ import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) {
-        Console console = System.console();
+		Console console = System.console();
 		if (console != null) { // Console returns null on jshell or inside an IDE
         	String name = console.readLine("> Εισάγετε όνομα χρήστη και πατήστε Enter%n");
         	console.printf("Γειά σου %s!%n", name);
