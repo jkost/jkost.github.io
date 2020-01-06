@@ -7,7 +7,7 @@
 
 ---
 
-Στο προηγούμενο μάθημα μάθαμε τις βασικές κλάσεις για επικοινωνία με τις μονάδες μόνιμης αποθήκευσης. Στην έκδοση 1.4 η γλώσσα εισήγαγε το NIO (New I/O) ενώ στην έκδοση 7 το NIO.2, δηλ. έναν νέο πλούσιο ΑΡΙ για το σκοπό αυτό.
+Στο προηγούμενο μάθημα μάθαμε τις βασικές κλάσεις για επικοινωνία με τις μονάδες μόνιμης αποθήκευσης. Στην έκδοση 1.4 η γλώσσα εισήγαγε το NIO (New I/O) ενώ στην έκδοση 7 το NIO.2, δηλ. ένα νέο πλούσιο ΑΡΙ για το σκοπό αυτό.
 
 | I/O | NIO.2
 | ```java.io``` | ```java.nio.file```
@@ -17,7 +17,7 @@
 | ```-``` | ```FileSystem```
 | ```-``` | ```FileStore```   
 
-Το NIO ΑΡΙ είναι non-blocking, σε αντίθεση με το blocking API του προηγούμενου μαθήματος που περιμένει να διαβαστούν/γραφτούν όλα τα δεδομένα προτού μπορέσει να εκτελέσει άλλες εντολές. Οι κλάσεις NIO δουλεύουν με _κανάλια (channels)_ και _προσωρινές μνήμες (buffers)_ αντί με _ροές (streams)_. Αν ένα νήμα (thread) ζητήσει να διαβάσει ή να γράψει σε ένα κανάλι τότε θα του επιστραφεί ότι υπάρχει στο κανάλι ή την προσωρινή μνήμη ενώ παράλληλα μπορεί να εκτελέσει άλλες εντολές. Επίσης, μπορεί να μετακινηθεί στον buffer μπρος/πίσω (σ' αντίθεση με τις ροές που τα δεδομένα μεταφέρονται προς μια μόνο κατεύθυνση), οπότε μπορούμε να έχουμε ταυτόχρονα ανάγνωση και εγγραφή.
+Το NIO ΑΡΙ είναι non-blocking, σε αντίθεση με το blocking API του προηγούμενου μαθήματος που περιμένει να διαβαστούν/γραφτούν όλα τα δεδομένα προτού μπορέσει να εκτελέσει άλλες εντολές. Οι κλάσεις NIO δουλεύουν με _κανάλια (channels)_ και _προσωρινές μνήμες (buffers)_ αντί για _ροές (streams)_. Αν ένα νήμα (thread) ζητήσει να διαβάσει ή να γράψει σε ένα κανάλι τότε θα του επιστραφεί ότι υπάρχει στο κανάλι ή την προσωρινή μνήμη ενώ παράλληλα μπορεί να εκτελέσει άλλες εντολές. Επίσης, μπορεί να μετακινηθεί στον buffer μπρος/πίσω (σ' αντίθεση με τις ροές που τα δεδομένα μεταφέρονται προς μια μόνο κατεύθυνση), οπότε μπορούμε να έχουμε ταυτόχρονα ανάγνωση και εγγραφή.
  
 Ας δούμε πώς "μεταφράζονται" τα παραδείγματα του προηγούμενου μαθήματος στο ΝΙΟ.2.
 
@@ -57,56 +57,68 @@ path1 ==> C:
 jshell> Path path2 = Paths.get("temp/test.txt");    
 path2 ==> temp/test.txt
 
-jshell> path1.resolve(path2)	// συνένωση
-$1 ==> C:/temp/test.txt
+jshell> path1.equals(path2)
+$1 ==> false
+
+jshell> path1.compareTo(path2) // το path1 < path2 (λεξικογραφικά)
+$2 ==> -49
+
+jshell> path1.resolve(path2) // συνένωση
+$3 ==> C:/temp/test.txt
 
 jshell> path1.relativize(path2)
-$2 ==> ../temp/test.txt
+$4 ==> ../temp/test.txt
 
 jshell> path
 path ==> C:/temp/test.txt
 
 jshell> path.endsWith("test.txt")
-$3 ==> true
+$5 ==> true
 
 jshell> path.resolveSibling("file.txt")	// συνένωση
-$4 ==> C:/temp/file.txt
+$6 ==> C:/temp/file.txt
 
 jshell> path.getFileName()
-$5 ==> test.txt
+$7 ==> test.txt
 
 jshell> path.getNameCount()
-$6 ==> 3
+$8 ==> 3
 
 jshell> path.getName(1)
-$7 ==> temp
+$9 ==> temp
 
 jshell> path.getParent()
-$8 ==> C:/temp
+$10 ==> C:/temp
 
 jshell> path.getRoot()
-$9 ==> null
+$11 ==> null
 
 jshell> Paths.get("/Users/").getRoot()
-$10 ==> /
+$12 ==> /
 
-jshell> path.subpath(1,2)
-$11 ==> temp
+jshell> path.subpath(1,2); // beginIndex, endIndex; index starts from 0
+$13 ==> temp
 
 jshell> path.toString()
-$12 ==> "C:/temp/test.txt"
+$14 ==> "C:/temp/test.txt"
 
 jshell> path.toUri()
-$13 ==> file:///C:/temp/test.txt
+$15 ==> file:///C:/temp/test.txt
+
+jshell> path.isAbsolute()
+$16 ==> true
 
 jshell> path.toAbsolutePath()
-$14 ==> /C:/temp/test.txt
+$17 ==> /C:/temp/test.txt
 
 jshell> Path path = Paths.get("/","tmp","test.txt");    
 path ==> /tmp/test.txt
 
 jshell> path.toRealPath()
-$15 ==> /private/tmp/test.txt
+$18 ==> /private/tmp/test.txt
+
+jshell> path.startsWith("/")
+$19 ==> true
 
 jshell> File f = path.toFile()	// Path ==> File
 f ==> /tmp/test.txt
@@ -150,6 +162,12 @@ $23 ==> "text/plain"
 
 jshell> Files.size(path)
 $24 ==> 0
+
+jshell> Path p = Paths.get("/tmp/test.txt")
+p ==> /tmp/test.txt
+
+jshell> Files.isSameFile(path, p); // άλλος τρόπος πέραν του Path.exists(). Τα paths πρέπει να υπάρχουν.
+$25 ==> true
 ```
 
 * ```text/plain``` δηλώνει αρχείο κειμένου
@@ -158,34 +176,51 @@ $24 ==> 0
 * ```image/png ``` δηλώνει αρχείο εικόνας PNG
 
 ```java
+jshell> Files.getAttribute(path, "creationTime")
+$26 ==> 2019-12-30T21:40:04Z
+
+jshell> Files.getAttribute(path, "lastModifiedTime")
+$27 ==> 2019-12-30T21:40:04Z
+
+jshell> Files.getAttribute(path, "size")
+$28 ==> 0
+
+jshell> Files.getAttribute(path, "isDirectory")
+$29 ==> false
+
+jshell> Files.getAttribute(path, "dos:hidden") // δουλεύει μόνο στα Windows
+|  Exception java.lang.UnsupportedOperationException: View 'dos' not available
+```
+Το 2ο όρισμα της ```getAttribute``` είναι της μορφής _view:attribute_ όπου _view_ μπορεί να είναι: ```basic, dos, posix``` με την ```basic``` να είναι η εξ'ορισμού. Άλλος τρόπος να διαβάσουμε τα γνωρίσματα (attributes) αρχείων και καταλόγων είναι:
+```java
 jshell> import java.nio.file.attribute.*;
 
 jshell> BasicFileAttributes attr = Files.readAttributes(path, BasicFileAttributes.class);
 attr ==> null
 
 jshell> attr.size()
-$4 ==> 0
+$30 ==> 0
 
 jshell> attr.creationTime()
-$5 ==> 2019-02-19T19:52:50Z
+$31 ==> 2019-02-19T19:52:50Z
 
 jshell> attr.lastAccessTime()
-$6 ==> 2019-02-19T19:52:50Z
+$32 ==> 2019-02-19T19:52:50Z
 
 jshell> attr.lastModifiedTime()
-$7 ==> 2019-02-19T19:52:50Z
+$33 ==> 2019-02-19T19:52:50Z
 
 jshell> attr.isDirectory()
-$8 ==> false
+$34 ==> false
 
 jshell> attr.isRegularFile()
-$9 ==> true
+$35 ==> true
 
 jshell> attr.isSymbolicLink()
-$10 ==> false
+$36 ==> false
 
 jshell> attr.isOther()
-$11 ==> false
+$37 ==> false
 
 jshell> FileTime fileTime = FileTime.fromMillis(System.currentTimeMillis());
 fileTime ==> 2019-02-19T21:10:44.927Z
@@ -193,7 +228,7 @@ fileTime ==> 2019-02-19T21:10:44.927Z
 jshell> Files.setLastModifiedTime(path, fileTime);
 
 jshell> Files.getLastModifiedTime(path)
-$12 ==> 2019-02-19T21:10:44Z
+$38 ==> 2019-02-19T21:10:44Z
 ```
 
 * ```BasicFileAttributes```
@@ -312,11 +347,12 @@ $2 ==> true
 jshell> Path newdir3 = FileSystems.getDefault().getPath("/tmp/", "test", "newdir3");
 newdir3 ==> /tmp/test/newdir3
 
-jshell> Files.createDirectories(newdir3);
+jshell> Files.createDirectories(newdir3);  // creates intermediate directories too, if they do not exist
 
 jshell> Files.exists(newdir3)
 $3 ==> true
 ```
+
 
 Δημιουργία αρχείου:
 
@@ -326,24 +362,6 @@ newfile ==> /tmp/newfile
 
 jshell> Files.createFile(newfile);
 ```
-
-## Διαγραφή
-
-```java
-jshell> Files.deleteIfExists(path)
-$1 ==> true
-```
-Οι εντολές ```deleteIfExists(), delete()``` εγείρουν εξαιρέσεις σε περίπτωση που κάτι πάει στραβά:
-
-```java
-jshell> try {
-   ...> Files.delete(path);
-   ...> } catch (IOException x) {
-   ...> System.out.println("Deletion failed");
-   ...> }	
-Deletion failed
-```
-Οι ακόλουθες εξαιρέσεις μπορούν να εγερθούν: ```NoSuchFileException, DirectoryNotEmptyException, IOException, SecurityException```.
 
 ## Εμφάνιση καταλόγου
 
@@ -549,11 +567,32 @@ jshell> try (BufferedWriter writer = Files.newBufferedWriter(path, Charset.forNa
 * ```DELETE_ON_CLOSE``` 
 * ```TRUNCATE_EXISTING``` 
 
-## Αντιγραφή αρχείου
-Στο μάθημα με τις εξαιρέσεις είδαμε έναν τρόπο αντιγραφής ενός αρχείου. Ένας γρήγορος τρόπος αντιγραφής αρχείων είναι ο παρακάτω:
+## Αντιγραφή αρχείου/φακέλου
+Στο προηγούμενο μάθημα και στο μάθημα με τις εξαιρέσεις είδαμε έναν τρόπο αντιγραφής ενός αρχείου. Η ```Files.copy()``` κάνει την ίδια δουλειά:
 
 ```java
-jshell> File sourceFile = path.toFile()
+jshell> path // το πηγαίο αρχείο πρέπει να υπάρχει
+path ==> /tmp/test.txt
+
+jshell> Path backup = Paths.get("/tmp/test.bak")
+backup ==> /tmp/test.bak
+
+jshell> Files.copy(path, backup) 
+$1 ==> /tmp/test.bak
+
+jshell> Files.copy(path, dest)
+|  Exception java.nio.file.FileAlreadyExistsException: /tmp/test.bak
+
+jshell> Files.copy(path, dest, StandardCopyOption.REPLACE_EXISTING);
+$2 ==> /tmp/test.bak
+```
+
+Η ```Files.copy()``` δουλεύει και για φακέλους αλλά να θυμάστε ότι δεν αντιγράφει υπο-φακέλους. Θα πρέπει να την χρησιμοποιήσετε για ν' αντιγράψετε κάθε υπο-φάκελο.
+
+Ένας γρήγορος τρόπος αντιγραφής αρχείων είναι και ο παρακάτω:
+
+```java
+jshell> File sourceFile = path.toFile() // το πηγαίο αρχείο πρέπει να υπάρχει
 sourceFile ==> /tmp/test.txt
 
 jshell> File destFile = Paths.get("/tmp/backup.txt").toFile()
@@ -573,6 +612,46 @@ jshell> if (sourceFile.exists() && destFile.exists()) {
    ...> }
    ...> }
 ```
+
+## Μετονομασία/μετακίνηση αρχείου/φακέλου
+```java
+jshell> Path path = Files.createFile(Paths.get("C:/temp/test.txt")); // το αρχείο πρέπει να υπάρχει
+path ==> C:\temp\test.txt
+
+jshell> Path targetPath = Paths.get("C:/Users/john/"); // must be a directory
+targetPath ==> C:\Users\john
+ 
+jshell> Files.move(path, targetPath.resolve(path.getFileName()), StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE); 
+$1 ==> C:\Users\john\test.txt
+```
+
+Δουλεύει και για φακέλους αν θέλετε μόνο να μετονομάσετε το φάκελο. Δε δουλεύει αν θέλετε να μετακινήσετε το φάκελο σε άλλο σύστημα αρχείων ή drive.
+
+Εάν μετακινήσετε (move) έναν σύνδεσμο (symbolic link), μετακινείται ο ίδιος ο σύνδεσμος, όχι το αρχείο που δείχνει ο σύνδεσμος. Είναι σημαντικό να σημειωθεί ότι στην περίπτωση της αντιγραφής (copy) που είδαμε προηγούμενα, αντιγράφεται το αρχείο που δείχνει ο σύνδεσμος κι όχι ο ίδιος ο σύνδεσμος.
+
+Η παράμετρος ```StandardCopyOption.ATOMIC_MOVE``` εγγυάται ότι αν αποτύχει η μετακίνηση τότε το πηγαίο αρχείο/φάκελος παραμένει άθικτο.
+
+## Διαγραφή αρχείου/φακέλου
+
+```java
+jshell> Files.deleteIfExists(path)
+$1 ==> true
+```
+Οι εντολές ```deleteIfExists(), delete()``` εγείρουν εξαιρέσεις σε περίπτωση που κάτι πάει στραβά:
+
+```java
+jshell> try {
+   ...> Files.delete(path);
+   ...> } catch (IOException x) {
+   ...> System.out.println("Deletion failed");
+   ...> }	
+Deletion failed
+```
+Οι ακόλουθες εξαιρέσεις μπορούν να εγερθούν: ```NoSuchFileException, DirectoryNotEmptyException, IOException, SecurityException```.
+
+Στην περίπτωση διαγραφής καταλόγου (φακέλου), θα πρέπει να είναι άδειος. 
+
+Στην περίπτωση ενός συμβολικού συνδέσμου (symbolic link), ο σύνδεσμος διαγράφεται, όχι το αρχείο που δείχνει ο σύνδεσμος.
 
 ## Συντομεύσεις (Symbolic links)
 Στα συστήματα Unix, υπάρχει η δυνατότητα δημιουργίας συνδέσμων (links) και μάλιστα hard links και soft ή symbolic links. Στα Windows είναι οι αντίστοιχες συντομεύσεις (shortcuts). Το hard link είναι στην ουσία ένα αντίγραφο ενός αρχείου (δεν υπάρχουν hard links για φακέλους). Το soft link είναι απλά ένας δείκτης σ' ένα αρχείο ή φάκελο. Θα πρέπει να υπάρχει το αρχείο για να δημιουργηθεί ένα soft link γι' αυτό. Αντιθέτως, ο "στόχος" που δείχνει ένα soft link μπορεί και να μην υπάρχει με αποτέλεσμα το soft link να είναι "τζούφιο, άδειο", να μη δείχνει πουθενά (π.χ. επειδή το αρχείο ή ο φάκελος στο οποίο έδειχνε διαγράφηκε). Αντιθέτως, αν διαγράψετε το αρχείο που δείχνει το hard link, τότε το hard link συνεχίζει να υπάρχει ως αντίγραφο του αρχικού αρχείου. 
@@ -607,17 +686,158 @@ $2 ==>
 
 Επίσης, θα πρέπει να σημειώσουμε ότι στα Unix συστήματα, αντιγράφοντας ή μετακινώντας (```cp, mv```) έναν σύνδεσμο αντιγράφει/μετακινεί τον ίδιο το σύνδεσμο κι όχι το αρχείο/φάκελο στον οποίο δείχνει. 
 
+## Κανάλια 
+Στην αρχή του μαθήματος είπαμε ότι το ΝΙΟ είναι non-blocking. Αυτό το επιτυγχάνει χάρις στις νέες ασύγχρονες κλάσεις που εισάγει στη βιβλιοθήκη ```java.nio.channels``` όπως φαίνεται στην ακόλουθη εικόνα:
+
+![](assets/Fig1.png)
+
+**Εικόνα 5.3.1** _Διάγραμμα κλάσεων ιεραρχίας Καναλιών (Channels)_
+
+Στην εικόνα προσέξτε την ιεραρχία διαμάντι μεταξύ των διεπαφών ```Channel, ReadableByteChannel, WritableByteChannel, ByteChannel``` που, όπως είδαμε στα μαθήματα της 2ης εβδομάδας, είναι κάτι που πρέπει να αποφεύγεται. Στην συγκεκριμένη περίπτωση καθώς δεν υπάρχουν επικαλυπτώμενες μέθοδοι, δεν υπάρχει κάποιο πρόβλημα.
+
+Θα επικεντρωθούμε στα κανάλια διαχείρισης αρχείων (```AsynchronousFileChannel``` και ```FileChannel```), αλλά υπάρχουν και ```AsynchronousSocketChannel, AsynchronousServerSocketChannel, AsynchronousDatagramChannel``` για ασύγχρονη διαχείριση TCP και UDP sockets. Όπως είπαμε, με τον όρο _ασύγχρονο Ι/Ο_ εννοούμε Ι/Ο (Input/Output) που δεν μπλοκάρει περιμένοντας δεδομένα από τη ροή ή το κανάλι επικοινωνίας. Όταν δεν υπάρχουν δεδομένα να διαχειριστεί, ελευθερώνει τον επεξεργαστή ώστε να εκτελέσει άλλες ενέργειες και αναλαμβάνει πάλι δράση όταν υπάρχουν δεδομένα προς επεξεργασία (δέχεται κάποια διακοπή - interrupt). 
+
+Σ' ένα εισαγωγικό μάθημα σαν κι αυτό, δε θα εντρυφήσουμε στα κανάλια, ένα παράδειγμα χρήσης των οποίων είδαμε πιο πάνω στην αντιγραφή αρχείου. Τα κανάλια δουλεύουν με ```ByteBuffer```s τα οποία ξεφεύγουν από τις ανάγκες ενός εισαγωγικού μαθήματος της γλώσσας. Παρόλ' αυτά θα δώσουμε εδώ μια μικρή εισαγωγή κι ένα παράδειγμα χρήσης. 
+
+Ένας ```java.nio.ByteBuffer```, όπως λέει και τ' όνομά του, είναι μια προσωρινή/ενδιάμεση θέση μνήμης για αποθήκευση bytes, ή πιο σωστά μια όψη (view) σε μια ακολουθία από bytes. Υπάρχουν δυο κατηγορίες: αυτοί που χρησιμοποιούν μια συστοιχία (array) και αυτές που χρησιμοποιούν απευθείας ένα μέρος της μνήμης σωρού (heap).  
+
+Όπως βλέπετε στο παρακάτω σχήμα, ένας ByteBuffer διαθέτει κάποιους δείκτες:
+
+* ```capacity```: δείχνει στο τέλος του ByteBuffer και δηλώνει τη χωρητικότητά του, δηλ. τον αριθμό bytes που χωράει
+* ```limit```: δείχνει στο τέλος των δεδομένων, δηλ. στην επόμενη θέση από την θέση του τελευταίου δεδομένου
+* ```position```: δείχνει στη θέση του επόμενου στοιχείου προς ανάγνωση ή εγγραφή
+* ```mark```: δείχνει σε μια θέση που εσείς θέλετε, κάτι σαν σελιδοδείκτης
+
+Ισχύει: 0 <= mark <= position <= limit <= capacity
+
+![](assets/Fig2.png)
+
+**Εικόνα 5.3.2** _ByteBuffer συστοιχίας_
+
+Διαβάστε περισσότερα στις πηγές (π.χ. [Schuller, 2012]).
+
+Στο προηγούμενο μάθημα είδαμε ένα παράδειγμα αποθήκευσης (σειριοποίησης) μιας ιεραρχίας κλάσεων (```Track```) σ' ένα αρχείο με τη χρήση της ```ObjectOutputStream```. Το μέγεθος του αρχείου ```tracks.dump``` είναι 329 bytes. 
+
+Ένα ```AirTrack``` όμως καταλαμβάνει 25 bytes στη μνήμη:
+
+* ```TrackType trackType; // 1 byte```
+* ```int speed; // 4 bytes```
+* ```int height; // 4 bytes```
+* ```double x; // 8 bytes```
+* ```double y; // 8 bytes```
+
+και αντίστοιχα ένα ```LandTrack``` καταλαμβάνει 21 bytes. 
+
+```java
+Track airTrack = new AirTrack(5000, 10000, 20.0, -20.0);    // 25 bytes 
+Track landTrack = new LandTrack(20, 10.0, -25.0);           // 21 bytes 
+List<Track> tracks = new ArrayList<>();
+tracks.add(airTrack);
+tracks.add(landTrack);
+```
+Επιπλέον θα πρέπει ν' αποθηκεύσουμε πόσα ίχνη θ' αποθηκεύσουμε στο αρχείο, στο παράδειγμά μας 2 ίχνη, έναν αέρος και ένα εδάφους, που είναι άλλος ένας ακέραιος, δηλ. άλλα 4 bytes. Άρα συνολικά χρειαζόμαστε έναν ```ByteBuffer``` μεγέθους 25 + 21 + 4 = 50 bytes.
+
+```java
+ByteBuffer buffer = ByteBuffer.allocate(50);    // 25 + 21 + 4 bytes
+// try (RandomAccessFile store = new RandomAccessFile(new File("./tracks.dump"), "rw");
+//      FileChannel channel = store.getChannel()) {
+try (SeekableByteChannel channel = (Files.newByteChannel("./tracks.dump",
+     EnumSet.of(StandardOpenOption.CREATE, StandardOpenOption.WRITE)))) {
+     channel.position(0);
+     buffer.putInt(tracks.size()); // 4 bytes
+     for (Track track : tracks) {
+         System.out.println(track.toString());
+         buffer.put((byte) track.getTrackType().ordinal());  // 1 byte
+         buffer.putDouble(track.getX());     // 8 bytes
+         buffer.putDouble(track.getY());     // 8 bytes
+         buffer.putInt(track.getSpeed());    // 4 bytes
+         if (track.getTrackType() == Track.TrackType.AIR) {
+             buffer.putInt(((AirTrack) track).getHeight());  // 4 bytes
+         }
+	 }
+    buffer.flip();  // limit = position; position = 0; <-- don't forget this!!!
+    int nOfBytes = channel.write(buffer);
+    System.out.println("Bytes written: " + nOfBytes);
+    buffer.clear();
+} catch (IOException ex) {
+    System.err.println(ex);
+}
+```
+Το μέγεθος του αρχείου ```tracks.dump``` είναι πλέον μόνο 50 bytes.
+
+Για να διαβάσετε το αρχείο ```tracks.dump```:
+
+```java
+// try (RandomAccessFile store = new RandomAccessFile(new File("./tracks.dump"), "r");
+//      FileChannel channel = store.getChannel()) {
+try (SeekableByteChannel channel = (Files.newByteChannel("./tracks.dump",
+     EnumSet.of(StandardOpenOption.READ)))) {
+     channel.position(0);
+//   buffer.flip();      // limit = position; position = 0;
+//   buffer.rewind();    // position = 0; mark discarded
+//   buffer.clear();     // position =0; limit = capacity; mark discarded
+    int nbytes;
+    do {
+        nbytes = channel.read(buffer);
+    } while (nbytes != -1 && buffer.hasRemaining());
+    System.out.println("Bytes read: " + nbytes);
+    buffer.flip(); // limit = position; position = 0; <-- don't forget this!!!
+    int numOfTracks = buffer.getInt();
+    for (int i = 0; i < numOfTracks; i++) {
+        byte type = buffer.get();      // 1 byte
+        Track.TrackType trackType = Track.TrackType.values()[type];
+        Track t = null;
+        double x = buffer.getDouble();      // 8 bytes
+        double y = buffer.getDouble();      // 8 bytes
+        int speed = buffer.getInt();        // 4 bytes
+        if (trackType == Track.TrackType.AIR) {
+            int height = buffer.getInt();  // 4 bytes
+            t = new AirTrack(height, speed, x, y);
+        } else if (trackType == Track.TrackType.LAND) {
+            t = new LandTrack(speed, x, y);
+        }
+        if (t != null) {
+            System.out.println(t.toString());
+        }
+    }
+} catch (IOException ex) {
+    System.err.println(ex);
+}
+```
+Υπάρχουν πολλοί τρόποι να λάβουμε ένα κανάλι, είδαμε μερικούς πιο πάνω κι άλλον έναν παρακάτω:
+
+```java
+ByteBuffer buffer = ByteBuffer.allocateDirect(50);
+try (FileChannel rdr = (new FileInputStream("./tracks.dump")).getChannel()) {
+   while (rdr.read(buffer) > 0) {
+     // Do something with the buffer
+     buffer.clear();
+   }
+} catch (IOException ex) {
+   System.err.println(ex);
+}
+```
+
 ## Περίληψη
-Σ' αυτό το μάθημα είδαμε κάποιες από τις δυνατότητες του NIO.2. Ασχοληθήκαμε μόνο με αρχεία κειμένου (παραλείψαμε τα δυαδικά αρχεία η εγγραφή/ανάγνωση των οποίων γίνεται με την ```ByteBuffer```) ενώ δεν αναφερθήκαμε στις δυνατότητες που παρέχει το NIO.2 API να ανιχνεύουμε αλλαγές στο σύστημα αρχείων (```java.nio.file.WatchService```).
+Σ' αυτό το μάθημα είδαμε κάποιες από τις δυνατότητες του NIO.2. Μιλήσαμε για τις δυο βασικές κλάσεις ```java.nio.file.Path``` και ```java.nio.file.Files```, για symbolic links και είδαμε ένα παράδειγμα καναλιών (Channels) με τη χρήση ```ByteBuffer```s. Δεν αναφερθήκαμε στις δυνατότητες που παρέχει το NIO.2 API να ανιχνεύουμε αλλαγές στο σύστημα αρχείων (```java.nio.file.WatchService```).
+
+Πέρα από τα αρχεία, μπορείτε να αποθηκεύσετε τα δεδομένα σας και σε βάσεις δεδομένων, που είναι το θέμα του επόμενου μαθήματος. 
 
 ## Πηγές
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
+1. Baeldung (2019), [Guide to Java FileChannel](https://www.baeldung.com/java-filechannel)
 1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
 1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
+1. Gupta L. [Working With Buffers – Java NIO 2.0](https://howtodoinjava.com/java7/nio/java-nio-2-0-working-with-buffers/)
+1. Jenkov, [Java NIO Buffer](http://tutorials.jenkov.com/java-nio/buffers.html)
 1. Leonard A. (2011), _Pro Java 7 NIO.2_, Apress.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
-1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley.
+1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley.
+1. Long F. et al. (2014), _Java Coding Guidelines_, Pearson. 
+1. Schuller P. (2012), ["The Java ByteBuffer – a crash course"](https://www.javacodegeeks.com/2012/12/the-java-bytebuffer-a-crash-course.html), JavaCodeGeeks.
 1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
+1. [Java NIO Buffer](https://javapapers.com/java/java-nio-buffer/)
 
 ---
 
