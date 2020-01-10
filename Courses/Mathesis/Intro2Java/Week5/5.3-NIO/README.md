@@ -823,6 +823,9 @@ try (FileChannel rdr = (new FileInputStream("./tracks.dump")).getChannel()) {
 
 Πέρα από τα αρχεία, μπορείτε να αποθηκεύσετε τα δεδομένα σας και σε βάσεις δεδομένων, που είναι το θέμα του επόμενου μαθήματος. 
 
+## Ασκήσεις
+1) Επιλύστε την άσκηση 1 του προηγούμενου μαθήματος χρησιμοποιώντας το ΝΙΟ.2 ΑΡΙ.
+
 ## Πηγές
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Baeldung (2019), [Guide to Java FileChannel](https://www.baeldung.com/java-filechannel)
