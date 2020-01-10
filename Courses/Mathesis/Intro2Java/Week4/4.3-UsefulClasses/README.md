@@ -783,10 +783,10 @@ jshell> textIO.getTextTerminal().printf("Username: %s, password %s.\n", username
 ```
 ID Name  qt City
 ---------------------- 
-1  Sony  20	Hania
-2  Apple 10	Heraklion
-3  Apple 30	Hania
-4  Dell  40	Rethymnon
+1  Sony  20 Hania
+2  Apple 10 Heraklion
+3  Apple 30 Hania
+4  Dell  40 Rethymnon
 ```
 
 ## Πηγές:
