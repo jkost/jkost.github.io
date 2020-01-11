@@ -363,6 +363,8 @@ jshell> BigInteger valueFromLong = BigInteger.valueOf(longValue);
 valueFromLong ==> 9223372036854775807
 ```
 
+Για να αναπαραστήσετε αριθμούς μεγαλύτερους του ```Long.MAX_VALUE``` ή μικρότερους του ```Long.MIN_VALUE``` χρησιμοποιήστε τη μέθοδο κατασκευής που δέχεται ένα αλφαριθμητικό ως όρισμα.
+
 Μπορεί ν' αναπαραστήσει και αριθμούς διαφορετικής βάσης (```BigInteger(String val, int radix)```):
 
 ```java
@@ -387,7 +389,7 @@ valueFromBytes ==> 128
 jshell> new BigInteger(32, new Random());    // BigInteger(int numBits, Random rnd)
 $3 ==> 1009907818
 ```
-Μπορείτε να χρησιμοποιήστε και την ```SecureRandom()``` όπως μάθαμε προηγούμενα. 
+Μπορείτε να χρησιμοποιήσετε και την ```SecureRandom()``` όπως μάθαμε προηγούμενα. 
 
 ### Μαθηματικοί τελεστές
 * ```add()```
@@ -788,6 +790,8 @@ ID Name  qt City
 3  Apple 30 Hania
 4  Dell  40 Rethymnon
 ```
+
+2. Υλοποιήστε τον αλγόριθμο εύρεσης του ν-στού αριθμού Fibonacci της άσκησης 7 του 8ου μαθήματος της 1ης εβδομάδας χρησιμοποιώντας ```BigInteger``` και υπολογίστε έναν πολύ μεγάλο αρ. Fibonacci, π.χ. τον 5000-ό. Επαληθεύστε την υλοποίησή σας [εδώ](https://keisan.casio.com/exec/system/1180573404). 
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)

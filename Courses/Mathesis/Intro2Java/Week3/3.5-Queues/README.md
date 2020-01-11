@@ -236,13 +236,13 @@ jshell> deque.removeLast()
 Αν η σειρά με την οποία θέλουμε να προσπελάσουμε τα στοιχεία είναι σημαντική, τότε μπορούμε να χρησιμοποιήσουμε μια ουρά προτεραιότητας ή ```PriorityQueue```. Η σειρά (ταξινόμηση) των στοιχείων βασίζεται είτε στη φυσική σειρά των στοιχείων (αν υλοποιούν τη διεπαφή ```Comparable```), είτε τη σειρά που ορίζει ένας ```Comparator``` που παρέχεται στη μέθοδο κατασκευής της ```PriorityQueue```.
 
 ```java
-PriorityQueue() 				// φυσική ταξινόμηση, αρχική χωρητικότητα (11)
-PriorityQueue(Collection<? extends E> c) 				// φυσική ταξινόμηση, εκτός κι αν c είναι τύπου PriorityQueue ή 
-				// SortedSet οπότε κληρονομεί τη σειρά ταξινόμησης της
-PriorityQueue(int initialCapacity)				// φυσική ταξινόμηση
-PriorityQueue(int initialCapacity, Comparator<? super E> comparator)	// η ταξινόμηση ορίζεται από τον Comparator
-PriorityQueue(PriorityQueue<? extends E> c)					// ταξινόμηση αυτή της c
-PriorityQueue(SortedSet<? extends E> c)  					// ταξινόμηση αυτή της c
+PriorityQueue() // φυσική ταξινόμηση, αρχική χωρητικότητα (11)
+PriorityQueue(Collection<? extends E> c) // φυσική ταξινόμηση, εκτός κι αν c είναι τύπου PriorityQueue ή 
+ // SortedSet οπότε κληρονομεί τη σειρά ταξινόμησης της
+PriorityQueue(int initialCapacity) // φυσική ταξινόμηση
+PriorityQueue(int initialCapacity, Comparator<? super E> comparator) // η ταξινόμηση ορίζεται από τον Comparator
+PriorityQueue(PriorityQueue<? extends E> c) // ταξινόμηση αυτή της c
+PriorityQueue(SortedSet<? extends E> c) // ταξινόμηση αυτή της c
 ```
 
 Έστω π.χ. ότι έχουμε μια κλάση ```Task```:
