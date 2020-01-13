@@ -738,7 +738,7 @@ tracks.add(landTrack);
 ByteBuffer buffer = ByteBuffer.allocate(50);    // 25 + 21 + 4 bytes
 // try (RandomAccessFile store = new RandomAccessFile(new File("./tracks.dump"), "rw");
 //      FileChannel channel = store.getChannel()) {
-try (SeekableByteChannel channel = (Files.newByteChannel("./tracks.dump",
+try (SeekableByteChannel channel = (Files.newByteChannel(Paths.get("./tracks.dump"),
      EnumSet.of(StandardOpenOption.CREATE, StandardOpenOption.WRITE)))) {
      channel.position(0);
      buffer.putInt(tracks.size()); // 4 bytes
@@ -767,7 +767,7 @@ try (SeekableByteChannel channel = (Files.newByteChannel("./tracks.dump",
 ```java
 // try (RandomAccessFile store = new RandomAccessFile(new File("./tracks.dump"), "r");
 //      FileChannel channel = store.getChannel()) {
-try (SeekableByteChannel channel = (Files.newByteChannel("./tracks.dump",
+try (SeekableByteChannel channel = (Files.newByteChannel(Paths.get("./tracks.dump"),
      EnumSet.of(StandardOpenOption.READ)))) {
      channel.position(0);
 //   buffer.flip();      // limit = position; position = 0;
