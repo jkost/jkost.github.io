@@ -52,7 +52,7 @@ System.out.println(messages.getString("farewell"));
 * ```Locale(String language, String country)```
 * ```Locale(String language, String country, String variant)```
 
-Οι γλώσσες (language) ([ISO 639](http://www.loc.gov/standards/iso639-2/php/code_list.php) και [IETF BCP 47](https://tools.ietf.org/html/bcp47)) και οι χώρες  (country) ([ISO 3166](http://www.chemie.fu-berlin.de/diverse/doc/ISO_3166.html) ή [UN M.49](https://en.wikipedia.org/wiki/UN_M49)) ορίζονται [εδώ](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry). Μια χώρα ορίζεται από 2 ή 3 χαρακτήρες. Τέλος, η παραλλαγή χρησιμοποιείται για να δείξει μια παραλλαγή ενός Locale, π.χ. ```"polyton"``` (πολυτονικά ελληνικά), ```"POSIX"``` κλπ.
+Οι γλώσσες (language) ([ISO 639](http://www.loc.gov/standards/iso639-2/php/code_list.php) και [IETF BCP 47](https://tools.ietf.org/html/bcp47)) και οι χώρες  (country) ([ISO 3166](http://www.chemie.fu-berlin.de/diverse/doc/ISO_3166.html) ή [UN M.49](https://en.wikipedia.org/wiki/UN_M49)) ορίζονται [εδώ](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry). Μια χώρα ορίζεται από 2 ή 3 χαρακτήρες. Τέλος, η παραλλαγή χρησιμοποιείται για να δείξει μια παραλλαγή ενός Locale, π.χ. ```"polyton"``` (πολυτονικά ελληνικά), ```"POSIX"``` κλπ. Μπορείτε να βρείτε τις κωδικοποιήσεις (encodings) που υποστηρίζει η γλώσσα [εδώ](https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html).
 
 Υπάρχουν φυσικά και σταθερές για τις πιο δημοφιλής γλώσσες:
 
@@ -125,6 +125,8 @@ public static void main(String[] args) {
 3. Δημιουργήστε στον κώδικά σας ένα αντικείμενο τύπου ```Locale``` παρέχοντάς του τους κατάλληλους κωδικούς γλώσσας και χώρας.
 4. Δημιουργήστε στον κώδικά σας ένα αντικείμενο τύπου ```ResouceBundle``` για να φορτώσετε το κατάλληλο αρχείο ιδιοτήτων που περιέχει τις μεταφράσεις που επιθυμείτε
 5. Ανακτήστε την αντίστοιχη μετάφραση δίνοντας το κλειδί στο ```ResourceBundle``` με τη μέθοδο ```getString()```.
+
+**Σημείωση** _Ένα πρόγραμμα Java εκτελείται με την εξ' ορισμού κωδικοποίηση του συστήματος που είναι εγκατεστημένη η ΕΜ της Java. Μπορείτε όμως να εκκινήσετε ένα πρόγραμμα Java περνώντας του την παράμετρο ```-Dfile.encoding=<encoding>``` π.χ. ```-Dfile.encoding=UTF-8``` για να το εκτελέσετε με άλλη κωδικοποίηση απ' αυτή του συστήματος. Π.χ. ```java -Dfile.encoding=UTF-8 Main el GR```._
 
 ## Τοπικοποίηση (Localization)
 Πιο πάνω είδαμε δυο τρόπους δημιουργίας ```Locale```:
