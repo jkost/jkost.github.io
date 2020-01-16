@@ -58,7 +58,7 @@ public double area() {
 
 Όταν μια υποκλάση υπερσκελίζει μια μέθοδο της υπερκλάσης, θα πρέπει να δώσει τα ίδια ή περισσότερα δικαιώματα πρόσβασης, αλλά όχι λιγότερα. Π.χ. αν η γονική μέθοδος παρέχει ```protected``` πρόσβαση, τότε η υποκλάση δεν μπορεί να δώσει π.χ. πρόσβαση ```private``` (λάθος μεταγλώττισης).
 
-## Πρόσδεση ( Binding) και τύποι πρόσδεσης
+## Πρόσδεση (Binding) και τύποι πρόσδεσης
 Με τον όρο _Πρόσδεση (Binding)_ εννοούμε την σύνδεση δυο πραγμάτων, π.χ. τη σύνδεση μιας μεταβλητής με μια τιμή είτε το κάλεσμα μιας μεθόδου με τις παραμέτρους που της περνάμε. Υπάρχουν δυο είδη πρόσδεσης:
 
 * _Στατική (Early ή static)_ συμβαίνει προτού εκτελεστεί το πρόγραμμα από τον μεταγλωττιστή ή τον συνδέτη (linker). Τέτοιου είδους πρόσδεση υποστηρίζεται από γλώσσες όπως η C ή η C++
@@ -107,7 +107,7 @@ public abstract class Shape implements IShape {
 
     Shape(int edges) {
         this.points = new Point[edges];
-        draw();								// (2)
+        draw();		// (2)
     }
 
     Shape(Point[] points) {
@@ -169,7 +169,7 @@ public class Circle extends Shape {
     private final int radius;
 
     Circle() {
-        super(1);					// (1)
+        super(1);		// (1)
         this.radius = 1;
     }
 
@@ -194,14 +194,14 @@ public class Circle extends Shape {
 
     @Override
     public void draw() {
-        System.out.println("Draws a circle...");	// (3)
+        System.out.println("Draws a circle...");		// (3)
     }
 }
 
 public class Main {
     public static void main(String[] args) {
         Shape s = new Circle();
-        s.draw();									// (4)
+        s.draw();		// (4)
     }
 }
 ```
