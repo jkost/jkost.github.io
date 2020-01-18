@@ -348,8 +348,8 @@ private class Secret {
 ```java
 import utils.*;
 ...
-Util.circumference(12.0);  	// Error: έχει πρόσβαση package
-Util.area(12.0);  			// OK: έχει πρόσβαση public
+Util.circumference(12.0);   // Error: έχει πρόσβαση package
+Util.area(12.0);   // OK: έχει πρόσβαση public
 ```
 διαφορετικά αν δεν χρησιμοποιήσουμε την ```import```:
 ```java
@@ -447,7 +447,7 @@ To Apache NetBeans υποστηρίζει modules.
 
 **Εικόνα 2.3.6** _Γραφική αναπαράσταση εξαρτήσεων από το NetBeans_
 
-```
+```java
 module AnagramGame {
 	requires java.logging;
 	requires java.desktop;
