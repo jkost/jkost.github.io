@@ -48,6 +48,9 @@ path ==> /home/user/test.txt
 jshell> Path path = FileSystems.getDefault().getPath("C:\\temp\\test.txt");
 path ==> C:\temp\test.txt
 
+jshell> Path path = Path.of("C:\\temp\\test.txt");
+path ==> C:\temp\test.txt
+
 jshell> Path path = Paths.get(System.getProperty("user.home"), "downloads", "test.txt");
 path ==> /Users/MyMacBook/downloads/test.txt
 
