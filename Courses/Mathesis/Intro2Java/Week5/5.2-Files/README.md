@@ -137,6 +137,7 @@ $20 ==> "/private/tmp/test.txt"
 * ```setWritable(boolean writable, boolean ownerOnly)``` // αν ```ownerOnly == false``` ```-w--w--w-``` αλλοιώς ```-w--------```
 * ```setExecutable(boolean executable)``` // για εκτέλεση μόνο από τον ιδιοκτήτη του αρχείου/φακέλου δηλ. ```--x------```
 * ```setExecutable(boolean executable, boolean ownerOnly)``` // αν ```ownerOnly == false``` ```--x--x--x``` αλλοιώς ```--x------```
+
 Αν εκτελεστούν με επιτυχία τότε επιστρέφουν ```true```.
 
 ## Ανάγνωση/εγγραφή αρχείων
