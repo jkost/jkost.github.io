@@ -848,6 +848,7 @@ try (FileChannel rdr = (new FileInputStream("./tracks.dump")).getChannel()) {
 1. Baeldung (2019), [Guide to Java FileChannel](https://www.baeldung.com/java-filechannel)
 1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
 1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
+1. Friesen J. (2015), _Java I/O, NIO and NIO.2_, APress.
 1. Gupta L. [Working With Buffers – Java NIO 2.0](https://howtodoinjava.com/java7/nio/java-nio-2-0-working-with-buffers/)
 1. Jenkov, [Java NIO Buffer](http://tutorials.jenkov.com/java-nio/buffers.html)
 1. Leonard A. (2011), _Pro Java 7 NIO.2_, Apress.

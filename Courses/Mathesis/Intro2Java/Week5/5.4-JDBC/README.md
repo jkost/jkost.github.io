@@ -114,12 +114,19 @@ public class UserDBApp {
             connection = DriverManager.getConnection(URL, DB_ADMIN_USERNAME, DB_ADMIN_PASSWORD);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
+            try {
+               if (connection != null) {
+                  connection.close();
+			   }
+            } catch (SQLException e) {
+               System.err.println(e.getMessage());
+            }
         }
         return connection;
     }
 }
 ```
-Η μέθοδος ```getConnection()``` δημιουργεί μια σύνδεση (```Connection```) με τη ΒΔ που ορίζεται με το ```URL```. Το όνομα χρήστη και ο κωδικός του διαχειριστή της ΒΔ δεν απαιτούνται από την SQLite, αλλά απαιτούνται από άλλες ΒΔ όπως π.χ. MySQL κλπ. **Προσοχή**, τα ```DB_ADMIN_USERNAME, DB_ADMIN_PASSWORD``` χρησιμοποιούνται για να συνδεθούμε με το ΣΔΒΔ της SQLite και δεν έχουν καμία σχέση με τα περιεχόμενα του πίνακα ```Users```.  
+Η μέθοδος ```getConnection()``` δημιουργεί μια σύνδεση (```Connection```) με τη ΒΔ που ορίζεται με το ```URL```. Το όνομα χρήστη και ο κωδικός του διαχειριστή της ΒΔ δεν απαιτούνται από την SQLite, αλλά απαιτούνται από άλλες ΒΔ όπως π.χ. MySQL κλπ. **Προσοχή**, τα ```DB_ADMIN_USERNAME, DB_ADMIN_PASSWORD``` χρησιμοποιούνται για να συνδεθούμε με το ΣΔΒΔ της SQLite και δεν έχουν καμία σχέση με τα περιεχόμενα του πίνακα ```Users```. Παρατηρήστε ότι αν συμβεί κάποιο λάθος δε θέλουμε το ```connection``` να παραμείνει ανοικτό. 
 
 Ας δούμε πώς μπορούμε να διαβάσουμε τα περιεχόμενα του πίνακα ```Users```:
 
@@ -140,17 +147,18 @@ public class UserDBApp {
      * @param dbConnection database connection
      */
     public static void selectAll(Connection dbConnection) {
-        try (Statement stmt = dbConnection.createStatement();
+		if (dbConnection != null) {
+          try (Statement stmt = dbConnection.createStatement();
              ResultSet rs = stmt.executeQuery(SQL_SELECT_ALL)) {
-
             // loop through the result set
             while (rs.next()) {
                 System.out.println(rs.getString("username") + "\t"
                         + rs.getString("password"));
             }
-        } catch (SQLException e) {
+          } catch (SQLException e) {
             System.out.println(e.getMessage());
-        }
+          }
+		}
     }	
 //...	
 ```
@@ -160,7 +168,7 @@ public class UserDBApp {
 
 Ανάλογα με τον τύπο των δεδομένων, υπάρχουν διάφορες μέθοδοι ανάκτησης αυτών π.χ. ```getString(), getDouble()``` κλπ. Προσέξτε ότι υπάρχει η ```getDate()``` η οποία επιστρέφει ```java.sql.Date``` (κι όχι ```java.util.Date```), η ```getTime()``` η οποία επιστρέφει ```java.sql.Time``` και η ```getTimeStamp()``` η οποία επιστρέφει ```java.sql.TimeStamp```. Θα πρέπει να τις μετατρέψετε στις αντίστοιχες κλάσεις ημερομηνίας και ώρας για να τις χρησιμοποιήσετε στο Java πρόγραμμά σας.
 
-Επίσης, χρησιμοποιήσαμε την try-with-resources για να κλείσουμε αυτόματα τη σύνδεση με την ΒΔ, διαφορετικά θα 'πρεπε να έχουμε μια ακόμα μέθοδο:
+Επίσης, χρησιμοποιήσαμε την try-with-resources για να κλείσουμε αυτόματα τη σύνδεση με την ΒΔ, διαφορετικά θα 'πρεπε να έχουμε μια ακόμα μέθοδο για να κλείσουμε τη σύνδεση με τη ΒΔ:
 
 ```java
     /**
