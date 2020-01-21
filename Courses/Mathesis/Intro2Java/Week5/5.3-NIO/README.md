@@ -169,7 +169,7 @@ $24 ==> 0
 jshell> Path p = Paths.get("/tmp/test.txt")
 p ==> /tmp/test.txt
 
-jshell> Files.isSameFile(path, p); // άλλος τρόπος πέραν του Path.exists(). Τα paths πρέπει να υπάρχουν.
+jshell> Files.isSameFile(path, p); // άλλος τρόπος πέραν του Path.exists() χωρίς να ελέγχει αν τα αρχεία/φάκελοι υπάρχουν.
 $25 ==> true
 ```
 
