@@ -278,15 +278,15 @@ System.out.println("Next high priority task: " + highPriorityTaskList.peek());
 ## Σύγκριση των διαφόρων υλοποιήσεων της ```Map```
 
 | |  ```get``` |  ```containsKey``` | ```next``` 
-| ```HashMap```  | O(1) | O(1) | O(h/n) 
+| ```HashMap```  | O(1) | O(1) | O(k*/n) 
 | ```LinkedHashMap``` | O(1) | O(1) | O(1)  
-| ```IdentityHashMap``` | O(1) | O(1) | O(h/n)   
+| ```IdentityHashMap``` | O(1) | O(1) | O(k*/n)   
 | ```EnumMap``` | O(1) | O(1) | O(1) 
 | ```TreeMap``` | O(logn) | O(logn) | O(logn)   
 
 _Πηγή: [Naftalin, Wadler (2006)]_
 
-** h είναι η χωρητικότητα του πίνακα
+*k είναι η χωρητικότητα του πίνακα
 
 | Ιδιότητα | ```HashMap``` |  ```LinkedHashMap``` | ```TreeMap``` | 
 | Δομή δεδομένων | 	```Hashtable``` | ```Hashtable```+```LinkedList``` | Ισοζυγισμένο (red-black) δέντρο  |  
