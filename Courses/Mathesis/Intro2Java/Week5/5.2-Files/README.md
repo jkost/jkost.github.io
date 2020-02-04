@@ -24,10 +24,10 @@ jshell> File file = new File("test.txt");
 file ==> test.txt
 
 jshell> File folder = new File("C:/temp");
-folder ==> C:
+folder ==> C:\temp
 
 jshell> File fileInFolder = new File(folder, "test.txt");
-fileInFolder ==> C:/test.txt
+fileInFolder ==> C:\temp\test.txt
 
 jshell> file.exists()
 $1 ==> false
@@ -603,7 +603,7 @@ try (BufferedReader inFile = new BufferedReader(new FileReader(srcFile));
 jshell> File srcFile = new File("C:\temp\test.txt");
 srcFile ==> C:\temp\test.txt
 
-jshell> File destFile = new File(C:\temp\test.bak");
+jshell> File destFile = new File("C:\temp\test.bak");
 destFile ==> C:\temp\test.bak
 
 jshell> srcFile.exists();
