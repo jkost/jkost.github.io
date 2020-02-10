@@ -190,14 +190,20 @@ $ jshell --startup PRINTING
 **Σημαντική Σημείωση** _Για να μπορέσετε να δείτε ελληνικά στο JShell στα Windows, θα πρέπει να δώσετε τις εξής εντολές σε ένα παράθυρο DOS_
 
 ```
-C:\ chcp 1253
-
-C:\ set JAVA_TOOL_OPTIONS=-Dfile.encoding=737
+C:\ chcp 737
 
 C:\ jshell
+|  Welcome to JShell -- Version 13
+|  For an introduction type: /help intro
+
+jshell> System.setOut(new PrintStream(System.out, true, "cp737"));
+
+jshell> System.out.println("Γειά")
+Γειά
 ```
 
-Μπορείτε να ορίσετε τη μεταβλητή ```JAVA_TOOL_OPTIONS``` και ως μεταβλητή περιβάλλοντος όπως περιγράψαμε στην αρχή αυτών των σημειώσεων, ώστε να μην την ορίζετε κάθε φορά.
+Για να μπορέσετε να δείτε ελληνικά στο jshell του NetBeans στα Windows, θα πρέπει να ορίσετε την μεταβλητή περιβάλλοντος ```JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8```, όπως περιγράψαμε στην αρχή αυτών των σημειώσεων.
+
 
 ### Εντολές JShell
 ```bash
