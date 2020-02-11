@@ -254,11 +254,13 @@ jshell> /help
 | ```Ctrl+Y``` | Επικόλληση του πιο πρόσφατα διαγραμμένου κειμένου 
 | ```Alt+Y``` | Μετακίνηση στο διαγραμμένο κείμενο
 
+```Ctrl+L```: καθαρισμός οθόνης
+
 Στις επόμενες διαλέξεις αυτής της εβδομάδας θα μάθουμε τις βασικές εντολές της γλώσσας χρησιμοποιώντας το JShell.
 
 ## Πηγές
 1. [JDK 10 Documentation](https://docs.oracle.com/javase/10/index.html)
-1. [Java Platform, Standard Edition Java Shell User’s Guide](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm#JSHEL-GUID-630F27C8-1195-4989-9F6B-2C51D46F52C8)
+1. [Java Platform, Standard Edition Java Shell User’s Guide](https://docs.oracle.com/javase/10/jshell/toc.htm)
 1. [JShell Tutorial](https://jshelltutorial.com/)
 1. [JShell Tutorial](http://cr.openjdk.java.net/~rfield/tutorial/JShellTutorial.html)
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
