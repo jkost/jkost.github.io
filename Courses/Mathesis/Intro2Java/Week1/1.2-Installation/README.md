@@ -119,7 +119,7 @@ jshell> (Ctrl+D)
 * [Eclipse](http://www.eclipse.org/)
 * [IDEA](https://www.jetbrains.com/idea/)
 * [JDeveloper](http://www.oracle.com/technetwork/developer-tools/jdev/overview/index.html)
-* [NetBeans](https://netbeans.apache.org/) ή [CoolBeans](http://coolbeans.xyz/)
+* [NetBeans](https://netbeans.apache.org/) ή [OpenBeans](https://www.openbeans.org/)
 
 Σ' αυτή τη σειρά μαθημάτων θα χρησιμοποιήσουμε το NetBeans, αλλά μπορείτε κάλλιστα να χρησιμοποιήσετε όποιο ΟΠΕ ή επεξεργαστή κειμένου προτιμάτε.
 

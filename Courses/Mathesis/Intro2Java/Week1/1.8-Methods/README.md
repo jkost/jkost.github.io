@@ -126,7 +126,7 @@ void printTree(int treeWidth) {
 ```java
 // υπολογισμός του n παραγοντικό
 jshell> int factorial(int n) {
-	     if (n <= 2) {
+	     if (n <= 1) {
         	return 1;
 	     } else {
 		    return n * factorial(n-1);
