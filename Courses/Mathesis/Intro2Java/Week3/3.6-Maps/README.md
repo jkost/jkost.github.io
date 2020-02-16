@@ -410,6 +410,8 @@ k *
 Most frequent: h; 12 time(s).
 Least frequent: k; 1 time(s). 
 ```
+3) Γράψτε ένα πρόγραμμα που θα δημιουργεί ένα ευρετήριο ενός κειμένου. Ένα ευρετήριο είναι μια αλφαβητική λίστα των διακεκριμένων λέξεων του κειμένου. Για κάθε γράμμα (Α, Β κλπ.) δημιουργείστε μια λίστα λέξεων που αρχίζουν από αυτό το γράμμα. 
+
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.
