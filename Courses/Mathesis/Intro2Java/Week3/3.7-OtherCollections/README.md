@@ -76,10 +76,10 @@ public Set<Car> getSportCars() {
 ```java
 import org.apache.commons.collections4.Bag;
 ```
-## Άσκηση
-Στο 2ο μάθημα αυτής της εβδομάδας μάθαμε ότι δεν μπορούμε να μετατρέψουμε μια συλλογή σε μια συστοιχία πρωτογενούς τύπου με την ```toArray()``` (αν και όσοι παρακολουθήσετε τον κύκλο προχωρημένων μαθήματων Java υπάρχει ένας εύκολος τρόπος να το κάνετε αυτό με τη Java 8). Χρησιμοποιήστε είτε την ```Ints.toArray(Collection<Integer> collection)``` της βιβλιοθήκης Guava είτε την ```ArrayUtils.toPrimitive()``` της βιβλιοθήκης Apache Commons Lang για το επιτύχετε αυτό. 
-
-Ακολουθήστε τις οδηγίες που θα βρείτε [εδώ](https://stackoverflow.com/questions/43111018/how-to-import-external-libraries-in-jshell-java-9) για να χρησιμοποιήσετε βιβλιοθήκες στο jshell.
+## Ασκήσεις
+1. Στο 2ο μάθημα αυτής της εβδομάδας μάθαμε ότι δεν μπορούμε να μετατρέψουμε μια συλλογή σε μια συστοιχία πρωτογενούς τύπου με την ```toArray()``` (αν και όσοι παρακολουθήσετε τον κύκλο προχωρημένων μαθήματων Java υπάρχει ένας εύκολος τρόπος να το κάνετε αυτό με τη Java 8). Χρησιμοποιήστε είτε την ```Ints.toArray(Collection<Integer> collection)``` της βιβλιοθήκης Guava είτε την ```ArrayUtils.toPrimitive()``` της βιβλιοθήκης Apache Commons Lang για το επιτύχετε αυτό. 
+	Ακολουθήστε τις οδηγίες που θα βρείτε [εδώ](https://stackoverflow.com/questions/43111018/how-to-import-external-libraries-in-jshell-java-9) για να χρησιμοποιήσετε βιβλιοθήκες στο jshell.
+2. Επαναλάβετε την άσκηση 4 της προηγούμενης ενότητας χρησιμοποιώντας την κλάση [org.apache.commons.collections.map.LRUMap](https://commons.apache.org/proper/commons-collections/apidocs/org/apache/commons/collections4/map/LRUMap.html) (LRU = Least Recently Used). 
 
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
