@@ -420,7 +420,7 @@ public class Cache<K, V> {
 		private long counter = 0;
 	    private V value;
  
-	    protected CrunchifyCacheObject(V value) {
+	    protected CacheObject(V value) {
 	       this.value = value;
 	    }
 		//...
