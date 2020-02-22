@@ -122,7 +122,7 @@ jshell> (Ctrl+D)
 
 Σ' αυτή τη σειρά μαθημάτων θα χρησιμοποιήσουμε το NetBeans, αλλά μπορείτε κάλλιστα να χρησιμοποιήσετε όποιο ΟΠΕ ή επεξεργαστή κειμένου προτιμάτε.
 
-Αν δεν επιθυμείτε να εγκαταστήσετε κάποιο πρόγραμμα στον Η/Υ σας, μπορείτε ακόμα να χρησιμοποιήσετε κάποιο από τα online ΟΠΕ:
+Αν δεν επιθυμείτε να εγκαταστήσετε κάποιο πρόγραμμα στον Η/Υ σας, μπορείτε ακόμα να χρησιμοποιήσετε κάποιο από τα παρακάτω online:
 * [Browxy                    ](http://www.browxy.com/)
 * [Codecademy                ](https://www.codecademy.com/learn/learn-java)
 * [CodeChef                  ](https://www.codechef.com/ide)
@@ -132,9 +132,13 @@ jshell> (Ctrl+D)
 * [Guru99                    ](https://www.guru99.com/try-java-editor.html)
 * [Ideone                    ](https://ideone.com/)
 * [JDoodle                   ](https://www.jdoodle.com/online-java-compiler)
+* [TryJShell - Online JShell ](https://tryjshell.org)
 * [Learn Java Online         ](http://www.learnjavaonline.org/)
+* [Paiza.io                  ](https://paiza.io/en/projects/new?language=java)
+* [Repl.it                   ](https://repl.it/languages/java10)
 * [Rextester                 ](http://rextester.com/l/java_online_compiler)
 * [Online Java Debugger      ](https://www.onlinegdb.com/online_java_debugger)
+* [Trinket                   ](https://trinket.io/java)
 * [Tutorialspoint            ](https://www.tutorialspoint.com/compile_java_online.php)
 * [Visualizer                ](http://www.pythontutor.com/visualize.html#mode=edit)
 
