@@ -293,6 +293,9 @@ LOG.addAppender(appender);
 1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley.
 1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf).
 1. Jenkov J. [Java Logging](http://tutorials.jenkov.com/java-logging/index.html).
+1. Joshi R. (2014), [java.util.logging Example](https://examples.javacodegeeks.com/core-java/util/logging/java-util-logging-example/)
+1. Vogel L. (2016), [Java Logging API - Tutorial](https://www.vogella.com/tutorials/Logging/article.html).
+1. [Logging messages](http://www.javapractices.com/topic/TopicAction.do?Id=143).
 
 ---
 
