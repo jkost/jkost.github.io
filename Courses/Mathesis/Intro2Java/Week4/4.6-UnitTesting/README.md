@@ -270,6 +270,27 @@ class Test {
 1. Εμφανίστε το μενού **Tools --> Options** (ή **NetBeans --> Preferences** αν είστε στο Mac).
 1. Επιλέξτε **Editor --> Hints**, στη συνέχεια **Language: FindBugs** και **Run FindBugs in Editor**.
 
+## Ασκήσεις
+1. Γράψτε μια κλάση ```LRInsert``` η οποία περιέχει ένα πεδίο τύπου ```LinkedList```. Κάθε φορά που εισάγετε ένα αντικείμενο στη λίστα, αυτό εισάγετε εναλλάξ στην αρχή και στο τέλος της συλλογής. Η μέθοδος ```toString()``` θα πρέπει να επιστρέψει τα αντικείμενα με τη σειρά που αυτά αποθηκεύθηκαν στη λίστα. ΄Οταν διαβάζετε (iterate) τη λίστα, προσπαθήστε να επιστρέψετε τα αντικείμενα με τη σειρά με την οποία εισήχθησαν σ' αυτή. Η υλοποίησή σας θα πρέπει να περνά το ακόλουθο unit test:
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.Iterator;
+public class LRInsertTest {
+  @Test	
+  public void test() {
+    for (int i = 0; i < 6; i++) {
+      LRInsert<Integer> lri = new LRInsert<Integer>();
+      for (int j = 0; j < i; j++) lri.add(j);
+      Iterator<Integer> it = lri.iterator();
+      for (int j = 0; j < i; j++) {
+        assertEquals(j, it.next().intValue());
+      }
+    }
+  }
+}
+```
+
 ## Πηγές
 1. ["JUnit 5"](https://junit.org/junit5/)
 1. [Java Magazine](https://www.oracle.com/technetwork/java/javamagazine/index.html), Issue Nov/Dec 2016.
