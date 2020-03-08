@@ -475,6 +475,39 @@ module AnagramGame {
 
 **Εικόνα 2.3.8** _Παράδειγμα διαγράμματος αρθρωμάτων στη UML_
 
+## Δημιουργία αυτόνομων προγραμμάτων Java
+Μέχρι την έκδοση 8 της γλώσσας, κάποιος χρειαζόταν να έχει εγκατεστημένο στο σύστημά του το Java Runtime Environment (JRE) ώστε να μπορεί να εκτελεί προγράμματα Java. Το JRE είναι ένα υποσύνολο του Java Development Kit (JDK) που είναι αναγκαίο για την ανάπτυξη προγραμμάτων Java. 
+
+Από την έκδοση 9 και μετά, με την εισαγωγή των αρθρωμάτων, ο προγραμματιστής μπορεί να δημιουργήσει το δικό του JRE μαζί με την εφαρμογή του, το οποίο περιέχει μόνο τα αρθρώματα που απαιτούνται για να εκτελεστεί η εφαρμογή. 
+
+Ας δούμε πώς μπορούμε να δημιουργήσουμε μια αυτόνομη εφαρμογή ```AnagramGame```. Κάντε δεξί κλικ στο Project και επιλέξτε ```Properties```, ```Build --> Packaging``` και επιλέξτε ```Create JLINK distribution``` όπως φαίνεται στην ακόλουθη εικόνα.  
+
+![](assets/Fig9.png)
+
+**Εικόνα 2.3.9** _'Πακετάρισμα' μιας εφαρμογής Java με τη βοήθεια του jlink_
+
+Όταν χτίσετε (build) το έργο σας, στο φάκελο ```dist``` δημιουργείται μαζί με το ```anagrams.jar``` μια ιεραρχία ```dist/jlink/AnagramGame```:
+
+```
+bin/
+conf/
+include/
+legal/
+lib/
+man/
+release
+```
+
+η οποία περιλαμβάνει και το δικό σας (custom) JRE που απαιτείται για να εκτελέσετε το πρόγραμμά σας. Εκτελέστε το δίνοντας (ανάλογα με την πλατφόρμα σας):
+
+```
+dist/jlink/AnagramGame/bin/AnagramGame
+```
+
+Μπορείτε πλέον να συμπιέσετε το φάκελο ```dist``` και να μετονομάσετε το συμπιεσμένο αρχείο ως π.χ. ```AnagramGame.zip``` και να το διανέμετε. 
+
+Μπορείτε επίσης να δημιουργήσετε προγράμματα εγκατάστασης για τις διάφορες πλατφόρμες. Εμφανίστε πάλι το παράθυρο ```Properties``` και επιλέξτε ```Build --> Deployments``` και επιλέξτε ```Enable Native Packaging Actions in Project Menu``` και **OK**. Πλέον, όταν κάνετε δεξί κλικ στο έργο _AnagramGame_ εμφανίζεται ένα νέο μενού **Package as** που σας επιτρέπει να δημιουργήσετε π.χ. installers για τις διάφορες πλατφόρμες. 
+
 ## Πηγές:
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.
@@ -487,6 +520,7 @@ module AnagramGame {
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 1. [Apache NetBeans](https://netbeans.apache.org/help/index.html)
+1. Baeldung, ["Guide to jlink"](https://www.baeldung.com/jlink)
 1. [Jenkov Nested Classes](http://tutorials.jenkov.com/java/nested-classes.html)
 
 ---
