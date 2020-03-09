@@ -507,7 +507,7 @@ public class Student implements Comparable{
             return 1;
     }
 
-    class StudentComparator implements Comparator {
+    static class StudentComparator implements Comparator {
         @Override
         public int compare(Object o1, Object o2) {
             Student s1 = (Student)o1;
