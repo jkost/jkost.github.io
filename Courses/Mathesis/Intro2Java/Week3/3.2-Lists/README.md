@@ -437,7 +437,7 @@ obj1.compareTo(obj2);
 
 * ```<0``` αν το ```obj1 < obj2```
 * ```0``` αν ```obj1 == obj2```
-* ```>0``` αν το ```obj1 < obj2```
+* ```>0``` αν το ```obj1 > obj2```
 
 ```java
 jshell> "a".compareTo("c")
