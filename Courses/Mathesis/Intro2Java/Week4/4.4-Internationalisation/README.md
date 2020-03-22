@@ -137,7 +137,7 @@ public static void main(String[] args) {
 
 **Σημείωση 1** _Ένα πρόγραμμα Java εκτελείται με την εξ' ορισμού κωδικοποίηση του συστήματος που είναι εγκατεστημένη η ΕΜ της Java. Μπορείτε όμως να εκκινήσετε ένα πρόγραμμα Java περνώντας του την παράμετρο ```-Dfile.encoding=<encoding>``` π.χ. ```-Dfile.encoding=UTF-8``` για να το εκτελέσετε με άλλη κωδικοποίηση απ' αυτή του συστήματος. Π.χ. ```java -Dfile.encoding=UTF-8 Main el GR```._
 
-**Σημείωση 2** _Αν δημιουργήσετε τα αρχεία `.properties` στο ριζικό φάκελο του έργου (Project) αντί για το φάκελο που βρίσκεται η κλάση ```Main``,` θα λάβετε λάθος εκτέλεσης ```java.util.MissingResourceException: Can't find bundle for base name MessagesBundle, locale el_GR```. Ο λόγος είναι ότι δεν μπορεί να βρει τα ```MessagesBundle.properties``` γιατί δεν τα βρίσκει ούτε στο ```classpath``` ούτε στο ```modulepath```. Μπορείτε να ορίσετε το ```classpath``` σύμφωνα με τις παρακάτω οδηγίες:_
+**Σημείωση 2** _Αν δημιουργήσετε τα αρχεία `.properties` στο ριζικό φάκελο του έργου (Project) αντί για το φάκελο που βρίσκεται η κλάση ```Main```, θα λάβετε λάθος εκτέλεσης ```java.util.MissingResourceException: Can't find bundle for base name MessagesBundle, locale el_GR```. Ο λόγος είναι ότι δεν μπορεί να βρει τα ```MessagesBundle.properties``` γιατί δεν τα βρίσκει ούτε στο ```classpath``` ούτε στο ```modulepath```. Μπορείτε να ορίσετε το ```classpath``` σύμφωνα με τις παρακάτω οδηγίες:_
 
 1. Δεξί κλικ στο έργο και **Properties**
 1. Κλικ στην κατηγορία **Libraries**
