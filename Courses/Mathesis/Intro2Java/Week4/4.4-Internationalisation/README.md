@@ -78,7 +78,16 @@ greetings = Hello.
 farewell = Goodbye.
 inquiry = How are you?
 ```
-και το αρχείο ```MessagesBundle_el_GR.properties```:
+
+ως εξής:
+
+1. Δεξί κλικ στο ```<default package>``` (όψη _Projects_) και κλικ στο μενού **New --> Other**
+1. **Categories:** _Other_, **File Types:** _Properties File_
+1. Κλικ στο **Next**
+1. **File Name:** ```MessagesBundle```
+1. Κλικ στο **Finish**
+
+και το με τον ίδιο τρόπο το αρχείο ```MessagesBundle_el_GR.properties```:
 
 ```
 greetings = Γειά σου.
@@ -126,7 +135,18 @@ public static void main(String[] args) {
 4. Δημιουργήστε στον κώδικά σας ένα αντικείμενο τύπου ```ResouceBundle``` για να φορτώσετε το κατάλληλο αρχείο ιδιοτήτων που περιέχει τις μεταφράσεις που επιθυμείτε
 5. Ανακτήστε την αντίστοιχη μετάφραση δίνοντας το κλειδί στο ```ResourceBundle``` με τη μέθοδο ```getString()```.
 
-**Σημείωση** _Ένα πρόγραμμα Java εκτελείται με την εξ' ορισμού κωδικοποίηση του συστήματος που είναι εγκατεστημένη η ΕΜ της Java. Μπορείτε όμως να εκκινήσετε ένα πρόγραμμα Java περνώντας του την παράμετρο ```-Dfile.encoding=<encoding>``` π.χ. ```-Dfile.encoding=UTF-8``` για να το εκτελέσετε με άλλη κωδικοποίηση απ' αυτή του συστήματος. Π.χ. ```java -Dfile.encoding=UTF-8 Main el GR```._
+**Σημείωση 1** _Ένα πρόγραμμα Java εκτελείται με την εξ' ορισμού κωδικοποίηση του συστήματος που είναι εγκατεστημένη η ΕΜ της Java. Μπορείτε όμως να εκκινήσετε ένα πρόγραμμα Java περνώντας του την παράμετρο ```-Dfile.encoding=<encoding>``` π.χ. ```-Dfile.encoding=UTF-8``` για να το εκτελέσετε με άλλη κωδικοποίηση απ' αυτή του συστήματος. Π.χ. ```java -Dfile.encoding=UTF-8 Main el GR```._
+
+**Σημείωση 2** _Αν εκτελέσετε το παραπάνω πρόγραμμα στο NetBeans θα λάβετε λάθος εκτέλεσης ```java.util.MissingResourceException: Can't find bundle for base name MessagesBundle, locale el_GR```. Ο λόγος είναι ότι δεν μπορεί να βρει τα ```MessagesBundle.properties``` γιατί δεν τα βρίσκει ούτε στο ```classpath``` ούτε στο ```modulepath```. Υπάρχουν διάφορες λύσεις. Μια είναι να μεταφέρετε (**Refactor --> Move...**) την κλάση σας σε μια βιβλιοθήκη (package) και τα αρχεία ```MessagesBundle.properties``` μέσα σ' αυτή ή να αφήσετε την κλάση ```Main``` στο default package και τα ```MessagesBundle.properties``` στο ριζικό φάκελο του έργου και να ορίσετε το ```classpath``` σύμφωνα με τις παρακάτω οδηγίες:_
+
+1. Δεξί κλικ στο έργο και **Properties**
+1. Κλικ στην κατηγορία **Libraries**
+1. Κλικ στο **+** του Classpath και **Add JAR/Folder**
+1. Επιλέξτε το όνομα του έργου σας (θα πρέπει το _Relative Path_ να γίνει **.**) (βλ. παρακάτω εικόνα)
+
+![](assets/Fig2.png)
+
+**Εικόνα 4.4.2** _Ορισμός classpath στο NetBeans_
 
 ## Τοπικοποίηση (Localization)
 Πιο πάνω είδαμε δυο τρόπους δημιουργίας ```Locale```:
