@@ -44,7 +44,7 @@
 * JAXP (Java API for XML Processing) επιτρέπει να χρησιμοποιήσετε βιβλιοθήκες από τρίτους πέραν απ' αυτές που προσφέρει το JDK 
 * [SAX (Simple API for XML)](http://www.saxproject.org) η υλοποίηση του JDK για αναλυτή SAX
 * StAX (Streaming API for XML) όπως ο SAX αλλά χωρίς event handlers
-* DOM (W3C Document Object Model API) η υλοποίηση του JDK για αναλυτή SAX
+* DOM (W3C Document Object Model API) η υλοποίηση του JDK για αναλυτή DOM
 
 Δυστυχώς, το πολύ γνωστό JAXB ([Java Architecture for XML Binding](https://en.wikipedia.org/wiki/Java_Architecture_for_XML_Binding)) δεν αποτελεί πλέον μέρος του JDK ([JEP 320](http://openjdk.java.net/jeps/320)).
 
