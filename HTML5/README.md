@@ -34,7 +34,7 @@ _Σημείωση!_ Το βιβλίο αυτό υποθέτει ότι γνωρ�
 * [Aptana Studio 3](http://www.aptana.com/products/studio3/download.html), ένα δωρεάν ολοκληρωμένο περιβάλλον εργασίας που υποστηρίζει HTML5, JavaScript, CSS3, Python, PHP, Rails και Ruby
 * [Bluefish](http://bluefish.openoffice.nl/index.html), ο αγαπημένος σας κειμενογράφος τώρα και με υποστήριξη HTML 5
 * [BlueGriffon](http://bluegriffon.org/), ένας δωρεάν WYSIWYG κειμενογράφος από την Gecko 
-* [HTML5-editor](http://html5-editor.org/), ένας δωρεάν WYSIWYG κειμενογράφος από την Silex, γραμμένος σε php, που σημαίνει ότι θα χρειαστείτε έναν διακομιστή Apache με ενεργοποιημένη την php (π.χ. xampp)
+* [HTML5-editor](https://html5-editor.net/), ένας δωρεάν WYSIWYG κειμενογράφος από την Silex, γραμμένος σε php, που σημαίνει ότι θα χρειαστείτε έναν διακομιστή Apache με ενεργοποιημένη την php (π.χ. xampp)
 * [Maqetta](http://maqetta.org/), άλλος ένας δωρεάν WYSIWYG κειμενογράφος 
 * [Mercury](http://jejacks0n.github.io/mercury/), ένας δωρεάν κειμενογράφος που υποστηρίζει HTML5
 * [NetBeans](http://netbeans.org), ένα δωρεάν ολοκληρωμένο περιβάλλον εργασίας που υποστηρίζει HTML5 και CSS3
