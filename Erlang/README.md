@@ -298,15 +298,16 @@ dirlada
 ```erlang
 -module(temperature).
 -export([convert/2]).
-```
-```erlang
+
 convert({fahrenheit, Temp}, celsius) ->
   {celsius, 5 * (Temp - 32) / 9};
 convert({celsius, Temp}, fahrenheit) ->
   {fahrenheit, 32 + Temp * 9 / 5};
 convert({X, _}, Y) ->
   {cannot,convert,X,to,Y}.
+``` 
 Μεταγλωττίστε το κατά τα γνωστά:
+```erlang
 58> c(temperature).
 {ok,temperature}
 59> temperature:convert({celsius, 23}, fahrenheit).
@@ -365,15 +366,13 @@ ok
 -module(recursion).
 -export([factorial/1]).
 -export([fib/1]).
-```
-```
+
 % N!
 factorial(0) ->
     1;
 factorial(N) ->
     N * factorial(N - 1).
-```
-```erlang  
+
 % fib(N) = fib(N-1) + fib(N-2)
 fib(0) -> 0;
 fib(1) -> 1;
@@ -508,7 +507,9 @@ true
 78> echo ! {self(), hello}.
 Received: hello, Sent: hello
 {<0.31.0>,hello}
+```
 Ας δούμε ακόμα ένα παράδειγμα, το πρόγραμμα fibonacci.
+```erlang
 -module(concur_fib).
 -export([start/0, loop/0]).
 -import(recursion, [fastfib/1]).
