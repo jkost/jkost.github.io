@@ -4,12 +4,14 @@
 
 [![Mathesis](Courses/Mathesis/assets/mathesis.png)](http://mathesis.cup.gr)
 
+* [Εισαγωγή στον προγραμματισμό](Courses/Mathesis/Intro2Programming/README.md)
 * [Εισαγωγή στη γλώσσα προγραμματισμού Java](Courses/Mathesis/Intro2Java/README.md) √
 * [Προχωρημένος προγραμματισμός με τη γλώσσα Java](Courses/Mathesis/AdvancedJava/README.md)
-* [Εισαγωγή στη Java EE](Courses/Mathesis/JavaEE/README.md)
+* [Εισαγωγή στη Java Enterprise Edition (JEE)](Courses/Mathesis/JavaEE/README.md)
 * [Εισαγωγή στον προγραμματισμό με Android](Courses/Mathesis/Android/README.md)
 * [Πρότυπα Σχεδίασης - Design Patterns](Courses/Mathesis/DesignPatterns/README.md)
 * [C++ για προγραμματιστές Java](Courses/Mathesis/Cpp/README.md)
+* [Προγραμματισμός εφαρμογών με την πλατφόρμα NetBeans](Courses/Mathesis/NetBeansRCP/README.md)
 
 ---
 
@@ -27,10 +29,10 @@
 * [Εισαγωγή στην Elixir](Elixir/README.md)
 * [Η γλώσσα προγραμματισμού Java](Java/README.md) √
 * [Επισκόπηση της C++14](Cpp/Cpp14/README.md)
-* [C++ για προγραμματιστές Java](Cpp/Cpp-Java/README.md) √
+* [C++ για προγραμματιστές Java](Cpp/Cpp-Java/README.md)
 * [Εισαγωγή στο Scilab](Scilab/README.md) √
 * [Εισαγωγή στις Εκφράσεις Αναγνώρισης Προτύπων (Regular Expressions)](Regex/README.md)
-* [Εισαγωγή στα Πολλά Δεδομένα (Big Data)](BigData/README.md)
+* [Εισαγωγή στα Μαζικά Δεδομένα (Big Data)](BigData/README.md)
 * [Εισαγωγή στο Mercurial](Mercurial/README.md)
 * [Εισαγωγή στο Git](Git/README.md)
 * [Εισαγωγή στα Γεωγραφικά Συστήματα Πληροφοριών](GIS/README.md)
