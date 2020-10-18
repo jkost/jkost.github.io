@@ -589,7 +589,7 @@ $ erlc +debug_info Module.erl
 1. [Getting started with Erlang User's Guide, v. 5.9](http://www.erlang.org/doc/getting_started/users_guide.html) (2011). 
 2. [Erlang Reference Manual User's Guide, v. 5.9](http://www.erlang.org/doc/reference_manual/users_guide.html) (2011).
 3. [Learn you some Erlang](http://learnyousomeerlang.com/). 
-4. [3 Free E-Books and a Tutorial on Erlang](http://www.readwriteweb.com/hack/2011/05/free-e-books-on-erlang.php).  
+4. [3 Free E-Books and a Tutorial on Erlang](https://readwrite.com/2011/05/06/free-e-books-on-erlang/).  
 5. Armstrong J. (2013), _Programming Erlang_, 2nd Edition, Pragmatic.
 6. Cesarini F. & Thompson S. (2009), [Erlang Programming](http://en.wikibooks.org/wiki/Erlang_Programming), O'Reilly.
 7. Laurent S. (2013), _Introducing Erlang_, O'Reilly.
