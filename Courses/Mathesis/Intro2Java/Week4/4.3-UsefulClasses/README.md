@@ -485,7 +485,7 @@ budget ==> 0.3999999999999999
 
 Ας δούμε τη χρήση της ```BigDecimal```:
 ```java
-jshell> BigDecimal ten_cents = new BigDecimal(".10");
+jshell> BigDecimal TEN_CENTS = new BigDecimal(".10");
 ten_cents ==> 0.10
 
 jshell> BigDecimal budget = new BigDecimal("1.0");
@@ -540,7 +540,15 @@ $3 ==> 0.1000000000000000055511151231257827021181583404541015625
 ```java
 jshell> BigDecimal.valueOf(.1);
 $4 ==> 0.1
+
+jshell> BigDecimal a = BigDecimal.valueOf(1.01234567890123456789);
+a ===> 1.01234567890123456
+
+jshell> BigDecimal b = new BigDecimal("1.01234567890123456789");
+b ===> 1.01234567890123456789
 ```
+
+Προσέξτε όμως ότι η μέθοδος ```valueOf()``` έχει περιορισμένη ακρίβεια (ο ```double``` έχει ακρίβεια 15-17 ψηφία).
 
 Οι μέθοδοι ```equals()``` και ```compareTo()``` της ```BigDecimal``` δεν συμφωνούν:
 ```java
@@ -558,6 +566,34 @@ $6 ==> 0
 ```
 
 Αυτό οφείλεται στο ότι η ```equals()``` λαμβάνει υπόψιν τον αριθμό δεκαδικών ψηφίων (```scale```). Γι' αυτό χρησιμοποιείτε **πάντα** την ```compareTo()```.
+
+Κάποιοι μπορεί να δοκιμάσουν την μέθοδο ```round(new MathContext(precision, roundingMode))``` για να στρογγυλοποιήσουν έναν ```BigDecimal```:
+
+```java
+jshell> BigDecimal x = new BigDecimal("123.456")
+x ==> 123.456
+
+jshell> x = x.round(new MathContext(2, RoundingMode.HALF_UP));
+x ==> 1.2E+2
+
+jshell> x.toPlainString()
+$7 ==> "120"
+
+jshell> x.scale()
+$8 ==> -1
+```
+
+αντί για ```123.46```. Αυτό οφείλεται στο ότι αντί να στρογγυλοποιήσει το δεκαδικό μέρος, στρογγυλοποιεί τον αριθμό από αριστερά προς τα δεξιά, επομένως ακρίβεια ```2``` σημαίνει τα 2 πρώτα ψηφία από αριστερά (δηλ. ```12```) το οποίο στη συνέχεια πολλ/ζεται με το 10 (```scale == -1```, δηλ. ```τιμή x 10```<sup>-scale</sup> ή ```12x10```<sup>-(-1)</sup>), επομένως το αποτέλεσμα. 
+
+Για το επιθυμητό αποτέλεσμα:
+
+```
+jshell> BigDecimal x = new BigDecimal("123.456")
+x ==> 123.456
+
+jshell> x = x.setScale(2, RoundingMode.HALF_UP);
+x ==> 123.46
+```
 
 ### Μαθηματικοί τελεστές
 * ```add()```
@@ -808,6 +844,7 @@ ID Name  qt City
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
 1. Iordache S. (2016), ["Interactive Console Applications in Java"](https://dzone.com/articles/interactive-console-applications-in-java).
+1. Kiwy F. (2020), ["Four common pitfalls of the BigDecimal class and how to avoid them"](https://blogs.oracle.com/javamagazine/four-common-pitfalls-of-the-bigdecimal-class-and-how-to-avoid-them?source=:em:nw:mt:::RC_WWMK200429P00043:NSL400084275), Java Magazine.
 1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley. 
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
