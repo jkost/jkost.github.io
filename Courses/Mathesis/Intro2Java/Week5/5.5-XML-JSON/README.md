@@ -493,7 +493,7 @@ public class ΧΧΕApp {
 ## JSON
 Μια άλλη αναπαράσταση δεδομένων είναι η μορφή JSON (JavaScript Object Notation). Το JSON μπορεί ν' αναπαραστήσει δυο δομημένους τύπους: _αντικείμενα_ και _συστοιχίες (arrays)_. Υποστηρίζει τους παρακάτω τύπους δεδομένων: ```number, string, boolean, array, object, null```. Χρησιμοποιείται συχνά σε εφαρμογές Ajax, υπηρεσίες ιστού REST (RESTful web services) κ.α. Φυσικά, όπως και με την XML, μπορείτε να επικυρώσετε μια δομή JSON σε κάποιο σχήμα (schema) (βλ. [schemavalidator](https://www.jsonschemavalidator.net/) και [άλλες υλοποιήσεις](http://json-schema.org/implementations.html)).
 
-Το [Java API for JSON Processing](https://www.oracle.com/technetwork/articles/java/json-1973242.html) παρέχει τη δυνατότητα να αναλύσετε (parse), παράγετε (generate), μετατρέψετε (transform), και να δημιουργήσετε ερωτήματα (query) δομές JSON. [Η JSON απαιτεί λιγότερη πληκτρολόγηση από την XML](www.json.org/xml.html). Το [JEP 198: Light-Weight JSON API](http://openjdk.java.net/jeps/198) για την προσθήκη του JSON API στη Java _δεν_ είναι ακόμα μέρος του JDK. Άλλες βιβλιοθήκες:
+Το [Java API for JSON Processing](https://www.oracle.com/technetwork/articles/java/json-1973242.html) παρέχει τη δυνατότητα να αναλύσετε (parse), παράγετε (generate), μετατρέψετε (transform), και να δημιουργήσετε ερωτήματα (query) δομές JSON. [Η JSON απαιτεί λιγότερη πληκτρολόγηση από την XML](http://www.json.org/xml.html). Το [JEP 198: Light-Weight JSON API](http://openjdk.java.net/jeps/198) για την προσθήκη του JSON API στη Java _δεν_ είναι ακόμα μέρος του JDK. Άλλες βιβλιοθήκες:
 
 * [GSon](https://mvnrepository.com/artifact/com.google.code.gson/gson) από τη Google
 * [Jackson](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)
