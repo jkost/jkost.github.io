@@ -213,7 +213,6 @@ ECDIS (Electronic Chart  Display and Information System).  Η ακρίβεια �
 ασφάλεια.  Αποτελούν ένα  σύνολο από  ερευνητικά προγράμματα  σε Ευρώπη  και Η.Π.Α.,  γνωστά ως  Έξυπνα Συστήματα  Μεταφοράς
 (Intelligent Information Systems - ITSs).
 
-
 ## Συμπερασματικά
 Τα συστήματα GIS έχουν μια  ευρεία περιοχή εφαρμογών. Τυπικές εφαρμογές τους είναι στη  διαχείριση του περιβάλλοντος και των
 πόρων του, στο  σχεδιασμό και ανάπτυξη νέων υποδομών των  πόλεων (π.χ. δρόμων), στις θαλάσσιες και  επίγειες μεταφορές, στην
@@ -222,12 +221,12 @@ ECDIS (Electronic Chart  Display and Information System).  Η ακρίβεια �
 τεχνολογίας με  ετήσια ανάπτυξη  20% και  πωλήσεις της  τάξης των  $500 εκατομμυρίων.  Η ικανότητα  των συστημάτων  αυτών να
 αποθηκεύουν σχέσεις ανάμεσα στα χαρακτηριστικά, πέρα από τα ίδια  τα χαρακτηριστικά και τις ιδιότητές τους, είναι ένα από τα
 πιο σημαντικά χαρακτηριστικά  ισχύος και ευελιξίας αυτής της  τεχνολογίας. Τέλος, υπάρχει μια πολύ  δραστήρια κοινότητα στην
-Ελλάδα, που μπορείτε να επισκεφθείτε στο http://www.gistech.gr.
+Ελλάδα, που μπορείτε να επισκεφθείτε στο [GISTech](http://www.gistech.gr).
 
 ## Πηγές:
 1. Bernhardsen T., _Geographic Information Systems - An Introduction_, 2nd Edition, John Wiley: 1999.
 2. ESRI, _Understanding GIS - The ARC/INFO Method_, Environmental Systems Research Institut Inc.: 1990.
-3. Gillings M. et al., _GIS Guide to Good Practice_, http://ahds.ac.uk:1998.
-4. Babcock H., _Geographic Information Systems - A Resource Guide For Using GIS as a Tool For Your Data_, Tahoe Center for a Sustainable Future,http://ceres.ca.gov/tcsf/gis.html.
-5. MapInfo Corporation, _MapXtreme Guide_, http://www.mapxtreme.com, MapInfo Corporation: 1999.
+3. Gillings M. et al., _[GIS Guide to Good Practice](http://ahds.ac.uk:1998)_.
+4. Babcock H., _[Geographic Information Systems - A Resource Guide For Using GIS as a Tool For Your Data](http://ceres.ca.gov/tcsf/gis.html)_, Tahoe Center for a Sustainable Future.
+5. MapInfo Corporation, _[MapXtreme Guide](http://www.mapxtreme.com)_, MapInfo Corporation: 1999.
 ---
