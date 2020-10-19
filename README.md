@@ -41,6 +41,6 @@
 * [Εισαγωγή στο Mercurial](Mercurial/README.md)
 * [Εισαγωγή στο Git](Git/README.md)
 * [Ασφάλεια Apache Tomcat](SecureTomcat/README.md)
-* [Εισαγωγή στα Γεωγραφικά Συστήματα Πληροφοριών](GIS/README.md)
+* [Εισαγωγή στα Γεωγραφικά Συστήματα Πληροφοριών](GIS/README.md) √
 
 ---
