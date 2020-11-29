@@ -144,8 +144,8 @@ jshell> (Ctrl+D)
 
 ## Εγκατάσταση του Apache NetBeans
 
-1. Από τον ιστοχώρο της [Apache](https://netbeans.apache.org/download/index.html) κατεβάστε την τελευταία έκδοση του Apache NetBeans. Θα πρέπει να κατεβάσετε την έκδοση 9.0 ή νεώτερη για να μπορέσετε να δουλέψετε με το JDK 9 ή νεώτερο. A
-1. Αποσυμπιέστε το αρχείο ```netbeans-java-x.0-bin.zip``` σε ένα φάκελο (π.χ. ```$HOME/Programs```). Από την έκδοση 11.2 και μετά υπάρχει οδηγός εγκατάστασης του NetBeabs. Κατεβάστε το κατάλληλο για την πλατφόρμα σας και εκτελέστε το για να εγκαταστήσετε το Apache NetBeans. 
+1. Από τον ιστοχώρο της [Apache](https://netbeans.apache.org/download/index.html) κατεβάστε την τελευταία έκδοση του Apache NetBeans για την πλατφόρμα σας.
+1. Μπορείτε να κατεβάσετε και να αποσυμπιέστε το αρχείο ```netbeans-xx.0-bin.zip``` σε ένα φάκελο (π.χ. ```$HOME/Programs```) ή τον κατάλληλο οδηγό εγκατάστασης για την πλατφόρμα σας (Windows/MacOSX/Linux). 
 1. Ελέξτε ότι το αρχείο ```<netbeans>/etc/netbeans.conf``` περιέχει γραμμή παρόμοια με την παρακάτω ανάλογα με την έκδοση JDK που εγκαταστήσατε προηγουμένως:
 ```bash
 netbeans_jdkhome="/<path>/jdk-XX.X.X.jdk/Contents/Home/" 
@@ -205,7 +205,7 @@ jshell> System.out.println("Γειά")
 Γειά
 ```
 
-Για να μπορέσετε να δείτε ελληνικά στο jshell του NetBeans στα Windows, θα πρέπει να ορίσετε την μεταβλητή περιβάλλοντος ```JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8```, όπως περιγράψαμε στην αρχή αυτών των σημειώσεων. Εναλλακτικά, ανοίξτε το αρχείο ```etc/netbeans.conf``` και προσθέστε στο τέλος του κλειδιού ```netbeans_default_options```, δηλ. μετά το ```-J-XX:+IgnoreUnrecognizedVMOptions``` το ```-J-Dfile.encoding=UTF8```. Επανεκκινήστε το NetBeans, και θα πρέπει να βλέπετε πλέον ελληνικά στο JShell.
+_Για να μπορέσετε να δείτε ελληνικά στο jshell του NetBeans στα Windows, θα πρέπει να ορίσετε την μεταβλητή περιβάλλοντος ```JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8```, όπως περιγράψαμε στην αρχή αυτών των σημειώσεων. Εναλλακτικά, ανοίξτε το αρχείο ```etc/netbeans.conf``` και προσθέστε στο τέλος του κλειδιού ```netbeans_default_options```, δηλ. μετά το ```-J-XX:+IgnoreUnrecognizedVMOptions``` το ```-J-Dfile.encoding=UTF8```. Επανεκκινήστε το NetBeans, και θα πρέπει να βλέπετε πλέον ελληνικά στο JShell._
 
 ### Εντολές JShell
 ```bash
