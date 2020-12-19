@@ -6,7 +6,7 @@
 _Tο άρθρο αυτό αναφέρεται σε μια παλιά έκδοση του Apache Tomcat. Θα ακολουθήσει μια ενημερωμένη έκδοση για την τελευταία έκδοση του Apache Tomcat._
 
 ## Προστατεύοντας τον Tomcat
-Αν δεν έχετε ήδη κατεβάσει τον Apache Tomcat, κατεβάστε την έκδοση 6.0 από το [εδώ](http://tomcat.apache.org/download-60.cgi) και εγκαταστήστε την στον κατάλογο ```/opt/``` π.χ.:
+Αν δεν έχετε ήδη κατεβάσει τον Apache Tomcat, κατεβάστε την έκδοση 6.0 από [εδώ](http://tomcat.apache.org/download-60.cgi) και εγκαταστήστε την στον κατάλογο ```/opt/``` π.χ.:
 ```bash
 $ cd /opt/
 $ sudo unzip /home/<user>/Downloads/apache-tomcat-6.0.20.zip
