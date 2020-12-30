@@ -70,6 +70,98 @@ public final class Point {
 
 Είναι επίσης πολύ σημαντικό να καταλάβουμε τι σημαίνει η δήλωση π.χ. ```final Car car = new Car(...);```. Η δήλωση αυτή δηλώνει ότι η μεταβλητή ```car``` είναι ένας _δείκτης_ σε μια διεύθυνση της κύριας μνήμης η οποία αποθηκεύει ένα αντικείμενο τύπου ```Car```. Η δήλωση ```final``` σημαίνει ότι ο _δείκτης_ δεν μπορεί ν' αλλάξει, δηλ. να λάβει μια νέα τιμή. Δε σημαίνει όμως ότι και το αντικείμενο στο οποίο δείχνει δεν μπορεί ν' αλλάξει, εκτός κι αν το αντικείμενο αυτό είναι αμετάβλητο (immutable). Η κλάση ```Car``` όμως μπορεί να μεταβληθεί (mutable), όπως είδαμε στα προηγούμενα μαθήματα, με αποτέλεσμα κώδικας που χρησιμοποιεί την μεταβλητή ```car``` μπορεί να τροποποιήσει τα γνωρίσματα του αντικειμένου στο οποίο δείχνει η ```car``` παρόλο που δηλώνουμε ότι είναι ```final``` (γιατί το ```final``` αναφέρεται μόνο στον δείκτη της μνήμης κι όχι στο αντικείμενο αυτό καθαυτό που δείχνει ο δείκτης αυτός).
 
+## Εγγραφές (records)
+Από την έκδοση 14 και μετά εισήχθηκαν στη γλώσσα οι _εγγραφές (records)_. Όταν αναπαριστούμε ως κλάσεις αντικείμενα του πραγματικού κόσμου, συνήθως γράφουμε μια κλάση που περιέχει απλά τα γνωρίσματα (attributes) και μεθόδους προσπέλασης αυτών των αντικειμένων (δηλ. ```getXXX()``` και ```setXXX()```). Π.χ.
+
+```java
+public final class Point {
+    private final int x;
+    private final int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + this.x;
+        hash = 37 * hash + this.y;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Point other = (Point) obj;
+        if (this.x != other.x) {
+            return false;
+        }
+        if (this.y != other.y) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" + "x=" + x + ", y=" + y + '}';
+    }  
+  
+}
+```
+Πολύς κώδικας για να περιγράψετε ένα σημείο στο δισδιάστατο χώρο, έτσι δεν είναι; Από την έκδοση 14 και μετά εισήχθηκε στη γλώσσα η εγγραφή. Ο παρακάτω κώδικας είναι ισοδύναμος με τον παραπάνω!
+
+```java
+public record Point(int x, int y) { 
+}
+```
+και μπορούμε δημιουργήσουμε αντικείμενα της ```Point``` κατά τα γνωστά:
+
+```java
+Point p = new Point (0, 0);
+int x = p.x();
+```
+Παρατηρήστε ότι πλέον οι μέθοδοι ανάγνωσης των τιμών των γνωρισμάτων δεν ονομάζονται πλέον ```getXXX()``` αλλά ```XXX()```. Επίσης, ένα record είναι αμετάβλητο (immutable), δεν επιτρέπεται να κληρονομήσει άλλες κλάσεις (```extends```) αλλά επιτρέπεται να υλοποιήσει (```implements```) διεπαφές. Οι εγγραφές είναι ως επί των πλείστων _πλειάδες (tuples)_ αλλά με περισσότερες δυνατότητες.
+
+Φυσικά, μπορείτε να ορίσετε και τις δικές σας μεθόδους σε μια εγγραφή, να ορίσετε compact constructors, όπως:
+
+```java
+public record Point(int x, int y) { 
+	public Point {
+		if (x < 0 || y < 0) 
+			throw new IllegalArgumentException(
+			      "x and y must be positive");
+	}
+}
+```
+ή ακόμα και εναλλακτικές μεθόδους κατασκευής (alternative constructors), π.χ.
+```java
+public record Point(int x, int y) { 
+	public static Point of(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+}
+```
+
 ## Αναδιοργάνωση Κώδικα (Refactoring)
 Πολλές φορές συμβαίνει να θέλετε να προσθέσετε ένα νέο χαρακτηριστικό σε ένα πρόγραμμα, αλλά η δομή του προγράμματος είναι τέτοια που δεν είναι εύκολο ή εφικτό να προστεθεί αυτό το νέο χαρακτηριστικό. Σ' αυτήν την περίπτωση, θα πρέπει πρώτα να αναδιοργανώσετε τον κώδικα ώστε να είναι ευκολότερο να εισάγετε νέα χαρακτηριστικά.
 
@@ -93,6 +185,7 @@ public final class Point {
 1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
 1. Downey A. B., Mayfield C. (2016), _Think Java_, O' Reilly. 
 1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
+1. Evans B. (2020), [Records Come to Java](https://blogs.oracle.com/javamagazine/records-come-to-java), Java Magazine.
 1. Fowler M. (1999), _Refactoring, Improving the Design of Existing Code_, Addison-Wesley.
 1. Fowler M. (2019), _Refactoring, Improving the Design of Existing Code_, 2nd Ed., Addison-Wesley.
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
