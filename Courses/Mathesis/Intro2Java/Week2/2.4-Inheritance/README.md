@@ -361,6 +361,30 @@ class Weapon {
 
 Τέλος, αν μέσα σε μια μέθοδο μιας κλάσης χρησιμοποιούμε ένα αντικείμενο μιας άλλης κλάσης αλλά χωρίς να την ορίζουμε ως γνώρισμα της κλάσης, τότε χρησιμοποιούμε τη σχέση _εξάρτηση (dependency)_.
 
+## Σφραγισμένες κλάσεις
+Στην έκδοση 15 εμφανίστηκαν δυο νέες δεσμευμένες λέξεις, η ```sealed``` και η ```permits```. Ας δούμε τη χρήση τους μ' ένα παράδειγμα:
+
+```java
+public abstract sealed class Shape
+    permits Circle, Rectangle {...}
+
+public class Circle extends Shape {...} 
+public class Rectangle extends Shape {...} 
+public class Triangle extends Shape {...}   // compilation error
+```
+Η ```sealed``` περιορίζει ποιες άλλες κλάσεις μπορούν να κληρονομήσουν την κλάση ```Shape```. Βλέπουμε ότι επιτρέπει μόνο τις ```Circle, Rectangle``` με αποτέλεσμα η κλάση ```Triangle``` να εμφανίζει λάθος μεταγλώττισης. Από δω και πέρα, έχουμε διάφορες επιλογές για τις (επιτρεπόμενες) υποκλάσεις (```Circle, Rectangle```). Μπορούμε να τις ορίσουμε ως ```final``` (δεν επιτρέπεται να κληρονομηθού), είναι ως ```sealed``` (οπότε πρέπει να ορίσουμε με την ```permits``` ποιες άλλες κλάσεις επιτρέπεται να την κληρονομήσουν) ή να τις ορίσουμε όπως στο παραπάνω παράδειγμα οπότε μπορεί να τις κληρονομίσει οποιαδήποτε άλλη κλάση.
+
+Στα μαθήματα της 1ης εβδομάδας μάθαμε για τη νέα σύνταξη της ```switch```. Οι ```sealed``` κλάσεις επιτρέπουν την απλοποίησή τους, καθώς, όπως βλέπουμε στο παρακάτω παράδειγμα δεν απαιτείται ```default```:
+
+```java
+double area = switch (shape) {
+  case Circle c -> Math.pow(c.radius(), 2)*Math.PI
+  case Rectangle r -> r.a() * r.b()
+};
+```
+
+Σημειώστε, ότι στην έκδοση 15 αυτό είναι ένα χαρακτηριστικό προεπισκόπισης (preview) της γλώσσας, με αποτέλεσμα για να το ενεργοποιήσετε θα πρέπει να περάσετε την παράμετρο ```--enable-preview``` κατά τη μεταγλώττιση. Θα περάσουν μια ή δυο εκδόσεις ακόμα ώστε να γίνει ένα κανονικό χαρακτηριστικό της γλώσσας.
+
 ## Κλάση ```Object```
 Όλες οι κλάσεις στη Java κληρονομούν από την κλάση ```Object``` (δηλ. κάθε κλάση μπορεί να γραφτεί και ως ```class MyClass extends Object```). Η κλάση ```Object``` δηλώνει έναν αριθμό από χρήσιμες μεθόδους:
 
@@ -760,6 +784,7 @@ instance.aMethod();  // Anonymous class aMethod()
 1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
 1. Downey A. B., Mayfield C. (2016), _Think Java_, O' Reilly. 
 1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
+1. Evans B. (2019), [Inside the Language: Sealed Types](https://blogs.oracle.com/javamagazine/inside-the-language-sealed-types), Java Magazine.
 1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
