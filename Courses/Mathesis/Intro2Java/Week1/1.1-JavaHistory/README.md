@@ -183,9 +183,12 @@ double myvar = 3.14
 
 ## Πηγές:
 1. [Java History](http://www.java.com/en/javahistory/).
-2. Wikipedia, [Java Programming Language](http://en.wikipedia.org/wiki/Java_%28programming_language%29).
-3. Liguori R. & Liguori P. (2014), _Java 8 Pocket Guide_, O'Reilly.
-4. [Oracle Java SE Support Roadmap](https://www.oracle.com/technetwork/java/java-se-support-roadmap.html).
+1. [JAVATM TECHNOLOGY: AN EARLY HISTORY](https://web.archive.org/web/20011211151342/http://java.sun.com:80/features/1998/05/birthday.html).
+1. [Α brief history of the Green Project](https://web.archive.org/web/20020202210229/http://java.sun.com/people/jag/green/index.html).
+1. Kabutz H. (2002), ["Once Upon an Oak..."](https://www.javaspecialists.eu/archive/Issue055-Once-Upon-an-Oak-....html), JavaSpecialists Newsletter 055.
+1. Wikipedia, [Java Programming Language](http://en.wikipedia.org/wiki/Java_%28programming_language%29).
+1. Liguori R. & Liguori P. (2014), _Java 8 Pocket Guide_, O'Reilly.
+1. [Oracle Java SE Support Roadmap](https://www.oracle.com/technetwork/java/java-se-support-roadmap.html).
 
 ---
 
