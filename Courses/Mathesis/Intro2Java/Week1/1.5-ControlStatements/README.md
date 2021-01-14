@@ -322,8 +322,10 @@ int score = switch (day) {
 1. Samoylov N. (2019), _Learn Java 12 Programming_, Packt.
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
+1. Τζίτζικας Γ. (2016), [Μια Γεύση από Java](https://leanpub.com/JavaTaste), LeanPub.
 1. Urma R.-G. & Warburton R. (2019), "New switch Expressions in Java 12", _Java Magazine_, May/June 2019.
 1. Urma R.-G. & Warburton R. (2019), "Inside Java 13’s switch Expressions and Reimplemented Socket API", [Java Magazine](https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api), October 2019.
+1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
 
 ---
 

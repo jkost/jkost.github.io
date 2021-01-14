@@ -242,6 +242,7 @@ html ==> "     <html>\n        <body>\n            <p>Hell ...   </body>\n     <
 1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
+1. Τζίτζικας Γ. (2016), [Μια Γεύση από Java](https://leanpub.com/JavaTaste), LeanPub.
 
 ---
 
