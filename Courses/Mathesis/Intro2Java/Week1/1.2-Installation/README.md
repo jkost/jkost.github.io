@@ -266,10 +266,8 @@ jshell> /help
 1. [Java Platform, Standard Edition Java Shell User’s Guide](https://docs.oracle.com/javase/10/jshell/toc.htm)
 1. [JShell Tutorial](https://jshelltutorial.com/)
 1. [JShell Tutorial](http://cr.openjdk.java.net/~rfield/tutorial/JShellTutorial.html)
-1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
-1. Samoylov N. (2019), _Learn Java 12 Programming_, Packt.
-1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
 1. [Apache NetBeans](https://netbeans.apache.org/help/index.html)
+1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
 
 ---
 
