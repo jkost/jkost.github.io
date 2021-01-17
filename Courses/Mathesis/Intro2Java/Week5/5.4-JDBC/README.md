@@ -522,11 +522,9 @@ System.out.println("Column statistics: " + collStatsResults.toJson());
 Στο επόμενο μάθημα, θα δούμε δυο ακόμα τρόπους αναπαράστασης δεδομένων, τα αρχεία XML και τις δομές JSON.
 
 ## Πηγές
-1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
 1. Date C.J. (1991), _An Introduction to Data Base Systems_, Vοlume 1, 6th Edition, Addison Wesley.
-1. Horstmann C. S. (2018), _Core Java, Volume II--Advanced Features_, 11th Edition, 
+1. Horstmann C. S. (2018), _Core Java Volume II - Advanced Features_, 11th Ed., Pearson.
 1. Kreibich J. A. (2010), _Using SQLite_, O'Reilly.
-1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley. 
 1. O'Donahue J. (2002), _Java Database Programming Bible_, John Wiley & Sons.
 1. Reese G. (2001), _Database Programming with JDBC and Java_, 2nd Ed., O'Reilly.
 1. Thomas T. M. (2002), _Java Data Access—JDBC, JNDI, and JAXP_, M&T Books.

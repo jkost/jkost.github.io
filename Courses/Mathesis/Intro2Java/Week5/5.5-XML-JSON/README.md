@@ -647,15 +647,8 @@ private static void generateJSON(JsonObject o, String file) {
 1. Ξαναγράψτε τα παραδείγματα JSON χρησιμοποιώντας τις βιβλιοθήκες mJSon και Jackson. 
 
 ## Πηγές
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
-1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
-1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
 1. Friesen J. (2019), _Java XML and JSON_, 2nd Ed., APress.
-1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
-1. Horstmann C. S. (2016), _Core Java, Volume ΙΙ_, 11th Ed., Pearson.
-1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley.
-1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley.  
-1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
+1. Horstmann C. S. (2016), _Core Java, Volume ΙΙ_, 11th Ed., Pearson. 
 1. [GSon user guide](https://github.com/google/gson/blob/master/UserGuide.md)
 1. [JSON Path](http://www.javadoc.io/doc/com.jayway.jsonpath/json-path/2.4.0) 
 

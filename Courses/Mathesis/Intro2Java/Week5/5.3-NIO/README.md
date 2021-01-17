@@ -844,18 +844,11 @@ try (FileChannel rdr = (new FileInputStream("./tracks.dump")).getChannel()) {
 ```
 
 ## Πηγές
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
 1. Baeldung (2019), [Guide to Java FileChannel](https://www.baeldung.com/java-filechannel)
-1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
-1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
 1. Friesen J. (2015), _Java I/O, NIO and NIO.2_, APress.
 1. Gupta L. [Working With Buffers – Java NIO 2.0](https://howtodoinjava.com/java7/nio/java-nio-2-0-working-with-buffers/)
 1. Jenkov, [Java NIO Buffer](http://tutorials.jenkov.com/java-nio/buffers.html)
 1. Leonard A. (2011), _Pro Java 7 NIO.2_, Apress.
-1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
-1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley.
-1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley.
-1. Long F. et al. (2014), _Java Coding Guidelines_, Pearson. 
 1. Schuller P. (2012), ["The Java ByteBuffer – a crash course"](https://www.javacodegeeks.com/2012/12/the-java-bytebuffer-a-crash-course.html), JavaCodeGeeks.
 1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
 1. [Java NIO Buffer](https://javapapers.com/java/java-nio-buffer/)

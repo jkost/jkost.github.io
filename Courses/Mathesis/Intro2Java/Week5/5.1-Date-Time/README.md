@@ -413,12 +413,10 @@ public static void main(String[] args) {
 4) Γράψτε ένα πρόγραμμα Java για να υπολογίσετε πόσες Κυριακές έπεσαν την 1η του μήνα στον 20-ό αιώνα (1 Ιαν 1901 με 31 Δεκ 2000).
 
 ## Πηγές
-1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
-2. Evans B., Warburton R. (2014), “Java SE 8 Date and Time”, Java Magazine, [Issue 16](http://www.oraclejavamagazine-digital.com/javamagazine_open/20140304?pg=57#pg57), January-February, pp. 56-58.
-3. Evans B. J., Flanagan D. (2019), _Java in a Nutshell_, 7th Ed., O’ Reilly. 
-4. Horstmann C. S. (2018), _Core Java Volume II - Advanced Features_, 11th Ed., Pearson.
-5. Redko A. (2014), [“Java 8 Features – The ULTIMATE Guide”](http://www.javacodegeeks.com/2014/05/java-8-features-tutorial.html).
-6. Urma R-G., Fusco M., Mycroft Al. (2014), _Java 8 in Action: Lambdas, Streams, and functional-style programming_, Manning.
+1. Evans B., Warburton R. (2014), “Java SE 8 Date and Time”, Java Magazine, [Issue 16](http://www.oraclejavamagazine-digital.com/javamagazine_open/20140304?pg=57#pg57), January-February, pp. 56-58.
+1. Horstmann C. S. (2018), _Core Java Volume II - Advanced Features_, 11th Ed., Pearson.
+1. Redko A. (2014), [“Java 8 Features – The ULTIMATE Guide”](http://www.javacodegeeks.com/2014/05/java-8-features-tutorial.html).
+1. Urma R-G., Fusco M., Mycroft Al. (2014), _Java 8 in Action: Lambdas, Streams, and functional-style programming_, Manning.
 
 ---
 
