@@ -284,14 +284,8 @@ LOG.addAppender(appender);
 
 **Εικόνα 4.5.2** _Ορισμός παραμέτρων προγράμματος σε έργο του NetBeans_
 
-## Πηγές:
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
+## Πηγές
 1. Daconta M. C. et al. (2003), _More Java Pitfalls_, Wiley.
-1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
-1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
-1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
-1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley.
-1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf).
 1. Jenkov J. [Java Logging](http://tutorials.jenkov.com/java-logging/index.html).
 1. Joshi R. (2014), [java.util.logging Example](https://examples.javacodegeeks.com/core-java/util/logging/java-util-logging-example/)
 1. Vogel L. (2016), [Java Logging API - Tutorial](https://www.vogella.com/tutorials/Logging/article.html).

@@ -833,22 +833,9 @@ ID Name  qt City
 
 2. Υλοποιήστε τον αλγόριθμο εύρεσης του ν-στού αριθμού Fibonacci της άσκησης 7 του 8ου μαθήματος της 1ης εβδομάδας χρησιμοποιώντας ```BigInteger``` και υπολογίστε έναν πολύ μεγάλο αρ. Fibonacci, π.χ. τον 5000-ό. Επαληθεύστε την υλοποίησή σας [εδώ](https://keisan.casio.com/exec/system/1180573404). 
 
-## Πηγές:
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
-1. Bloch J. & Gafter N. (2005), _Java™ Puzzlers: Traps, Pitfalls, and Corner Cases_, Addison-Wesley, Puzzle 2.
-1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley, Item 63.
-1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
-1. Downey A. B., Mayfield C. (2016), _Think Java_, O' Reilly. 
-1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
-1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
-1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
-1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+## Πηγές
 1. Iordache S. (2016), ["Interactive Console Applications in Java"](https://dzone.com/articles/interactive-console-applications-in-java).
 1. Kiwy F. (2020), ["Four common pitfalls of the BigDecimal class and how to avoid them"](https://blogs.oracle.com/javamagazine/four-common-pitfalls-of-the-bigdecimal-class-and-how-to-avoid-them?source=:em:nw:mt:::RC_WWMK200429P00043:NSL400084275), Java Magazine.
-1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley. 
-1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
-1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
-1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
 1. [Generate Random Numbers](http://www.javapractices.com/topic/TopicAction.do?Id=62)
 1. [Formatting with printf() in Java (2019)](https://www.baeldung.com/java-printstream-printf)
 1. [Java printf( ) Method Quick Reference](https://www.cs.colostate.edu/~cs160/.Spring16/resources/Java_printf_method_quick_reference.pdf)

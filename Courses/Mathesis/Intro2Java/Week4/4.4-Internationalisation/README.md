@@ -265,13 +265,7 @@ collator.setStrength(Collator.PRIMARY);
 collator.equals("Gärten", "gaerten"); // returns true
 ```
 
-## Πηγές:
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
-1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
-1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
-1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
-1. Long F. et al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Addison-Wesley.
-1. [Java Notes for Professionals](https://books.goalkicker.com/JavaBook/JavaNotesForProfessionals.pdf)
+## Πηγές
 1. [Wikipedia](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 1. [Java Internationalization](http://tutorials.jenkov.com/java-internationalization/index.html)
 
