@@ -404,19 +404,8 @@ for (Character character : new StringIterable("abc")) {
 
 5) Τροποποιήστε την κλάση ```SchoolClass``` της προηγούμενης άσκησης ώστε να ικανοποιεί τις απαιτήσεις της άσκησης 2 του μαθήματος 2.4. Στην τάξη θα μπορούν να διδάσκουν και ένας ή περισσότεροι καθηγητές. Πώς θα τροποποιήσετε την κλάση ```SchoolClass``` ώστε να μπορεί ν' αποθηκεύει και καθηγητές; Τι αλλαγές θα πρέπει να κάνετε στο γενικευμένο τύπο της κλάσης ώστε να δέχεται και αντικείμενα τύπου ```Teacher```; 
 
-## Πηγές:
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
-1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.
-1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
-1. Downey A. B., Mayfield C. (2016), _Think Java_, O' Reilly. 
-1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
-1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
-1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
-1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
+## Πηγές
 1. Kabutz H. (2017), "Collections.checkedCollection()", [Java Specialists Newsletter Issue 251](https://www.javaspecialists.eu/archive/Issue251.html)
-1. Naftalin M., Wadler P. (2006), _Java Generics and Collections_, O'Reilly. 
-1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
-1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 
 ---
 

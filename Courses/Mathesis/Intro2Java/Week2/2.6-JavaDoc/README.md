@@ -111,9 +111,6 @@ B --|> A
 
 _Υπάρχει και το [UML Java Doclet](https://github.com/gboersma/uml-java-doclet) έργο ανοικτού κώδικα το οποίο χρησιμοποιεί το [maven](https://maven.apache.org/) και ξεφεύγει από τα όρια αυτής της σειράς μαθημάτων._
 
-## Πηγές:
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
-1. Long F. et. al. (2014), _Java Coding Guidelines_, Addison-Wesley.
 
 ---
 

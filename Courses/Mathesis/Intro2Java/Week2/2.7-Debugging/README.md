@@ -132,7 +132,7 @@ public class FortuneTeller {
 }
 ```
 
-## Πηγές:
+## Πηγές
 1. [Αποσφαλμάτωση](https://el.wikipedia.org/wiki/%CE%91%CF%80%CE%BF%CF%83%CF%86%CE%B1%CE%BB%CE%BC%CE%AC%CF%84%CF%89%CF%83%CE%B7), Wikipedia
 1. Spinellis D. (2017), _Effective Debugging_, Addison-Wesley.
 1. [Using the Visual Debugger in NetBeans IDE](https://netbeans.org/kb/docs/java/debug-visual.html)

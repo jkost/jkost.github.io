@@ -81,8 +81,7 @@ import org.apache.commons.collections4.Bag;
 	Ακολουθήστε τις οδηγίες που θα βρείτε [εδώ](https://stackoverflow.com/questions/43111018/how-to-import-external-libraries-in-jshell-java-9) για να χρησιμοποιήσετε βιβλιοθήκες στο jshell.
 2. Επαναλάβετε την άσκηση 4 της προηγούμενης ενότητας χρησιμοποιώντας την κλάση [org.apache.commons.collections.map.LRUMap](https://commons.apache.org/proper/commons-collections/apidocs/org/apache/commons/collections4/map/LRUMap.html) (LRU = Least Recently Used). 
 
-## Πηγές:
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
+## Πηγές
 1. [Apache Commons Collections](http://commons.apache.org/proper/commons-collections/)
 1. [Eclipse Collections](https://www.eclipse.org/collections/)
 1. [Google Guava](https://github.com/google/guava)

@@ -372,7 +372,7 @@ public class Circle extends Shape {...}
 public class Rectangle extends Shape {...} 
 public class Triangle extends Shape {...}   // compilation error
 ```
-Η ```sealed``` περιορίζει ποιες άλλες κλάσεις μπορούν να κληρονομήσουν την κλάση ```Shape```. Βλέπουμε ότι επιτρέπει μόνο τις ```Circle, Rectangle``` με αποτέλεσμα η κλάση ```Triangle``` να εμφανίζει λάθος μεταγλώττισης. Από δω και πέρα, έχουμε διάφορες επιλογές για τις (επιτρεπόμενες) υποκλάσεις (```Circle, Rectangle```). Μπορούμε να τις ορίσουμε ως ```final``` (δεν επιτρέπεται να κληρονομηθούν), ως ```sealed``` (οπότε πρέπει να ορίσουμε με την ```permits``` ποιες άλλες κλάσεις επιτρέπεται να την κληρονομήσουν) ή να τις ορίσουμε όπως στο παραπάνω παράδειγμα οπότε μπορεί να τις κληρονομίσει οποιαδήποτε άλλη κλάση.
+Η ```sealed``` περιορίζει ποιες άλλες κλάσεις μπορούν να κληρονομήσουν την κλάση ```Shape```. Βλέπουμε ότι επιτρέπει μόνο τις ```Circle, Rectangle``` με αποτέλεσμα η κλάση ```Triangle``` να εμφανίζει λάθος μεταγλώττισης. Από δω και πέρα, έχουμε διάφορες επιλογές για τις (επιτρεπόμενες) υποκλάσεις (```Circle, Rectangle```). Μπορούμε να τις ορίσουμε ως ```final``` (δεν επιτρέπεται να κληρονομηθούν), ως ```sealed``` (οπότε πρέπει να ορίσουμε με την ```permits``` ποιες άλλες κλάσεις επιτρέπεται να την κληρονομήσουν) ή να τις ορίσουμε όπως στο παραπάνω παράδειγμα οπότε μπορεί να τις κληρονομήσει οποιαδήποτε άλλη κλάση.
 
 Στα μαθήματα της 1ης εβδομάδας μάθαμε για τη νέα σύνταξη της ```switch```. Οι ```sealed``` κλάσεις επιτρέπουν την απλοποίησή τους, καθώς, όπως βλέπουμε στο παρακάτω παράδειγμα δεν απαιτείται ```default```:
 
@@ -778,20 +778,8 @@ instance.aMethod();  // Anonymous class aMethod()
 
 * μαθήματα που διδάσκει (το πολύ μέχρι 3)
 
-## Πηγές:
-1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
-1. Bloch J. (2018), _Effective Java_, 3rd Edition, Addison-Wesley.
-1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
-1. Downey A. B., Mayfield C. (2016), _Think Java_, O' Reilly. 
-1. Eckel B. (2006), _Thinking in Java_, 4th Ed., Prentice-Hall.
+## Πηγές
 1. Evans B. (2019), [Inside the Language: Sealed Types](https://blogs.oracle.com/javamagazine/inside-the-language-sealed-types), Java Magazine.
-1. Hillar G.C. (2017), _Java 9 with JShell_, Packt.
-1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
-1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
-1. Long F. et. al. (2014), _Java Coding Guidelines_, Addison-Wesley.
-1. Samoylov N. (2019), _Learn Java 12 Programming_, Packt.
-1. Sharan K. (2017), _Java 9 Revealed: For Early Adoption and Migration_, Apress.
-1. Sierra K. & Bates B. (2005), _Head First Java_, 2nd Ed. for Java 5.0, O’Reilly.
 1. [Jenkov Nested Classes](http://tutorials.jenkov.com/java/nested-classes.html)
 
 ---
