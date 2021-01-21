@@ -203,6 +203,7 @@ double myvar = 3.14
 1. Horstmann C. S. (2016), _Core Java, Volume 1 Fundamentals_, 10th Ed., Prentice-Hall.
 1. Horstmann C. S. (2018), _Core Java SE 9 for the impatient_, 2nd Ed., Addison-Wesley. 
 1. Liguori R. & Liguori P. (2014), _Java 8 Pocket Guide_, O'Reilly.
+1. Juneau J. (2017), _Java 9 Recipes_, 3rd Ed., APress.
 1. Long F. et. al. (2012), _The CERT® Oracle® Secure Coding Standard for Java™_, Pearson.
 1. Long F. et. al. (2014), _Java Coding Guidelines_, Addison-Wesley.
 1. Naftalin M., Wadler P. (2006), _Java Generics and Collections_, O'Reilly. 
