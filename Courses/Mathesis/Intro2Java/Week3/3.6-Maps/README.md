@@ -451,9 +451,6 @@ public class Cache<K, V> {
 }
 ```
 
-## Πηγές
-1. Kabutz H. (2014), "Recent File List", _Java Specialists Newsletter_. 
-
 ---
 
 [<-](../3.5-Queues/README.md) | [Δ](../../README.md) | [->](../3.7-OtherCollections/README.md)

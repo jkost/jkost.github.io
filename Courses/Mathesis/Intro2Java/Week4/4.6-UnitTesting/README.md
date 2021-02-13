@@ -253,7 +253,9 @@ class Test {
 
 Αφού επανεκκινήσετε το NetBeans, επιλέξτε ένα Έργο (Project) και εμφανίστε το παράθυρο _Action Items_ από το μενού **Window --> Action Items**. Τ' αποτελέσματα του PMD εμφανίζονται εκεί.
 
-### FindBugs
+### SpotBugs
+
+Το [SpotBugs](https://spotbugs.github.io/) είναι ο διάδοχος του δημοφιλούς [FindBugs](http://findbugs.sourceforge.net/).
 
 Για να προσθέσετε το _FindBugs Integration_ plugin, κάντε κλικ στο μενού **Tools --> Plugins --> Available Plugins** πληκτρολογήστε _findbugs_ στο πεδίο **Search:** και επιλέξτε το plugin που εμφανίζεται. Πατήστε το κουμπί **Install** και ακολουθήστε τον οδηγό.
 
