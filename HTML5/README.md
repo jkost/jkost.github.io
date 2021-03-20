@@ -31,13 +31,15 @@ _Σημείωση!_ Το βιβλίο αυτό υποθέτει ότι γνωρ�
 ## Κειμενογράφοι HTML 5
 Υπάρχουν ήδη κειμενογράφοι που υποστηρίζουν τη σύνταξη της HTML 5:
 
-* [Aptana Studio 3](http://www.aptana.com/products/studio3/download.html), ένα δωρεάν ολοκληρωμένο περιβάλλον εργασίας που υποστηρίζει HTML5, JavaScript, CSS3, Python, PHP, Rails και Ruby
+* [Aptana Studio 3](http://www.aptana.com/), ένα δωρεάν ολοκληρωμένο περιβάλλον εργασίας που υποστηρίζει HTML5, JavaScript, CSS3, Python, PHP, Rails και Ruby
 * [Bluefish](http://bluefish.openoffice.nl/index.html), ο αγαπημένος σας κειμενογράφος τώρα και με υποστήριξη HTML 5
 * [BlueGriffon](http://bluegriffon.org/), ένας δωρεάν WYSIWYG κειμενογράφος από την Gecko 
 * [HTML5-editor](https://html5-editor.net/), ένας δωρεάν WYSIWYG κειμενογράφος
 * [Maqetta](http://maqetta.org/), άλλος ένας δωρεάν WYSIWYG κειμενογράφος 
 * [Mercury](http://jejacks0n.github.io/mercury/), ένας δωρεάν κειμενογράφος που υποστηρίζει HTML5
 * [NetBeans](http://netbeans.org), ένα δωρεάν ολοκληρωμένο περιβάλλον εργασίας που υποστηρίζει HTML5 και CSS3
+* [SeaMonkey Composer](https://www.seamonkey-project.org), ο παλιός Netscape Navigator περιέχει τον Composer για ανάπτυξη ιστοσελίδων
+* [Visual Studio Code](https://code.visualstudio.com), ένα δωρεάν ολοκληρωμένο περιβάλλον εργασίας υποστήριξης πολλών γλωσσών προγραμματισμού από την Microsoft
 * [WebStorm](https://www.jetbrains.com/webstorm/download/index.html), ένας εμπορικός κειμενογράφος από την Jetbrains
 
 ## Μια απλή ιστοσελίδα στην HTML 4.01 και την HTML 5
