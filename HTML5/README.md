@@ -44,39 +44,39 @@ _Σημείωση!_ Το βιβλίο αυτό υποθέτει ότι γνωρ�
 
 ## Μια απλή ιστοσελίδα στην HTML 4.01 και την HTML 5
 Μια ιστοσελίδα στην HTML 4.01 ξεκινούσε με την κεφαλίδα:
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
 ```
 Στην HTML 5 απλά ξεκινάει με:
-```
+```html
 <!DOCTYPE html>
 ```
 και δεν θα χρειαστεί να ξαναλλάξει!
 Επίσης, η μετα-εντολή:
-```
+```html
 <meta http-equiv="content-type" content="text/html; charset=
 UTF-8">
 ```
 απλοποιείται ως:
-```
+```html
 <meta charset="utf-8">
 ```
 Ο υπερσύνδεσμος:
-```
+```html
 <link type="text/css" rel="stylesheet" href="mycss.css">
 ```
 απλοποιείται ως εξής:
-```
+```html
 <link rel="stylesheet" href="mycss.css">
 ```
 γιατί το Cascaded Stylesheet (CSS) είναι το εξ ορισμού πρότυπο στυλ στην HTML 5.
 Τέλος, καθώς η Javascript είναι η εξ ορισμού γλώσσα συνόδου της HTML 5, η εντολή:
-```
+```html
 <script type="text/javascript" src="myscript.js"></script>
 ```
 απλοποιείται ως:
-```
+```html
 <script src="myscript.js"></script>
 ```
 Το καλύτερο; Η νέα σύνταξη δουλεύει και σε παλαιότερους πλοηγούς!
@@ -84,7 +84,7 @@ UTF-8">
 
 ## Καμβάς - Ζωγραφική
 Επιτέλους, μπορείτε να «βγάλετε» τον ζωγράφο που κρύβετε μέσα σας, χρησιμοποιώντας τη νέα εντολή ```canvas```:
-```
+```html
 <canvas height="yyy" width="xxx">
 </canvas>
 ```
@@ -101,7 +101,7 @@ UTF-8">
 **Εικόνα 1** _Ένα παράδειγμα χρήσης του καμβά_
 
 Ας ξεκινήσουμε με τον ακόλουθο κώδικα, τον οποίο μπορείτε ν' αποθηκεύσετε στο αρχείο ```canvas.html```:
-```
+```html
 <!DOCTYPE html>
 <html>
  <head>
@@ -119,7 +119,7 @@ UTF-8">
 </html>
 ```
 Ο παραπάνω σκελετός κώδικα περιλαμβάνει την ετικέτα ```canvas```, όπως την ορίσαμε πρωτύτερα. Αλλά το τι θα ζωγραφίσουμε στον καμβά το προγραμματίζουμε με javascript. Στο παράδειγμά μας, η ιδιότητα ```onload``` καλεί τη συνάρτηση ```loader()```, που εκτελείται κατά τη φόρτωση της ιστοσελίδας στον πλοηγό και περιέχει τη ζωγραφική μας. Μέσα στη συνάρτηση ```loader()```, προσπελάζουμε τον καμβά με τις εντολές:
-```
+```javascript
 function loader() {
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
@@ -129,7 +129,7 @@ function loader() {
 ίσως μαντεύετε, μελλοντικά θα μπορούμε να ζωγραφίζουμε και τρισδιάστατα αντικείμενα, απλά αντικαθιστώντας το ```"2d"``` με ```"3d"```. Για την ακρίβεια,
 το 3d API ονομάζεται WebGL και καλείται επίσης περνώντας το αλφαριθμητικό ```"webgl"``` (αντί για το ```"3d"```).
 Από δω και πέρα, απλά… ζωγραφίζουμε.
-```
+```javascript
 function loader() {
  var canvas = document.getElementById('canvas');
  var context = canvas.getContext('2d');
@@ -178,7 +178,7 @@ function loader() {
 * ```rect(float x, float y, float w, float h);```
 
 Π.χ.:
-```
+```javascript
 // Face \\
 context.beginPath();
 context.arc(275, 275, 50, 0, Math.PI * 2, true);
@@ -201,7 +201,7 @@ context.fill();
 ```
 
 Μπορείτε να δημιουργήσετε πολύπλοκα σχήματα με τις εντολές:
-```
+```javascript
 context.beginPath();
 context.moveTo(x, y); // τo πινέλo είναι σηκωμένο
 context.lineTo(x, y); // τo πινέλo ζωγραφίζει
@@ -216,7 +216,7 @@ context.stroke();
 
 όπου ```cp``` σημαίνει _control point (σημείο ελέγχου)_· η quadratic καμπύλη χρειάζεται ένα, ενώ η bezier δυο σημεία ελέγχου.
 Π.χ.:
-```
+```javascript
 // Heart
 context.fillStyle = "rgba(200, 0, 0, 1)";
 context.beginPath();
@@ -231,7 +231,7 @@ context.closePath();
 context.fill();
 ```
 Τέλος, μπορείτε φυσικά να προσθέσετε κείμενο:
-```
+```javascript
 context.font = 'italic 32px sans-serif';
 context.fillText("Καλή Χρονιά!", 5, 400);
 ```
@@ -240,7 +240,7 @@ context.fillText("Καλή Χρονιά!", 5, 400);
 * ```drawImage(HTMLImageElement image, float dx, float dy, optional float dw, float dh);```
 
 όπου
-```
+```javascript
 var image = new Image();
 image.onload = function() {
   context.drawImage(image, sizeX, sizeY);
@@ -253,11 +253,11 @@ image.src = '<ImageURL>';
 
 ## Βίντεο και ήχος
 Συνεχίζοντας με την υποστήριξη πολυμέσων, θα δούμε πώς μπορούμε να αναπαράγουμε βίντεο στον πλοηγό μας με τη βοήθεια της HTML 5:
-```
+```html
 <video [attributes]></video>
 ```
 Η εντολή για αναπαραγωγή ήχου είναι:
-```
+```html
 <audio [attributes]></audio>
 ```
 όπου attributes:
@@ -284,7 +284,7 @@ image.src = '<ImageURL>';
 Για την ώρα υποστηρίζεται μόνο η ανοικτού κώδικα μορφή αρχείου ```.ogg```. Αν θέλετε να φορτώσετε μια άλλη μορφή αρχείου (π.χ. ```.wmv```, ```.mpeg```, κλπ.) και ο πλοηγός σας δεν την υποστηρίζει ακόμα, τότε μπορείτε να το μετατρέψετε σε μορφή ```.ogg```, π.χ. μέσω των ιστοσελίδων:
 [Media Converter](http://www.mediaconverter.org/) ή [Online convert](http://www.online-convert.com/). Αφού έχετε επιλέξει το αρχείο βίντεο και το αρχείο ήχου που θέλετε ν' αναπαράγετε, αποθηκεύστε τον παρακάτω κώδικα στο αρχείο ```audiovideo.html``` και αντιγράψτε τα αρχεία βίντεο και ήχου στον ίδιο φάκελο:
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head><title>Audio/Video Example</title>
@@ -361,7 +361,7 @@ image.src = '<ImageURL>';
 
 Ο παρακάτω κώδικας ```register.html``` δείχνει τη χρήση κάποιων απ' αυτά σε σε μια χρήσιμη φόρμα εγγραφής:
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head><title>Εγγραφή</title></head>
@@ -459,7 +459,7 @@ image.src = '<ImageURL>';
 
 **Εικόνα 2** _Σύρε και ρίξε_
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -542,13 +542,13 @@ image.src = '<ImageURL>';
 ```
 
 Υπάρχουν 4 ```<div>``` στον κώδικα, ένα για τους μαγνήτες (```magnets```) και 3 για τις 3 εικόνες (```target1, target2, target3```). Επίσης κάθε μαγνήτης (```bird, cat, dog```) ορίζεται στο δικό του ```<div>```. Επειδή καθένας από τους μαγνήτες θα πρέπει να μπορεί να συρθεί, ορίζουμε την ιδιότητα ```draggable="true"``` για καθέναν απ' αυτούς:
-```
+```html
 <div id="bird" draggable="true" ondragstart="return start(event)" ondragend="return end(event)">bird</div>
 ```
 Οι ιδιότητες ```“on"``` συνδέουν τα διάφορα γεγονότα με συναρτήσεις JavaScript. Π.χ. η ιδιότητα ```“ondragstart"``` καλεί τη συνάρτηση JavaScript
 ```“start()"``` όταν ένα στοιχείο αρχίζει να σέρνεται. Διαφορετικά γεγονότα ορίζονται για τα αντικείμενα που σέρνονται και για τα αντικείμενα «στόχους»,
 αυτά δηλ. στα οποία θ' αφεθεί το μεταφερόμενο αντικείμενο. 
-```
+```html
 <div id="target1"
 ondragenter="return enter(event)"
 ondragover="return over(event)"
@@ -561,7 +561,7 @@ ondrop="return drop(event)">
 * τις συναρτήσεις ```setData()``` και ```getData()``` που σας επιτρέπει να αποθηκεύσετε τα δεδομένα που θέλετε να μεταφέρετε, και
 * τη συνάρτηση ```setDragImage()``` με την οποία ορίζετε την εικόνα του αντικειμένου κατά τη μεταφορά.
 
-```
+```javascript
 e.dataTransfer.effectAllowed = 'move';
 e.dataTransfer.setData("Data",
 e.target.getAttribute('id'));
@@ -569,7 +569,7 @@ e.dataTransfer.setDragImage(e.target, 0, 0);
 ```
 Η συνάρτηση ```"over()"``` καλείται για να αποφασίσει αν το αντικείμενο μπορεί να αφεθεί στο αντικείμενο στόχο ή όχι. Αν επιστρέψει ```true``` το αντικείμενο δεν μπορεί ν' αφεθεί, διαφορετικά μπορεί.
 
-```
+```javascript
 function over(e) {
   var idDragObj = e.dataTransfer.getData("Data");
   var idTarget = e.target.getAttribute('id');
@@ -605,7 +605,7 @@ function over(e) {
 * ```window.onpopstate```
 
 Το παρακάτω πρόγραμμα περιγράφει τη λειτουργία τους:
-```
+```html
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
@@ -656,13 +656,13 @@ function over(e) {
 </html>
 ```
 Όταν φορτώνεται η ιστοσελίδα: 
-```
+```html
 <body onload="loader()">
 ...
 </body>
 ```
 καλείται η συνάρτηση ```loader()```:
-```
+```javascript
 function loader() {
   var length = window.history.length;
   document.getElementById("length").innerHTML = "<h1>" + "Μέγεθος ιστορικού: " + length + "</h1>";
@@ -670,12 +670,12 @@ function loader() {
 ```
 η οποία εμφανίζει το μέγεθος του ιστορικού στο κάτω μέρος της σελίδας.
 Τα κουμπιά **Πίσω** και **Εμπρός**:
-```
+```html
 <input value="Πίσω" onclick="back();" type="button">
 <input value="Εμπρός" onclick="forward();" type="button">
 ```
 καλούν τις αντίστοιχες συναρτήσεις:
-```
+```javascript
 function back() {
   window.history.back();
 }
@@ -684,11 +684,11 @@ function forward() {
 }
 ```
 Η μετάβαση σε **X** σελίδες στο ιστορικό παρέχεται με τον κώδικα:
-```
+```html
 Μετακίνηση: <input id="numPages" type="text"> σελ. <input value="Εκτέλεση" onclick="go();" type="button">
 ```
 ο οποίος καλεί τη συνάρτηση:
-```
+```javascript
 function go() {
   var numPages = document.getElementById("numPages").value;
   window.history.go(numPages);
@@ -697,11 +697,11 @@ function go() {
 Σημειώστε ότι η μεταβλητή ```numPages``` μπορεί να είναι και αρνητικός ακέραιος αριθμός.
 
 Τέλος, η προσθήκη δεδομένων στην τρέχουσα σελίδα παρέχεται από:
-```
+```html
 Δεδομένα: <input id="data" type="text"> <input value="Προσθήκη" onclick="pushdata();" type="button">
 ```
 ο οποίος καλεί τη συνάρτηση:
-```
+```javascript
 function pushData() {
   var data = document.getElementById("data").value;
   var containerObject = { container : data };
@@ -711,7 +711,7 @@ function pushData() {
 Η συνάρτηση ```pushState(data, title [, url ])``` δέχεται ως ορίσματα ένα αντικείμενο που περιέχει τα δεδομένα, ένα κλειδί με το οποίο μπορείτε να προσπελάσετε τα δεδομένα και την ιστοσελίδα με την οποία συσχετίζετε τα δεδομένα (το παραπάνω πρόγραμμα έχει αποθηκευτεί ως ```history.html```).
 Η συνάρτηση ```replaceState(data, title [, url ])``` δέχεται τα ίδια ορίσματα όπως και η pushState και αντικαθιστά τα παλιά δεδομένα με νέα.
 Τέλος, προσθέτουμε έναν «ακροατή» (listener) ο οποίος όταν λάβει το γεγονός onpopstate καλεί τη συνάρτηση ```popData()```.
-```
+```javascript
 function popData(event) {
   var state = "Ιστοσελίδα: " + document.location + " Δεδομένα: " + event.state.container;
   document.getElementById("state").innerHTML = "<h1>" + state + "</h1>";
@@ -730,7 +730,7 @@ window.addEventListener("popstate", popData, false);
 Πλοηγοί που το υποστηρίζουν: Chrome, Firefox, IE, Safari, Opera. Ο ορθογράφος υποστηρίζεται μόνο από τον firefox.
 
 Το παρακάτω πρόγραμμα είναι ένας online κειμενογράφος.
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -779,20 +779,20 @@ window.addEventListener("popstate", popData, false);
 **Εικόνα 4** _Online κειμενογράφος_
 
 Η τελευταία γραμμή κώδικα ορίζει την ιδιότητα ```contenteditable="true"``` του ```<div id="div">```:
-```
+```html
 <div id="div" style='border:solid black; height: 300px; width:400px; resize: both; overflow: auto' contenteditable="true"></div>
 ```
 Η ιδιότητα ```contenteditable``` μπορεί να πάρει τις τιμές: ```true, false, inherit``` (δηλ. ίδια με του στοιχείου γονέα στο οποίο ανήκει). Πλέον μπορείτε να γράψετε μέσα στο ```div```. Από εκεί και πέρα, ορίζουμε κάποια κουμπιά για να επεξεργαστούμε το κείμενο του ```div```. Αντί για την εντολή:
-```
+```html
 <input type="button" value="Bold" onclick="document.execCommand('bold', false, null);">
 ```
 χρησιμοποιήσαμε την πιο πρακτική:
-```
+```html
 <button onclick="document.execCommand('bold', false, null);"><b>B</b></button>
 ```
 για να μπορούμε να μορφοποιήσουμε το κουμπί (π.χ. ```<b>B</b>```).
 Η μορφοποίηση του κειμένου γίνεται με την εντολή:
-```
+```javascript
 object.execCommand(sCommand [, bUserInterface] [, vValue])
 ```
 όπου:
@@ -807,11 +807,11 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 δουλεύει μόνο για αγγλικό κείμενο.
 
 Αντί για ```<div>``` θα μπορούσαμε να επεξεργαστούμε ολόκληρο ```iframe```:
-```
+```html
 <iframe id="content" style='border:solid black; height: 300px; width: 400px' src="about:blank"></iframe>
 ```
 Σ' αυτήν την περίπτωση, θα πρέπει να θέσουμε ```designMode="on"```:
-```
+```html
 <script type="text/javascript">
   var iframe;
   function loader() {
@@ -823,15 +823,15 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 </script>
 ```
 και φυσικά:
-```
+```html
 <body onload="loader()">
 ```
 Οι υπόλοιπες διαφορές έχουν να κάνουν με την αντικατάσταση του ```document.execCommand``` με ```iframe.contentDocument.execCommand``` π.χ.
-```
+```html
 <button onclick="document.execCommand('bold', false, null);"><b>B</b></button>
 ```
 θα γίνει:
-```
+```html
 <button onclick="iframe.contentDocument.execCommand('bold', false, null);"><b>B</b></button>
 ```
 
@@ -855,7 +855,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 **Εικόνα 5** _Διάταξη μιας ιστοσελίδας_
 
 Ας δούμε ένα παράδειγμα:
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -930,7 +930,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 **Εικόνα 6** _Ένα ιστολόγιο_
 
 Το ιστολόγιο αποτελείται από μια κεφαλίδα:
-```
+```html
 <header>
   <hgroup>
     <h1>Ιστολόγιο</h1>
@@ -939,7 +939,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 </header>
 ```
 που αποτελείται από δυο επικεφαλίδες οργανωμένες ως hgroup, από ένα μενού πλοήγησης:
-```
+```html
 <nav>
   <ul style="list-style-type: none; margin: 0; padding: 0;">
     <li class="inline"><a href="#">Νέα</a></li>
@@ -949,7 +949,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 </nav>
 ```
 ένα section που αποτελείται από δυο άρθρα:
-```
+```html
 <section contextmenu="mnu-comments">
   <article> ... </article>
   <article> ... </article>
@@ -963,7 +963,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 </aside>
 ```
 και ένα υποσέλιδο:
-```
+```html
 <footer>Hawk - ©2013</footer>
 ```
 Επίσης, αν κάνετε δεξί κλικ σε κάποιο από τα άρθρα θα εμφανιστεί ένα μενού (βλ. Εικόνα 7):
@@ -972,7 +972,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 
 **Εικόνα 7** _Μενού_
 
-```
+```html
 <menu type="context" id="mnu-comments">
   <menuitem label="Παρακαλώ μην αντιγράφετε τα κείμενα" icon="forbidden.png"></menuitem>
   <menu label="Αναφορές">
@@ -1020,7 +1020,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 1. Κατεβάστε το αρχείο [modernizr](www.modernizr.com/download/).
 2. Φορτώστε το στο αρχείο σας HTML ως εξής:
 
-```
+```html
 <html>
   <head>
     <script src="script/modernizr-2.6.2.js" type="text/javascript"></script>
@@ -1070,7 +1070,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 
 Εφόσον ο χρήστης δεν έχει κλείσει τον πλοηγό μπορεί να επαναφέρει τα δεδομένα που αποθήκευσε στον πλοηγό.
 Το παράδειγμά μας αποτελείται από δυο αρχεία:
-```
+```htmlhtml
 store.html
 <!DOCTYPE html>
 <html>
@@ -1106,7 +1106,7 @@ store.html
 </body>
 </html>
 ```
-```
+```html
 basket.html
 <!DOCTYPE html>
 <html>
@@ -1138,15 +1138,15 @@ basket.html
 </html>
 ```
 Η μέθοδος ```sessionStore()``` αποθηκεύει τα δεδομένα που πρόσθεσε ο χρήστης στο πλαίσιο κειμένου ```basket``` στον πλοηγό χρησιμοποιώντας την εντολή με κλειδί ```"Data"```:
-```
+```javascript
 localStorage.setItem("Data", text);
 ```
 Η διαγραφή των δεδομένων από τον ιστό γίνεται με την εντολή (βλ. συνάρτηση ```sessionClear()```):
-```
+```javascript
 localStorage.removeItem("Data");
 ```
 ενώ η ανάκτηση των δεδομένων με την εντολή (βλ. συνάρτηση ```sessionGet()```):
-```
+```javascript
 localStorage.getItem("Data");
 ```
 Αν υπήρχε διακομιστής και επιθυμούμε να αποθηκεύσουμε τα δεδομένα στο διακομιστή κι όχι στον πλοηγό, αντικαθιστούμε τη ```localStorage``` με ```sessionStorage``` ενώ η υπόλοιπη εφαρμογή παραμένει η ίδια.
@@ -1179,7 +1179,7 @@ localStorage.getItem("Data");
 **Εικόνα 10** _Αποστολή μηνύματος_
 
 Η inline ιστοσελίδα ```messages.html``` περιέχει ένα ```div``` (```messages```) και όταν φορτώνεται για πρώτη φορά προσθέτουμε έναν ```EventListener``` στο γεγονός ```onMessage```. Όταν ληφθεί το γεγονός αυτό καλείται η συνάρτηση ```onLoad()``` η οποία δέχεται το γεγονός στη μεταβλητή ```e```. Η μεταβλητή αυτή περιέχει τα δεδομένα του μηνύματος (```e.data```) τα οποία εμφανίζονται στο ```div```. 
-```
+```html
 messages.html
 <!DOCTYPE html>
 <html>
@@ -1199,11 +1199,11 @@ messages.html
 </html> 
 ```
 Η ιστοσελίδα ```sender.html``` περιέχει την ιστοσελίδα ```messages.html``` σ' ένα ```iframe``` και όταν ο χρήστης πατήσει το κουμπί **Αποστολή** καλείται η συνάρτηση ```send()``` η οποία στέλνει το μήνυμα στην inline ιστοσελίδα ```messages``` με την εντολή ```postMessage(message, "*")```. Το ```*``` είναι επικίνδυνο από πλευράς ασφαλείας καθώς σημαίνει ότι οποιαδήποτε ιστοσελίδα μπορεί να στείλει μηνύματα στην ιστοσελίδα μας ```messages.html```. Αν θέλουμε μόνο μια συγκεκριμένη ιστοσελίδα να στέλνει, τότε μπορούμε να δώσουμε το URL της, όπως π.χ.: ```postMessage(message, window.location.protocol + '//' + window.location.hostname)```. Θα πρέπει να προσέξουμε η διεύθυνση ιστοσελίδας που περνάμε ως 2η παράμετρο στην ```postMessage()``` να προέρχεται από το ίδιο domain (origin) του ```contentWindow``` αλλιώς θα εμφανιστεί ```SecurityError```, π.χ.:
-```  
+```html
 <iframe id="iframe" src="http://www.domain.gr/messages.html" height="300" width="600"></iframe>
 ```
 Στην περίπτωση αυτή καλούμε ```postMessage(message, 'http://www.domain.gr')```. 
-```
+```html
 sender.html
 <!DOCTYPE html>
 <html>
@@ -1253,7 +1253,7 @@ sender.html
 |Latitude/Longitude: 50°39′48″N/005°35′45″E - accuracy: 32 meters.|
 
 **Εικόνα 12** _Εμφάνιση γεωγραφικής θέσης χρήστη_
-```
+```html
 geolocation.html
 <!DOCTYPE html>
 <html>
@@ -1314,7 +1314,7 @@ geolocation.html
 Πλοηγοί που το υποστηρίζουν: [http://caniuse.com/websockets](http://caniuse.com/websockets). Μπορείτε να ελέγξετε αν ο πλοηγός σας υποστηρίζει Web sockets φορτώνοντας την [ιστοσελίδα](http://www.websocket.org/echo.html).
 
 Για να δείξουμε ένα παράδειγμα θα χρειαζόμασταν ένα διακομιστή που να υποστηρίζει WebSockets. Καθώς κάτι τέτοιο ξεφεύγει από τα όρια αυτού του βιβλίου, θα χρησιμοποιήσουμε το διακομιστή της [ιστοσελίδας](http://www.websocket.org/echo.html).
-```
+```html
 websockets.html
 <!DOCTYPE html>
 <html>
@@ -1411,7 +1411,7 @@ websockets.html
 ![](assets/Fig14.png)
 
 **Εικόνα 14** _Παράδειγμα WebWorker_ 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -1437,32 +1437,32 @@ worker.postMessage(document.getElementById('n').value);
 </html>
 ```
 με τη εντολή:
-```
+```javascript
 var worker = new Worker('fib.js');
 ```
 ή αν πρόκειται για διαμοιρασμένο εργάτη ιστού:
-```
+```javascript
 var worker = new SharedWorker('fib.js');
 ```
 Ο κώδικας Javascript θα εκτελεστεί ασύγχρονα στο δικό του νήμα εκτέλεσης (thread) όταν του σταλεί ένα μήνυμα με τη μέθοδο:
-```
+```javascript
 worker.postMessage(document.getElementById('n').value); 
 ```
 όπου του περνάμε έναν θετικό ακέραιο αριθμό.
 Το script που ξεκίνησε τον εργάτη ιστού μπορεί να ακούει για το γεγονός  αυτό (```e```) και όταν το λάβει να επεξεργαστεί τα δεδομένα (```e.data```) που του στέλνει ο εργάτης στον διαχειριστή του γεγονότος (event handler) ```onMessage```:
-```
+```javascript
 worker.addEventListener('message', function(e) {
   document.getElementById('fib').textContent = e.data;
 }, false);
 ```
 Αντίστοιχα ο εργάτης θα πρέπει να έχει επίσης κάποιον διαχειριστή γεγονότων για να τα διαχειριστεί και να αποστείλει την απάντηση:
-```
+```javascript
 self.addEventListener('message', function(e) {
   self.postMessage(fibonacci(e.data));
 }, false);
 ```
 Αν συμβεί κάποιο λάθος τότε θα πρέπει να διαχειριστεί ως εξής:
-```
+```javascript
 worker.addEventListener('error', function(e) {
   // error handling code
 });
@@ -1479,7 +1479,7 @@ worker.addEventListener('error', function(e) {
 Πλοηγοί που το υποστηρίζουν: Chrome, Firefox, IE 11, Opera, Safari. 
 
 Η υλοποίηση είναι απλή. Χρειάζεται απλά να δηλώσετε το αρχείο κειμένου cache manifest που περιέχει όλους τους πόρους που χρειάζεται ο  πλοηγός σας  για να προσπελάσει τους πόρους offline π.χ.
-```
+```html
 <html manifest="appcache.mf">
   ...
 </html>
@@ -1488,7 +1488,7 @@ worker.addEventListener('error', function(e) {
 
 Μπορείτε να δείτε την application cache στον Chrome από τη δ/νση [chrome://appcache-internals/](chrome://appcache-internals/). Υπάρχουν διάφορα εργαλεία για τον Firefox.
 Ας δούμε πως μπορούμε να μετατρέψουμε το αρχείο ```dragdrop.html``` που είδαμε προηγούμενα ώστε να είναι διαθέσιμο offline. Κατ' αρχήν, θα πρέπει να δημιουργήσετε το αρχείο ```appcache.mf``` (ή ότι άλλο όνομα θέλετε να του δώσετε) που να περιλαμβάνει τους πόρους που θα πρέπει να είναι διαθέσιμοι εκτός σύνδεσης:
-```
+```html
 CACHE MANIFEST
 # This is a comment
 CACHE:
@@ -1505,12 +1505,12 @@ images/ images/offline.jpg
 Η 1η γραμμή ```CACHE MANIFEST``` είναι η μόνη που είναι υποχρεωτική. ```#``` είναι σχόλιο. Τα αρχεία που αποθηκεύονται στην λανθάνουσα μνήμη αναγράφονται κάτω από το τμήμα ```CACHE:``` (που είναι προαιρετικό). Το (προαιρετικό) τμήμα ```NETWORK:``` αναγράφει τα αρχεία για τα οποία ο χρήστης πρέπει να είναι συνδεδεμένος στο διαδίκτυο. Το (προαιρετικό) τμήμα ```FALLBACK:```, τέλος, δηλώνει τι να φορτωθεί αν κάποιος πόρος δεν είναι διαθέσιμος.
 Στη συνέχεια πρέπει να τροποποιήσετε την ετικέτα ```html``` του αρχείου ```dragdrop.html``` προσθέτοντας το αρχείο ```manifest``` όπως είδαμε προηγουμένως. 
 Για να δουλέψει το παράδειγμα, θα πρέπει να 'σερβίρετε' τα αρχεία μέσω ενός διακομιστή ιστού, π.χ. τον Apache. Ακολουθήστε αυτή τη διαδικασία για να εγκαταστήσετε τον Apache στο Ubuntu σας αν δεν το 'χετε κάνει ήδη. Επίσης, εγκαταστήστε και τον Chrome όπως περιγράφεται εδώ. Αντιγράψτε τα παραπάνω αρχεία μαζί με το ```dragdrop.html``` στο φάκελο ```/var/www/html/dragdrop```. Εκκινήστε τον ```apache``` δίνοντας την εντολή αν δεν τρέχει ήδη:
-```
+```bash
 $ sudo /etc/init.d/apache2 start
 ```
 Ανοίξτε τον Firefox ή/και τον Chrome και πλοηγηθείτε στην ιστοσελίδα:
 [http://localhost/dragdrop/dragdrop.html](http://localhost/dragdrop/dragdrop.html). Ανοίξτε ένα ακόμα tab στον Chrome και δώστε τη διεύθυνση: [chrome://appcache-internals/](chrome://appcache-internals/):
-```
+```html
 Manifest: http://localhost/dragdrop/appcache.mf
 Remove  View Entries 
     • Size: 47.6 kB
@@ -1525,7 +1525,7 @@ Remove  View Entries
 2. Το αρχείο manifest τροποποιείται.
 
 Π.χ. θα μπορούσαμε να προσθέσουμε τον παρακάτω κώδικα στο αρχείο ```dragdrop.html``` για να εμφανίσουμε την κατάσταση της λανθάνουσας μνήμης:
-```
+```javascript
 function appCache() {
       if (supports_offline()) {
           // window.applicationCache is available!
@@ -1577,7 +1577,7 @@ function supports_offline() {
 **Εικόνα 13** _Παράδειγμα Application Cache_ 
 
 Μπορείτε να ενημερώσετε τη λανθάνουσα μνήμη ως εξής:
-```
+```javascript
 var appCache = window.applicationCache;
 appCache.update(); // Attempt to update the user's cache
 ...
@@ -1587,7 +1587,7 @@ if (appCache.status == window.applicationCache.UPDATEREADY) {
 ```
 
 Αν η ενημέρωση ήταν επιτυχής, τότε μπορείτε να ανταλλάξετε το παλιό αρχείο ```manifest``` με το νέο. Υπάρχουν και πολλά γεγονότα στα οποία μπορεί να εγγραφεί το αντικείμενο ```appCache```, π.χ. 
-```
+```javascript
 // Fired after the first cache of the manifest.
 appCache.addEventListener('cached', handleCacheEvent, false);
 ```
