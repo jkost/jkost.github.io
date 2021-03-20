@@ -34,6 +34,7 @@ _Σημείωση!_ Το βιβλίο αυτό υποθέτει ότι γνωρ�
 * [Aptana Studio 3](http://www.aptana.com/), ένα δωρεάν ολοκληρωμένο περιβάλλον εργασίας που υποστηρίζει HTML5, JavaScript, CSS3, Python, PHP, Rails και Ruby
 * [Bluefish](http://bluefish.openoffice.nl/index.html), ο αγαπημένος σας κειμενογράφος τώρα και με υποστήριξη HTML 5
 * [BlueGriffon](http://bluegriffon.org/), ένας δωρεάν WYSIWYG κειμενογράφος από την Gecko 
+* [CodePen](https://codepen.io/pen/) ένας online κειμενογράφος που εμφανίζει απευθείας το αποτέλεσμα
 * [HTML5-editor](https://html5-editor.net/), ένας δωρεάν WYSIWYG κειμενογράφος
 * [Maqetta](http://maqetta.org/), άλλος ένας δωρεάν WYSIWYG κειμενογράφος 
 * [Mercury](http://jejacks0n.github.io/mercury/), ένας δωρεάν κειμενογράφος που υποστηρίζει HTML5
@@ -1070,7 +1071,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 
 Εφόσον ο χρήστης δεν έχει κλείσει τον πλοηγό μπορεί να επαναφέρει τα δεδομένα που αποθήκευσε στον πλοηγό.
 Το παράδειγμά μας αποτελείται από δυο αρχεία:
-```htmlhtml
+```html
 store.html
 <!DOCTYPE html>
 <html>
