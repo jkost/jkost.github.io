@@ -96,13 +96,20 @@ enum Choice {
 }
 Choice choice = ...;  // Choice.RED_PILL ή Choice.BLUE_PILL
 switch (choice) {
-  case Choice.BLUE_PILL:
-	System.out.println("Συνέχισε να κοιμάσαι...");
-       break;  
-  case Choice.RED_PILL:
-	System.out.println("Καλωσήρθες στο Matrix!");
-       break;
+  case BLUE_PILL:
+     System.out.println("Συνέχισε να κοιμάσαι...");
+     break;  
+  case RED_PILL:
+     System.out.println("Καλωσήρθες στο Matrix!");
+     break;
 }
+```
+Προσέξτε, ότι είναι λάθος:
+```java
+case Choice.BLUE_PILL:
+
+|  Error:
+|  an enum switch case label must be the unqualified name of an enumeration constant
 ```
 
 Παράδειγμα ελέγχου με αλφαριθμητικό:
@@ -243,7 +250,7 @@ jshell> switch (grade) {
 }
 Πολύ καλά
 ```
-Τέλος, η ```switch``` δεν είναι πλέον απλά μια εντολή, αλλά έχει μετατραπεί σε έκφραση, δηλ. μπορείτε να επιστρέψετε κάποια τιμή:
+Η ```switch``` δεν είναι πλέον απλά μια εντολή, αλλά έχει μετατραπεί σε έκφραση, δηλ. μπορείτε να επιστρέψετε κάποια τιμή:
 
 ```java
 jshell> String result = switch (dayOfWeek) {
