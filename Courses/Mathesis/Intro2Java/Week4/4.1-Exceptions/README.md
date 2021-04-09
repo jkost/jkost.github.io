@@ -567,6 +567,8 @@ public static <E extends Comparable<E>> Optional<E> find(E el, Collection<E> c) 
 //...
 String foundName = find("Ελένη", names).orElse("Not found...");
 ```
+Χρήσιμη είναι και η μέθοδος ```isPresent()``` που επιστρέφει ```boolean``` αν υπάρχει τιμή στο προαιρετικό.
+
 Αποφύγετε να χρησιμοποιείτε ```Optional``` στις ακόλουθες περιπτώσεις:
 
 * μην επιστρέφετε συλλογές ως ```Optional``` (π.χ. ```Optional<List<T>>```) 
