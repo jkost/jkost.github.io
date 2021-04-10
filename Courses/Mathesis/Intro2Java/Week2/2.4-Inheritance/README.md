@@ -748,19 +748,26 @@ Hello Z
 Στο προηγούμενο μάθημα μιλήσαμε για τις εσωτερικές (inner) και τις εμφωλιασμένες (nested) κλάσεις. Αφήσαμε τις ανώνυμες εσωτερικές κλάσεις (anonymous inner classes) γι' αυτό το μάθημα. Οι ανώνυμες εσωτερικές κλάσεις είναι μη στατικές εσωτερικές κλάσεις χωρίς όνομα. Υλοποιούν κάποια διεπαφή (interface) ή επεκτείνουν μια κλάση με προκαθορισμένη μέθοδο κατασκευής. Συνδυάζουν τον ορισμό και δημιουργία ενός αντικειμένου μίας εσωτερικής κλάσης σε ένα βήμα:
 
 ```java
-public interface MyInterface {
-
+jshell> public interface MyInterface {
   public void aMethod();
 }
+|  created interface MyInterface
 
-MyInterface instance = new MyInterface() {  // ανώνυμη εσωτερική κλάση
-
-    public void aMethod() {
+jshell> public class Test {
+  public Test() {	
+    new MyInterface() {  // ανώνυμη εσωτερική κλάση
+      @Override
+      public void aMethod() {
         System.out.println("Anonymous class aMethod()");
-    }
-};
+      }
+    }.aMethod();  // Anonymous class' aMethod()
+  }
+}
+|  created class Test
 
-instance.aMethod();  // Anonymous class aMethod()
+jshell> new Test()
+Anonymous class aMethod()
+$75 ==> Test@679b62af
 ```
 
 ## Ασκήσεις
