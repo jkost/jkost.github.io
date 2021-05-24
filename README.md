@@ -4,14 +4,17 @@
 
 [![Mathesis](Courses/Mathesis/assets/mathesis.png)](http://mathesis.cup.gr)
 
-* [Εισαγωγή στον προγραμματισμό](Courses/Mathesis/Intro2Programming/README.md)
 * [Εισαγωγή στη γλώσσα προγραμματισμού Java](Courses/Mathesis/Intro2Java/README.md) √
-* [Προχωρημένος προγραμματισμός με τη γλώσσα Java](Courses/Mathesis/AdvancedJava/README.md)
-* [Εισαγωγή στη Java Enterprise Edition (JEE)](Courses/Mathesis/JavaEE/README.md)
-* [Εισαγωγή στον προγραμματισμό με Android](Courses/Mathesis/Android/README.md)
-* [Σχεδιαστικά Πρότυπα Προγραμματισμού - Design Patterns](Courses/Mathesis/DesignPatterns/README.md)
-* [C++ για προγραμματιστές Java](Courses/Mathesis/Cpp/README.md)
-* [Προγραμματισμός εφαρμογών με την πλατφόρμα NetBeans](Courses/Mathesis/NetBeansRCP/README.md)
+* [Εισαγωγή στον προγραμματισμό με τη γλώσσα Java](Courses/Mathesis/Intro2ProgrammingWithJava/README.md)
+
+## Άλλα Μαθήματα
+* [Εισαγωγή στον προγραμματισμό](Courses/Other/Intro2Programming/README.md)
+* [Προχωρημένος προγραμματισμός με τη γλώσσα Java](Courses/Other/AdvancedJava/README.md)
+* [Εισαγωγή στη Java Enterprise Edition (JEE)](Courses/Other/JavaEE/README.md)
+* [Εισαγωγή στον προγραμματισμό με Android](Courses/Other/Android/README.md)
+* [Σχεδιαστικά Πρότυπα Προγραμματισμού - Design Patterns](Courses/Other/DesignPatterns/README.md)
+* [C++ για προγραμματιστές Java](Courses/Other/Cpp/README.md)
+* [Ανάπτυξη εφαρμογών με την πλατφόρμα NetBeans](Courses/Other/NetBeansRCP/README.md)
 
 ---
 
@@ -22,6 +25,7 @@
 ## Γλώσσες προγραμματισμού
 
 * [Η γλώσσα προγραμματισμού Java](Java/README.md) √
+* [Προγραμματισμός Web](Web/README.md) √
 * [Εισαγωγή στη Python](Python/README.md) √
 * [Εισαγωγή στη Ruby και τη Ruby on Rails](Ruby/README.md) √
 * [Εισαγωγή στο bash](Bash/README.md) √
@@ -29,21 +33,17 @@
 * [Εισαγωγή στη Groovy](Groovy/README.md)
 * [Εισαγωγή στην Erlang](Erlang/README.md) √
 * [Εισαγωγή στην Elixir](Elixir/README.md)
-* [Εισαγωγή στη JavaScript](JavaScript/README.md)
 * [Εισαγωγή στη Rust](Rust/README.md)
 * [Εισαγωγή στη Scala](Scala/README.md)
 * [Επισκόπηση της C++14](Cpp/Cpp14/README.md)
 * [C++ για προγραμματιστές Java](Cpp/Cpp-Java/README.md)
 * [Εισαγωγή στο Scilab](Scilab/README.md) √
-* [Εισαγωγή στην HTML 5](HTML5/README.md) √
-* [Εισαγωγή στο CSS3](CSS3/README.md)
 * [Εισαγωγή στις Κανονικές Εκφράσεις (Regular Expressions)](Regex/README.md)
 
 ## Θέματα πληροφορικής
 * [Εισαγωγή στο LibreOffice](LibreOffice/README.md) √
 * [Εισαγωγή στα Μαζικά Δεδομένα (Big Data)](BigData/README.md)
-* [Εισαγωγή στο Mercurial](Mercurial/README.md) √
-* [Εισαγωγή στο Git](Git/README.md)
+* [Συστήματα Διαχείρισης Εκδόσεων (Version Control)](VersionControl/README.md) √
 * [Ασφάλεια Apache Tomcat](SecureTomcat/README.md) √
 * [Εισαγωγή στα Γεωγραφικά Συστήματα Πληροφοριών](GIS/README.md) √
 
