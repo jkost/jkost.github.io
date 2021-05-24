@@ -69,7 +69,7 @@ $2 ==> -49
 jshell> path1.resolve(path2) // συνένωση
 $3 ==> C:/temp/test.txt
 
-jshell> path1.relativize(path2)
+jshell> path1.relativize(path2)  // requires all paths to be either absolute or relative
 $4 ==> ../temp/test.txt
 
 jshell> path

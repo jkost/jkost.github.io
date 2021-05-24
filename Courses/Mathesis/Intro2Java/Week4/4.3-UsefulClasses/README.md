@@ -683,11 +683,11 @@ public class Test {
     public static void main(String[] args) {
 		Console console = System.console();
 		if (console != null) { // Console returns null on jshell or inside an IDE
-        	String name = console.readLine("> Εισάγετε όνομα χρήστη και πατήστε Enter%n");
-        	console.printf("Γειά σου %s!%n", name);
-        	console.printf("> Εισάγετε κωδικό και πατήστε Enter: ");
-        	char[] password = console.readPassword();
-        	console.printf("Δώσατε τον κωδικό: %s%n", String.valueOf(password));
+			String name = console.readLine("> Εισάγετε όνομα χρήστη και πατήστε Enter%n");
+			console.printf("Γειά σου %s!%n", name);
+			console.printf("> Εισάγετε κωδικό και πατήστε Enter: ");
+			char[] password = console.readPassword();
+			console.printf("Δώσατε τον κωδικό: %s%n", String.valueOf(password));
 			Arrays.fill(password, ' '); // καλή τεχνική να σβήνετε τον κωδικό αν δε χρησιμοποιείται άλλο
 		}
     }
