@@ -138,7 +138,7 @@ double myvar = 3.14
 
 Εν τω μεταξύ, μετά το JDK 1.3 εμφανίστηκε και η [Java Enterprise Edition (JEE) 1.3](https://en.wikipedia.org/wiki/Java_Platform%2C_Enterprise_Edition) η οποία στοχεύει στην ανάπτυξη επιχειρηματικών εφαρμογών (κοινώς το Web). Περιλαμβάνει τεχνολογίες όπως [Enterprise JavaBeans (EJBs)](https://en.wikipedia.org/wiki/Enterprise_JavaBeans), servlets, Java Server Pages, Java Server Faces κ.ά. Σήμερα βρίσκεται στην έκδοση 8, με πολλές δυνατότητες και ευκολία χρήσης σε σχέση με τις προηγούμενες εκδόσεις (1.3, 1.4, 5, 6, 7). Παράλληλα, έχουν αναπτυχθεί πολλά frameworks για ανάπτυξη επιχειρηματικών εφαρμογών (ή εφαρμογών ιστού) βασισμένα στη Java, όπως το [Apache Tapestry](https://en.wikipedia.org/wiki/Apache_Tapestry), το [Apache Struts](https://en.wikipedia.org/wiki/Apache_Struts_2), το [Play](https://www.playframework.com/) και το [Spring](https://en.wikipedia.org/wiki/Spring_Framework) για να αναφέρουμε τα πιο γνωστά. 
 
-![](https://www.programering.com/images/remote/ZnJvbT1pdGV5ZSZ1cmw9Y21idzVpWWlabVloWlROemtqWmxGVExoTm1aNTB5WW1Sek10SW1OaFZUTDNVbVpsVkdaNFUyTHlrVE96OGlONEFETXZRbmJsMUdhakZHZDBGMkxrRjJic0JYZHYwMmJqNVNaNVZHZHA1aU1zUjJMdm9EYzBSSGE.jpg)
+![](https://i.stack.imgur.com/LuHAa.png)
 
 **Εικόνα 1.1.7** _Αρχιτεκτονική της Java Enterprise Edition (Πηγή: [https://i.stack.imgur.com/LuHAa.png](https://i.stack.imgur.com/LuHAa.png))_
 
@@ -152,7 +152,7 @@ double myvar = 3.14
 
 Αλλά η Java έχει γίνει πολύ γνωστή και στον κλάδο των κινητών εφαρμογών με τη [Java Micro Edition (JME)](https://en.wikipedia.org/wiki/Java_Platform%2C_Micro_Edition) που αποτελεί ανταγωνιστή του Android και του iOS.
 
-![](http://www.oracle.com/ocom/groups/public/@otn/documents/digitalasset/148076.jpg)
+![](https://tinyurl.com/ysz9t6ww)
 
 **Εικόνα 1.1.8** _Αρχιτεκτονική της Java Mobile Edition (Πηγή: [https://tinyurl.com/ysz9t6ww](https://tinyurl.com/ysz9t6ww))_
 
