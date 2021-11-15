@@ -140,7 +140,7 @@ double myvar = 3.14
 
 ![](https://www.programering.com/images/remote/ZnJvbT1pdGV5ZSZ1cmw9Y21idzVpWWlabVloWlROemtqWmxGVExoTm1aNTB5WW1Sek10SW1OaFZUTDNVbVpsVkdaNFUyTHlrVE96OGlONEFETXZRbmJsMUdhakZHZDBGMkxrRjJic0JYZHYwMmJqNVNaNVZHZHA1aU1zUjJMdm9EYzBSSGE.jpg)
 
-**Εικόνα 1.1.7** _Αρχιτεκτονική της Java Enterprise Edition (Πηγή: [https://tinyurl.com/yc2ozrck](https://tinyurl.com/yc2ozrck))_
+**Εικόνα 1.1.7** _Αρχιτεκτονική της Java Enterprise Edition (Πηγή: [https://i.stack.imgur.com/LuHAa.png](https://i.stack.imgur.com/LuHAa.png))_
 
 Βασικά συστατικά μιας εφαρμογής JEE είναι:
 
@@ -154,7 +154,7 @@ double myvar = 3.14
 
 ![](http://www.oracle.com/ocom/groups/public/@otn/documents/digitalasset/148076.jpg)
 
-**Εικόνα 1.1.8** _Αρχιτεκτονική της Java Mobile Edition (Πηγή: [https://tinyurl.com/ycfgxymh](https://tinyurl.com/ycfgxymh))_
+**Εικόνα 1.1.8** _Αρχιτεκτονική της Java Mobile Edition (Πηγή: [https://tinyurl.com/ysz9t6ww](https://tinyurl.com/ysz9t6ww))_
 
 Η Java έχει προκαλέσει περισσότερο ενθουσιασμό από οποιαδήποτε άλλη εξέλιξη στο Διαδίκτυο από την εποχή του [Mosaic](https://en.wikipedia.org/wiki/Mosaic_(web_browser)). Είναι μια γλώσσα προγραμματισμού για κατανεμημένες εφαρμογές. Έχει γίνει παγκοσμίως γνωστή ωστόσο, επειδή επιτρέπει στους χρήστες να αλληλεπιδρούν με τις ιστοσελίδες. Ένα πολύ βασικό χαρακτηριστικό που αποτέλεσε κι έναν από τους κυριότερους λόγους διάδοσης της γλώσσας είναι ότι είναι ανεξάρτητη πλατφόρμας ('Write Once Run Everywhere'). Αυτό σημαίνει ότι γράφετε κώδικα μια φορά και αυτός τρέχει σε οποιαδήποτε πλατφόρμα που έχει εγκατεστημένο το [Java Virtual Machine](https://en.wikipedia.org/wiki/Java_virtual_machine). 
 
