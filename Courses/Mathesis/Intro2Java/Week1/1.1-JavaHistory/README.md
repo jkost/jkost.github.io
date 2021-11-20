@@ -83,7 +83,8 @@ double myvar = 3.14
 Ακολουθούν οι εκδόσεις 1.3 και 1.4 (εισαγωγή του JDBC για επικοινωνία με βάσεις δεδομένων). Οι εκδόσεις 1.2, 1.3 και 1.4 αποτελούν τη "Java 2". Από την έκδοση 1.5, οι αλλαγές είναι πάλι μεγάλες, και πλέον αλλάζει πάλι η ονομασία της έκδοσης σε Java 5. Η Java 5 ήταν η πρώτη ουσιαστική αλλαγή του πυρήνα της γλώσσας απ' τη δημιουργία της, έτσι ώστε να υποστηρίζει Generics, Enumerated Types, autoboxing, varargs, annotations, static imports και νέες δυνατότητες για πολυνηματισμό (multi-threading). Η έκδοση 6 καταφέρνει να είναι 30% ταχύτερη από τις προηγούμενες εκδόσεις, ενώ η [έκδοση 7](Java7/REAMDE.md) φέρνει μικρές βελτιώσεις στη γλώσσα. Είναι η εποχή που η Sun Microsystems εξαγοράζεται από την Oracle. Η [έκδοση 8](Java8/README.md) φέρνει σημαντικές αλλαγές στη γλώσσα παρέχοντάς της δυνατότητες συναρτησιακού (λ-) προγραμματισμού αλλάζοντας κατά πολύ τον τρόπο χρήσης της. Η πολυαναμενόμενη [έκδοση 9](Java9/README.md) έφερε δυνατότητες τμηματοποίησης (modularisation) της γλώσσας δίνοντας τη δυνατότητα να δημιουργήσετε την δική σας εφαρμογή που να περιλαμβάνει μόνο τα modules της Java που χρειάζεται η εφαρμογή σας για να τρέξει. Από την έκδοση 10 και μετά, η Oracle αποφάσισε να εκδίδει μια νέα (minor) έκδοση Java κάθε 6 μήνες (και μια major έκδοση κάθε δυο χρόνια). Η πρώτη έκδοση με μακροπρόθεσμη υποστήριξη (Long Time Support - LTS) είναι η 11. ([Εκδόσεις Java SE](https://www.codejava.net/java-se/java-se-versions-history))
 
 | Έκδοση Java | Κωδική ονομασία | Τέλος εποχής | Ημερομηνία έκδοσης | Αρ. δημοσίων κλάσεων* 
-| Java 16 | - | - | --/03/2021 | 
+| Java 17 | - | - | 14/09/2021 | 
+| Java 16 | - | - | 15/03/2021 | 
 | Java 15 | - | - | 15/09/2020 | 
 | Java 14 | - | - | 17/03/2020 | 
 | Java 13 | - | - | 17/09/2019 | 
@@ -109,7 +110,7 @@ double myvar = 3.14
 * 1.2: strictfp
 * 1.3: μικρές αλλαγές
 * 1.4: assert, JDBC
-*   5: annotations, generics, autoboxing, var-args...
+*   5: annotations, enums, generics, autoboxing, var-args...
 *   6: καλύτερη απόδοση
 *   7: diamond syntax, try-with-resources, κλπ.
 *   8: lambda expressions και default methods
@@ -120,15 +121,8 @@ double myvar = 3.14
 *  13: [νέα switch και text blocks](https://metebalci.com/blog/what-is-new-in-java-13/) 
 *  14: [records και νέα switch (τελική έκδοση)](https://metebalci.com/blog/what-is-new-in-java-14/) 
 *  15: [sealed classes και textblocks](https://metebalci.com/blog/what-is-new-in-java-15/) 
-*  16: [Vector, ](https://metebalci.com/blog/what-is-new-in-java-16/) 
-
-Ο ακόλουθος πίνακας παρέχει μια εύκολη αναφορά για να δείτε τι έχει αλλάξει ανάμεσα στις τελευταίες εκδόσεις της γλώσσας.
-
-| Έκδοση Java | 9 (09/2017) | 10 (03/2018) | 11 (09/2018) | 12 (03/2019) | 13 (09/2019) | 14 (03/2020) | 15 (09/2020) | 16 (03/2021)
-| JEPs | [jdk9](https://openjdk.java.net/projects/jdk9/) | [jdk10](https://openjdk.java.net/projects/jdk/10) | [jdk11](https://openjdk.java.net/projects/jdk/11) | [jdk12](https://openjdk.java.net/projects/jdk/12) | [jdk13](https://openjdk.java.net/projects/jdk/13) | [jdk14](https://openjdk.java.net/projects/jdk/14) | [jdk15](https://openjdk.java.net/projects/jdk/15) | [jdk16](https://openjdk.java.net/projects/jdk/16)
-| JSRs | [379](https://openjdk.java.net/projects/jdk9/spec) | [383](https://openjdk.java.net/projects/jdk/10/spec) | [384](https://openjdk.java.net/projects/jdk/11/spec/) | [386](https://openjdk.java.net/projects/jdk/12/spec/) | [388](https://openjdk.java.net/projects/jdk/13/spec/) | [389](https://openjdk.java.net/projects/jdk/14/spec/) | [390](https://openjdk.java.net/projects/jdk/15/spec/) | [391](https://openjdk.java.net/projects/jdk/16/spec/)
-| Διορθώσεις | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8187930?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%229%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8196883?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2210%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8209506?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2211%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8215322?jql=project%20=%20JDK%20AND%20issuetype%20in%20(Enhancement,%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved,%20Closed)%20AND%20resolution%20=%20Fixed%20AND%20Fixed%20=%20%2212%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8227642?jql=project%20%3D%20JDK%20AND%20issuetype%20in%20(Enhancement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved%2C%20Closed)%20AND%20resolution%20%3D%20Fixed%20AND%20Fixed%20%3D%20%2213%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8227642?jql=project%20%3D%20JDK%20AND%20issuetype%20in%20(Enhancement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved%2C%20Closed)%20AND%20resolution%20%3D%20Fixed%20AND%20Fixed%20%3D%20%2213%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8227642?jql=project%20%3D%20JDK%20AND%20issuetype%20in%20(Enhancement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved%2C%20Closed)%20AND%20resolution%20%3D%20Fixed%20AND%20Fixed%20%3D%20%2214%22) | [Bugs](https://bugs.openjdk.java.net/browse/JDK-8227642?jql=project%20%3D%20JDK%20AND%20issuetype%20in%20(Enhancement%2C%20%22New%20Feature%22)%20AND%20status%20in%20(Resolved%2C%20Closed)%20AND%20resolution%20%3D%20Fixed%20AND%20Fixed%20%3D%20%2215%22)
-| Release Notes | [Release Notes](https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html) | [Release Notes](https://www.oracle.com/java/technologies/javase/10-relnote-issues.html) | [Release Notes](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html) | [Release Notes](https://www.oracle.com/technetwork/java/javase/12u-relnotes-5211424.html) | [Release Notes](https://www.oracle.com/technetwork/java/javase/13u-relnotes-5461742.html) | [Release Notes](https://www.oracle.com/java/technologies/javase/14u-relnotes.html) | [Release Notes](https://www.oracle.com/java/technologies/javase/15u-relnotes.html) | -
+*  16: [Pattern Matching for instanceof, Static Members in Inner Classes, Vector API, Foreign API, packaging tool](https://www.baeldung.com/java-16-new-features) 
+*  17: [Pattern Matching for switch, Vector API, Foreign & Memory API](https://www.baeldung.com/java-17-new-features) 
 
 Η ιστοσελίδα [Java Almanac](https://javaalmanac.io/) περιλαμβάνει λεπτομερείς πληροφορίες για τις διάφορες εκδόσεις καθώς και τι αλλάζει από έκδοση σε έκδοση με δυνατότητα να δοκιμάσετε τα νέα χαρακτηριστικά κάθε έκδοσης απευθείας στον πλοηγό σας. Αξίζει να την επισκεφθείτε. 
 
