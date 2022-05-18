@@ -35,7 +35,7 @@ $1 ==> false
 jshell> folder.exists()
 $2 ==> false
 
-jshell> folder.mkdir()
+jshell> folder.mkdir()      // η mkdirs() δημιουργεί και τυχόν ενδιάμεσα directories που δεν υπάρχουν
 $3 ==> true
 
 jshell> fileInFolder.exists()
@@ -732,7 +732,7 @@ Actions:
 * read 
 * write
 * execute (επιτρέπει την κλήση της Runtime.exec() και αντιστοιχεί στην SecurityManager.checkExec())
-* delete (επιστρέπει την κλήσει της File.delete και αντιστοιχεί στην SecurityManager.checkDelete())
+* delete (επιστρέπει την κλήση της File.delete και αντιστοιχεί στην SecurityManager.checkDelete())
 * readlink (επιστρέπει την ανάγνωση του προορισμού ενός symbolic link καλώντας τη μέθοδο readSymbolicLink())
 */
 class FilePermission {
