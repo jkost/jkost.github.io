@@ -523,31 +523,59 @@ _Μια υπερσκελισμένη μέθοδος μπορεί να μην ε�
 Ο κανόνας αντιστρέφεται στην περίπτωση των μεθόδων κατασκευής (constructors). _Μια υπερσκελισμένη μέθοδος δεν μπορεί να εγείρει μια πιο γενικευμένη ελεγχόμενη εξαίρεση, ενώ μια μέθοδος κατασκευής (constructor) μιας υποκλάσης δεν μπορεί να εγείρει μια πιο ειδικευμένη ελεγχόμενη εξαίρεση_. Π.χ.
 
 ```java
-class A { 
-   public A() throws IOException{ } 
-   void m() throws IOException{ } 
+jshell> class Super { 
+   public Super() throws IOException{ } 
 }  
+|  created class Super
 
-class B extends A { 
-   // IOException είναι ΟΚ, όχι όμως FileNotFoundException. Πρέπει επίσης να δηλώσει ότι εγείρει IOException (ή κάποια υποκλάση της) 
-   public B() throws IOException, Exception{ }  
-
-   // μπορεί να δηλώσει είτε IOException είτε μια υποκλάση της, π.χ. FileNotFoundException, όχι όμως Exception
-   void m() throws IOException, FileNotFoundException{ } 
+jshell> class Sub extends Super { 
+     public Sub() { }  
 }
-```
-Π.χ.
-```java
-jshell> class B extends A { 
-   ...>    public B() throws FileNotFoundException{ }  
-   ...> 
-   ...>    void m() throws IOException, FileNotFoundException{ } 
-   ...> }
 |  Error:
 |  unreported exception java.io.IOException; must be caught or declared to be thrown
-|     public B() throws FileNotFoundException{ } 
+|     public Sub() { } 
+
 ```
-Μπορείτε να σκεφτείτε γιατί;
+Μπορείτε να σκεφτείτε γιατί; 
+
+Αν καλέσουμε τον constructor της ```Sub```, π.χ.
+
+```java
+new Sub();
+```
+αυτός θα καλέσει τον constructor της ```Super``` ο οποίος μπορεί να εγείρει μια εξαίρεση η οποία δεν διαχειρίζεται από τον κώδικα που την καλεί. Ίσως να σκεφτείτε να γράψετε το εξής:
+
+```java
+class Sub extends Super { 
+     public Sub() { 
+	 	try {
+			super();
+		} catch (IOException ex) {}
+	 }  
+}
+|  Error:
+|  call to super must be first statement in constructor
+|  			super();
+|     ^-----^
+|  Error:
+|  unreported exception java.io.IOException; must be caught or declared to be thrown
+|       public Sub() { 
+|          
+```
+Επομένως, η μέθοδος κατασκευής της ```Sub``` θα πρέπει να δηλώσει τουλάχιστον ότι μπορεί να εγείρει την εξαίρεση που δηλώνει ο constructor της ```Super```. Μπορεί να δηλώσει μια πιο γενικευμένη εξαίρεση καθώς έτσι μπορεί να διαχειριστεί και η εξαίρεση του super contructor.
+```java
+class Sub extends Super { 
+   // IOException είναι ΟΚ, όχι όμως FileNotFoundException. Πρέπει επίσης να δηλώσει ότι εγείρει IOException (ή κάποια υποκλάση της) 
+   public Sub() throws IOException, Exception{ }  
+}
+```
+
+Π.χ. ο παρακάτω κώδικας μπορεί να διαχειριστεί και ```IOException``` που πιθανόν να προκληθεί από τον constructor της ```Super```.
+```java
+try {
+   new Sub();
+} catch (Exception e) {}
+```
 
 ## Ισχυρισμοί (Assertions) 
 
