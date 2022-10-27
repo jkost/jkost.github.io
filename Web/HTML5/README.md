@@ -7,9 +7,9 @@
 ```
         HTML 5 = HTML5 + JavaScript + CSS3
 ```
-Αυτή τη στιγμή, λίγα χαρακτηριστικά της γλώσσας υποστηρίζονται από τους πιο δημοφιλείς πλοηγούς (Chrome, Firefox, Opera, Safari και Internet Explorer). 
+Αρκετά χαρακτηριστικά της γλώσσας υποστηρίζονται από τους πιο δημοφιλείς πλοηγούς (Chrome, Edge, Firefox, Opera, Safari και Internet Explorer). 
 
-Συνοπτικά, η HTML 5 φέρνει τα εξής νέα στοιχεία (χάρη στην Javascript, που πλέον έχει τυποποιηθεί και μέσω αυτής έχουμε πρόσβαση στα ακόλουθα APIs):
+Συνοπτικά, η HTML 5 φέρνει τα εξής νέα στοιχεία (χάρις στην Javascript, που πλέον έχει τυποποιηθεί και μέσω αυτής έχουμε πρόσβαση στα ακόλουθα APIs):
 
 * Καμβάς (canvas) για να ζωγραφίζετε
 * Δυνατότητα Σύρε & Ρίξε (Drag & Drop)
@@ -23,10 +23,9 @@
 * Αποστολή μηνυμάτων σε διάφορα μέρη μιας ιστοσελίδας
 * νέες ετικέτες (tags), καθώς και ετικέτες που καταργούνται στην έκδοση 5.
 
-Αυτό που πρέπει να υπογραμμίσουμε είναι ότι ακόμα οι προδιαγραφές είναι σε μορφή πρόχειρου (draft) και θα μείνουν έτσι για πολλά χρόνια ακόμα, αλλά αυτό δε σημαίνει ότι οι πιο δημοφιλείς πλοηγοί δεν τις υποστηρίζουν ήδη, σε μικρότερο ή μεγαλύτερο βαθμό. Στη συνέχεια θα περιγράψουμε μερικές από αυτές.
-Το μόνο που χρειάζεστε είναι ένας απλός κειμενογράφος και ένας πλοηγός που υποστηρίζει τη νέα έκδοση της HTML. Ελέγξτε [αυτήν την ιστοσελίδα](http://deepbluesky.com/blog/-/browser-support-for- css3-and-html5_72/) για να δείτε την υποστήριξη των πιο δημοφιλών πλοηγών. Επίσης, πλοηγηθείτε στην ιστοσελίδα [http://html5test.com/](http://html5test.com/) για να δείτε το σκορ του πλοηγού σας όσον αφορά την υποστήριξη HTML 5. Για πιο αναλυτικά αποτελέσματα, δείτε την ιστοσελίδα [http://fmbip.com/](http://fmbip.com/) (χρειάζεται να έχετε ενεργοποιημένη την Javascript στον πλοηγό σας). Τέλος, αν ένας απλός κειμενογράφος δεν σας ικανοποιεί, ανατρέξτε στην επόμενη ενότητα, όπου παρέχεται μια λίστα κειμενογράφων για το Ubuntu που υποστηρίζουν την HTML 5.
-_Σημείωση!_ Αυτό το άρθρο υποθέτει ότι γνωρίζετε την HTML 4, ή τουλάχιστον μια παλαιότερη έκδοσή της, και παρουσιάζει μόνο τα νέα χαρακτηριστικά που
-φέρνει η έκδοση 5. Επίσης, προαπαιτεί κάποιες γνώσεις Javascript.
+Στη συνέχεια θα περιγράψουμε μερικά από αυτά. Το μόνο που χρειάζεστε είναι ένας απλός κειμενογράφος και ένας πλοηγός που υποστηρίζει τη νέα έκδοση της HTML. Πλοηγηθείτε στην ιστοσελίδα [http://html5test.com/](http://html5test.com/) για να δείτε το σκορ του πλοηγού σας όσον αφορά την υποστήριξη HTML 5. Τέλος, αν ένας απλός κειμενογράφος δεν σας ικανοποιεί, ανατρέξτε στην επόμενη ενότητα, όπου παρέχεται μια λίστα κειμενογράφων που υποστηρίζουν την HTML 5.
+
+_Σημείωση!_ Αυτό το άρθρο υποθέτει ότι γνωρίζετε την HTML 4, ή τουλάχιστον μια παλαιότερη έκδοσή της, και παρουσιάζει μόνο τα νέα χαρακτηριστικά που φέρνει η έκδοση 5. Επίσης, προαπαιτεί κάποιες γνώσεις Javascript.
 
 ## Κειμενογράφοι HTML 5
 Υπάρχουν ήδη κειμενογράφοι που υποστηρίζουν τη σύνταξη της HTML 5:
@@ -72,7 +71,7 @@ UTF-8">
 <link rel="stylesheet" href="mycss.css">
 ```
 γιατί το Cascaded Stylesheet (CSS) είναι το εξ ορισμού πρότυπο στυλ στην HTML 5.
-Τέλος, καθώς η Javascript είναι η εξ ορισμού γλώσσα συνόδου της HTML 5, η εντολή:
+Τέλος, καθώς η Javascript είναι η εξ ορισμού δυναμική γλώσσα της HTML 5, η εντολή:
 ```html
 <script type="text/javascript" src="myscript.js"></script>
 ```
@@ -89,11 +88,11 @@ UTF-8">
 <canvas height="yyy" width="xxx">
 </canvas>
 ```
-Μπορείτε να βρείτε το πλήρες API στη διεύθυνση
-[http://www.w3.org/TR/html5/the-canvas-element.html](http://www.w3.org/TR/html5/the-canvas-element.html), καθώς και στην [http://dev.w3.org/2006/canvas-api/canvas-2d-api.html](http://dev.w3.org/2006/canvas-api/canvas-2d-api.html). Όπως θα δείτε, μπορείτε να ζωγραφίσετε ένα πλήθος σχημάτων (γραμμές, παραλληλόγραμμα, καμπύλες, τόξα, ελλείψεις, εικόνες, πολύπλοκα σχήματα, κ.ά.), να ορίσετε στυλ γραμμών, να προσθέσετε σκιές, να χρησιμοποιήσετε
+Μπορείτε να βρείτε το πλήρες API σε αυτήν την  
+[διεύθυνση](https://html.spec.whatwg.org/multipage/canvas.html), καθώς και σε  [αυτήν](https://html.spec.whatwg.org/multipage/canvas.html#2dcontext). Όπως θα δείτε, μπορείτε να ζωγραφίσετε ένα πλήθος σχημάτων (γραμμές, παραλληλόγραμμα, καμπύλες, τόξα, ελλείψεις, εικόνες, πολύπλοκα σχήματα, κ.ά.), να ορίσετε στυλ γραμμών, να προσθέσετε σκιές, να χρησιμοποιήσετε
 μετασχηματισμούς σχημάτων (περιστροφή, μεταφορά, κλπ.), και πολλά άλλα ακόμη.
 
-* Πλοηγοί που τον υποστηρίζουν: Chrome, Firefox, Opera, Safari.
+* Πλοηγοί που τον υποστηρίζουν: Brave, Chrome, Edge, Firefox, Opera, Safari.
 
 Στη συνέχεια, θα δούμε… το ζωγράφο μέσα μου!
 
@@ -278,11 +277,17 @@ image.src = '<ImageURL>';
 
 **Πίνακας 1** _Ιδιότητες εντολών audio/video_
 
-Μπορείτε να βρείτε το πλήρες API για το βίντεο στη [διεύθυνση](http://www.w3.org/TR/html5/the-video-element.html), ενώ το πλήρες ΑΡΙ για τον ήχο βρίσκεται στη [διεύθυνση](http://www.w3.org/TR/html5/the-audio-element.html).
+Μπορείτε να βρείτε τα πλήρες API για το βίντεο και τον ήχο σε αυτήν την  [διεύθυνση](https://html.spec.whatwg.org/multipage/media.html).
 
 * Πλοηγοί που τα υποστηρίζουν: Chrome, Firefox, Opera, Safari, Internet Explorer 9.
 
-Για την ώρα υποστηρίζεται μόνο η ανοικτού κώδικα μορφή αρχείου ```.ogg```. Αν θέλετε να φορτώσετε μια άλλη μορφή αρχείου (π.χ. ```.wmv```, ```.mpeg```, κλπ.) και ο πλοηγός σας δεν την υποστηρίζει ακόμα, τότε μπορείτε να το μετατρέψετε σε μορφή ```.ogg```, π.χ. μέσω των ιστοσελίδων:
+Για την ώρα υποστηρίζονται
+
+* η ανοικτού κώδικα μορφή αρχείου ```.ogg/.ogv```
+* ```mp4```
+* ```webm```
+
+Αν θέλετε να φορτώσετε μια άλλη μορφή αρχείου (π.χ. ```.wmv```, ```.mpeg```, κλπ.) και ο πλοηγός σας δεν την υποστηρίζει ακόμα, τότε μπορείτε να το μετατρέψετε σε μια από τις παραπάνω μορφές, π.χ. μέσω των ιστοσελίδων:
 [Media Converter](http://www.mediaconverter.org/) ή [Online convert](http://www.online-convert.com/). Αφού έχετε επιλέξει το αρχείο βίντεο και το αρχείο ήχου που θέλετε ν' αναπαράγετε, αποθηκεύστε τον παρακάτω κώδικα στο αρχείο ```audiovideo.html``` και αντιγράψτε τα αρχεία βίντεο και ήχου στον ίδιο φάκελο:
 
 ```html
@@ -321,7 +326,7 @@ image.src = '<ImageURL>';
 </html>
 ```
 
-Όπου ```myvideo.ogg``` είναι το αρχείο βίντεο και ```myaudio.ogg``` το αρχείο ήχου που θέλετε ν' αναπαράγετε (αντικαταστήστε τα με τα δικά σας). Φυσικά, μπορείτε να δοκιμάσετε και τις υπόλοιπες ιδιότητες: ```loop, preload, autoplay,``` κλπ.
+όπου ```myvideo.ogg``` είναι το αρχείο βίντεο και ```myaudio.ogg``` το αρχείο ήχου που θέλετε ν' αναπαράγετε (αντικαταστήστε τα με τα δικά σας). Φυσικά, μπορείτε να δοκιμάσετε και τις υπόλοιπες ιδιότητες: ```loop, preload, autoplay,``` κλπ.
 
 ## Φόρμες
 Παραδοσιακά, η HTML υποστηρίζει τις ακόλουθες εντολές εισαγωγής δεδομένων μέσω φορμών:
@@ -342,7 +347,7 @@ image.src = '<ImageURL>';
 
 **Πίνακας 2** _Εργαλεία εισαγωγής δεδομένων φορμών μέχρι την HTML 4.01_
 
-Η HTML 5 προσθέτει πολλές νέες δυνατότητες εισαγωγής δεδομένων μέσω φορμών. Μόνο ο Opera, και λιγότερο ο Chrome, υποστηρίζουν μέχρι στιγμής τις νέες εντολές κι αυτές όχι πλήρως. Για περισσότερες πληροφορίες, ανατρέξτε στις ιστοσελίδες [http://www.w3.org/TR/html5/forms.html](http://www.w3.org/TR/html5/forms.html) και [http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#attr-input-type](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#attr-input-type).
+Η HTML 5 προσθέτει πολλές νέες δυνατότητες εισαγωγής δεδομένων μέσω φορμών. Μόνο ο Opera, και λιγότερο ο Chrome, υποστηρίζουν μέχρι στιγμής τις νέες εντολές κι αυτές όχι πλήρως. Για περισσότερες πληροφορίες, ανατρέξτε στις ιστοσελίδες [https://html.spec.whatwg.org/multipage/forms.html](https://html.spec.whatwg.org/multipage/forms.html) και [https://html.spec.whatwg.org/multipage/input.html#attr-input-type](https://html.spec.whatwg.org/multipage/input.html#attr-input-type).
 
 | Τύπος | Εντολή | HTML Εμφάνιση |
 | Επιλογή Χρώματος | ```<input name="color" type="color"/>``` | ![](assets/table2/1.png)  |
@@ -437,11 +442,10 @@ image.src = '<ImageURL>';
   </body>
 </html>
 ```
-Φυσικά, θα πρέπει να υπάρχει και κάποιος διακομιστής που θα επεξεργαστεί τα στοιχεία της φόρμας όταν πατήσετε το κουμπί **Υποβολή**. Αυτό γίνεται από τον κώδικα ```register.php```, ο οποίος όμως ξεφεύγει από το σκοπό αυτού του βιβλίου. Σημειώστε ότι, παρόλο που ο Opera έχει την καλύτερη υποστήριξη για φόρμες τη στιγμή που γράφονται αυτές οι γραμμές, και πάλι πολλά πράγματα δεν υποστηρίζονται ακόμα, π.χ. το μέγεθος των πεδίων ή ο έλεγχος εγκυρότητας.
+Φυσικά, θα πρέπει να υπάρχει και κάποιος διακομιστής που θα επεξεργαστεί τα στοιχεία της φόρμας όταν πατήσετε το κουμπί **Υποβολή**. Αυτό γίνεται από τον κώδικα ```register.php```, ο οποίος όμως ξεφεύγει από το σκοπό αυτού του βιβλίου. 
 
 ## Σύρε Ρίξε (Drag & Drop)
-Η HTML5 υποστηρίζει τη λειτουργία _Σύρε-Ρίξε_, δηλ. ο χρήστης μπορεί να σύρει κείμενο ή εικόνα με το ποντίκι και να την αφήσει σε κάποιο άλλο
-τμήμα της ιστοσελίδας όπως π.χ. προσθήκη αντικειμένων σε ένα καλάθι αγορών.
+Η HTML5 υποστηρίζει τη λειτουργία _Σύρε-Ρίξε_, δηλ. ο χρήστης μπορεί να σύρει κείμενο ή εικόνα με το ποντίκι και να την αφήσει σε κάποιο άλλο τμήμα της ιστοσελίδας όπως π.χ. προσθήκη αντικειμένων σε ένα καλάθι αγορών.
 Η λειτουργία αυτή υποστηρίζεται από τις ακόλουθες ιδιότητες:
 
 * ```draggable```
@@ -451,10 +455,9 @@ image.src = '<ImageURL>';
 * ```ondragstart```
 * ```ondragend```
 
-Πλοηγοί που το υποστηρίζουν: Chrome, Firefox, Opera, Safari.
+Πλοηγοί που το υποστηρίζουν: Chrome, Edge, Firefox, Opera, Safari.
 
-Στο επόμενο μάθημα αγγλικών, η δασκάλα σας ζητάει να αντιστοιχίσετε τους μαγνήτες με τη σωστή λέξη, με τη σωστή εικόνα (βλ. Εικόνα 2). Όταν
-τοποθετείτε ένα μαγνήτη στη λάθος εικόνα, ο δρομέας αλλάζει δείχνοντάς σας ότι δεν μπορείτε ν' αφήσετε το μαγνήτη εκεί. Αφήνοντας το σωστό μαγνητάκι κάτω από τη σωστή εικόνα (πάνω στην εικόνα δε δουλεύει) θα δείτε το μαγνητάκι να «κολλάει» κάτω από τη σωστή εικόνα αλλά όχι κάτω από τη λάθος.
+Στο επόμενο μάθημα αγγλικών, η δασκάλα σας ζητάει να αντιστοιχίσετε τους μαγνήτες με τη σωστή λέξη, με τη σωστή εικόνα (βλ. Εικόνα 2). Όταν τοποθετείτε ένα μαγνήτη στη λάθος εικόνα, ο δρομέας αλλάζει δείχνοντάς σας ότι δεν μπορείτε ν' αφήσετε το μαγνήτη εκεί. Αφήνοντας το σωστό μαγνητάκι κάτω από τη σωστή εικόνα (πάνω στην εικόνα δε δουλεύει) θα δείτε το μαγνητάκι να «κολλάει» κάτω από τη σωστή εικόνα αλλά όχι κάτω από τη λάθος.
 
 ![](assets/Fig2.png)
 
@@ -581,12 +584,12 @@ function over(e) {
 }
 ```
 
-Μπορείτε να βρείτε περισσότερες πληροφορίες [εδώ](http://w3c.github.io/html/editing.html#dnd).
+Μπορείτε να βρείτε περισσότερες πληροφορίες [εδώ](https://html.spec.whatwg.org/multipage/dnd.html#dnd).
 
 ## Ιστορικό
-Η HTML5 σας δίνει τον έλεγχο του ιστορικού του πλοηγού σας. Με τη βοήθεια του αντικειμένου History, σας επιτρέπει να μεταφέρεστε μπροστά/πίσω στο ιστορικό και από ιστοσελίδα σε ιστοσελίδα. Μπορείτε ακόμα ν' αποθηκεύσετε δεδομένα στο αντικείμενο ιστορικού κατάστασης της τρέχουσας ιστοσελίδας και να τα ανακτήσετε αργότερα. Με αυτόν τον τρόπο, μπορείτε να μεταφέρετε δεδομένα από ιστοσελίδα σε ιστοσελίδα, οπότε ξεχάστε τα κουλουράκια (cookies) ή τις συνοδείες (sessions). 
+Η HTML5 σας δίνει τον έλεγχο του ιστορικού του πλοηγού σας. Με τη βοήθεια του αντικειμένου ```History```, σας επιτρέπει να μεταφέρεστε μπροστά/πίσω στο ιστορικό και από ιστοσελίδα σε ιστοσελίδα. Μπορείτε ακόμα ν' αποθηκεύσετε δεδομένα στο αντικείμενο ιστορικού κατάστασης της τρέχουσας ιστοσελίδας και να τα ανακτήσετε αργότερα. Με αυτόν τον τρόπο, μπορείτε να μεταφέρετε δεδομένα από ιστοσελίδα σε ιστοσελίδα, οπότε ξεχάστε τα κουλουράκια (cookies) ή τις συνεδρίες (sessions). 
 
-Το παρακάτω πρόγραμμα επιδεικνύει τα παραπάνω. Ο χρήστης μπορεί να πατήσει τα κουμπιά **Πίσω/Εμπρός** για να πλοηγηθεί πίσω ή μπροστά μια ιστοσελίδα. Ή να εισάγει ένα θετικό (αρνητικό) αριθμό στο πλαίσιο κειμένου **Μετακίνηση ... σελ.** για να μετακινηθεί τόσες σελίδες προς τα εμπρός (πίσω). Ακόμα, μπορεί να προσθέσει δεδομένα στην ιστοσελίδα ιστορικού που βρίσκεται. Τέλος, εμφανίζει το μέγεθος του ιστορικού.
+Το παρακάτω πρόγραμμα επιδεικνύει τα παραπάνω. Ο χρήστης μπορεί να πατήσει τα κουμπιά **Πίσω/Εμπρός** για να πλοηγηθεί πίσω ή μπροστά σε μια ιστοσελίδα. Ή να εισάγει ένα θετικό (αρνητικό) αριθμό στο πλαίσιο κειμένου **Μετακίνηση ... σελ.** για να μετακινηθεί τόσες σελίδες προς τα εμπρός (πίσω). Ακόμα, μπορεί να προσθέσει δεδομένα στην ιστοσελίδα ιστορικού που βρίσκεται. Τέλος, εμφανίζει το μέγεθος του ιστορικού.
 
 ![](assets/Fig3.png)
 
@@ -711,7 +714,7 @@ function pushData() {
 ```
 Η συνάρτηση ```pushState(data, title [, url ])``` δέχεται ως ορίσματα ένα αντικείμενο που περιέχει τα δεδομένα, ένα κλειδί με το οποίο μπορείτε να προσπελάσετε τα δεδομένα και την ιστοσελίδα με την οποία συσχετίζετε τα δεδομένα (το παραπάνω πρόγραμμα έχει αποθηκευτεί ως ```history.html```).
 Η συνάρτηση ```replaceState(data, title [, url ])``` δέχεται τα ίδια ορίσματα όπως και η pushState και αντικαθιστά τα παλιά δεδομένα με νέα.
-Τέλος, προσθέτουμε έναν «ακροατή» (listener) ο οποίος όταν λάβει το γεγονός onpopstate καλεί τη συνάρτηση ```popData()```.
+Τέλος, προσθέτουμε έναν «ακροατή» (listener) ο οποίος όταν λάβει το γεγονός ```onpopstate``` καλεί τη συνάρτηση ```popData()```.
 ```javascript
 function popData(event) {
   var state = "Ιστοσελίδα: " + document.location + " Δεδομένα: " + event.state.container;
@@ -939,7 +942,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
   </hgroup>
 </header>
 ```
-που αποτελείται από δυο επικεφαλίδες οργανωμένες ως hgroup, από ένα μενού πλοήγησης:
+που αποτελείται από δυο επικεφαλίδες οργανωμένες ως ```hgroup```, από ένα μενού πλοήγησης:
 ```html
 <nav>
   <ul style="list-style-type: none; margin: 0; padding: 0;">
@@ -949,13 +952,13 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
   </ul>
 </nav>
 ```
-ένα section που αποτελείται από δυο άρθρα:
+ένα ```section``` που αποτελείται από δυο άρθρα:
 ```html
 <section contextmenu="mnu-comments">
   <article> ... </article>
   <article> ... </article>
 </section>
-ένα aside που εμφανίζεται στα δεξιά:
+ένα ```aside``` που εμφανίζεται στα δεξιά:
 <aside>
   <figure>
     <img width="85" height="85" src="hawk.jpg" alt="hawk" />
@@ -1018,7 +1021,7 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 **Πίνακας 3** _Νέες ετικέτες_
 
 Πάντα υπάρχει το πρόβλημα ότι υπάρχουν παλιοί πλοηγοί εκεί έξω που δεν υποστηρίζουν τις παραπάνω ετικέτες. Τι κάνουμε σ' αυτήν την περίπτωση; Μια εύκολη λύση είναι η εξής:
-1. Κατεβάστε το αρχείο [modernizr](www.modernizr.com/download/).
+1. Κατεβάστε το αρχείο [modernizr](https://www.modernizr.com/download/).
 2. Φορτώστε το στο αρχείο σας HTML ως εξής:
 
 ```html
@@ -1033,9 +1036,9 @@ object.execCommand(sCommand [, bUserInterface] [, vValue])
 ## Αποθήκευση στον Ιστό (Web Storage)
 Το πρωτόκολλο HTTP δε θυμάται καταστάσεις (είναι εξ' ορισμού stateless). Δηλ. ο πλοηγός κάνει μια αίτηση στο διακομιστή και ο διακομιστής στέλνει μια απάντηση. Από εκεί και πέρα, ο διακομιστής δε θυμάται τίποτ' άλλο για τον πελάτη-πλοηγό. Αλλά τότε, πώς μπορούμε π.χ. να κάνουμε ηλεκτρονικές αγορές; Στις ηλεκτρονικές αγορές, πλοηγούμαστε σε πολλές σελίδες και γεμίζουμε το ηλεκτρονικό καλάθι μας με προϊόντα. Αφού ο διακομιστής μας “ξεχνάει" μετά από κάθε ιστοσελίδα, πώς μπορεί να θυμάται τι έχουμε στο καλάθι μας; 
 Μέχρι την HTML 4 αυτό επιτυγχανόταν με τις συνεδρίες (sessions) και τα κουλουράκια (cookies). Χρειαζόταν δηλ. να χρησιμοποιήσουμε κάποια γλώσσα προγραμματισμού διακομιστή (server-side code) για να το επιτύχουμε.  Η HTML 5 μαζί με τη Javascript φέρνουν νέες τεχνολογίες για ν' αποθηκεύετε δεδομένα από μια ιστοσελίδα σε μια άλλη χωρίς την ανάγκη να καταφύγετε σε server-side λύσεις. Μπορείτε ν' αποθηκεύσετε δεδομένα του χρήστη είτε σε κάποιο διακομιστή (Session Storage) είτε στον πλοηγό (Local Storage).
-Μπορείτε να διαβάσετε περισσότερα [εδώ](http://dev.w3.org/html5/webstorage).
+Μπορείτε να διαβάσετε περισσότερα [εδώ](https://html.spec.whatwg.org/multipage/#toc-webstorage).
 
-Πλοηγοί που το υποστηρίζουν: Chrome, Firefox, Safari.
+Πλοηγοί που το υποστηρίζουν: Brave, Chrome, Edge, Firefox, Safari.
 
 Στην ακόλουθη εφαρμογή, μπορείτε να προσθέσετε προϊόντα στο καλάθι αγορών και μετά να δείτε τι περιέχει το καλάθι.
 
@@ -1169,7 +1172,7 @@ localStorage.getItem("Data");
 * ```event.origin```
 * ```event.source```
 
-Περισσότερα [εδώ](http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html).
+Περισσότερα [εδώ](https://html.spec.whatwg.org/multipage/#toc-comms).
 
 Πλοηγοί που το υποστηρίζουν: Opera, Safari.
 
@@ -1232,7 +1235,7 @@ sender.html
 ```
 
 ## Γεωκαταχώρηση (Geolocation)
-Η γεωκαταχώρηση σας δίνει τη δυνατότητα να βρείτε την ακριβή γεωγραφική τοποθεσία ενός χρήστη. Χρησιμοποιείται από πολλές εφαρμογές όπως π.χ. [Google maps](http://maps.google.com/). Μπορείτε να διαβάσετε περισσότερα [εδώ](http://www.w3.org/TR/geolocation-API/).
+Η γεωκαταχώρηση σας δίνει τη δυνατότητα να βρείτε την ακριβή γεωγραφική τοποθεσία ενός χρήστη. Χρησιμοποιείται από πολλές εφαρμογές όπως π.χ. [Google maps](http://maps.google.com/). Μπορείτε να διαβάσετε περισσότερα [εδώ](https://www.w3.org/TR/geolocation/).
 
 Πλοηγοί που την υποστηρίζουν: Chrome, Firefox, IE 9, Opera, Safari. 
 
@@ -1308,13 +1311,13 @@ geolocation.html
 Αν αναρωτιέστε πως δουλεύει, τότε, αν η συσκευή στην οποία φορτώνεται η ιστοσελίδα διαθέτει GPS, είναι φανερό πώς λαμβάνεται η πληροφορία. Αν η συσκευή σας δε διαθέτει GPS, τότε η πληροφορία ανακτάται από τριγωνοποίηση με τις κεραίες κινητής τηλεφωνίας. Αν η ιστοσελίδα φορτώνεται από κάποιο laptop ή desktop τότε η πληροφορία ανακτάται από τριγωνοποίηση WiFi ή αντιστοίχηση της διεύθυνσης ΙΡ με τις γεωγραφικές συντεταγμένες του παρόχου και πιθανώς κλήση σε κάποιον πάροχο που μπορεί να παρέχει γεωγραφικές συντεταγμένες όπως η Google.
 
 ## WebSockets
-Αν έχετε βαρεθεί τους περιορισμούς του HTTP, τότε καλωσορίστε τα WebSockets. Πρόκειται για ένα πρωτόκολλο αμφίδρομης επικοινωνίας (bi-directional full-duplex) με πλαίσια (frame-based).  Σε σύγκριση με το HTTP δεν ακολουθεί το μοντέλο αίτησης-απόκρισης (request-response model) και χρησιμοποιεί sockets. Διαθέτει το δικό του URI: ```ws``` και ```wss``` για ασφαλή επικοινωνία (αντίστοιχο δηλ. του HTTPS). 
-Κάθε επικοινωνία που ακολουθεί το πρωτόκολλο WebSocket ξεκινά με μια _χειραψία (handshake)_, η οποία αναβαθμίζει τη σύνδεση από HTTP σε WebSocket, δηλ. από επικοινωνία μοντέλου αίτησης-απόκρισης σε μοντέλο επικοινωνίας βασισμένο στα μηνύματα (message-based ή frame-based). Ο λόγος είναι ότι το πρωτόκολλο WebSockets χρησιμοποιεί τις ίδιες θύρες με το HTTP (δηλ. ```80``` και ```443```).
+Αν έχετε βαρεθεί τους περιορισμούς του HTTP, τότε καλωσορίστε τα [WebSockets](https://websockets.spec.whatwg.org/#the-websocket-interface). Πρόκειται για ένα πρωτόκολλο αμφίδρομης επικοινωνίας (bi-directional full-duplex) με πλαίσια (frame-based).  Σε σύγκριση με το HTTP δεν ακολουθεί το μοντέλο αίτησης-απόκρισης (request-response model) και χρησιμοποιεί sockets. Διαθέτει το δικό του URI: ```ws``` και ```wss``` για ασφαλή επικοινωνία (αντίστοιχο δηλ. του HTTPS). 
+Κάθε επικοινωνία που ακολουθεί το [πρωτόκολλο WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) ξεκινά με μια _χειραψία (handshake)_, η οποία αναβαθμίζει τη σύνδεση από HTTP σε WebSocket, δηλ. από επικοινωνία μοντέλου αίτησης-απόκρισης σε μοντέλο επικοινωνίας βασισμένο στα μηνύματα (message-based ή frame-based). Ο λόγος είναι ότι το πρωτόκολλο WebSockets χρησιμοποιεί τις ίδιες θύρες με το HTTP (δηλ. ```80``` και ```443```).
 Τα WebSockets επιταχύνουν δραματικά την επικοινωνία μεταξύ πελάτη-διακομιστή σε σχέση με το HTTP παρέχοντας βελτίωση 500:1 όσων αφορά το μέγεθος των επικεφαλίδων (headers), 1000:1 όσων αφορά την επικοινωνία επικεφαλίδων (σε σχέση με το HTTP η επικεφαλίδα στέλνεται μόνο στην αρχή κι όχι σε κάθε συναλλαγή με το διακομιστή) και 3:1 όσον αφορά την μείωση της καθυστέρησης.
 
-Πλοηγοί που το υποστηρίζουν: [http://caniuse.com/websockets](http://caniuse.com/websockets). Μπορείτε να ελέγξετε αν ο πλοηγός σας υποστηρίζει Web sockets φορτώνοντας την [ιστοσελίδα](http://www.websocket.org/echo.html).
+Πλοηγοί που το υποστηρίζουν: [http://caniuse.com/websockets](http://caniuse.com/websockets).
 
-Για να δείξουμε ένα παράδειγμα θα χρειαζόμασταν ένα διακομιστή που να υποστηρίζει WebSockets. Καθώς κάτι τέτοιο ξεφεύγει από τα όρια αυτού του βιβλίου, θα χρησιμοποιήσουμε το διακομιστή της [ιστοσελίδας](http://www.websocket.org/echo.html).
+Για να δείξουμε ένα παράδειγμα θα χρειαζόμασταν ένα διακομιστή που να υποστηρίζει WebSockets. Καθώς κάτι τέτοιο ξεφεύγει από τα όρια αυτού του βιβλίου, θα χρησιμοποιήσουμε το διακομιστή αυτής της [ιστοσελίδας](echo.websocket.events/). Παλαιότερα, όλα τα εκπαιδευτικά εγχειρίδια (καθώς και παλαιότερη έκδοση αυτού του βιβλίου) χρησιμοποιούσαν την ιστοσελίδα http://www.websocket.org/echo.html, αλλά πλέον αυτή καταργήθηκε όπως περιγράφεται σε αυτό το [άρθρο](https://www.lob.com/blog/websocket-org-is-down-here-is-an-alternative).
 ```html
 websockets.html
 <!DOCTYPE html>
@@ -1335,7 +1338,7 @@ websockets.html
     var websocket;
     if (window.WebSocket) {    
       console.log("WebSocket object is supported in your browser");
-       websocket = new WebSocket("ws://echo.websocket.org"); 
+       websocket = new WebSocket("ws://echo.websocket.events"); 
        websocket.onopen = function(e) {
         console.log("onopen");
         writeToScreen("CONNECTED"); 
@@ -1376,8 +1379,8 @@ websockets.html
 ```
 
 Το σώμα της ιστοσελίδας αποτελείται από ένα ```div output``` το οποίο θα εμφανίσει το αποτέλεσμα της επικοινωνίας. Προσθέτουμε έναν ακροατή (listener) στο παράθυρο (window) το οποίο ακούει όταν φορτώνεται η ιστοσελίδα, κι όταν συμβεί το συμβάν τότε καλείται η συνάρτηση javascript ```loader()``` η οποία αρχικοποιεί τη μεταβλητή ```output``` να δείχνει στο ομώνυμο ```div``` και καλεί τη συνάρτηση ```testWebSocket()```.
-Το πρώτο πράγμα που κάνει η συνάρτηση αυτή είναι να ελέγξει αν ο πλοηγός υποστηρίζει web sockets κι αν ναι τότε ανοίγει μια σύνδεση ```ws``` με τον διακομιστή ```echo.websocket.org```. Από εκεί και πέρα ορίζονται οι 4 συναρτήσεις που καλούνται όταν θα συμβεί ένα από τα αντίστοιχα γεγονότα ```onopen, onmessage, onclose``` και ```onerror```:
-* η ```open()``` εμφανίζει το μήνυμα ```CONNECTED``` και στέλνει το μήνυμα ```“Hello WebSocket"``` στο διακομιστή ```echo.websocket.org```
+Το πρώτο πράγμα που κάνει η συνάρτηση αυτή είναι να ελέγξει αν ο πλοηγός υποστηρίζει web sockets κι αν ναι τότε ανοίγει μια σύνδεση ```ws``` με τον διακομιστή ```echo.websocket.events```. Από εκεί και πέρα ορίζονται οι 4 συναρτήσεις που καλούνται όταν θα συμβεί ένα από τα αντίστοιχα γεγονότα ```onopen, onmessage, onclose``` και ```onerror```:
+* η ```open()``` εμφανίζει το μήνυμα ```CONNECTED``` και στέλνει το μήνυμα ```“Hello WebSocket"``` στο διακομιστή ```echo.websocket.events```
 * η ```message()``` περιμένει την απάντηση του διακομιστή, την εμφανίζει στον πλοηγό (```div output```) και κλείνει τη σύνδεση (αν και θα μπορούσαμε να την αφήσουμε ανοιχτή και να στείλουμε περισσότερα δεδομένα· πέρα από κείμενο UTF-8 το πρωτόκολλο υποστηρίζει και την αποστολή δυαδικών δεδομένων: ```Blob``` and ```ArrayBuffer```)
 * η ```close()``` απλά εμφανίζει το μήνυμα ```DISCONNECTED```
 * η ```error()``` εμφανίζει τυχόν λάθος μήνυμα
@@ -1401,13 +1404,22 @@ websockets.html
 
 Μπορείτε να διαβάσετε περισσότερα [εδώ](http://www.whatwg.org/specs/web-apps/current-work/multipage/workers.html). Υπάρχουν δυο ειδών “εργάτες ιστού", οι _Αφιερωμένοι (Dedicated)_ και οι _Διαμοιρασμένοι (Shared)_. Όταν μια ιστοσελίδα ξεκινάει έναν εργάτη ιστού και διαχειρίζεται τα αποτελέσματα επεξεργασίας του, τότε μιλάμε για έναν αφιερωμένο εργάτη. Αν τ' αποτελέσματα επεξεργασίας τους χρησιμοποιούνται από πολλές ιστοσελίδες, που όμως προέρχονται από την ίδια αρχή (origin), τότε μιλάμε για διαμοιρασμένους εργάτες. 
 Οι εργάτες ιστού έχουν πρόσβαση στα αντικείμενα ```navigator``` και ```location``` (read-only), στα ```XMLHttpRequest```, ```setTimeout()/clearTimeout()``` και ```setInterval()/clearInterval()``` και στην Application Cache. Μπορείτε να εισάγετε άλλα script με τη μέθοδο ```importScripts()``` και να εκκινήσετε νέους εργάτες ιστού.
-Οι εργάτες ιστού έχουν όμως και περιορισμούς: δεν έχουν πρόσβαση στο DOM της “πατρικής" σελίδας καθώς και στα αντικείμενα window, document και parent. Μπορείτε από έναν Web Worker να ξεκινήσετε άλλον Web Worker αλλά με τους εξής περιορισμούς:
+Οι εργάτες ιστού έχουν όμως και περιορισμούς: δεν έχουν πρόσβαση στο DOM της “πατρικής" σελίδας καθώς και στα αντικείμενα ```window```, ```document``` και ```parent```. Δεν μπορείτε να στείλετε δεδομένα σ' αυτούς που δεν μπορεί να τα διαχειριστεί ο αλγόριθμος [δομημένου κλώνου](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm) (_structured clone algorithm_). Ο αλγόριθμος αυτός αντιγράφει πολύπλοκα αντικείμενα JavaScript. Χρησιμοποιείται εσωτερικά όταν καλείται η ```structuredClone()``` για να μεταφέρει δεδομένα μεταξύ Workers μέσω της ```postMessage()```.
+
+Μπορείτε από έναν Web Worker να ξεκινήσετε άλλον Web Worker αλλά με τους εξής περιορισμούς:
 
 * Οι Subworkers πρέπει να φιλοξενούνται από τον ίδιο host όπως και η πατρική ιστοσελίδα
 * URIs στους subworkers είναι πάντα σχετικά με την θέση του πατρικού webworker
 
 Επιπλέον, ο Chrome επιβάλει επιπλέον περιορισμούς ασφαλείας που αποτρέπει τους εργάτες ιστού να εκτελούνται τοπικά (π.χ. ```file://```). Θα πρέπει να εκτελέσετε τον Chrome με την παράμετρο ```--allow-file-access-from-files``` ενεργοποιημένη αλλά αποφύγετε να την αφήσετε εξ' ορισμού ενεργοποιημένη όταν πλοηγήστε στον παγκόσμιο ιστό.
-Ο παρακάτω κώδικας χρησιμοποιεί έναν WebWorker για να φορτώσει ένα χρονοβόρο κώδικα Javascript.
+Ο παρακάτω κώδικας χρησιμοποιεί έναν WebWorker για να φορτώσει ένα χρονοβόρο κώδικα Javascript με τη εντολή:
+```javascript
+const worker = new Worker('fib.js');
+```
+ή αν πρόκειται για διαμοιρασμένο εργάτη ιστού με την εντολή:
+```javascript
+const worker = new SharedWorker('fib.js');
+```
 
 ![](assets/Fig14.png)
 
@@ -1418,51 +1430,48 @@ websockets.html
   <head>
     <meta charset="utf-8">
     <title>Web Workers</title>
+  </head>
+  <body>
+    <h1>WebWorkers</h1>
+    F(<input id="n" type="text" size="10"></input>)=
+    <output id="fib"></output> 
+    <button onclick="calculate();">Calculate!</button>
+
     <script>
-  var worker;
-  worker = new Worker('fib.js');
-  worker.addEventListener('message', function(e) {
-    document.getElementById('fib').textContent = e.data;
-      }, false);
-  function calculate() { 
-worker.postMessage(document.getElementById('n').value); 
-    }
+      const worker = new Worker('fib.js');
+      function calculate() {
+        document.getElementById('fib').textContent = '...'
+        worker.postMessage(document.getElementById('n').value);
+        worker.onmessage = (event) => {
+          document.getElementById('fib').textContent = event.data;
+        };
+      }
     </script>
-    </head>
-    <body>
-  <h1>WebWorkers</h1>
-  F(<input id="n" type="text" size="10"></input>)=
-  <output id="fib"></output> 
-  <button onclick="calculate();">Calculate!</button>
-    </body>
+  </body>
 </html>
 ```
-με τη εντολή:
+και το αρχείο ```fib.js```:
 ```javascript
-var worker = new Worker('fib.js');
+const fib = (n) => (n < 2 ? n : fib(n - 1) + fib(n - 2));
+
+onmessage = (e) => {
+  const num  = e.data;
+  const fibNum = fib(num);
+  postMessage(fibNum);
+};
 ```
-ή αν πρόκειται για διαμοιρασμένο εργάτη ιστού:
-```javascript
-var worker = new SharedWorker('fib.js');
-```
+
 Ο κώδικας Javascript θα εκτελεστεί ασύγχρονα στο δικό του νήμα εκτέλεσης (thread) όταν του σταλεί ένα μήνυμα με τη μέθοδο:
 ```javascript
 worker.postMessage(document.getElementById('n').value); 
 ```
-όπου του περνάμε έναν θετικό ακέραιο αριθμό.
-Το script που ξεκίνησε τον εργάτη ιστού μπορεί να ακούει για το γεγονός  αυτό (```e```) και όταν το λάβει να επεξεργαστεί τα δεδομένα (```e.data```) που του στέλνει ο εργάτης στον διαχειριστή του γεγονότος (event handler) ```onMessage```:
+όπου του περνάμε έναν θετικό ακέραιο αριθμό. Το μήνυμα αυτό στέλνεται στον εργάτη ```fib.js``` όπου λαμβάνεται από την ```onmessage``` η οποία με τη σειρά της καλεί την αναδρομική μέθοδο ```fib``` και στέλνει πίσω με την ```postMessage()``` το αποτέλεσμα. Το script που ξεκίνησε τον εργάτη ιστού να ακούει με τη σειρά για το γεγονός  αυτό (```event```) και όταν το λάβει εμφανίζει το αποτέλεσμα (```e.data```) που του στέλνει ο εργάτης στον διαχειριστή του γεγονότος (event handler) ```onMessage```:
 ```javascript
-worker.addEventListener('message', function(e) {
-  document.getElementById('fib').textContent = e.data;
-}, false);
+worker.onmessage = (event) => {
+  document.getElementById('fib').textContent = event.data;
+});
 ```
-Αντίστοιχα ο εργάτης θα πρέπει να έχει επίσης κάποιον διαχειριστή γεγονότων για να τα διαχειριστεί και να αποστείλει την απάντηση:
-```javascript
-self.addEventListener('message', function(e) {
-  self.postMessage(fibonacci(e.data));
-}, false);
-```
-Αν συμβεί κάποιο λάθος τότε θα πρέπει να διαχειριστεί ως εξής:
+Αν συμβεί κάποιο λάθος τότε θα πρέπει να το διαχειριστεί ως εξής:
 ```javascript
 worker.addEventListener('error', function(e) {
   // error handling code
@@ -1470,7 +1479,7 @@ worker.addEventListener('error', function(e) {
 ```
 
 Με την ```postMessage()``` μπορούμε να στείλουμε αντικείμενα JSON, ή πιο πολύπλοκα αντικείμενα όπως ```File, Blob, ArrayBuffer```. 
-Τα δεδομένα που στέλνονται μέσω μηνυμάτων αντιγράφονται στους εργάτες, δεν διαμοιράζονται. Αυτό από τη μια είναι καλό καθώς ένας εργάτης δεν πειράζει τα δεδομένα του 'πατέρα' του, από την άλλη όταν πρόκειται για μεγάλα αντικείμενα (π.χ. κάποια MB) η αντιγραφή δεν είναι η καλύτερη λύση από πλευράς απόδοσης. Γι' αυτό το σκοπό υπάρχουν τα _Μεταφερόμενα Αντικείμενα (Transferable Objects)_. Σ' αυτήν την περίπτωση δεν δημιουργείται κάποιο αντίγραφο αλλά τα δεδομένα μεταφέρονται στον εργάτη. Τα αρχικά δεδομένα όμως, σβήνονται από τον πατρικό εργάτη, είναι σα να κάνουμε **Αποκοπή** και **Επικόλληση*.
+Τα δεδομένα που στέλνονται μέσω μηνυμάτων αντιγράφονται στους εργάτες, δεν διαμοιράζονται. Αυτό από τη μια είναι καλό καθώς ένας εργάτης δεν πειράζει τα δεδομένα του 'πατέρα' του, από την άλλη όταν πρόκειται για μεγάλα αντικείμενα (π.χ. κάποια MB) η αντιγραφή δεν είναι η καλύτερη λύση από πλευράς απόδοσης. Γι' αυτό το σκοπό υπάρχουν τα _Μεταφερόμενα Αντικείμενα (Transferable Objects)_. Σ' αυτήν την περίπτωση δεν δημιουργείται κάποιο αντίγραφο αλλά τα δεδομένα μεταφέρονται στον εργάτη. Τα αρχικά δεδομένα όμως, σβήνονται από τον πατρικό εργάτη, είναι σα να κάνουμε **Αποκοπή** και **Επικόλληση**.
 Το θέμα είναι αρκετά ευρύ και ο ενδιαφερόμενος αναγνώστης καλείται να αναφερθεί στη βιβλιογραφία που ακολουθεί. 
 
 ## Λανθάνουσα μνήμη εκτός σύνδεσης (Offline caching)
@@ -1592,7 +1601,7 @@ if (appCache.status == window.applicationCache.UPDATEREADY) {
 // Fired after the first cache of the manifest.
 appCache.addEventListener('cached', handleCacheEvent, false);
 ```
-Για περισσότερα μπορείτε να διαβάσετε [εδώ](http://www.whatwg.org/specs/web-apps/current-work/#applicationcache) και στη βιβλιογραφία που ακολουθεί.
+Για περισσότερα μπορείτε να διαβάσετε [εδώ](https://html.spec.whatwg.org/#applicationcache) και στη βιβλιογραφία που ακολουθεί.
 
 ## Επίλογος
 Σ' αυτό το βιβλίο δώσαμε μια σύντομη εισαγωγή στην HTML 5 και πιο συγκεκριμένα μιλήσαμε για τις νέες ευκολίες στη διαχείριση φορμών, ζωγραφικής, ήχου και βίντεο. Δυστυχώς, οι πλοηγοί δεν υποστηρίζουν ακόμα πλήρως την HTML 5, αλλά αυτό δε σημαίνει ότι δεν μπορείτε να ξεκινήσετε από τώρα να μαθαίνετε τις δυνατότητες της νέας αυτής έκδοσης της γλώσσας που θ' αλλάξει τον παγκόσμιο ιστό όπως τον ξέρουμε. 
@@ -1614,35 +1623,35 @@ appCache.addEventListener('cached', handleCacheEvent, false);
 
 ## Πηγές
 
+1. [Προδιαγραφές της HTML 5](https://html.spec.whatwg.org/multipage/)
 1. Fain Y., Rasputnis V., Gamov V., Tartakovsky A. (2014), [Enterprise Web Development](http://enterprisewebbook.com/), O' Reilly.
 1. Flanagan D. (2010), _Canvas Pocket Reference_, O'Reilly.
-2. Freeman E. & Robson E. (2011), _Head First HTML5 Programming_, O'Reilly.
-3. Geary D. (2012), _Core HTML 5 Canvas_, Prentice Hall.
-10. Green I. (2012), _Web Workers_, O'Reilly.
-4. Lawson B. & Sharp R. (2012), _Introducing HTML 5_, 2nd Ed., New Riders.
-9. Lubbers P. (2012), [HTML 5 WebSocket](http://refcardz.dzone.com/refcardz/html5-websocket), refcard, DZone. 
-4. Hawkes, R. (2011), _HTML5 Canvas_, Apress.
-5. Holzner, P. (2011), _Sams Teach Yourself HTML 5 in 10 minutes_, Sams.
-6. Holdener A. (2012), _HTML5 Geolocation_, O'Reilly.
-7. Mahemoff, M. (2010), [“A Simple Trip Meter using the Geolocation API"](file:///Volumes/jkost/Books/Magazines/Ubuntistas/Issue19/1.%20Άρθρα/HTML_5_part3/7.%20http://www.html5rocks.com/en/tutorials/geolocation/trip_meter/).
-6. Marsman J. (2011), [«Learn HTML 5 in 5 minutes»](https://dzone.com/articles/learn-html5-5-minutes), DZone
-7. Osborn J. & AGI Training Team (2011), _HTML5 Digital Classroom_, Wiley.
-5. Pilgrim M. [Dive into HTML 5](http://diveintohtml5.info/).
-8. Ιστολόγια: [Robert Nyman](https://robertnyman.com/), [Christian Heilmann](christianheilmann.com).
-9. [HTML 5 Intro](http://www.w3schools.com/html/html5_intro.asp)
-10. ZK (2012), [7 Useful HTML5 Editors for Web Development](http://www.webtrafficroi.com/7-useful-html5-editors-for-web-develop
-ment/).
-11. [Comparison of HTML editors](http://en.wikipedia.org/wiki/Comparison_of_HTML_editors).
-12. [Game engines](https://github.com/bebraw/jswiki/wiki/Game-Engines).
-13. [HTML 5 Canvas Tutorials Introduction](http://www.html5canvastutorials.com/tutorials/html5-canvas-tutorials-introduction/)
-14. [HTML5 Code snippets](http://css.dzone.com/articles/html5-code-snippets-take-your?mz=46483-html5).
-15. Jung, J-B. (2013), [«HTML5 code snippets to take your website to the next level»](https://dzone.com/articles/html5-code-snippets-take-your?mz=46483-html5), DZone
-16. Gueret A. (2012), [«HTML5 : Drag & Drop API Tutorial.»](http://marakana.com/s/post/1071/html5_drag_n_drop_api)
-17. Gueret A. (2012), [«Using the HTML5 attribute "contenteditable" to create a WYSIWYG»](http://marakana.com/s/post/1096/using_the_html5_attribute_contenteditable_to_create_a_wysiwyg).
-11. Bidelman, E. (2010), [“The Problem: Javascript Concurrency"](http://www.html5rocks.com/en/tutorials/workers/basics/). 
-12. [HTML5 WebWorkers](http://www.w3schools.com/html/html5_webworkers.asp) 
-13. Bidelman, E. (2010), [“A Beginner's Guide to Using the Application Cache"](http://www.html5rocks.com/en/tutorials/appcache/beginner/).
-14. Archibald, J (2012), “Application Cache is a Douchebag".
-16. [Calculate distance, bearing and more between Latitude/Longitude points](http://www.movable-type.co.uk/scripts/latlong.html)
+1. Freeman E. & Robson E. (2011), _Head First HTML5 Programming_, O'Reilly.
+1. Geary D. (2012), _Core HTML 5 Canvas_, Prentice Hall.
+1. Green I. (2012), _Web Workers_, O'Reilly.
+1. Lawson B. & Sharp R. (2012), _Introducing HTML 5_, 2nd Ed., New Riders.
+1. Lubbers P. (2012), [HTML 5 WebSocket](http://refcardz.dzone.com/refcardz/html5-websocket), refcard, DZone. 
+1. Hawkes, R. (2011), _HTML5 Canvas_, Apress.
+1. Holzner, P. (2011), _Sams Teach Yourself HTML 5 in 10 minutes_, Sams.
+1. Holdener A. (2012), _HTML5 Geolocation_, O'Reilly.
+1. Mahemoff, M. (2010), [“A Simple Trip Meter using the Geolocation API"](file:///Volumes/jkost/Books/Magazines/Ubuntistas/Issue19/1.%20Άρθρα/HTML_5_part3/7.%20http://www.html5rocks.com/en/tutorials/geolocation/trip_meter/).
+1. Marsman J. (2011), [«Learn HTML 5 in 5 minutes»](https://dzone.com/articles/learn-html5-5-minutes), DZone
+1. Osborn J. & AGI Training Team (2011), _HTML5 Digital Classroom_, Wiley.
+1. Pilgrim M. [Dive into HTML 5](http://diveintohtml5.info/).
+1. Ιστολόγια: [Robert Nyman](https://robertnyman.com/), [Christian Heilmann](christianheilmann.com).
+1. [HTML 5 Intro](http://www.w3schools.com/html/html5_intro.asp)
+1. ZK (2012), [7 Useful HTML5 Editors for Web Development](http://www.webtrafficroi.com/7-useful-html5-editors-for-web-development/).
+1. [Comparison of HTML editors](http://en.wikipedia.org/wiki/Comparison_of_HTML_editors).
+1. [Game engines](https://github.com/bebraw/jswiki/wiki/Game-Engines).
+1. [HTML 5 Canvas Tutorials Introduction](http://www.html5canvastutorials.com/tutorials/html5-canvas-tutorials-introduction/)
+1. [HTML5 Code snippets](http://css.dzone.com/articles/html5-code-snippets-take-your?mz=46483-html5).
+1. Jung, J-B. (2013), [«HTML5 code snippets to take your website to the next level»](https://dzone.com/articles/html5-code-snippets-take-your?mz=46483-html5), DZone
+1. Gueret A. (2012), [«HTML5 : Drag & Drop API Tutorial.»](http://marakana.com/s/post/1071/html5_drag_n_drop_api)
+1. Gueret A. (2012), [«Using the HTML5 attribute "contenteditable" to create a WYSIWYG»](http://marakana.com/s/post/1096/using_the_html5_attribute_contenteditable_to_create_a_wysiwyg).
+1. Bidelman, E. (2010), [“The Problem: Javascript Concurrency"](http://www.html5rocks.com/en/tutorials/workers/basics/). 
+1. [HTML5 WebWorkers](http://www.w3schools.com/html/html5_webworkers.asp) 
+1. Bidelman, E. (2010), [“A Beginner's Guide to Using the Application Cache"](http://www.html5rocks.com/en/tutorials/appcache/beginner/).
+1. Archibald, J (2012), “Application Cache is a Douchebag".
+1. [Calculate distance, bearing and more between Latitude/Longitude points](http://www.movable-type.co.uk/scripts/latlong.html)
 
 ---
