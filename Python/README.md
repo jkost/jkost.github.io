@@ -1256,14 +1256,15 @@ O O O O O
 11. [Python Programming: A Concise Introduction](https://www.coursera.org/learn/python-programming-introduction), Coursera.
 12. [Programming for Everybody (Getting Started with Python)](https://www.coursera.org/learn/python), Coursera.
 13. [Learn Python the Hard Way](http://learnpythonthehardway.org/)
-14. Barry P. (2011), _Head First Python_, O’Reilly.
-15. Barry P. & Griffiths D. (2009), _Head First Programming_, O’Reilly.
-16. Briggs A. (2012), _Hello Python_, Manning.
-17. Lutz M. (2013), _Learning Python_, 5th Ed., O’Reilly.
-18. Lutz M. (2014), _Python Pocket Reference_, O’Reilly.
-19. Matthes E. (2016), _Python Crash Course_, No Starch Press.
-20. Payne J. (2010), _Beginning Python_, Wrox, Wiley.
-21. Sweigart A. (2015), _Automate the Boring Stuff with Python_, No Starch Press.
-22. Walters G. (2016-2017), “The Python Collection, Full Circle Magazine Python Special Editions", [Full Circle](https://fullcirclemagazine.org/python-special-editions/). 
+14. [Learn Python Programming In Detail](https://www.scaler.com/topics/python/).
+15. Barry P. (2011), _Head First Python_, O’Reilly.
+16. Barry P. & Griffiths D. (2009), _Head First Programming_, O’Reilly.
+17. Briggs A. (2012), _Hello Python_, Manning.
+18. Lutz M. (2013), _Learning Python_, 5th Ed., O’Reilly.
+19. Lutz M. (2014), _Python Pocket Reference_, O’Reilly.
+20. Matthes E. (2016), _Python Crash Course_, No Starch Press.
+21. Payne J. (2010), _Beginning Python_, Wrox, Wiley.
+22. Sweigart A. (2015), _Automate the Boring Stuff with Python_, No Starch Press.
+23. Walters G. (2016-2017), “The Python Collection, Full Circle Magazine Python Special Editions", [Full Circle](https://fullcirclemagazine.org/python-special-editions/). 
 
 ---
