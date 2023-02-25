@@ -4,8 +4,8 @@
 
 [![Mathesis](Courses/Mathesis/assets/mathesis.png)](http://mathesis.cup.gr)
 
-* [Εισαγωγή στη γλώσσα προγραμματισμού Java](Courses/Mathesis/Intro2Java/README.md) √
-* [Εισαγωγή στον προγραμματισμό με τη γλώσσα Java](Courses/Mathesis/Intro2ProgrammingWithJava/README.md)
+* [Εισαγωγή στη γλώσσα προγραμματισμού Java (παλιό)](Courses/Mathesis/Intro2Java/README.md) √
+* [Εισαγωγή στον προγραμματισμό με τη γλώσσα Java (νέο)](Courses/Mathesis/Intro2ProgrammingWithJava/README.md) √
 
 ## Άλλα Μαθήματα
 * [Εισαγωγή στον προγραμματισμό](Courses/Other/Intro2Programming/README.md)
