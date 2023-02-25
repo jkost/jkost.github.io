@@ -6,7 +6,7 @@
 [<-](../1.2-Algorithm/README.md) | [Δ](../../README.md)  | [->](../1.4-Installation/README.md)
 
 ---
-[![](../../../assets/Jupyter_logo.svg)](1.3-JavaHistory.ipynb)
+[![](../../../assets/jupyter_logo.svg)](1.3-JavaHistory.ipynb)
 
 _Στο μάθημα 1.4 θα μάθουμε πώς να εγκαταστήσουμε το Jupyter Lab ώστε να μπορούμε να ανοίγουμε αρχεία ```.ipynb```. Μέχρι τότε, μπορείτε να τα ανοίξετε στο [Colab](https://colab.research.google.com/) και επιλέγοντας **Upload**. Δυστυχώς δεν υποστηρίζει Java αλλά θα μπορέσετε να διαβάσετε το αρχείο._
 

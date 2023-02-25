@@ -7,7 +7,7 @@
 
 ---
 
-[![](../../../assets/Jupyter_logo.svg)](1.6-PrimitiveDataTypes.ipynb)
+[![](../../../assets/jupyter_logo.svg)](1.6-PrimitiveDataTypes.ipynb)
 
 ### Μαθησιακοί στόχοι
 Σε αυτήν την ενότητα θα μάθουμε:

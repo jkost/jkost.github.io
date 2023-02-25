@@ -7,7 +7,7 @@
 
 ---
 
-[![](../../../assets/Jupyter_logo.svg)](1.7-Strings.ipynb)
+[![](../../../assets/jupyter_logo.svg)](1.7-Strings.ipynb)
 
 ### Μαθησιακοί στόχοι
 Σε αυτήν την ενότητα θα μάθουμε:

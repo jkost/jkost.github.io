@@ -6,7 +6,7 @@
 [<-](../1.3-JavaHistory/README.md) | [∆](../../README.md) | [->](../1.5-JavaBasics/README.md)
 
 ---
-[![](../../../assets/Jupyter_logo.svg)](1.4-Installation.ipynb)
+[![](../../../assets/jupyter_logo.svg)](1.4-Installation.ipynb)
 
 ### Μαθησιακοί στόχοι
 Σε αυτήν την ενότητα θα μάθουμε:
