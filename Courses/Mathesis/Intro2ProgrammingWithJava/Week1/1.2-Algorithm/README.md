@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.1-Introduction/README.md) | [Δ](../../README.md)  | [->](../1.3-JavaHistory/README.md)
+[<](../1.1-Introduction/README.md) | [Δ](../../README.md)  | [>](../1.3-JavaHistory/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](1.2-Algorithm.ipynb)
