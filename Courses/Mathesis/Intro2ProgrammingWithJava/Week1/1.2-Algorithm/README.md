@@ -273,6 +273,6 @@ hero.pick(diamond)
 
 ---
 
-[<-](../1.1-Introduction/README.md) | [Δ](../../README.md)  | [->](../1.3-JavaHistory/README.md)
+[<](../1.1-Introduction/README.md) | [Δ](../../README.md)  | [>](../1.3-JavaHistory/README.md)
 
 ---

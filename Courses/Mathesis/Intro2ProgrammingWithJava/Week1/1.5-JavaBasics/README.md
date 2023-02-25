@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.4-Installation/README.md) | [∆](../../README.md) | [->](../1.6-PrimitiveDataTypes/README.md)
+[<](../1.4-Installation/README.md) | [∆](../../README.md) | [>](../1.6-PrimitiveDataTypes/README.md)
 
 ---
 
@@ -191,6 +191,6 @@ int radius;
 
 ---
 
-[<-](../1.4-Installation/README.md) | [∆](../../README.md) | [->](../1.6-PrimitiveDataTypes/README.md)
+[<](../1.4-Installation/README.md) | [∆](../../README.md) | [>](../1.6-PrimitiveDataTypes/README.md)
 
 ---

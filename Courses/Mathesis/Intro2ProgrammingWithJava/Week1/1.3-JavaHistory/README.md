@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.2-Algorithm/README.md) | [Δ](../../README.md)  | [->](../1.4-Installation/README.md)
+[<](../1.2-Algorithm/README.md) | [Δ](../../README.md)  | [>](../1.4-Installation/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](1.3-JavaHistory.ipynb)
@@ -229,6 +229,6 @@ double myvar2 = 3.14
 
 ---
 
-[<-](../1.2-Algorithm/README.md) | [Δ](../../README.md)  | [->](../1.4-Installation/README.md)
+[<](../1.2-Algorithm/README.md) | [Δ](../../README.md)  | [>](../1.4-Installation/README.md)
 
 ---

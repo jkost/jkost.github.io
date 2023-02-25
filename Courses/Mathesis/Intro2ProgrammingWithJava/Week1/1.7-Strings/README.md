@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.6-PrimitiveDataTypes/README.md) | [Δ](../../README.md)
+[<](../1.6-PrimitiveDataTypes/README.md) | [Δ](../../README.md)
 
 ---
 
@@ -325,6 +325,6 @@ saturday ==> "Παρ"
 
 ---
 
-[<-](../1.6-PrimitiveDataTypes/README.md) | [Δ](../../README.md)
+[<](../1.6-PrimitiveDataTypes/README.md) | [Δ](../../README.md)
 
 ---

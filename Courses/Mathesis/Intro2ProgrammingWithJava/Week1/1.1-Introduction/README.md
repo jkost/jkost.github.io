@@ -3,7 +3,7 @@
 
 ---
 
-[Δ](../../README.md)  | [->](../1.2-Algorithm/README.md)
+[Δ](../../README.md)  | [>](../1.2-Algorithm/README.md)
 
 ---
 
@@ -170,6 +170,6 @@ H _κύρια μνήμη_ η οποία είναι μια ταχύτατη μο�
 
 ---
 
-[Δ](../../README.md)  | [->](../1.2-Algorithm/README.md)
+[Δ](../../README.md)  | [>](../1.2-Algorithm/README.md)
 
 ---

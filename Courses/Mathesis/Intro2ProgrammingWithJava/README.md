@@ -9,10 +9,10 @@
 ### Εβδομάδα 1η - Εισαγωγή
 1. [Εισαγωγή στους Η/Υ](Week1/1.1-Introduction/README.md) 
 2. [Αλγόριθμοι και Προγράμματα](Week1/1.2-Algorithm/README.md)
-3. [Ιστορία της γλώσσας προγραμματισμού Java](Week1/1.3-JavaHistory/README.md) 
+3. [Ιστορία της γλώσσας προγραμματισμού Java](Week1/README.md) 
 4. [Εγκατάσταση της Java](Week1/1.4-Installation/README.md) 
 5. [Εισαγωγή στη γλώσσα προγραμματισμού Java](Week1/1.5-JavaBasics/README.md) 
-6. [Αριθμοί, μεταβλητές, εκφράσεις](Week1/1.6-JavaBasics/README.md) 
+6. [Αριθμοί, μεταβλητές, εκφράσεις](Week1/1.6-PrimitiveDataTypes/README.md) 
 7. [Συμβολοσειρές (Strings)](Week1/1.7-Strings/README.md)
 
 ### Εβδομάδα 2η - Εντολές αποφάσεων, εντολές επανάληψης, συστοιχίες και μέθοδοι

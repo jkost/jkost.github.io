@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../1.5-JavaBasics/README.md) | [∆](../../README.md) | [->](../1.7-Strings/README.md)
+[<](../1.5-JavaBasics/README.md) | [∆](../../README.md) | [>](../1.7-Strings/README.md)
 
 ---
 
@@ -646,6 +646,6 @@ seconds ==> 20
 
 ---
 
-[<-](../1.5-JavaBasics/README.md) | [∆](../../README.md) | [->](../1.7-Strings/README.md)
+[<](../1.5-JavaBasics/README.md) | [∆](../../README.md) | [>](../1.7-Strings/README.md)
 
 ---

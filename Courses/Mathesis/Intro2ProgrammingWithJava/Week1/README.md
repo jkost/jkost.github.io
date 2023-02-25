@@ -7,7 +7,7 @@
 
 ---
 
-[Δ](../README.md) | [->](../Week2/README.md) 
+[Δ](../README.md) | [>](../Week2/README.md) 
  
 ---
 
@@ -23,6 +23,6 @@
 
 ---
 
-[Δ](../README.md) | [->](../Week2/README.md) 
+[Δ](../README.md) | [>](../Week2/README.md) 
  
 ---
