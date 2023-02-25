@@ -7,7 +7,7 @@
 
 ---
 
-[1.1-Introduction.ipynb](../../../assets/Jupyter_logo.svg)
+[![](../../../assets/Jupyter_logo.svg)](1.1-Introduction.ipynb)
 
 _Στο μάθημα 1.4 θα μάθουμε πώς να εγκαταστήσουμε το Jupyter Lab ώστε να μπορούμε να ανοίγουμε αρχεία ```.ipynb```. Μέχρι τότε, μπορείτε να τα ανοίξετε στο [Colab](https://colab.research.google.com/) και επιλέγοντας **Upload**. Δυστυχώς δεν υποστηρίζει Java αλλά θα μπορέσετε να διαβάσετε το αρχείο._
 
