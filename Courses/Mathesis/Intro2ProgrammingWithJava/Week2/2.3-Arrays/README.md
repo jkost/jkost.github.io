@@ -25,7 +25,7 @@
 
 ![](assets/Fig1.png)
 
-**Εικόνα 2.3.1** _Πίνακας_
+**Εικόνα 2.3.1** _Πίνακας ή συστοιχία (array)_
 
 Το 1ο στοιχείο αποθηκεύεται στη θέση ```0```:
 ```java
@@ -216,16 +216,32 @@ $2 ==> "[[1, 2, 3], [4, 5, 6], [7, 8, 9]]"
 ```java
 jshell> int[] array = {2, 9, -1, 4, 13};
 $3 ==> int[5] {2, 9, -1, 4, 13}
+
 jshell> Arrays.sort(array); // με αριθμητική σειρά
+
 jshell> Arrays.toString(array);
 $4 ==> "[-1, 2, 4, 9, 13]"
+
 jshell> Arrays.sort(array, 0, array.length, Collections.reverseOrder()); // με αντίστροφη αριθμητική σειρά
-Error
+|  Error:
+|  no suitable method found for sort(int[],int,int,java.util.Comparator<java.lang.Object>)
+|      method java.util.Arrays.<T>sort(T[],java.util.Comparator<? super T>) is not applicable
+|        (cannot infer type-variable(s) T
+|          (actual and formal argument lists differ in length))
+|      method java.util.Arrays.<T>sort(T[],int,int,java.util.Comparator<? super T>) is not applicable
+|        (inference variable T has incompatible bounds
+|          equality constraints: int
+|          lower bounds: java.lang.Object)
+|  Arrays.sort(array, 0, array.length, Collections.reverseOrder());
+|  ^---------^
+
 jshell> String[] names = {"Κώστας", "Γιάννης", "Κατερίνα", "Μαρία", "Ανάργυρος"};
 names ==> String[5] { "Κώστας", "Γιάννης", "Κατερίνα", "Μαρία", "Ανάργυρος" }
+
 jshell> Arrays.sort(names, 0, names.length, Collections.reverseOrder()); // λεξικογραφικά
 // "["Μαρία", "Κώστας", "Κατερίνα", "Γιάννης", "Ανάργυρος"]"
 ```
+Παρατηρήστε ότι δουλεύει μόνο σε αντικείμενα κλάσεων (όπως η ```String[]```) και όχι σε πρωτογενής τύπους (π.χ. ```int[]```).
 
 ### Αναζήτηση στοιχείων σε πίνακα
 ```java
@@ -573,7 +589,7 @@ array ==> int[5] { -1, 1, 2, 4, 9 }
    * Συμμετρικός
    * Τριγωνικός
    * Τριδιαγώνιος
-5. Ένα τρόπος αποθήκευσης συμβολοσειρών είναι η χρήση _σωρού (heap)_ όπου κάθε συμβολοσειρά αποθηκεύεται στον πίνακα σωρού (βλ. εικόνα 2.3.3) και αναπαρίσταται ως μια εγγραφή δυο τιμών ```position, size```. Π.χ. η 2η συμβολοσειρά του σωρού βρίσκεται στη θέση 7 και έχει μήκος 6. Να γράψετε το πρόγραμμα ώστε να εισάγετε, διαγράψετε, αναζητήσετε συμβολοσειρές στο/από το σωρό καθώς και να εμφανίσετε τα περιεχόμενα του σωρού.  
+5. Ένα τρόπος αποθήκευσης συμβολοσειρών είναι η χρήση _σωρού (heap)_ όπου κάθε συμβολοσειρά αποθηκεύεται στον πίνακα σωρού (βλ. εικόνα 2.3.4) και αναπαρίσταται ως μια εγγραφή δυο τιμών ```position, size```. Π.χ. η 2η συμβολοσειρά του σωρού βρίσκεται στη θέση 7 και έχει μήκος 6. Να γράψετε το πρόγραμμα ώστε να εισάγετε, διαγράψετε, αναζητήσετε συμβολοσειρές στο/από το σωρό καθώς και να εμφανίσετε τα περιεχόμενα του σωρού.  
 
 ![](assets/Fig4.png)
 

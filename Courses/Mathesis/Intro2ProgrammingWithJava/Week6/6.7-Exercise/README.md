@@ -8,7 +8,7 @@
 ---
 [![](../../../assets/jupyter_logo.svg)](6.7-Exercise.ipynb)
 
-Θα εμπλουτίσουμε το έργο _School_ που ξεκινήσαμε στα μαθήματα των προηγούμενων εβδομάδων με όσα μάθαμε αυτήν την εβδομάδα, και πιο συγκεκριμένα:
+Θα εμπλουτίσουμε το έργο _School_ που ξεκινήσαμε στα μαθήματα των προηγούμενων εβδομάδων με όσα μάθαμε σε αυτήν την εβδομάδα, και πιο συγκεκριμένα:
 
 * Θα προσθέσουμε εξαιρέσεις
 * Θα προσθέσουμε αρχεία καταγραφής
@@ -206,7 +206,6 @@ public abstract class Person {
 }
 ```
 
-
 ```Java
 //package school;
 
@@ -314,13 +313,15 @@ public class Student extends Person {
 //package school;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 //import school.validation.Validation;
 
 /**
  * A school teacher.
- * 
- * @author MyMacBook
  */
 public class Teacher extends Person {
     /** Max number of lessons a teacher can teach in the school. */
@@ -328,9 +329,7 @@ public class Teacher extends Person {
     /** No ID number. */
     private String id = NONE;  // ΑΔΤ
     /** Lessons the teacher can teach. */
-    private String[] lessons;
-    /** How many lessons the teacher teaches. */
-    private int index = 0;
+    private final Set<String> lessons;
 
     /**
      * Constructor.
@@ -349,9 +348,9 @@ public class Teacher extends Person {
         }
         if (lessons != null && lessons.length > 0) { // αντιγράφουμε μόνο τα 3 πρώτα μαθήματα
             int length = lessons.length > MAX_LESSONS ? MAX_LESSONS : lessons.length;
-            this.lessons = Arrays.copyOfRange(lessons, 0, length);
+            this.lessons = new HashSet<>(Arrays.asList(Arrays.copyOfRange(lessons, 0, length)));
         } else {
-            this.lessons = new String[MAX_LESSONS];
+            this.lessons = new HashSet<>(MAX_LESSONS);
         }
     }
 
@@ -378,8 +377,8 @@ public class Teacher extends Person {
      * @param lesson lesson to add
      */
     public void addLesson(String lesson) {
-        if (lesson != null && index < MAX_LESSONS) {
-            lessons[index++] = lesson;
+        if (lesson != null && lessons.size() < MAX_LESSONS) {
+            lessons.add(lesson);
         }
     }
     /**
@@ -389,7 +388,7 @@ public class Teacher extends Person {
      */
     public void removeLesson(String lesson) {
         if (lesson != null) {
-            remove(contains(lessons, lesson));
+            this.lessons.remove(lesson);
         }
     }
     
@@ -399,14 +398,14 @@ public class Teacher extends Person {
      * @return {@code true} if the teacher teaches this lesson.
      */
     public boolean contains(String les) {
-        return les == null ? false : contains(this.lessons, les) >= 0;
+        return les == null ? false : this.lessons.contains(les);
     }
     
     /**
      * @return the lessons that this teacher teaches. 
      */
-    public String[] getLessons() {
-        return Arrays.copyOf(lessons, index);
+    public Collection<String> getLessons() {
+        return Collections.unmodifiableCollection(this.lessons);
     }    
 
     @Override
@@ -433,51 +432,19 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" + "id=" + id + super.toString() + ", lessons=" + Arrays.toString(lessons) + '}';
+        return "Teacher{" + "id=" + id + super.toString() + ", lessons=" + lessons + '}';
     }    
-    
-    /**
-     * Checks to see if {@code les} exists in the list of lessons
-     * @param lessons array of lessons
-     * @param les lesson to search for
-     * @return {@code true} if {@code les} is found in {@code lessons}
-     */
-    private int contains(String[] lessons, String les) {
-        for (int i = 0; i < index; i++) {
-            String lesson = lessons[i];
-            if (lesson != null && lesson.equalsIgnoreCase(les)) {
-                return i;
-            }
-        }
-        return -1;
-    }
 
-    /**
-     * Remove index {@code indx} from {@code lessons}
-     * @param indx index
-     * @return {@code true} if the lesson was successfully removed.
-     */
-    private boolean remove(int indx) {
-        if (indx < 0 || indx >= this.lessons.length) {
-            return false;
-        }
-        String[] newLessons = new String[this.lessons.length - 1];
-        // αντιγραφή από το 0 μέχρι το lessons[index-1]
-        System.arraycopy(this.lessons, 0, newLessons, 0, indx);
-        // αντιγραφή από lessons[index+1] μέχρι lessons[lessons.length-1]
-        System.arraycopy(this.lessons, indx + 1, newLessons, indx, this.lessons.length - indx - 1);
-        this.lessons = newLessons;
-        index--;
-        return true;
-    }
 }
 ```
 
-
 ```Java
 //package school;
-import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 //import school.validation.Validation;
 
 /**
@@ -491,9 +458,7 @@ public class ClassRoom {
     /** Classroom's size. */ 
     private final int size;
     /** Classrooms' students. */ 
-    private Student[] students;
-    /** Classroom's number of students. */ 
-    private int index = 0;
+    private final Set<Student> students;
 
     /**
      * Constructor.
@@ -508,7 +473,7 @@ public class ClassRoom {
     public ClassRoom(String name, int size) {
         this.name = Validation.isClassRoomNameValid(name) ? name : NO_CLASSROOM;
         this.size = Validation.isSizeValid(size) ? size : Validation.CLASSROOM_MAX_SIZE;
-        this.students = new Student[size];
+        this.students = new HashSet<>(size);
     }
 
     /**
@@ -540,8 +505,8 @@ public class ClassRoom {
      * @param student to add
      */
     public void addStudent(Student student) {
-        if (student != null && index < size) {
-            students[index++] = student;
+        if (student != null && students.size() < size) {
+            students.add(student);
             student.setClassRoom(this);
         }
     }
@@ -549,38 +514,39 @@ public class ClassRoom {
     /**
      * Remove student with {@code am} from this class.
      * @param am student's reg. number.
+     * @return the removed student
      */
-    public void removeStudent(int am) {
-        int indx = contains(students, am);
-        if (indx != -1) {
-            Student student = students[indx];
-            if (remove(indx)) {
-                student.setClassRoom(null);
-            }
+    public Student removeStudent(int am) {
+        Student student = contains(am);
+        if (removeStudent(student)) {
+           student.setClassRoom(null);
         }
+        return student;
     }
 
     /**
      * Remove {@code student} from this class.
      * 
      * @param student student to remove from this class
+     * @return {@code true} if student was removed successfully
      */
-    public void removeStudent(Student student) {
+    public boolean removeStudent(Student student) {
+        boolean removed = false;
         if (student != null) {
-            removeStudent(student.getAm());
+            removed = students.remove(student);
             student.setClassRoom(null);
         }
+        return removed;
     }
 
     /**
      * Empty this class.
      */
     public void removeAllStudents() {
-        for (int i = 0; i < index; i++) {
-            students[i].setClassRoom(null);
+        for (Student student : students) {
+            student.setClassRoom(null);
         }
-        Arrays.fill(students, null);
-        index = 0;
+        students.clear();
     }
     
     /**
@@ -588,48 +554,20 @@ public class ClassRoom {
      * @param am am of student to search for
      * @return {@code true} if the student with the given {@code am} exists in this class.
      */
-    public boolean contains(int am) {
-        return contains(this.students, am) >= 0;
+    public Student contains(int am) {
+        for (Student student : students) {
+            if (student.getAm() == am) {
+                return student;
+            }
+        }
+        return null;
     }
     
     /**
      * @return the students of this class. 
      */
-    public Student[] getStudents() {
-        return Arrays.copyOf(students, index);
-    }       
-
-    /**
-     * Checks to see if {@code am} exists in the list of students
-     * @param students array of students
-     * @param am am to search for
-     * @return {@code true} if {@code am} is found in {@code students}
-     */
-    private int contains(Student[] students, int am) {
-        for (int i = 0; i < index; i++) {
-            Student student = students[i];
-            if (student != null && student.getAm() == am) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    /**
-     * Remove index {@code indx} from {@code students}
-     * @param indx index
-     * @return {@code true} if the student was successfully removed.
-     */
-    private boolean remove(int indx) {
-        if (indx < 0 || indx > this.index) return false;
-        Student[] newStudents = new Student[this.students.length - 1];
-        // αντιγραφή από το 0 μέχρι το students[index-1]
-        System.arraycopy(this.students, 0, newStudents, 0, indx);
-        // αντιγραφή από students[index+1] μέχρι students[students.length-1]
-        System.arraycopy(this.students, indx + 1, newStudents, indx, this.students.length - indx - 1);
-        this.students = newStudents;
-        index--;
-        return true;
+    public Collection<Student> getStudents() {
+        return Collections.unmodifiableCollection(students);
     }
 
     @Override
@@ -657,7 +595,7 @@ public class ClassRoom {
 
     @Override
     public String toString() {
-        return "ClassRoom{" + "name=" + name + ", size=" + size + ", numOfStudents=" + index + '}';
+        return "ClassRoom{" + "name=" + name + ", size=" + size + ", numOfStudents=" + students.size() + '}';
     }
 }
 ```
@@ -1153,7 +1091,7 @@ BUILD FAILURE
 ```java
 package school;
 
-import java.util.Arrays;
+import java.util.Set;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -1161,16 +1099,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 
 public class TeacherTest {
-    
+
     private Teacher instance;
-    
+
     @BeforeEach
     public void setUp() {
         instance = new Teacher("AB123456", "Σωκράτης", "Σωκράτης");
         instance.addLesson("Φιλοσοφία");
         instance.addLesson("Αρχαία Ελληνικά");
     }
-    
+
     @AfterEach
     public void tearDown() {
     }
@@ -1184,7 +1122,7 @@ public class TeacherTest {
         assertEquals("AB123456", instance.getId());
         instance.setId("ΧΥ123456");
         assertEquals("ΧΥ123456", instance.getId());
-        
+
     }
 
     /**
@@ -1193,20 +1131,28 @@ public class TeacherTest {
     @DisplayName("addLesson/removeLesson")
     @Test
     public void testAddRemoveLesson() {
-        String[] lessons1 = new String[] {"Φιλοσοφία", "Αρχαία Ελληνικά"};
-        assertTrue(Arrays.equals(lessons1, instance.getLessons()));
+        Set<String> lessons1 = Set.of("Αρχαία Ελληνικά","Φιλοσοφία");
+        assertTrue(lessons1.size() == instance.getLessons().size() &&
+                lessons1.containsAll(instance.getLessons()) &&
+                instance.getLessons().containsAll(lessons1));
         String lesson1 = "Γραμματική";
         instance.addLesson(lesson1);
         assertTrue(instance.contains(lesson1));
         String lesson2 = "Χημεία";
         instance.addLesson(lesson2);
         assertFalse(instance.contains(lesson2));
-        String[] lessons2 = new String[] {"Φιλοσοφία", "Αρχαία Ελληνικά", lesson1};
-        assertTrue(Arrays.equals(lessons2, instance.getLessons()));
+        Set<String> lessons2 = Set.of("Φιλοσοφία", "Αρχαία Ελληνικά", lesson1);
+        assertTrue(lessons2.size() == instance.getLessons().size() &&
+                lessons2.containsAll(instance.getLessons()) &&
+                instance.getLessons().containsAll(lessons2));
         instance.removeLesson(lesson2);
-        assertTrue(Arrays.equals(lessons2, instance.getLessons()));
+        assertTrue(lessons2.size() == instance.getLessons().size() &&
+                lessons2.containsAll(instance.getLessons()) &&
+                instance.getLessons().containsAll(lessons2));
         instance.removeLesson(lesson1);
-        assertTrue(Arrays.equals(lessons1, instance.getLessons()));
+        assertTrue(lessons1.size() == instance.getLessons().size() &&
+                lessons1.containsAll(instance.getLessons()) &&
+                instance.getLessons().containsAll(lessons1));
         assertFalse(instance.contains(lesson1));
         assertFalse(instance.contains(lesson2));
         instance.addLesson(null);
@@ -1238,7 +1184,7 @@ public class TeacherTest {
     @DisplayName("toString")
     @Test
     public void testToString() {
-        String expResult = "Teacher{id=AB123456, firstName=Σωκράτης, lastName=Σωκράτης, lessons=[Φιλοσοφία, Αρχαία Ελληνικά, null]}";
+        String expResult = "Teacher{id=AB123456, firstName=Σωκράτης, lastName=Σωκράτης, lessons=[Φιλοσοφία, Αρχαία Ελληνικά]}";
         assertEquals(expResult, instance.toString());
     }
 
@@ -1253,8 +1199,16 @@ public class TeacherTest {
         assertFalse(instance.contains(null));
         assertFalse(instance.contains(""));
     }
-    
+
 }
+```
+Παρατηρήστε πώς ελέγχουμε αν δυο σύνολα είναι ίσα καθώς η σειρά δεν έχει σημασία.
+
+Έλεγχος ισότητας δυο συνόλων (```Set```):
+```java
+        assertTrue(lessons1.size() == instance.getLessons().size() &&
+                lessons1.containsAll(instance.getLessons()) &&
+                instance.getLessons().containsAll(lessons1));
 ```
 
 ```java
@@ -1307,12 +1261,12 @@ public class ClassRoomTest {
     @Test
     public void testAddRemoveStudent() {
         instance.addStudent(student1);
-        assertTrue(instance.contains(student1.getAm()));
-        assertEquals(1, instance.getStudents().length);
+        assertEquals(student1, instance.contains(student1.getAm()));
+        assertEquals(1, instance.getStudents().size());
         assertEquals(instance, student1.getClassRoom());
         instance.removeStudent(student1.getAm());
-        assertFalse(instance.contains(student1.getAm()));
-        assertEquals(0, instance.getStudents().length);
+        assertNull(instance.contains(student1.getAm()));
+        assertEquals(0, instance.getStudents().size());
         assertEquals(null, student1.getClassRoom());
     }
 
@@ -1325,9 +1279,9 @@ public class ClassRoomTest {
         instance.addStudent(student1);
         instance.addStudent(student2);
         assertNotNull(instance.getStudents());
-        assertEquals(2, instance.getStudents().length);
+        assertEquals(2, instance.getStudents().size());
         instance.removeAllStudents();
-        assertEquals(0, instance.getStudents().length);
+        assertEquals(0, instance.getStudents().size());
         
     }
 
@@ -1366,9 +1320,7 @@ public class ClassRoomTest {
         instance.addStudent(student2);
         assertEquals("ClassRoom{name=Α1, size=28, numOfStudents=2}", instance.toString());
     }
-
 }
-
 ```
 
 ## Υλοποίηση με το BlueJ
@@ -1380,6 +1332,8 @@ public class ClassRoomTest {
 **Εικόνα 6.7.3** _Διάγραμμα κλάσεων εφαρμογής σχολείου στο BlueJ με unit tests_
 
 Για να εκτελέσετε ένα unit test, δεξί κλικ πάνω του και **Test All**.
+
+Σε προηγούμενο μάθημα είδαμε ότι οι κλάσεις ```ClassRoom``` και ```Student``` εξαρτώνται η μια από την άλλη. Πώς θα μπορέσουμε να "σπάσουμε" αυτήν την εξάρτηση; Αυτό που γίνεται συνήθως είναι η εισαγωγή μιας τρίτης κλάσης ώστε οι δυο αρχικές κλάσεις να εξαρτώνται απ' αυτήν. Θα χρησιμοποιήσουμε την κλάση ```School``` για το σκοπό αυτό. 
 
 ### Αποθετήριο του πηγαίου κώδικα της άσκησης
 

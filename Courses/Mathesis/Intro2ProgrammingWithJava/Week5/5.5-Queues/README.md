@@ -55,6 +55,8 @@ q ==> []
 ```
 με την πρώτη υλοποίηση να είναι πιο αποδοτική από τη δεύτερη.
 
+Ας δούμε πώς θα μπορούσαμε να υλοποιήσουμε τη δική μας ουρά:
+
 ```java
 public class Q<E> {
  private final Deque<E> queue;
@@ -170,7 +172,7 @@ $11 ==> 30
 jshell> deque.getFirst();			// εμφανίζει NoSuchElementException αν η ουρά είναι άδεια
 $12 ==> 10
 
-jshell> deque.getLast();				// εμφανίζει NoSuchElementException αν η ουρά είναι άδεια
+jshell> deque.getLast();			// εμφανίζει NoSuchElementException αν η ουρά είναι άδεια
 $13 ==> 30
 ```
 
@@ -241,7 +243,7 @@ jshell> deque.removeLast();
 ```java
 PriorityQueue() // φυσική ταξινόμηση, αρχική χωρητικότητα (11)
 PriorityQueue(Collection<? extends E> c) // φυσική ταξινόμηση, εκτός κι αν c είναι τύπου PriorityQueue ή 
- // SortedSet οπότε κληρονομεί τη σειρά ταξινόμησης της
+ // SortedSet οπότε κληρονομεί τη σειρά ταξινόμησής της
 PriorityQueue(int initialCapacity) // φυσική ταξινόμηση
 PriorityQueue(int initialCapacity, Comparator<? super E> comparator) // η ταξινόμηση ορίζεται από τον Comparator
 PriorityQueue(PriorityQueue<? extends E> c) // ταξινόμηση αυτή της c
