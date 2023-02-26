@@ -1165,8 +1165,8 @@ Hello Z
 * μαθήματα που διδάσκει (το πολύ μέχρι 3)
 
 ## Πηγές
+1. Bloch J. (2018), Effective Java, 3rd Ed., Addison-Wesley.
 1. Evans B. (2019), [Inside the Language: Sealed Types](https://blogs.oracle.com/javamagazine/inside-the-language-sealed-types), Java Magazine.
-1. [Jenkov Nested Classes](http://tutorials.jenkov.com/java/nested-classes.html)
 
 ---
 
