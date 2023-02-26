@@ -1398,7 +1398,7 @@ $ cd school
 $ git log
 
 commit fe67cb4832719f5b43941f962581b68bff12a479 (HEAD -> master, origin/master, origin/HEAD)
-Author: mathesiscupgr <mathesiscupgr@gmail.com>
+Author: mathesiscupgr <126293884+mathesiscupgr@users.noreply.github.com>
 Date:   Sat Feb 25 18:41:32 2023 +0200
 
     Added LICENSE
@@ -1410,13 +1410,13 @@ Date:   Sat Feb 25 17:37:08 2023 +0200
     Create README.md
 
 commit e62f02c731805094121800ba5e649a9268cad0d8
-Author: John Kostaras <jkostaras@gmail.com>
+Author: John Kostaras <126293884+mathesiscupgr@users.noreply.github.com>
 Date:   Sat Feb 25 13:59:23 2023 +0200
 
     Προστέθηκε log.
 
 commit 4916767c40e572392ac5ef28a3d33dd6080b3159
-Author: John Kostaras <jkostaras@gmail.com>
+Author: John Kostaras <126293884+mathesiscupgr@users.noreply.github.com>
 Date:   Sat Nov 19 22:50:50 2022 +0200
 
     Week5 - Άσκηση
