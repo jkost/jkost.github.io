@@ -621,19 +621,19 @@ public class ClassRoom {
 
 Θα μετατρέψουμε το έργο μας σε maven για καλύτερη διαχείριση κλπ.
 
-1. Κάντε κλικ στο μενού **File -> New Project**, κατηγορία **Java with Maven** και έργο **Java Application**. Πατήστε **Next**.
+1) Κάντε κλικ στο μενού **File -> New Project**, κατηγορία **Java with Maven** και έργο **Java Application**. Πατήστε **Next**.
 
 ![](assets/Fig1.png)
 
 **Εικόνα 6.7.1** _File New Maven Project με το NetBeans_
 
-2. Συμπληρώστε τις συντεταγμένες του έργου όπως στην παρακάτω εικόνα και πατήστε **Finish**.
+2) Συμπληρώστε τις συντεταγμένες του έργου όπως στην παρακάτω εικόνα και πατήστε **Finish**.
 
 ![](assets/Fig2.png)
 
-**Εικόνα 6.7.2** _Συντεταγένες New Maven Project με το NetBeans_
+**Εικόνα 6.7.2** _Συντεταγμένες New Maven Project με το NetBeans_
 
-3. Ανοίξτε το ```pom.xml``` (βρίσκεται μέσα στο φάκελο _Project Files_):
+3) Ανοίξτε το ```pom.xml``` (βρίσκεται μέσα στο φάκελο _Project Files_):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -651,12 +651,14 @@ public class ClassRoom {
     </properties>
 </project>
 ```
-4. Διαγράψτε την κλάση ```Schoolmvn.java``` και αντιγράψτε τις κλάσεις από το έργο ```School```.
-6. Στο ```pom.xml``` μετονομάστε τη γραμμή ```<exec.mainClass>``` ώστε να είναι:
+4) Διαγράψτε την κλάση ```Schoolmvn.java``` και αντιγράψτε τις κλάσεις από το έργο ```School```.
+5) Στο ```pom.xml``` μετονομάστε τη γραμμή ```<exec.mainClass>``` ώστε να είναι:
+
 ```xml
 <exec.mainClass>school.School</exec.mainClass>
 ```
-6. Πρέπει να προσθέσουμε εξάρτηση στο ```log4j```. Αφού ψάξουμε στο https://mvnrepository.com/ για ```log4j-api, log4j-core```, ενημερώνουμε το ```pom.xml``` προσθέτοντας μια περιοχή ```<dependencies>...</dependencies>``` πριν από το ```</project>```:
+
+6) Πρέπει να προσθέσουμε εξάρτηση στο ```log4j```. Αφού ψάξουμε στο https://mvnrepository.com/ για ```log4j-api, log4j-core```, ενημερώνουμε το ```pom.xml``` προσθέτοντας μια περιοχή ```<dependencies>...</dependencies>``` πριν από το ```</project>```:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -687,9 +689,9 @@ public class ClassRoom {
     </dependencies>
 </project>
 ```
-   Προσέξτε ότι λίγο παλαιότερες εκδόσεις του ```log4j-core``` είχαν κάποια σοβαρά κενά ασφαλείας (vulnerabilities) ικανά να κάνουν αρκετούς να χάσουν τον ύπνο τους. 
+Προσέξτε ότι λίγο παλαιότερες εκδόσεις του ```log4j-core``` είχαν κάποια σοβαρά κενά ασφαλείας (vulnerabilities) ικανά να κάνουν αρκετούς να χάσουν τον ύπνο τους. 
 
-4. Δεξί κλικ στο έργο ```schoolmvn``` και επιλέξτε **Build**. 
+7) Δεξί κλικ στο έργο ```schoolmvn``` και επιλέξτε **Build**. 
 
 Το αποτέλεσμα θα αντιγραφεί στο ```~/.m2/repository``` ή ```%USERNAME%\.m2\repository``` (Windows):
 
@@ -698,9 +700,11 @@ Installing /Users/MyMacBook/Projects/Java/Mathesis/schoolmvn/target/schoolmvn-1.
 Installing /Users/MyMacBook/Projects/Java/Mathesis/schoolmvn/pom.xml to /Users/MyMacBook/.m2/repository/school/schoolmvn/1.0-SNAPSHOT/schoolmvn-1.0-SNAPSHOT.pom
 ```
 Μπορείτε να το εκτελέσετε κατά τα γνωστά, π.χ.:
+
 ```bash
 mvn exec:java -Dexec.mainClass=school.School
 ```
+
 Μπορείτε να δημιουργήσετε κι άλλους στόχους (target) στο NetBeans ως εξής:
 
 1. Δεξί κλικ στο έργο ```schoolmvn``` και επιλέξτε **Run Maven -> Goals...**
