@@ -652,6 +652,7 @@ public class ClassRoom {
 </project>
 ```
 4) Διαγράψτε την κλάση ```Schoolmvn.java``` και αντιγράψτε τις κλάσεις από το έργο ```School```.
+
 5) Στο ```pom.xml``` μετονομάστε τη γραμμή ```<exec.mainClass>``` ώστε να είναι:
 
 ```xml
