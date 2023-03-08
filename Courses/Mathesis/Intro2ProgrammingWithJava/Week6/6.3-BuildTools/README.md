@@ -420,12 +420,14 @@ myappgradle/
 ```
 
 ```settings.gradle```:
+
 ```groovy
 rootProject.name = 'myappgradle'
 include('app')
 ```
 
 ```app/build.gradle```:
+
 ```groovy
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
