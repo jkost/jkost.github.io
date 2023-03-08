@@ -188,7 +188,7 @@ jshell> (Ctrl+D)
 * [NetBeans](https://netbeans.apache.org/) ή [OpenBeans](https://www.openbeans.org/)
 * [Visual Studio Code](https://code.visualstudio.com/download) (δείτε την αναφορά [7])
 
-Σ' αυτή τη σειρά μαθημάτων θα χρησιμοποιήσουμε το NetBeans και το BlueJ, αλλά μπορείτε κάλλιστα να χρησιμοποιήσετε όποιο ΟΠΕ ή επεξεργαστή κειμένου προτιμάτε.
+Σ' αυτή τη σειρά μαθημάτων θα χρησιμοποιήσουμε το NetBeans, το Visual Studio Code και το BlueJ, αλλά μπορείτε κάλλιστα να χρησιμοποιήσετε όποιο ΟΠΕ ή επεξεργαστή κειμένου προτιμάτε.
 
 ## Εγκατάσταση του Apache NetBeans
 

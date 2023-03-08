@@ -3,7 +3,7 @@
 
 ---
 
-[<](../6.3-Build/README.md) | [Δ](../../README.md) | [>](../6.5-Logging/README.md)  
+[<](../6.3-BuildTools/README.md) | [Δ](../../README.md) | [>](../6.5-Logging/README.md)  
  
 ---
 [![](../../../assets/jupyter_logo.svg)](6.4-I18n.ipynb)
@@ -272,6 +272,6 @@ collator.equals("débárquér", "debarquer"); // returns true
 
 ---
 
-[<](../6.3-Build/README.md) | [Δ](../../README.md) | [>](../6.5-Logging/README.md)
+[<](../6.3-BuildTools/README.md) | [Δ](../../README.md) | [>](../6.5-Logging/README.md)
 
 ---
