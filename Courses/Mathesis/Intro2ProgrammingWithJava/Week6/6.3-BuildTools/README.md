@@ -419,14 +419,14 @@ myappgradle/
 12 directories, 8 files
 ```
 
-```settings.gradle```:
+``` settings.gradle ``` :
 
 ```Groovy
 rootProject.name = 'myappgradle'
 include('app')
 ```
 
-```app/build.gradle```:
+``` app/build.gradle ``` :
 
 ```Groovy
 plugins {
