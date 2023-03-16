@@ -134,6 +134,9 @@ jshell> String quotedStr = "\""
 quotedStr ==> """
 
 jshell> String multilineStr= "Σε γνωρίζω από την κόψη\n του σπαθιού την τρομερή"
+"Σε γνωρίζω από την κόψη\n του σπαθιού την τρομερή"
+    
+jshell> System.out.println(multilineStr);
 multilineStr ==> "Σε γνωρίζω από την κόψη
  του σπαθιού την τρομερή"
 ```
