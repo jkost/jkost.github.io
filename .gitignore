@@ -2,4 +2,6 @@
 .DS_Store
 .ipynb_checkpoints/
 *.orig
+*.class
+*.jar
 
