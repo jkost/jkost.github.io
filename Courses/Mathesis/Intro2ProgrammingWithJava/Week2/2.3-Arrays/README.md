@@ -179,16 +179,16 @@ jshell> for (int e : array) {
 jshell> int[][] matrix = new int[5][5]; 
 matrix ==> int[5][] { int[5] { 0, 0, 0, 0, 0 }, int[5] { 0,  ... int[5] { 0, 0, 0, 0, 0 } }
 jshell> for (int i = 0; i < matrix.length; i++) {
-	       for (int j = 0; j < matrix[i].length; j++) {
-		      matrix[i][j] = i+j;
-	       }
+           for (int j = 0; j < matrix[i].length; j++) {
+              matrix[i][j] = i+j;
+           }
         } 
 jshell> for (int[] numbers : matrix) {
-	       for (int e : numbers) {
-		      System.out.print(e + " ");
-	       }
-	       System.out.println();	
-	    }
+           for (int e : numbers) {
+              System.out.print(e + " ");
+           }
+           System.out.println();    
+        }
 0 1 2 3 4 
 1 2 3 4 5 
 2 3 4 5 6 
@@ -264,7 +264,7 @@ clonedArray ==> int[5] { 1, 2, 3, 4, 5 }
 ή
 ```java
 System.arraycopy( <source table>, <source start index>, 
-			<dest table>, <dest start index>, <dest end index>);
+            <dest table>, <dest start index>, <dest end index>);
 ```
 π.χ.
 ```java
@@ -306,7 +306,7 @@ $1 ==> false
 
 * _Τετραγωνικός_ λέγεται ο δισδιάστατος πίνακας του οποίου το μέγεθος των δυο διαστάσεων είναι ίσο (δηλ. m=n)
 * _Συμμετρικός_ λέγεται ένας τετραγωνικός πίνακας με στοιχεία ```a[i][j]=a[j][i]``` για ```0<=i,j<=n-1```. Π.χ.
-	
+    
 | 1 | 6 | 7 | 9
 | 6 | 2 | 5 | 8
 | 7 | 5 | 3 | 0
@@ -315,7 +315,7 @@ $1 ==> false
 * _Τριγωνικοί_ ονομάζονται οι τετραγωνικοί πίνακες που έχουν μηδενικά στοιχεία από τη μια μεριά της διαγωνίου. 
 Διακρίνονται σε _άνω τριγωνικούς_ (```a[i][j] = 0``` αν ```i>j```) και _κάτω τριγωνικούς_ (```a[i][j] = 0``` αν ```i<j```). Αν τα στοιχεία της διαγωνίου είναι επίσης μηδέν, τότε ο πίνακας λέγεται _αυστηρά πάνω (κάτω) τριγωνικός_. Τέλος, η γενίκευση των τριγωνικών πινάκων σε ανώτερες διαστάσεις, ονομάζεται _τετραεδικός πίνακας_.
 Π.χ. ένας κάτω τριγωνικός πίνακας
-	
+    
 | 1 | 0 | 0 | 0
 | 6 | 2 | 0 | 0
 | 7 | 5 | 3 | 0
@@ -354,6 +354,7 @@ _Πολλαπλασιασμός πινάκων_
 | 1 | 2 | 3 |      | 4 | 5 |    | 21 | 27 |
 | 4 | 5 | 6 |  *   | 7 | 8 |  = | 57 | 72 |
                    | 1 | 2 |    
+
 ```
 c[0][0] = a[0][0]*b[0][0] + a[0][1]*b[1][0] + a[0][2]*b[2][0]: 1 * 4 + 2 * 7 + 3 * 1 = 21
 c[0][1] = a[0][0]*b[0][1] + a[0][1]*b[1][1] + a[0][2]*b[2][1]: 1 * 5 + 2 * 8 + 3 * 2 = 27
@@ -369,16 +370,16 @@ int[][] b = { { 4, 5 }, { 7, 8 }, { 1, 2 } };
 int[][] c = new int[a.length][b[0].length];
 for (int row=0; row < a.length; row++) {
     for (int col=0; col < b[row].length; col++) {
-		for (int i = 0; i < b.length; i++) {
-	        c[row][col] += a[row][i] * b[i][col];
-	  	}
+        for (int i = 0; i < b.length; i++) {
+            c[row][col] += a[row][i] * b[i][col];
+          }
     }
 }
 for (int i=0; i < c.length; i++) {
-	for (int j=0; j < c[i].length; j++) {
-		System.out.print(" | " + c[i][j]);
-	}
-	System.out.println(" |");
+    for (int j=0; j < c[i].length; j++) {
+        System.out.print(" | " + c[i][j]);
+    }
+    System.out.println(" |");
 }
 
  | 21 | 27 |
@@ -444,9 +445,9 @@ Arrays.toString(array);
 int[] array = {2, 9, -1, 4, 13};
 int max = Integer.MIN_VALUE;   // φρουρός (sentinel), μια τιμή που δεν είναι έγκυρη για το πρόβλημά μας
 for (int i = 0; i < array.length; i++) {
-	if (array[i] > max) {
-		max = array[i];
-	}
+    if (array[i] > max) {
+        max = array[i];
+    }
 }
 System.out.println("Το μεγαλύτερο στοιχείο του πίνακα είναι: " + max);
 ```
@@ -476,9 +477,9 @@ while (i < array.length && pos == -1) {
    }
 }
 if (pos > -1) { 
-	System.out.println("Βρέθηκε στη θέση: " + pos); // Βρέθηκε στη θέση: 3
+    System.out.println("Βρέθηκε στη θέση: " + pos); // Βρέθηκε στη θέση: 3
 } else { 
-	System.out.println("Δεν βρέθηκε"); 
+    System.out.println("Δεν βρέθηκε"); 
 }
 ```
 Ο αλγόριθμος γραμμικής αναζήτησης δουλεύει τόσο με ταξινομημένους όσο και με αταξινόμητους πίνακες και αποτελεί απάντηση στην άσκηση 2.
@@ -533,16 +534,16 @@ for (int i=0; i< array.length; i++) {
 }
 // 2 9 -1 4 1
 for (int i = 0; i < array.length - 1; i++) {
-	int min = i;
-	for (int j = i+1; j < array.length; j++) {
-		if (array[min] > array[j]) {
-			min = j;    // εύρεση του δείκτη που 'χει το μικρότερο στοιχείο του πίνακα από το i και μετά
-		}
-	}
-	// αντιμετάθεση του στοιχείου array[i] με το array[min]
-	int temp = array[min];
-	array[min] = array[i];
-	array[i] = temp;
+    int min = i;
+    for (int j = i+1; j < array.length; j++) {
+        if (array[min] > array[j]) {
+            min = j;    // εύρεση του δείκτη που 'χει το μικρότερο στοιχείο του πίνακα από το i και μετά
+        }
+    }
+    // αντιμετάθεση του στοιχείου array[i] με το array[min]
+    int temp = array[min];
+    array[min] = array[i];
+    array[i] = temp;
 }
 System.out.println();
 Arrays.toString(array);
