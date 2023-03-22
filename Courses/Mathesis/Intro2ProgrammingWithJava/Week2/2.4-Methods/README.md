@@ -29,10 +29,10 @@
 
 ```java
 for (int i=0; i < c.length; i++) {
-	for (int j=0; j < c[i].length; j++) {
-		System.out.print(" | " + c[i][j]);
-	}
-	System.out.println(" |");
+    for (int j=0; j < c[i].length; j++) {
+        System.out.print(" | " + c[i][j]);
+    }
+    System.out.println(" |");
 }
 ```
 Αυτό είναι ένα χρήσιμο τμήμα κώδικα το οποίο μπορούμε να το χρησιμοποιήσουμε πολλές φορές, π.χ. πριν και μετά από μια πράξη πάνω σε δισδιάστατους πίνακες. Θα μπορούσαμε να δημιουργήσουμε μια _μέθοδο (method)_, όπως θα δούμε παρακάτω, με το πιο πάνω περιεχόμενο, καλώντας τη κάθε φορά περνώντας απλά τον πίνακα που θέλουμε να εμφανίσουμε στην έξοδο κάθε φορά.
@@ -76,7 +76,7 @@ y ==> 62.83185307179586
 ```java
 jshell> void myPrint(int... numbers) {  // varargs
            for (int i : numbers) {
-		       System.out.print(i + " ");
+               System.out.print(i + " ");
            }
         }    
 |  created method myPrint(int...)
@@ -88,7 +88,7 @@ jshell> myPrint(1, 2, 3)
 ```java
 jshell> void myPrint(String... lines) {  // varargs
            for (String e : lines) {
-		       System.out.println(e);
+               System.out.println(e);
            }
         }    
 |  created method myPrint(String...)
@@ -110,7 +110,7 @@ jshell> myPrint(sentences)
 {                                     __
    int x;                               |
    {                           __       |
-	int y;                       | y    | x
+    int y;                       | y    | x
    }                           __       |
    ...  // η y δεν υπάρχει              |
 }                                      __
@@ -194,7 +194,7 @@ int calculate(int x, int y) {
   return x*y;
 }
 double calculate(double x, double y) {
-	return x*y; 
+    return x*y; 
 }
 int calculate(int x, int y, int z) {
   return x*y*z;
