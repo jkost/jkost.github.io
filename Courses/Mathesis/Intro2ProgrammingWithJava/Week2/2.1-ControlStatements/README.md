@@ -323,7 +323,7 @@ int score = switch (day) {
 jshell> var days="ΚυρΔευΤριΤετΠεμΠαρΣαβ";
 days ==> "ΚυρΔευΤριΤετΠεμΠαρΣαβ"
 
-    jshell> Scanner sc = new Scanner(System.in);
+jshell> Scanner sc = new Scanner(System.in);
 sc ==> java.util.Scanner[delimiters=\p{javaWhitespace}+] ... \E][infinity string=\Q∞\E]
 
 jshell> int dayIndex = sc.nextInt() 
@@ -386,13 +386,13 @@ dayIndex ==> 8
 
 ```java
 jshell> int year = sc.nextInt();
-2014
+year ==> 2014
 
 jshell> boolean leapYear = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
 leapYear ==> false
 
 jshell> int year = sc.nextInt();
-2004
+year => 2004
 
 jshell> boolean leapYear = (year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0);
 leapYear ==> true
