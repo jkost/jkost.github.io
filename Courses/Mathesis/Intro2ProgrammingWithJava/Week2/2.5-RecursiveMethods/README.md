@@ -146,15 +146,13 @@ radar
 
 Οι υπόλοιπες ασκήσεις αφήνονται για επίλυση από εσάς.
 
-![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a})
-
 ## Ασκήσεις
 1. Να γράψετε μια αναδρομική μέθοδο ```long sum(int n)``` που θα υπολογίζει το άθροιμα ```1+2+...+n```. 
 2. Να γράψετε μια αναδρομική μέθοδο υπολογισμού της ν-στής δύναμης ενός αριθμού: 
    ```long power(int num, int exp) {...}```.
 3. Να γράψετε μια αναδρομική μέθοδο που θα υπολογίζει τον αριθμό fibonacci. Ο αριθμός fibonacci ορίζεται ως: 
 
-[\Large fib(n) = \left\{\begin{array}{ll}    1, n=0, n=1 \\    2, n=2 \\    fib(n-1) \cdot fib(n-2), n>2\end{array}\right.](https://latex.codecogs.com/svg.latex?\Large&space;fib(n) = \left\{\begin{array}{ll}    1, n=0, n=1 \\    2, n=2 \\    fib(n-1) \cdot fib(n-2), n>2\end{array}\right.)
+![](https://latex.codecogs.com/svg.image?fib(n)&space;=&space;\left\{\begin{array}{ll}&space;&space;&space;&space;1,&space;n=0,&space;n=1&space;\\&space;&space;&space;&space;2,&space;n=2&space;\\&space;&space;&space;&space;fib(n-1)&space;\cdot&space;fib(n-2),&space;n>2\end{array}\right.)
 
 $$
 fib(n) = \left\{
