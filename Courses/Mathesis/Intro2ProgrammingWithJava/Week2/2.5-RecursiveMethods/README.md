@@ -148,7 +148,7 @@ radar
 
 4) Να γραφτεί μια αναδρομική μέθοδο που θα υπολογίζει το Μέγιστο Κοινό Διαιρέτη (ΜΚΔ) δυο φυσικών αριθμών ```m``` και ```n``` σύμφωνα με τον αλγόριθμο του Ευκλείδη:
 
-![](https://latex.codecogs.com/svg.image?&space;ΜΚΔ(m,n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;n&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;,&space;n<=m&space;\&space;\&&space;\&space;m&space;\cdot&space;mod\&space;n&space;=&space;0&space;\\&space;&space;&space;&space;&space;&space;&space;&space;ΜΚΔ(m,&space;n)&space;&space;&space;&space;&space;&space;,&space;m&space;<&space;n&space;\\&space;&space;&space;&space;&space;&space;&space;&space;ΜΚΔ(m,&space;m&space;\cdot&space;mod\&space;n),&space;διαφορετικά&space;&space;&space;&space;\end{array}&space;\right.)
+![](https://latex.codecogs.com/svg.image?MKD(m,n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;n&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;,&space;n<=m&space;\&space;\&&space;\&space;m&space;\cdot&space;mod\&space;n&space;=&space;0&space;\\&space;&space;&space;&space;&space;&space;&space;&space;MKD(m,&space;n)&space;&space;&space;&space;&space;&space;,&space;m&space;<&space;n&space;\\&space;&space;&space;&space;&space;&space;&space;&space;MKD(m,&space;m&space;\cdot&space;mod\&space;n),&space;m\geq&space;n&space;&space;&space;\end{array}&space;\right.)
 
 5) Να γράψετε μια αναδρομική μέθοδο δυαδικής αναζήτησης (binary search). 
 
