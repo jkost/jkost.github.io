@@ -154,7 +154,7 @@ radar
    ```long power(int num, int exp) {...}```.
 3. Να γράψετε μια αναδρομική μέθοδο που θα υπολογίζει τον αριθμό fibonacci. Ο αριθμός fibonacci ορίζεται ως: 
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+[\Large fib(n) = \left\{\begin{array}{ll}    1, n=0, n=1 \\    2, n=2 \\    fib(n-1) \cdot fib(n-2), n>2\end{array}\right.](https://latex.codecogs.com/svg.latex?\Large&space;fib(n) = \left\{\begin{array}{ll}    1, n=0, n=1 \\    2, n=2 \\    fib(n-1) \cdot fib(n-2), n>2\end{array}\right.)
 
 $$
 fib(n) = \left\{
