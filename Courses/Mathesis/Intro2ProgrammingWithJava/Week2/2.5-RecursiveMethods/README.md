@@ -25,14 +25,7 @@
 Η παρακάτω αναδρομική μέθοδος καλεί τον εαυτό της για να υπολογίσει το παραγοντικό ενός ακεραίου θετικού αριθμού. Π.χ., 5 παραγοντικό ή  ```5! = 5 x 4 x 3 x 2 x 1 = 120```. 
 Ο υπολογισμός του παραγοντικού μπορεί να γενικευθεί ως εξής: ```n! = n x (n − 1) x (n − 2) x ... x 2 x 1``` το οποίο μας οδηγεί στον ακόλουθο αναδρομικό ορισμό:
 
-$$
-n! = \left\{
-    \begin{array}{ll}
-        1, n=0, n=1 \\
-        n \cdot (n-1)!, n>1
-    \end{array}
-\right.
-$$
+![](https://latex.codecogs.com/svg.image?n!&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;1,&space;n=0,&space;n=1&space;\\&space;&space;&space;&space;&space;&space;&space;&space;n&space;\cdot&space;(n-1)!,&space;n>1&space;&space;&space;&space;\end{array}\right.)
 
 τον οποίο μπορούμε πολύ εύκολα να γράψουμε σε Java:
 
@@ -65,15 +58,7 @@ jshell> factorial(3)
 
 Ας δούμε την 3η άσκηση. Η δημιουργία μιας αναδρομικής μεθόδους υπολογισμού των αριθμών Fibonacci δεν είναι δύσκολη. 
 
-$$
-fib(n) = \left\{
-    \begin{array}{ll}
-        1, n=0, n=1 \\
-        2, n=2 \\
-        fib(n-1) \cdot fib(n-2), n>2
-    \end{array}
-\right.
-$$
+![](https://latex.codecogs.com/svg.image?fib(n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;1,&space;n=0,&space;n=1&space;\\&space;&space;&space;&space;&space;&space;&space;&space;2,&space;n=2&space;\\&space;&space;&space;&space;&space;&space;&space;&space;fib(n-1)&space;\cdot&space;fib(n-2),&space;n>2&space;&space;&space;&space;\end{array}\right.)
 
 Η συνθήκη τερματισμού είναι ότι αν ```n=1``` ή ```n=2``` τότε ο αριθμός Fibonacci είναι ```1``` και ```2``` αντίστοιχα. Επιβεβαιώστε τα αποτελέσματα [εδώ](https://www.omnicalculator.com/math/fibonacci).
 
@@ -154,37 +139,21 @@ radar
 
 ![](https://latex.codecogs.com/svg.image?fib(n)&space;=&space;\left\{\begin{array}{ll}&space;&space;&space;&space;1,&space;n=0,&space;n=1&space;\\&space;&space;&space;&space;2,&space;n=2&space;\\&space;&space;&space;&space;fib(n-1)&space;\cdot&space;fib(n-2),&space;n>2\end{array}\right.)
 
-$$
-fib(n) = \left\{
-\begin{array}{ll}
-    1, n=0, n=1 \\
-    2, n=2 \\
-    fib(n-1) \cdot fib(n-2), n>2
-\end{array}
-\right.
-$$
-
    **Υπόδειξη:** _Υπάρχει και ένας πιο γρήγορος αναδρομικός αλγόριθμος υπολογισμού_:
    
-  * ```f(2n)=2*f(n-1)*f(n) + f(n)*f(n)```, αν ο ```n``` είναι ζυγός
-  * ```f(2n-1)=f(n)*f(n) + f(n-1)*f(n-1)```, αν ο ```n``` είναι μονός
+  * ```f(2n)=2 · f(n-1) · f(n) + f(n) · f(n)```, αν ο ```n``` είναι ζυγός
+  * ```f(2n-1)=f(n) · f(n) + f(n-1) · f(n-1)```, αν ο ```n``` είναι μονός
  
    _(Προσέξτε να διαιρέσετε με το 2 για να υπολογίσετε το f(n))_.
 
 4) Να γραφτεί μια αναδρομική μέθοδο που θα υπολογίζει το Μέγιστο Κοινό Διαιρέτη (ΜΚΔ) δυο φυσικών αριθμών ```m``` και ```n``` σύμφωνα με τον αλγόριθμο του Ευκλείδη:
 
-$$
- ΜΚΔ(m,n) = \left\{
-    \begin{array}{ll}
-        n              , n<=m \ \& \ m \cdot mod\ n = 0 \\
-        ΜΚΔ(m, n)      , m < n \\
-        ΜΚΔ(m, m \cdot mod\ n), διαφορετικά
-    \end{array}
- \right.
-$$
+![](https://latex.codecogs.com/svg.image?&space;ΜΚΔ(m,n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;n&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;,&space;n<=m&space;\&space;\&&space;\&space;m&space;\cdot&space;mod\&space;n&space;=&space;0&space;\\&space;&space;&space;&space;&space;&space;&space;&space;ΜΚΔ(m,&space;n)&space;&space;&space;&space;&space;&space;,&space;m&space;<&space;n&space;\\&space;&space;&space;&space;&space;&space;&space;&space;ΜΚΔ(m,&space;m&space;\cdot&space;mod\&space;n),&space;διαφορετικά&space;&space;&space;&space;\end{array}&space;\right.)
 
 5) Να γράψετε μια αναδρομική μέθοδο δυαδικής αναζήτησης (binary search). 
+
 6) Να γράψετε μια αναδρομική μέθοδο που αντιστρέφει μια συμβολοσειρά ```String reverse(String s)```.
+
 7) Να γράψετε μια αναδρομική μέθοδο που να ελέγχει αν μια συμβολοσειρά είναι παλινδρομική.
 
 ---
