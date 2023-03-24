@@ -3,7 +3,7 @@
 
 ---
 
-[<](../6.6-UnitTesting/README.md) | [Δ](../../README.md)
+[<](../6.6-UnitTesting/README.md) | [Δ](../../README.md) | [>](../6.8-Assignment/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](6.7-Exercise.ipynb)
@@ -602,6 +602,58 @@ public class ClassRoom {
 
 ### Χρήση εξαιρέσεων
 
+Οι εξαιρέσεις χρησιμοποιούνται για να προστατεύσουν το πρόγραμμά μας από μη αναμενόμενες περιπτώσεις. 
+
+Π.χ. η μέθοδος `setAge()` της κλάσης `Student`
+
+```Java
+    /**
+     * Set student's age. It increases every year.
+     * @param age student's age.
+     * @see school.validation.Validation#isAgeValid(int) 
+     */
+    public void setAge(int age) {
+        this.age = Validation.isAgeValid(age) ? age : -1;
+    }
+```
+θέτει το γνώρισμα ```age``` σε μια μη έγκυρη τιμή (```-1```) όταν αυτός που καλεί τη μέθοδο περάσει μια ηλικία που δεν ικανοποιεί τα όρια 15-18. Πιο σωστό στην περίπτωση αυτή θα ήταν να εγείρουμε μια κατάλληλη εξαίρεση ώστε να ειδοποιήσουμε τον χρήστη ότι δεν δόθηκε σωστή ηλικία.
+
+```Java
+    /**
+     * Set student's age. It increases every year.
+     * @param age student's age.
+     * @see school.validation.Validation#isAgeValid(int)
+     * @throws IllegalArgumentException
+     */
+    public void setAge(int age) {
+        if (Validation.isAgeValid(age)) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("Η ηλικία πρέπει να είναι μεταξύ 15 και 18.");
+        }
+    }
+```
+H `IllegalArgumentException()` εγείρεται όταν περάσουμε σε μια μέθοδο μη έγκυρα ορίσματα. Προσέξτε και την επισημείωση `@throws` στα σχόλια Javadoc.
+
+Παρόμοια μπορούμε να γράψουμε και τη μέθοδο κατασκευής:
+
+```Java
+    /**
+     * Constructor.
+     * 
+     * @param firstName student's first name
+     * @param lastName student's last name
+     * @param age student's age must be between 15 and 18 years old
+     * @see school.validation.Validation#isAgeValid(int)
+     * @throws IllegalArgumentException
+     */
+    public Student(String firstName, String lastName, int age) {
+        super(firstName, lastName);
+        am = ++amCounter;
+        setAge(age);
+    }
+```
+
 ### Χρήση αρχείων καταγραφής
 Θα χρησιμοποιήσουμε το Log4j για να δούμε και πώς μπορούμε να προσθέσουμε βιβλιοθήκες σε ένα έργο Ant του NetBeans. 
 
@@ -644,7 +696,6 @@ public class ClassRoom {
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>school.Schoolmvn</exec.mainClass>
@@ -671,6 +722,7 @@ public class ClassRoom {
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>        
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>school.School</exec.mainClass>
@@ -725,6 +777,7 @@ mvn exec:java -Dexec.mainClass=school.School
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>        
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>school.School</exec.mainClass>
@@ -1396,6 +1449,6 @@ $ git checkout XXXXXX
 
 ---
 
-[<](../6.6-UnitTesting/README.md) | [Δ](../../README.md)
+[<](../6.6-UnitTesting/README.md) | [Δ](../../README.md) | [>](../6.8-Assignment/README.md)
 
 ---
