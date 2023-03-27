@@ -241,7 +241,7 @@ jshell> void countLetters(String s) {
 jshell> void countLetters(String s) {
     int uppercaseLetters = 0, lowercaseLetters = 0;
     for (char c : s.toCharArray()) {
-        if (c >= 'A' && c <= 'Ω') {
+        if (c >= 'Α' && c <= 'Ω') {
             uppercaseLetters++;
         } else if (c >= 'α' && c <= 'ω') {
             lowercaseLetters++;
