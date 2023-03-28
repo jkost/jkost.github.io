@@ -1549,13 +1549,13 @@ public class ClassRoomTest {
 
 ### Αποθετήριο του πηγαίου κώδικα της άσκησης
 
-Μπορείτε να κατεβάσετε τον πηγαίο κώδικα της άσκησης, καθώς και τις διάφορες εκδόσεις που δημιουργήσαμε ανά εβδομάδα, στο [Github](https://github.com/jkost/mathesis/intro2java) με τις εντολές:
+Μπορείτε να κατεβάσετε τον πηγαίο κώδικα της άσκησης, καθώς και τις διάφορες εκδόσεις που δημιουργήσαμε ανά εβδομάδα, στο [Github](https://github.com/mathesiscupgr) με τις εντολές:
 
 ```bash
 $ git clone https://github.com/mathesiscupgr/school.git
 $ git clone https://github.com/mathesiscupgr/schoolmvn.git
 ```
-για τα δυο έργα, ```school``` και ```schoolmvn``` (δηλ. την έκδοση maven) αντίστοιχα.
+για τα δυο έργα, ```school``` (έκδοση ant) και ```schoolmvn``` (έκδοση maven) αντίστοιχα.
 
 Για να δείτε το ιστορικό δώστε π.χ.:
 
