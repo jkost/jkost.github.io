@@ -666,7 +666,161 @@ H `IllegalArgumentException()` εγείρεται όταν περάσουμε σ
 
 Αφού προσθέσαμε τις βιβλιοθήκες στο έργο, μπορούμε να χρησιμοποιήσουμε τις αντίστοιχες κλάσεις στο πρόγραμμά μας.
 
+Εδώ βλέπουμε για παράδειγμα την κλάση ```Student```:
 
+```java
+package school;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import school.validation.Validation;
+
+/**
+ * A student of the school.
+ */
+public class Student extends Person {
+    /** Automatic counter to set AM. */
+    private static int amCounter = 0;
+    /** Student's registration number (AM).*/
+    private final int am;
+    /** Student's age. -1 means age has not been set. */
+    private int age = -1;  // 15-18
+    /** Student's classroom. */
+    private ClassRoom classRoom;
+    /** Logger. */
+    private static final Logger LOG = LogManager.getLogger(Student.class);      
+
+    /**
+     * Constructor.
+     *
+     * @param firstName student's first name
+     * @param lastName student's last name
+     * @param age student's age must be between 15 and 18 years old
+     * @see school.validation.Validation#isAgeValid(int)
+     * @throws IllegalArgumentException
+     */
+    public Student(String firstName, String lastName, int age) {
+        super(firstName, lastName);
+        am = ++amCounter;
+        if (LOG.isDebugEnabled()) {
+            LOG.debug("AM=" + am);
+        }
+        setAge(age);
+    }
+
+    /**
+     * Student's AM is calculated automatically.
+     *
+     * @return student's AM
+     */
+    public int getAm() {
+        return am;
+    }
+
+    /**
+     * @return student's age
+     */
+    public int getAge() {
+        return age;
+    }
+
+    /**
+     * Set student's age. It increases every year.
+     *
+     * @param age student's age.
+     * @see school.validation.Validation#isAgeValid(int)
+     * @throws IllegalArgumentException
+     */
+    public void setAge(int age) {
+        if (Validation.isAgeValid(age)) {
+            this.age = age;
+        } else {
+            LOG.error("Μη έγκυρη ηλικία " + age + ". Η ηλικία πρέπει να είναι μεταξύ 15 και 18");
+            throw new IllegalArgumentException("Η ηλικία πρέπει να είναι μεταξύ 15 και 18");
+        }
+    }
+
+    /**
+     * @return the classroom the student is in.
+     */
+    public ClassRoom getClassRoom() {
+        return classRoom;
+    }
+
+    /**
+     * Set student's classroom.
+     *
+     * @param classRoom new classroom for student.
+     */
+    void setClassRoom(ClassRoom classRoom) {
+        this.classRoom = classRoom;
+        if (LOG.isDebugEnabled()) {
+            LOG.debug("Student with am=" + am + " was added to classroom " + classRoom);
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + this.am;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Student other = (Student) obj;
+        return this.am == other.am;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "am=" + am + super.toString() + ", age=" + age + ", classRoom=" + classRoom + '}';
+    }
+}
+```
+
+Φυσικά, θα πρέπει να δημιουργήσουμε και το κατάλληλο αρχείο ```log4j.xml``` στον κατάλογο του έργου:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="info">
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%m%n"/>
+    </Console>
+    <File name="FILE" fileName="log/school.log">
+      <PatternLayout>
+        <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+      </PatternLayout>
+    </File>
+  </Appenders>
+  <Loggers>
+    <Root level="DEBUG">
+      <AppenderRef ref="FILE" level="DEBUG"/>
+      <AppenderRef ref="STDOUT" level="DEBUG"/>
+    </Root>
+  </Loggers>
+</Configuration>
+```
+Βλέπουμε ότι έχουμε δημιουργήσει δυο appenders, έναν για την καταγραφή σε αρχείο κι έναν για καταγραφή στην οθόνη. 
+
+Δεν αρκεί όμως μόνο αυτό. Θα πρέπει να δηλώσουμε στο πρόγραμμά μας ότι θα πρέπει να χρησιμοποιήσει αυτό το αρχείο κι αυτό το δηλώνουμε περνώντας στην ΕΜ Java μια παράμετρο περιβάλλοντος ```-Dlog4j.configurationFile=log4j2.xml```. Στο NetBeans αυτό δηλώνεται στο παράθυρο **Project Properties** όπως φαίνεται στην παρακάτω εικόνα:
+
+![](assets/Fig1.png)
+
+**Εικόνα 6.7.1** _Ορισμός παραμέτρων περιβάλλοντος στο παράθυρο Project Properties του NetBeans_
+
+Όταν τώρα εκτελέσετε το πρόγραμμα, θα δείτε να έχει δημιουργηθεί ένα νέο αρχείο καταγραφής ```log/school.log```.
 
 ### Δημιουργία έργου Maven
 Το έργο που έχουμε δημιουργήσει μέχρι στιγμής είναι ένα έργο _ant_. Αν κάνετε κλικ στην καρτέλα _Files_ θα δείτε ότι υπάρχει ένα αρχείο ```build.xml``` που έχει δημιουργήσει το NetBeans για να οικοδομήσει το έργο. Η διαχείριση των διαφόρων βιβλιοθηκών που απαιτούνται από το έργο για να οικοδομηθεί και να εκτελεστεί γίνεται από τον προγραμματιστή. Π.χ. είδαμε προηγούμενα πώς να προσθέσουμε μόνοι μας τα ```jar``` αρχεία για logging στο φάκελο ```lib```.
@@ -675,15 +829,15 @@ H `IllegalArgumentException()` εγείρεται όταν περάσουμε σ
 
 1) Κάντε κλικ στο μενού **File -> New Project**, κατηγορία **Java with Maven** και έργο **Java Application**. Πατήστε **Next**.
 
-![](assets/Fig1.png)
+![](assets/Fig2.png)
 
-**Εικόνα 6.7.1** _File New Maven Project με το NetBeans_
+**Εικόνα 6.7.2** _File New Maven Project με το NetBeans_
 
 2) Συμπληρώστε τις συντεταγμένες του έργου όπως στην παρακάτω εικόνα και πατήστε **Finish**.
 
-![](assets/Fig2.png)
+![](assets/Fig3.png)
 
-**Εικόνα 6.7.2** _Συντεταγμένες New Maven Project με το NetBeans_
+**Εικόνα 6.7.3** _Συντεταγμένες New Maven Project με το NetBeans_
 
 3) Ανοίξτε το ```pom.xml``` (βρίσκεται μέσα στο φάκελο _Project Files_):
 
@@ -1385,9 +1539,9 @@ public class ClassRoomTest {
 
 Η δημιουργία unit tests με το BlueJ είναι πολύ εύκολη όπως μάθαμε. Αν και ο σκελετός που δημιουργεί δεν είναι τόσο πλήρης όσο αυτός που δημιουργεί το NetBeans παρόλ' αυτά μπορείτε να αντιγράψετε τον προηγούμενο πηγαίο κώδικα των unit tests.
 
-![](assets/Fig3.png)
+![](assets/Fig4.png)
 
-**Εικόνα 6.7.3** _Διάγραμμα κλάσεων εφαρμογής σχολείου στο BlueJ με unit tests_
+**Εικόνα 6.7.4** _Διάγραμμα κλάσεων εφαρμογής σχολείου στο BlueJ με unit tests_
 
 Για να εκτελέσετε ένα unit test, δεξί κλικ πάνω του και **Test All**.
 
