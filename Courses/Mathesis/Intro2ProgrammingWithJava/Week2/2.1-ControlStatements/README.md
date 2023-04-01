@@ -440,7 +440,7 @@ jshell> if (d > 0) {
    ...>     var x2 = (-b-Math.sqrt(d))/(2*a);
    ...>     System.out.println("Δυο πραγματικές λύσεις: x1=" + x1 + " x2=" + x2);
    ...> } else if (d == 0) {
-   ...>     var x = -b/2*a;
+   ...>     var x = -b/(2*a);
    ...>     System.out.println("Μια πραγματική λύση: x=" + x);
    ...> } else {
    ...>     System.out.println("Καμία πραγματική λύση");
