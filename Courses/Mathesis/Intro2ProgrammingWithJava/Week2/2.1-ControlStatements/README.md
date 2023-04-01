@@ -436,8 +436,8 @@ jshell> System.out.println("Η διακρίνουσα είναι: " + d);
 Η διακρίνουσα είναι: 25
 
 jshell> if (d > 0) {
-   ...>     var x1 = (-b+Math.sqrt(d))/2*a;
-   ...>     var x2 = (-b-Math.sqrt(d))/2*a;
+   ...>     var x1 = (-b+Math.sqrt(d))/(2*a);
+   ...>     var x2 = (-b-Math.sqrt(d))/(2*a);
    ...>     System.out.println("Δυο πραγματικές λύσεις: x1=" + x1 + " x2=" + x2);
    ...> } else if (d == 0) {
    ...>     var x = -b/2*a;
@@ -445,7 +445,7 @@ jshell> if (d > 0) {
    ...> } else {
    ...>     System.out.println("Καμία πραγματική λύση");
    ...> }
-Δυο πραγματικές λύσεις: x1=2.0 x2=-8.0
+Δυο πραγματικές λύσεις: x1=0.5 x2=-2.0
 ```
 
 ## Ασκήσεις
