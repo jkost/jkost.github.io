@@ -522,7 +522,6 @@ public class ClassRoom {
     public void removeStudent(Student student) {
         if (student != null) {
             removeStudent(student.getAm());
-            student.setClassRoom(null);
         }
     }
 
