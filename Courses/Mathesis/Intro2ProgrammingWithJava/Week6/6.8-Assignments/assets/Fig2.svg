@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="488px" preserveAspectRatio="none" style="width:563px;height:488px;background:#FFFFFF;" version="1.1" viewBox="0 0 563 488" width="563px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1xz1e52amvv4" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="182" x="182.75" y="23.5352">eLibrary - Class Diagram</text>
+        <!--cluster gr.cup.mathesis.elibrary.model-->
+        <g id="cluster_gr.cup.mathesis.elibrary.model">
+            <polygon fill="none" filter="url(#f1xz1e52amvv4)" points="16,166.4883,240,166.4883,247,188.9766,250,188.9766,250,481.4883,16,481.4883,16,166.4883" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="247" y1="188.9766" y2="188.9766"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="218" x="20" y="182.0234">gr.cup.mathesis.elibrary.model</text>
+        </g>
+        <!--cluster gr.cup.mathesis.elibrary.model.library-->
+        <g id="cluster_gr.cup.mathesis.elibrary.model.library">
+            <polygon fill="none" filter="url(#f1xz1e52amvv4)" points="115,43.4883,389,43.4883,396,65.9766,399,65.9766,399,142.4883,115,142.4883,115,43.4883" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="115" x2="396" y1="65.9766" y2="65.9766"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="268" x="119" y="59.0234">gr.cup.mathesis.elibrary.model.library</text>
+        </g>
+        <!--cluster gr.cup.mathesis.elibrary-->
+        <g id="cluster_gr.cup.mathesis.elibrary">
+            <polygon fill="none" filter="url(#f1xz1e52amvv4)" points="274,166.4883,450,166.4883,457,188.9766,460,188.9766,460,265.4883,274,265.4883,274,166.4883" style="stroke:#000000;stroke-width:1.5;"/>
+            <line style="stroke:#000000;stroke-width:1.5;" x1="274" x2="457" y1="188.9766" y2="188.9766"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="170" x="278" y="182.0234">gr.cup.mathesis.elibrary</text>
+        </g>
+        <!--class Medium-->
+        <g id="elem_Medium">
+            <rect codeLine="7" fill="#FEFECE" filter="url(#f1xz1e52amvv4)" height="48" id="Medium" style="stroke:#A80036;stroke-width:1.0;" width="87" x="146.5" y="201.4883"/>
+            <ellipse cx="161.5" cy="217.4883" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M163.9731,223.6313 Q163.3921,223.9302 162.7529,224.0796 Q162.1138,224.229 161.4082,224.229 Q158.9014,224.229 157.5815,222.5771 Q156.2617,220.9253 156.2617,217.8042 Q156.2617,214.6748 157.5815,213.0229 Q158.9014,211.3711 161.4082,211.3711 Q162.1138,211.3711 162.7612,211.5205 Q163.4087,211.6699 163.9731,211.9688 L163.9731,214.6914 Q163.3423,214.1104 162.7488,213.8406 Q162.1553,213.5708 161.5244,213.5708 Q160.1797,213.5708 159.4949,214.6375 Q158.8101,215.7041 158.8101,217.8042 Q158.8101,219.896 159.4949,220.9626 Q160.1797,222.0293 161.5244,222.0293 Q162.1553,222.0293 162.7488,221.7595 Q163.3423,221.4897 163.9731,220.9087 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="175.5" y="222.7793">Medium</text>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="147.5" x2="232.5" y1="233.4883" y2="233.4883"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="147.5" x2="232.5" y1="241.4883" y2="241.4883"/>
+        </g>
+        <!--class Book-->
+        <g id="elem_Book">
+            <rect codeLine="8" fill="#FEFECE" filter="url(#f1xz1e52amvv4)" height="48" id="Book" style="stroke:#A80036;stroke-width:1.0;" width="66" x="71" y="309.4883"/>
+            <ellipse cx="86" cy="325.4883" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M88.4731,331.6313 Q87.8921,331.9302 87.2529,332.0796 Q86.6138,332.229 85.9082,332.229 Q83.4014,332.229 82.0815,330.5771 Q80.7617,328.9253 80.7617,325.8042 Q80.7617,322.6748 82.0815,321.0229 Q83.4014,319.3711 85.9082,319.3711 Q86.6138,319.3711 87.2612,319.5205 Q87.9087,319.6699 88.4731,319.9688 L88.4731,322.6914 Q87.8423,322.1104 87.2488,321.8406 Q86.6553,321.5708 86.0244,321.5708 Q84.6797,321.5708 83.9949,322.6375 Q83.3101,323.7041 83.3101,325.8042 Q83.3101,327.896 83.9949,328.9626 Q84.6797,330.0293 86.0244,330.0293 Q86.6553,330.0293 87.2488,329.7595 Q87.8423,329.4897 88.4731,328.9087 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="100" y="330.7793">Book</text>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="72" x2="136" y1="341.4883" y2="341.4883"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="72" x2="136" y1="349.4883" y2="349.4883"/>
+        </g>
+        <!--class Disk-->
+        <g id="elem_Disk">
+            <rect codeLine="9" fill="#FEFECE" filter="url(#f1xz1e52amvv4)" height="48" id="Disk" style="stroke:#A80036;stroke-width:1.0;" width="61" x="172.5" y="309.4883"/>
+            <ellipse cx="187.5" cy="325.4883" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M189.9731,331.6313 Q189.3921,331.9302 188.7529,332.0796 Q188.1138,332.229 187.4082,332.229 Q184.9014,332.229 183.5815,330.5771 Q182.2617,328.9253 182.2617,325.8042 Q182.2617,322.6748 183.5815,321.0229 Q184.9014,319.3711 187.4082,319.3711 Q188.1138,319.3711 188.7612,319.5205 Q189.4087,319.6699 189.9731,319.9688 L189.9731,322.6914 Q189.3423,322.1104 188.7488,321.8406 Q188.1553,321.5708 187.5244,321.5708 Q186.1797,321.5708 185.4949,322.6375 Q184.8101,323.7041 184.8101,325.8042 Q184.8101,327.896 185.4949,328.9626 Q186.1797,330.0293 187.5244,330.0293 Q188.1553,330.0293 188.7488,329.7595 Q189.3423,329.4897 189.9731,328.9087 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="201.5" y="330.7793">Disk</text>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="173.5" x2="232.5" y1="341.4883" y2="341.4883"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="173.5" x2="232.5" y1="349.4883" y2="349.4883"/>
+        </g>
+        <!--class CD-->
+        <g id="elem_CD">
+            <rect codeLine="10" fill="#FEFECE" filter="url(#f1xz1e52amvv4)" height="48" id="CD" style="stroke:#A80036;stroke-width:1.0;" width="52" x="180" y="417.4883"/>
+            <ellipse cx="195" cy="433.4883" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M197.4731,439.6313 Q196.8921,439.9302 196.2529,440.0796 Q195.6138,440.229 194.9082,440.229 Q192.4014,440.229 191.0815,438.5771 Q189.7617,436.9253 189.7617,433.8042 Q189.7617,430.6748 191.0815,429.0229 Q192.4014,427.3711 194.9082,427.3711 Q195.6138,427.3711 196.2612,427.5205 Q196.9087,427.6699 197.4731,427.9688 L197.4731,430.6914 Q196.8423,430.1104 196.2488,429.8406 Q195.6553,429.5708 195.0244,429.5708 Q193.6797,429.5708 192.9949,430.6375 Q192.3101,431.7041 192.3101,433.8042 Q192.3101,435.896 192.9949,436.9626 Q193.6797,438.0293 195.0244,438.0293 Q195.6553,438.0293 196.2488,437.7595 Q196.8423,437.4897 197.4731,436.9087 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="209" y="438.7793">CD</text>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="181" x2="231" y1="449.4883" y2="449.4883"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="181" x2="231" y1="457.4883" y2="457.4883"/>
+        </g>
+        <!--class DVD-->
+        <g id="elem_DVD">
+            <rect codeLine="11" fill="#FEFECE" filter="url(#f1xz1e52amvv4)" height="48" id="DVD" style="stroke:#A80036;stroke-width:1.0;" width="61" x="83.5" y="417.4883"/>
+            <ellipse cx="98.5" cy="433.4883" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M100.9731,439.6313 Q100.3921,439.9302 99.7529,440.0796 Q99.1138,440.229 98.4082,440.229 Q95.9014,440.229 94.5815,438.5771 Q93.2617,436.9253 93.2617,433.8042 Q93.2617,430.6748 94.5815,429.0229 Q95.9014,427.3711 98.4082,427.3711 Q99.1138,427.3711 99.7612,427.5205 Q100.4087,427.6699 100.9731,427.9688 L100.9731,430.6914 Q100.3423,430.1104 99.7488,429.8406 Q99.1553,429.5708 98.5244,429.5708 Q97.1797,429.5708 96.4949,430.6375 Q95.8101,431.7041 95.8101,433.8042 Q95.8101,435.896 96.4949,436.9626 Q97.1797,438.0293 98.5244,438.0293 Q99.1553,438.0293 99.7488,437.7595 Q100.3423,437.4897 100.9731,436.9087 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="112.5" y="438.7793">DVD</text>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="84.5" x2="143.5" y1="449.4883" y2="449.4883"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="84.5" x2="143.5" y1="457.4883" y2="457.4883"/>
+        </g>
+        <!--class ILibrary-->
+        <g id="elem_ILibrary">
+            <rect codeLine="19" fill="#FEFECE" filter="url(#f1xz1e52amvv4)" height="48" id="ILibrary" style="stroke:#A80036;stroke-width:1.0;" width="83" x="272.5" y="78.4883"/>
+            <ellipse cx="287.5" cy="94.4883" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M283.9277,90.7534 L283.9277,88.5952 L291.3071,88.5952 L291.3071,90.7534 L288.8418,90.7534 L288.8418,98.8301 L291.3071,98.8301 L291.3071,100.9883 L283.9277,100.9883 L283.9277,98.8301 L286.3931,98.8301 L286.3931,90.7534 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="51" x="301.5" y="99.7793">ILibrary</text>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="273.5" x2="354.5" y1="110.4883" y2="110.4883"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="273.5" x2="354.5" y1="118.4883" y2="118.4883"/>
+        </g>
+        <!--class Library-->
+        <g id="elem_Library">
+            <rect codeLine="20" fill="#FEFECE" filter="url(#f1xz1e52amvv4)" height="48" id="Library" style="stroke:#A80036;stroke-width:1.0;" width="79" x="158.5" y="78.4883"/>
+            <ellipse cx="173.5" cy="94.4883" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M175.9731,100.6313 Q175.3921,100.9302 174.7529,101.0796 Q174.1138,101.229 173.4082,101.229 Q170.9014,101.229 169.5815,99.5771 Q168.2617,97.9253 168.2617,94.8042 Q168.2617,91.6748 169.5815,90.0229 Q170.9014,88.3711 173.4082,88.3711 Q174.1138,88.3711 174.7612,88.5205 Q175.4087,88.6699 175.9731,88.9688 L175.9731,91.6914 Q175.3423,91.1104 174.7488,90.8406 Q174.1553,90.5708 173.5244,90.5708 Q172.1797,90.5708 171.4949,91.6375 Q170.8101,92.7041 170.8101,94.8042 Q170.8101,96.896 171.4949,97.9626 Q172.1797,99.0293 173.5244,99.0293 Q174.1553,99.0293 174.7488,98.7595 Q175.3423,98.4897 175.9731,97.9087 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="187.5" y="99.7793">Library</text>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="159.5" x2="236.5" y1="110.4883" y2="110.4883"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="159.5" x2="236.5" y1="118.4883" y2="118.4883"/>
+        </g>
+        <!--class Main-->
+        <g id="elem_Main">
+            <rect codeLine="23" fill="#FEFECE" filter="url(#f1xz1e52amvv4)" height="48" id="Main" style="stroke:#A80036;stroke-width:1.0;" width="65" x="290.5" y="201.4883"/>
+            <ellipse cx="305.5" cy="217.4883" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M307.9731,223.6313 Q307.3921,223.9302 306.7529,224.0796 Q306.1138,224.229 305.4082,224.229 Q302.9014,224.229 301.5815,222.5771 Q300.2617,220.9253 300.2617,217.8042 Q300.2617,214.6748 301.5815,213.0229 Q302.9014,211.3711 305.4082,211.3711 Q306.1138,211.3711 306.7612,211.5205 Q307.4087,211.6699 307.9731,211.9688 L307.9731,214.6914 Q307.3423,214.1104 306.7488,213.8406 Q306.1553,213.5708 305.5244,213.5708 Q304.1797,213.5708 303.4949,214.6375 Q302.8101,215.7041 302.8101,217.8042 Q302.8101,219.896 303.4949,220.9626 Q304.1797,222.0293 305.5244,222.0293 Q306.1553,222.0293 306.7488,221.7595 Q307.3423,221.4897 307.9731,220.9087 Z " fill="#000000"/>
+            <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="319.5" y="222.7793">Main</text>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="291.5" x2="354.5" y1="233.4883" y2="233.4883"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="291.5" x2="354.5" y1="241.4883" y2="241.4883"/>
+        </g>
+        <g id="elem_GMN8">
+            <path d="M267.5,428.9883 L267.5,454.2988 L554.5,454.2988 L554.5,438.9883 L544.5,428.9883 L267.5,428.9883 " fill="#FBFB77" filter="url(#f1xz1e52amvv4)" style="stroke:#A80036;stroke-width:1.0;"/>
+            <path d="M544.5,428.9883 L544.5,438.9883 L554.5,438.9883 L544.5,428.9883 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="266" x="273.5" y="446.5566">Αυτήν την κλάση πρέπει να υλοποιήσετε</text>
+        </g>
+        <!--link DVD to GMN8-->
+        <g id="link_DVD_GMN8">
+            <path d="M136.12,417.0183 C148.02,405.6983 163.68,393.4583 180.5,387.4883 C255.45,360.8883 348.79,405.3483 389.89,428.6483 " fill="none" id="DVD-GMN8" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        </g>
+        <!--reverse link Medium to Book-->
+        <g id="link_Medium_Book">
+            <path codeLine="26" d="M157.62,266.3983 C145.88,280.8683 133.02,296.7283 122.83,309.2783 " fill="none" id="Medium-backto-Book" style="stroke:#A80036;stroke-width:1.0;"/>
+            <polygon fill="none" points="152.14,262.0483,170.17,250.9283,163.01,270.8683,152.14,262.0483" style="stroke:#A80036;stroke-width:1.0;"/>
+        </g>
+        <!--reverse link Medium to Disk-->
+        <g id="link_Medium_Disk">
+            <path codeLine="27" d="M195.43,270.7283 C197.05,283.9683 198.77,297.9683 200.15,309.2783 " fill="none" id="Medium-backto-Disk" style="stroke:#A80036;stroke-width:1.0;"/>
+            <polygon fill="none" points="188.52,271.9583,193.04,251.2483,202.42,270.2483,188.52,271.9583" style="stroke:#A80036;stroke-width:1.0;"/>
+        </g>
+        <!--reverse link Disk to CD-->
+        <g id="link_Disk_CD">
+            <path codeLine="28" d="M204.27,379.2083 C204.64,392.3083 205.03,406.1083 205.34,417.2783 " fill="none" id="Disk-backto-CD" style="stroke:#A80036;stroke-width:1.0;"/>
+            <polygon fill="none" points="197.27,379.4583,203.7,359.2683,211.26,379.0583,197.27,379.4583" style="stroke:#A80036;stroke-width:1.0;"/>
+        </g>
+        <!--reverse link Disk to DVD-->
+        <g id="link_Disk_DVD">
+            <path codeLine="29" d="M169.89,373.9183 C157.64,388.5183 144.14,404.5883 133.49,417.2783 " fill="none" id="Disk-backto-DVD" style="stroke:#A80036;stroke-width:1.0;"/>
+            <polygon fill="none" points="164.27,369.7283,182.5,358.9083,175,378.7283,164.27,369.7283" style="stroke:#A80036;stroke-width:1.0;"/>
+        </g>
+        <!--link Library to Medium-->
+        <g id="link_Library_Medium">
+            <path codeLine="30" d="M195.5688,140.3022 C195.5688,140.3022 193.44,172.4583 192.48,186.9983 " fill="none" id="Library-Medium" style="stroke:#A80036;stroke-width:1.0;"/>
+            <polygon fill="#A80036" points="196.36,128.3283,191.9731,134.0515,195.5688,140.3022,199.9557,134.579,196.36,128.3283" style="stroke:#A80036;stroke-width:1.0;"/>
+            <polygon fill="#A80036" points="191.64,199.7183,196.2247,191.0016,191.9697,194.7292,188.2421,190.4741,191.64,199.7183" style="stroke:#A80036;stroke-width:1.0;"/>
+            <line style="stroke:#A80036;stroke-width:1.0;" x1="191.9697" x2="192.5" y1="194.7292" y2="186.7483"/>
+            <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="171.4034" y="147.1831">0..*</text>
+        </g>
+        <!--link Library to ILibrary-->
+        <g id="link_Library_ILibrary">
+            <path codeLine="31" d="M237.88,102.4883 C242.15,102.4883 246.42,102.4883 250.7,102.4883 " fill="none" id="Library-to-ILibrary" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+            <polygon fill="none" points="250.56,95.4883,270.56,102.4883,250.56,109.4883,250.56,95.4883" style="stroke:#A80036;stroke-width:1.0;"/>
+        </g>
+        <!--reverse link ILibrary to Main-->
+        <g id="link_ILibrary_Main">
+            <path codeLine="32" d="M316.2,133.0983 C317.76,154.0783 319.83,181.8283 321.27,201.2283 " fill="none" id="ILibrary-backto-Main" style="stroke:#A80036;stroke-width:1.0;"/>
+            <polygon fill="#A80036" points="315.85,128.3283,312.5297,137.6006,316.2215,133.3145,320.5076,137.0062,315.85,128.3283" style="stroke:#A80036;stroke-width:1.0;"/>
+        </g>
+        <!--SRC=[ZP7FIWCn4CRlUOgXnqA23r3sO1T1qAltk3lTXlsJacmHiOMAzW5y3oruM4gLqZUOl9BPRRUh1T4SCdpVP2QPNsog2Z3Q8cEbAZC4l5AtHffxu33CfBKGAfaOcJCsaL4g4uJ4Y6Ww4RainsYL5PZjAqIkOynWCBZGMOmc2E210KHDaskCrJG_odEjqwC8bUt4CEpycv3D6IjqYM1KCYv1ZneJ_A8NjtJFjA8j-B3sWJxearxT4wt1BTmZlRa5LRG1sj8xkALFxhopemsj_A7ALrKCYnZg_lyTJXpKwP2gAD6CP8HmUS1tdABLyp-l-8MSL4MDOKyG1ZCUwxk2xn6UcWtAUkii3_IdKHDi_xXt9aI_1ttEW_QBsfHea8jPq8rKFmNuTCA_ULy0]-->
+    </g>
+</svg>
