@@ -896,9 +896,11 @@ public class Student extends Person {
     </dependencies>
 </project>
 ```
-Προσέξτε ότι λίγο παλαιότερες εκδόσεις του ```log4j-core``` είχαν κάποια σοβαρά κενά ασφαλείας (vulnerabilities) ικανά να κάνουν αρκετούς να χάσουν τον ύπνο τους. 
+Προσέξτε ότι λίγο παλαιότερες εκδόσεις του ```log4j-core``` είχαν κάποια σοβαρά κενά ασφαλείας (vulnerabilities) ικανά να κάνουν αρκετούς να χάσουν τον ύπνο τους.
 
-7) Δεξί κλικ στο έργο ```schoolmvn``` και επιλέξτε **Build**. 
+7) Αντιγράψτε το αρχείο log4j2.xml στον αρχικό φάκελο του έργου.
+
+8) Δεξί κλικ στο έργο ```schoolmvn``` και επιλέξτε **Build**. 
 
 Το αποτέλεσμα θα αντιγραφεί στο ```~/.m2/repository``` ή ```%USERNAME%\.m2\repository``` (Windows):
 
@@ -906,7 +908,7 @@ public class Student extends Person {
 Installing /Users/MyMacBook/Projects/Java/Mathesis/schoolmvn/target/schoolmvn-1.0-SNAPSHOT.jar to /Users/MyMacBook/.m2/repository/school/schoolmvn/1.0-SNAPSHOT/schoolmvn-1.0-SNAPSHOT.jar
 Installing /Users/MyMacBook/Projects/Java/Mathesis/schoolmvn/pom.xml to /Users/MyMacBook/.m2/repository/school/schoolmvn/1.0-SNAPSHOT/schoolmvn-1.0-SNAPSHOT.pom
 ```
-Μπορείτε να το εκτελέσετε κατά τα γνωστά, π.χ.:
+Μπορείτε να το εκτελέσετε κατά τα γνωστά, από τον αρχικό φάκελο του έργου, π.χ.:
 
 ```bash
 mvn exec:java -Dexec.mainClass=school.School
@@ -916,10 +918,11 @@ mvn exec:java -Dexec.mainClass=school.School
 
 1. Δεξί κλικ στο έργο ```schoolmvn``` και επιλέξτε **Run Maven -> Goals...**
 1. Γράψτε μέσα στο πεδίο _Goals_: ```package``` και **OK**
+1. Επιλέξτε το _Remember as:_, πληκτρολογήστε ```package``` και πατήστε **OK**
 
 Μπορείτε πλέον να δίνετε στον στόχο **Run Maven -> package** ο οποίος απλά δημιουργεί το ```.jar``` αρχείο και δεν το αντιγράφει στο τοπικό αποθετήριο.
 
-Το ```schoolmvn-1.0-SNAPSHOT.jar``` δεν είναι εκτελέσιμο, αλλά μπορούμε να το κάνουμε εκτελέσιμο χρησιμοποιώντας κάποιον από τους τρόπους που αναφέρονται [εδώ](https://www.baeldung.com/executable-jar-with-maven):
+Το ```schoolmvn-1.0-SNAPSHOT.jar``` δεν είναι εκτελέσιμο, αλλά μπορούμε να το κάνουμε εκτελέσιμο χρησιμοποιώντας το _maven-assembly-plugin_, έναν από τους τρόπους που αναφέρονται [εδώ](https://www.baeldung.com/executable-jar-with-maven):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -981,10 +984,10 @@ mvn exec:java -Dexec.mainClass=school.School
         
 </project>
 ```
-Αν ξαναχτίσετε το έργο, αυτή τη φορά θα δημιουργηθεί και το ```schoolmvn-1.0-SNAPSHOT-jar-with-dependencies.jar``` το οποίο περιέχει και όλα τα ```.jar``` αρχεία από τα οποία εξαρτάται:
+Αν ξαναχτίσετε το έργο, αυτή τη φορά θα δημιουργηθεί και το ```schoolmvn-1.0-SNAPSHOT-jar-with-dependencies.jar``` το οποίο περιέχει και όλα τα ```.jar``` αρχεία από τα οποία εξαρτάται Από τον αρχικό φάκελο του έργου, μπορούμε να το εκτελέσουμε με την εντολή:
 
 ```bash
-$ java -jar schoolmvn-1.0-SNAPSHOT-jar-with-dependencies.jar
+$ java -jar target/schoolmvn-1.0-SNAPSHOT-jar-with-dependencies.jar
 ...
 ```
 
