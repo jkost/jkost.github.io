@@ -193,7 +193,7 @@ public class MyClass {
 * ```FATAL```
 * ```ERROR```
 * ```WARN``` 
-* ```INFO``` (εξ' αρισμού)
+* ```INFO``` (εξ' oρισμού)
 * ```DEBUG```
 * ```TRACE```
 * ```ALL```
