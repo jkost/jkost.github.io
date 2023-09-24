@@ -419,17 +419,11 @@ ui ==> '￿'
 jshell> (int)ui
 $2 ==> 65535
 
-jshell> (int)--ui
-$3 ==> 65534
-
 jshell> (int)++ui
+$3 ==> 0
+
+jshell> (int)--ui
 $4 ==> 65535
-
-jshell> (int)++ui
-$5 ==> 0
-
-jshell> (int)--ui
-$6 ==> 65535
 ```
 
 ## Μετατροπές τύπων δεδομένων (casting)
