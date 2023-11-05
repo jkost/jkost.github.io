@@ -686,8 +686,6 @@ for (a = 0; a < b; a++) {
 
 12. [Υπολογίστε πότε πέφτει το ορθόδοξο Πάσχα](https://codecheck.io/files/2310152056ejc7q3nca5sxgj3si1a1i2djv) με βάση τον [αλγόριθμο του Gauss](https://www.ma8imatikos.gr/%CE%B1%CE%BB%CE%B3%CF%8C%CF%81%CE%B9%CE%B8%CE%BC%CE%BF%CF%82-gauss-%CE%B3%CE%B9%CE%B1-%CF%84%CE%BF%CE%BD-%CF%85%CF%80%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CF%83%CE%BC%CF%8C-%CE%B7%CE%BC%CE%B5%CF%81%CE%BF/). Tο Ορθόδοξο Πάσχα πέφτει στις (```d+e+4```) Απριλίου (αν η ημερομηνία αυτή είναι μεγαλύτερη από 30, τότε πέϕτει μέσα στον Μάιο), όπου ```d = (19 · a + 15) mod 30, e = (2 · b + 4 · c + 6 · d + 6) mod 7, a = year mod 19, b = year mod 4 και c = year mod 7```.
 
-13. Δοθείσας μιας ημερομηνίας, να υπολογίσετε την ημέρα από την αρχή του έτους. Π.χ. αν δώσει ο χρήστης ```14/2/2020``` το πρόγραμμα θα εκτυπώνει: ```Η 14/2/2020 είναι η 45η ημέρα του 2020. Μένουν άλλες 321 ημέρες μέχρι το τέλος του έτους```. (Μην ξεχάσετε τα δίσεκτα έτη.)
-
 ## Πηγές
 1. Horstmann C. (), [Big Java 5 - Chapter 6 - Loops](https://www.cs.ryerson.ca/~aferworn/courses/CPS109/CLASSES/week06/ch06/index.html)
 1. Horstmann C. Unblog (2022), [Loop Patterns (Java Edition)](https://horstmann.com/unblog/2022-01-25/index.html)
