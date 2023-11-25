@@ -132,10 +132,10 @@ radar
 Οι υπόλοιπες ασκήσεις αφήνονται για επίλυση από εσάς.
 
 ## Ασκήσεις
-1. Να γράψετε μια αναδρομική μέθοδο ```long sum(int n)``` που θα υπολογίζει το άθροιμα ```1+2+...+n```. 
-2. Να γράψετε μια αναδρομική μέθοδο υπολογισμού της ν-στής δύναμης ενός αριθμού: 
-   ```long power(int num, int exp) {...}```.
-3. Να γράψετε μια αναδρομική μέθοδο που θα υπολογίζει τον αριθμό fibonacci. Ο αριθμός fibonacci ορίζεται ως: 
+1. [Να γράψετε μια αναδρομική μέθοδο ```long sum(int n)``` που θα υπολογίζει το άθροιμα ```1+2+...+n```.](https://codecheck.io/files/2311251528auw9ts97mkzkbahf08fjxani8)
+2. [Να γράψετε μια αναδρομική μέθοδο υπολογισμού της ν-στής δύναμης ενός αριθμού: 
+   ```long power(int num, int exp) {...}```.](https://codecheck.io/files/23112515348g3m6tsbl87i2wvlxdfh32u0g)
+3. [Να γράψετε μια αναδρομική μέθοδο που θα υπολογίζει τον αριθμό fibonacci](https://codecheck.io/files/23112420529cnhx13wesi4vumf5fedckk4c). Ο αριθμός fibonacci ορίζεται ως: 
 
 ![](https://latex.codecogs.com/svg.image?fib(n)&space;=&space;\left\{\begin{array}{ll}&space;&space;&space;&space;1,&space;n=0,&space;n=1&space;\\&space;&space;&space;&space;2,&space;n=2&space;\\&space;&space;&space;&space;fib(n-1)&space;\cdot&space;fib(n-2),&space;n>2\end{array}\right.)
 
@@ -146,7 +146,7 @@ radar
  
    _(Προσέξτε να διαιρέσετε με το 2 για να υπολογίσετε το f(n))_.
 
-4) Να γραφτεί μια αναδρομική μέθοδο που θα υπολογίζει το Μέγιστο Κοινό Διαιρέτη (ΜΚΔ) δυο φυσικών αριθμών ```m``` και ```n``` σύμφωνα με τον αλγόριθμο του Ευκλείδη:
+4) Να γραφτεί μια αναδρομική μέθοδος που θα υπολογίζει το Μέγιστο Κοινό Διαιρέτη (ΜΚΔ) δυο φυσικών αριθμών ```m``` και ```n``` σύμφωνα με τον αλγόριθμο του Ευκλείδη:
 
 ![](https://latex.codecogs.com/svg.image?MKD(m,n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;n&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;,&space;n<=m&space;\&space;\&&space;\&space;m&space;\cdot&space;mod\&space;n&space;=&space;0&space;\\&space;&space;&space;&space;&space;&space;&space;&space;MKD(m,&space;n)&space;&space;&space;&space;&space;&space;,&space;m&space;<&space;n&space;\\&space;&space;&space;&space;&space;&space;&space;&space;MKD(m,&space;m&space;\cdot&space;mod\&space;n),&space;m\geq&space;n&space;&space;&space;\end{array}&space;\right.)
 
