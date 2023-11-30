@@ -150,11 +150,11 @@ radar
 
 ![](https://latex.codecogs.com/svg.image?MKD(m,n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;n&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;&space;,&space;n<=m&space;\&space;\&&space;\&space;m&space;\cdot&space;mod\&space;n&space;=&space;0&space;\\&space;&space;&space;&space;&space;&space;&space;&space;MKD(m,&space;n)&space;&space;&space;&space;&space;&space;,&space;m&space;<&space;n&space;\\&space;&space;&space;&space;&space;&space;&space;&space;MKD(m,&space;m&space;\cdot&space;mod\&space;n),&space;m\geq&space;n&space;&space;&space;\end{array}&space;\right.)
 
-5) Να γράψετε μια αναδρομική μέθοδο δυαδικής αναζήτησης (binary search). 
+5) [Να γράψετε μια αναδρομική μέθοδο δυαδικής αναζήτησης (binary search).](https://codecheck.io/files/231130221193s63om5k2nvjwjoxccvzdpgz)
 
-6) Να γράψετε μια αναδρομική μέθοδο που αντιστρέφει μια συμβολοσειρά ```String reverse(String s)```.
+6) [Να γράψετε μια αναδρομική μέθοδο που αντιστρέφει μια συμβολοσειρά ```String reverse(String s)```.](https://codecheck.io/files/23113021588gb8g8p0gpynkrbev2hfk5yvr)
 
-7) Να γράψετε μια αναδρομική μέθοδο που να ελέγχει αν μια συμβολοσειρά είναι παλινδρομική.
+7) [Να γράψετε μια αναδρομική μέθοδο που να ελέγχει αν μια συμβολοσειρά είναι παλινδρομική.](https://codecheck.io/files/23113021147rt1wq0qcdfocwak0dp9trczu)
 
 ---
 
