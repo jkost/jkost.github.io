@@ -2,22 +2,15 @@
 © Ioannis Kostaras
 
 ---
-The Java and C++ programming languages share many things in common. Actually, Java was designed to be a simplified version of C++. In this book we will compare the two languages, or if you want, learn two languages in parallel.
+The Java and C++ programming languages share many things in common. Actually, Java was designed to be a simplified version of C++. In this book we will compare the two languages, or if you, learn two languages in parallel.
 
 ## 1. C++/Java and classes 
 C++ and Java support OOP and define classes in a similar way following similar rules. However, there are some differences. 
 
 While Java defines scope per defined attribute/method, C++ uses sections for ```private, public, protected``` access: 
 
-<table>
-<tr>
-<th>Java</th>
-<th>C++</th>
-</tr>
-<tr>
-<td>
-
 ```java
+// Java
 class Car {
   private int speed;
   private Color color;
@@ -29,11 +22,8 @@ class Car {
   public void accelerate() { this.speed++; }
 }
 ```
-
-</td>
-<td>
-
 ```cpp
+// C++
 class Car {
   private:  
      unsigned int speed;
@@ -53,10 +43,6 @@ Car::Car(int speed, string color) {
 }
 Car::~Car() { }
 ```
-
-</td>
-</tr>
-</table>
 
 If you define a constructor, it’s a good practice to define a destructor in C++ (i.e. ```~Car()```) even if your destructor does nothing. This helps you remember to make use of the destructor when you need to take explicit steps to free memory. 
 
