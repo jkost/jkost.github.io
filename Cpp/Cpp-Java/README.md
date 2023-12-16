@@ -16,7 +16,7 @@ While Java defines scope per defined attribute/method, C++ uses sections for ```
 </tr>
 <tr>
 <td>
-  
+
 ```java
 class Car {
   private int speed;
