@@ -823,7 +823,7 @@ ID Name  qt City
 4  Dell  40 Rethymnon
 ```
 
-2. Υλοποιήστε τον αλγόριθμο εύρεσης του ν-στού αριθμού Fibonacci της άσκησης 7 του 8ου μαθήματος της 1ης εβδομάδας χρησιμοποιώντας ```BigInteger``` και υπολογίστε έναν πολύ μεγάλο αρ. Fibonacci, π.χ. τον 5000-ό. Επαληθεύστε την υλοποίησή σας [εδώ](https://keisan.casio.com/exec/system/1180573404). 
+2. [Υλοποιήστε τον αλγόριθμο εύρεσης του ν-στού αριθμού Fibonacci της άσκησης 3 του 5ου μαθήματος της 2ης εβδομάδας χρησιμοποιώντας ```BigInteger``` και υπολογίστε έναν πολύ μεγάλο αρ. Fibonacci, π.χ. τον 5000-ό](https://codecheck.io/files/23121616327iqx7uu8x5s2cfd247d8zmp6g). Επαληθεύστε την υλοποίησή σας [εδώ](http://www.javascripter.net/math/calculators/fibonaccinumberscalculator.htm). 
 
 ## Πηγές
 1. Iordache S. (2016), ["Interactive Console Applications in Java"](https://dzone.com/articles/interactive-console-applications-in-java).
