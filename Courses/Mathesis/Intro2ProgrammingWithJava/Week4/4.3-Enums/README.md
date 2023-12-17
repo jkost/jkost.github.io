@@ -151,7 +151,7 @@ public enum BasicOperation implements Operation {
 4. Τέλος οι static initializers 
 
 ## Ασκήσεις
-1. Τροποποιήστε το ```eunm Operation``` ώστε:
+1. [Τροποποιήστε το ```enum Operation``` ώστε:](https://codecheck.io/files/23121715425ou1g3bnm9i8c6ehm631hrh26)
 
 ```java
 jshell> int a = 4, b = 2;
@@ -161,7 +161,7 @@ b ==> 2
 jshell> Operation op = Operation.PLUS;
 op ==> Operation.PLUS
 
-jshell> System.out.print(a + " " + op + " " + b + " = " + op.apply(x, y));
+jshell> System.out.print(a + " " + op + " " + b + " = " + op.apply(a, b));
 4 + 2 = 6
 ``` 
 
