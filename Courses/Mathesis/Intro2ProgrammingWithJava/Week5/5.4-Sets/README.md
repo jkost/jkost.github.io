@@ -283,7 +283,7 @@ faceCards ==> [JACK, QUEEN, KING]
 
 ** για ```EnumSet```s μέχρι 64 στοιχείων, μετά γίνεται O(logn)
 
-_Πηγή: [Naftalin, Wadler (2006)]_
+_Πηγή: [Naftalin, Wadler (2006)](https://www.amazon.com/-/en/Maurice-Naftalin/dp/0596527756)_
 
 Αν η εφαρμογή σας διαβάζει συχνότερα στοιχεία τότε καλύτερη απόδοση έχει η ```LinkedHashSet```.
 
