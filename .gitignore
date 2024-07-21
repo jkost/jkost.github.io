@@ -4,6 +4,8 @@
 .ipynb_checkpoints/
 *.orig
 codecheck.io.txt
+*.pptx
+*.docx
 
 # Java
 *.class
