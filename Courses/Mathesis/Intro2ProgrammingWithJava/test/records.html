@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java21" mainclass="Java21" preview="true" v-cloak>
+<sandbox-source name="Records.java">
+public class Records {
+
+    public static void main(String[] args) {
+    	record Point(int x, int y) { };
+		Point p = new Point (0, 0);
+		System.out.println(p);
+		
+		record Line(Point p1, Point p2) {};
+		Line line = new Line(p, new Point(10, 10));
+		System.out.println(line);
+		
+		record Circle(Point center, int radius) {
+			double circumference() {
+			   return 2*Math.PI*radius;
+			}
+		};
+		Circle circle = new Circle(p, 5);
+		System.out.println(circle.circumference());
+		
+		record Rectangle(Point upperLeft, Point lowerRight) {};
+    }
+
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

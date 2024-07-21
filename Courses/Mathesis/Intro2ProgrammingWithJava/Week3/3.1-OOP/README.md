@@ -778,6 +778,7 @@ b1 ==> ClassRoom{name=Β1, size=30, numOfStudents=0}
 
 ## Πηγές
 1. ["The Java Tutorial"](https://docs.oracle.com/javase/tutorial/)
+1. Bouras A. S. (), _Java and Algorithmic Thinking for the Complete Beginner_, 3rd Ed. 
 1. Darwin I. F. (2014), _Java Cookbook_, 3rd Ed., O’ Reilly.
 1. Deitel P., Deitel H. (2018), _Java How to Program_, 11th Ed., Safari.
 1. Downey A. B., Mayfield C. (2016), _Think Java_, O' Reilly. 

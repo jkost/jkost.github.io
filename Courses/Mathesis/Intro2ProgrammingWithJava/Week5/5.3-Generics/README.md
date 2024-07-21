@@ -432,6 +432,7 @@ public class LRInsertTest {
 **Εικόνα 5.3.1** _Σωρός (heap)_
 ## Πηγές
 1. Kabutz H. (2017), "Collections.checkedCollection()", [Java Specialists Newsletter Issue 251](https://www.javaspecialists.eu/archive/Issue251.html)
+1. Langer A., [Java Generics FAQs - Programming With Java Generics](http://www.angelikalanger.com/GenericsFAQ/FAQSections/ProgrammingIdioms.html)
 
 ---
 
