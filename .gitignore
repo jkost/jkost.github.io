@@ -1,7 +1,8 @@
 # Other files
+*~
+._*
 .fseventsd
 .DS_Store
-.ipynb_checkpoints/
 *.orig
 codecheck.io.txt
 *.pptx
@@ -12,7 +13,7 @@ codecheck.io.txt
 *.jar
 
 # C/C++
-*.o
+*.[oa]
 
 # directories
 .vscode/
@@ -20,3 +21,4 @@ codecheck.io.txt
 nbproject/
 bin/
 out/
+.ipynb_checkpoints/
