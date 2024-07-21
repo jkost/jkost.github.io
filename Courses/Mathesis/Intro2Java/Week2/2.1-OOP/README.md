@@ -34,6 +34,15 @@
 
 Ας δούμε πώς μπορούμε να ορίσουμε την πρώτη μας κλάση, ```HelloWorld```, η οποία θα εκτυπώνει τη φράση ```"Hello, World!"```. Μια κλάση στη Java ορίζεται με τη δεσμευμένη λέξη ```class``` ακολουθούμενη από το όνομα της κλάσης με κεφαλαίο το πρώτο γράμμα. Για την ονομασία των κλάσεων (αλλά και όλων των ονομάτων που ορίζουμε εμείς στο πρόγραμμα), ακολουθείται, εκ συμβάσεως, ο "τρόπος καμήλας" (Camel case), δηλ. όταν ξεκινά μια νέα λέξη αυτή ξεκινά με κεφαλαίο γράμμα. Έτσι, π.χ. το όνομα της κλάσης μας αποτελείται από δυο λέξης _Hello_ και _World_ και ακολουθώντας τον τρόπο καμήλας την ονομάζουμε _HelloWorld_. Σε άλλες γλώσσες προγραμματισμού χρησιμοποιείται π.χ. ο χαρακτήρας κάτω παύλα (```_```), π.χ. θα ονομαζόταν ```Hello_world``` αλλά αυτό δε συνιστάται στη Java. 
 
+{{< sandbox version=java17 preview="true" mainclass="HelloWorld" >}}{{< sandboxsource "HelloWorld.java" >}}
+public class HelloWorld {
+   public static void main(String[] args) {
+     System.out.println("Hello, World!");
+   }
+}
+{{< /sandboxsource >}}
+{{< /sandbox >}}
+
 ```java
 public class HelloWorld {
    public static void main(String[] args) {
