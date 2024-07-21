@@ -1,7 +1,20 @@
+# Other files
 .fseventsd
 .DS_Store
 .ipynb_checkpoints/
 *.orig
+codecheck.io.txt
+
+# Java
 *.class
 *.jar
-codecheck.io.txt
+
+# C/C++
+*.o
+
+# directories
+.vscode/
+.idea/
+nbproject/
+bin/
+out/
