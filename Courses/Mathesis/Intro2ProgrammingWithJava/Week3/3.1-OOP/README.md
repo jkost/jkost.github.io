@@ -774,7 +774,7 @@ $2 ==> null
 jshell> b1
 b1 ==> ClassRoom{name=Β1, size=30, numOfStudents=0}
 ```
-Εξασκηθείτε εδώ [![Java Almanac](../../../assets/javaalmanac.svg)](sandbox/classroom.html).
+Εξασκηθείτε εδώ <a href="sandbox/classroom.html"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:25%; height:auto;"></a>
 
 ## Περαιτέρω μελέτη
 Υπάρχουν δυο πολύ ενδιαφέροντες ιστοτόποι εκμάθησης της γλώσσας Java (στα Αγγλικά) τους οποίους συνιστούμε ανεπιφύλακτα για να μελετάτε τα μαθήματά τους παράλληλα με αυτό το μάθημα. Αν επιθυμείτε να παρακολουθήσετε παράλληλα και αυτά τα μαθήματα, καλό είναι να εγγραφείτε (register). 
