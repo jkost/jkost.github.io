@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="ClassRoom" preview="true" v-cloak>
+<sandbox-source name="ClassRoom.java">
+class Student { 
+  // γνωρίσματα και μέθοδοι 
+}
+
+public class ClassRoom {
+  // γνωρίσματα και μέθοδοι 
+	 
+    public static void main(String[] args) {
+    	Student ioannis = new Student("Γιάννης", "Αντεκοτούμπο", 16);
+		System.out.println("AM: " + ioannis.getAm());   // 1
+		ioannis.setClassRoom("Β1");
+		System.out.println(ioannis.getClassRoom());     // Β1
+		
+		ClassRoom b1 = new ClassRoom("B1", 30);
+		b1.addStudent(ioannis);
+		ioannis.getClassRoom(); 
+		System.out.println("B1: " + b1);
+		b1.removeStudent(ioannis);
+		ClassRoom c = ioannis.getClassRoom();
+		System.out.println("Ioannis' class room: " + c);
+		System.out.println("B1: " + b1);
+    }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

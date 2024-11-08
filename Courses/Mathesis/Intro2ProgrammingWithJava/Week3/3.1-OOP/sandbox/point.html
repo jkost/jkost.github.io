@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Point" preview="true" v-cloak>
+<sandbox-source name="Point.java">
+public final class Point {
+	private final int x, y;
+	
+	public Point() {
+		x=0;
+		y=0;
+	}
+	
+	public Point(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+    
+    public String toString() {
+        return "Point[" + "x=" + x + ", y=" + y + "]";
+    }
+
+    public static void main(String[] args) {
+		Point p = new Point (0, 0);
+		System.out.println(p);
+		
+		Point p2 = new Point(10, 10);
+		System.out.println(p2);
+    }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
