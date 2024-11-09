@@ -643,6 +643,8 @@ jshell> School.main(null);
     ClassRoom{name=Β1, size=30, numOfStudents=1}
 ```
 
+Μπορείτε να εξασκηθείτε πάνω στις αυτού του μαθήματος εδώ <a href="sandbox/school.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>
+
 Συγχαρητήρια αν φθάσατε μέχρι εδώ!
 
 ## Υλοποίηση με το BlueJ

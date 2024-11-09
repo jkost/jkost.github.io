@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="School" preview="true" v-cloak>
+<sandbox-source name="School.java">import java.util.Arrays;
+
+class Student {
+
+
+    private static final int MAX_SIZE = 20;
+    private static final String NONE = "<Κενό>";
+
+    private static int amCounter = 0;
+    
+    private final int am;
+    private String firstName = NONE;
+    private String lastName = NONE;
+    private int age = -1;  // 15-18
+    private ClassRoom classRoom;
+
+    public Student(String firstName, String lastName, int age) {
+        am = ++amCounter;
+        if (isNameValid(firstName)) {
+            this.firstName = firstName.trim();
+        }
+        if (isNameValid(lastName)) {
+            this.lastName = lastName.trim();
+        }
+        if (isAgeValid(age)) {
+            this.age = age;
+        }
+    }
+
+    public int getAm() {
+        return am;
+    }
+    
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = isNameValid(firstName) ? firstName.trim() : NONE;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = isNameValid(lastName) ? lastName.trim() : NONE;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = isAgeValid(age) ? age : -1;
+    }
+
+    public ClassRoom getClassRoom() {
+        return classRoom;
+    }
+
+    void setClassRoom(ClassRoom classRoom) {
+        this.classRoom = classRoom;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "am=" + am + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", classRoom=" + classRoom + '}';
+    }
+    
+    private boolean isAgeValid(int inAge) {
+        return inAge >= 15 && inAge <= 18;
+    }
+    
+    private boolean isNameValid(String name) {
+        return name != null && !name.isBlank() && name.length() <= MAX_SIZE;
+    }
+}
+
+class ClassRoom {
+
+    private static final int DEFAULT_SIZE = 30;
+    private static final String NO_CLASSROOM = "--";
+    private static final int CLASSROOM_NAME_LENGTH = 2;    
+
+    private final String name;
+    private final int size;
+    private Student[] students;
+    private int index = 0;
+
+    public ClassRoom(String name, int size) {
+        this.name = isClassRoomNameValid(name) ? name : NO_CLASSROOM;
+        this.size = isSizeValid(size) ? size : DEFAULT_SIZE;
+        this.students = new Student[size];
+    }
+
+    public ClassRoom(String name) {
+        this(name, DEFAULT_SIZE);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void addStudent(Student student) {
+        if (student != null && index < size) {
+            students[index++] = student;
+            student.setClassRoom(this);
+        }
+    }
+
+    public void removeStudent(int am) {
+        int indx = contains(students, am);
+        if (indx != -1) {
+            Student student = students[indx];
+            if (remove(indx)) {
+                student.setClassRoom(null);
+            }
+        }
+    }
+
+    public void removeStudent(Student student) {
+        if (student != null) {
+            removeStudent(student.getAm());
+        }
+    }
+
+    public void removeAllStudents() {
+        for (Student student : students) {
+            student.setClassRoom(null);
+        }
+        Arrays.fill(students, null);
+        index = 0;
+    }
+
+    private int contains(Student[] students, int am) {
+        for (int i = 0; i < students.length; i++) {
+            Student student = students[i];
+            if (student.getAm() == am) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private boolean remove(int indx) {
+        if (indx < 0 || indx >= this.students.length) return false;
+        Student[] newStudents = new Student[this.students.length - 1];
+        // αντιγραφή από το 0 μέχρι το students[index-1]
+        System.arraycopy(this.students, 0, newStudents, 0, indx);
+        // αντιγραφή από students[index+1] μέχρι students[students.length-1]
+        System.arraycopy(this.students, indx + 1, newStudents, indx, this.students.length - indx - 1);
+        this.students = newStudents;
+        index--;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "ClassRoom{" + "name=" + name + ", size=" + size + ", numOfStudents=" + index + '}';
+    }
+    
+    private boolean isSizeValid(int inSize) {
+        return inSize >= 10 && inSize <= DEFAULT_SIZE;
+    }    
+    
+    private boolean isClassRoomNameValid(String classRoom) {
+        return classRoom != null && !classRoom.isBlank() 
+                && classRoom.length() == CLASSROOM_NAME_LENGTH 
+                && (classRoom.startsWith("Α") 
+                || classRoom.startsWith("Β")
+                || classRoom.startsWith("Γ"))
+                && classRoom.charAt(1) >= '1'
+                && classRoom.charAt(1) <= '9';
+    }
+}    
+
+public class School {
+    private static final ClassRoom[] classRooms = { 
+        new ClassRoom("Α1"), 
+        new ClassRoom("Α2", 28), 
+        new ClassRoom("Α3", 25), 
+        new ClassRoom("Β1"), 
+        new ClassRoom("Β2", 28), 
+        new ClassRoom("Β3", 25), 
+        new ClassRoom("Γ1"), 
+        new ClassRoom("Γ2", 26), 
+        new ClassRoom("Γ3", 22), 
+    
+    };
+
+    public static void main(String[] args) {
+        System.out.println("=== Create student ioannis ====");
+        Student ioannis = new Student("Γιάννης", "Αντεκοτούμπο", 16);
+        System.out.println("AM: " + ioannis.getAm());
+        System.out.println("ClassRoom: " + ioannis.getClassRoom());
+        
+        System.out.println("\n=== Add student ioannis to classroom 'B1' ====");
+        classRooms[3].addStudent(ioannis);
+        System.out.println(ioannis.getClassRoom());
+        System.out.println(ioannis);
+        
+        System.out.println("\n=== Create student aliki and add to classroom 'B1' ====");
+        Student aliki = new Student("Αλίκη", "Βουγιουκλάκη", 17);
+        classRooms[3].addStudent(aliki);
+        System.out.println(aliki);
+        System.out.println(classRooms[3]);
+
+        System.out.println("\n=== Remove student ioannis from classroom 'B1' ====");
+        classRooms[3].removeStudent(ioannis.getAm());
+        System.out.println(ioannis);
+        System.out.println(classRooms[3]);
+    }
+    
+}
+</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
