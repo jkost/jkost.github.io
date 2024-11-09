@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Car" preview="true" v-cloak>
+<sandbox-source name="Car.java">
+public class Car { // κλάση
+  // ιδιότητες/γνωρίσματα
+  private String model;
+  private int maxSpeed;
+  private int ccm;
+  private int speed = 0;
+  // μέθοδος δημιουργίας αντικειμένων - κατασκευαστής
+  public Car(String m, int s, int c) {
+    model = m; maxSpeed = s; ccm = c;
+  }
+  // ενέργειες/μέθοδοι
+  public void accelerate() {
+     if (speed <= maxSpeed - 10)
+        speed+=10;
+  }
+  public void decelerate() {
+     if (speed >= 10)
+        speed-=10;
+  }  
+  public String getModel() {
+  	return model;
+  }
+  public void setModel(String m) {
+    this.model = m;
+  }
+  public int getMaxSpeed() {
+  	return maxSpeed;
+  }
+  public void setMaxSpeed(int ms) {
+    this.maxSpeed = ms;
+  }        
+  public int getCcm() {
+  	return ccm;
+  }
+  public void setCcm(int ccm) {
+    this.ccm = ccm;
+  }      
+  public int getSpeed() {
+  	return speed;
+  }
+  public String toString() {
+    return "Car {model=" + model + ", maxSpeed=" + maxSpeed + ", ccm=" + ccm + ", speed=" + speed  + "}";   
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
