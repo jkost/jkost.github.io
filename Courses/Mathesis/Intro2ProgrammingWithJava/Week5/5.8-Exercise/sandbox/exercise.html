@@ -8,8 +8,7 @@
 <div class="content" id="content">
 
 <sandbox version="java17" mainclass="School" preview="true" v-cloak>
-<sandbox-source name="School.java">import java.util.Arrays;
-import java.util.Objects;
+<sandbox-source name="School.java">import java.util.*;
 
 /**
  * An Utility Validation class.
@@ -40,7 +39,7 @@ final class Validation {
      * @see MAX_SIZE
      */
     public static boolean isNameValid(String name) {
-        return name != null && !name.isBlank() && name.length() <= MAX_SIZE;
+        return name != null && !name.isBlank() && name.length() &lt;= MAX_SIZE;
     }
     
     /**
@@ -50,7 +49,7 @@ final class Validation {
      * @return {@code true} if {@code inAge} is between the limits
      */
     public static boolean isAgeValid(int inAge) {
-        return inAge >= 15 && inAge <= 18;
+        return inAge &gt;= 15 && inAge &lt;= 18;
     }
 
     /**
@@ -62,7 +61,7 @@ final class Validation {
      * @see CLASSROOM_MAX_SIZE
      */
     public static boolean isSizeValid(int inSize) {
-        return inSize >= CLASSROOM_MIN_SIZE && inSize <= CLASSROOM_MAX_SIZE;
+        return inSize &gt;= CLASSROOM_MIN_SIZE && inSize &lt;= CLASSROOM_MAX_SIZE;
     }
 
     /**
@@ -78,8 +77,8 @@ final class Validation {
                 && (classRoom.startsWith("Α")
                 || classRoom.startsWith("Β")
                 || classRoom.startsWith("Γ"))
-                && classRoom.charAt(1) >= '1'
-                && classRoom.charAt(1) <= '9';
+                && classRoom.charAt(1) &gt;= '1'
+                && classRoom.charAt(1) &lt;= '9';
     }
     
     /**
@@ -106,7 +105,7 @@ final class Validation {
      * @return {@code true} if {@code c} is capital letter.
      */
     public static boolean isCapitalLetter(char c) {
-        return c >= 'A' && c <= 'Ω';
+        return c &gt;= 'A' && c &lt;= 'Ω';
     }
     
     /**
@@ -115,13 +114,13 @@ final class Validation {
      * @return {@code true} if {@code c} is a number.
      */
     public static boolean isNumber(char c) {
-        return c >= '0' && c <= '9';
+        return c &gt;= '0' && c &lt;= '9';
     }
 }
 
 abstract class Person {
     /** The empty string used in case no name has been given. */
-    static final String NONE = "<Κενό>";
+    static final String NONE = "&lt;Κενό&gt;";
     /** Person's first name. */
     protected String firstName = NONE;
     /** Person's last name. */
@@ -288,7 +287,7 @@ class Teacher extends Person {
     /** No ID number. */
     private String id = NONE;  // ΑΔΤ
     /** Lessons the teacher can teach. */
-    private final Set<String> lessons;
+    private final Set&lt;String&gt; lessons;
 
     /**
      * Constructor.
@@ -305,11 +304,11 @@ class Teacher extends Person {
         if (Validation.isIdValid(id)) {
             this.id = id;
         }
-        if (lessons != null && lessons.length > 0) { // αντιγράφουμε μόνο τα 3 πρώτα μαθήματα
-            int length = lessons.length > MAX_LESSONS ? MAX_LESSONS : lessons.length;
-            this.lessons = new HashSet<>(Arrays.asList(Arrays.copyOfRange(lessons, 0, length)));
+        if (lessons != null && lessons.length &gt; 0) { // αντιγράφουμε μόνο τα 3 πρώτα μαθήματα
+            int length = lessons.length &gt; MAX_LESSONS ? MAX_LESSONS : lessons.length;
+            this.lessons = new HashSet&lt;&gt;(Arrays.asList(Arrays.copyOfRange(lessons, 0, length)));
         } else {
-            this.lessons = new HashSet<>(MAX_LESSONS);
+            this.lessons = new HashSet&lt;&gt;(MAX_LESSONS);
         }
     }
 
@@ -336,7 +335,7 @@ class Teacher extends Person {
      * @param lesson lesson to add
      */
     public void addLesson(String lesson) {
-        if (lesson != null && lessons.size() < MAX_LESSONS) {
+        if (lesson != null && lessons.size() &lt; MAX_LESSONS) {
             lessons.add(lesson);
         }
     }
@@ -363,7 +362,7 @@ class Teacher extends Person {
     /**
      * @return the lessons that this teacher teaches. 
      */
-    public Collection<String> getLessons() {
+    public Collection&lt;String&gt; getLessons() {
         return Collections.unmodifiableCollection(this.lessons);
     }    
 
@@ -407,7 +406,7 @@ class ClassRoom {
     /** Classroom's size. */ 
     private final int size;
     /** Classrooms' students. */ 
-    private final Set<Student> students;
+    private final Set&lt;Student&gt; students;
 
     /**
      * Constructor.
@@ -422,7 +421,7 @@ class ClassRoom {
     public ClassRoom(String name, int size) {
         this.name = Validation.isClassRoomNameValid(name) ? name : NO_CLASSROOM;
         this.size = Validation.isSizeValid(size) ? size : Validation.CLASSROOM_MAX_SIZE;
-        this.students = new HashSet<>(size);
+        this.students = new HashSet&lt;&gt;(size);
     }
 
     /**
@@ -454,7 +453,7 @@ class ClassRoom {
      * @param student to add
      */
     public void addStudent(Student student) {
-        if (student != null && students.size() < size) {
+        if (student != null && students.size() &lt; size) {
             students.add(student);
             student.setClassRoom(this);
         }
@@ -517,7 +516,7 @@ class ClassRoom {
     /**
      * @return the students of this class. 
      */
-    public Collection<Student> getStudents() {
+    public Collection&lt;Student&gt; getStudents() {
         return Collections.unmodifiableCollection(students);
     }
 
@@ -592,8 +591,7 @@ public class School {
         socrates.addLesson("Αρχαία Ελληνικά");
         System.out.println(socrates);
     }
-}
-</sandbox-source>
+}</sandbox-source>
 </sandbox>
 </div>
 <script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>

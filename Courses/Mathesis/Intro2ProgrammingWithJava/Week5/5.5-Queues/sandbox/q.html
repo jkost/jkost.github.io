@@ -8,14 +8,15 @@
 <div class="content" id="content">
 
 <sandbox version="java17" mainclass="Q" preview="true" v-cloak>
-<sandbox-source name="Q.java">
-public class Q<E> {
- private final Deque<E> queue;
+<sandbox-source name="Q.java">import java.util.*;
+
+public class Q&lt;E&gt; {
+ private final Deque&lt;E&gt; queue;
  private final int size;
  
  public Q(int numElements) {
   this.size = numElements;
-  queue = new ArrayDeque<E>(this.size);
+  queue = new ArrayDeque&lt;E&gt;(this.size);
  }
  
  // προσθήκη στο τέλος της ουράς
@@ -40,23 +41,23 @@ public class Q<E> {
  public boolean isFull() {
 	return queue.size() == size;
  }
+ 
+ @Override
+ public String toString() {
+     return queue.toString();
+ }  
 	
  public static void main(String[] args) {
-	 Q<Integer> q = new Q<>();
- 	 q.offer(10);
-	 q.offer(20);
-	 q.offer(30);
+	 Q&lt;Integer&gt; q = new Q&lt;&gt;(3);
+ 	 q.push(10);
+	 q.push(20);
+	 q.push(30);
 	 System.out.println(q);	 
-	 System.out.println(q.element());
+	 System.out.println(q.pop());
 	 System.out.println(q.peek());
-	 q.remove();
-	 System.out.println(q);
-	 q.poll();
-	 System.out.println(q);
-	 q.poll();
 	 System.out.println(q);	 
 	 
-	 Deque<Integer> deque = new ArrayDeque<>();
+	 Deque&lt;Integer&gt; deque = new ArrayDeque&lt;&gt;();
 	 deque.offerLast(10);
 	 deque.offerLast(20);
 	 deque.offerLast(30);	
