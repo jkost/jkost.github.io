@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Q" preview="true" v-cloak>
+<sandbox-source name="Q.java">
+public class Q<E> {
+ private final Deque<E> queue;
+ private final int size;
+ 
+ public Q(int numElements) {
+  this.size = numElements;
+  queue = new ArrayDeque<E>(this.size);
+ }
+ 
+ // προσθήκη στο τέλος της ουράς
+ public boolean push(E e) {  
+  return !isFull() && queue.offer(e);
+ }
+ 
+ // αφαίρεση από την αρχή της ουράς
+ public E pop() {
+   return queue.poll();
+ }
+ 
+ // προσπέλαση της αρχής της ουράς
+ public E peek() {
+   return queue.peek();
+ }
+ 
+ public boolean isEmpty() {
+  return queue.isEmpty();
+ }
+ 
+ public boolean isFull() {
+	return queue.size() == size;
+ }
+	
+ public static void main(String[] args) {
+	 Q<Integer> q = new Q<>();
+ 	 q.offer(10);
+	 q.offer(20);
+	 q.offer(30);
+	 System.out.println(q);	 
+	 System.out.println(q.element());
+	 System.out.println(q.peek());
+	 q.remove();
+	 System.out.println(q);
+	 q.poll();
+	 System.out.println(q);
+	 q.poll();
+	 System.out.println(q);	 
+	 
+	 Deque<Integer> deque = new ArrayDeque<>();
+	 deque.offerLast(10);
+	 deque.offerLast(20);
+	 deque.offerLast(30);	
+	 System.out.println(deque); 
+	 System.out.println(deque.peekFirst());			// επιστρέφει null αν η ουρά είναι άδεια
+	 System.out.println(deque.peekLast());			// επιστρέφει null αν η ουρά είναι άδεια
+	 System.out.println(deque.getFirst());			// εμφανίζει NoSuchElementException αν η ουρά είναι άδεια
+	 System.out.println(deque.getLast());			// εμφανίζει NoSuchElementException αν η ουρά είναι άδεια
+	 System.out.println(deque.pollFirst());
+	 System.out.println(deque.pollLast());
+	 System.out.println(deque.removeFirst());
+	 System.out.println(deque); 
+ }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

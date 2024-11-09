@@ -234,6 +234,8 @@ jshell> deque.removeLast();
 ```
 Τέλος, η ```pop()``` είναι συνώνυμη της ```removeFirst()``` (όπως και οι ```getFirst()``` και ```removeFirst()``` είναι συνώνυμες των ```element()``` και ```remove()``` της ```Queue```).
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/q.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ### Αναζήτηση στοιχείων
 Η δομή δεδομένων Ουρά δε συνίσταται για αναζήτηση στοιχείων.
 
@@ -279,6 +281,8 @@ priorityQueue.add(new Task("Book hotel", LocalDate.parse("2019-07-15"), Priority
 ...
 Task nextTask = priorityQueue.poll();   // θα επιστρέψει το Task με Priority.HIGH
 ```
+
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/task.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ### Αντιγραφή 
 Οι διάφοροι τύποι ουρών διαθέτουν copy constructors:

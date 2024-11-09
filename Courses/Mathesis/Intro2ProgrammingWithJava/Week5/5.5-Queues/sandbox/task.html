@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">import java.time.*;
+import java.util.*;
+
+enum Priority {HIGH, MEDIUM, LOW};
+
+record Task(String description, LocalDate dueDate, Priority priority) { }
+
+public class Main {
+
+ Comparator<Task> priorityComparator = new Comparator<Task>() {
+ 	public int compare(Task t1, Task t2) {
+ 		return t1.priority().compareTo(t2.priority());
+ 	}
+ };
+ 	
+ public static void main(String[] args) {
+	 Queue<Task> priorityQueue = new PriorityQueue<>(20, priorityComparator);
+	 priorityQueue.add(new Task("Doctor appointment", LocalDate.parse("2019-11-18"), Priority.MEDIUM));
+	 priorityQueue.add(new Task("Birthday party", LocalDate.parse("2019-09-02"), Priority.HIGH));
+	 priorityQueue.add(new Task("Book hotel", LocalDate.parse("2019-07-15"), Priority.MEDIUM));
+	 Task nextTask = priorityQueue.poll();   // θα επιστρέψει το Task με Priority.HIGH
+	 System.out.println(task);
+ }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
