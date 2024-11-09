@@ -322,6 +322,8 @@ public final int getEdges() { // δεν μπορεί να υπερκαλυφθε
    return this.points.length;
 }
 ```
+Εξασκηθείτε στις παραπάνω κλάσεις εδώ <a href="sandbox/vehicle.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ### Σειρά εκτέλεσης υπερσκελισμένης μεθόδου στον constructor
 Ένα συχνό λάθος είναι όταν καλούμε μια υπερκαλυμμένη (overridable) μέθοδο στο σώμα της μεθόδου κατασκευής (constructor). Ας δούμε ένα παράδειγμα:
 
@@ -574,13 +576,15 @@ public class Triangle extends Shape {
 
 Η σχέση μεταξύ των κλάσεων ```Shape```, ```Circle, Rectangle``` και ```Triangle``` ονομάζεται _γενίκευση (generalization)_ η οποία είναι μια σχέση τύπου _είναι (is a)_.
 
+Εξασκηθείτε στις παραπάνω κλάσεις εδώ <a href="sandbox/shape.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ### Σχέσεις μεταξύ κλάσεων
 
 Στο παραπάνω διάγραμμα βλέπουμε μια ακόμα σχέση μεταξύ κλάσεων, την _συσσωμάτωση (aggregation)_ η οποία είναι μια σχέση τύπου _ανήκει (owns)_. Η σχέση αυτή δηλώνει ότι η κλάση ```Shape``` περιλαμβάνει μια συλλογή από σημεία (```Points```) τα οποία τα αποθηκεύει στην ```protected``` μεταβλητή ```points```.
 
 Όπως μπορείτε να δείτε στην Εικόνα 3.3.5 του μαθήματος 3.3 της προηγούμενης εβδομάδας (το οποίο επαναλαμβάνεται παρακάτω)
 
-![](../../Week3/3.3-UML/assets/Fig5.jpg)
+![](../../Week3/3.3-UML/assets/Fig5.png)
 
 **Εικόνα 3.3.5.** _Σχέσεις μεταξύ κλάσεων στα διαγράμματα κλάσεων UML_
 
@@ -751,6 +755,8 @@ double area = switch (shape) {
   case Rectangle r -> r.a() * r.b()
 };
 ```
+
+Εξασκηθείτε στις παραπάνω κλάσεις εδώ <a href="sandbox/sealed.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ## Κλάση ```Object```
 Όλες οι κλάσεις στη Java κληρονομούν (νοητά) από την κλάση ```Object``` (δηλ. κάθε κλάση μπορεί να γραφτεί και ως ```class MyClass extends Object```). Η κλάση ```Object``` είναι η ριζική κλάση της ιεραρχίας, δηλ. η μόνη που δεν έχει γονέα. Οι πρωτογενείς τύποι ```int, char``` κλπ. δεν κληρονομούν από την ```Object``` αφού δεν είναι αντικείμενα, οι επικαλυπτόμενοι τύποι ```Integer, Character``` κλπ. όμως την κληρονομούν.
@@ -982,6 +988,8 @@ public class Job implements Runnable {
 }
 ```
 
+Εξασκηθείτε στις παραπάνω κλάσεις εδώ <a href="sandbox/shape-interface.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ### Προσθήκες στις διεπαφές
 Η έκδοση 8 πρόσθεσε τις έννοιες των _στατικών (static)_ και _εξ' ορισμού (default)_ μεθόδων στις διεπαφές.
 
@@ -1125,6 +1133,8 @@ Hello Z
 | ```private abstract``` | Όχι | από τη μία πρέπει να επεκταθεί (```abstract```) από την άλλη δεν μπορεί (```private```) 
 | ```private default``` | Όχι | από τη μία θα πρέπει να μπορεί να επεκταθεί (```abstract```) από την άλλη δεν μπορεί (```private```)
 
+Εξασκηθείτε στα παραπάνω εδώ <a href="sandbox/interface.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Περίληψη
 Ας δούμε περιληπτικά τι μάθαμε σε αυτό και τα προηγούμενα μαθήματα.
 
@@ -1148,11 +1158,11 @@ Hello Z
 * Οι σφραγισμένες κλάσεις (sealed classes) δηλώνουν τις κλάσεις που μπορούν να κληρονομήσουν από αυτές.
 
 ## Ασκήσεις
-1) Μετατρέψτε το ακόλουθο UML διάγραμμα σε κώδικα Java
+1) Μετατρέψτε το ακόλουθο UML διάγραμμα σε <a href="sandbox/ex1.html" target="_blank">κώδικα Java</a>
 
 ![](assets/Fig5.png)
 
-2) Σε συνέχεια της άσκησης 1. της προηγούμενης εβδομάδας, δημιουργήστε μια κλάση ```Person``` με τα εξής γνωρίσματα:
+2) Σε συνέχεια της άσκησης 1. της προηγούμενης εβδομάδας, δημιουργήστε <a href="sandbox/ex2.html" target="_blank">μια κλάση ```Person```</a> με τα εξής γνωρίσματα:
 
 * όνομα (αλφαριθμητικό και δεν μπορεί να 'ναι κενό)
 * επώνυμο (αλφαριθμητικό και δεν μπορεί να 'ναι κενό)

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">
+record Point(int x, int y) {}
+
+abstract sealed class Shape permits Circle, Rectangle, Triangle {   
+  protected final Point[] points;
+ 
+  Shape(int edges) {
+     this.points = new Point[edges];
+  }  
+
+  Shape(Point... points) {
+     this.points = points;
+  }
+
+  public int getEdges() {
+     return this.points.length;
+  }
+ 
+  protected abstract double area();
+
+  protected abstract double perimeter();
+}
+
+final class Circle extends Shape {  
+  private final int radius;
+
+  Circle() {
+    super(1);
+    this.radius = 1;
+  }  
+
+  Circle(Point center, int radius) {
+    super(center);
+    this.radius = radius;
+  }    
+  
+  public int getRadius() {
+    return radius;
+  }
+    
+  public Point getCenter() {
+    return points[0];   
+  }
+
+  @Override
+  public double area() {
+      return Math.PI * (radius * radius);
+  } 
+
+  @Override
+  public double perimeter() {
+    return Math.PI * 2*radius;
+  } 
+}
+
+final class Rectangle extends Shape {  
+  private int width, height; 
+
+  Rectangle(int width, int height) {
+    super(1);
+    this.width = width;
+    this.height = height;
+  }  
+
+  Rectangle(Point upperLeft, int width, int height) {
+    super(upperLeft);
+    this.width = width;
+    this.height = height;
+  }
+  
+  public int getWidth() {
+    return width;
+  }
+  
+  public int getHeight() {
+    return height;
+  }
+
+  @Override
+  public double area() {
+      return width * height;
+  } 
+  
+  @Override
+  public double perimeter() {
+    return 2*width + 2*height;
+  }  
+}
+
+final class Triangle extends Shape {
+
+    Triangle(Point... points) {
+        super(points);
+    }
+
+    public Point[] getPoints() {
+        return points;
+    }
+    
+    // see https://tinyurl.com/msfdtjme
+    private double length(Point p1, Point p2) {
+        return Math.sqrt((p2.x() - p1.x()) * (p2.x() - p1.x()) + (p2.y() - p1.y()) * (p2.y() - p1.y()));
+    }
+    
+    // see https://www.ypologismos.gr/emvadon-trigonou-xerontas-3-pleyres-typos-hrona/
+    @Override
+    public double area() {
+        double s = perimeter()/2;
+        double a = length(points[0], points[1]);
+        double b = length(points[1], points[2]);
+        double c = length(points[2], points[0]);
+        return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+    }
+
+    // https://www.ypologismos.gr/emvadon-trigonou-xerontas-3-pleyres-typos-hrona/
+    @Override
+    public double perimeter() {
+        return length(points[0], points[1]) + length(points[1], points[2]) + length(points[2], points[0]);
+    }
+}
+
+public class Main {  
+  public static void main(String[] args) {
+	Shape c = new Circle(new Point(10, 10), 10);
+	System.out.println(c.perimeter());
+	System.out.println(c.area());
+	
+	Shape r = new Rectangle(new Point(0, 0), 10, 10);
+	System.out.println(r.perimeter());
+	System.out.println(r.area());
+	
+	Shape t = new Triangle(new Point(0, 0), new Point(10, 10), new Point(-10, -10));
+	System.out.println(t.perimeter());
+	System.out.println(t.area());
+	
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

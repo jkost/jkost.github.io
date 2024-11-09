@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">
+interface AInterface {
+    default String message() {
+        return "Hallo A";
+    }
+}
+
+class A implements AInterface {
+}
+
+interface BInterface extends AInterface {
+    default String message() {
+        return "Hallo B";
+    }
+}
+
+class B implements BInterface {
+}
+
+class C extends B {
+    public String message() {
+        return "Hallo C";
+    }
+}
+
+class D extends C implements AInterface { }
+
+public class Main {  
+  public static void main(String[] args) {
+	AInterface a = new A();
+	System.out.println(a.message());
+	
+	AInterface b = new B();
+	System.out.println(b.message());
+	
+	AInterface c = new C();
+	System.out.println(c.message());
+	
+	AInterface d = new D();
+	System.out.println(d.message());
+	
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

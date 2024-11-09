@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">
+abstract class Vehicle { // κλάση
+  // ιδιότητες/γνωρίσματα
+  protected String model;
+  protected int maxSpeed;
+  protected int ccm;
+  protected int speed = 0;
+  // μέθοδος δημιουργίας αντικειμένων - κατασκευαστής
+  public Vehicle(String m, int s, int c) {
+    model = m; maxSpeed = s; ccm = c;
+  }
+  // ενέργειες/μέθοδοι
+  public String getModel() {
+  	return model;
+  }
+  public void setModel(String m) {
+    this.model = m;
+  }
+  public int getMaxSpeed() {
+  	return maxSpeed;
+  }
+  public void setMaxSpeed(int ms) {
+    this.maxSpeed = ms;
+  }        
+  public int getCcm() {
+  	return ccm;
+  }
+  public void setCcm(int ccm) {
+    this.ccm = ccm;
+  }      
+  public int getSpeed() {
+  	return speed;
+  }
+  public String toString() {
+    return "Vehicle {model=" + model + ", maxSpeed=" + maxSpeed + ", ccm=" + ccm + ", speed=" + speed  + "}";   
+  }
+}
+
+class Car extends Vehicle { // κλάση
+     // μέθοδος δημιουργίας αντικειμένων - κατασκευαστής
+    public Car(String m, int s, int c) {
+        super(m, s, c);
+    }
+    // ενέργειες/μέθοδοι
+    public void accelerate() {
+        if (speed <= maxSpeed - 10)
+            speed+=10;
+    }
+
+    public void decelerate() {
+        if (speed >= 10)
+            speed-=10;
+    }  
+
+    public String toString() {
+        return "Car {model=" + model + ", maxSpeed=" + maxSpeed + ", ccm" + ccm + ", speed=" + speed  + "}";   
+    }
+}
+
+class Motorcycle extends Vehicle { // κλάση
+  // ιδιότητες/γνωρίσματα
+  // μέθοδος δημιουργίας αντικειμένων - κατασκευαστής
+  public Motorcycle(String m, int s, int c) {
+    super(m, s, c);
+  }
+  // ενέργειες/μέθοδοι
+  public void accelerate() {
+     if (speed <= maxSpeed - 20)
+        speed+=20;
+  }
+  public void decelerate() {
+     if (speed >= 20)
+        speed-=20;
+  }  
+  public String toString() {
+    return "Motorcycle {model=" + model + ", maxSpeed=" + maxSpeed + ", ccm=" + ccm + ", speed=" + speed  + "}";   
+  }
+}
+
+public class Main {  
+  public static void main(String[] args) {
+	Car subaru = new Car("Subaru Impreza", 180, 1600);  
+	System.out.println(subaru);
+	subaru.accelerate();
+	System.out.println(subaru.getSpeed());
+	
+	Motorcycle honda = new Motorcycle("Honda CBR 650", 250, 649);
+	System.out.println(honda);
+	honda.accelerate();
+	System.out.println(honda.getSpeed());
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
