@@ -52,6 +52,23 @@ public class Car { // κλάση
   public String toString() {
     return "Car {model=" + model + ", maxSpeed=" + maxSpeed + ", ccm=" + ccm + ", speed=" + speed  + "}";   
   }
+  
+  public static void main(String[] args) {
+  	Car audiA3 = new Car("Audi A3", 210, 1595);
+	System.out.println(audiA3.getSpeed());
+	audiA3.accelerate();
+	System.out.println(audiA3.getSpeed());
+	
+	final Car car = new Car("Kia Ceed", 210, 1353);
+	car.accelerate();
+	System.out.println(car);
+	
+	Car otherCar = car;
+	System.out.println(otherCar);
+	otherCar.decelerate();
+	System.out.println(otherCar);
+	System.out.println(car);
+  }
 }</sandbox-source>
 </sandbox>
 </div>
