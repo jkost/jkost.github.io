@@ -13,15 +13,15 @@ import java.util.*;
 
 enum Priority {HIGH, MEDIUM, LOW};
 
-record Task(String description, LocalDate dueDate, Priority priority) { }
+record Task(String description, LocalDate dueDate, Priority priority) { }; 
 
-public class Main {
-
- Comparator<Task> priorityComparator = new Comparator<Task>() {
+public class Main { 
+    
+ static  Comparator<Task> priorityComparator = new Comparator<Task>() {
  	public int compare(Task t1, Task t2) {
  		return t1.priority().compareTo(t2.priority());
  	}
- };
+ };     
  	
  public static void main(String[] args) {
 	 Queue<Task> priorityQueue = new PriorityQueue<>(20, priorityComparator);
@@ -29,7 +29,7 @@ public class Main {
 	 priorityQueue.add(new Task("Birthday party", LocalDate.parse("2019-09-02"), Priority.HIGH));
 	 priorityQueue.add(new Task("Book hotel", LocalDate.parse("2019-07-15"), Priority.MEDIUM));
 	 Task nextTask = priorityQueue.poll();   // θα επιστρέψει το Task με Priority.HIGH
-	 System.out.println(task);
+	 System.out.println(nextTask);
  }
 }</sandbox-source>
 </sandbox>
