@@ -561,6 +561,8 @@ students ==> [Student {am = 1, name = Παπαμιχαήλ Δημήτριος, g
 ```
 Αν θέλουμε να ταξινομήσουμε τους μαθητές με βάση το όνομά τους κι όχι με τον αριθμό μητρώου τους, τότε χρησιμοποιούμε έναν ```Comparator```. Σημειώστε ότι ο ```Comparator``` χρησιμοποιεί την μέθοδο ```compareTo()``` της κλάσης ```String``` η οποία υλοποιεί τη διεπαφή ```Comparable```.
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/student.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ### Αντιγραφή λιστών
 Ήδη είδαμε τον copy constructor ```ArrayList(Collection c)``` που δημιουργεί μια νέα ```ArrayList``` από τη συλλογή που της περνάμε ως όρισμα.
 

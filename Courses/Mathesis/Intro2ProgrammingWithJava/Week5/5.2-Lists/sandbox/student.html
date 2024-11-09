@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Student" preview="true" v-cloak>
+<sandbox-source name="Student.java">import java.util.*;
+
+public class Student implements Comparable {
+    private final long am;    	// Αριθμός Μητρώου
+    private final String name;
+    private int grade;
+
+    public Student(long am, String name, int grade) {
+        this.am = am;
+        this.name = name;
+        this.grade = grade;
+    }
+
+    public long getAm() {
+        return am;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+    
+    @Override
+    public String toString() {
+       return "Student {am = " + am + ", name = " + name + ", grade = " + grade + "}";   
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Student otherStudent = (Student)o;
+        if (this.am == otherStudent.am)
+            return 0;
+        else if (this.am < otherStudent.am)
+            return -1;
+        else
+            return 1;
+    }
+	
+    public static void main(String[] args) {
+    	Student s1 = new Student(1, "Παπαμιχαήλ Δημήτριος", 16);
+		System.out.println(s1);
+		Student s2 = new Student(2, "Βουγιουκλάκη Αλίκη", 10);
+		System.out.println(s2);
+		List students = new ArrayList(List.of(s1, s2));
+		System.out.println(students);
+		students.sort(new StudentNameComparator());
+		System.out.println(students);
+		students.sort(new StudentGradeComparator().reversed());
+		System.out.println(students);		
+	}
+}
+
+class StudentNameComparator implements Comparator {
+    @Override
+    public int compare(Object o1, Object o2) {
+        Student s1 = (Student)o1;
+        Student s2 = (Student)o2;
+        return s1.getName().compareTo(s2.getName());
+    }
+}
+
+class StudentGradeComparator implements Comparator {
+    @Override
+    public int compare(Object o1, Object o2) {
+        Student s1 = (Student)o1;
+        Student s2 = (Student)o2;
+        return Integer.compare(s1.getGrade(), s2.getGrade());
+    }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
