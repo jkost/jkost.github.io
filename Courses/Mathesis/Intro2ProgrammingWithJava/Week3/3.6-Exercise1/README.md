@@ -274,6 +274,8 @@ jshell> System.out.println(ioannis.getClassRoom());     // Β1
 Β1
 ```
 
+Εξασκηθείτε πάνω στην κλάση ```Student``` αυτού του μαθήματος εδώ <a href="sandbox/student.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>
+
 ## Υλοποίηση με το BlueJ
 
 1. Δημιουργήστε ένα νέο έργο στο BlueJ από το μενού **Project -> New Project** δίνοντάς του το όνομα ```School```.
