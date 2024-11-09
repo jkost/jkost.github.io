@@ -17,14 +17,14 @@ record Task(String description, LocalDate dueDate, Priority priority) { };
 
 public class Main { 
     
- static  Comparator<Task> priorityComparator = new Comparator<Task>() {
+ static  Comparator&lt;Task&gt; priorityComparator = new Comparator&lt;&gt;() {
  	public int compare(Task t1, Task t2) {
  		return t1.priority().compareTo(t2.priority());
  	}
  };     
  	
  public static void main(String[] args) {
-	 Queue<Task> priorityQueue = new PriorityQueue<>(20, priorityComparator);
+	 Queue&lt;Task&gt; priorityQueue = new PriorityQueue&lt;&gt;(20, priorityComparator);
 	 priorityQueue.add(new Task("Doctor appointment", LocalDate.parse("2019-11-18"), Priority.MEDIUM));
 	 priorityQueue.add(new Task("Birthday party", LocalDate.parse("2019-09-02"), Priority.HIGH));
 	 priorityQueue.add(new Task("Book hotel", LocalDate.parse("2019-07-15"), Priority.MEDIUM));
