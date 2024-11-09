@@ -209,7 +209,7 @@ jshell> circle.radius = 10;
 
 Αυτό το γνώρισμα του αντικειμενοστραφούς προγραμματισμού λέγεται _ενθυλάκωση (encapsulation)_, όπως θα δούμε σε επόμενο μάθημα, και διαφέρει σε σχέση με τον διαδικαστικό προγραμματισμό, όπου μεταβλητές και μέθοδοι είναι ανεξάρτητες. Στον αντικειμενοστραφή προγραμματισμό, οι μεταβλητές ανήκουν σε μια κλάση και μόνο αντικείμενα αυτής της κλάσης έχουν πρόσβαση στις μεταβλητές. 
 
-Μπορείτε να εξασκηθείτε μόνοι σας στα records εδώ <a href="sandbox/records.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:10%; height:10%;"></a>.
+Μπορείτε να εξασκηθείτε μόνοι σας στα records εδώ <a href="sandbox/records.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ## Κλάσεις (Class)
 Η εγγραφή (record) εισήχθηκε στην Java από την έκδοση 14 και μετά. Από την αρχή της δημιουργίας της, η γλώσσα υποστηρίζει τις κλάσεις. Τα πάντα είναι κλάσεις στη Java. Ας δούμε πώς θα γράφαμε την εγγραφή ```Point``` στις εκδόσεις της Java πριν την 14:
@@ -483,7 +483,7 @@ public record Point(int x, int y) {
 }
 ```
 
-Μπορείτε να εξασκηθείτε μόνοι σας στην κλάση ```Point``` εδώ <a href="sandbox/point.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:10%; height:10%;"></a>.
+Μπορείτε να εξασκηθείτε μόνοι σας στην κλάση ```Point``` εδώ <a href="sandbox/point.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 Ας δούμε ακόμα ένα παράδειγμα. Ας υποθέσουμε ότι θέλουμε να γράψουμε ένα παιχνίδι αγώνων αυτοκινήτων σε Java. Χρειαζόμαστε λοιπόν, μιαν αφαιρετική αναπαράσταση ενός αυτοκινήτου, δηλ. μια κλάση ```Car```. Τι γνωρίσματα θέλουμε να έχουμε για την κλάση αυτή (η κατάστασή του); Μας ενδιαφέρει να γνωρίζουμε το μοντέλο του (π.χ. _Tesla Model S_), την μέγιστη ταχύτητά του, τον κυβισμό του κλπ. καθώς επίσης και την ταχύτητά του κάθε στιγμή (καθώς θα τρέχει σε αγώνες).
 
@@ -552,7 +552,7 @@ jshell> teslaS.toString()
 ```
 λαμβάνουμε την διάσημη εξαίρεση (exception) ```NullPointerException```, τον τρόμο και των φόβο των προγραμματιστών. Πολύ μεγάλη προσοχή λοιπόν, πάντα να αρχικοποιείτε τα αντικείμενά σας προτού τα χρησιμοποιήσετε.
 
-Μπορείτε να εξασκηθείτε μόνοι σας στην κλάση ```Car``` εδώ <a href="sandbox/car.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:10%; height:10%;"></a>.
+Μπορείτε να εξασκηθείτε μόνοι σας στην κλάση ```Car``` εδώ <a href="sandbox/car.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ## Διεπαφές (Interface)
 Η _διεπαφή (interface)_ είναι ένα είδος κλάσης που περιέχει όμως μόνο σκελετούς μεθόδων (δηλ. χωρίς υλοποίηση) ή/και σταθερές. Π.χ.
@@ -774,7 +774,7 @@ $2 ==> null
 jshell> b1
 b1 ==> ClassRoom{name=Β1, size=30, numOfStudents=0}
 ```
-Εξασκηθείτε εδώ <a href="sandbox/classroom.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:10%; height:10%;"></a>
+Εξασκηθείτε εδώ <a href="sandbox/classroom.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>
 
 ## Περαιτέρω μελέτη
 Υπάρχουν δυο πολύ ενδιαφέροντες ιστοτόποι εκμάθησης της γλώσσας Java (στα Αγγλικά) τους οποίους συνιστούμε ανεπιφύλακτα για να μελετάτε τα μαθήματά τους παράλληλα με αυτό το μάθημα. Αν επιθυμείτε να παρακολουθήσετε παράλληλα και αυτά τα μαθήματα, καλό είναι να εγγραφείτε (register). 
