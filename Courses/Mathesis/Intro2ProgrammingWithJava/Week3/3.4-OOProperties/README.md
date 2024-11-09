@@ -494,6 +494,8 @@ class Car { // κλάση
 
 Θα μιλήσουμε για τα υπόλοιπα χαρακτηριστικά του αντικειμενοστραφούς προγραμματισμού σε επόμενα μαθήματα.
 
+Εξασκηθείτε πάνω στην κλάση ```Car``` αυτού του μαθήματος εδώ <a href="sandbox/car.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>
+
 ---
 
 [<](../3.3-UML/README.md) | [Δ](../../README.md) | [>](../3.5-Encapsulation/README.md)

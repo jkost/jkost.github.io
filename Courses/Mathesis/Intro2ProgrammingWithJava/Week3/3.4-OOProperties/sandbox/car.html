@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Car" preview="true" v-cloak>
+<sandbox-source name="Car.java">
+public class Car { // κλάση
+  // ιδιότητες/γνωρίσματα
+  static int counter;  
+  String model;
+  int maxSpeed;
+  int ccm;
+  int speed;
+ 
+  static {
+    counter = 0;  
+    System.out.println("static block " + counter);
+  }
+   
+  {
+    speed = 0;  
+    System.out.println("instance block " + speed);
+  }
+    
+  // μέθοδος δημιουργίας αντικειμένων - κατασκευαστής
+  Car(String m, int s, int c) {
+    ++counter;
+    model = m; maxSpeed = s; ccm = c;
+  }
+  // ενέργειες/μέθοδοι
+  void accelerate() {
+     if (speed <= maxSpeed - 10)
+        speed+=10;
+  }
+  void decelerate() {
+     if (speed >= 10)
+        speed-=10;
+  }
+  public String toString() {
+     return "Car[" + "model=" + model + ", maxSpeed=" + maxSpeed + ", ccm=" + ccm + ", speed=" + speed + "]"; 
+  }
+    
+  public static int getCounter() {
+     return counter;   
+  }
+    
+  public static void main(String... args) {
+      Car audiA3 = new Car("Audi A3", 210, 1595);
+      System.out.println(Car.getCounter());
+      Car fiat500 = new Car("Fiat 500", 160, 1368);
+      System.out.println(Car.getCounter());
+      Car peugeot208 = new Car("Peugeot 208", 175, 1199);
+      System.out.println(peugeot208.getCounter());      
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
