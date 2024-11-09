@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">
+record Point(int x, int y) {}
+
+interface IShape {
+    double area();
+    double perimeter();
+    void draw();
+} 
+
+abstract class Shape implements IShape  {   
+    protected final Point[] points;
+
+    Shape(int edges) {
+        this.points = new Point[edges];
+        draw(); // (2)
+    }
+
+    Shape(Point[] points) {
+        this.points = points;
+    }
+
+    public int getEdges() {
+        return this.points.length;
+    }
+    
+    @Override
+    public void draw() {
+        System.out.println("Draws a shape...");
+    }
+}
+
+class Rectangle extends Shape {
+
+    private final int width, height;
+
+    Rectangle(int width, int height) {
+        super(4);
+        this.width = width;
+        this.height = height;
+    }
+
+    Rectangle(Point[] points, int width, int height) {
+        super(points);
+        this.width = width;
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    @Override
+    public double area() {
+        return width * height;
+    }
+
+    @Override
+    public double perimeter() {
+        return 2 * width + 2 * height;
+    }
+    
+    @Override
+    public void draw() {
+        System.out.println("Draws a rectangle...");
+    }    
+}
+
+class Circle extends Shape {
+
+    private final int radius;
+
+    Circle() {
+        super(1);	// (1)
+        this.radius = 1;
+    }
+
+    Circle(Point[] points, int radius) {
+        super(points);
+        this.radius = radius;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    @Override
+    public double area() {
+        return Math.PI * (radius * radius);
+    }
+
+    @Override
+    public double perimeter() {
+        return Math.PI * 2 * radius;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Draws a circle...");	// (3)
+    }
+}
+
+class Triangle extends Shape {
+
+    Triangle(Point... points) {
+        super(points);
+    }
+
+    public Point[] getPoints() {
+        return points;
+    }
+    
+    // see https://tinyurl.com/msfdtjme
+    private double length(Point p1, Point p2) {
+        return Math.sqrt((p2.x() - p1.x()) * (p2.x() - p1.x()) + (p2.y() - p1.y()) * (p2.y() - p1.y()));
+    }
+    
+    // see https://www.ypologismos.gr/emvadon-trigonou-xerontas-3-pleyres-typos-hrona/
+    @Override
+    public double area() {
+        double s = perimeter()/2;
+        double a = length(points[0], points[1]);
+        double b = length(points[1], points[2]);
+        double c = length(points[2], points[0]);
+        return Math.sqrt(s*(s-a)*(s-b)*(s-c));
+    }
+
+    // https://www.ypologismos.gr/emvadon-trigonou-xerontas-3-pleyres-typos-hrona/
+    @Override
+    public double perimeter() {
+        return length(points[0], points[1]) + length(points[1], points[2]) + length(points[2], points[0]);
+    }
+	
+    @Override
+    public void draw() {
+        System.out.println("Draws a triangle...");	// (3)
+    }	
+}
+
+public class Main {  
+  public static void main(String[] args) {
+	Point[] points = new Point[1];
+	points[0] = new Point(10, 10);
+	Shape c = new Circle(points, 10);
+	System.out.println(c.perimeter());
+	System.out.println(c.area());
+	c.draw();
+	
+	points = new Point[1];
+	points[0] = new Point(0, 0);
+	Shape r = new Rectangle(points, 10, 10);
+	System.out.println(r.perimeter());
+	System.out.println(r.area());
+	r.draw();	
+	
+	points = new Point[3];
+	points[0] = new Point(0, 0);
+	points[1] = new Point(10, 10);
+	points[2] = new Point(-10, -10);	
+	Shape t = new Triangle(points);
+	System.out.println(t.perimeter());
+	System.out.println(t.area());
+	t.draw();	
+  }
+}
+</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

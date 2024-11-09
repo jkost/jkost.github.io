@@ -371,6 +371,8 @@ Draws a circle...
 
 Πιο αναλυτικά η ροή του προγράμματος φαίνεται στα νούμερα μέσα στις παρενθέσεις.
 
+Εξασκηθείτε εδώ <a href="sandbox/shape.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Περίληψη
 Ας δούμε περιληπτικά τι μάθαμε σε αυτό το μάθημα.
 

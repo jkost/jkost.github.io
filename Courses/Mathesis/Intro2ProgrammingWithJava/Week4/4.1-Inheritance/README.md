@@ -988,7 +988,7 @@ public class Job implements Runnable {
 }
 ```
 
-Εξασκηθείτε στις παραπάνω κλάσεις εδώ <a href="sandbox/shape-interface.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+Εξασκηθείτε στις παραπάνω κλάσεις εδώ <a href="sandbox/shape_interface.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ### Προσθήκες στις διεπαφές
 Η έκδοση 8 πρόσθεσε τις έννοιες των _στατικών (static)_ και _εξ' ορισμού (default)_ μεθόδων στις διεπαφές.
@@ -1133,7 +1133,7 @@ Hello Z
 | ```private abstract``` | Όχι | από τη μία πρέπει να επεκταθεί (```abstract```) από την άλλη δεν μπορεί (```private```) 
 | ```private default``` | Όχι | από τη μία θα πρέπει να μπορεί να επεκταθεί (```abstract```) από την άλλη δεν μπορεί (```private```)
 
-Εξασκηθείτε στα παραπάνω εδώ <a href="sandbox/interface.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+Εξασκηθείτε στα παραπάνω εδώ <a href="sandbox/interfaces.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ## Περίληψη
 Ας δούμε περιληπτικά τι μάθαμε σε αυτό και τα προηγούμενα μαθήματα.
