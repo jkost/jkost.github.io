@@ -271,6 +271,8 @@ faceCards ==> [JACK, QUEEN, KING]
 ```
 Επιστρέφει τα στοιχεία του με τη σειρά που ορίζονται στο ```enum```.
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/set.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Σύγκριση των διαφόρων υλοποιήσεων της ```Set```
 
 | | ```add``` |  ```contains``` | ```next``` | 
