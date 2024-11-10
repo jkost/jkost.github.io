@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">
+import java.util.*;
+import java.util.concurrent.*;
+import java.security.*;
+
+public class Main {	
+ public static void main(String[] args) throws NoSuchAlgorithmException {
+	Random random = new Random();
+	int randInt = random.nextInt();
+	System.out.println(random.nextInt(101));	// τυχαίος ακέραιος μεταξύ 0 και 100
+	System.out.println(Math.abs(random.nextInt()) % 101);	// άλλος τρόπος παραγωγής τυχαίου ακεραίου μεταξύ 0 και 100
+	long randLong = random.nextLong();
+	System.out.println(randLong);
+	double randDouble = random.nextDouble();	// επιστρέφει μια τιμή μεταξύ [0.0, 1.0)
+	System.out.println(randDouble);
+	float randFloat = random.nextFloat();	// όπως και η προηγούμενη
+	System.out.println(randFloat);
+	boolean randBoolean = random.nextBoolean();
+	System.out.println(randBoolean);
+	byte[] randBytes = new byte[16];
+	random.nextBytes(randBytes);	// γεμίζει μια συστοιχία από bytes με τυχαίους αριθμούς
+	System.out.println(randBytes);
+	
+	random = ThreadLocalRandom.current();
+	System.out.println(random.nextInt(101));
+	
+	SecureRandom number = SecureRandom.getInstanceStrong();
+	System.out.println(random.nextInt(21));
+	
+	SecureRandom rng = new SecureRandom();
+	byte[] randomBytes = new byte[4];
+	rng.nextBytes(randomBytes); // Fills randomBytes with random bytes
+	System.out.println(Arrays.toString(randomBytes));
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

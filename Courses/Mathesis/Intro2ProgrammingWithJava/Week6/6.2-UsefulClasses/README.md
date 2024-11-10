@@ -93,6 +93,8 @@ jshell> for (String str : split)
 Μάρ
 ```
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/string.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Formatter, NumberFormat, System.out.printf()
 Έχουμε μάθει ότι οι	```System.out.print()``` και ```System.out.println()``` εμφανίζουν τα ορίσματά τους στη μονάδα εξόδου (συνήθως οθόνη). Η ```System.out.printf()``` λειτουργεί όπως η ```printf()``` της C και παρέχει περισσότερες δυνατότητες μορφοποίησης με τη βοήθεια της ```Formatter```:
 
@@ -257,6 +259,8 @@ jshell> System.out.printf("%1$td.%1$tm.%1$ty %n", d);
 01.12.19 
 ```
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/format.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Γεννήτριες τυχαίων αριθμών
 Αν θέλετε να παράγετε (ψευδο)τυχαίους αριθμούς, τότε η γλώσσα παρέχει μια επιλογή από κλάσεις γι' αυτό το σκοπό:
 
@@ -345,6 +349,8 @@ jshell> System.out.println(Arrays.toString(randomBytes));
 ```
 
 Τέλος, αν θέλουμε να παράγουμε πολύ μεγάλους τυχαίους αριθμούς, μπορούμε να χρησιμοποιήσουμε την αντίστοιχη μέθοδο κατασκευής της ```BigInteger``` όπως θα δούμε παρακάτω.
+
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/random.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ## BigInteger
 Στα μαθήματα της 1ης εβδομάδας μάθαμε για τους πρωτογενείς τύπους δεδομένων της γλώσσας ```int, long, float``` και ```double```. Εξηγήσαμε τους περιορισμούς καθενός. Είδαμε π.χ. ότι ο τύπος ```int``` μπορεί ν' αποθηκεύσει ακέραιους αριθμούς μέχρι το ```Integer.MAX =``` 2<sup>31</sup>-1 κι ότι αν οι υπολογισμοί σας τον ξεπεράσουν τότε έχουμε υπερχείλιση και λάθος αποτελέσματα. Επίσης, λόγω του [τρόπου αναπαράστασης των αριθμών κινητής υποδιαστολής](https://en.wikipedia.org/wiki/IEEE_754) από τους Η/Υ, δεν μπορείτε να βασίζεστε στην ακρίβεια των πράξεων τέτοιων αριθμών. Η Java παρέχει τις κλάσεις ([BigInteger](https://docs.oracle.com/javase/10/docs/api/java/math/BigInteger.html) και [BigDecimal](https://docs.oracle.com/javase/10/docs/api/java/math/BigDecimal.html)) γι' αυτό το σκοπό. Σημειώστε ότι και οι δυο κλάσεις είναι αμετάβλητες (immutable) (αν και δεν πληρούν όλα τα κριτήρια). Από σχεδιαστικό λάθος των ```BigInteger``` και ```BigDecimal```, έπρεπε να δηλωθούν ```final``` (άρα δεν ικανοποιούν πλήρως τα κριτήρια της αμεταβλητότητας - immutability). Δυστυχώς πλέον είναι αργά, κι έτσι κάποιος μπορεί να δημιουργήσει μια νέα κακόβουλη ```BigInteger``` η οποία κληρονομεί από την ```BigInteger``` την οποία μπορεί να χρησιμοποιήσετε κατά λάθος στο πρόγραμμά σας με καταστροφικά αποτελέσματα (βλ. [Bloch J. (2017)]).
@@ -446,6 +452,7 @@ jshell>  try {
 ns=530500452766
 x1=530500452766
 ```
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/biginteger.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 Ως άσκηση, γράψτε τη μέθοδο υπολογισμού του παραγοντικού χρησιμοποιώντας τη κλάση ```BigInteger```.
 
@@ -584,6 +591,8 @@ x ==> 123.456
 jshell> x = x.setScale(2, RoundingMode.HALF_UP);
 x ==> 123.46
 ```
+
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/bigdecimal.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ### Μαθηματικοί τελεστές
 * ```add()```

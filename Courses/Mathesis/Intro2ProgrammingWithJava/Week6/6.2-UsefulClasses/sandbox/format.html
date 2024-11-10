@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">
+import java.util.*;
+import java.time.*;
+
+public class Main {	
+ public static void main(String[] args) {
+	final Formatter f = new Formatter();
+	System.out.print(f.format("Όνομα: %s, ηλικία: %d%n", "Νίκος", 1));
+	System.out.print(String.format("Όνομα: %s, ηλικία: %d%n", "Νίκος", 1));
+	System.out.printf("Όνομα: %s, ηλικία: %d%n", "Νίκος", 1);
+	
+	f.format("e=%+10.4f", Math.E);
+	f.format("%(,.2f €", -1850.362);
+	
+	System.out.printf("%b%n", null);
+	System.out.printf("%B%n", false); 
+	System.out.printf("%c%n", 'α'); 
+	System.out.printf("%C%n", 'α'); 
+	System.out.printf("%s%n", "Γιάννης"); 
+	System.out.printf("%S%n", "Γιάννης"); 
+	System.out.printf("'%-10s' %n", "Γιάννης"); 
+	String s = "Hello World";
+	System.out.printf("Το αλφαριθμητικό %s έχει hash code %h%n", s, s);
+	System.out.printf("% 4d", 2);       // συμπλήρωση με κενά 
+	System.out.printf("%10.5s%n", Math.PI);
+	
+	LocalTime t = LocalTime.now();
+	System.out.printf("hours %tH: minutes %tM: seconds %tS%n", t, t, t);
+	System.out.printf("%1$tH:%1$tM:%1$tS %1$tp %1$tL %1$tN %n", t);
+	
+	LocalDate d = LocalDate.now();
+	System.out.printf("%1$tA, %1$td %1$tB %1$tY %n", d);
+	System.out.printf("%1$td.%1$tm.%1$ty %n", d);
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

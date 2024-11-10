@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">import java.util.*;
+
+public class Main {	
+ public static void main(String[] args) {
+	String s1 = "Hello ";
+	String s2 = "World";
+	s1 = s1 + s2;
+	String[] strings = {"This", "is", "a", "String"};
+	String sentence="";
+	for (String s : strings)
+	   sentence += s + " ";
+	System.out.println(sentence);
+	
+	StringBuilder sb = new StringBuilder(4);
+	for (String s : strings)
+	   sb.append(s).append(" ");
+	System.out.println(sb.toString());
+	
+	StringJoiner sj = new StringJoiner(", ", "[", "]");
+	for (String s : new String[]{"α", "β", "γ"}) {
+	   sj.add(s);
+    }
+	System.out.println(sj);
+	
+	String s = "Ιαν Φεβ Μάρ";
+	StringTokenizer st = new StringTokenizer(s, " ");
+	while (st.hasMoreTokens()) {
+	   System.out.println(st.nextToken());
+  	}
+	
+	String[] split = s.split(" ");
+	for (String str : split)
+	   System.out.println(str);
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
