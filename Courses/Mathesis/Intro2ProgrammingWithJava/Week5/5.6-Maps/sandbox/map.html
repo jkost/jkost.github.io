@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">
+import java.util.*;
+import static java.util.Map.entry;
+
+public class Main {	
+ public static void main(String[] args) {
+	 Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+	 map.put("Ζηνοβία", 11);
+	 map.put("Κατερίνα", 9);
+	 map.put("Αδριάνα", 11);
+	 map.put("Ζηνοβία", 12);
+	 
+	 System.out.println(map);
+	 
+	 for (String name : map.keySet()) 
+	     System.out.println(name);
+
+	 for (Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) 
+	     System.out.println(entry.getKey() + " : " + entry.getValue());
+	
+	System.out.println("Contains Αδριάνα?" + map.containsKey("Αδριάνα"));
+	System.out.println(map.get("Αδριάνα"));
+	System.out.println(map.remove("Αδριάνα"));
+	System.out.println("Contains key Αδριάνα? " + map.containsKey("Αδριάνα"));
+	System.out.println("Contains value 9? " + map.containsValue(9));
+	
+	map.put("Αδριάνα", 11);
+	TreeMap&lt;String, Integer&gt; treeMap = new TreeMap&lt;&gt;(map); 
+	treeMap.firstKey();			// NoSuchElementException αν ο πίνακας κατακερματισμού είναι άδειος
+	treeMap.firstEntry();		// NoSuchElementException αν ο πίνακας κατακερματισμού είναι άδειος
+	treeMap.lastKey();			// NoSuchElementException αν ο πίνακας κατακερματισμού είναι άδειος
+	treeMap.lastEntry();		// NoSuchElementException αν ο πίνακας κατακερματισμού είναι άδειος
+	treeMap.subMap("Ζ","Λ");				// "Ζ" &lt;= στοιχεία &lt; "Λ" 
+	treeMap.subMap("Ζ", true, "Κω", true);  // inclusive = true
+	treeMap.headMap("Ζηνοβία");				// στοιχεία &lt; "Zηνοβία"
+	treeMap.headMap("Ζηνοβία", true);		// inclusive = true
+	treeMap.tailMap("Ζηνοβία");				// στοιχεία &gt;= "Ζ"
+	treeMap.tailMap("Ζηνοβία", false);		// inclusive = false
+	treeMap.ceilingEntry("Ζ");				// το μικρότερο στοιχείο &gt;= "Ζηνοβία"
+	treeMap.floorEntry("Ζ");				// το μεγαλύτερο στοιχείο &lt;= "Ζηνοβία"
+	treeMap.higherEntry("Ζηνοβία");			// το μικρότερο στοιχείο &gt; "Ζηνοβία"
+	treeMap.lowerEntry("Ζηνοβία");			// το μεγαλύτερο στοιχείο &lt; "Ζηνοβία"
+	treeMap.descendingMap();
+	treeMap.navigableKeySet();
+	Iterator&lt;String&gt; i = treeMap.descendingKeySet().iterator();
+	while (i.hasNext()) 
+   		System.out.print(i.next() + " ");
+	 
+	Map&lt;String, Integer&gt; roMap = Map.ofEntries(
+	     entry("Ζηνοβία", 12), 
+	     entry("Κατερίνα", 9), 
+	     entry("Αδριάνα", 11));
+	System.out.println(roMap);
+	
+	Map&lt;Integer, String&gt; idMap = new IdentityHashMap&lt;&gt;();  // Α.Μ., όνομα
+	Integer i1 = new Integer(1);
+	Integer i2 = new Integer(1);
+	idMap.put(i1, "Γιάννης");
+	idMap.put(i2, "Νίκος");
+	System.out.println(idMap);
+ }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

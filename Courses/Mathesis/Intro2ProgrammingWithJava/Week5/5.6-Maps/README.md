@@ -258,6 +258,8 @@ idMap ==> {1=Γιάννης, 1=Νίκος}
 ```
 Όπως βλέπουμε στο παραπάνω παράδειγμα, αν και ```i1.equals(i2)```, ```i1 != i2``` γιατί ο τελεστής ```==``` ελέγχει ισότητα ταυτοτήτων αντικειμένων, και τα δυο αντικείμενα ```i1``` και ```i2``` δεν είναι τα ίδια, παρόλο που έχουν τις ίδιες τιμές, με αποτέλεσμα να υπάρχουν φαινομενικά δυο ίδια κλειδιά. Σαν άσκηση, δοκιμάστε τον παραπάνω κώδικα χρησιμοποιώντας ```HashMap``` αντί για ```IdentityHashMap```. 
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/map.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Συσχετισμένοι Πίνακες Απαριθμημένων Τύπων (```EnumMap```)
 Χρησιμοποιείται όταν ο αριθμός των κλειδιών είναι γνωστός εξ' αρχής και δεν αλλάζει και μπορούμε να αναθέσουμε ένα ευρετήριο (index) σ' αυτά. Ως αποτέλεσμα, είναι πολύ πιο αποδοτικοί από τις υπόλοιπες υλοποιήσεις. 
 
@@ -276,6 +278,8 @@ taskMap.get(Priority.HIGH).add(new Task("Book hotel", LocalDate.parse("2019-07-1
 Queue<Task> highPriorityTaskList = taskMap.get(Priority.HIGH);
 System.out.println("Next high priority task: " + highPriorityTaskList.peek());
 ```
+
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/task.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ## Σύγκριση των διαφόρων υλοποιήσεων της ```Map```
 
