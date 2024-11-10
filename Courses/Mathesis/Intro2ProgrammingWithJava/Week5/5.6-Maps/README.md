@@ -241,10 +241,10 @@ $12 ==> true
 jshell> Map<Integer, String> idMap = new IdentityHashMap<>();  // Α.Μ., όνομα
 idMap ==> {}
 
-jshell> Integer i1 = new Integer(1);
+jshell> Integer i1 = Integer.valueOf(1);
 i1 ==> 1
 
-jshell> Integer i2 = new Integer(1);
+jshell> Integer i2 = Integer.valueOf(1);
 i2 ==> 1
 
 jshell> idMap.put(i1, "Γιάννης");

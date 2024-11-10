@@ -63,8 +63,8 @@ public class Main {
 	System.out.println(roMap);
 	
 	Map&lt;Integer, String&gt; idMap = new IdentityHashMap&lt;&gt;();  // Α.Μ., όνομα
-	Integer i1 = new Integer(1);
-	Integer i2 = new Integer(1);
+	Integer i1 = Integer.valueOf(1);
+	Integer i2 = Integer.valueOf(1);
 	idMap.put(i1, "Γιάννης");
 	idMap.put(i2, "Νίκος");
 	System.out.println(idMap);
