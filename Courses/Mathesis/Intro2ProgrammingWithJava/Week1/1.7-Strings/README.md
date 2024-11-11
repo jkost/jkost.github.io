@@ -246,6 +246,8 @@ html ==> "     <html>\n        <body>\n            <p>Hell ...   </body>\n     <
 ```
 Το ```\s```, τέλος, αποτρέπει να αποκοπούν τα κενά που ακολουθούν το κείμενο (σβήνονται εξ' ορισμού).
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/strings.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Εφαρμογές
 Ας δούμε μερικά προγράμματα όπου η ```String``` είναι χρήσιμη.
 

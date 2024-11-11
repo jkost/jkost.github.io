@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">import java.util.*;
+
+public class Main {	
+ public static void main(String[] args) {
+	String name = "Αγαμέμνων";
+	String firstname = "Οδυσσέας";
+	String surname = "Ελύτης";
+	System.out.println(firstname + " " + surname);
+	
+	String s1="Καλήν εσπέραν άρχοντες";
+	String s2=" άρχοντες";
+	System.out.println(s1.equals(s2));		// έλεγχος ισότητας
+	System.out.println(s1.compareTo(s2));	// σύγκριση, == 0 σημαίνει ίσα, < 0 σημαίνει το s1 είναι πριν το s1, > 0 σημαίνει το s1 είναι μετά το s2
+	System.out.println(s1.length());		// μήκος αλφαριθμητικού
+	System.out.println(s1.toLowerCase());
+	System.out.println(s1.contains("Καλήν"));
+	System.out.println(s1.indexOf(s2));  	// η λέξη "άρχοντες" βρίσκεται στη θέση 13 της συμβολοσειράς s1
+	System.out.println(s1.substring(6,13)); // εξάγουμε το τμήμα που ξεκινά από τη θέση 6 μέχρι τη θέση 12
+	System.out.println(s1.split(" "));
+	System.out.println(String.join(" + ", "1", "2", "3"));
+	System.out.println(s2.trim());	// αποκόπτει κενά μπρος και πίσω από το αλφαριθμητικό
+	System.out.println(s2.charAt(0));	// επιστρέφει τον 1ο χαρακτήρα του αλφαριθμητικού s2
+	System.out.println(s1.replace("εσπ", "ημ"));		// Προσοχή! Δεν αντικαθιστά το s1, αλλά επιστρέφει ένα νέο αλφαριθμητικό
+	System.out.println(s1);
+	String s3 = s1.replace("εσπ", "ημ");  // επιστρέφει ένα νέο αλφαριθμητικό
+	System.out.println(s3);
+	System.out.println(s2.endsWith("ες"));
+	System.out.println(String.valueOf(0b100));
+	System.out.println(Integer.toString(0b100));
+	String empty = "";
+	String quotedStr = "\"";
+	String multilineStr= "Σε γνωρίζω από την κόψη\n του σπαθιού την τρομερή";
+	System.out.println(multilineStr);
+	
+	s1 = "Γιάννης";
+	s2 = "Γιάννης";
+	System.out.println("s1 == s2? " + (s1 == s2));
+	s3 = new String("Γιάννης");
+	System.out.println("s1 == s3? " + (s1 == s3));
+	System.out.println("s2 == s3? " + (s2 == s3));
+	System.out.println("s1.equals(s3)? " + s1.equals(s3));
+	
+	String s = "Hello \"Kosta\"";
+	System.out.println(s);
+	
+	String html = "<html>\n" +
+	              "  <body>\n" +
+	              "    <p>Hello, world</p>\n" + 
+	              "  </body>\n" +
+	              "</html>";
+	System.out.println(html);
+	html = """
+	     <html>
+	        <body>
+	            <p>Hello, world</p>
+	        </body>
+	     </html>
+	""";
+	System.out.println(html);
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
