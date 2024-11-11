@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Factorial" preview="true" v-cloak>
+<sandbox-source name="Factorial.java">
+public class Factorial {
+	static int factorial(int n) {
+	     if (n <= 1) {
+	        return 1;
+	     } else {
+	        return n * factorial(n-1);
+	     }
+	}
+    
+    public static void Main(String[] args) {
+        System.out.println("3! = " + Factorial.factorial(3));
+		System.out.println("33! = " + Factorial.factorial(33));
+		System.out.println("133! = " + Factorial.factorial(133));
+    }
+}
+</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
