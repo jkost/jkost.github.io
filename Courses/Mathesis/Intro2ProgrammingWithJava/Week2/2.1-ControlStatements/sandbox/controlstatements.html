@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">import java.util.*;
+
+public class Main {	
+ public static void main(String[] args) {
+	int grade = 15; 
+	if (grade > 17) {
+	  System.out.println("Άριστα");
+	} else if (grade > 15) { 
+	  System.out.println("Πολύ καλά");
+	} else if (grade > 13) {
+	  System.out.println("Καλά");
+	} else if (grade >= 10) {
+	  System.out.println("Μέτρια");
+	} else {
+	  System.out.println("Απορριπτέος");
+	}
+	
+	String answer = "ν";
+	int k = 0, i = 1;
+	if ("ν".equals(answer)) {
+	   if (i >= 0) {
+		k += 1;
+	   } else {
+		k -= 1;
+	   }
+	}
+	System.out.println(answer + " " + i + " " + k);
+	
+	int num = -1;
+	String result = (num > 0) ? "θετικός" : "αρνητικός";
+	
+	String dayOfWeek = "Saturday";
+	result = ""; 
+	switch (dayOfWeek) {
+	  case "Sunday":                 
+	    result = "Κυριακή"; 
+	    break; 
+	  case "Monday": 
+	    result = "Δευτέρα"; 
+	    break; 
+	  case "Tuesday": 
+	    result = "Τρίτη"; 
+	    break; 
+	  case "Wednesday": 
+	    result = "Τετάρτη"; 
+	    break; 
+	  case "Thursday": 
+	    result = "Πέμπτη"; 
+	    break; 
+	  case "Friday": 
+	    result = "Παρασκευή"; 
+	    break; 
+	  case "Saturday": 
+	    result = "Σάββατο"; 
+	    break; 
+	  default: 
+	    result = "Error: " + dayOfWeek + 
+	             " is not a day of the week"; 
+	    break; 
+	} 
+	System.out.println(result);
+	
+	System.out.println("Δώσε μια επιλογή (one/two/other):");
+	//Scanner sc = new Scanner(System.in);
+	//String choice_ = sc.next();
+	String choice_ = "other";
+	switch (choice_) {
+	  case "one":
+		System.out.println(1);
+	       break;
+	  case "two":
+		System.out.println(2);
+	       break;  
+	  default:
+		System.out.println(-1);
+	}
+	
+	switch (grade) {
+  		case 20:
+  		case 19:
+  		case 18:
+  		      System.out.println("Άριστα");
+  		     break;
+  		case 17:
+  		case 16:
+  		      System.out.println("Πολύ καλά");
+  		      break;
+  		case 15:
+  		case 14:
+  		      System.out.println("Καλά");
+  		      break; 
+  		case 13:
+  		case 12:
+  		case 11:
+  		case 10:
+  		      System.out.println("Μέτρια");
+  		      break;
+  		default:
+			  System.out.println("Απορριπτέος");
+	}
+	
+	enum Choice {
+	  RED_PILL, BLUE_PILL
+	}
+	Choice choice = Choice.RED_PILL;
+	switch (choice) {
+	  case BLUE_PILL:
+	     System.out.println("Συνέχισε να κοιμάσαι...");
+	     break;  
+	  case RED_PILL:
+	     System.out.println("Καλωσήρθες στο Matrix!");
+	     break;
+	}
+	
+	dayOfWeek = "Saturday";
+	result = "";
+
+	switch (dayOfWeek) {
+	  case "Sunday" -> result = "Κυριακή"; 
+	  case "Monday" -> result = "Δευτέρα"; 
+	  case "Tuesday" -> result = "Τρίτη"; 
+	  case "Wednesday" -> result = "Τετάρτη"; 
+	  case "Thursday" -> result = "Πέμπτη"; 
+	  case "Friday" -> result = "Παρασκευή"; 
+	  case "Saturday" -> result = "Σάββατο"; 
+	  default -> result = "Error: " + dayOfWeek + 
+	             " is not a day of the week"; 
+	}
+	System.out.println(result);
+	
+	switch (grade) {
+	  case 20, 19, 18 -> System.out.println("Άριστα");
+	  case 17, 16 -> System.out.println("Πολύ καλά");
+	  case 15, 14 -> System.out.println("Καλά");
+	  case 10, 13 -> System.out.println("Μέτρια");
+	  default -> System.out.println("Απορριπτέος");
+	}
+	
+	result = switch (dayOfWeek) {
+	  case "Sunday" -> result = "Κυριακή"; 
+	  case "Monday" -> result = "Δευτέρα"; 
+	  case "Tuesday" -> result = "Τρίτη"; 
+	  case "Wednesday" -> result = "Τετάρτη"; 
+	  case "Thursday" -> result = "Πέμπτη"; 
+	  case "Friday" -> result = "Παρασκευή"; 
+	  case "Saturday" -> result = "Σάββατο"; 
+	  default -> result = "Error: " + dayOfWeek + 
+	             " is not a day of the week"; 
+	};
+	System.out.println(result);
+	
+	enum DAY {
+		MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+	};
+	DAY day = DAY.SATURDAY;
+	int score = switch (day) {
+	    case MONDAY, FRIDAY, SUNDAY -> 6;
+	    case TUESDAY                -> 7;
+	    default -> {
+	      String s = day.toString();
+	      int res = s.length();
+	      yield res;
+	    }
+	};
+	System.out.println(score);
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

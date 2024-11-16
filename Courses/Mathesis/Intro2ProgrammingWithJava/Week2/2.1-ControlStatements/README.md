@@ -316,6 +316,8 @@ int score = switch (day) {
 };
 ```
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/controlstatements.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Εφαρμογές
 Ας επανέλθουμε επομένως στο πώς μπορούμε να βελτιώσουμε το πρόγραμμα της άσκησης 3 του προηγούμενου μαθήματος. Ας δούμε το πρόγραμμά μας μέχρι στιγμής:
 
