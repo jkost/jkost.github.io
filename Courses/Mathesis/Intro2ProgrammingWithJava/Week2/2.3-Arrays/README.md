@@ -415,6 +415,8 @@ for (int i=0; i < ni; i++) {
  -7 -1
 ```
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/arrays.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Εφαρμογές
 Ας ξεκινήσουμε με μια σχετικά απλή άσκηση, να αντιμεταθέσουμε τα στοιχεία ενός πίνακα. 
 
