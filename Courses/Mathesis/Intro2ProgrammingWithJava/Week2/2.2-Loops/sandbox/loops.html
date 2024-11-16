@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">import java.util.*;
+
+public class Main {	
+ public static void main(String[] args) {
+	int i = 0;
+	// ο έλεγχος γίνεται προτού εκτελεστεί ο βρόχος
+	while (i &lt; 10) {
+		i++;
+	   	System.out.print(" " + i);
+	} // 0 1 2 3 4 5 6 7 8 9 
+	
+	i = 0;
+	do {
+	   System.out.print(" " + i++);
+	} while (i &lt; 10);
+	// 0 1 2 3 4 5 6 7 8 9
+	
+	for (i = 0; i &lt; 10; i++) {
+	  System.out.print(" " + i);
+	} //0 1 2 3 4 5 6 7 8 9
+	
+	int sum = 0;
+	for (i = 1; i &lt;= 10; i++) {
+	  	sum += i;
+	}
+	System.out.print(sum);
+	
+	sum = 0;
+	i = 1;
+	while (i &lt;= 10) {
+		sum += 1;
+		i++;
+	}
+	System.out.print(sum);
+
+	sum = 0;
+	i = 1;
+	do {
+		sum += 1;
+		i++;
+	} while (i &lt;= 10);
+	System.out.print(sum);
+	
+	for (i=0; i&lt;10; i++) {
+		for (int j=0; j&lt;10; j++) {
+			System.out.print(" " + (i+j));
+		}
+	    System.out.println();
+	}
+
+   for (i=1; i&lt;=5; i++) {
+	for (int j=4-i+1; j&gt;0; j--) {
+		System.out.print(" ");
+	}
+	for (int j=1; j&lt;=2*i-1; j++) {
+		System.out.print("*");
+	}	
+	System.out.println(); // αλλαγή γραμμής
+   }
+ 
+	for (i = 9; i &gt; 0; i--) {
+       if (i == 5) {
+          break;
+       }
+       System.out.print(" " + i);
+    } 
+	
+	for (i = 10; i &gt; 0; i--) {
+	  if (i % 2 != 0) {
+	     continue;
+	  }
+	  System.out.print(" " + i);
+	}
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
