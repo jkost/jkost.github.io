@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">import java.util.*;
+
+public class Main {	
+ public static void main(String[] args) {
+	 double x = 10;
+	 double y = perimeter(x);
+	 System.out.println("Perimeter of a circle or radius 10 = " + y);
+	 
+	 myPrint(1, 2, 3);
+	 String[] sentences = new String[] {
+	 	"Καλήν εσπέραν άρχοντες",
+	 	"πώς είναι ο ορισμός σας"
+	 };
+	 myPrint(sentences);
+	 
+	 int a = 3;
+	 changeParameter(a);
+	 System.out.println(a);
+	 
+	 int[] arr = {1, 2, 3, 4, 5};
+	 printArray(arr);
+	 
+ }
+ 
+ static double perimeter(double r) {  // y = perimeter(r)
+     return 2*Math.PI*r;        // 2*π*r
+ }
+ 
+ static void myPrint(int... numbers) {  // varargs
+   for (int i : numbers) {
+      System.out.print(i + " ");
+   }
+ }
+ 
+ static void myPrint(String... lines) {  // varargs
+    for (String e : lines) {
+        System.out.println(e);
+    }
+ }
+ 
+ static void changeParameter(int i) {
+  i = 10;
+  System.out.println(i);
+ }
+ 
+ static void printArray(int[] array) {
+    array[0]=100;
+    for (int i=0; i&lt;array.length; i++) {
+        System.out.print(array[i] + ", ");
+    }
+    System.out.println();
+ }
+ 
+ static int calculate(int x, int y) {
+   return x*y;
+ }
+ 
+ static double calculate(double x, double y) {
+     return x*y; 
+ }
+ 
+ static int calculate(int x, int y, int z) {
+   return x*y*z;
+ }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
