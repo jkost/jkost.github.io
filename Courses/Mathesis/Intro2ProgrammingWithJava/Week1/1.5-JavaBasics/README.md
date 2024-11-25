@@ -157,6 +157,8 @@ int radius;
 ```
 Τα σχόλια Javadoc σας επιτρέπουν να τεκμηριώνετε τον κώδικά σας και να παράγετε τη διεπαφή των κλάσεών σας (Application Program Interface - API) σε μορφή HTML. Π.χ. [εδώ](https://docs.oracle.com/en/java/javase/17/docs/api/index.html) βλέπετε το API των κλάσεων του JDK 17. Θα μάθουμε πώς να γράφουμε τα δικά μας σχόλια Javadoc σε επόμενο μάθημα.
 
+Μπορείτε να πειραματιστείτε περαιτέρω εδώ <a href="sandbox/javabasics.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 ## Ασκήσεις
 1. [Να γραφτεί ένα πρόγραμμα που να εκτυπώνει το παρακάτω σχήμα της τρίλιζας](https://codecheck.io/files/23100113566gua4okkjb72b61j8r0nj9sl4):
 

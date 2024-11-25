@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">public class Main {	
+ public static void main(String[] args) {
+	 System.out.println("Hello" + "world!");
+	 System.out.println("Hello " + "world!");
+	 System.out.println("Hello"); System.out.println("world!");
+	 System.out.print("Hello"); System.out.println(" world!");
+	 System.out.println("3 + 4 = " + 3 + 4);
+	 System.out.println("3 + 4 = " + (3 + 4));
+	 System.out.println("3 - 4 = " + (3 - 4));
+	 System.out.println("3 * 4 = " + (3 * 4));
+	 System.out.println("7 / 3 = " + (7 / 3));
+	 System.out.println("7 % 3 = " + (7 % 3));
+	 
+	 int radius;          // Αυτό είναι ένα σχόλιο μιας γραμμής
+	 /* 
+	  * Αυτό είναι ένα σχόλιο
+	  * πολλαπλών γραμμών.
+	  */
+	 int radius1;
+  }
+}</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>
