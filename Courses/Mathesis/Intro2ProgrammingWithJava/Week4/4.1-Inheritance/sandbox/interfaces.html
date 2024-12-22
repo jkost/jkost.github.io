@@ -35,6 +35,10 @@ class C extends B {
 
 class D extends C implements AInterface { }
 
+interface Z { static void print() { System.out.println("Hello Z"); }}
+
+class ZZ implements Z {}
+
 public class Main {  
   public static void main(String[] args) {
 	AInterface a = new A();
@@ -49,6 +53,7 @@ public class Main {
 	AInterface d = new D();
 	System.out.println(d.message());
 	
+	Z.print();
   }
 }</sandbox-source>
 </sandbox>

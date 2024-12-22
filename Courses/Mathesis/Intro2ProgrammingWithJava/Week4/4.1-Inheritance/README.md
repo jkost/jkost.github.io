@@ -1067,6 +1067,8 @@ jshell> d.message()
 
 ```"Hallo C"```. Με άλλα λόγια, η κλάση νικά.
 
+Επιβεβαιώστε τα παραπάνω εδώ <a href="sandbox/interfaces.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 Επειδή η πολλαπλή κληρονομικότητα ισχύει για τις διεπαφές, ενδέχεται μια διεπαφή να κληρονομήσει από δυο διεπαφές που παρέχουν την ίδια εξ'ορισμού μέθοδο.
 
 ```java
@@ -1089,7 +1091,7 @@ public class XY implements X, Y {
 
 ```java
 public class XY implements X, Y {
-    default String message() {
+    public String message() {
         return X.super.message();
     }
 }
@@ -1108,9 +1110,6 @@ jshell> interface Z { static void print() { System.out.println("Hello Z"); }}
 
 jshell> class ZZ implements Z {}
 |  created class ZZ
-
-jshell> Z z = new ZZ()
-z ==> ZZ@3327bd23
 
 jshell> Z.print()
 Hello Z
@@ -1133,7 +1132,7 @@ Hello Z
 | ```private abstract``` | Όχι | από τη μία πρέπει να επεκταθεί (```abstract```) από την άλλη δεν μπορεί (```private```) 
 | ```private default``` | Όχι | από τη μία θα πρέπει να μπορεί να επεκταθεί (```abstract```) από την άλλη δεν μπορεί (```private```)
 
-Εξασκηθείτε στα παραπάνω εδώ <a href="sandbox/interfaces.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+Εξασκηθείτε στα παραπάνω εδώ <a href="sandbox/interfaces2.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
 
 ## Περίληψη
 Ας δούμε περιληπτικά τι μάθαμε σε αυτό και τα προηγούμενα μαθήματα.
