@@ -43,19 +43,12 @@
 
 ## Θέματα πληροφορικής
 * [Εισαγωγή στο LibreOffice](IT/LibreOffice/README.md) √
-* [Εισαγωγή στα Μαζικά Δεδομένα (Big Data)](IT/BigData/README.md)
 * [Συστήματα Διαχείρισης Εκδόσεων (Version Control)](IT/VersionControl/README.md) √
 * [Ασφάλεια Apache Tomcat](IT/SecureTomcat/README.md) √
+* [Εισαγωγή στα Μαζικά Δεδομένα (Big Data)](IT/BigData/README.md)
 * [Εισαγωγή στα Γεωγραφικά Συστήματα Πληροφοριών](IT/GIS/README.md) √
-* ["OpenMap Tutorial, Part 1", Java Code Geeks, 2015](https://www.javacodegeeks.com/2015/10/openmap-tutorial-part-1.html) √
-* ["OpenMap Tutorial Part 2 – Build a basic map application using the MapHandler – Part 1", Java Code Geeks, 2015](https://www.javacodegeeks.com/2015/11/openmap-tutorial-part-2-build-basic-map-application-using-maphandler-part-1.html) √
-* ["OpenMap Tutorial 3 – Build a basic map application using the MapHandler – Part 2", Java Code Geeks, 2015](https://www.javacodegeeks.com/2015/12/openmap-tutorial-3-build-basic-map-application-using-maphandler-part-2.html) √
-* ["OpenMap Tutorial 4 – Layers", Java Code Geeks, 2016](https://www.javacodegeeks.com/2016/01/openmap-tutorial-4-layers.html) √
+* ["OpenMap", Java Code Geeks](IT/Openmap.md) √
 * ["How to secure Openfire XMPP server", Java Code Geeks, 2015](https://www.javacodegeeks.com/2015/02/secure-openfire-xmpp-server.html) √
-* ["Processing real-time data with Storm, Kafka and ElasticSearch – Part 1", Java Code Geeks, 2020](https://www.javacodegeeks.com/processing-real-time-data-with-storm-kafka-and-elasticsearch-part-1.html) √
-* ["Processing real-time data with Storm, Kafka and ElasticSearch – Part 2", Java Code Geeks, 2020](https://www.javacodegeeks.com/processing-real-time-data-with-storm-kafka-and-elasticsearch-part-2.html) √
-* ["Processing real-time data with Storm, Kafka and ElasticSearch – Part 3", Java Code Geeks, 2020](https://www.javacodegeeks.com/processing-real-time-data-with-storm-kafka-and-elasticsearch-part-3.html) √
-* ["Processing real-time data with Storm, Kafka and ElasticSearch – Part 4", Java Code Geeks, 2020](https://www.javacodegeeks.com/processing-real-time-data-with-storm-kafka-and-elasticsearch-part-4.html) √
-* ["Processing real-time data with Storm, Kafka and ElasticSearch – Part 5", Java Code Geeks, 2021](https://www.javacodegeeks.com/processing-real-time-data-with-storm-kafka-and-elasticsearch-part-5.html) √
+* ["Processing real-time data with Storm, Kafka and ElasticSearch", Java Code Geeks](IT/Realtime.md) √
 
 ---
