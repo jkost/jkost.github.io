@@ -1423,7 +1423,8 @@ Linux](https://github.com/torvalds/linux), το [Apache NetBeans](https://github
    δει(-ουν). Μπορείτε ακόμα να προσθέσετε ένα ```README.md``` με πληροφορίες για το έργο σας, ```.gitignore``` 
    ακόμα και άδεια χρήσης. Επειδή θέλουμε να ανεβάσουμε το τοπικό μας αποθετήριο στο github, δεν επιλέγουμε τίποτα 
    απ' αυτά και πατάμε απλώς το κουμπί **Create repository...**. Το νέο σας αποθετήριο δημιουργήθηκε στη διεύθυνση 
-   URL: https://github.com/your-username/your-repository-name, π.χ. https://github.com/jkosta-test/my-project. 
+   URL: https://github.com/your-username/your-repository-name, π.χ. [https://github.com/jkosta-test/my-project](
+   https://github.com/jkosta-test/my-project). 
    Μάλιστα το github σας δίνει οδηγίες πώς να καταχωρήσετε το τοπικό σας αποθετήριο στο νέο αποθετήριο.
 2. Στο τοπικό αποθετήριο, ορίστε μια απομακρυσμένη διεύθυνση με την παρακάτω εντολή:
 
@@ -1525,7 +1526,7 @@ $  git branch -vv
 2. να το κάνει fork (διχαλώσει).
 
 ##### Προσθήκη χρήστη σε απομακρυσμένο αποθετήριο του github
-Έχοντας μεταβεί στο απομακρυσμένο αποθετήριό σας (https://github.com/jkosta-test/myproject), (όπου αντί για 
+Έχοντας μεταβεί στο απομακρυσμένο αποθετήριό σας [https://github.com/jkosta-test/my-project](https://github.com/jkosta-test/myproject), (όπου αντί για 
 ```jkosta-test``` βλέπετε το δικό σας όνομα χρήστη), ακολουθήστε τα ακόλουθα βήματα:
 
 1. Κάντε κλικ στα **Settings**
@@ -1671,7 +1672,7 @@ $ git branch -a
 (collaborator) του 
 απομακρυσμένου αποθετηρίου σας. 
 
-1. Ο συνεργάτης (Νίκος) πρέπει από το λογαριασμό του στο github να μεταβεί στην ιστοσελίδα https://github.com/jkosta-test/myproject και να πατήσει στο κουμπί **Fork** (δίνοντας το ίδιο όνομα έργου). Με αυτόν τον τρόπο έχει 
+1. Ο συνεργάτης (Νίκος) πρέπει από το λογαριασμό του στο github να μεταβεί στην ιστοσελίδα [https://github.com/jkosta-test/myproject](https://github.com/jkosta-test/myproject]) και να πατήσει στο κουμπί **Fork** (δίνοντας το ίδιο όνομα έργου). Με αυτόν τον τρόπο έχει 
 κλωνοποιηθεί το απομακρυσμένο αποθετήριο στο δικό του λογαριασμό github. Πλέον μπορεί να κλωνοποιήσει το διχαλωμένο 
    απομακρυσμένο αποθετήριο τοπικά:
 
@@ -1729,7 +1730,8 @@ $ git commit -m "Updated README.md"
 στο αρχικό 
 (```jkosta-test/myproject```). Πατήστε **Create pull request**.
 
-Στο αρχικό πλέον αποθετήριο (https://github.com/jkosta-test/myproject) θα δείτε ότι υπάρχει ένα νέο Pull request. 
+Στο αρχικό πλέον αποθετήριο [https://github.com/jkosta-test/myproject](https://github.com/jkosta-test/myproject) θα 
+δείτε ότι υπάρχει ένα νέο Pull request. 
 Επιλέγοντας το **Pull requests** θα δείτε μια λίστα με τα ανοιχτά αιτήματα συγχώνευσης. Επιλέξτε το **Updated README.
 md** pull request και πατήστε στο **Merge pull request** και **Confirm merge**. Πλέον οι αλλαγές του συνεργάτη σας 
 Νίκου έχουν συγχωνευθεί στο απομακρυσμένο αποθετήριό σας. Μένει να κάνετε ```git pull``` για να τις μεταφέρετε στο 
