@@ -332,12 +332,14 @@ jshell> /help
 Για να το εγκαταστήσετε χρειάζεστε (ανάλογα με την πλατφόρμα σας):
 * να εγκαταστήσετε την [python3](https://www.codecademy.com/article/install-python3) αν δεν είναι ήδη εγκατεστημένη στο σύστημά σας
 * να εγκαταστήσετε το Jupyter Lab ακολουθώντας τις [οδηγίες](https://jupyter.org/install)
-* να εγκαταστήσετε την [IJava](https://github.com/SpencerPark/IJava) στο Jupyter ώστε να μπορείτε να τρέχετε προγράμματα Java. Απαιτείται να έχετε εγκατεστημένη έκδοση JDK 9 ή μεγαλύτερη που περιέχει το JShell. 
-   * Ο πιο εύκολος τρόπος εγκατάστασης είναι να κατεβάσετε το αρχείο [ijava-X.X.X.zip](https://github.com/SpencerPark/IJava/releases), να το αποσυμπιέσετε σε κάποιον φάκελο και να εκτελέσετε την εντολή ```python3 install.py --sys-prefix```.
+* να εγκαταστήσετε την [JJava](https://dflib.org/jjava/docs/1.x/#_install_jjava) στο Jupyter ώστε να μπορείτε να τρέχετε προγράμματα Java. Απαιτείται να έχετε εγκατεστημένη έκδοση JDK 9 ή μεγαλύτερη που περιέχει το JShell. 
+   * Ο πιο εύκολος τρόπος εγκατάστασης είναι να κατεβάσετε το αρχείο [jjava-${version}-kernelspec.zip](https://github.com/dflib/jjava/releases), να το αποσυμπιέσετε σε κάποιον φάκελο και να εκτελέσετε την εντολή ```jupyter kernelspec install jjava-${version}-kernelspec --user --name=java```.
    
 Για να εκτελέσετε το Jupyter Lab, μεταβείτε στο φάκελο που έχετε κατεβάσει τα ```.ipynb``` αρχεία και δώστε σε μια γραμμή εντολών κελύφους ή DOS την εντολή ```jupyter lab```. Θα φορτώσει μια ιστοσελίδα στον πλοηγό σας που θα είναι το περιβάλλον του Jupyter Lab από το οποίο μπορείτε να ανοίξετε τα αρχεία ```.ipynb``` αλλά και να τα τροποποιήσετε.
 
 Αν δεν μπορείτε ή δεν θέλετε να εγκαταστήσετε το Jupyter Lab, τότε μπορείτε να τα ανοίξετε τα αρχεία ```.ipynb``` στο [Colab](https://colab.research.google.com/), επιλέγοντας **Upload**. Δυστυχώς δεν θα μπορέσετε να τρέξετε τα παραδείγματα Java καθώς υποστηρίζεται μόνο η γλώσσα Python.
+
+Το [Visual Studio Code](https://code.visualstudio.com/download) υποστηρίζει jupyter notebooks και θα σας ρωτήσει αν θέλετε να χρησιμοποιήσετε το JJava kernel όταν πατήσετε στο **Run All**.
 
 ## Πηγές
 1. [JDK 17 Documentation](https://docs.oracle.com/en/java/javase/17/?overview-summary.html)
