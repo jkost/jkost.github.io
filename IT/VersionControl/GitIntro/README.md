@@ -1,20 +1,18 @@
 # Εισαγωγή στο Git
 Σας έχει τύχει να δημιουργήσετε εκδόσεις αρχείων ή φακέλων για κάτι στο οποίο δουλεύετε, π.χ. ```MyProject_v1```, 
-```MyProject_v2``` ή ```Document_v1.txt```, ```Document_v2.txt```, κλπ.; Πόσο εύκολο ήταν; Ανάλογα με το μέγεθος του έργου σας, ξοδεύετε χώρο στο δίσκο αντιγράφοντας όλα τα αρχεία ενώ μεταξύ δύο εκδόσεων μπορεί να έχετε τροποποιήσει μόνο λίγα αρχεία. Επίσης, πόσο εύκολο είναι να εργαστείτε με άλλους στην ίδια έκδοση του έργου σας; Εδώ είναι που τα _Συστήματα Διαχείρισης Εκδόσεων (ΣΔΕ)_ ή _version control systems (VCS)_ έρχονται να κάνουν τη ζωή μας πιο εύκολη.
+```MyProject_v2``` ή ```Document_v1.txt```, ```Document_v2.txt```, κλπ.; Πόσο εύκολο ήταν; Ανάλογα με το μέγεθος του έργου σας, ξοδεύετε χώρο στο δίσκο αντιγράφοντας όλα τα αρχεία ενώ μεταξύ δύο εκδόσεων μπορεί να έχετε τροποποιήσει μόνο λίγα αρχεία. Επίσης, πόσο εύκολο είναι να συνεργαστείτε με άλλους στην ίδια έκδοση του έργου σας; Εδώ είναι που τα _Συστήματα Διαχείρισης Εκδόσεων (ΣΔΕ)_ ή _version control systems (VCS)_ έρχονται να κάνουν τη ζωή μας πιο εύκολη.
 
 Σε αυτό το εισαγωγικό άρθρο θα μάθουμε για την ιστορία των ΣΔΕ, τις διάφορες κατηγορίες τους και θα επικεντρωθούμε 
-στις βασικές εντολές του πιο διαδεδομένου ΣΔΕ σήμερα, το Git. Αφού μάθετε τις βασικές εντολές του Git, τότε μπορείτε 
-να συνεχίσετε με το επόμενο άρθρο [Git για προχωρημένους](https://jkost.github.io/VersionControl/Git/) για να 
-εντρυφήσετε στις δυνατότητές του.  
+στις βασικές εντολές του πιο διαδεδομένου ΣΔΕ σήμερα, το Git. Αν διαβάσατε το άρθρο μου για ένα άλλο ΣΔΕ, το [Mercurial](https://jkost.github.io/IT/VersionControl/Mercurial/) τότε έχετε ένα καλό υπόβαθρο για να κατανοήσετε καλύτερα αυτό το άρθρο.
 
 ## Ιστορία
 
 Υπάρχουν τρεις κατηγορίες ΣΔΕ: _τοπικά_ (local), _κεντροποιημένα_ (centralized) και _κατανεμμημένα_ (distributed). 
 
-Τα τοπικά ΣΔΕ δεν επέτρεπαν συνεργασία με άλλους χρήστες, κάθε χρήστης είχε δηλ. το δικό του αποθετήριο (repository) τοπικά όπου μπορούσε μόνο να διαχειρίζεται εκδόσεις των αρχείων του. Τα πιο γνωστά τοπικά ΣΔΕ ήταν:
+Τα τοπικά ΣΔΕ δεν επέτρεπαν συνεργασία με άλλους χρήστες, κάθε χρήστης είχε δηλ. το δικό του αποθετήριο (repository) τοπικά όπου μπορούσε να διαχειρίζεται εκδόσεις των αρχείων του μόνο. Τα πιο γνωστά τοπικά ΣΔΕ ήταν:
 
-* SCCS (Source Code Control System) 1970
-* RCS (Revision Control System) 1982
+* [SCCS (Source Code Control System) 1970](https://www.gnu.org/software/cssc/)
+* [RCS (Revision Control System) 1982](https://www.gnu.org/software/rcs/)
 
 Τα κεντροποιημένα ΣΔΕ ακολουθούν το μοντέλο _πελάτη-διακομιστή (client-server)_ όπου υπάρχει ένας κεντρικός 
 διακομιστής (server) στον οποίο έχει εγκατασταθεί το server πρόγραμμα του ΣΔΕ και σ' αυτόν έχει δημιουργηθεί το 
@@ -22,22 +20,22 @@
 κεντρικό αποθετήριο. Αν ο διακομιστής βγει εκτός λειτουργίας, τότε η διαδικασία αποτυγχάνει. Τα πιο γνωστά 
 κεντροποιημένα ΣΔΕ είναι:
 
-* CVS (Concurrent Version Control) 
-* Subversion
-* Perforce
-* Merant PVCS
-* StarTeam
-* IBM Rational ClearCase
-* IBM Team Concert
-* IBM Rational Synergy
-* MS Visual SourceSafe
+* [CVS (Concurrent Version Control)](https://cvs.nongnu.org/) 
+* [Subversion](https://subversion.apache.org/)
+* [Perforce](https://www.perforce.com/products/helix-core)
+* [Merant PVCS](https://en.freedownloadmanager.org/Windows-PC/PVCS-Version-Manager.html)
+* [StarTeam](https://en.wikipedia.org/wiki/StarTeam)
+* [IBM Rational ClearCase](https://www.ibm.com/support/pages/rational-clearcase-910)
+* [IBM Team Concert](https://www.ibm.com/docs/en/devops-test-workbench/8.7.1?topic=concert-rational-team)
+* [IBM Rational Synergy](https://www.ibm.com/products/rational-synergy)
+* [MS Visual SourceSafe](https://en.wikipedia.org/wiki/Microsoft_Visual_SourceSafe)
 
-Στην τελευταία κατηγορία ανήκουν ΣΔΕ όπως το [Mercurial](https://jkost.github.io/VersionControl/Mercurial/) και το _Git_, παιδί του Linux, το τελευταίο, που δημιουργήθηκε για την ανάπτυξη του πυρήνα του Linux από τους ανά τον κόσμο προγραμματιστές. Αυτά τα συστήματα δεν περιορίζονται σ' έναν διακομιστή, ο οποίος μπορεί να εξυπηρετεί μόνο μέχρι έναν ορισμένο αριθμό από χρήστες, ενώ όταν αυτός 'κρασάρει', τότε σταματούν και οι ενημερώσεις των εκδόσεων. Αντίθετα, στα κατανεμημένα συστήματα εκδόσεων, κάθε χρήστης έχει το δικό του τοπικό αποθετήριο (repository) των εκδόσεων, κι όταν χρειαστεί να συνεργαστεί με άλλους χρήστες, τότε γίνεται συγχώνευση των αποθετηρίων τους. Με άλλα λόγια, κάθε χρήστης έχει το δικό του backup και δεν απαιτείται συνεχής σύνδεση στο δίκτυο για να υποβληθούν οι αλλαγές (commit). Επιπλέον, το Git έπρεπε να είναι αξιόπιστο, γρήγορο και να μπορεί να διαχειρίζεται μεγάλα έργα (όπως π.χ. τον κώδικα του Linux). Τα πιο γνωστά κατανεμημένα ΣΔΕ είναι:
+Στην τελευταία κατηγορία ανήκουν ΣΔΕ όπως το _Mercurial_ και το _Git_, παιδί του Linux, το τελευταίο, που δημιουργήθηκε για την ανάπτυξη του πυρήνα του Linux από τους ανά τον κόσμο προγραμματιστές. Αυτά τα συστήματα δεν περιορίζονται σ' έναν διακομιστή, ο οποίος μπορεί να εξυπηρετεί μόνο μέχρι έναν ορισμένο αριθμό από χρήστες, ενώ όταν αυτός 'κρασάρει', τότε σταματούν και οι ενημερώσεις των εκδόσεων. Αντίθετα, στα κατανεμημένα συστήματα εκδόσεων, κάθε χρήστης έχει το δικό του τοπικό αποθετήριο (repository) των εκδόσεων, κι όταν χρειαστεί να συνεργαστεί με άλλους χρήστες, τότε γίνεται συγχώνευση των αποθετηρίων τους. Με άλλα λόγια, κάθε χρήστης έχει το δικό του backup και δεν απαιτείται συνεχής σύνδεση στο δίκτυο για να υποβληθούν οι αλλαγές (commit). Επιπλέον, το Git έπρεπε να είναι αξιόπιστο, γρήγορο και να μπορεί να διαχειρίζεται μεγάλα έργα (όπως π.χ. τον κώδικα του Linux). Τα πιο γνωστά κατανεμημένα ΣΔΕ είναι:
 
-* Git
-* Mercurial
-* SVK
-* Veracity
+* [Git](https://git-scm.com/)
+* [Mercurial](https://www.mercurial-scm.org/)
+* [SVK](https://metacpan.org/dist/SVK)
+* [Veracity](http://veracity-scm.com/)
 
 Οι λόγοι χρήσης συστημάτων διαχείρισης εκδόσεων είναι πολλοί:
 
@@ -48,9 +46,9 @@
 
 Με λίγα λόγια τα βασικά χαρακτηριστικά ενός ΣΔΕ είναι:
 
-* Αντιστρεψιμότητα (Reversibility), δηλ. να μπορούμε να γυρίσουμε πίσω στο ιστορικό αν έχουμε κάνει κάποιο λάθος 
-* Ταυτόχρονη χρήση (Concurrency)
-* Χρήση επισημειώσεων (Annotations) για τις διάφορες εκδόσεις 
+* _Αντιστρεψιμότητα (Reversibility)_, δηλ. να μπορούμε να γυρίσουμε πίσω στο ιστορικό αν έχουμε κάνει κάποιο λάθος 
+* _Ταυτόχρονη χρήση (Concurrency)_
+* _Χρήση επισημειώσεων (Annotations)_ για τις διάφορες εκδόσεις 
 
 Παράλληλα, τo Git προσφέρει πολλά πλεονεκτήματα συγκριτικά με άλλα συστήματα διαχείρισης εκδόσεων:
 
@@ -61,7 +59,7 @@
 * Δεν μειώνεται η απόδοσή του όσο κι αν αυξηθούν οι χρήστες ή ο όγκος των αρχείων.
 * Είναι ανοικτού κώδικα και φυσικά δωρεάν.
 
-Το Git είναι πιο πολύπλοκο από το Mercurial, όπως θα δούμε στη συνέχεια, αλλά είναι το πιο δημοφιλές σύστημα διαχείρισης εκδόσεων σήμερα.
+Το Git είναι πιο πολύπλοκο από το [Mercurial](https://jkost.github.io/VersionControl/Mercurial/), όπως θα δούμε στη συνέχεια, αλλά είναι το πιο δημοφιλές σύστημα διαχείρισης εκδόσεων σήμερα.
 
 ## Εγκατάσταση
 Η εγκατάσταση του Git στο Ubuntu ακολουθεί την πεπατημένη:
@@ -341,7 +339,7 @@ Date:   Sun Jul 7 13:56:51 2024 +0200
 $ git log --pretty=oneline
 488273f6a5ab8162629e105c7c175094819151ed Initial commit
 ```
-Με την εντολή ```commit``` καταχωρούμε πλέον τις αλλαγές μας στο τοπικό αποθετήριο (```.git```). Η εντολή ```log``` μας δείχνει το ιστορικό. Ακολουθούμε την ίδια σειρά για κάθε αλλαγή που κάνουμε στα αρχεία μας, δηλ. ```git add```, ```git commit -m "Message"```.
+Με την εντολή ```commit``` καταχωρούμε τις αλλαγές μας στο τοπικό αποθετήριο (```.git```). Η εντολή ```log``` μας δείχνει το ιστορικό. Ακολουθούμε την ίδια σειρά για κάθε αλλαγή που κάνουμε στα αρχεία μας, δηλ. ```git add```, ```git commit -m "Message"```.
 
 **Σημείωση.** _Η αντίστοιχη εντολή του mercurial είναι:_
 ```bash
@@ -489,7 +487,7 @@ $ git log --graph --oneline --all
 **Εικόνα 1** _Ιστορικό του αποθετηρίου μας όπως φαίνεται στο SourceTree_
 
 #### .gitignore
-Υπάρχουν αρχεία που δε θα θέλατε να προσθέσετε στο αποθετήριό σας. Τέτοια αρχεία είναι π.χ. εκτελέσιμα ή δυαδικά αρχεία, αρχεία που παράγονται από διάφορα εργαλεία, προσωρινά αρχεία κλπ. γενικά αρχεία που μπορείτε εύκολα να παράγετε ή δεν έχει νόημα να υποβάλλετε στο αποθετήριό σας. 
+Υπάρχουν αρχεία που δε θα θέλατε να προσθέσετε στο αποθετήριό σας. Τέτοια αρχεία είναι π.χ. προσωρινά αρχεία, εκτελέσιμα ή δυαδικά αρχεία, αρχεία που παράγονται από διάφορα εργαλεία κλπ. γενικά αρχεία που μπορείτε εύκολα να παράγετε ή δεν έχει νόημα να υποβάλλετε στο αποθετήριό σας. 
 ```bash
 $ gcc -o hello.exe hello.c
 $ git status
@@ -577,8 +575,9 @@ $ git clone /projects/myproject
 Cloning into 'myproject'...
 done.
 $ cd myproject
-$ git log --oneline --graph --all
-* 245fa8f (HEAD -> master) Updated hello.c
+$ git log --oneline --graph
+* bd054a7 (HEAD -> master) Added .gitignore
+* 245fa8f Updated hello.c
 * 488273f Initial commit
 ```
 
@@ -657,17 +656,17 @@ $ git add .
 $ git commit -m "Updated goodbye.c"
 [newbranch df85b3f] Updated goodbye.c
  1 file changed, 7 insertions(+)
-$ git log --oneline --graph --all
-* df85b3f (HEAD -> newbranch, master) Updated goodbye.c
-* bd054a7 Added .gitignore
+$ git log --oneline --graph
+* df85b3f (HEAD -> newbranch) Updated goodbye.c
+* bd054a7 (master) Added .gitignore
 * 245fa8f Updated hello.c
 * 488273f Initial commit
 $ git switch master
 Switched to branch 'master'
 $ more goodbye.c
 
-$ git log --oneline --graph --all
-* bd054a7 (HEAD -> master, newbranch) Added .gitignore
+$ git log --oneline --graph
+* bd054a7 (HEAD -> master) Added .gitignore
 * 245fa8f Updated hello.c
 * 488273f Initial commit
 ```
@@ -689,7 +688,7 @@ int main(void) {
 }
 
 goodbye.c (END)
-$ git log --oneline --graph --all
+$ git log --oneline --graph
 * df85b3f (HEAD -> master, newbranch) Updated goodbye.c
 * bd054a7 Added .gitignore
 * 245fa8f Updated hello.c
@@ -712,11 +711,10 @@ $ git branch
 ```feature/```, για διόρθωση σφαλμάτων ```bug/``` κλπ. Έτσι αν δουλεύετε π.χ. στο χαρακτηριστικό δημιουργία νέα 
 παραγγελίας θα μπορούσατε να ονομάσετε τον αντίστοιχο κλάδο ως ```feature/neworder```. Με αυτόν τον τρόπο μπορείτε 
 να ξεχωρίζετε πολύ εύκολα ποιοί κλάδοι είναι για νέα χαρακτηριστικά, ποιοί είναι για διόρθωση σφαλμάτων κλπ. Άλλη 
-σύμβαση είναι να ονομάζετε τον κλάδο σας προσθέτοντας το JIRA id αν χρησιμοποιείτε [JIRA](https://www.atlassian.com/software/jira) (ή κάποιο άλλο σύστημα 
-διαχείρισης σφαλμάτων/χαρακτηριστικών)._
+σύμβαση είναι να ονομάζετε τον κλάδο σας προσθέτοντας το JIRA id αν χρησιμοποιείτε [JIRA](https://www.atlassian.com/software/jira) (ή κάποιο άλλο σύστημα διαχείρισης σφαλμάτων/χαρακτηριστικών)._
 
 ### Προβλήματα Συγχώνευσης
-Ας υποθέσουμε ότι δουλεύετε σε ένα νέο χαρακτηριστικό σε έναν κλάδο (```feature1branch```) κι ένας άλλος συνάδελφος προσπαθεί να διορθώσει ένα σφάλμα και δουλεύει σε έναν άλλο κλάδο (```bug1branch```):
+Ας υποθέσουμε ότι δουλεύετε σε ένα νέο χαρακτηριστικό σε έναν κλάδο (```feature1branch```) ενώ ταυτόχρονα προσπαθείτε να διορθώσετε ένα σφάλμα σε έναν άλλο κλάδο (```bug1branch```):
 ```bash
 $ cd ~hawk/projects/myproject
 $ git branch feature1branch
@@ -724,7 +722,7 @@ $ git branch
   feature1branch
 * master
 ```
-Εσείς αλλάζετε το μήνυμα που εμφανίζεται στο χρήστη στο αρχείο ```hello.c```:
+Στον κλάδο ```feature1branc``` αλλάζετε το μήνυμα που εμφανίζεται στο χρήστη στο αρχείο ```hello.c```:
 ```bash
 $ git switch feature1branch
 Switched to branch 'feature1branch'
@@ -752,16 +750,15 @@ $ git add .
 $ git commit -m "Modified hello.c"
 [feature1branch 2946b52] Modified hello.c
  1 file changed, 1 insertion(+), 1 deletion(-)
-$ git log --oneline --graph --all
-* | 2946b52 (HEAD -> feature1branch, master) Modified hello.c
-|/ 
+$ git log --oneline --graph
+* 2946b52 (HEAD -> feature1branch) Modified hello.c 
 * df85b3f (master) Updated goodbye.c
 * bd054a7 Added .gitignore
 * 245fa8f Updated hello.c
 * 488273f Initial commit
 $ git switch master
 Switched to branch 'master'
-$ git log --oneline --graph --all
+$ git log --oneline --graph
 * df85b3f (HEAD -> master) Updated goodbye.c
 * bd054a7 Added .gitignore
 * 245fa8f Updated hello.c
@@ -772,20 +769,18 @@ Fast-forward
  hello.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 $ git log --oneline --graph --all
-* | 2946b52 (HEAD -> master, feature1branch) Modified hello.c
-|/ 
+* 2946b52 (HEAD -> master, feature1branch) Modified hello.c 
 * df85b3f Updated goodbye.c
 * bd054a7 Added .gitignore
 * 245fa8f Updated hello.c
 * 488273f Initial commit
 ```
-Ο άλλος συνάδελφος που δουλεύει στον κλάδο ```bug1branch``` τροποποιεί το ίδιο αρχείο:
+Ας υποθέσουμε τώρα ότι ξεχάσατε αυτήν την αλλαγή, και αφού καταπιάνεστε με το έργο πάλι μετά από λίγο καιρό, δημιουργείτε ένα νέο κλάδο ```bug1branch``` και τροποποιείτε το ίδιο αρχείο:
 ```bash
-$ cd ~nick/projects/myproject
-$ git branch bug1branch
-$ git switch bug1branch
+$ cd ~hawk/projects/myproject
+$ git switch -c bug1branch
 Switched to branch 'bug1branch'
-vi hello.c
+$ vi hello.c
 #include <stdio.h>
 
 int main(void) {
@@ -810,18 +805,16 @@ $ git commit -m "Fixed hello.c"
 [bug1branch 00937c5] Fixed hello.c
  1 file changed, 1 insertion(+), 1 deletion(-)
 $ git log --oneline --graph --all
-* | 00937c5 (HEAD -> bug1branch, master) Fixed hello.c
-|/ 
-* df85b3f Updated goodbye.c
+* 00937c5 (HEAD -> bug1branch) Fixed hello.c
+* df85b3f (master) Updated goodbye.c
 * bd054a7 Added .gitignore
 * 245fa8f Updated hello.c
 * 488273f Initial commit
 $ git switch master
 Switched to branch 'master'
 $ git log --oneline --graph --all
-* | 2946b52 (HEAD -> master, feature1branch) Modified hello.c
-|/ 
-* df85b3f Updated goodbye.c
+* 2946b52 (feature1branch) Modified hello.c
+* df85b3f (HEAD -> master) Updated goodbye.c
 * bd054a7 Added .gitignore
 * 245fa8f Updated hello.c
 * 488273f Initial commit
@@ -1769,11 +1762,317 @@ $ git log --oneline --all --graph
 * 488273f Initial commit
 ```
 ### Αναζήτηση αλλαγών
+Το git παρέχει πολλούς τρόπους αναζήτησης. Μπορείτε να αναζητήσετε σχεδόν τα πάντα. Ας δούμε κάποιες εντολές γι' αυτό το σκοπό:
+
+```bash
+$ git blame hello.c  
+245fa8fc (Ioannis Kostaras 2024-07-07 14:42:10 +0200 1) #include <stdio.h>
+245fa8fc (Ioannis Kostaras 2024-07-07 14:42:10 +0200 2) 
+245fa8fc (Ioannis Kostaras 2024-07-07 14:42:10 +0200 3) int main(void) {
+00937c51 (Ioannis Kostaras 2024-07-14 17:09:48 +0200 4)     puts("Γειά σου git!");
+245fa8fc (Ioannis Kostaras 2024-07-07 14:42:10 +0200 5)     return 0;
+245fa8fc (Ioannis Kostaras 2024-07-07 14:42:10 +0200 6) }
+```
+Η εντολή ```git blame``` εμφανίζει πολλές χρήσιμες πληροφορίες όπως ποιός άλλαξε τελευταίος κάθε γραμμή ενός αρχείου 
+και τι αλλαγές έκανε καθώς και λεπτομέρειες για την υποβολή της κάθε αλλαγής. Έτσι, π.χ., παραπάνω βλέπουμε το hash 
+της υποβολής, το όνομα αυτού που έκανε την αλλαγή, την ημερομηνία και ώρα που έγινε η αλλαγή, ο αρ. γραμμής και το 
+περιεχόμενο της αλλαγής. 
+
+Η εντολή ```git blame``` δεν μπορεί να σου πει αν μια γραμμή προστέθηκε ή άλλαξε ή διαγράφηκε. Απλά δίνει λεπτομέρειες  
+σχετικά με την τελευταία αλλαγή (δηλ. αυτήν που δείχνει ο ```HEAD```) που έγινε στη γραμμή του αρχείου. Μπορούμε 
+φυσικά να δούμε και προηγούμενες αλλαγές δίνοντας το κατάλληλο hash, π.χ.
+
+```bash
+$ git blame -s 245fa8f hello.c
+245fa8fc 1) #include <stdio.h>
+245fa8fc 2) 
+245fa8fc 3) int main(void) {
+245fa8fc 4)     puts("Γειά σου κόσμε!");
+245fa8fc 5)     return 0;
+245fa8fc 6) }
+```
+Στο παραπάνω παράδειγμα δώσαμε και την παράμετρο ```-s```, από το suppress, που δεν εμφανίζει το όνομα και την 
+ημερομηνία και ώρα. Φυσικά, υπάρχουν κι άλλες χρήσιμες παράμετροι που μπορείτε να χρησιμοποιήσετε για να παράγετε 
+την έξοδο όπως τη θέλετε. Δώστε ```git help blame``` για να δείτε όλες τις επιλογές.
+
+Μια άλλη χρήσιμη εντολή αναζήτησης είναι η ```git grep```, παρόμοια με την εντολή ```grep``` του Linux αλλά με τη δυνατότητα να αναζητά και στο αποθετήριο git.  
+
+```bash
+$ git grep "Γειά σου"
+hello.c:    puts("Γειά σου git!");
+```
+Η παραπάνω εντολή αναζήτησε τη φράση ```"Γειά σου"``` στο αποθετήριό μας και μας επέστρεψε σε πιο αρχείο βρέθηκε 
+αυτή η φράση. Αν η ίδια φράση βρίσκεται στο ίδιο αρχείο περισσότερες από μια φορές, τότε θα δούμε να εμφανίζεται το 
+αρχείο τόσες φορές. Αν η φράση εμφανίζεται σε πολλά αρχεία τότε θα τα εμφανίσει με αλφαβητική σειρά. Όπως και στην 
+εντολή ```grep```, μπορούμε να περάσουμε πολλές παραμέτρους στην εντολή όπως, 
+
+ * ```-i``` (ignore) για να αγνοήσουμε 
+τη διαφορά πεζών κεφαλαίων γραμμάτων 
+```bash
+$ git grep -i "γειά σου"
+hello.c:    puts("Γειά σου git!");
+```
+ * η παράμετρος ```-n``` (ή ```--line-number```) εμφανίζει και τον αριθμό γραμμής:
+```bash
+$ git grep -n "Γειά σου"  
+hello.c:4:    puts("Γειά σου git!");
+```
+ * η παράμετρος ```-l``` (```--name-only```) εμφανίζει μόνο τα ονόματα αρχείων που περιέχουν τη λέξη/φράση:
+```bash
+$ git grep -l "Γειά σου"  
+hello.c
+```
+και φυσικά μπορείτε να τις συνδυάσετε, όπως π.χ.
+```bash
+$ git grep -ni "γειά σου" 
+hello.c:4:    puts("Γειά σου git!");
+```
+Υποστηρίζονται και κανονικές εκφράσεις (regular expressions).
+
+**Προσοχή!** Η εντολή αυτή αναζητά μόνο αρχεία που είναι στο αποθετήριο του git (tracked). Αρχεία που δεν είναι στο 
+αποθετήριο (untracked) δεν επιστρέφονται μ' αυτήν την εντολή. Με άλλα λόγια η εντολή ```git grep``` αναζητά στο 
+αποθετήριο του git (στην περιοχή stage και στο αποθετήριο). Αν θέλετε να αναζητήσετε κάτι στον τοπικό φάκελο τότε 
+καλύτερα να χρησιμοποιήσετε την εντολή ```grep``` του Linux για το σκοπό αυτό.
+
+Αν θα θέλατε να γνωρίζετε πότε μια αλλαγή προστέθηκε ή αφαιρέθηκε, τότε η εντολή ```git log``` παρέχει κάποιες χρήσιμες παραμέτρους για εσάς.
+
+```bash
+$ git log -S κόσμε
+commit 00937c51126fe322ac5f708c5de63c91a3864270
+Author: hawk <nobody@nowhere.gr>
+Date:   Sun Jul 14 17:09:48 2024 +0200
+
+    Fixed hello.c
+
+commit df85b3fe814351994c99559f7f7f2cf8496329d9
+Author: hawk <nobody@nowhere.gr>
+Date:   Fri Jul 12 18:32:46 2024 +0200
+
+    Updated goodbye.c
+
+commit 245fa8fc3dfa2c8c308a07bdcb9b152329006d84
+Author: hawk <nobody@nowhere.gr>
+Date:   Sun Jul 7 14:42:10 2024 +0200
+
+    Updated hello.c
+```
+Η παράμετρος ```-S``` (ή pickaxe) μας εμφανίζει πότε πρωτοεμφανίστηκε η λέξη "κόσμε" στο αρχείο ```hello.c``` (αλλαγή ```245fa8fc```) και στο αρχείο ```goodbye.c``` (αλλαγή ```df85b3f```), και ότι αφαιρέθηκε από το αρχείο ```hello.c``` (αλλαγή ```00937c5```).  
+
+```bash
+$ git log -S κόσμε
+commit 00937c51126fe322ac5f708c5de63c91a3864270
+Author: hawk <nobody@nowhere.gr>
+Date:   Sun Jul 14 17:09:48 2024 +0200
+
+    Fixed hello.c
+
+commit 245fa8fc3dfa2c8c308a07bdcb9b152329006d84
+Author: hawk <nobody@nowhere.gr>
+Date:   Sun Jul 7 14:42:10 2024 +0200
+
+    Updated hello.c
+```
+Αν θέλετε να δείτε ακριβώς ποιά(-ες) γραμμή(-ές) άλλαξε(-αν), τότε χρησιμοποιήστε μια άλλη παράμετρο, την ```-p``` (```--patch```). Παρακάτω τη βλέπουμε σε συνδυασμό με άλλες παραμέτρους που έχουμε μάθει προηγουμένως:
+
+```bash
+$ git log --oneline --graph --all -p -S κόσμε hello.c
+* 00937c5 Fixed hello.c
+| diff --git a/hello.c b/hello.c
+| index b61ef6d..e99c37a 100644
+| --- a/hello.c
+| +++ b/hello.c
+| @@ -1,6 +1,6 @@
+|  #include <stdio.h>
+|  
+|  int main(void) {
+| -    puts("Γειά σου κόσμε!");
+| +    puts("Γειά σου git!");
+|      return 0;
+|  }
+* 245fa8f Updated hello.c
+| diff --git a/hello.c b/hello.c
+| index e69de29..b61ef6d 100644
+| --- a/hello.c
+| +++ b/hello.c
+| @@ -0,0 +1,6 @@
+| +#include <stdio.h>
+| +
+| +int main(void) {
+| +    puts("Γειά σου κόσμε!");
+| +    return 0;
+| +}
+
+$ git log --oneline --graph --all -p -S κόσμε --word-diff hello.c
+* 00937c5 Fixed hello.c
+| diff --git a/hello.c b/hello.c
+| index b61ef6d..e99c37a 100644
+| --- a/hello.c
+| +++ b/hello.c
+| @@ -1,6 +1,6 @@
+| #include <stdio.h>
+| 
+| int main(void) {
+|     puts("Γειά σου [-κόσμε!");-]{+git!");+}
+|     return 0;
+| }
+* 245fa8f Updated hello.c
+| diff --git a/hello.c b/hello.c
+| index e69de29..b61ef6d 100644
+| --- a/hello.c
+| +++ b/hello.c
+| @@ -0,0 +1,6 @@
+| {+#include <stdio.h>+}
+| 
+| {+int main(void) {+}
+| {+    puts("Γειά σου κόσμε!");+}
+| {+    return 0;+}
+| {+}+}
+```
+Πέραν από την παράμετρο ```-S``` που μας εμφανίζει πότε κάποιο κείμενο προστέθηκε στο ή αφαιρέθηκε από το ιστορικό, η παράμετρος ```-G``` μας εμφανίζει όλες τις περιπτώσεις που το κείμενο εμφανίστηκε σε οποιαδήποτε υποβολή, ακόμα κι αν δεν άλλαξε αυτό καθαυτό. Ας δούμε ένα παράδειγμα, πρώτα με την παράμετρο ```-S``` και ακολούθως με την παράμετρο ```-G```:
+
+```bash
+$ git log --oneline --graph --all -p -S Γειά --word-diff hello.c
+...
+* 245fa8f Updated hello.c
+| diff --git a/hello.c b/hello.c
+| index e69de29..b61ef6d 100644
+| --- a/hello.c
+| +++ b/hello.c
+| @@ -0,0 +1,6 @@
+| {+#include <stdio.h>+}
+| 
+| {+int main(void) {+}
+| {+    puts("Γειά σου κόσμε!");+}
+| {+    return 0;+}
+| {+}+}
+
+$ git log --oneline --graph --all -p -G Γειά --word-diff hello.c
+* 00937c5 Fixed hello.c
+| diff --git a/hello.c b/hello.c
+| index b61ef6d..e99c37a 100644
+| --- a/hello.c
+| +++ b/hello.c
+| @@ -1,6 +1,6 @@
+| #include <stdio.h>
+| 
+| int main(void) {
+|     puts("Γειά σου [-κόσμε!");-]{+git!");+}
+|     return 0;
+| }
+* 245fa8f Updated hello.c
+| diff --git a/hello.c b/hello.c
+| index e69de29..b61ef6d 100644
+| --- a/hello.c
+| +++ b/hello.c
+| @@ -0,0 +1,6 @@
+| {+#include <stdio.h>+}
+| 
+| {+int main(void) {+}
+| {+    puts("Γειά σου κόσμε!");+}
+| {+    return 0;+}
+| {+}+}
+``` 
+Ενώ η ```-S``` μας εμφανίζει μόνο την αλλαγή ```245fa8f``` όπου η λέξη "Γειά" προστέθηκε στο αρχείο ```hello.c```, η παράμετρος ```-G``` μας εμφανίζει και την αλλαγή ```00937c5``` όπου άλλαξε η πρόταση που περιέχει τη λέξη "Γειά" χωρίς όμως να αλλάξει η ίδια η λέξη, (άλλαξε άλλο τμήμα της πρότασης). Γιατί να θέλετε να δείτε μια τέτοια αλλαγή; Φανταστείτε ότι κάποιος άλλαξε αυτή την πρόταση και έκανε ένα τυπογραφικό λάθος. Αναζητώντας τη λέξη "Γειά" μπορείτε να βρείτε αυτήν την πρόταση. Ή μπορεί να θέλετε να δείτε πώς άλλαξε ο αριθμός των παραμέτρων σε μια συνάρτηση κώδικα (μπορείτε σ' αυτήν την περίπτωση να αναζητήσετε το όνομα της συνάρτησης με την παράμετρο ```-G``` ). Επιπλέον, η παράμετρος ```-G``` δέχεται και κανονικές εκφράσεις (regular expressions) σε αντίθεση με την παράμετρο ```-S```.
+
+Φυσικά μπορείτε να χρησιμοποιήσετε και την ```grep``` με τη ```log```:
+
+```bash
+$ git log --oneline --all --grep hello.c
+00937c5 Fixed hello.c
+2946b52 Modified hello.c
+245fa8f Updated hello.c
+```
+Η παραπάνω εντολή αναζήτησε το αλφαριθμητικό "hello.c" σε όλα τα logs και σε όλους τους κλάδους.
+
+Η εντολή ```shortLog``` εμφανίζει το ιστορικό ομαδοποιημένο ανά συγγραφέα.
+
+```bash
+$ git shortLog
+Ioannis Kostaras (7):
+      Initial commit
+      Updated hello.c
+      Added .gitignore
+      Updated goodbye.c
+      Modified hello.c
+      Fixed hello.c
+      Merge branch bug1branch
+
+John Kostaras (2):
+      Added README.md
+      Updated README.md
+
+jkosta-test (1):
+      Merge pull request #1 from jkost/master
+```
+
+Τέλος, υπάρχει και η εντολή ```git bisect``` την οποία μπορούμε να χρησιμοποιήσουμε για να βρούμε σε ποιά υποβολή εμφανίστηκε κάποιο σφάλμα (bug). Δουλεύει με τη μέθοδο της δυαδικής αναζήτησης (binary search). Της δίνουμε μια υποβολή όπου γνωρίζουμε ότι υπάρχει το σφάλμα και στη συνέχεια μια άλλη όπου δεν υπάρχει. Η εντολή θα χρησιμοποιήσει την δυαδική αναζήτηση για να μας καθοδηγήσει να βρούμε την υποβολή που πρωτοεισήχθηκε το σφάλμα. Ας τη δούμε στην πράξη.
+
+```bash
+$ % git lol
+*   909ba00 (HEAD -> master, origin/master, origin/HEAD) Merge pull request #1 from jkost/master
+|\  
+| * 9710ef2 Updated README.md
+|/  
+* c8e249d Added README.md
+*   285480f Merge branch bug1branch
+|\  
+| * 00937c5 Fixed hello.c
+* | 2946b52 Modified hello.c
+|/  
+* df85b3f Updated goodbye.c
+* bd054a7 Added .gitignore
+* 245fa8f Updated hello.c
+* 488273f Initial commit
+
+$ git bisect start
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+status: waiting for both good and bad commits
+
+$ git bisect bad HEAD
+status: waiting for good commit(s), bad commit known
+
+$ git bisect good bd054a7
+Bisecting: 2 revisions left to test after this (roughly 2 steps)
+[285480f8d1d8a51e217b5d8137f3e8f344a303ff] Merge branch bug1branch
+
+$ git status
+HEAD detached at 285480f
+You are currently bisecting, started from branch 'master'.
+  (use "git bisect reset" to get back to the original branch)
+
+nothing to commit, working tree clean
+```
+Παραπάνω του λέμε ότι το τελευταίο commit (```HEAD```) έχει το λάθος, ενώ η υποβολή ```bd054a7``` είναι σωστή. Αυτό που κάνει το git είναι να εφαρμόσει τον αλγόριθμο δυαδικής αναζήτησης και να βρει την υποβολή στη μέση αυτών των δυο, δηλ. ```285480f``` και να σας ρωτήσει αν αυτή περιέχει το bug ή όχι. Το git έχει ήδη εκτελέσει την εντολή ```git checkout 285480f``` για σας ώστε να ελέγξετε αν η έκδοση αυτή περιέχει το σφάλμα ή όχι. Αν η έκδοση αυτή περιέχει το λάθος τότε δίνετε ```git bisect bad``` διαφορετικά ```git bisect good``` ώστε το git να συνεχίσει είτε προς τα πάνω (δηλ. σε πιο πρόσφατη υποβολή) είτε προς τα κάτω (δηλ. σε παλαιότερη υποβολή) επαναλαμβάνοντας τη διαδικασία.
+
+```bash
+$ % git bisect bad
+Bisecting: 1 revision left to test after this (roughly 1 step)
+[2946b5268d8cdeb07cfe50740b63eada11f7bf87] Modified hello.c
+
+$ git bisect good
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[00937c51126fe322ac5f708c5de63c91a3864270] Fixed hello.c
+```
+Μετά από μερικές επαναλήψεις το Git θα εμφανίσει την υποβολή η οποία εισήχθη το bug και μπορείτε πλέον να το διορθώσετε ή να αναιρέσετε (```revert```) την υποβολή. Για να τερματίσετε την ```bisect```:
+
+```bash
+$ git bisect reset
+Previous HEAD position was 00937c5 Fixed hello.c
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+## Ξαναγράφοντας ιστορία
+Στο Mercurial, όπως και την πραγματική ζωή, είναι αδύνατο να αλλάξουμε το ιστορικό. Ό,τι έγινε, έγινε. Το git όμως, παρέχει πολλές χρήσιμες εντολές ώστε να αλλάξετε το ιστορικό όπως εσείς θέλετε!
+
+### Rebase 
+
 
 ## Επίλογος
 Σε αυτό το άρθρο δώσαμε μια εισαγωγή στο Git και στο Github. Μάθαμε για την ιστορία των ΣΔΕ και του ίδιου του Git, τις βασικές εντολές για να δημιουργήσουμε αποθετήρια, να κλωνοποιήσουμε απομακρυσμένα αποθετήρια (π.χ. από το Github), να υποβάλλουμε τις αλλαγές μας τοπικά (```commit```), αλλά και στα απομακρυσμένα αποθετήρια (```push```), για το πόσο εύκολο είναι να δημιουργήσουμε κλάδους (branches) και να τους συγχωνεύσουμε με τον κύριο (master branch), πώς να αναιρέσουμε τις αλλαγές μας, κλπ.
 
-Συμπερασματικά, το Git διακρίνεται για την αμεσότητα και την ευκολία χρήσης και υπερτερεί σε σχέση με άλλα συστήματα διαχείρισης εκδόσεων τόσο σε απόδοση όσο και σε επεκτασιμότητα. Δεν χρειάζεται συντήρηση, ούτε διαχειριστή, και δουλεύει καλά με κάθε είδους προγραμματιστές και κάθε είδους έργα. 
+Συμπερασματικά, το Git διακρίνεται για την αμεσότητα και την ευκολία χρήσης και υπερτερεί σε σχέση με άλλα συστήματα διαχείρισης εκδόσεων τόσο σε απόδοση όσο και σε επεκτασιμότητα. Δεν χρειάζεται συντήρηση, ούτε διαχειριστή, και δουλεύει καλά με κάθε είδους προγραμματιστές ή μη και με κάθε είδους έργα. 
 
 ## Πηγές
 1. https://git-scm.com
