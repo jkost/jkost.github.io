@@ -6,7 +6,8 @@
 ## Πίνακας περιεχομένων
 
 ### Κεφάλαιο 1 - λ-λογισμός, ροές και Ανταποκρίσιμος προγραμματισμός
-1.1. [λ-εκφράσεις και method references](Chapter1/1.1-Lambdas/README.md)
+1.0. [Εισαγωγή](Chapter1/1.0-Introduction/README.md)
+1.1. [λ-εκφράσεις και αναφορές μεθόδων (method references)](Chapter1/1.1-Lambdas/README.md)
 1.2. [Ροές (streams)](Chapter1/1.2-Streams/README.md)
 1.3. Filter-Map-Reduce
 1.4. Infinite και Parallel Streams
@@ -39,7 +40,7 @@
 13. Δημιουργία μιας εφαρμογής σε JavaFX
 
 ### Κεφάλαιο 4 - Βάσεις δεδομένων (JPA)
-1. Τρόποι επικοινωνίας με ΒΔ. Επανάληψη JDBC
+1. Τρόποι επικοινωνίας με ΒΔ. JDBC
 2. Object Relational Mapping (ORM)
 3. JPA annotations
 4. Σχέσεις
