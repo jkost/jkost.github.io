@@ -30,7 +30,6 @@
 * [Εισαγωγή στο bash](Programming/Bash/README.md) ✅
 * [Επισκόπηση της C++](Programming/Cpp/README.md)
 * [Εισαγωγή στη Rust](Programming/Rust/README.md)
-* [Εισαγωγή στη Javascript](Programming/Web/Javascript/README.md)
 * [Εισαγωγή στη Go](Programming/Go/README.md)
 * [Εισαγωγή στη Groovy](Programming/Groovy/README.md)
 * [Εισαγωγή στην Erlang](Programming/Erlang/README.md) ✅
@@ -66,6 +65,7 @@
 
 ---
 
+* [Web Programming](Programming/Web/README.md) ✅
 * ["Python Regular Expressions", Java Code Geeks, 2020](https://www.javacodegeeks.com/python-regular-expressions.html) ✅
 * ["OpenMap", Java Code Geeks](IT/Openmap.md) ✅
 * ["How to secure Openfire XMPP server", Java Code Geeks, 2015](https://www.javacodegeeks.com/2015/02/secure-openfire-xmpp-server.html) ✅
