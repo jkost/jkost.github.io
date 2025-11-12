@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+
+<body>
+
+    <div class="content" id="content">
+
+        <sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+            <sandbox-source name="Main.java">import java.util.*;
+
+                public class Main {
+                  public static void main(String[] args) {
+                    // Constructor is private -- cannot use new
+                    Singleton s1 = Singleton.getInstance();
+                    Singleton s2 = Singleton.getInstance();
+                    
+                    if ( s1 == s2 )
+                    System.out.println( "Sameinstance" );
+                  }
+                }
+            
+                final class Singleton {
+                  private static Singleton singleton = null;
+                  
+                  // private constructor
+                  private Singleton() {
+                  // initialize any state here
+                  }
+                  
+                  public static Singleton getInstance() {
+                  if (singleton == null)
+                    singleton = new Singleton();
+                  return singleton;             }            
+                }
+            </sandbox-source>
+        </sandbox>
+    </div>
+    <script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+    <script>new Vue({ el: '#content' })</script>
+</body>
+
+</html>

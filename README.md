@@ -17,19 +17,6 @@
 
 ---
 
-# Courses <img src="assets/ukflag.gif" width="50"/>
-© Ioannis Kostaras
-
----
-
-* [Design Patterns](Courses/Other/DesignPatterns/README.md)
-* [Develop Desktop Applications with NetBeans Rich Client Platform](Courses/Other/NetBeansRCP/README.md)
-* [C++ for Java Developers](Courses/Other/Cpp/README.md)
-* [Rust for Java Developers](Courses/Other/Rust/README.md)
-* [Artificial Intelligence & Machine Learning in Java](Programming/AI/Java/README.md)
-
----
-
 # Άρθρα <img src="assets/elliniki-simea.gif" width="50"/>
 © Γιάννης Κωστάρας
 
@@ -57,6 +44,19 @@
 * [Ασφάλεια Apache Tomcat](IT/SecureTomcat/README.md) √
 * [Εισαγωγή στα Μαζικά Δεδομένα (Big Data)](IT/BigData/README.md)
 * [Εισαγωγή στα Γεωγραφικά Συστήματα Πληροφοριών](IT/GIS/README.md) √
+
+---
+
+# Courses <img src="assets/ukflag.gif" width="50"/>
+© Ioannis Kostaras
+
+---
+
+* [Design Patterns](Courses/Other/DesignPatterns/README.md)
+* [Develop Desktop Applications with NetBeans Rich Client Platform](Courses/Other/NetBeansRCP/README.md)
+* [C++ for Java Developers](Courses/Other/Cpp/README.md)
+* [Rust for Java Developers](Courses/Other/Rust/README.md)
+* [Artificial Intelligence & Machine Learning in Java](Programming/AI/Java/README.md)
 
 ---
 

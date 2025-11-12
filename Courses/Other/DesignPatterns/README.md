@@ -68,11 +68,10 @@ The term "Design Pattern" was introduced in the GoF (Gang of Four) book: "Design
 * *Scope*: Object (deals with objects) or Class (deals with relationships between classes)
 * *Purpose*: Behavioural (deals with object interaction), Creational (concerned with object creation), or Structural (deals with object or class composition)
 
-| Purpose | |Creational | Structural | Behavioural |
-|---|--|---------|-------|-----------------|
-||**Class**| Factory Method  | Adapter (Class) | Interpreter, Template Method |
-|**Scope**|-| - | - | - |
-||**Object**| Abstract Factory, Builder, Prototype, [Singleton](GoF/Creational/Singleton/README.md) | Adapter (Object), Bridge, Composite, Decorator, Flyweight, Facade, Proxy | Chain of Responsibility, Command, Iterator, Mediator, Memento, [Observer](GoF/Behavioural/Observer/README.md), State, Strategy, Visitor
+| Scope\Purpose | Creational | Structural | Behavioural |
+|---|---------|-------|-----------------|
+|**Class**| Factory Method  | Adapter (Class) | Interpreter, Template Method |
+|**Object**| Abstract Factory, Builder, Prototype, [Singleton](GoF/Creational/Singleton/README.md) | Adapter (Object), Bridge, Composite, Decorator, Flyweight, Facade, Proxy | Chain of Responsibility, Command, Iterator, Mediator, Memento, [Observer](GoF/Behavioural/Observer/README.md), State, Strategy, Visitor
 
 But apart from those 23 GoF design patterns, we will present many more. These will include, Concurrent, Enterprise, Integration and Security design patterns.
 
