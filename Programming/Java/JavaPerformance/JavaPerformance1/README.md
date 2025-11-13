@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../OS_Performance_Monitoring/README.md)| [->](../JavaPerformance2/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](../OS_Performance_Monitoring/README.md) | [▶️](../JavaPerformance2/README.md)
 
 ---
 
@@ -211,6 +211,6 @@ threshold) μπορούμε να λύσουμε αυτό το πρόβλημα. 
 
 ---
 
-[<-](../OS_Performance_Monitoring/README.md)| [->](../JavaPerformance2/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](../OS_Performance_Monitoring/README.md) | [▶️](../JavaPerformance2/README.md)
 
 ---

@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../JavaPerformance2/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](../JavaPerformance2/README.md)
 
 ---
 
@@ -249,6 +249,6 @@ $ jconsole &
 
 ---
 
-[<-](../JavaPerformance2…/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](../JavaPerformance2…/README.md)
 
 ---

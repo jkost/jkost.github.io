@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../JavaPerformance1/README.md)| [->](../JavaPerformance3/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](../JavaPerformance1/README.md) | [▶️](../JavaPerformance3/README.md)
 
 ---
 
@@ -796,6 +796,6 @@ $ ./makeDemoLogFile.sh
 
 ---
 
-[<-](../JavaPerformance1/README.md)| [->](../JavaPerformance3/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](../JavaPerformance1/README.md) | [▶️](../JavaPerformance3/README.md)
 
 ---

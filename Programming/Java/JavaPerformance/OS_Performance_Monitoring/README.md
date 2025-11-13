@@ -3,7 +3,7 @@
 
 ---
 
-[->](../JavaPerformance1/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [▶️](../JavaPerformance1/README.md)
 
 ---
 
@@ -194,6 +194,6 @@ Mάθαμε για τις δυο κατηγορίες στις οποίες δι
 
 ---
 
-[->](../JavaPerformance1/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [▶️](../JavaPerformance1/README.md)
 
 ---
