@@ -3,7 +3,7 @@
 
 ---
 
-[<-](README.md)| [->](SystemRuby.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](README.md) | [▶️](SystemRuby.md)
 
 ---
 
@@ -393,6 +393,6 @@ ARGV.each { |arg|
  
 ---
 
-[<-](README.md)| [->](SystemRuby.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](README.md) | [▶️](SystemRuby.md)
 
 ---

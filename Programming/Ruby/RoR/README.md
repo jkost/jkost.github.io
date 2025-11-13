@@ -3,7 +3,7 @@
 
 ---
 
-[<-](../SystemRuby.md)| [->](../SecureRoR/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../SystemRuby.md) | [▶️](../SecureRoR/README.md)
 
 ---
 
@@ -771,6 +771,6 @@ $ bundle show mysql2
 
 ---
 
-[<-](../SystemRuby.md)| [->](../SecureRoR/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../SystemRuby.md) | [▶️](../SecureRoR/README.md)
 
 ---

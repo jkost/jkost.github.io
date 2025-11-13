@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap6.md) | [▶️](LibreOfficeWriter_chap8.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap6.md)
 
 ## Κεφάλαιο 7 - Συγχώνευση Αλληλογραφίας
 
@@ -152,6 +152,6 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap6.md) | [▶️](LibreOfficeWriter_chap8.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap6.md)
 
 ---
