@@ -3,7 +3,7 @@
 
 ---
 
-[<](../1.1-Introduction/README.md) | [Δ](../../README.md)  | [>](../1.3-JavaHistory/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.1-Introduction/README.md) | [▶️](../1.3-JavaHistory/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](1.2-Algorithm.ipynb)
@@ -272,6 +272,6 @@ hero.pick(diamond)
 
 ---
 
-[<](../1.1-Introduction/README.md) | [Δ](../../README.md)  | [>](../1.3-JavaHistory/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.1-Introduction/README.md) | [▶️](../1.3-JavaHistory/README.md)
 
 ---

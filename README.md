@@ -10,9 +10,10 @@
 * [Εισαγωγή στον προγραμματισμό με τη γλώσσα Java (2023)](Courses/Mathesis/Intro2ProgrammingWithJava/README.md) ✅
 
 ## Άλλα Μαθήματα
-* [Εισαγωγή στον προγραμματισμό](Courses/Other/Intro2Programming/README.md)
+* [Εισαγωγή στον προγραμματισμό](Courses/Other/Intro2Programming/README.md) ✅
 * [Προχωρημένος προγραμματισμός με τη γλώσσα Java](Courses/Other/AdvancedJava/README.md)
 * [Εισαγωγή στη Java Enterprise Edition (JEE)](Courses/Other/JavaEE/README.md)
+* [C++ για προγραμματιστές Java](Courses/Other/FromJavaToCpp/README.md)
 * [Εισαγωγή στον προγραμματισμό με Android](Courses/Other/Android/README.md)
 
 ---

@@ -6,23 +6,23 @@
 ## Πίνακας περιεχομένων
 
 ### Κεφάλαιο 1 - λ-λογισμός, ροές και Ανταποκρίσιμος προγραμματισμός
-1.0. [Εισαγωγή](Chapter1/1.0-Introduction/README.md)
-1.1. [λ-εκφράσεις και αναφορές μεθόδων (method references)](Chapter1/1.1-Lambdas/README.md)
-1.2. [Ροές (streams)](Chapter1/1.2-Streams/README.md)
-1.3. Filter-Map-Reduce
-1.4. Infinite και Parallel Streams
-1.5. [Ανταποκρίσιμος (Reactive) προγραμματισμός](Chapter1/1.5-Reactive/README.md)
+0. [Εισαγωγή](Chapter1/1.0-Introduction/README.md)
+1. [λ-εκφράσεις και αναφορές μεθόδων (method references)](Chapter1/1.1-Lambdas/README.md)
+2. [Ροές (streams)](Chapter1/1.2-Streams/README.md)
+3. Filter-Map-Reduce
+4. Infinite και Parallel Streams
+5. [Ανταποκρίσιμος (Reactive) προγραμματισμός](Chapter1/1.5-Reactive/README.md)
 
 ### Κεφάλαιο 2 - Πολυνηματικός προγραμματισμός (Concurrency) και Απόδοση
-2.1. Παράλληλος προγραμματισμός, νήματα (threads)
-2.2. Κύκλος ζωής ενός νήματος
-2.3. Δημιουργία νημάτων μέσω των κλάσεων Thread, Runnable, Executor
-2.4. Συγχρονισμός νημάτων (Locks, synchronized, conditions)
-2.5. Atomic counters
-2.6. Concurrent collections 
-2.7. Java Memory Model
-2.8. Συλλέκτες σκουπιδιών (Garbage Collectors)
-2.9. Εργαλεία μέτρησης της απόδοσης εφαρμογών Java
+1. Παράλληλος προγραμματισμός, νήματα (threads)
+2. Κύκλος ζωής ενός νήματος
+3. Δημιουργία νημάτων μέσω των κλάσεων Thread, Runnable, Executor
+4. Συγχρονισμός νημάτων (Locks, synchronized, conditions)
+5. Atomic counters
+6. Concurrent collections 
+7. Java Memory Model
+8. Συλλέκτες σκουπιδιών (Garbage Collectors)
+9. Εργαλεία μέτρησης της απόδοσης εφαρμογών Java
 
 ### Κεφάλαιο 3 - Γραφικές εφαρμογές
 1. Abstract Window Toolkit (AWT) (μόνο συνοπτικά)

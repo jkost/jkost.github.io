@@ -3,7 +3,7 @@
 
 ---
 
-[<](../1.6-PrimitiveDataTypes/README.md) | [Δ](../../README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.6-PrimitiveDataTypes/README.md)
 
 ---
 
@@ -331,6 +331,6 @@ saturday ==> "Παρ"
 
 ---
 
-[<](../1.6-PrimitiveDataTypes/README.md) | [Δ](../../README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.6-PrimitiveDataTypes/README.md)
 
 ---

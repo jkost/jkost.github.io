@@ -3,7 +3,7 @@
 
 ---
 
-[<](../1.3-JavaHistory/README.md) | [∆](../../README.md) | [>](../1.5-JavaBasics/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.3-JavaHistory/README.md) | [▶️](../1.5-JavaBasics/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](1.4-Installation.ipynb)
@@ -352,6 +352,6 @@ jshell> /help
 
 ---
 
-[<](../1.3-JavaHistory/README.md) | [∆](../../README.md) | [>](../1.5-JavaBasics/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.3-JavaHistory/README.md) | [▶️](../1.5-JavaBasics/README.md)
 
 ---

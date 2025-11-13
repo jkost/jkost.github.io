@@ -7,8 +7,8 @@
 
 ---
 
-[Δ](../README.md) | [>](../Week2/README.md) 
- 
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [▶️](../Week2/README.md)
+
 ---
 
 ## Πίνακας περιεχομένων
@@ -23,6 +23,6 @@
 
 ---
 
-[Δ](../README.md) | [>](../Week2/README.md) 
- 
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [▶️](../Week2/README.md)
+
 ---

@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [◀️](../1.2-Algorithm/README.md) | [⬆️](../../README.md)  | [▶️](../1.4-Installation/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.2-Algorithm/README.md) | [▶️](../1.4-Installation/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](1.3-JavaHistory.ipynb)
@@ -229,6 +229,6 @@ double myvar2 = 3.14
 
 ---
 
-[🏠](https://jkost.github.io) | [◀️](../1.2-Algorithm/README.md) | [⬆️](../../README.md)  | [▶️](../1.4-Installation/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.2-Algorithm/README.md) | [▶️](../1.4-Installation/README.md)
 
 ---
