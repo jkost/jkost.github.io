@@ -93,6 +93,6 @@
 
 ---
 
-[->](Writer/LibreOfficeWriter_chap1.md)
+[▶️](Writer/LibreOfficeWriter_chap1.md)
 
 ---

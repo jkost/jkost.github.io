@@ -1,7 +1,9 @@
 # LibreOffice Writer  
 © Γιάννης Κωστάρας
 
-[<-](LibreOfficeWriter_chap3.md) | [->](LibreOfficeWriter_chap5.md)
+---
+
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap3.md) | [▶️](LibreOfficeWriter_chap5.md)
 
 ## Κεφάλαιο 4 - Μορφοποίηση
 
@@ -9,7 +11,7 @@
 
 ### 4.1 Διαμόρφωση κειμένου
 
-Επιλέξτε το κείμενο που θέλετε να μορφοποιήσετε. Από το μενού **Format → Character**, ή με δεξί κλικ και επιλογή του μενού **Character**, εμφανίζεται το διαλογικό παράθυρο _Character_ \(βλ. Εικόνα 4.1\).
+Επιλέξτε το κείμενο που θέλετε να μορφοποιήσετε. Από το μενού **Format → Character**, ή με δεξί κλικ και επιλογή του μενού **Character**, εμφανίζεται το διαλογικό παράθυρο _Character_ (βλ. Εικόνα 4.1).
 
 ![](assets/chap4/Fig1.png)
 
@@ -17,9 +19,9 @@
 
 Η καρτέλα _Εφέ κειμένου_ προσφέρει πολλές επιλογές όπως:
 
-* Χρώμα γραμματοσειράς \(μπορείτε να το βρείτε και σαν κουμπί της εργαλειοθήκης Μορφοποίηση\)
-* Εφέ \(κεφαλαία, πεζά, τίτλος, μικρά κεφαλαία\)
-* Ανάγλυφο \(ανάγλυφο, χαραγμένο\)
+* Χρώμα γραμματοσειράς (μπορείτε να το βρείτε και σαν κουμπί της εργαλειοθήκης Μορφοποίηση)
+* Εφέ (κεφαλαία, πεζά, τίτλος, μικρά κεφαλαία)
+* Ανάγλυφο (ανάγλυφο, χαραγμένο)
 * Διάρθρωση, σκιά, φλας, κρυφό (άμα θέλετε το κείμενο να μη φαίνεται). Βέβαια, από το μενού **Tools → Options → LibreOffice Writer → Formating Aids** μπορείτε να επιλέξετε να φαίνεται το κρυφό κείμενο τσεκάροντας το αντίστοιχο κουμπί επιλογής. Τότε, αν έχετε επιλεγμένο το **View → Nonprinting** characters, το κρυφό κείμενο φαίνεται με εστιγμένη διαγράμμιση. Αν και μπορεί να σας φαίνεται περίεργο να ορίσετε κείμενο ως κρυφό, έχει συμβεί στο παρελθόν να έχει δημοσιευθεί έγγραφο του οποίου τμήματα είχαν μορφοποιηθεί ως κρυφά επειδή είχαν λογοκριθεί. Χάκερς όμως πολύ εύκολα δημοσίευσαν ολόκληρο το έγγραφο εμφανίζοντας και τα λογοκριμένα (κρυφά) τμήματα χρησιμοποιώντας την παραπάνω τεχνική.
 * Διαγράμμιση (και χρώμα διαγράμμισης)
 * Διακριτή γραφή
@@ -197,13 +199,13 @@ H καρτέλα **Εσοχές & διάστιχο (Indents & Spacing)** σας 
 
 1. Perry E. (2011), “How To – Libre Office Part 3”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-48), τεύχος 48, σελ. 16-18.
 2. Perry E. (2011), “How To – Libre Office Part 6”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-51), τεύχος 51, σελ. 15-16.
-3. LibreOffice \(2011\), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf) .
-4. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
+3. LibreOffice (2011), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf) .
+4. LibreOffice (2011), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
 5. Chanelle A. (2009), _Beginning OpenOffice 3 From Novice to Professional_, Apress.
 6. Miller R. (2005), _Point & Click OpenOffice.org!_, Prentice Hall.
 
 ---
 
-[<-](LibreOfficeWriter_chap3.md) | [->](LibreOfficeWriter_chap5.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap3.md) | [▶️](LibreOfficeWriter_chap5.md)
 
 ---

@@ -1,7 +1,9 @@
 # LibreOffice Writer  
 © Γιάννης Κωστάρας
 
-[<-](LibreOfficeWriter_chap4.md) | [->](LibreOfficeWriter_chap6.md)
+---
+
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap4.md) | [▶️](LibreOfficeWriter_chap6.md)
 
 ## Κεφάλαιο 5 - Πίνακες
 
@@ -167,13 +169,13 @@
 
 ## Πηγές:
 
-1. LibreOffice \(2011\), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf) .
-1. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
+1. LibreOffice (2011), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf) .
+1. LibreOffice (2011), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
 1. Chanelle A. (2009), _Beginning OpenOffice 3 From Novice to Professional_, Apress.
 1. Miller R. (2005), _Point & Click OpenOffice.org!_, Prentice Hall.
 
 ---
 
-[<-](LibreOfficeWriter_chap4.md) | [->](LibreOfficeWriter_chap6.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap4.md) | [▶️](LibreOfficeWriter_chap6.md)
 
 ---

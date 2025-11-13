@@ -1,11 +1,13 @@
 # LibreOffice Writer  
 © Γιάννης Κωστάρας
 
-[<-](LibreOfficeWriter_chap1.md) | [->](LibreOfficeWriter_chap3.md)
+---
+
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap1.md) | [▶️](LibreOfficeWriter_chap3.md)
 
 ## Κεφάλαιο 2 - Εργαλεία Συνεργασίας
 
-Σ' αυτό το κεφάλαιο θα δούμε τις δυνατότητες συνεργατικής συγγραφής κειμένων μεταξύ πολλών χρηστών \(collaboration\) που προσφέρει το LibreOffice. Π.χ. σε μια εταιρία, ή κατά τη συγγραφή των άρθρων ενός περιοδικού, πολλά άτομα δουλεύουν στο ίδιο κείμενο, πάνω στο οποίο θέλουν να κάνουν αλλαγές που θέλουν να τις δουν οι υπόλοιποι ή να ανταλλάξουν απόψεις. Παρακάτω θα δούμε πώς εφαρμόζονται αυτά τα εργαλεία στην πράξη κατά τη συγγραφή ενός άρθρου στο περιοδικό Ubuntistas.
+Σ' αυτό το κεφάλαιο θα δούμε τις δυνατότητες συνεργατικής συγγραφής κειμένων μεταξύ πολλών χρηστών (collaboration) που προσφέρει το LibreOffice. Π.χ. σε μια εταιρία, ή κατά τη συγγραφή των άρθρων ενός περιοδικού, πολλά άτομα δουλεύουν στο ίδιο κείμενο, πάνω στο οποίο θέλουν να κάνουν αλλαγές που θέλουν να τις δουν οι υπόλοιποι ή να ανταλλάξουν απόψεις. Παρακάτω θα δούμε πώς εφαρμόζονται αυτά τα εργαλεία στην πράξη κατά τη συγγραφή ενός άρθρου στο περιοδικό Ubuntistas.
 
 ### 2.1 Σχόλια
 
@@ -49,7 +51,7 @@
 
 ### 2.5 Προστασία εγγράφου
 
-Όταν τελειώσει και η επιμέλεια του άρθρου, καλό είναι ο συγγραφέας να προστατεύει το άρθρο από ατυχή ή σκόπιμη αλλαγή του. Από το μενού **File → Properties → Security** ο συγγραφέας μπορεί να προστατεύσει το έγγραφο ώστε να ανοίγει μόνο για ανάγνωση καθώς και από αλλαγές \(ίδιο αποτέλεσμα με το **Edit → Changes → Protect Record** που είδαμε παραπάνω\). Μόνο όποιος γνωρίζει τον κωδικό μπορεί να ανοίξει το έγγραφο για εγγραφή και να ενεργοποιήσει την ανίχνευση αλλαγών.
+Όταν τελειώσει και η επιμέλεια του άρθρου, καλό είναι ο συγγραφέας να προστατεύει το άρθρο από ατυχή ή σκόπιμη αλλαγή του. Από το μενού **File → Properties → Security** ο συγγραφέας μπορεί να προστατεύσει το έγγραφο ώστε να ανοίγει μόνο για ανάγνωση καθώς και από αλλαγές (ίδιο αποτέλεσμα με το **Edit → Changes → Protect Record** που είδαμε παραπάνω). Μόνο όποιος γνωρίζει τον κωδικό μπορεί να ανοίξει το έγγραφο για εγγραφή και να ενεργοποιήσει την ανίχνευση αλλαγών.
 
 ![](assets/chap2/Fig4.png)
 
@@ -62,14 +64,14 @@
 **Πηγές:**
 
 1. Princeton University, "[Collaboration Tools in Microsoft Word](http://helpdesk.princeton.edu/ntfileshare/word.html)”.
-1. Perry E. \(2014\), “How To – Libre Office Part 40 - Writer, Tracking Changes”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-88), τεύχος 88, σελ. 19-21.
-2. LibreOffice \(2011\), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf).
-3. LibreOffice \(2011\), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
-4. Chanelle A. \(2009\), _Beginning OpenOffice 3 From Novice to Professional_, Apress.
-5. Miller R. \(2005\), _Point & Click OpenOffice.org!_, Prentice Hall.
+1. Perry E. (2014), “How To – Libre Office Part 40 - Writer, Tracking Changes”, [Full Circle Magazine](http://fullcirclemagazine.org/issue-88), τεύχος 88, σελ. 19-21.
+2. LibreOffice (2011), [Getting Started with LibreOffice 3.3](http://wiki.documentfoundation.org/images/c/c4/0100GS3-GettingStartedLibO.pdf).
+3. LibreOffice (2011), [LibreOffice Writer Guide – Word Processing with LibreOffice 3.3](http://wiki.documentfoundation.org/images/b/ba/0200WG3-WriterGuide.pdf).
+4. Chanelle A. (2009), _Beginning OpenOffice 3 From Novice to Professional_, Apress.
+5. Miller R. (2005), _Point & Click OpenOffice.org!_, Prentice Hall.
 
 ---
 
-[<-](LibreOfficeWriter_chap1.md) | [->](LibreOfficeWriter_chap3.md)
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](LibreOfficeWriter_chap1.md) | [▶️](LibreOfficeWriter_chap3.md)
 
 ---
