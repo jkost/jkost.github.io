@@ -3,7 +3,7 @@
 
 ---
 
-[Δ](../../README.md) | [>](../2.2-Loops/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../2.2-Loops/README.md)
 
 ---
 
@@ -502,6 +502,6 @@ jshell> if (d > 0) {
 
 ---
 
-[Δ](../../README.md) | [>](../2.2-Loops/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../2.2-Loops/README.md)
 
 ---

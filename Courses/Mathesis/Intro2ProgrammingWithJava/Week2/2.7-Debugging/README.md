@@ -3,7 +3,7 @@
 
 ---
 
-[<](../2.6-IDEs/README.md) | [Δ](../../README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.6-IDEs/README.md)
 
 ---
 
@@ -161,6 +161,6 @@ public class FortuneTeller {
 
 ---
 
-[<](../2.6-IDEs/README.md) | [Δ](../../README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.6-IDEs/README.md)
 
 ---

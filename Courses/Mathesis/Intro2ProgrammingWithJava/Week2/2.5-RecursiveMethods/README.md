@@ -3,7 +3,7 @@
 
 ---
 
-[<](../2.4-Methods/README.md) | [Δ](../../README.md) | [>](../2.6-IDEs/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.4-Methods/README.md) | [▶️](../2.6-IDEs/README.md)
 
 ---
 
@@ -160,7 +160,7 @@ radar
 
 ---
 
-[<](../2.4-Methods/README.md) | [Δ](../../README.md) | [>](../2.6-IDEs/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.4-Methods/README.md) | [▶️](../2.6-IDEs/README.md)
 
 ---
 

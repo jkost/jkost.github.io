@@ -3,7 +3,7 @@
 
 ---
 
-[<](../2.2-Loops/README.md) | [Δ](../../README.md) | [>](../2.5-RecursiveMethods/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.2-Loops/README.md) | [▶️](../2.5-RecursiveMethods/README.md)
 
 ---
 
@@ -532,6 +532,6 @@ $33 ==> false
 
 ---
 
-[<](../2.3-Arrays/README.md) | [Δ](../../README.md) | [>](../2.5-RecursiveMethods/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.2-Loops/README.md) | [▶️](../2.5-RecursiveMethods/README.md)
 
 ---

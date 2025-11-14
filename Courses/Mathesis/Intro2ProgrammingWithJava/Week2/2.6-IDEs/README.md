@@ -3,7 +3,7 @@
 
 ---
 
-[<](../2.5-RecursiveMethods/README.md) | [Δ](../../README.md) | [>](../2.7-Debugging/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.5-RecursiveMethods/README.md) | [▶️](../2.7-Debugging/README.md)
 
 ---
 
@@ -254,6 +254,6 @@ Hello Γιάννης
 
 ---
 
-[<](../2.5-RecursiveMethods/README.md) | [Δ](../../README.md) | [>](../2.7-Debugging/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.5-RecursiveMethods/README.md) | [▶️](../2.7-Debugging/README.md)
 
 ---

@@ -3,7 +3,7 @@
 
 ---
 
-[<](../2.2-Loops/README.md) | [Δ](../../README.md) | [>](../2.4-Methods/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.2-Loops/README.md) | [▶️](../2.4-Methods/README.md)
 
 ---
 
@@ -601,6 +601,6 @@ array ==> int[5] { -1, 1, 2, 4, 9 }
 
 ---
 
-[<](../2.2-Loops/README.md) | [Δ](../../README.md) | [>](../2.4-Methods/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.2-Loops/README.md) | [▶️](../2.4-Methods/README.md)
 
 ---

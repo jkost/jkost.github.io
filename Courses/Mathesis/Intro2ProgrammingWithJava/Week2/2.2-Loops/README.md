@@ -3,7 +3,7 @@
 
 ---
 
-[<](../2.1-ControlStatements/README.md) | [Δ](../../README.md) | [>](../2.3-Arrays/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.1-ControlStatements/README.md) | [▶️](../2.3-Arrays/README.md)
 
 ---
 
@@ -696,6 +696,6 @@ for (a = 0; a < b; a++) {
 
 ---
 
-[<](../2.1-ControlStatements/README.md) | [Δ](../../README.md) | [>](../2.3-Arrays/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../2.1-ControlStatements/README.md) | [▶️](../2.3-Arrays/README.md)
 
 ---
