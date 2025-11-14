@@ -3,7 +3,7 @@
 
 ---
 
-[<](../3.5-Encapsulation/README.md) | [Δ](../../README.md) | [>](../3.7-Exercise2/README.md) 
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.5-Encapsulation/README.md) | [▶️](../3.7-Exercise2/README.md)
 
 ---
 
@@ -287,6 +287,6 @@ jshell> System.out.println(ioannis.getClassRoom());     // Β1
 
 ---
 
-[<](../3.5-Encapsulation/README.md) | [Δ](../../README.md) | [>](../3.7-Exercise2/README.md) 
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.5-Encapsulation/README.md) | [▶️](../3.7-Exercise2/README.md)
 
 ---

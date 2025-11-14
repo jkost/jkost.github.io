@@ -3,7 +3,7 @@
 
 ---
 
-[<](../3.4-OOProperties/README.md) | [Δ](../../README.md) | [>](../3.6-Exercise1/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.4-OOProperties/README.md) | [▶️](../3.6-Exercise1/README.md)
 
 ---
 
@@ -509,6 +509,6 @@ dist/jlink/AnagramGame/bin/AnagramGame
 
 ---
 
-[<](../3.4-OOProperties/README.md) | [Δ](../../README.md) | [>](../3.6-Exercise1/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.4-OOProperties/README.md) | [▶️](../3.6-Exercise1/README.md)
 
 ---

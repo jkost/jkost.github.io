@@ -3,6 +3,8 @@
 
 ---
 
+[🏠](https://jkost.github.io) | [▶️](Week1/1.1-Introduction/README.md)
+
 [![Mathesis](../assets/mathesis.png)](http://mathesis.cup.gr)
 
 ## Πίνακας περιεχομένων
@@ -59,5 +61,9 @@
 5. [Αρχεία καταγραφής (Logging)](Week6/6.5-Logging/README.md)
 6. [Έλεγχος Ποιότητας κώδικα (Unit Testing)](Week6/6.6-UnitTesting/README.md)
 7. [Άσκηση Αντικειμενοστραφούς Προγραμματισμού](Week6/6.7-Exercise/README.md)
+
+---
+
+[🏠](https://jkost.github.io) | [▶️](Week1/1.1-Introduction/README.md)
 
 ---

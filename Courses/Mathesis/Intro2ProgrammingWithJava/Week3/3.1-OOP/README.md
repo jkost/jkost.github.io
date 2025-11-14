@@ -3,7 +3,7 @@
 
 ---
 
-[Δ](../../README.md) | [>](../3.2-IDEs/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../3.2-IDEs/README.md)
 
 ---
 
@@ -808,6 +808,6 @@ b1 ==> ClassRoom{name=Β1, size=30, numOfStudents=0}
 
 ---
 
-[Δ](../../README.md) | [>](../3.2-IDEs/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../3.2-IDEs/README.md)
 
 ---

@@ -3,7 +3,7 @@
 
 ---
 
-[<](../3.3-UML/README.md) | [Δ](../../README.md) | [>](../3.5-Encapsulation/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.3-UML/README.md) | [▶️](../3.5-Encapsulation/README.md)
 
 ---
 
@@ -498,6 +498,6 @@ class Car { // κλάση
 
 ---
 
-[<](../3.3-UML/README.md) | [Δ](../../README.md) | [>](../3.5-Encapsulation/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.3-UML/README.md) | [▶️](../3.5-Encapsulation/README.md)
 
 ---

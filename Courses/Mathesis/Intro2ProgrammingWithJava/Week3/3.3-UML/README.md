@@ -3,7 +3,7 @@
 
 ---
 
-[<](../3.2-IDEs/README.md) | [Δ](../../README.md) | [>](../3.4-OOProperties/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.2-IDEs/README.md) | [▶️](../3.4-OOProperties/README.md)
 
 ---
 
@@ -337,6 +337,6 @@ B --|> A
 
 ---
 
-[<](../3.2-IDEs/README.md) | [Δ](../../README.md) | [>](../3.4-OOProperties/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.2-IDEs/README.md) | [▶️](../3.4-OOProperties/README.md)
 
 ---

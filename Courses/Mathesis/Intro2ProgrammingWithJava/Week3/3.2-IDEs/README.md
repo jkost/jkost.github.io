@@ -3,7 +3,7 @@
 
 ---
 
-[<](../3.1-OOP/README.md) | [Δ](../../README.md) | [>](../3.3-UML/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.1-OOP/README.md) | [▶️](../3.3-UML/README.md)
 
 ---
 
@@ -232,6 +232,6 @@ record Point(int x, int y) { }
 1. Στο πλαίσιο που θα εμφανιστεί δώστε το όνομα της κλάσης που περιέχει την μέθοδο ```main()``` και θα δημιουργηθεί το εκτελέσιμο αρχείο JAR στο φάκελο του έργου σας.
 ---
 
-[<](../3.1-OOP/README.md) | [Δ](../../README.md) | [>](../3.3-UML/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../3.1-OOP/README.md) | [▶️](../3.3-UML/README.md)
 
 ---
