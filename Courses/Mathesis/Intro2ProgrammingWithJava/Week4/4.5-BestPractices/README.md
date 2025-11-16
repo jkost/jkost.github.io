@@ -3,7 +3,7 @@
 
 ---
 
-[<](../4.4-JavaDoc/README.md) | [Δ](../../README.md) | [>](../4.6-Exercise/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.4-JavaDoc/README.md) | [▶️](../4.6-Exercise/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](4.5-BestPractices.ipynb)
@@ -72,6 +72,6 @@
 
 ---
 
-[<](../4.4-JavaDoc/README.md) | [Δ](../../README.md) | [>](../4.6-Exercise/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.4-JavaDoc/README.md) | [▶️](../4.6-Exercise/README.md)
 
 ---

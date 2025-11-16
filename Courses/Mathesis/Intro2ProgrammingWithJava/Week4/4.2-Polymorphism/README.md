@@ -3,7 +3,7 @@
 
 ---
 
-[<](../4.1-Inheritance/README.md) | [Δ](../../README.md) | [>](../4.3-Enums/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.1-Inheritance/README.md) | [▶️](../4.3-Enums/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](4.2-Polymorphism.ipynb)
@@ -383,6 +383,6 @@ Draws a circle...
 
 ---
 
-[<](../4.1-Inheritance/README.md) | [Δ](../../README.md) | [>](../4.3-Enums/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.1-Inheritance/README.md) | [▶️](../4.3-Enums/README.md)
 
 ---

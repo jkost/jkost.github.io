@@ -3,7 +3,7 @@
 
 ---
 
-[<](../4.2-Polymorphism/README.md) | [Δ](../../README.md) | [>](../4.4-JavaDoc/README.md)  
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.2-Polymorphism/README.md) | [▶️](../4.4-JavaDoc/README.md)  
  
 ---
 [![](../../../assets/jupyter_logo.svg)](4.3-Enums.ipynb)
@@ -167,6 +167,6 @@ jshell> System.out.print(a + " " + op + " " + b + " = " + op.apply(a, b));
 
 ---
 
-[<](../4.2-Polymorphism/README.md) | [Δ](../../README.md) | [>](../4.4-JavaDoc/README.md)    
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.2-Polymorphism/README.md) | [▶️](../4.4-JavaDoc/README.md)
 
 ---

@@ -3,7 +3,7 @@
 
 ---
 
-[Δ](../../README.md) | [>](../4.2-Polymorphism/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../4.2-Polymorphism/README.md)
 
 ---
 
@@ -1177,6 +1177,6 @@ Hello Z
 
 ---
 
-[Δ](../../README.md) | [>](../4.2-Polymorphism/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../4.2-Polymorphism/README.md)
 
 ---

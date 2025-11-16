@@ -7,7 +7,7 @@
 
 ---
 
-[<](../Week1/README.md) | [Δ](../README.md) | [>](../Week3/README.md) 
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](../Week1/README.md) | [▶️](../Week3/README.md)
  
 ---
 
@@ -23,6 +23,6 @@
 
 ---
 
-[<](../Week1/README.md) | [Δ](../README.md) | [>](../Week3/README.md) 
+[🏠](https://jkost.github.io) | [⬆️](../README.md) | [◀️](../Week1/README.md) | [▶️](../Week3/README.md)
  
 ---
