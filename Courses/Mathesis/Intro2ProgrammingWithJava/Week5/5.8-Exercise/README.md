@@ -3,7 +3,7 @@
 
 ---
 
-[<](../5.7-OtherCollections/README.md) | [Δ](../../README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.7-OtherCollections/README.md)
 
 ---
 
@@ -957,6 +957,6 @@ public class Teacher extends Person {
 
 ---
 
-[<](../5.7-OtherCollections/README.md) | [Δ](../../README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.7-OtherCollections/README.md)
 
 ---

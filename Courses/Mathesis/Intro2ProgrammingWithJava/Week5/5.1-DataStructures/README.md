@@ -3,7 +3,7 @@
 
 ---
 
-[Δ](../../README.md) | [>](../5.2-Lists/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../5.2-Lists/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](5.1-DataStructures.ipynb)
@@ -90,6 +90,6 @@ _Αλγόριθμος_ είναι ένα πεπερασμένο σύνολο ε�
 
 ---
 
-[Δ](../../README.md) | [>](../5.2-Lists/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../5.2-Lists/README.md)
 
 ---
