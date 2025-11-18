@@ -3,7 +3,7 @@
 
 ---
 
-[<](../6.6-UnitTesting/README.md) | [Δ](../../README.md) | [>](../6.8-Assignment/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../6.6-UnitTesting/README.md) | [▶️](../6.8-Assignment/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](6.7-Exercise.ipynb)
@@ -1606,6 +1606,6 @@ $ git checkout XXXXXX
 
 ---
 
-[<](../6.6-UnitTesting/README.md) | [Δ](../../README.md) | [>](../6.8-Assignment/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../6.6-UnitTesting/README.md) | [▶️](../6.8-Assignment/README.md)
 
 ---

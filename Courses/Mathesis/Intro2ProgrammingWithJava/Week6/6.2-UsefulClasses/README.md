@@ -3,7 +3,7 @@
 
 ---
 
-[<](../6.1-Exceptions/README.md) | [Δ](../../README.md) | [>](../6.3-BuildTools/README.md)  
+[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../6.1-Exceptions/README.md) | [▶️](../6.3-BuildTools/README.md)
  
 ---
 
@@ -845,6 +845,6 @@ ID Name  qt City
 
 ---
 
-[<](../6.1-Exceptions/README.md) | [Δ](../../README.md) | [>](../6.3-BuildTools/README.md)  
+[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../6.1-Exceptions/README.md) | [▶️](../6.3-BuildTools/README.md)
 
 ---

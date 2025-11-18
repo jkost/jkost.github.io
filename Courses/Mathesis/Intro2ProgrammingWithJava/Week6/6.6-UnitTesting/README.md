@@ -3,7 +3,7 @@
 
 ---
 
-[<](../6.5-Logging/README.md) | [Δ](../../README.md) | [>](../6.7-Exercise/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../6.5-Logging/README.md) | [▶️](../6.7-Exercise/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](6.6-UnitTesting.ipynb)
@@ -344,6 +344,6 @@ public class StudentTest
 
 ---
 
-[<](../6.5-Logging/README.md) | [Δ](../../README.md) | [>](../6.7-Exercise/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../6.5-Logging/README.md) | [▶️](../6.7-Exercise/README.md)
 
 ---

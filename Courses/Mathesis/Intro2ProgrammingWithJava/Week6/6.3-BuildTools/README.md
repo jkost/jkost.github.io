@@ -3,7 +3,7 @@
 
 ---
 
-[<](../6.2-UsefulClasses/README.md) | [Δ](../../README.md) | [>](../6.4-I18n/README.md) 
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../6.2-UsefulClasses/README.md) | [▶️](../6.4-I18n/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](6.3-BuildTools.ipynb)
@@ -502,6 +502,6 @@ $ gradlew build
 
 ---
 
-[<](../6.2-UsefulClasses/README.md) | [Δ](../../README.md) | [>](../6.4-I18n/README.md) 
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../6.2-UsefulClasses/README.md) | [▶️](../6.4-I18n/README.md)
 
 ---
