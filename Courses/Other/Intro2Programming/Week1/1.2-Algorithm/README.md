@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.1-Introduction/README.md) | [▶️](../1.5-Program/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../1.1-Introduction/README.md) | [▶️](../1.3-Program/README.md)
 
 ---
 
