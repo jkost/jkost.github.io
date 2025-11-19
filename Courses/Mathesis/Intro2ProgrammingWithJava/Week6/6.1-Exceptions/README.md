@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [▶️](../6.2-UsefulClasses/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../6.2-UsefulClasses/README.md)
  
 ---
 
@@ -594,6 +594,6 @@ String foundName = find("Ελένη", names).orElse("Not found...");
 1. Τροποποιήστε το πρόγραμμα ```School``` ώστε να εγείρετε εξαιρέσεις π.χ. στην περίπτωση που ο χρήστης περάσει λάθος ορίσματα ή σε λάθος υπολογισμούς κλπ. Προσοχή, διαχειριζόμαστε μόνο τις ελεγχόμενες (checked) εξαιρέσεις.
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [▶️](../6.2-UsefulClasses/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../6.2-UsefulClasses/README.md)
 
 ---

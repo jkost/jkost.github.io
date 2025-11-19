@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.5-Queues/README.md) | [▶️](../5.7-OtherCollections/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.5-Queues/README.md) | [▶️](../5.7-OtherCollections/README.md)
  
 ---
 [![](../../../assets/jupyter_logo.svg)](5.6-Maps.ipynb)
@@ -459,6 +459,6 @@ public class Cache<K, V> {
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.5-Queues/README.md) | [▶️](../5.7-OtherCollections/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.5-Queues/README.md) | [▶️](../5.7-OtherCollections/README.md)
 
 ---

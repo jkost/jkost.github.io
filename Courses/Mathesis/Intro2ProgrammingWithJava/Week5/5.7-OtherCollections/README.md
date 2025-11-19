@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.6-Maps/README.md) | [▶️](../5.8-Exercise/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.6-Maps/README.md) | [▶️](../5.8-Exercise/README.md)
  
 ---
 
@@ -125,6 +125,6 @@ import org.apache.commons.collections4.Bag;
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.6-Maps/README.md) | [▶️](../5.8-Exercise/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.6-Maps/README.md) | [▶️](../5.8-Exercise/README.md)
 
 ---

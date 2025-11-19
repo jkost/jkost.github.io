@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.2-Lists/README.md) | [▶️](../5.4-Sets/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.2-Lists/README.md) | [▶️](../5.4-Sets/README.md)
  
 ---
 [![](../../../assets/jupyter_logo.svg)](5.3-Generics.ipynb)
@@ -436,6 +436,6 @@ public class LRInsertTest {
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.2-Lists/README.md) | [▶️](../5.4-Sets/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.2-Lists/README.md) | [▶️](../5.4-Sets/README.md)
 
 ---

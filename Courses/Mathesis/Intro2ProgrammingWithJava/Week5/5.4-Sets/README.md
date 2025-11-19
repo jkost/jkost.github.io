@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.3-Generics/README.md) | [▶️](../5.5-Queues/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.3-Generics/README.md) | [▶️](../5.5-Queues/README.md)
  
 ---
 
@@ -306,6 +306,6 @@ _Πηγή: [Naftalin, Wadler (2006)](https://www.amazon.com/-/en/Maurice-Naftali
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.3-Generics/README.md) | [▶️](../5.5-Queues/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.3-Generics/README.md) | [▶️](../5.5-Queues/README.md)
 
 ---

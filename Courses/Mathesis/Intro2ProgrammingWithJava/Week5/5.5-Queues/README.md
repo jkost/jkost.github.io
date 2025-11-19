@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.4-Sets/README.md) | [▶️](../5.6-Maps/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.4-Sets/README.md) | [▶️](../5.6-Maps/README.md)
  
 ---
 
@@ -356,6 +356,6 @@ public interface Stack<E> {
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.4-Sets/README.md) | [▶️](../5.6-Maps/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.4-Sets/README.md) | [▶️](../5.6-Maps/README.md)
 
 ---

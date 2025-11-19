@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.1-DataStructures/README.md) | [▶️](../5.3-Generics/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.1-DataStructures/README.md) | [▶️](../5.3-Generics/README.md)
  
 ---
 
@@ -691,6 +691,6 @@ list ==> [10, 20, 30, 40]
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../5.1-DataStructures/README.md) | [▶️](../5.3-Generics/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../5.1-DataStructures/README.md) | [▶️](../5.3-Generics/README.md)
 
 ---

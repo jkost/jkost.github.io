@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../6.4-I18n/README.md) | [▶️](../6.6-UnitTesting/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../6.4-I18n/README.md) | [▶️](../6.6-UnitTesting/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](6.5-Logging.ipynb)
@@ -296,6 +296,6 @@ LOG.addAppender(appender);
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../TOC.ipynb) | [◀️](../6.4-I18n/README.md) | [▶️](../6.6-UnitTesting/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../6.4-I18n/README.md) | [▶️](../6.6-UnitTesting/README.md)
 
 ---
