@@ -14,7 +14,7 @@
 1. [Εισαγωγή στους Η/Υ](Week1/1.1-Introduction/README.md) ✅
 2. [Αλγόριθμοι και Προγράμματα](Week1/1.2-Algorithm/README.md) ✅
 3. [Προγραμματισμός με Πλακίδια](Week1/1.3-BlockProgramming/README.md) ✅
-4. [Προγράμματα](Week1/1.4-Programs/README.md) ✅
+4. [Προγράμματα](Week1/1.4-Programs/README.md)
 
 ### Εβδομάδα 2η - Προγραμματισμός με το Scratch
 
@@ -23,16 +23,20 @@
 3. [Μεταβλητές και Σταθερές](Week2/2.3-Variables/README.md) ✅
 4. [Κίνηση](Week2/2.4-Movement/README.md) ✅
 5. [Δημιουργία νέων εντολών](Week2/2.5-NewCommands/README.md) ✅
-6. [Δημιουργία παιχνιδιών](Week2/2.6-Games/README.md) ✅
+6. [Δημιουργία παιχνιδιών](Week2/2.6-Games/README.md)
 
 ### Εβδομάδα 3η - Αντικειμενοστραφής προγραμματισμός με το BlueJ
 
 1. [Εισαγωγή στον Αντικειμενοστραφή Προγραμματισμό](Week3/3.1-Intro2OOP/README.md) ✅
-2. [Εισαγωγή στο BlueJ](Week3/3.2-Intro2BlueJ/README.md)
+2. [Αντικειμενοστραφής Προγραμματισμός με το BlueJ](Week3/3.2-Intro2OOPWithBlueJ/README.md) ✅
+3. [Ιδιότητες του Αντικειμενοστραφούς Προγραμματισμού](Week3/3.3-OOProperties/README.md)
+4. [Ενθυλάκωση](Week3/3.4-Encapsulation/README.md)
+5. [Κληρονομικότητα](Week3/3.5-Inheritance/README.md)
+6. [Πολυμορφισμός](Week3/3.6-Polymorphism/README.md)
 
 ### Εβδομάδα 4η - Αντικειμενοστραφής προγραμματισμός με το Greenfoot
 
-1. Εισαγωγή στο Greenfoot
+1. [Εισαγωγή στο Greenfoot](Week4/4.1-Intro2Greenfoot/)
 2. Δημιουργία ενός παιχνιδιού με το Greenfoot
 
 ### Εβδομάδα 5η - Γνωριμία με τις γλώσσες προγραμματισμού
