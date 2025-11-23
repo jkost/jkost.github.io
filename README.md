@@ -66,6 +66,7 @@
 
 ---
 
+* [NetBeans](Programming/NetBeans/README.md) ✅
 * [Web Programming](Programming/Web/README.md) ✅
 * ["Python Regular Expressions", Java Code Geeks, 2020](https://www.javacodegeeks.com/python-regular-expressions.html) ✅
 * ["OpenMap", Java Code Geeks](IT/Openmap.md) ✅
