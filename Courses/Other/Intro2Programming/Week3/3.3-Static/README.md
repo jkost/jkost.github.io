@@ -38,7 +38,7 @@ public class Car { // κλάση
 
 Ας δούμε ένα παράδειγμα. Ας υποθέσουμε ότι θα θέλαμε να δώσουμε έναν μοναδικό αύξοντα αριθμό για κάθε αυτοκίνητο που δημιουργούμε. Έστω π.χ. ότι δημιουργούμε 3 αυτοκίνητα, ένα Audi A3 (με αύξοντα αριθμό ```1```), ένα Fiat 500 (με αύξοντα αριθμό ```2```) κι ένα Peugeot 208 (με αύξοντα αριθμό ```3```). Πώς θα το καταφέρουμε αυτό;
 
-```Java
+```java
 /**
  * A Car.
  *
@@ -95,8 +95,7 @@ public class Car { // κλάση
 
 Ας δημιουργήσουμε μια στατική μέθοδο στην κλάση ```Car``` που να μας επιστρέφει τον αύξοντα αριθμό του αυτοκινήτου.
 
-
-```Java
+```java
 /**
  * A Car.
  *
@@ -173,7 +172,7 @@ public class Car { // κλάση
 
 Ένα άλλο παράδειγμα στατικής μεθόδου θα μπορούσε να είναι μια εναλλακτική μέθοδος κατασκευής (alternative constructor) για την εγγραφή ```Point```:
 
-```Java
+```java
 public record Point(int x, int y) { 
 	public static Point of(int x, int y) {
 		return new Point(x, y);
@@ -190,7 +189,7 @@ public record Point(int x, int y) {
 Ας δούμε ένα παράδειγμα:
 
 
-```Java
+```java
 public class StaticExample {
 	private int var1;
 	private static int var2;
