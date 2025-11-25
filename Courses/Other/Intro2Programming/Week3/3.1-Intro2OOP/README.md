@@ -2,7 +2,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../3.2-Intro2BlueJ/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../3.2-Intro2OOPWithBlueJ/README.md)
 
 ---
 
@@ -156,6 +156,6 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../3.2-Intro2BlueJ/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [▶️](../3.2-Intro2OOPWithBlueJ/README.md)
 
 ---
