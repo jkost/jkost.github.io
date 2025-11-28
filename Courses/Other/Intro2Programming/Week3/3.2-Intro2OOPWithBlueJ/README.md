@@ -47,7 +47,7 @@
  * A 2D Point.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param x The x coordinate
  * @param y The y coordinate
  */
@@ -83,7 +83,7 @@ public record Point(int x, int y)
  * A 2D Line.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param p1 The first point of the line
  * @param p2 The second point of the line
  */
@@ -107,7 +107,7 @@ public record Line(Point p1, Point p2)
  * A Circle.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param center The center point of the circle
  * @param radius The circle's radius
  */
@@ -120,7 +120,7 @@ public record Circle(Point center, int radius)
  * A 2D Rectangle.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param upperLeft The upper left point of the rectangle
  * @param lowerRight The lower right point of the rectangle
  */
@@ -141,7 +141,7 @@ public record Rectangle(Point upperLeft, Point lowerRight)
  * A Circle.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.2
  * @param center The center point of the circle
  * @param radius The circle's radius
  */
@@ -187,7 +187,7 @@ public record Circle(Point center, int radius)
  * A 2D Point.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param x The x coordinate
  * @param y The y coordinate
  */
@@ -252,7 +252,7 @@ public class Point {
  * A 2D Point.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param x The x coordinate
  * @param y The y coordinate
  */
@@ -294,7 +294,7 @@ public class Point {
  * A 2D Point.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param x The x coordinate
  * @param y The y coordinate
  */
@@ -336,7 +336,7 @@ _**Σημαντική σημείωση**: Αν δηλώσουμε έστω μι�
  * A 2D Point.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param x The x coordinate
  * @param y The y coordinate
  */
@@ -361,7 +361,7 @@ public class Point {
  * A 2D Point.
  *
  * @author ikost
- * @version 1.0
+ * @version 0.1
  * @param x The x coordinate
  * @param y The y coordinate
  */
@@ -493,22 +493,12 @@ public class Car { // κλάση
 public interface Shape
 {
     /**
-     * @return the number of edges
+     * Draw the shape.
      */
-    int edges();
-    
-    /**
-     * @return the shape's are
-     */
-    double area();
-
-    /**
-     * @return the shape's perimeter
-     */
-    double perimeter();
+    void draw();
 }
 ```
-Βλέπουμε ότι η παραπάνω διεπαφή περιέχει 3 αφηρημένες (abstract) μεθόδους που δεν περιέχουν υλοποίηση, δηλ. βλέπουμε μόνο τους ορισμούς των μεθόδων. Η υλοποίηση των μεθόδων γίνεται σε άλλες κλάσεις.
+Βλέπουμε ότι η παραπάνω διεπαφή περιέχει μια αφηρημένη (abstract) μέθοδο που δεν περιέχει υλοποίηση, δηλ. βλέπουμε μόνο τον ορισμό της μεθόδου. Η υλοποίηση της γίνεται σε άλλες κλάσεις. Φυσικά σε μια διεπαφή μπορούμε να ορίσουμε πολλές αφηρημένες μεθόδους.
 
 Δεν μπορούμε να δημιουργήσουμε απευθείας αντικείμενα μιας διεπαφής (εκτός κι αν παρέχουμε υλοποιήσεις όλων των μεθόδων της). Θα μιλήσουμε αναλυτικά για διεπαφές σε επόμενο μάθημα.
 
