@@ -67,7 +67,7 @@ public class Point implements Shape {
 /**
  * A 2D Point.
  *
- * @author hawk
+ * @author ikost
  * @version 0.2
  * @param x The x coordinate
  * @param y The y coordinate
@@ -89,7 +89,7 @@ public record Point(int x, int y) implements Shape
 /**
  * A 2D Point.
  *
- * @author hawk
+ * @author ikost
  * @version 0.2
  * @param x The x coordinate
  * @param y The y coordinate
@@ -899,9 +899,12 @@ public final class Car extends Vehicle { // κλάση
 
 Με άλλα λόγια, αποτελεί ένα "συμβόλαιο" που θα πρέπει να υλοποιήσει μια κλάση.
 
+Οι μέθοδοι και οι σταθερές μιας διεπαφής είναι εξ’ ορισμού public. Από την έκδοση 9 υποστηρίζονται και private μέθοδοι.
+
 Μια κλάση μπορεί να υλοποιεί (```implements```) μια ή περισσότερες διεπαφές. Επίσης, μια διεπαφή μπορεί να κληρονομήσει άλλες διεπαφές (```extends```) αλλά όχι άλλες κλάσεις.
 
 Μία κλάση πρέπει να υλοποιεί _όλες_ τις μεθόδους μίας διεπαφής εκτός και αν είναι δηλωμένη ως ```abstract```.
+
 Χαρακτηριστικές διεπαφές της γλώσσας Java:
 
 * ```Serializable```: ονομάζεται και marker interface καθώς δεν περιέχει καμία μέθοδο προς υλοποίηση.
@@ -955,6 +958,111 @@ public record Circle(Point center, int radius) implements Shape, Comparable
 ```
 Επιστρέφει ```0``` αν τα δυο αντικείμενα είναι ίσα (έχουν ίσες ακτίνες), ```1``` αν το αντικείμενο ```this``` είναι μεγαλύτερο απ' αυτό που περνάμε για σύγκριση, ή ```-1``` στην αντίθετη περίπτωση.
 
+Μια _εξ’ ορισμού (default)_ μέθοδος σε μια διεπαφή είναι μια μέθοδο που έχει μια εξ' ορισμού υλοποίηση που κληρονομούν οι υποκλάσεις ώστε να μην χρειάζεται να παρέχουν υλοποίηση. Μπορούν όμως να την υπερσκελίσουν και να παράσχουν την δική τους υλοποίηση. Μια _εξ’ ορισμού (default)_ μέθοδος σε μια διεπαφή ορίζεται με τη λέξη-κλειδί ```default```. Ας υλοποιήσουμε την αφαιρετική μέθοδο ```draw()``` της ```Shape``` ως εξ' ορισμού:
+
+```java
+/**
+ * A 2D Shape.
+ *
+ * @author ikost
+ * @version 0.2
+ */
+public interface Shape
+{
+    /**
+     * Draw the shape.
+     */
+    default void draw() {
+        System.out.println("Draw " + toString());
+    }
+}
+```
+Αυτό έχει ως συνέπεια λιγότερο κώδικα για τις υποκλάσεις:
+```java
+/**
+ * A 2D Point.
+ *
+ * @author ikost
+ * @version 0.3
+ * @param x The x coordinate
+ * @param y The y coordinate
+ */
+public record Point(int x, int y) implements Shape
+{ 
+    @Override
+    public String toString() {
+        return "Point(" + x + ", " + y + ")";
+    }
+}
+
+/**
+ * A 2D Line.
+ *
+ * @author ikost
+ * @version 0.3
+ * @param p1 The first point of the line
+ * @param p2 The second point of the line
+ */
+public record Line(Point p1, Point p2) implements Shape
+{   
+    @Override
+    public String toString() {
+        return "Line from " + p1 + " to " + p2;
+    }    
+}
+
+/**
+ * A Circle.
+ *
+ * @author ikost
+ * @version 0.4
+ * @param center The center point of the circle
+ * @param radius The circle's radius
+ */
+public record Circle(Point center, int radius) implements Shape, Comparable
+{
+    double circumference() {
+        return 2*Math.PI*radius;
+    }
+    
+    @Override
+    public String toString() {
+        return "Circle with center " + center + " and radius " + radius;
+    }
+    
+    @Override
+    public int compareTo(Object o) {
+        if (!(o instanceof Circle c)) {
+            throw new ClassCastException("must be an instance of Circle");
+        }
+        if (radius() > c.radius()) {
+            return 1;
+        } else if (radius() < c.radius()) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+}
+
+/**
+ * A 2D Rectangle.
+ *
+ * @author ikost
+ * @version 0.3
+ * @param upperLeft The upper left point of the rectangle
+ * @param lowerRight The lower right point of the rectangle
+ */
+public record Rectangle(Point upperLeft, Point lowerRight) implements Shape
+{  
+    @Override
+    public String toString() {
+        return "Rectangle from " + upperLeft + " to " + lowerRight;
+    }    
+}
+```
+κι αν τρέξετε πάλι την ```Main``` θα δείτε πάλι το ίδιο αποτέλεσμα. 
+
 ## Περίληψη
 Ας δούμε περιληπτικά τι μάθαμε σε αυτό και τα προηγούμενα μαθήματα.
 
@@ -969,7 +1077,7 @@ public record Circle(Point center, int radius) implements Shape, Comparable
 * Η Java δεν επιτρέπει να δημιουργήσουμε κύκλους όπου ένας constructor καλεί έναν άλλο ο οποίος με τη σειρά του καλεί τον αρχικό.
 * Η πρώτη γραμμή κάθε constructor είναι μια κλήση είτε στον γονικό constructor με τη ```super()``` είτε σε έναν υπερφορτωμένο constructor με την ```this()```.
 * Αν η μέθοδος κατασκευής δεν περιέχει μια εντολή ```this()``` ή ```super()``` τότε ο μεταγλωττιστής εισάγει αυτόματα μια εντολή ```super()``` χωρίς ορίσματα ως την πρώτη γραμμή της μεθόδου κατασκευής.
-* Αν ένανς constructor καλεί μια εντολή ```super()``` τότε αυτή πρέπει να είναι η πρώτη γραμμή του constructor.
+* Αν ένας constructor καλεί μια εντολή ```super()``` τότε αυτή πρέπει να είναι η πρώτη γραμμή του constructor.
 * Αν μια κλάση κληρονομεί μια άλλη κλάση που έχει δηλώσει constructor με παραμέτρους, η υποκλάση πρέπει κι αυτή να δηλώσει μέθοδο κατασκευής που να καλεί τον constructor της υπερκλάσης με την ```super()```.
 
 Ακόμα μάθαμε ότι:
