@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://javaalmanac.io/almanac.min.css">
+</head>
+<body>
+
+<div class="content" id="content">
+
+<sandbox version="java17" mainclass="Main" preview="true" v-cloak>
+<sandbox-source name="Main.java">
+enum Day {
+    MON("Monday"), TUE("Tuesday"), WED("Wednesday"), THU("Thursday"), FRI("Friday"), SAT("Saturday"), SUN("Sunday");
+    String day;
+
+    Day(String d) {
+        day = d;
+    }
+
+    String getDay() {
+        return day;
+    }
+
+    void setDay(String d) {
+        this.day = d;
+    }
+
+    public static Day fromValue(String value) {
+        for (Day type : Day.values()) {
+            if (type.getDay().equals(value)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException("No enum constant for value: " + value);
+    } 
+}
+
+interface Operation {
+    long apply(long x, long y);
+}
+
+enum BasicOperation implements Operation {
+    PLUS {public long apply(long x, long y){return x + y;}},
+    MINUS {public long apply(long x, long y){return x - y;}},
+    TIMES {public long apply(long x, long y){return x * y;}},
+    DIVIDE {public long apply(long x, long y){return x / y;}};
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Day d = Day.MON;
+        d.setDay("Δευτέρα");
+        System.out.println(d.getDay());
+        d = Day.fromValue("Saturday");
+        System.out.println(d);
+
+        int a = 4, b = 2;
+        Operation op = BasicOperation.PLUS;
+        System.out.print(a + " " + op + " " + b + " = " + op.apply(a, b));
+    }
+}
+</sandbox-source>
+</sandbox>
+</div>
+<script src="https://javaalmanac.io/app/sandbox-bundle.js"></script>
+<script>new Vue({ el: '#content' })</script>
+</body>
+</html>

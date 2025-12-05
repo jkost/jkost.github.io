@@ -88,6 +88,15 @@ enum Day {
   void setDay(String d) {
   	this.day = d; 
   }
+
+  public static Day fromValue(String value) {
+    for (Day type : Day.values()) {
+        if (type.getDay().equals(value)) {
+            return type;
+        }
+    }
+    throw new IllegalArgumentException("No enum constant for value: " + value);
+  }
 }
 ```
 Αν ορίζονται γνωρίσματα σ' ένα enum, όπως στο ανωτέρω παράδειγμα, επιτρέπεται να υπάρχουν setters που αλλάζουν τη _τιμή_ ενός enum, π.χ.
@@ -100,6 +109,9 @@ jshell> d.setDay("Δευτέρα")
 
 jshell> d.getDay()
 $60 ==> "Δευτέρα"
+
+jshell> Day d = Day.fromValue("Saturday");
+d ==> SAT
 ```
 
 Οι απαριθμημένοι τύποι μπορούν να περιέχουν αφηρημένες μεθόδους, αλλά σ' αυτήν την περίπτωση κάθε τιμή του θα πρέπει να υπερσκελίζει τις αφηρημένες μεθόδους:
@@ -143,12 +155,14 @@ public enum BasicOperation implements Operation {
 }
 ```
 
+Εξασκηθείτε εδώ <a href="sandbox/enums.html" target="_blank"><img src="../../../assets/javaalmanac.svg" alt="javaalmanac.io" style="width:5%; height:5%;"></a>.
+
 Η αρχικοποίηση ενός enum είναι αντίστροφη από αυτήν μιας κλάσης: 
 
 1. Πρώτα αρχικοποιούνται οι σταθερές (constants)
 2. Στη συνέχεια εκτελούνται οι instance initializers 
 3. Μετά οι κατασκευαστές (constructors) και
-4. Τέλος οι static initializers 
+4. Τέλος οι static initializers
 
 ## Ασκήσεις
 1. [Τροποποιήστε το ```enum Operation``` ώστε:](https://codecheck.io/files/23121715425ou1g3bnm9i8c6ehm631hrh26)
@@ -163,7 +177,7 @@ op ==> Operation.PLUS
 
 jshell> System.out.print(a + " " + op + " " + b + " = " + op.apply(a, b));
 4 + 2 = 6
-``` 
+```
 
 ---
 
