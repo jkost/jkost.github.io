@@ -31,8 +31,9 @@
 2. [Αντικειμενοστραφής Προγραμματισμός με το BlueJ](Week3/3.2-Intro2OOPWithBlueJ/README.md) ✅
 3. [Στατικότητα](Week3/3.3-Static/README.md) ✅
 4. [Ενθυλάκωση](Week3/3.4-Encapsulation/README.md) ✅
-5. [Κληρονομικότητα](Week3/3.5-Inheritance/README.md)
-6. [Πολυμορφισμός](Week3/3.6-Polymorphism/README.md)
+5. [Κληρονομικότητα](Week3/3.5-Inheritance/README.md) ✅
+6. [Πολυμορφισμός](Week3/3.6-Polymorphism/README.md) ✅
+7. [Έλεγχος Κώδικα](Week3/3.7-UnitTesting/README.md) ✅
 
 ### Εβδομάδα 4η - Αντικειμενοστραφής προγραμματισμός με το Greenfoot
 
