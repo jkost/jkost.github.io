@@ -3,7 +3,7 @@
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.4-Enums/README.md) |[▶️](../4.5-BestPractices/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.3-Enums/README.md) |[▶️](../4.5-BestPractices/README.md)
 
 ---
 [![](../../../assets/jupyter_logo.svg)](4.4-JavaDoc.ipynb)
@@ -126,6 +126,6 @@ _Υπάρχει και το [UML Java Doclet](https://github.com/gboersma/uml-ja
 
 ---
 
-[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.4-Enums/README.md) |[▶️](../4.5-BestPractices/README.md)
+[🏠](https://jkost.github.io) | [⬆️](../../README.md) | [◀️](../4.3-Enums/README.md) |[▶️](../4.5-BestPractices/README.md)
 
 ---
