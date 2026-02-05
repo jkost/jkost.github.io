@@ -70,27 +70,62 @@ $4 ==> 3
 Θα μπορούσαμε ν' αρχικοποιήσουμε την παραπάνω λίστα και ως εξής:
 
 ```java
-jshell> List array = List.of(10, 20, 30);
-array = [10, 20, 30]
+jshell> List array1 = List.of(10, 20, 30);
+array1 = [10, 20, 30]
 
-jshell> List array = Arrays.asList(10, 20, 30);
-array = [10, 20, 30]
+jshell> List array2 = Arrays.asList(10, 20, 30);
+array2 = [10, 20, 30]
 ```
 
-Προσοχή όμως. Και στις δυο αυτές περιπτώσεις επιστρέφεται μια λίστα η οποία _δεν_ μπορεί να μεταβληθεί. Επιπλέον, δεν επιτρέπονται ```null``` στοιχεία.
+Προσοχή όμως. Και στις δυο αυτές περιπτώσεις επιστρέφεται μια λίστα στην οποία _δεν_ μπορούμε να προσθαφαιρέσουμε στοιχεία μετά τη δημιουργία της. Επιπλέον, δεν επιτρέπονται ```null``` στοιχεία.
 
 ```java
-jshell> array.add(40)
+jshell> array1.add(40)
 |  Warning:
 |  unchecked call to add(E) as a member of the raw type java.util.List
-|  array.add(40)
+|  array1.add(40)
+|  ^------------^
+|  Exception java.lang.UnsupportedOperationException
+|        at ImmutableCollections.uoe (ImmutableCollections.java:142)
+|        at ImmutableCollections$AbstractImmutableCollection.add (ImmutableCollections.java:147)
+|        at (#3:1)
+
+jshell> array2.add(40)
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.List
+|  array2.add(40)
 |  ^-----------^
 |  java.lang.UnsupportedOperationException thrown
 |        at AbstractList.add (AbstractList.java:153)
 |        at AbstractList.add (AbstractList.java:111)
 |        at (#43:1)
-
 ```
+Όμως, ενώ η λίστα που δημιουργήθηκε με τη `List.of()` είναι πραγματικά αμετάβλητη, εκείνη που δημιουργήθηκε με την `Arrays.asList()` δεν είναι, αν και δεν μπορούμε να προσθαφαιρέσουμε άλλα στοιχεία μετά τη δημιουργία της.
+```java
+jshell> array1.set(1, 40);
+|  Warning:
+|  unchecked call to set(int,E) as a member of the raw type java.util.List
+|  array1.set(1, 40);
+|  ^---------------^
+|  Exception java.lang.UnsupportedOperationException
+|        at ImmutableCollections.uoe (ImmutableCollections.java:142)
+|        at ImmutableCollections$AbstractImmutableList.set (ImmutableCollections.java:260)
+|        at (#5:1)
+
+jshell> array1
+array1 ==> [10, 20, 30]
+
+jshell> array2.set(1, 40);
+|  Warning:
+|  unchecked call to set(int,E) as a member of the raw type java.util.List
+|  array2.set(1, 40);
+|  ^---------------^
+$6 ==> 20
+
+jshell> array2
+array2 ==> [10, 40, 30]
+```
+
 Για να μπορέσουμε να δημιουργήσουμε μια μεταβαλλόμενη λίστα σ' αυτή την περίπτωση, πρέπει να χρησιμοποιήσουμε την μέθοδο κατασκευής της ```ArrayList``` που δέχεται μια άλλη συλλογή:
 
 ```java
