@@ -144,7 +144,49 @@ set ==> [20, 40]
 
 Τέλος, η διεπαφή ```Collection``` παρέχει και τις ακόλουθες δυο μεθόδους οι οποίες μπορούν να διαγράψουν με τη μία από το σύνολό μας όλα τα στοιχεία της παρεχόμενης συλλογής ```c``` (```removeAll(Collection<?> c)```) και επιστρέφει ```true``` αν τα κατάφερε (αν δεν κατάφερε να διαγράψει έστω και ένα από τα στοιχεία της ```c``` από το σύνολό μας, τότε επιστρέφει ```false```).
 
-Η ```retainAll(Collection<?> c)``` κρατάει από το σύνολό μας μόνο τα στοιχεία που περιέχονται στη ```c``` και διαγράφει όλα τα υπόλοιπα. 
+Η ```retainAll(Collection<?> c)``` κρατάει από το σύνολό μας μόνο τα στοιχεία που περιέχονται στη ```c``` και διαγράφει όλα τα υπόλοιπα.
+
+Ας δούμε ένα παράδειγμα:
+
+```java
+jshell> Set<Integer> oddNumbers = new HashSet<>(Set.of(1, 3, 5, 7, 9));
+oddNumbers ==> [1, 3, 5, 7, 9]
+
+jshell> Set<Integer> evenNumbers = new HashSet<>(Set.of(0, 2, 4, 6, 8));
+evenNumbers ==> [0, 2, 4, 6, 8]
+
+jshell> Set<Integer> numbers = new HashSet<>(oddNumbers);
+numbers ==> [1, 3, 5, 7, 9]
+
+jshell> numbers.addAll(evenNumbers); // union
+$5 ==> true
+
+jshell> numbers
+numbers ==> [0, 1, 2, 4, 5, 6, 7, 8, 9]
+
+jshell> Set<Integer> primeNumbers = new HashSet<>(Set.of(2, 3, 5, 7));
+primeNumbers ==> [2, 3, 5, 7]
+
+jshell> Set<Integer> intersection = new HashSet<>(primeNumbers);
+intersection ==> [2, 3, 5, 7]
+
+jshell> intersection.retainAll(evenNumbers);
+$9 ==> true
+
+jshell> intersection // only even prime numbers
+intersection ==> [2]
+
+jshell> Set<Integer> primesNoOdds = new HashSet<>(primeNumbers);
+primesNoOdds ==> [2, 3, 5, 7]
+
+jshell> primesNoOdds.removeAll(oddNumbers);
+$12 ==> true
+
+jshell> primesNoOdds  // no odd primes
+primesNoOdds ==> [2]
+
+```
+**Σημείωση**! _Η `TreeSet` υλοποιείται ως [Red-Black tree](https://en.wikipedia.org/wiki/Red–black_tree)._
 
 Η ```NavigableSet``` διαθέτει δυο ακόμα μεθόδους που διαγράφουν το πρώτο και το τελευταίο στοιχείο του ταξινομημένου συνόλου: ```pollFirst()``` και ```pollLast()```.
 
