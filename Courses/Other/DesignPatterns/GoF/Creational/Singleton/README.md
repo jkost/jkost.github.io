@@ -81,9 +81,10 @@ public final class Singleton {
     }
     
     public static Singleton getInstance() {
-     if (singleton == null) 
-            singleton = new Singleton();	
-        return singleton;
+     if (singleton == null) {
+        singleton = new Singleton();
+     }
+     return singleton;
     }
 }
 
@@ -186,24 +187,102 @@ public enum Singleton {
 
 But if the constructor(s) are `private`, how can we pass arguments to a Singleton?
 
+If you use a Singleton with lazy initialization, for example:
+```java
+// Singleton with lazy initialization
+public final class Singleton {
+    private static Singleton singleton = null;
+    private String param;
+
+    // private constructor
+    private Singleton(String p) {
+        // initialize any state here
+        this.param = p;
+    }
+    
+    public static Singleton getInstance(String p) {
+     if (singleton == null) {
+        singleton = new Singleton(p);
+     }
+     return singleton;
+    }
+}
+```
+However, subsequent calls to getInstance("differentParam") silently ignore the new parameter.
+
+Using Spring one has two options:
+
+```java
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component // By default, Spring beans are Singletons
+public final class Singleton {
+
+    private final String param;
+
+    // Spring automatically injects the property via constructor injection
+    public SpringSingleton(@Value("${app.my-param:defaultValue}") String param) {
+        this.param = param;
+        // initialize any state here
+    }
+
+    public String getParam() {
+        return this.param;
+    }
+}
+```
+In `application.properties`, simply define: `app.my-param=aValue`.
+
+Because `param` is injected during application startup and the field can be marked `final`, you don't need to worry about race conditions or synchronization issues.
+
+Another way:
+```java
+public final class Singleton {
+    private final String param;
+
+    public Singleton(String param) {
+        this.param = param;
+    }
+
+    public String getParam() {
+        return this.param;
+    }
+}
+```
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+
+    @Bean // Spring manages this as a Singleton by default
+    public Singleton getSingleton() {
+        return new Singleton("param");
+    }
+}
+```
+In both cases, initialization is eager, not lazy (created by default during Spring context startup). `param` is injected at application startup via config or properties file. The state is consistent across the entire application lifetime.
+
 ### C#
 
 ```csharp
-// Singleton pattern -- Lazy initialization  
-using System;  
-// "Singleton"  
-class Singleton {   
-    // Fields   
-    private static Singleton instance;    
+// Singleton pattern -- Lazy initialization
+using System; 
+// "Singleton"
+class Singleton {
+    // Fields
+    private static Singleton instance;
     // Constructor   
     protected Singleton() {}
-    // Methods   
-    public static Singleton Instance()   {     
+    // Methods
+    public static Singleton Instance() {
         // Uses "Lazy initialization"     
-        if ( instance == null ) {       
-            instance = new Singleton();     
-            return instance;   
-        } 
+        if ( instance == null ) {
+            instance = new Singleton();
+            return instance;
+        }
     }
 }
 ```
