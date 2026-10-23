@@ -60,7 +60,7 @@ jshell> factorial(3)
 
 Ας δούμε την 3η άσκηση. Η δημιουργία μιας αναδρομικής μεθόδους υπολογισμού των αριθμών Fibonacci δεν είναι δύσκολη. 
 
-![](https://latex.codecogs.com/svg.image?fib(n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;1,&space;n=0,&space;n=1&space;,&space;n=2&space;\\&space;&space;&space;&space;&space;&space;&space;&space;fib(n-1)&space;\cdot&space;fib(n-2),&space;n>2&space;&space;&space;&space;\end{array}\right.)
+![](https://latex.codecogs.com/svg.image?fib(n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;0,&space;n=0\\&space;&space;&space;&space;&space;&space;&space;&space;1,&space;n=1&space;,&space;n=2&space;\\&space;&space;&space;&space;&space;&space;&space;&space;fib(n-1)&space;\cdot&space;fib(n-2),&space;n>2&space;&space;&space;&space;\end{array}\right.)
 
 Η συνθήκη τερματισμού είναι ότι αν ```n=1``` ή ```n=2``` τότε ο αριθμός Fibonacci είναι ```1```. Επιβεβαιώστε τα αποτελέσματα [εδώ](https://www.omnicalculator.com/math/fibonacci).
 
