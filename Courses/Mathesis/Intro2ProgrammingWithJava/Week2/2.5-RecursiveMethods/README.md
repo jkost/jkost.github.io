@@ -139,7 +139,7 @@ radar
    ```long power(int num, int exp) {...}```.](https://codecheck.io/files/23112515348g3m6tsbl87i2wvlxdfh32u0g)
 3. [Να γράψετε μια αναδρομική μέθοδο που θα υπολογίζει τον αριθμό fibonacci](https://codecheck.io/files/23112420529cnhx13wesi4vumf5fedckk4c). Ο αριθμός fibonacci ορίζεται ως: 
 
-![](https://latex.codecogs.com/svg.image?fib(n)&space;=&space;\left\{\begin{array}{ll}&space;&space;&space;&space;1,&space;n=0,&space;n=1&space;\\&space;&space;&space;&space;2,&space;n=2&space;\\&space;&space;&space;&space;fib(n-1)&space;\cdot&space;fib(n-2),&space;n>2\end{array}\right.)
+![](https://latex.codecogs.com/svg.image?fib(n)&space;=&space;\left\{&space;&space;&space;&space;\begin{array}{ll}&space;&space;&space;&space;&space;&space;&space;&space;0,&space;n=0\\&space;&space;&space;&space;&space;&space;&space;&space;1,&space;n=1&space;,&space;n=2&space;\\&space;&space;&space;&space;&space;&space;&space;&space;fib(n-1)&space;\cdot&space;fib(n-2),&space;n>2&space;&space;&space;&space;\end{array}\right.)
 
    **Υπόδειξη:** _Υπάρχει και ένας πιο γρήγορος αναδρομικός αλγόριθμος υπολογισμού_:
    
